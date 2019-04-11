@@ -28,6 +28,7 @@ Partial Class frmListboxen
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAuswahluebernehmen = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -80,12 +81,23 @@ Partial Class frmListboxen
         '
         Me.btnAuswahluebernehmen.Image = CType(resources.GetObject("btnAuswahluebernehmen.Image"), System.Drawing.Image)
         Me.btnAuswahluebernehmen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAuswahluebernehmen.Location = New System.Drawing.Point(127, 526)
+        Me.btnAuswahluebernehmen.Location = New System.Drawing.Point(5, 526)
         Me.btnAuswahluebernehmen.Name = "btnAuswahluebernehmen"
         Me.btnAuswahluebernehmen.Size = New System.Drawing.Size(319, 60)
         Me.btnAuswahluebernehmen.TabIndex = 35
         Me.btnAuswahluebernehmen.Text = "Ausgewählten Text eintragen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "und Fenster schliessen"
         Me.btnAuswahluebernehmen.UseVisualStyleBackColor = True
+        '
+        'btnClose
+        '
+        Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
+        Me.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnClose.Location = New System.Drawing.Point(330, 526)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(243, 60)
+        Me.btnClose.TabIndex = 36
+        Me.btnClose.Text = "Fenster schliessen"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'frmListboxen
         '
@@ -93,7 +105,9 @@ Partial Class frmListboxen
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(578, 594)
+        Me.ClientSize = New System.Drawing.Size(579, 594)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnAuswahluebernehmen)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -111,4 +125,5 @@ Partial Class frmListboxen
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnAuswahluebernehmen As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btnClose As Button
 End Class

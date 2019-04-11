@@ -1,19 +1,13 @@
 ﻿Public Class frmListboxen
 
     Private _frmMain As frmMain
-    Private _frmInterviewer As frmInterviewer
     Private _frmKurzfragebogen As frmKurzfragebogen
+    Private _frmInterviewer As frmInterviewer
     Private _frmTelefoninterview As frmTelefoninterview
 
     Sub New(frmMain As frmMain)
         ' TODO: Complete member initialization 
         _frmMain = frmMain
-        InitializeComponent()
-    End Sub
-
-    Sub New(frmInterviewer As frmInterviewer)
-        ' TODO: Complete member initialization 
-        _frmInterviewer = frmInterviewer
         InitializeComponent()
     End Sub
 
@@ -23,8 +17,12 @@
         InitializeComponent()
     End Sub
 
+    Sub New(frmInterviewer As frmInterviewer)
+        _frmInterviewer = frmInterviewer
+        InitializeComponent()
+    End Sub
+
     Sub New(frmTelefoninterview As frmTelefoninterview)
-        ' TODO: Complete member initialization 
         _frmTelefoninterview = frmTelefoninterview
         InitializeComponent()
     End Sub
@@ -63,10 +61,10 @@
     Public Shared Property fueherschein As String = String.Empty
     Public Shared Property oepnv As String = String.Empty
     Public Shared Property pdl_welche As String = String.Empty
-    Public Shared Property suchmaschine As String = String.Empty
-    Public Shared Property zeitung As String = String.Empty
-    Public Shared Property jobboerse As String = String.Empty
-    Public Shared Property anderemedien As String = String.Empty
+    'Public Shared Property suchmaschine As String = String.Empty
+    'Public Shared Property zeitung As String = String.Empty
+    'Public Shared Property jobboerse As String = String.Empty
+    'Public Shared Property anderemedien As String = String.Empty
     Public Shared Property studiumabschluss As String = String.Empty
     Public Shared Property sapmodule As String = String.Empty
     Public Shared Property fibuerfahrung As String = String.Empty
@@ -140,6 +138,29 @@
         End Select
         '  Me.ListBox1.SelectedIndex = 0
 
+        ' Alle Variablen leeren
+
+        zavm = String.Empty
+        arbeitsort = String.Empty
+        fueherschein = String.Empty
+        oepnv = String.Empty
+        pdl_welche = String.Empty
+        studiumabschluss = String.Empty
+        sapmodule = String.Empty
+        fibuerfahrung = String.Empty
+        fibusoftwareerfahrung = String.Empty
+        controllingerfahrung = String.Empty
+        controllingsystemeerfahrung = String.Empty
+        steuerfachangestellte_erfahrung = String.Empty
+        steuerfachangestellte_software = String.Empty
+        bibuha_erfahrung = String.Empty
+        bibuha_software = String.Empty
+        lug_erfahrung = String.Empty
+        lug_abrechnung_software = String.Empty
+        lug_buchhaltung = String.Empty
+        lug_buchhaltung_software = String.Empty
+        fibu_kontenrahmen = String.Empty
+        vztz = String.Empty
     End Sub
 
 
@@ -173,30 +194,35 @@
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         Select Case True
             Case zavm_bool
-                zavm = String.Empty
-                For h As Integer = 0 To Me.ListBox1.SelectedItems.Count - 1
-                    zavm &= Me.ListBox1.SelectedItems.Item(h).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For h As Integer = 0 To Me.ListBox1.SelectedItems.Count - 1
+                        zavm &= Me.ListBox1.SelectedItems.Item(h).ToString & vbCrLf
+                    Next
+                End If
             Case arbeitsort_bool
-                arbeitsort = String.Empty
-                For j As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    arbeitsort &= ListBox1.SelectedItems.Item(j).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For j As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        arbeitsort &= ListBox1.SelectedItems.Item(j).ToString & vbCrLf
+                    Next
+                End If
             Case fuehrerschein_bool
-                fueherschein = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    fueherschein &= ListBox1.SelectedItems.Item(k).ToString & ", "
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        fueherschein &= ListBox1.SelectedItems.Item(k).ToString & ", "
+                    Next
+                End If
             Case oepnv_bool
-                oepnv = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    oepnv &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        oepnv &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case pdl_welche_bool
-                pdl_welche = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    pdl_welche &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        pdl_welche &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
                 '  Case suchmaschine_bool
                 '     suchmaschine = String.Empty
                 '    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
@@ -218,90 +244,130 @@
                 ' anderemedien &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
                 'Next
             Case studiumsabschluss_bool
-                studiumabschluss = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    studiumabschluss &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        studiumabschluss &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case sapmodule_bool
                 sapmodule = String.Empty
                 For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
                     sapmodule &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
                 Next
             Case fibuerfahrung_bool
-                fibuerfahrung = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    fibuerfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        fibuerfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case fibusoftwareerfahrung_bool
-                fibusoftwareerfahrung = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    fibusoftwareerfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        fibusoftwareerfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case controllingerfahrung_bool
-                controllingerfahrung = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    controllingerfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        controllingerfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case controllingsystemeerfahrung_bool
-                controllingsystemeerfahrung = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    controllingsystemeerfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        controllingsystemeerfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case steuerfachangestellte_erfahrung_bool
-                steuerfachangestellte_erfahrung = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    steuerfachangestellte_erfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        steuerfachangestellte_erfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case steuerfachangestellte_software_bool
-                steuerfachangestellte_software = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    steuerfachangestellte_software &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        steuerfachangestellte_software &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case bibuha_erfahrung_bool
-                bibuha_erfahrung = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    bibuha_erfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        bibuha_erfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case bibuha_software_bool
-                bibuha_software = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    bibuha_software &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        bibuha_software &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case lug_abrechnung_bool
-                lug_erfahrung = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    lug_erfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        lug_erfahrung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case lugabrechnung_software_bool
-                lug_abrechnung_software = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    lug_abrechnung_software &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        lug_abrechnung_software &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case lug_buchhaltung_bool
-                lug_buchhaltung = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    lug_buchhaltung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        lug_buchhaltung &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case lugbuchhaltung_software_bool
-                lug_buchhaltung_software = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    lug_buchhaltung_software &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        lug_buchhaltung_software &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case fibu_kontenrahmen_bool
-                fibu_kontenrahmen = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    fibu_kontenrahmen &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        fibu_kontenrahmen &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
             Case vztz_bool
-                vztz = String.Empty
-                For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                    vztz &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                Next
+                If ListBox1.SelectedItems.Count > 0 Then
+                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                        vztz &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                    Next
+                End If
         End Select
     End Sub
 
     Private Sub btnAuswahluebernehmen_Click(sender As Object, e As EventArgs) Handles btnAuswahluebernehmen.Click
         Call listboxendeaktivieren()
+        Me.Close()
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        zavm = String.Empty
+        arbeitsort = String.Empty
+        fueherschein = String.Empty
+        oepnv = String.Empty
+        pdl_welche = String.Empty
+        studiumabschluss = String.Empty
+        sapmodule = String.Empty
+        fibuerfahrung = String.Empty
+        fibusoftwareerfahrung = String.Empty
+        controllingerfahrung = String.Empty
+        controllingsystemeerfahrung = String.Empty
+        steuerfachangestellte_erfahrung = String.Empty
+        steuerfachangestellte_software = String.Empty
+        bibuha_erfahrung = String.Empty
+        bibuha_software = String.Empty
+        lug_erfahrung = String.Empty
+        lug_abrechnung_software = String.Empty
+        lug_buchhaltung = String.Empty
+        lug_buchhaltung_software = String.Empty
+        fibu_kontenrahmen = String.Empty
+        vztz = String.Empty
         Me.Close()
     End Sub
 End Class

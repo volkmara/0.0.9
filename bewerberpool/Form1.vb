@@ -43,6 +43,7 @@ Public Class frmMain
     Public sprachenliste As String
 
     Public alter As Integer
+    Public row_ausgewählt_bool As Boolean = False
 
     ' Für Drag and Drop
     Private _GrabOffset As Size
@@ -155,6 +156,8 @@ Public Class frmMain
         'Call ulascheck() ' Anzeigen, ob Ulas abgespeichert wurden
         'Call rundschreibencheck() ' Prüfen und anzeigen, ob Bewerber für Rundschreiben vorgesehen ist
         Call refnrhomepage()
+        Call Variablen_leeren()
+        Call Sprachendaten()
     End Sub
 
     Private Sub BewGridView1_CurrentRowChanged(sender As Object, e As CurrentRowChangedEventArgs) Handles BewGridView1.CurrentRowChanged
@@ -234,11 +237,11 @@ Public Class frmMain
             bewspeichern.sprachkenntnisse = CStr(frmMain.sprachenliste)
         End If
 
-        If frmMain.UlasTextBox.Text = String.Empty Then
+        If frmMain.txtUlas.Text = String.Empty Then
             MessageBox.Show("Bitte Ulas eintragen", "Ulas eintragen", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
-        If frmMain.UlasTextBox.Text.Contains("10") Then ' Wenn bei Ulas "10" eingetragen wurde, wird der Status ebenfalls auf zehn gesetzt
+        If frmMain.txtUlas.Text.Contains("10") Then ' Wenn bei Ulas "10" eingetragen wurde, wird der Status ebenfalls auf zehn gesetzt
             bewspeichern.stand = CStr("10")
         End If
 
@@ -778,7 +781,7 @@ Public Class frmMain
     ' `====================================================================== Formatierung bewgridview =====================================================
 
     ' =================================================================  Doppelklick Email, Homepage Beginn, Ulas, Bewerberbogen, Googlemaps, Persönlichkeit ============================
-    Private Sub EmailTextBox_DoubleClick(sender As Object, e As EventArgs) Handles EmailTextBox.DoubleClick, HomepagelinkTextBox.DoubleClick, OrtTextBox.DoubleClick, UlasListBox.DoubleClick, UlasbearbeitetListBox.DoubleClick, RTEBewerberbeschreibung.DoubleClick, Label16.DoubleClick, RefnrTextBox.DoubleClick, lblMehrAnmerkungen.DoubleClick, txtFuerstelle.DoubleClick
+    Private Sub EmailTextBox_DoubleClick(sender As Object, e As EventArgs) Handles EmailTextBox.DoubleClick, HomepagelinkTextBox.DoubleClick, txtOrt.DoubleClick, UlasListBox.DoubleClick, UlasbearbeitetListBox.DoubleClick, RTEBewerberbeschreibung.DoubleClick, Label16.DoubleClick, RefnrTextBox.DoubleClick, lblMehrAnmerkungen.DoubleClick, txtFuerstelle.DoubleClick
         Select Case True
             Case sender Is EmailTextBox
                 If CStr(EmailTextBox.Text) <> String.Empty Then
@@ -794,8 +797,8 @@ Public Class frmMain
                         System.Diagnostics.Process.Start(HomepagelinkTextBox.Text)
                     End If
                 End If
-            Case sender Is OrtTextBox
-                Dim googleort As String = CStr(Me.PlzTextBox.Text & "+" & Me.OrtTextBox.Text & "+" & Me.StrasseTextBox.Text)
+            Case sender Is txtOrt
+                Dim googleort As String = CStr(Me.PlzTextBox.Text & "+" & Me.txtOrt.Text & "+" & Me.StrasseTextBox.Text)
                 Dim googlestring As New StringBuilder
                 googlestring.Append("www.google.de/maps/place/")
                 googlestring.Append(googleort)
@@ -1286,28 +1289,73 @@ Public Class frmMain
     ' ================================================================================== Eingaben Listboxen Ende =========================================================================
 
     ' =========================================================================== Controls mit Doppelklick (Listboxen aufrufen) ==========================================================
-    Private Sub Za_vmTextBox_DoubleClick(sender As Object, e As EventArgs) Handles Za_vmTextBox.DoubleClick, ArbeitsortTextBox.DoubleClick, FuehrerscheinTextBox1.DoubleClick, Studium_abschlussTextBox.DoubleClick, Pkw_oepnvTextBox.DoubleClick, Pdl_welcheTextBox1.DoubleClick, SuchmaschineTextBox1.DoubleClick, ZeitungTextBox1.DoubleClick, JobboerseTextBox1.DoubleClick, Medien_andereTextBox1.DoubleClick, Studium_abschlussTextBox.DoubleClick, Sap_moduleTextBox.DoubleClick, Fibu_erfahrungTextBox.DoubleClick, Fibu_softwareTextBox.DoubleClick, Controlling_typTextBox.DoubleClick, Controlling_report_controlling_systemeTextBox.DoubleClick, Steuerfachang_woTextBox.DoubleClick, Steuerfachang_softwareTextBox.DoubleClick, Bibuha_woTextBox.DoubleClick, Bibuha_softwareTextBox.DoubleClick, Lug_abrechnung_woTextBox.DoubleClick, Lug_abrechnung_softwareTextBox.DoubleClick, Lug_buchhaltung_woTextBox.DoubleClick, Lug_buchhaltung_softwareTextBox.DoubleClick, Fibu_kontenrahmenTextBox.DoubleClick, UlasTextBox.DoubleClick, Vz_tzTextBox1.DoubleClick
+
+    Private Function Rowausgewählt_check(ByVal test As Boolean) As Boolean
+        If BewGridView1.SelectedRows.Count = 1 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Private Sub txtZa_vm_DoubleClick(sender As Object, e As EventArgs) Handles txtZa_vm.DoubleClick, txtArbeitsort.DoubleClick, txtFuehrerschein.DoubleClick, txtStudium_abschluss.DoubleClick, txtPkw_oepnv.DoubleClick, txtPdl_welche.DoubleClick, SuchmaschineTextBox1.DoubleClick, ZeitungTextBox1.DoubleClick, JobboerseTextBox1.DoubleClick, Medien_andereTextBox1.DoubleClick, txtStudium_abschluss.DoubleClick, txtSap_module.DoubleClick, txtFibu_erfahrung.DoubleClick, txtFibu_software.DoubleClick, txtControlling_typ.DoubleClick, txtControlling_report_controlling_systeme.DoubleClick, txtSteuerfachang_wo.DoubleClick, txtSteuerfachang_software.DoubleClick, txtBibuha_wo.DoubleClick, txtBibuha_software.DoubleClick, txtLug_abrechnung_wo.DoubleClick, txtLug_abrechnung_software.DoubleClick, txtLug_buchhaltung_wo.DoubleClick, txtLug_buchhaltung_software.DoubleClick, txtFibu_kontenrahmen.DoubleClick, txtUlas.DoubleClick, txtVz_tz.DoubleClick
         Select Case True
-            Case sender Is Za_vmTextBox
-                frmListboxen.zavm_bool = True
-                Call listboxenaufrufen()
-                Za_vmTextBox.Text = CStr(frmListboxen.zavm)
-            Case sender Is ArbeitsortTextBox
-                frmListboxen.arbeitsort_bool = True
-                Call listboxenaufrufen()
-                ArbeitsortTextBox.Text = CStr(frmListboxen.arbeitsort)
-            Case sender Is FuehrerscheinTextBox1
-                frmListboxen.fuehrerschein_bool = True
-                Call listboxenaufrufen()
-                FuehrerscheinTextBox1.Text = CStr(frmListboxen.fueherschein)
-            Case sender Is Pkw_oepnvTextBox
-                frmListboxen.oepnv_bool = True
-                Call listboxenaufrufen()
-                Pkw_oepnvTextBox.Text = CStr(frmListboxen.oepnv)
-            Case sender Is Pdl_welcheTextBox1
-                frmListboxen.pdl_welche_bool = True
-                Call listboxenaufrufen()
-                Pdl_welcheTextBox1.Text = CStr(frmListboxen.pdl_welche)
+            Case sender Is txtZa_vm
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.zavm_bool = True
+                    Call listboxenaufrufen()
+                    If CStr(frmListboxen.zavm) <> String.Empty AndAlso CStr(frmListboxen.zavm) <> txtZa_vm.Text Then
+                        txtZa_vm.Text = CStr(frmListboxen.zavm)
+                        frmListboxen.zavm = String.Empty
+                    End If
+                ElseIf Not Rowausgewählt_check(row_ausgewählt_bool) Then
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtArbeitsort
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.arbeitsort_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.arbeitsort <> String.Empty AndAlso frmListboxen.arbeitsort <> txtArbeitsort.Text Then
+                        txtArbeitsort.Text = CStr(frmListboxen.arbeitsort)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtFuehrerschein
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.fuehrerschein_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.fueherschein <> String.Empty AndAlso frmListboxen.fueherschein <> txtFuehrerschein.Text Then
+                        txtFuehrerschein.Text = CStr(frmListboxen.fueherschein)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtPkw_oepnv
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.oepnv_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.oepnv <> String.Empty AndAlso frmListboxen.oepnv <> txtPkw_oepnv.Text Then
+                        txtPkw_oepnv.Text = CStr(frmListboxen.oepnv)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtPdl_welche
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.pdl_welche_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.pdl_welche <> String.Empty AndAlso frmListboxen.pdl_welche <> txtPdl_welche.Text Then
+                        txtPdl_welche.Text = CStr(frmListboxen.pdl_welche)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
                 ' Case sender Is SuchmaschineTextBox1
                 '    frmListboxen.suchmaschine_bool = True
                 '   Call listboxenaufrufen()
@@ -1324,76 +1372,193 @@ Public Class frmMain
                 'frmListboxen.anderemedien_bool = True
                 'Call listboxenaufrufen()
                 'Medien_andereTextBox1.Text = CStr(frmListboxen.anderemedien)
-            Case sender Is Studium_abschlussTextBox
-                frmListboxen.studiumsabschluss_bool = True
-                Call listboxenaufrufen()
-                Studium_abschlussTextBox.Text = CStr(frmListboxen.studiumabschluss)
-            Case sender Is Sap_moduleTextBox
-                frmListboxen.sapmodule_bool = True
-                Call listboxenaufrufen()
-                Sap_moduleTextBox.Text = CStr(frmListboxen.sapmodule)
-            Case sender Is Fibu_erfahrungTextBox
-                frmListboxen.fibuerfahrung_bool = True
-                Call listboxenaufrufen()
-                Fibu_erfahrungTextBox.Text = CStr(frmListboxen.fibuerfahrung)
-            Case sender Is Fibu_softwareTextBox
-                frmListboxen.fibusoftwareerfahrung_bool = True
-                Call listboxenaufrufen()
-                Fibu_softwareTextBox.Text = CStr(frmListboxen.fibusoftwareerfahrung)
-            Case sender Is Controlling_typTextBox
-                frmListboxen.controllingerfahrung_bool = True
-                Call listboxenaufrufen()
-                Controlling_typTextBox.Text = CStr(frmListboxen.controllingerfahrung)
-            Case sender Is Controlling_report_controlling_systemeTextBox
-                frmListboxen.controllingsystemeerfahrung_bool = True
-                Call listboxenaufrufen()
-                Controlling_report_controlling_systemeTextBox.Text = CStr(frmListboxen.controllingsystemeerfahrung)
-            Case sender Is Steuerfachang_woTextBox
-                frmListboxen.steuerfachangestellte_erfahrung_bool = True
-                Call listboxenaufrufen()
-                Steuerfachang_woTextBox.Text = CStr(frmListboxen.steuerfachangestellte_erfahrung)
-            Case sender Is Steuerfachang_softwareTextBox
-                frmListboxen.steuerfachangestellte_software_bool = True
-                Call listboxenaufrufen()
-                Steuerfachang_softwareTextBox.Text = CStr(frmListboxen.steuerfachangestellte_software)
-            Case sender Is Bibuha_woTextBox
-                frmListboxen.bibuha_erfahrung_bool = True
-                Call listboxenaufrufen()
-                Bibuha_woTextBox.Text = CStr(frmListboxen.bibuha_erfahrung)
-            Case sender Is Bibuha_softwareTextBox
-                frmListboxen.bibuha_software_bool = True
-                Call listboxenaufrufen()
-                Bibuha_softwareTextBox.Text = CStr(frmListboxen.bibuha_software)
-            Case sender Is Lug_abrechnung_woTextBox
-                frmListboxen.lug_abrechnung_bool = True
-                Call listboxenaufrufen()
-                Lug_abrechnung_woTextBox.Text = CStr(frmListboxen.lug_erfahrung)
-            Case sender Is Lug_abrechnung_softwareTextBox
-                frmListboxen.lugabrechnung_software_bool = True
-                Call listboxenaufrufen()
-                Lug_abrechnung_softwareTextBox.Text = CStr(frmListboxen.lug_abrechnung_software)
-            Case sender Is Lug_buchhaltung_woTextBox
-                frmListboxen.lug_buchhaltung_bool = True
-                Call listboxenaufrufen()
-                Lug_buchhaltung_woTextBox.Text = CStr(frmListboxen.lug_buchhaltung)
-            Case sender Is Lug_buchhaltung_softwareTextBox
-                frmListboxen.lugbuchhaltung_software_bool = True
-                Call listboxenaufrufen()
-                Lug_buchhaltung_softwareTextBox.Text = CStr(frmListboxen.lug_buchhaltung_software)
-            Case sender Is Fibu_kontenrahmenTextBox
-                frmListboxen.fibu_kontenrahmen_bool = True
-                Call listboxenaufrufen()
-                Fibu_kontenrahmenTextBox.Text = CStr(frmListboxen.fibu_kontenrahmen)
-            Case sender Is UlasTextBox
-                frmUlaseintragen.ulas_bool = True
-                Call ulasaufrufen()
-                If frmUlaseintragen.ulas_wert <> String.Empty Then
-                    UlasTextBox.Text = CStr(frmUlaseintragen.ulas_wert)
+
+            Case sender Is txtStudium_abschluss
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.studiumsabschluss_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.studiumabschluss <> String.Empty AndAlso frmListboxen.studiumabschluss <> txtStudium_abschluss.Text Then
+                        txtStudium_abschluss.Text = CStr(frmListboxen.studiumabschluss)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 End If
-            Case sender Is Vz_tzTextBox1
-                frmListboxen.vztz_bool = True
-                Call listboxenaufrufen()
-                Vz_tzTextBox1.Text = CStr(frmListboxen.vztz)
+
+            Case sender Is txtSap_module
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.sapmodule_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.sapmodule <> String.Empty AndAlso frmListboxen.sapmodule <> txtSap_module.Text Then
+                        txtSap_module.Text = CStr(frmListboxen.sapmodule)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtFibu_erfahrung
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.fibuerfahrung_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.fibusoftwareerfahrung <> String.Empty AndAlso frmListboxen.fibusoftwareerfahrung <> txtFibu_erfahrung.Text Then
+                        txtFibu_erfahrung.Text = CStr(frmListboxen.fibuerfahrung)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtFibu_software
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.fibusoftwareerfahrung_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.fibusoftwareerfahrung <> String.Empty AndAlso frmListboxen.fibusoftwareerfahrung <> txtFibu_software.Text Then
+                        txtFibu_software.Text = CStr(frmListboxen.fibusoftwareerfahrung)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtControlling_typ
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.controllingerfahrung_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.controllingerfahrung <> String.Empty AndAlso frmListboxen.controllingerfahrung <> txtControlling_typ.Text Then
+                        txtControlling_typ.Text = CStr(frmListboxen.controllingerfahrung)
+                    Else
+                        MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                    End If
+                End If
+
+            Case sender Is txtControlling_report_controlling_systeme
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.controllingsystemeerfahrung_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.controllingsystemeerfahrung <> String.Empty AndAlso frmListboxen.controllingsystemeerfahrung <> txtControlling_report_controlling_systeme.Text Then
+                        txtControlling_report_controlling_systeme.Text = CStr(frmListboxen.controllingsystemeerfahrung)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtSteuerfachang_wo
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.steuerfachangestellte_erfahrung_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.steuerfachangestellte_erfahrung <> String.Empty AndAlso frmListboxen.steuerfachangestellte_erfahrung <> txtSteuerfachang_wo.Text Then
+                        txtSteuerfachang_wo.Text = CStr(frmListboxen.steuerfachangestellte_erfahrung)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtSteuerfachang_software
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.steuerfachangestellte_software_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.steuerfachangestellte_software <> String.Empty AndAlso frmListboxen.steuerfachangestellte_software <> txtSteuerfachang_software.Text Then
+                        txtSteuerfachang_software.Text = CStr(frmListboxen.steuerfachangestellte_software)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtBibuha_wo
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.bibuha_erfahrung_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.bibuha_erfahrung <> String.Empty AndAlso frmListboxen.bibuha_erfahrung <> txtBibuha_wo.Text Then
+                        txtBibuha_wo.Text = CStr(frmListboxen.bibuha_erfahrung)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtBibuha_software
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.bibuha_software_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.lug_buchhaltung_software <> String.Empty AndAlso frmListboxen.lug_buchhaltung_software <> txtBibuha_software.Text Then
+                        txtBibuha_software.Text = CStr(frmListboxen.bibuha_software)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtLug_abrechnung_wo
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.lug_abrechnung_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.lug_erfahrung <> String.Empty AndAlso frmListboxen.lug_erfahrung <> txtLug_abrechnung_wo.Text Then
+                        txtLug_abrechnung_wo.Text = CStr(frmListboxen.lug_erfahrung)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtLug_abrechnung_software
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.lugabrechnung_software_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.lug_abrechnung_software <> String.Empty AndAlso frmListboxen.lug_abrechnung_software <> txtLug_abrechnung_software.Text Then
+                        txtLug_abrechnung_software.Text = CStr(frmListboxen.lug_abrechnung_software)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtLug_buchhaltung_wo
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.lug_buchhaltung_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.lug_buchhaltung <> String.Empty AndAlso frmListboxen.lug_buchhaltung <> txtLug_buchhaltung_wo.Text Then
+                        txtLug_buchhaltung_wo.Text = CStr(frmListboxen.lug_buchhaltung)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtLug_buchhaltung_software
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.lugbuchhaltung_software_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.lug_buchhaltung_software <> String.Empty AndAlso frmListboxen.lug_buchhaltung_software <> txtLug_buchhaltung_software.Text Then
+                        txtLug_buchhaltung_software.Text = CStr(frmListboxen.lug_buchhaltung_software)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtFibu_kontenrahmen
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.fibu_kontenrahmen_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.fibu_kontenrahmen <> String.Empty AndAlso frmListboxen.fibu_kontenrahmen <> txtFibu_kontenrahmen.Text Then
+                        txtFibu_kontenrahmen.Text = CStr(frmListboxen.fibu_kontenrahmen)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtUlas
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmUlaseintragen.ulas_bool = True
+                    Call ulasaufrufen()
+                    If frmUlaseintragen.ulas_wert <> String.Empty AndAlso frmUlaseintragen.ulas_wert <> String.Empty AndAlso frmUlaseintragen.ulas_wert <> txtUlas.Text Then
+                        txtUlas.Text = CStr(frmUlaseintragen.ulas_wert)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
+
+            Case sender Is txtVz_tz
+                If Rowausgewählt_check(row_ausgewählt_bool) Then
+                    frmListboxen.vztz_bool = True
+                    Call listboxenaufrufen()
+                    If frmListboxen.vztz <> String.Empty AndAlso frmListboxen.vztz <> txtVz_tz.Text Then
+                        txtVz_tz.Text = CStr(frmListboxen.vztz)
+                    End If
+                Else
+                    MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                End If
         End Select
     End Sub
 
@@ -1587,7 +1752,7 @@ Public Class frmMain
     End Function
 
 #Region "Fremdsprachen für Feld ""Sprachkenntnisse"" es werden die Interviewereinträge verwendet, soweit vorhanden"
-    Private Sub sprachendaten()
+    Private Sub Sprachendaten()
 
         Dim bewerbersprachen = DirectCast(DirectCast(Me.Bewerber_sprachenBindingSource.Current, DataRowView).Row, bewerber_sprachenRow)
         Dim sprachen As New List(Of String)()
@@ -1753,6 +1918,34 @@ Public Class frmMain
             MessageBox.Show("Datensatz wurde nicht gelöscht", "Datensatz nicht gelöscht", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
+    End Sub
+
+    ' Alle Variablen aus frmListboxen leeren
+    Private Sub Variablen_leeren()
+        frmPersönlichkeitbearbeiten.bewerberbeschreibung = String.Empty
+        frmPersönlichkeitbearbeiten.bewerberbeschreibungtext = String.Empty
+        frmUlaseintragen.ulas_wert = String.Empty
+        frmListboxen.zavm = String.Empty
+        frmListboxen.arbeitsort = String.Empty
+        frmListboxen.fueherschein = String.Empty
+        frmListboxen.oepnv = String.Empty
+        frmListboxen.pdl_welche = String.Empty
+        frmListboxen.studiumabschluss = String.Empty
+        frmListboxen.sapmodule = String.Empty
+        frmListboxen.fibuerfahrung = String.Empty
+        frmListboxen.fibusoftwareerfahrung = String.Empty
+        frmListboxen.controllingerfahrung = String.Empty
+        frmListboxen.controllingsystemeerfahrung = String.Empty
+        frmListboxen.steuerfachangestellte_erfahrung = String.Empty
+        frmListboxen.steuerfachangestellte_software = String.Empty
+        frmListboxen.bibuha_erfahrung = String.Empty
+        frmListboxen.bibuha_software = String.Empty
+        frmListboxen.lug_erfahrung = String.Empty
+        frmListboxen.lug_abrechnung_software = String.Empty
+        frmListboxen.lug_buchhaltung = String.Empty
+        frmListboxen.lug_buchhaltung_software = String.Empty
+        frmListboxen.fibu_kontenrahmen = String.Empty
+        frmListboxen.vztz = String.Empty
     End Sub
 
 End Class
