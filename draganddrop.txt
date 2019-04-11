@@ -1,0 +1,86 @@
+Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'Dim fl As String = String.Empty
+        'fl = String.Concat(ulasspeichern.zielverzeichnis, UlasListBox.SelectedItem.ToString)
+        'MsgBox(fl)
+
+        If connectionString.Contains("127.0.0.1") Then
+            verzeichnis = CStr("e:\heyduck\ulas\")
+        Else
+            verzeichnis = CStr("x:\ulas\")
+        End If
+
+        Dim testverzeichnis As String = String.Concat(verzeichnis, letzteid, "\", "Originale", "\")
+
+        Dim ll = New List(Of IO.FileInfo)
+        ListBox1.Items.AddRange(New IO.DirectoryInfo(testverzeichnis).GetFiles("*.*", SearchOption.AllDirectories))
+        'Me.ListBox1.DataSource = ll
+        '  ll.AddRange(New IO.DirectoryInfo(testverzeichnis).GetFiles("*.*", SearchOption.AllDirectories))
+        ListBox1.DisplayMember = "Fullname"
+    End Sub
+
+
+    Private Sub ListBox1_DragOver(ByVal sender As Object, _
+       ByVal e As DragEventArgs) Handles ListBox1.DragOver
+
+        Dim DTO = TryCast(e.Data, DataObject)
+        If DTO IsNot Nothing AndAlso DTO.ContainsFileDropList Then
+            e.Effect = DragDropEffects.Copy
+        End If
+    End Sub
+
+    ' Im _DragDrop wird nach dem schlußendlich gültigen Drop-Effect verfahren. 
+    ' Dieses Beispiel braucht aber nicht auf verschiedene DropEffekte 
+    ' abzuprüfen, da nur DragDropEffects.Copy möglich ist.
+    Private Sub ListBox1_DragDrop(ByVal sender As Object, _
+        ByVal e As DragEventArgs) Handles ListBox1.DragDrop
+
+        Dim DTO = TryCast(e.Data, DataObject)
+        ListBox1.Items.AddRange(DTO.GetFileDropList.Cast(Of String).ToArray)
+    End Sub
+
+
+    Private Sub ListBox1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles ListBox1.MouseDown
+
+        _PrevMouse = e
+    End Sub
+
+    Private Sub ListBox1_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles ListBox1.MouseMove
+
+        If _PrevMouse.Button = MouseButtons.Left AndAlso _
+            e.Button = MouseButtons.Left Then
+
+            Dim I = ListBox1.IndexFromPoint(_PrevMouse.Location)
+            If I < 0 Then Return
+
+            Dim SC As New System.Collections.Specialized.StringCollection
+            Dim FullPath = ListBox1.Items(I).ToString
+            SC.Add(FullPath)
+
+            Dim DTO = New DataObject
+            DTO.SetFileDropList(SC)
+
+            UlasListBox.AllowDrop = False
+            Dim Result = ListBox1.DoDragDrop(DTO, DragDropEffects.Copy)
+            ListBox1.AllowDrop = True
+
+            Select Case Result
+                Case DragDropEffects.Copy
+                    ' Nichts tun. Kopieren muß die Anwendung, auf die 
+                    ' gedroppt wurde
+
+                    '  Case DragDropEffects.Move
+                    ' Dieses funktioniert leider nicht.
+                    ' Bei DropEffekt.Move bekomme ich DropEffekt.None zurück
+                    'UlasListBox.Items.RemoveAt(I)
+
+                Case DragDropEffects.None
+                    ' Also gucken wir, ob das FilesystemItem gelöscht wurde
+                    '     If (Not File.Exists(FullPath)) AndAlso _
+                    '            (Not Directory.Exists(FullPath)) Then
+                    '   UlasListBox.Items.RemoveAt(I)
+                    '  End If
+
+            End Select
+        End If
+        _PrevMouse = e
+    End Sub

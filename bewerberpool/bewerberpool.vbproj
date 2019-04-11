@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F24788AF-3F4A-4B76-BE69-AAB266269245}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>bewerberpool.My.MyApplication</StartupObject>
+    <RootNamespace>bewerberpool</RootNamespace>
+    <AssemblyName>bewerberpool</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\server2012\xchange\bewerberpool\publish\</InstallUrl>
+    <UpdateUrl>\\server2012\xchange\bewerberpool\publish\</UpdateUrl>
+    <ApplicationRevision>165</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>bewerberpool.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>bewerberpool.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8A1B9AD48681D85AFAA55DF61DFF0A51A1240F24</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>bewerberpool_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>BP.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.8\Assemblies\v4.5\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReportLib">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\PrivateAssemblies\ReportLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.WinControls, Version=2018.2.515.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2018.2.515.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\Telerik.WinControls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2018.2.515.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\Telerik.WinControls.RichTextEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2018.2.515.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2018.2.511.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2018.2.511.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2018.2.511.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2018.2.511.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2018.2.515.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikData, Version=2018.2.515.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\TelerikData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikExport, Version=2018.2.515.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R2 2018\Bin40\TelerikExport.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="allgemein.vb" />
+    <Compile Include="benutzerverwaltungDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>benutzerverwaltungDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bewerberbogen_ausdrucken.vb" />
+    <Compile Include="bewerberbogen_ergänzt_ausdruck.vb" />
+    <Compile Include="BewerberDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BewerberDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="crypto.vb" />
+    <Compile Include="DirectPrinting.vb" />
+    <Compile Include="einloggen.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formatierung.vb" />
+    <Compile Include="frmBogendruck.Designer.vb">
+      <DependentUpon>frmBogendruck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBogendruck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHomepage.Designer.vb">
+      <DependentUpon>frmHomepage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHomepage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHomepageindividuell.Designer.vb">
+      <DependentUpon>frmHomepageindividuell.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHomepageindividuell.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInterviewer.Designer.vb">
+      <DependentUpon>frmInterviewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInterviewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKurzfragebogen.Designer.vb">
+      <DependentUpon>frmKurzfragebogen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmKurzfragebogen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListboxen.designer.vb">
+      <DependentUpon>frmListboxen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListboxen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNeueAnmerkunganlegen.Designer.vb">
+      <DependentUpon>frmNeueAnmerkunganlegen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNeueAnmerkunganlegen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNeuerBewerberanlegen.Designer.vb">
+      <DependentUpon>frmNeuerBewerberanlegen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNeuerBewerberanlegen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOA.Designer.vb">
+      <DependentUpon>frmOA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersönlichkeitbearbeiten.Designer.vb">
+      <DependentUpon>frmPersönlichkeitbearbeiten.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersönlichkeitbearbeiten.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRundschreiben.Designer.vb">
+      <DependentUpon>frmRundschreiben.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRundschreiben.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRundschreibendetail.Designer.vb">
+      <DependentUpon>frmRundschreibendetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRundschreibendetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRundschreibenuebersicht.Designer.vb">
+      <DependentUpon>frmRundschreibenuebersicht.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRundschreibenuebersicht.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTelefoninterview.Designer.vb">
+      <DependentUpon>frmTelefoninterview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTelefoninterview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUlaseintragen.Designer.vb">
+      <DependentUpon>frmUlaseintragen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUlaseintragen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVersionshinweise.Designer.vb">
+      <DependentUpon>frmVersionshinweise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVersionshinweise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXmleinlesen.Designer.vb">
+      <DependentUpon>frmXmleinlesen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmXmleinlesen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GermanDataFilterLocalizationProvider.vb" />
+    <Compile Include="heyduckDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>heyduckDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="inallentabellen.vb" />
+    <Compile Include="Mail.vb" />
+    <Compile Include="Module1.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MyGermanRadGridLocalizationProvider.vb" />
+    <Compile Include="oaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>oaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tabellen.vb" />
+    <Compile Include="kopfbogendrucken.vb" />
+    <Compile Include="texttauschen.vb" />
+    <Compile Include="Timerreload.vb" />
+    <Compile Include="ulasspeichern.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBogendruck.resx">
+      <DependentUpon>frmBogendruck.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHomepage.resx">
+      <DependentUpon>frmHomepage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHomepageindividuell.resx">
+      <DependentUpon>frmHomepageindividuell.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInterviewer.resx">
+      <DependentUpon>frmInterviewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKurzfragebogen.resx">
+      <DependentUpon>frmKurzfragebogen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListboxen.resx">
+      <DependentUpon>frmListboxen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNeueAnmerkunganlegen.resx">
+      <DependentUpon>frmNeueAnmerkunganlegen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNeuerBewerberanlegen.resx">
+      <DependentUpon>frmNeuerBewerberanlegen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOA.resx">
+      <DependentUpon>frmOA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersönlichkeitbearbeiten.resx">
+      <DependentUpon>frmPersönlichkeitbearbeiten.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRundschreiben.resx">
+      <DependentUpon>frmRundschreiben.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRundschreibendetail.resx">
+      <DependentUpon>frmRundschreibendetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRundschreibenuebersicht.resx">
+      <DependentUpon>frmRundschreibenuebersicht.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTelefoninterview.resx">
+      <DependentUpon>frmTelefoninterview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUlaseintragen.resx">
+      <DependentUpon>frmUlaseintragen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVersionshinweise.resx">
+      <DependentUpon>frmVersionshinweise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXmleinlesen.resx">
+      <DependentUpon>frmXmleinlesen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="benutzerverwaltungDataSet.xsc">
+      <DependentUpon>benutzerverwaltungDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="benutzerverwaltungDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>benutzerverwaltungDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="benutzerverwaltungDataSet.xss">
+      <DependentUpon>benutzerverwaltungDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BewerberDataSet.xsc">
+      <DependentUpon>BewerberDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BewerberDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BewerberDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BewerberDataSet.xss">
+      <DependentUpon>BewerberDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bewerberpool_TemporaryKey.pfx" />
+    <None Include="heyduckDataSet.xsc">
+      <DependentUpon>heyduckDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="heyduckDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>heyduckDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="heyduckDataSet.xss">
+      <DependentUpon>heyduckDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="oaDataSet.xsc">
+      <DependentUpon>oaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="oaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>oaDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="oaDataSet.xss">
+      <DependentUpon>oaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Telerik.Documents.SpreadsheetStreaming">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Fixed">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Spreadsheet">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.Windows.Zip">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TelerikCommon">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TelerikData">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BP.ico" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="user-group-new-2.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
