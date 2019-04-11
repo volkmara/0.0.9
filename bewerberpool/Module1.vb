@@ -112,4 +112,9 @@ Module Module1
             MessageBox.Show("Es besteht keine Internetverbindung oder der Webserver ist nicht erreichbar", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
+
+    ' Auf Speichern hinweisen, wenn aus anderer Form Änderungen übernommen wurden.
+    Public Sub Speichernhinweis()
+        MessageBox.Show("Speichern nicht vergessen, Einträge wurden geändert", "Speichern nicht vergessen", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
 End Module

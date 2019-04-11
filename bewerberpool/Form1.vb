@@ -1306,9 +1306,9 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If CStr(frmListboxen.zavm) <> String.Empty AndAlso CStr(frmListboxen.zavm) <> txtZa_vm.Text Then
                         txtZa_vm.Text = CStr(frmListboxen.zavm)
-                        frmListboxen.zavm = String.Empty
+                        Call Speichernhinweis()
                     End If
-                ElseIf Not Rowausgewählt_check(row_ausgewählt_bool) Then
+                Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 End If
 
@@ -1318,6 +1318,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.arbeitsort <> String.Empty AndAlso frmListboxen.arbeitsort <> txtArbeitsort.Text Then
                         txtArbeitsort.Text = CStr(frmListboxen.arbeitsort)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1329,6 +1330,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.fueherschein <> String.Empty AndAlso frmListboxen.fueherschein <> txtFuehrerschein.Text Then
                         txtFuehrerschein.Text = CStr(frmListboxen.fueherschein)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1340,6 +1342,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.oepnv <> String.Empty AndAlso frmListboxen.oepnv <> txtPkw_oepnv.Text Then
                         txtPkw_oepnv.Text = CStr(frmListboxen.oepnv)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1351,6 +1354,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.pdl_welche <> String.Empty AndAlso frmListboxen.pdl_welche <> txtPdl_welche.Text Then
                         txtPdl_welche.Text = CStr(frmListboxen.pdl_welche)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1379,6 +1383,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.studiumabschluss <> String.Empty AndAlso frmListboxen.studiumabschluss <> txtStudium_abschluss.Text Then
                         txtStudium_abschluss.Text = CStr(frmListboxen.studiumabschluss)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1390,6 +1395,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.sapmodule <> String.Empty AndAlso frmListboxen.sapmodule <> txtSap_module.Text Then
                         txtSap_module.Text = CStr(frmListboxen.sapmodule)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1401,6 +1407,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.fibusoftwareerfahrung <> String.Empty AndAlso frmListboxen.fibusoftwareerfahrung <> txtFibu_erfahrung.Text Then
                         txtFibu_erfahrung.Text = CStr(frmListboxen.fibuerfahrung)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1412,6 +1419,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.fibusoftwareerfahrung <> String.Empty AndAlso frmListboxen.fibusoftwareerfahrung <> txtFibu_software.Text Then
                         txtFibu_software.Text = CStr(frmListboxen.fibusoftwareerfahrung)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1423,6 +1431,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.controllingerfahrung <> String.Empty AndAlso frmListboxen.controllingerfahrung <> txtControlling_typ.Text Then
                         txtControlling_typ.Text = CStr(frmListboxen.controllingerfahrung)
+                        Call Speichernhinweis()
                     Else
                         MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                     End If
@@ -1434,6 +1443,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.controllingsystemeerfahrung <> String.Empty AndAlso frmListboxen.controllingsystemeerfahrung <> txtControlling_report_controlling_systeme.Text Then
                         txtControlling_report_controlling_systeme.Text = CStr(frmListboxen.controllingsystemeerfahrung)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1445,6 +1455,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.steuerfachangestellte_erfahrung <> String.Empty AndAlso frmListboxen.steuerfachangestellte_erfahrung <> txtSteuerfachang_wo.Text Then
                         txtSteuerfachang_wo.Text = CStr(frmListboxen.steuerfachangestellte_erfahrung)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1456,6 +1467,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.steuerfachangestellte_software <> String.Empty AndAlso frmListboxen.steuerfachangestellte_software <> txtSteuerfachang_software.Text Then
                         txtSteuerfachang_software.Text = CStr(frmListboxen.steuerfachangestellte_software)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1467,6 +1479,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.bibuha_erfahrung <> String.Empty AndAlso frmListboxen.bibuha_erfahrung <> txtBibuha_wo.Text Then
                         txtBibuha_wo.Text = CStr(frmListboxen.bibuha_erfahrung)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1478,6 +1491,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.lug_buchhaltung_software <> String.Empty AndAlso frmListboxen.lug_buchhaltung_software <> txtBibuha_software.Text Then
                         txtBibuha_software.Text = CStr(frmListboxen.bibuha_software)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1489,6 +1503,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.lug_erfahrung <> String.Empty AndAlso frmListboxen.lug_erfahrung <> txtLug_abrechnung_wo.Text Then
                         txtLug_abrechnung_wo.Text = CStr(frmListboxen.lug_erfahrung)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1500,6 +1515,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.lug_abrechnung_software <> String.Empty AndAlso frmListboxen.lug_abrechnung_software <> txtLug_abrechnung_software.Text Then
                         txtLug_abrechnung_software.Text = CStr(frmListboxen.lug_abrechnung_software)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1511,6 +1527,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.lug_buchhaltung <> String.Empty AndAlso frmListboxen.lug_buchhaltung <> txtLug_buchhaltung_wo.Text Then
                         txtLug_buchhaltung_wo.Text = CStr(frmListboxen.lug_buchhaltung)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1522,6 +1539,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.lug_buchhaltung_software <> String.Empty AndAlso frmListboxen.lug_buchhaltung_software <> txtLug_buchhaltung_software.Text Then
                         txtLug_buchhaltung_software.Text = CStr(frmListboxen.lug_buchhaltung_software)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1533,6 +1551,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.fibu_kontenrahmen <> String.Empty AndAlso frmListboxen.fibu_kontenrahmen <> txtFibu_kontenrahmen.Text Then
                         txtFibu_kontenrahmen.Text = CStr(frmListboxen.fibu_kontenrahmen)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1544,6 +1563,7 @@ Public Class frmMain
                     Call ulasaufrufen()
                     If frmUlaseintragen.ulas_wert <> String.Empty AndAlso frmUlaseintragen.ulas_wert <> String.Empty AndAlso frmUlaseintragen.ulas_wert <> txtUlas.Text Then
                         txtUlas.Text = CStr(frmUlaseintragen.ulas_wert)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -1555,6 +1575,7 @@ Public Class frmMain
                     Call listboxenaufrufen()
                     If frmListboxen.vztz <> String.Empty AndAlso frmListboxen.vztz <> txtVz_tz.Text Then
                         txtVz_tz.Text = CStr(frmListboxen.vztz)
+                        Call Speichernhinweis()
                     End If
                 Else
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
