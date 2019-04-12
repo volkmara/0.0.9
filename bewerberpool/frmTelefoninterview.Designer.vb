@@ -35,10 +35,6 @@ Partial Class frmTelefoninterview
         Dim NameLabel As System.Windows.Forms.Label
         Dim VornameLabel As System.Windows.Forms.Label
         Dim AnredeLabel As System.Windows.Forms.Label
-        Dim Kunden_nicht_vorschlagen_laut_interviewerLabel As System.Windows.Forms.Label
-        Dim Stelle_nicht_vorschlagen_laut_interviewerLabel As System.Windows.Forms.Label
-        Dim Kunde_vorschlagen_laut_interviewerLabel As System.Windows.Forms.Label
-        Dim Stelle_vorschlagen_laut_interviewerLabel1 As System.Windows.Forms.Label
         Dim WechselwunschLabel As System.Windows.Forms.Label
         Dim Beendigungsgrund_detailsLabel As System.Windows.Forms.Label
         Dim BeendigungsgrundLabel As System.Windows.Forms.Label
@@ -139,12 +135,6 @@ Partial Class frmTelefoninterview
         Me.EmpfehlungTextBox = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
-        Me.Kunden_nicht_vorschlagen_laut_interviewerTextBox = New System.Windows.Forms.TextBox()
-        Me.UlasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Stelle_nicht_vorschlagen_laut_interviewerTextBox = New System.Windows.Forms.TextBox()
-        Me.Kunde_vorschlagen_laut_interviewerTextBox = New System.Windows.Forms.TextBox()
-        Me.Stelle_vorschlagen_laut_interviewerTextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.WechselwunschTextBox = New System.Windows.Forms.TextBox()
         Me.Beendigungsgrund_detailsTextBox = New System.Windows.Forms.TextBox()
@@ -246,6 +236,7 @@ Partial Class frmTelefoninterview
         Me.UlasListBox = New System.Windows.Forms.ListBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.UlasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
         Me.Bew_bewerberdatenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter()
@@ -268,10 +259,6 @@ Partial Class frmTelefoninterview
         NameLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
         AnredeLabel = New System.Windows.Forms.Label()
-        Kunden_nicht_vorschlagen_laut_interviewerLabel = New System.Windows.Forms.Label()
-        Stelle_nicht_vorschlagen_laut_interviewerLabel = New System.Windows.Forms.Label()
-        Kunde_vorschlagen_laut_interviewerLabel = New System.Windows.Forms.Label()
-        Stelle_vorschlagen_laut_interviewerLabel1 = New System.Windows.Forms.Label()
         WechselwunschLabel = New System.Windows.Forms.Label()
         Beendigungsgrund_detailsLabel = New System.Windows.Forms.Label()
         BeendigungsgrundLabel = New System.Windows.Forms.Label()
@@ -356,8 +343,6 @@ Partial Class frmTelefoninterview
         Me.GroupBox2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.GroupBox12.SuspendLayout()
-        CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox9.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -388,6 +373,7 @@ Partial Class frmTelefoninterview
         Me.Panel9.SuspendLayout()
         Me.GroupBox11.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -498,42 +484,6 @@ Partial Class frmTelefoninterview
         AnredeLabel.Size = New System.Drawing.Size(62, 16)
         AnredeLabel.TabIndex = 0
         AnredeLabel.Text = "Anrede:"
-        '
-        'Kunden_nicht_vorschlagen_laut_interviewerLabel
-        '
-        Kunden_nicht_vorschlagen_laut_interviewerLabel.AutoSize = True
-        Kunden_nicht_vorschlagen_laut_interviewerLabel.Location = New System.Drawing.Point(515, 146)
-        Kunden_nicht_vorschlagen_laut_interviewerLabel.Name = "Kunden_nicht_vorschlagen_laut_interviewerLabel"
-        Kunden_nicht_vorschlagen_laut_interviewerLabel.Size = New System.Drawing.Size(126, 48)
-        Kunden_nicht_vorschlagen_laut_interviewerLabel.TabIndex = 6
-        Kunden_nicht_vorschlagen_laut_interviewerLabel.Text = "Für Kunden nicht " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "vorschlagen laut " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Interviewer:"
-        '
-        'Stelle_nicht_vorschlagen_laut_interviewerLabel
-        '
-        Stelle_nicht_vorschlagen_laut_interviewerLabel.AutoSize = True
-        Stelle_nicht_vorschlagen_laut_interviewerLabel.Location = New System.Drawing.Point(6, 146)
-        Stelle_nicht_vorschlagen_laut_interviewerLabel.Name = "Stelle_nicht_vorschlagen_laut_interviewerLabel"
-        Stelle_nicht_vorschlagen_laut_interviewerLabel.Size = New System.Drawing.Size(126, 48)
-        Stelle_nicht_vorschlagen_laut_interviewerLabel.TabIndex = 4
-        Stelle_nicht_vorschlagen_laut_interviewerLabel.Text = "Für Stelle nicht " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "vorschlagen laut " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Interviewer:"
-        '
-        'Kunde_vorschlagen_laut_interviewerLabel
-        '
-        Kunde_vorschlagen_laut_interviewerLabel.AutoSize = True
-        Kunde_vorschlagen_laut_interviewerLabel.Location = New System.Drawing.Point(515, 33)
-        Kunde_vorschlagen_laut_interviewerLabel.Name = "Kunde_vorschlagen_laut_interviewerLabel"
-        Kunde_vorschlagen_laut_interviewerLabel.Size = New System.Drawing.Size(170, 32)
-        Kunde_vorschlagen_laut_interviewerLabel.TabIndex = 2
-        Kunde_vorschlagen_laut_interviewerLabel.Text = "Für Kunde vorschlagen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "laut Interviewer:"
-        '
-        'Stelle_vorschlagen_laut_interviewerLabel1
-        '
-        Stelle_vorschlagen_laut_interviewerLabel1.AutoSize = True
-        Stelle_vorschlagen_laut_interviewerLabel1.Location = New System.Drawing.Point(6, 36)
-        Stelle_vorschlagen_laut_interviewerLabel1.Name = "Stelle_vorschlagen_laut_interviewerLabel1"
-        Stelle_vorschlagen_laut_interviewerLabel1.Size = New System.Drawing.Size(167, 32)
-        Stelle_vorschlagen_laut_interviewerLabel1.TabIndex = 0
-        Stelle_vorschlagen_laut_interviewerLabel1.Text = "Für Stelle vorschlagen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "laut Interviewer:"
         '
         'WechselwunschLabel
         '
@@ -1486,74 +1436,12 @@ Partial Class frmTelefoninterview
         '
         Me.Panel4.AutoScroll = True
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.GroupBox12)
         Me.Panel4.Controls.Add(Me.GroupBox9)
         Me.Panel4.Controls.Add(Me.GroupBox4)
         Me.Panel4.Location = New System.Drawing.Point(6, 6)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1006, 1190)
         Me.Panel4.TabIndex = 0
-        '
-        'GroupBox12
-        '
-        Me.GroupBox12.BackColor = System.Drawing.Color.White
-        Me.GroupBox12.Controls.Add(Me.Kunden_nicht_vorschlagen_laut_interviewerTextBox)
-        Me.GroupBox12.Controls.Add(Me.Stelle_nicht_vorschlagen_laut_interviewerTextBox)
-        Me.GroupBox12.Controls.Add(Me.Kunde_vorschlagen_laut_interviewerTextBox)
-        Me.GroupBox12.Controls.Add(Me.Stelle_vorschlagen_laut_interviewerTextBox1)
-        Me.GroupBox12.Controls.Add(Kunden_nicht_vorschlagen_laut_interviewerLabel)
-        Me.GroupBox12.Controls.Add(Stelle_nicht_vorschlagen_laut_interviewerLabel)
-        Me.GroupBox12.Controls.Add(Kunde_vorschlagen_laut_interviewerLabel)
-        Me.GroupBox12.Controls.Add(Stelle_vorschlagen_laut_interviewerLabel1)
-        Me.GroupBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox12.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox12.Location = New System.Drawing.Point(3, 943)
-        Me.GroupBox12.Name = "GroupBox12"
-        Me.GroupBox12.Size = New System.Drawing.Size(985, 228)
-        Me.GroupBox12.TabIndex = 2
-        Me.GroupBox12.TabStop = False
-        Me.GroupBox12.Text = "Stellen und Kunden vorschlagen"
-        '
-        'Kunden_nicht_vorschlagen_laut_interviewerTextBox
-        '
-        Me.Kunden_nicht_vorschlagen_laut_interviewerTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UlasBindingSource, "kunden_nicht_vorschlagen_laut_interviewer", True))
-        Me.Kunden_nicht_vorschlagen_laut_interviewerTextBox.Location = New System.Drawing.Point(691, 143)
-        Me.Kunden_nicht_vorschlagen_laut_interviewerTextBox.Multiline = True
-        Me.Kunden_nicht_vorschlagen_laut_interviewerTextBox.Name = "Kunden_nicht_vorschlagen_laut_interviewerTextBox"
-        Me.Kunden_nicht_vorschlagen_laut_interviewerTextBox.Size = New System.Drawing.Size(288, 65)
-        Me.Kunden_nicht_vorschlagen_laut_interviewerTextBox.TabIndex = 10
-        '
-        'UlasBindingSource
-        '
-        Me.UlasBindingSource.DataMember = "bew_ulas"
-        Me.UlasBindingSource.DataSource = Me.BewBindingSource
-        '
-        'Stelle_nicht_vorschlagen_laut_interviewerTextBox
-        '
-        Me.Stelle_nicht_vorschlagen_laut_interviewerTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UlasBindingSource, "stelle_nicht_vorschlagen_laut_interviewer", True))
-        Me.Stelle_nicht_vorschlagen_laut_interviewerTextBox.Location = New System.Drawing.Point(179, 143)
-        Me.Stelle_nicht_vorschlagen_laut_interviewerTextBox.Multiline = True
-        Me.Stelle_nicht_vorschlagen_laut_interviewerTextBox.Name = "Stelle_nicht_vorschlagen_laut_interviewerTextBox"
-        Me.Stelle_nicht_vorschlagen_laut_interviewerTextBox.Size = New System.Drawing.Size(272, 65)
-        Me.Stelle_nicht_vorschlagen_laut_interviewerTextBox.TabIndex = 9
-        '
-        'Kunde_vorschlagen_laut_interviewerTextBox
-        '
-        Me.Kunde_vorschlagen_laut_interviewerTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UlasBindingSource, "kunde_vorschlagen_laut_interviewer", True))
-        Me.Kunde_vorschlagen_laut_interviewerTextBox.Location = New System.Drawing.Point(691, 33)
-        Me.Kunde_vorschlagen_laut_interviewerTextBox.Multiline = True
-        Me.Kunde_vorschlagen_laut_interviewerTextBox.Name = "Kunde_vorschlagen_laut_interviewerTextBox"
-        Me.Kunde_vorschlagen_laut_interviewerTextBox.Size = New System.Drawing.Size(288, 75)
-        Me.Kunde_vorschlagen_laut_interviewerTextBox.TabIndex = 8
-        '
-        'Stelle_vorschlagen_laut_interviewerTextBox1
-        '
-        Me.Stelle_vorschlagen_laut_interviewerTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UlasBindingSource, "stelle_vorschlagen_laut_interviewer", True))
-        Me.Stelle_vorschlagen_laut_interviewerTextBox1.Location = New System.Drawing.Point(179, 33)
-        Me.Stelle_vorschlagen_laut_interviewerTextBox1.Multiline = True
-        Me.Stelle_vorschlagen_laut_interviewerTextBox1.Name = "Stelle_vorschlagen_laut_interviewerTextBox1"
-        Me.Stelle_vorschlagen_laut_interviewerTextBox1.Size = New System.Drawing.Size(272, 72)
-        Me.Stelle_vorschlagen_laut_interviewerTextBox1.TabIndex = 7
         '
         'GroupBox9
         '
@@ -2662,6 +2550,11 @@ Partial Class frmTelefoninterview
         Me.Panel2.Size = New System.Drawing.Size(1014, 417)
         Me.Panel2.TabIndex = 0
         '
+        'UlasBindingSource
+        '
+        Me.UlasBindingSource.DataMember = "bew_ulas"
+        Me.UlasBindingSource.DataSource = Me.BewBindingSource
+        '
         'BewTableAdapter
         '
         Me.BewTableAdapter.ClearBeforeFill = True
@@ -2755,9 +2648,6 @@ Partial Class frmTelefoninterview
         Me.GroupBox2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
-        Me.GroupBox12.ResumeLayout(False)
-        Me.GroupBox12.PerformLayout()
-        CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -2799,6 +2689,7 @@ Partial Class frmTelefoninterview
         Me.GroupBox11.ResumeLayout(False)
         Me.GroupBox11.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -2835,11 +2726,6 @@ Partial Class frmTelefoninterview
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
-    Friend WithEvents GroupBox12 As System.Windows.Forms.GroupBox
-    Friend WithEvents Kunden_nicht_vorschlagen_laut_interviewerTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Stelle_nicht_vorschlagen_laut_interviewerTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Kunde_vorschlagen_laut_interviewerTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Stelle_vorschlagen_laut_interviewerTextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
     Friend WithEvents WechselwunschTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Beendigungsgrund_detailsTextBox As System.Windows.Forms.TextBox

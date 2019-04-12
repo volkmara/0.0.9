@@ -20,14 +20,6 @@ Public Class frmTelefoninterview
     End Sub
 
     Private Sub frmTelefoninterview_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        '  Me.BewBindingSource.DataSource = frmMain.BewBindingSource.Current
-        ' Me.Bew_bewerberdatenBindingSource.DataSource = frmMain.Bew_bewerberdatenBindingSource.Current
-        'Me.Bewerber_ausbildungBindingSource.DataSource = frmMain.Bewerber_ausbildungBindingSource.Current
-        'Me.Bewerber_berufserfahrungBindingSource.DataSource = frmMain.Bewerber_berufserfahrungBindingSource.Current
-        'Me.Bewerber_sprachenBindingSource.DataSource = frmMain.Bewerber_sprachenBindingSource.Current
-        'Me.UlasBindingSource.DataSource = frmMain.UlasBindingSource.Current
-        'Me.Bewerber_edvTableAdapter.Fill(Me.BewerberDataSet.bewerber_edv)
         Me.BewBindingSource.AddNew()
         Me.Bew_bewerberdatenBindingSource.AddNew()
         Me.Bewerber_ausbildungBindingSource.AddNew()
@@ -291,8 +283,13 @@ Public Class frmTelefoninterview
             ZeugnistextTextBox.BackColor = Color.Yellow
         End If
 
-        If exportfilertf = CStr("{\rtf\ansi\ansicpg1252\uc1\deff0\deflang1033{\fonttbl{\f0 Verdana;}}{\colortbl\red0\green0\blue0 ;}{\*\defchp\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone}{\*\defpap\sl276\slmult1\ql\sa180\ltrpar}{\stylesheet{\s0\sqformat\spriority0\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\sl276\slmult1\ql\sa180\ltrpar Normal;}{\*\ts2\tsrowd\spriority59\trbrdrt\brdrnone\trbrdrb\brdrnone\trbrdrl\brdrnone\trbrdrr\brdrnone\trbrdrh\brdrnone\trbrdrv\brdrnone\trgaph0\trpaddl75\trpaddr75\trpaddt0\trpaddb0\clpadft3\clpadt0\clpadfr3\clpadr0\clpadfl3\clpadl0\clpadfb3\clpadb0\tsvertalt\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\sl276\slmult1\ql\sa180\ltrpar Table Normal;}}\nouicompat\viewkind4\paperw12240\paperh15840\margl1425\margr1425\margt1425\margb1425\deftab720\sectd\pgwsxn12240\pghsxn15840\marglsxn1425\margrsxn1425\margtsxn1425\margbsxn1425\headery720\footery720\pard\s0\sl276\slmult1\ql\sa180\ltrpar{\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\par}}") Then
-            pflichtfeld.Add("Persönlichkeit, Äußeres etc.")
+        'If exportfilertf = CStr("{\rtf\ansi\ansicpg1252\uc1\deff0\deflang1033{\fonttbl{\f0 Verdana;}}{\colortbl\red0\green0\blue0 ;}{\*\defchp\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone}{\*\defpap\sl276\slmult1\ql\sa180\ltrpar}{\stylesheet{\s0\sqformat\spriority0\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\sl276\slmult1\ql\sa180\ltrpar Normal;}{\*\ts2\tsrowd\spriority59\trbrdrt\brdrnone\trbrdrb\brdrnone\trbrdrl\brdrnone\trbrdrr\brdrnone\trbrdrh\brdrnone\trbrdrv\brdrnone\trgaph0\trpaddl75\trpaddr75\trpaddt0\trpaddb0\clpadft3\clpadt0\clpadfr3\clpadr0\clpadfl3\clpadl0\clpadfb3\clpadb0\tsvertalt\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\sl276\slmult1\ql\sa180\ltrpar Table Normal;}}\nouicompat\viewkind4\paperw12240\paperh15840\margl1425\margr1425\margt1425\margb1425\deftab720\sectd\pgwsxn12240\pghsxn15840\marglsxn1425\margrsxn1425\margtsxn1425\margbsxn1425\headery720\footery720\pard\s0\sl276\slmult1\ql\sa180\ltrpar{\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\par}}") Then
+        '    pflichtfeld.Add("Persönlichkeit, Äußeres etc.")
+        '    GroupBox10.BackColor = Color.Yellow
+        'End If
+
+        If exportfiletxt = String.Empty Then
+            pflichtfeld.Add("Persönlichkeit")
             GroupBox10.BackColor = Color.Yellow
         End If
 
@@ -578,24 +575,8 @@ Public Class frmTelefoninterview
     End Sub
 
 
-    Private Sub SuchmaschineTextBox_DoubleClick(sender As Object, e As EventArgs) Handles Za_vmTextBox.DoubleClick, ArbeitsortTextBox.DoubleClick, FuehrerscheinTextBox.DoubleClick, Pkw_oepnvTextBox.DoubleClick, Studium_abschlussTextBox.DoubleClick, Sap_moduleTextBox.DoubleClick
+    Private Sub Za_vmTextBox_DoubleClick(sender As Object, e As EventArgs) Handles Za_vmTextBox.DoubleClick, ArbeitsortTextBox.DoubleClick, FuehrerscheinTextBox.DoubleClick, Pkw_oepnvTextBox.DoubleClick, Studium_abschlussTextBox.DoubleClick, Sap_moduleTextBox.DoubleClick
         Select Case True
-            'Case sender Is SuchmaschineTextBox
-            '    frmListboxen.suchmaschine_bool = True
-            '    Call listboxenaufrufen()
-            '    SuchmaschineTextBox.Text = CStr(frmListboxen.suchmaschine)
-            'Case sender Is Medien_andereTextBox
-            '    frmListboxen.anderemedien_bool = True
-            '    Call listboxenaufrufen()
-            '    Medien_andereTextBox.Text = CStr(frmListboxen.anderemedien)
-            'Case sender Is JobboerseTextBox
-            '    frmListboxen.jobboerse_bool = True
-            '    Call listboxenaufrufen()
-            '    JobboerseTextBox'.Text = CStr(frmListboxen.jobboerse)
-            'Case sender Is ZeitungTextBox
-            '    frmListboxen.zeitung_bool = True
-            '    Call listboxenaufrufen()
-            '    ZeitungTextBox.Text = CStr(frmListboxen.zeitung)
             Case sender Is Za_vmTextBox
                 frmListboxen.zavm_bool = True
                 Call listboxenaufrufen()

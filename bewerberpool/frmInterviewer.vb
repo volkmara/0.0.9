@@ -22,7 +22,6 @@ Public Class frmInterviewer
     Public tabpagecount As Integer = CInt(0)
 
     Sub New(frmMain As frmMain)
-        ' TODO: Complete member initialization 
         _frmMain = frmMain
         InitializeComponent()
     End Sub
@@ -666,24 +665,8 @@ Public Class frmInterviewer
         End Using
     End Sub
 
-    Private Sub SuchmaschineTextBox_DoubleClick(sender As Object, e As EventArgs) Handles txtZa_vm.DoubleClick, txtArbeitsort.DoubleClick, txtFuehrerschein.DoubleClick, txtPkw_oepnv.DoubleClick, txtStudium_abschluss.DoubleClick, txtUlas.DoubleClick
+    Private Sub txtZa_vm_DoubleClick(sender As Object, e As EventArgs) Handles txtZa_vm.DoubleClick, txtArbeitsort.DoubleClick, txtFuehrerschein.DoubleClick, txtPkw_oepnv.DoubleClick, txtStudium_abschluss.DoubleClick, txtUlas.DoubleClick
         Select Case True
-          '  Case sender Is SuchmaschineTextBox
-            '     frmListboxen.suchmaschine_bool = True
-            'Call listboxenaufrufen()
-            '   SuchmaschineTextBox.Text = CStr(frmListboxen.suchmaschine)
-            'Case sender Is Medien_andereTextBox
-            'frmListboxen.anderemedien_bool = True
-            '   Call listboxenaufrufen()
-            'Medien_andereTextBox.Text = CStr(frmListboxen.anderemedien)
-            'Case sender Is JobboerseTextBox
-            '   frmListboxen.jobboerse_bool = True
-            'Call listboxenaufrufen()
-            '   JobboerseTextBox.Text = CStr(frmListboxen.jobboerse)
-            'Case sender Is ZeitungTextBox
-            'frmListboxen.zeitung_bool = True
-            '   Call listboxenaufrufen()
-            'ZeitungTextBox.Text = CStr(frmListboxen.zeitung)
             Case sender Is txtZa_vm
                 frmListboxen.zavm_bool = True
                 Call listboxenaufrufen()

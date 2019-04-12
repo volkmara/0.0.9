@@ -1360,23 +1360,6 @@ Public Class frmMain
                     MessageBox.Show("Bitte erst eine/n Bewerber/in auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 End If
 
-                ' Case sender Is SuchmaschineTextBox1
-                '    frmListboxen.suchmaschine_bool = True
-                '   Call listboxenaufrufen()
-                '  SuchmaschineTextBox1.Text = CStr(frmListboxen.suchmaschine)
-                'Case sender Is ZeitungTextBox1
-                '   frmListboxen.zeitung_bool = True
-                '  Call listboxenaufrufen()
-                ' ZeitungTextBox1.Text = CStr(frmListboxen.zeitung)
-                'Case sender Is JobboerseTextBox1
-                '   frmListboxen.jobboerse_bool = True
-                '  Call listboxenaufrufen()
-                ' JobboerseTextBox1.Text = CStr(frmListboxen.jobboerse)
-                ' Case sender Is Medien_andereTextBox1
-                'frmListboxen.anderemedien_bool = True
-                'Call listboxenaufrufen()
-                'Medien_andereTextBox1.Text = CStr(frmListboxen.anderemedien)
-
             Case sender Is txtStudium_abschluss
                 If Rowausgewählt_check(row_ausgewählt_bool) Then
                     frmListboxen.studiumsabschluss_bool = True
