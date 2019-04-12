@@ -99,7 +99,7 @@ Partial Class frmInterviewer
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.InterviewerComboBox = New System.Windows.Forms.ComboBox()
+        Me.cmbInterviewer = New System.Windows.Forms.ComboBox()
         Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.btnClose = New System.Windows.Forms.Button()
@@ -109,27 +109,27 @@ Partial Class frmInterviewer
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.RaucherComboBox = New System.Windows.Forms.ComboBox()
+        Me.cmbRaucher = New System.Windows.Forms.ComboBox()
         Me.Bew_bewerberdatenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ParfumComboBox = New System.Windows.Forms.ComboBox()
-        Me.HaendedruckComboBox = New System.Windows.Forms.ComboBox()
-        Me.BeurteilungComboBox = New System.Windows.Forms.ComboBox()
+        Me.cmbParfum = New System.Windows.Forms.ComboBox()
+        Me.cmbHaendedruck = New System.Windows.Forms.ComboBox()
+        Me.cmbBeurteilung = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.StrasseTextBox = New System.Windows.Forms.TextBox()
-        Me.EmailTextBox = New System.Windows.Forms.TextBox()
-        Me.Tel_mobilTextBox = New System.Windows.Forms.TextBox()
-        Me.Tel_festnetzTextBox = New System.Windows.Forms.TextBox()
-        Me.OrtsteilTextBox = New System.Windows.Forms.TextBox()
-        Me.OrtTextBox = New System.Windows.Forms.TextBox()
-        Me.PlzTextBox = New System.Windows.Forms.TextBox()
-        Me.Alter_jahrTextBox = New System.Windows.Forms.TextBox()
-        Me.NameTextBox = New System.Windows.Forms.TextBox()
-        Me.VornameTextBox = New System.Windows.Forms.TextBox()
-        Me.AnredeComboBox = New System.Windows.Forms.ComboBox()
+        Me.txtStrasse = New System.Windows.Forms.TextBox()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.txtTel_mobil = New System.Windows.Forms.TextBox()
+        Me.txtTel_festnetz = New System.Windows.Forms.TextBox()
+        Me.txtOrtsteil = New System.Windows.Forms.TextBox()
+        Me.txtOrt = New System.Windows.Forms.TextBox()
+        Me.txtPlz = New System.Windows.Forms.TextBox()
+        Me.txtAlter_jahr = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.txtVorname = New System.Windows.Forms.TextBox()
+        Me.cmbAnrede = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtAufmerksam_andere = New System.Windows.Forms.TextBox()
         Me.cmbAufmerksam = New System.Windows.Forms.ComboBox()
-        Me.EmpfehlungTextBox = New System.Windows.Forms.TextBox()
+        Me.txtEmpfehlung = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
@@ -142,68 +142,68 @@ Partial Class frmInterviewer
         Me.KuendigungsfristComboBox = New System.Windows.Forms.ComboBox()
         Me.VerfuegbarkeitComboBox = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.JahresgehaltTextBox = New System.Windows.Forms.TextBox()
-        Me.MonatsgehaltTextBox = New System.Windows.Forms.TextBox()
-        Me.Gdb_gradTextBox = New System.Windows.Forms.TextBox()
-        Me.MdEComboBox = New System.Windows.Forms.ComboBox()
-        Me.MdETextBox = New System.Windows.Forms.TextBox()
-        Me.Gehaltswunsch_jahrTextBox = New System.Windows.Forms.TextBox()
-        Me.Gehaltswunsch_monatTextBox = New System.Windows.Forms.TextBox()
-        Me.Pkw_oepnvTextBox = New System.Windows.Forms.TextBox()
-        Me.FuehrerscheinTextBox = New System.Windows.Forms.TextBox()
-        Me.UmzugComboBox = New System.Windows.Forms.ComboBox()
-        Me.ArbeitsortTextBox = New System.Windows.Forms.TextBox()
-        Me.Teilzeit_wannComboBox = New System.Windows.Forms.ComboBox()
-        Me.Teilzeit_stundenComboBox = New System.Windows.Forms.ComboBox()
-        Me.Vz_tzComboBox = New System.Windows.Forms.ComboBox()
-        Me.Za_vmTextBox = New System.Windows.Forms.TextBox()
-        Me.JobwunschTextBox = New System.Windows.Forms.TextBox()
+        Me.txtJahresgehalt = New System.Windows.Forms.TextBox()
+        Me.txtMonatsgehalt = New System.Windows.Forms.TextBox()
+        Me.txtGdb_grad = New System.Windows.Forms.TextBox()
+        Me.cmbMdE = New System.Windows.Forms.ComboBox()
+        Me.txtMdE = New System.Windows.Forms.TextBox()
+        Me.txtGehaltswunsch_jahr = New System.Windows.Forms.TextBox()
+        Me.txtGehaltswunsch_monat = New System.Windows.Forms.TextBox()
+        Me.txtPkw_oepnv = New System.Windows.Forms.TextBox()
+        Me.txtFuehrerschein = New System.Windows.Forms.TextBox()
+        Me.cmbUmzug = New System.Windows.Forms.ComboBox()
+        Me.txtArbeitsort = New System.Windows.Forms.TextBox()
+        Me.cmbTeilzeit_wann = New System.Windows.Forms.ComboBox()
+        Me.cmbTeilzeit_stunden = New System.Windows.Forms.ComboBox()
+        Me.cmbVz_tz = New System.Windows.Forms.ComboBox()
+        Me.txtZa_vm = New System.Windows.Forms.TextBox()
+        Me.txtJobwunsch = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.StudienfaecherTextBox = New System.Windows.Forms.TextBox()
+        Me.txtStudienfaecher = New System.Windows.Forms.TextBox()
         Me.Bewerber_ausbildungBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Studium_abschlussTextBox = New System.Windows.Forms.TextBox()
-        Me.Ausbildung_qualifizierungTextBox = New System.Windows.Forms.TextBox()
-        Me.AusbildungsberufTextBox = New System.Windows.Forms.TextBox()
+        Me.txtStudium_abschluss = New System.Windows.Forms.TextBox()
+        Me.txtAusbildung_qualifizierung = New System.Windows.Forms.TextBox()
+        Me.txtAusbildungsberuf = New System.Windows.Forms.TextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.Personalverantwortung_anzahlTextBox = New System.Windows.Forms.TextBox()
+        Me.txtPersonalverantwortung_anzahl = New System.Windows.Forms.TextBox()
         Me.Bewerber_berufserfahrungBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PersonalverantwortungComboBox = New System.Windows.Forms.ComboBox()
-        Me.Fuehrungsverantwortung_dauerTextBox = New System.Windows.Forms.TextBox()
-        Me.FuehrungsverantwortungComboBox = New System.Windows.Forms.ComboBox()
+        Me.cmbPersonalverantwortung = New System.Windows.Forms.ComboBox()
+        Me.txtFuehrungsverantwortung_dauer = New System.Windows.Forms.TextBox()
+        Me.cmbFuehrungsverantwortung = New System.Windows.Forms.ComboBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.TaetigkeitenTextBox = New System.Windows.Forms.TextBox()
-        Me.Beruf_schwerpunkttaetigkeitTextBox = New System.Windows.Forms.TextBox()
-        Me.Beruf_positionTextBox = New System.Windows.Forms.TextBox()
+        Me.txtTaetigkeiten = New System.Windows.Forms.TextBox()
+        Me.txtBeruf_schwerpunkttaetigkeit = New System.Windows.Forms.TextBox()
+        Me.txtBeruf_position = New System.Windows.Forms.TextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.Auslandsaufenthalt_dauerTextBox = New System.Windows.Forms.TextBox()
+        Me.txtAuslandsaufenthalt_dauer = New System.Windows.Forms.TextBox()
         Me.Bewerber_sprachenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Auslandsaufenthalt_woTextBox = New System.Windows.Forms.TextBox()
-        Me.AuslandsaufenthaltComboBox = New System.Windows.Forms.ComboBox()
-        Me.Deutsch_interviewerComboBox = New System.Windows.Forms.ComboBox()
-        Me.DeutschTextBox = New System.Windows.Forms.TextBox()
-        Me.Niederlaendisch_interviewerComboBox = New System.Windows.Forms.ComboBox()
-        Me.NiederlaendischTextBox = New System.Windows.Forms.TextBox()
-        Me.Russisch_interviewerComboBox = New System.Windows.Forms.ComboBox()
-        Me.RussischTextBox = New System.Windows.Forms.TextBox()
-        Me.Tuerkisch_interviewerComboBox = New System.Windows.Forms.ComboBox()
-        Me.TuerkischTextBox = New System.Windows.Forms.TextBox()
-        Me.Italienisch_interviewerComboBox = New System.Windows.Forms.ComboBox()
-        Me.ItalienischTextBox = New System.Windows.Forms.TextBox()
-        Me.Spanisch_interviewerComboBox = New System.Windows.Forms.ComboBox()
-        Me.SpanischTextBox = New System.Windows.Forms.TextBox()
-        Me.Französich_interviewerComboBox = New System.Windows.Forms.ComboBox()
-        Me.FranzoesischTextBox = New System.Windows.Forms.TextBox()
-        Me.Englisch_interviewerComboBox = New System.Windows.Forms.ComboBox()
+        Me.txtAuslandsaufenthalt_wo = New System.Windows.Forms.TextBox()
+        Me.cmbAuslandsaufenthalt = New System.Windows.Forms.ComboBox()
+        Me.cmbDeutsch_interviewer = New System.Windows.Forms.ComboBox()
+        Me.txtDeutsch = New System.Windows.Forms.TextBox()
+        Me.cmbNiederlaendisch_interviewer = New System.Windows.Forms.ComboBox()
+        Me.txtNiederlaendisch = New System.Windows.Forms.TextBox()
+        Me.cmbRussisch_interviewer = New System.Windows.Forms.ComboBox()
+        Me.txtRussisch = New System.Windows.Forms.TextBox()
+        Me.cmbTuerkisch_interviewer = New System.Windows.Forms.ComboBox()
+        Me.txtTuerkisch = New System.Windows.Forms.TextBox()
+        Me.cmbItalienisch_interviewer = New System.Windows.Forms.ComboBox()
+        Me.txtItalienisch = New System.Windows.Forms.TextBox()
+        Me.cmbSpanisch_interviewer = New System.Windows.Forms.ComboBox()
+        Me.txtSpanisch = New System.Windows.Forms.TextBox()
+        Me.cmbFranzösich_interviewer = New System.Windows.Forms.ComboBox()
+        Me.txtFranzoesisch = New System.Windows.Forms.TextBox()
+        Me.cmbEnglisch_interviewer = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.EnglischTextBox = New System.Windows.Forms.TextBox()
-        Me.Muendlich_schriftlichComboBox = New System.Windows.Forms.ComboBox()
+        Me.txtEnglisch = New System.Windows.Forms.TextBox()
+        Me.cmbMuendlich_schriftlich = New System.Windows.Forms.ComboBox()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
@@ -212,7 +212,7 @@ Partial Class frmInterviewer
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.GroupBox11 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.UlasTextBox = New System.Windows.Forms.TextBox()
+        Me.txtUlas = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.UlasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -1006,7 +1006,7 @@ Partial Class frmInterviewer
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(InterviewerLabel)
-        Me.Panel1.Controls.Add(Me.InterviewerComboBox)
+        Me.Panel1.Controls.Add(Me.cmbInterviewer)
         Me.Panel1.Controls.Add(Me.btnClose)
         Me.Panel1.Controls.Add(Me.btnSave)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -1036,15 +1036,15 @@ Partial Class frmInterviewer
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Sie bearbeiten diese Bewerberin/diesen Bewerber: "
         '
-        'InterviewerComboBox
+        'cmbInterviewer
         '
-        Me.InterviewerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "interviewer", True))
-        Me.InterviewerComboBox.FormattingEnabled = True
-        Me.InterviewerComboBox.Items.AddRange(New Object() {"", "Devilder", "Fürst", "Heyduck", "Mersch", "Leinweber"})
-        Me.InterviewerComboBox.Location = New System.Drawing.Point(865, 40)
-        Me.InterviewerComboBox.Name = "InterviewerComboBox"
-        Me.InterviewerComboBox.Size = New System.Drawing.Size(151, 24)
-        Me.InterviewerComboBox.TabIndex = 4
+        Me.cmbInterviewer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "interviewer", True))
+        Me.cmbInterviewer.FormattingEnabled = True
+        Me.cmbInterviewer.Items.AddRange(New Object() {"", "Devilder", "Fürst", "Heyduck", "Mersch", "Leinweber"})
+        Me.cmbInterviewer.Location = New System.Drawing.Point(865, 40)
+        Me.cmbInterviewer.Name = "cmbInterviewer"
+        Me.cmbInterviewer.Size = New System.Drawing.Size(151, 24)
+        Me.cmbInterviewer.TabIndex = 4
         '
         'BewBindingSource
         '
@@ -1140,13 +1140,13 @@ Partial Class frmInterviewer
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.White
         Me.GroupBox3.Controls.Add(RaucherLabel)
-        Me.GroupBox3.Controls.Add(Me.RaucherComboBox)
+        Me.GroupBox3.Controls.Add(Me.cmbRaucher)
         Me.GroupBox3.Controls.Add(ParfumLabel)
-        Me.GroupBox3.Controls.Add(Me.ParfumComboBox)
+        Me.GroupBox3.Controls.Add(Me.cmbParfum)
         Me.GroupBox3.Controls.Add(HaendedruckLabel)
-        Me.GroupBox3.Controls.Add(Me.HaendedruckComboBox)
+        Me.GroupBox3.Controls.Add(Me.cmbHaendedruck)
         Me.GroupBox3.Controls.Add(BeurteilungLabel)
-        Me.GroupBox3.Controls.Add(Me.BeurteilungComboBox)
+        Me.GroupBox3.Controls.Add(Me.cmbBeurteilung)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox3.Location = New System.Drawing.Point(7, 416)
@@ -1156,76 +1156,76 @@ Partial Class frmInterviewer
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Persönliches"
         '
-        'RaucherComboBox
+        'cmbRaucher
         '
-        Me.RaucherComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "raucher", True))
-        Me.RaucherComboBox.FormattingEnabled = True
-        Me.RaucherComboBox.Items.AddRange(New Object() {"", "keine Angaben", "Nein", "Ja"})
-        Me.RaucherComboBox.Location = New System.Drawing.Point(811, 41)
-        Me.RaucherComboBox.Name = "RaucherComboBox"
-        Me.RaucherComboBox.Size = New System.Drawing.Size(148, 24)
-        Me.RaucherComboBox.TabIndex = 7
+        Me.cmbRaucher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "raucher", True))
+        Me.cmbRaucher.FormattingEnabled = True
+        Me.cmbRaucher.Items.AddRange(New Object() {"", "keine Angaben", "Nein", "Ja"})
+        Me.cmbRaucher.Location = New System.Drawing.Point(811, 41)
+        Me.cmbRaucher.Name = "cmbRaucher"
+        Me.cmbRaucher.Size = New System.Drawing.Size(148, 24)
+        Me.cmbRaucher.TabIndex = 7
         '
         'Bew_bewerberdatenBindingSource
         '
         Me.Bew_bewerberdatenBindingSource.DataMember = "bew_bew_bewerberdaten"
         Me.Bew_bewerberdatenBindingSource.DataSource = Me.BewBindingSource
         '
-        'ParfumComboBox
+        'cmbParfum
         '
-        Me.ParfumComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "parfum", True))
-        Me.ParfumComboBox.FormattingEnabled = True
-        Me.ParfumComboBox.Items.AddRange(New Object() {"", "keines", "wenig", "dezent", "stark", "penetrant", "Nuttendiesel"})
-        Me.ParfumComboBox.Location = New System.Drawing.Point(564, 41)
-        Me.ParfumComboBox.Name = "ParfumComboBox"
-        Me.ParfumComboBox.Size = New System.Drawing.Size(153, 24)
-        Me.ParfumComboBox.TabIndex = 5
+        Me.cmbParfum.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "parfum", True))
+        Me.cmbParfum.FormattingEnabled = True
+        Me.cmbParfum.Items.AddRange(New Object() {"", "keines", "wenig", "dezent", "stark", "penetrant", "Nuttendiesel"})
+        Me.cmbParfum.Location = New System.Drawing.Point(564, 41)
+        Me.cmbParfum.Name = "cmbParfum"
+        Me.cmbParfum.Size = New System.Drawing.Size(153, 24)
+        Me.cmbParfum.TabIndex = 5
         '
-        'HaendedruckComboBox
+        'cmbHaendedruck
         '
-        Me.HaendedruckComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "haendedruck", True))
-        Me.HaendedruckComboBox.FormattingEnabled = True
-        Me.HaendedruckComboBox.Items.AddRange(New Object() {"", "Fingerspitzen", "weich", "feucht", "fest", "energisch", "Schraubstock", "normal"})
-        Me.HaendedruckComboBox.Location = New System.Drawing.Point(350, 41)
-        Me.HaendedruckComboBox.Name = "HaendedruckComboBox"
-        Me.HaendedruckComboBox.Size = New System.Drawing.Size(125, 24)
-        Me.HaendedruckComboBox.TabIndex = 3
+        Me.cmbHaendedruck.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "haendedruck", True))
+        Me.cmbHaendedruck.FormattingEnabled = True
+        Me.cmbHaendedruck.Items.AddRange(New Object() {"", "Fingerspitzen", "weich", "feucht", "fest", "energisch", "Schraubstock", "normal"})
+        Me.cmbHaendedruck.Location = New System.Drawing.Point(350, 41)
+        Me.cmbHaendedruck.Name = "cmbHaendedruck"
+        Me.cmbHaendedruck.Size = New System.Drawing.Size(125, 24)
+        Me.cmbHaendedruck.TabIndex = 3
         '
-        'BeurteilungComboBox
+        'cmbBeurteilung
         '
-        Me.BeurteilungComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "beurteilung", True))
-        Me.BeurteilungComboBox.FormattingEnabled = True
-        Me.BeurteilungComboBox.Items.AddRange(New Object() {"", "0,5", "1", "1,5", "2", "2,5", "3"})
-        Me.BeurteilungComboBox.Location = New System.Drawing.Point(110, 41)
-        Me.BeurteilungComboBox.Name = "BeurteilungComboBox"
-        Me.BeurteilungComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.BeurteilungComboBox.TabIndex = 1
+        Me.cmbBeurteilung.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "beurteilung", True))
+        Me.cmbBeurteilung.FormattingEnabled = True
+        Me.cmbBeurteilung.Items.AddRange(New Object() {"", "0,5", "1", "1,5", "2", "2,5", "3"})
+        Me.cmbBeurteilung.Location = New System.Drawing.Point(110, 41)
+        Me.cmbBeurteilung.Name = "cmbBeurteilung"
+        Me.cmbBeurteilung.Size = New System.Drawing.Size(121, 24)
+        Me.cmbBeurteilung.TabIndex = 1
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
-        Me.GroupBox1.Controls.Add(Me.StrasseTextBox)
+        Me.GroupBox1.Controls.Add(Me.txtStrasse)
         Me.GroupBox1.Controls.Add(EmailLabel)
-        Me.GroupBox1.Controls.Add(Me.EmailTextBox)
+        Me.GroupBox1.Controls.Add(Me.txtEmail)
         Me.GroupBox1.Controls.Add(Tel_mobilLabel)
-        Me.GroupBox1.Controls.Add(Me.Tel_mobilTextBox)
+        Me.GroupBox1.Controls.Add(Me.txtTel_mobil)
         Me.GroupBox1.Controls.Add(Tel_festnetzLabel)
-        Me.GroupBox1.Controls.Add(Me.Tel_festnetzTextBox)
+        Me.GroupBox1.Controls.Add(Me.txtTel_festnetz)
         Me.GroupBox1.Controls.Add(StrasseLabel)
         Me.GroupBox1.Controls.Add(OrtsteilLabel)
-        Me.GroupBox1.Controls.Add(Me.OrtsteilTextBox)
+        Me.GroupBox1.Controls.Add(Me.txtOrtsteil)
         Me.GroupBox1.Controls.Add(OrtLabel)
-        Me.GroupBox1.Controls.Add(Me.OrtTextBox)
+        Me.GroupBox1.Controls.Add(Me.txtOrt)
         Me.GroupBox1.Controls.Add(PlzLabel)
-        Me.GroupBox1.Controls.Add(Me.PlzTextBox)
+        Me.GroupBox1.Controls.Add(Me.txtPlz)
         Me.GroupBox1.Controls.Add(Alter_jahrLabel)
-        Me.GroupBox1.Controls.Add(Me.Alter_jahrTextBox)
+        Me.GroupBox1.Controls.Add(Me.txtAlter_jahr)
         Me.GroupBox1.Controls.Add(NameLabel)
-        Me.GroupBox1.Controls.Add(Me.NameTextBox)
+        Me.GroupBox1.Controls.Add(Me.txtName)
         Me.GroupBox1.Controls.Add(VornameLabel)
-        Me.GroupBox1.Controls.Add(Me.VornameTextBox)
+        Me.GroupBox1.Controls.Add(Me.txtVorname)
         Me.GroupBox1.Controls.Add(AnredeLabel)
-        Me.GroupBox1.Controls.Add(Me.AnredeComboBox)
+        Me.GroupBox1.Controls.Add(Me.cmbAnrede)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox1.Location = New System.Drawing.Point(7, 3)
@@ -1235,95 +1235,95 @@ Partial Class frmInterviewer
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Bewerber/in"
         '
-        'StrasseTextBox
+        'txtStrasse
         '
-        Me.StrasseTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "strasse", True))
-        Me.StrasseTextBox.Location = New System.Drawing.Point(778, 82)
-        Me.StrasseTextBox.Name = "StrasseTextBox"
-        Me.StrasseTextBox.Size = New System.Drawing.Size(181, 22)
-        Me.StrasseTextBox.TabIndex = 13
+        Me.txtStrasse.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "strasse", True))
+        Me.txtStrasse.Location = New System.Drawing.Point(778, 82)
+        Me.txtStrasse.Name = "txtStrasse"
+        Me.txtStrasse.Size = New System.Drawing.Size(181, 22)
+        Me.txtStrasse.TabIndex = 13
         '
-        'EmailTextBox
+        'txtEmail
         '
-        Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "email", True))
-        Me.EmailTextBox.Location = New System.Drawing.Point(722, 136)
-        Me.EmailTextBox.Name = "EmailTextBox"
-        Me.EmailTextBox.Size = New System.Drawing.Size(237, 22)
-        Me.EmailTextBox.TabIndex = 21
+        Me.txtEmail.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "email", True))
+        Me.txtEmail.Location = New System.Drawing.Point(722, 136)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(237, 22)
+        Me.txtEmail.TabIndex = 21
         '
-        'Tel_mobilTextBox
+        'txtTel_mobil
         '
-        Me.Tel_mobilTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "tel_mobil", True))
-        Me.Tel_mobilTextBox.Location = New System.Drawing.Point(410, 136)
-        Me.Tel_mobilTextBox.Name = "Tel_mobilTextBox"
-        Me.Tel_mobilTextBox.Size = New System.Drawing.Size(228, 22)
-        Me.Tel_mobilTextBox.TabIndex = 19
+        Me.txtTel_mobil.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "tel_mobil", True))
+        Me.txtTel_mobil.Location = New System.Drawing.Point(410, 136)
+        Me.txtTel_mobil.Name = "txtTel_mobil"
+        Me.txtTel_mobil.Size = New System.Drawing.Size(228, 22)
+        Me.txtTel_mobil.TabIndex = 19
         '
-        'Tel_festnetzTextBox
+        'txtTel_festnetz
         '
-        Me.Tel_festnetzTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "tel_festnetz", True))
-        Me.Tel_festnetzTextBox.Location = New System.Drawing.Point(77, 136)
-        Me.Tel_festnetzTextBox.Name = "Tel_festnetzTextBox"
-        Me.Tel_festnetzTextBox.Size = New System.Drawing.Size(229, 22)
-        Me.Tel_festnetzTextBox.TabIndex = 17
+        Me.txtTel_festnetz.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "tel_festnetz", True))
+        Me.txtTel_festnetz.Location = New System.Drawing.Point(77, 136)
+        Me.txtTel_festnetz.Name = "txtTel_festnetz"
+        Me.txtTel_festnetz.Size = New System.Drawing.Size(229, 22)
+        Me.txtTel_festnetz.TabIndex = 17
         '
-        'OrtsteilTextBox
+        'txtOrtsteil
         '
-        Me.OrtsteilTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "ortsteil", True))
-        Me.OrtsteilTextBox.Location = New System.Drawing.Point(492, 82)
-        Me.OrtsteilTextBox.Name = "OrtsteilTextBox"
-        Me.OrtsteilTextBox.Size = New System.Drawing.Size(189, 22)
-        Me.OrtsteilTextBox.TabIndex = 13
+        Me.txtOrtsteil.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "ortsteil", True))
+        Me.txtOrtsteil.Location = New System.Drawing.Point(492, 82)
+        Me.txtOrtsteil.Name = "txtOrtsteil"
+        Me.txtOrtsteil.Size = New System.Drawing.Size(189, 22)
+        Me.txtOrtsteil.TabIndex = 13
         '
-        'OrtTextBox
+        'txtOrt
         '
-        Me.OrtTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "ort", True))
-        Me.OrtTextBox.Location = New System.Drawing.Point(231, 82)
-        Me.OrtTextBox.Name = "OrtTextBox"
-        Me.OrtTextBox.Size = New System.Drawing.Size(188, 22)
-        Me.OrtTextBox.TabIndex = 11
+        Me.txtOrt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "ort", True))
+        Me.txtOrt.Location = New System.Drawing.Point(231, 82)
+        Me.txtOrt.Name = "txtOrt"
+        Me.txtOrt.Size = New System.Drawing.Size(188, 22)
+        Me.txtOrt.TabIndex = 11
         '
-        'PlzTextBox
+        'txtPlz
         '
-        Me.PlzTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "plz", True))
-        Me.PlzTextBox.Location = New System.Drawing.Point(77, 82)
-        Me.PlzTextBox.Name = "PlzTextBox"
-        Me.PlzTextBox.Size = New System.Drawing.Size(87, 22)
-        Me.PlzTextBox.TabIndex = 9
+        Me.txtPlz.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "plz", True))
+        Me.txtPlz.Location = New System.Drawing.Point(77, 82)
+        Me.txtPlz.Name = "txtPlz"
+        Me.txtPlz.Size = New System.Drawing.Size(87, 22)
+        Me.txtPlz.TabIndex = 9
         '
-        'Alter_jahrTextBox
+        'txtAlter_jahr
         '
-        Me.Alter_jahrTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "alter", True))
-        Me.Alter_jahrTextBox.Location = New System.Drawing.Point(872, 34)
-        Me.Alter_jahrTextBox.Name = "Alter_jahrTextBox"
-        Me.Alter_jahrTextBox.Size = New System.Drawing.Size(87, 22)
-        Me.Alter_jahrTextBox.TabIndex = 7
+        Me.txtAlter_jahr.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "alter", True))
+        Me.txtAlter_jahr.Location = New System.Drawing.Point(872, 34)
+        Me.txtAlter_jahr.Name = "txtAlter_jahr"
+        Me.txtAlter_jahr.Size = New System.Drawing.Size(87, 22)
+        Me.txtAlter_jahr.TabIndex = 7
         '
-        'NameTextBox
+        'txtName
         '
-        Me.NameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "name", True))
-        Me.NameTextBox.Location = New System.Drawing.Point(590, 34)
-        Me.NameTextBox.Name = "NameTextBox"
-        Me.NameTextBox.Size = New System.Drawing.Size(189, 22)
-        Me.NameTextBox.TabIndex = 5
+        Me.txtName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "name", True))
+        Me.txtName.Location = New System.Drawing.Point(590, 34)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(189, 22)
+        Me.txtName.TabIndex = 5
         '
-        'VornameTextBox
+        'txtVorname
         '
-        Me.VornameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "vorname", True))
-        Me.VornameTextBox.Location = New System.Drawing.Point(310, 34)
-        Me.VornameTextBox.Name = "VornameTextBox"
-        Me.VornameTextBox.Size = New System.Drawing.Size(166, 22)
-        Me.VornameTextBox.TabIndex = 3
+        Me.txtVorname.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "vorname", True))
+        Me.txtVorname.Location = New System.Drawing.Point(310, 34)
+        Me.txtVorname.Name = "txtVorname"
+        Me.txtVorname.Size = New System.Drawing.Size(166, 22)
+        Me.txtVorname.TabIndex = 3
         '
-        'AnredeComboBox
+        'cmbAnrede
         '
-        Me.AnredeComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "anrede", True))
-        Me.AnredeComboBox.FormattingEnabled = True
-        Me.AnredeComboBox.Items.AddRange(New Object() {"", "Herr", "Frau"})
-        Me.AnredeComboBox.Location = New System.Drawing.Point(77, 34)
-        Me.AnredeComboBox.Name = "AnredeComboBox"
-        Me.AnredeComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.AnredeComboBox.TabIndex = 1
+        Me.cmbAnrede.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "anrede", True))
+        Me.cmbAnrede.FormattingEnabled = True
+        Me.cmbAnrede.Items.AddRange(New Object() {"", "Herr", "Frau"})
+        Me.cmbAnrede.Location = New System.Drawing.Point(77, 34)
+        Me.cmbAnrede.Name = "cmbAnrede"
+        Me.cmbAnrede.Size = New System.Drawing.Size(121, 24)
+        Me.cmbAnrede.TabIndex = 1
         '
         'GroupBox2
         '
@@ -1333,7 +1333,7 @@ Partial Class frmInterviewer
         Me.GroupBox2.Controls.Add(AufmerksamLabel)
         Me.GroupBox2.Controls.Add(Me.cmbAufmerksam)
         Me.GroupBox2.Controls.Add(EmpfehlungLabel)
-        Me.GroupBox2.Controls.Add(Me.EmpfehlungTextBox)
+        Me.GroupBox2.Controls.Add(Me.txtEmpfehlung)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox2.Location = New System.Drawing.Point(6, 199)
@@ -1362,15 +1362,15 @@ Partial Class frmInterviewer
         Me.cmbAufmerksam.Size = New System.Drawing.Size(252, 24)
         Me.cmbAufmerksam.TabIndex = 3
         '
-        'EmpfehlungTextBox
+        'txtEmpfehlung
         '
-        Me.EmpfehlungTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "empfehlung", True))
-        Me.EmpfehlungTextBox.Location = New System.Drawing.Point(779, 32)
-        Me.EmpfehlungTextBox.Multiline = True
-        Me.EmpfehlungTextBox.Name = "EmpfehlungTextBox"
-        Me.EmpfehlungTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.EmpfehlungTextBox.Size = New System.Drawing.Size(200, 52)
-        Me.EmpfehlungTextBox.TabIndex = 1
+        Me.txtEmpfehlung.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "empfehlung", True))
+        Me.txtEmpfehlung.Location = New System.Drawing.Point(779, 32)
+        Me.txtEmpfehlung.Multiline = True
+        Me.txtEmpfehlung.Name = "txtEmpfehlung"
+        Me.txtEmpfehlung.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtEmpfehlung.Size = New System.Drawing.Size(200, 52)
+        Me.txtEmpfehlung.TabIndex = 1
         '
         'TabPage2
         '
@@ -1508,38 +1508,38 @@ Partial Class frmInterviewer
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.White
-        Me.GroupBox4.Controls.Add(Me.JahresgehaltTextBox)
-        Me.GroupBox4.Controls.Add(Me.MonatsgehaltTextBox)
+        Me.GroupBox4.Controls.Add(Me.txtJahresgehalt)
+        Me.GroupBox4.Controls.Add(Me.txtMonatsgehalt)
         Me.GroupBox4.Controls.Add(Gdb_gradLabel)
-        Me.GroupBox4.Controls.Add(Me.Gdb_gradTextBox)
+        Me.GroupBox4.Controls.Add(Me.txtGdb_grad)
         Me.GroupBox4.Controls.Add(MdELabel1)
-        Me.GroupBox4.Controls.Add(Me.MdEComboBox)
+        Me.GroupBox4.Controls.Add(Me.cmbMdE)
         Me.GroupBox4.Controls.Add(MdELabel)
-        Me.GroupBox4.Controls.Add(Me.MdETextBox)
+        Me.GroupBox4.Controls.Add(Me.txtMdE)
         Me.GroupBox4.Controls.Add(Gehaltswunsch_jahrLabel)
-        Me.GroupBox4.Controls.Add(Me.Gehaltswunsch_jahrTextBox)
+        Me.GroupBox4.Controls.Add(Me.txtGehaltswunsch_jahr)
         Me.GroupBox4.Controls.Add(Gehaltswunsch_monatLabel)
-        Me.GroupBox4.Controls.Add(Me.Gehaltswunsch_monatTextBox)
+        Me.GroupBox4.Controls.Add(Me.txtGehaltswunsch_monat)
         Me.GroupBox4.Controls.Add(JahresgehaltLabel)
         Me.GroupBox4.Controls.Add(MonatsgehaltLabel)
         Me.GroupBox4.Controls.Add(Pkw_oepnvLabel)
-        Me.GroupBox4.Controls.Add(Me.Pkw_oepnvTextBox)
+        Me.GroupBox4.Controls.Add(Me.txtPkw_oepnv)
         Me.GroupBox4.Controls.Add(FuehrerscheinLabel)
-        Me.GroupBox4.Controls.Add(Me.FuehrerscheinTextBox)
+        Me.GroupBox4.Controls.Add(Me.txtFuehrerschein)
         Me.GroupBox4.Controls.Add(UmzugLabel)
-        Me.GroupBox4.Controls.Add(Me.UmzugComboBox)
+        Me.GroupBox4.Controls.Add(Me.cmbUmzug)
         Me.GroupBox4.Controls.Add(ArbeitsortLabel)
-        Me.GroupBox4.Controls.Add(Me.ArbeitsortTextBox)
+        Me.GroupBox4.Controls.Add(Me.txtArbeitsort)
         Me.GroupBox4.Controls.Add(Teilzeit_wannLabel)
-        Me.GroupBox4.Controls.Add(Me.Teilzeit_wannComboBox)
+        Me.GroupBox4.Controls.Add(Me.cmbTeilzeit_wann)
         Me.GroupBox4.Controls.Add(Teilzeit_stundenLabel)
-        Me.GroupBox4.Controls.Add(Me.Teilzeit_stundenComboBox)
+        Me.GroupBox4.Controls.Add(Me.cmbTeilzeit_stunden)
         Me.GroupBox4.Controls.Add(Vz_tzLabel)
-        Me.GroupBox4.Controls.Add(Me.Vz_tzComboBox)
+        Me.GroupBox4.Controls.Add(Me.cmbVz_tz)
         Me.GroupBox4.Controls.Add(Za_vmLabel)
-        Me.GroupBox4.Controls.Add(Me.Za_vmTextBox)
+        Me.GroupBox4.Controls.Add(Me.txtZa_vm)
         Me.GroupBox4.Controls.Add(JobwunschLabel)
-        Me.GroupBox4.Controls.Add(Me.JobwunschTextBox)
+        Me.GroupBox4.Controls.Add(Me.txtJobwunsch)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox4.Location = New System.Drawing.Point(3, 3)
@@ -1549,159 +1549,159 @@ Partial Class frmInterviewer
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Beschäftigung"
         '
-        'JahresgehaltTextBox
+        'txtJahresgehalt
         '
-        Me.JahresgehaltTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "jahresgehalt", True))
-        Me.JahresgehaltTextBox.Location = New System.Drawing.Point(368, 413)
-        Me.JahresgehaltTextBox.Name = "JahresgehaltTextBox"
-        Me.JahresgehaltTextBox.Size = New System.Drawing.Size(110, 22)
-        Me.JahresgehaltTextBox.TabIndex = 13
+        Me.txtJahresgehalt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "jahresgehalt", True))
+        Me.txtJahresgehalt.Location = New System.Drawing.Point(368, 413)
+        Me.txtJahresgehalt.Name = "txtJahresgehalt"
+        Me.txtJahresgehalt.Size = New System.Drawing.Size(110, 22)
+        Me.txtJahresgehalt.TabIndex = 13
         '
-        'MonatsgehaltTextBox
+        'txtMonatsgehalt
         '
-        Me.MonatsgehaltTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "monatsgehalt", True))
-        Me.MonatsgehaltTextBox.Location = New System.Drawing.Point(124, 413)
-        Me.MonatsgehaltTextBox.Name = "MonatsgehaltTextBox"
-        Me.MonatsgehaltTextBox.Size = New System.Drawing.Size(107, 22)
-        Me.MonatsgehaltTextBox.TabIndex = 13
+        Me.txtMonatsgehalt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "monatsgehalt", True))
+        Me.txtMonatsgehalt.Location = New System.Drawing.Point(124, 413)
+        Me.txtMonatsgehalt.Name = "txtMonatsgehalt"
+        Me.txtMonatsgehalt.Size = New System.Drawing.Size(107, 22)
+        Me.txtMonatsgehalt.TabIndex = 13
         '
-        'Gdb_gradTextBox
+        'txtGdb_grad
         '
-        Me.Gdb_gradTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "gdb_grad", True))
-        Me.Gdb_gradTextBox.Location = New System.Drawing.Point(880, 485)
-        Me.Gdb_gradTextBox.Name = "Gdb_gradTextBox"
-        Me.Gdb_gradTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.Gdb_gradTextBox.TabIndex = 55
+        Me.txtGdb_grad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "gdb_grad", True))
+        Me.txtGdb_grad.Location = New System.Drawing.Point(880, 485)
+        Me.txtGdb_grad.Name = "txtGdb_grad"
+        Me.txtGdb_grad.Size = New System.Drawing.Size(100, 22)
+        Me.txtGdb_grad.TabIndex = 55
         '
-        'MdEComboBox
+        'cmbMdE
         '
-        Me.MdEComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "MdE", True))
-        Me.MdEComboBox.FormattingEnabled = True
-        Me.MdEComboBox.Items.AddRange(New Object() {"", "keine Angaben", "Ja", "Nein"})
-        Me.MdEComboBox.Location = New System.Drawing.Point(124, 485)
-        Me.MdEComboBox.Name = "MdEComboBox"
-        Me.MdEComboBox.Size = New System.Drawing.Size(203, 24)
-        Me.MdEComboBox.TabIndex = 54
+        Me.cmbMdE.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "MdE", True))
+        Me.cmbMdE.FormattingEnabled = True
+        Me.cmbMdE.Items.AddRange(New Object() {"", "keine Angaben", "Ja", "Nein"})
+        Me.cmbMdE.Location = New System.Drawing.Point(124, 485)
+        Me.cmbMdE.Name = "cmbMdE"
+        Me.cmbMdE.Size = New System.Drawing.Size(203, 24)
+        Me.cmbMdE.TabIndex = 54
         '
-        'MdETextBox
+        'txtMdE
         '
-        Me.MdETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "mde_grad", True))
-        Me.MdETextBox.Location = New System.Drawing.Point(648, 485)
-        Me.MdETextBox.Name = "MdETextBox"
-        Me.MdETextBox.Size = New System.Drawing.Size(100, 22)
-        Me.MdETextBox.TabIndex = 53
+        Me.txtMdE.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "mde_grad", True))
+        Me.txtMdE.Location = New System.Drawing.Point(648, 485)
+        Me.txtMdE.Name = "txtMdE"
+        Me.txtMdE.Size = New System.Drawing.Size(100, 22)
+        Me.txtMdE.TabIndex = 53
         '
-        'Gehaltswunsch_jahrTextBox
+        'txtGehaltswunsch_jahr
         '
-        Me.Gehaltswunsch_jahrTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "gehaltswunsch_jahr", True))
-        Me.Gehaltswunsch_jahrTextBox.Location = New System.Drawing.Point(880, 410)
-        Me.Gehaltswunsch_jahrTextBox.Name = "Gehaltswunsch_jahrTextBox"
-        Me.Gehaltswunsch_jahrTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.Gehaltswunsch_jahrTextBox.TabIndex = 52
+        Me.txtGehaltswunsch_jahr.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "gehaltswunsch_jahr", True))
+        Me.txtGehaltswunsch_jahr.Location = New System.Drawing.Point(880, 410)
+        Me.txtGehaltswunsch_jahr.Name = "txtGehaltswunsch_jahr"
+        Me.txtGehaltswunsch_jahr.Size = New System.Drawing.Size(100, 22)
+        Me.txtGehaltswunsch_jahr.TabIndex = 52
         '
-        'Gehaltswunsch_monatTextBox
+        'txtGehaltswunsch_monat
         '
-        Me.Gehaltswunsch_monatTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "gehaltswunsch_monat", True))
-        Me.Gehaltswunsch_monatTextBox.Location = New System.Drawing.Point(648, 413)
-        Me.Gehaltswunsch_monatTextBox.Name = "Gehaltswunsch_monatTextBox"
-        Me.Gehaltswunsch_monatTextBox.Size = New System.Drawing.Size(100, 22)
-        Me.Gehaltswunsch_monatTextBox.TabIndex = 51
+        Me.txtGehaltswunsch_monat.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "gehaltswunsch_monat", True))
+        Me.txtGehaltswunsch_monat.Location = New System.Drawing.Point(648, 413)
+        Me.txtGehaltswunsch_monat.Name = "txtGehaltswunsch_monat"
+        Me.txtGehaltswunsch_monat.Size = New System.Drawing.Size(100, 22)
+        Me.txtGehaltswunsch_monat.TabIndex = 51
         '
-        'Pkw_oepnvTextBox
+        'txtPkw_oepnv
         '
-        Me.Pkw_oepnvTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "pkw_oepnv", True))
-        Me.Pkw_oepnvTextBox.Location = New System.Drawing.Point(608, 235)
-        Me.Pkw_oepnvTextBox.Multiline = True
-        Me.Pkw_oepnvTextBox.Name = "Pkw_oepnvTextBox"
-        Me.Pkw_oepnvTextBox.ReadOnly = True
-        Me.Pkw_oepnvTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.Pkw_oepnvTextBox.Size = New System.Drawing.Size(230, 47)
-        Me.Pkw_oepnvTextBox.TabIndex = 48
+        Me.txtPkw_oepnv.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "pkw_oepnv", True))
+        Me.txtPkw_oepnv.Location = New System.Drawing.Point(608, 235)
+        Me.txtPkw_oepnv.Multiline = True
+        Me.txtPkw_oepnv.Name = "txtPkw_oepnv"
+        Me.txtPkw_oepnv.ReadOnly = True
+        Me.txtPkw_oepnv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtPkw_oepnv.Size = New System.Drawing.Size(230, 47)
+        Me.txtPkw_oepnv.TabIndex = 48
         '
-        'FuehrerscheinTextBox
+        'txtFuehrerschein
         '
-        Me.FuehrerscheinTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "fuehrerschein", True))
-        Me.FuehrerscheinTextBox.Location = New System.Drawing.Point(124, 330)
-        Me.FuehrerscheinTextBox.Multiline = True
-        Me.FuehrerscheinTextBox.Name = "FuehrerscheinTextBox"
-        Me.FuehrerscheinTextBox.ReadOnly = True
-        Me.FuehrerscheinTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.FuehrerscheinTextBox.Size = New System.Drawing.Size(203, 50)
-        Me.FuehrerscheinTextBox.TabIndex = 47
+        Me.txtFuehrerschein.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "fuehrerschein", True))
+        Me.txtFuehrerschein.Location = New System.Drawing.Point(124, 330)
+        Me.txtFuehrerschein.Multiline = True
+        Me.txtFuehrerschein.Name = "txtFuehrerschein"
+        Me.txtFuehrerschein.ReadOnly = True
+        Me.txtFuehrerschein.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtFuehrerschein.Size = New System.Drawing.Size(203, 50)
+        Me.txtFuehrerschein.TabIndex = 47
         '
-        'UmzugComboBox
+        'cmbUmzug
         '
-        Me.UmzugComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "umzug", True))
-        Me.UmzugComboBox.FormattingEnabled = True
-        Me.UmzugComboBox.Items.AddRange(New Object() {"", "Ja", "Nein", "Vielleicht"})
-        Me.UmzugComboBox.Location = New System.Drawing.Point(608, 182)
-        Me.UmzugComboBox.Name = "UmzugComboBox"
-        Me.UmzugComboBox.Size = New System.Drawing.Size(230, 24)
-        Me.UmzugComboBox.TabIndex = 46
+        Me.cmbUmzug.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "umzug", True))
+        Me.cmbUmzug.FormattingEnabled = True
+        Me.cmbUmzug.Items.AddRange(New Object() {"", "Ja", "Nein", "Vielleicht"})
+        Me.cmbUmzug.Location = New System.Drawing.Point(608, 182)
+        Me.cmbUmzug.Name = "cmbUmzug"
+        Me.cmbUmzug.Size = New System.Drawing.Size(230, 24)
+        Me.cmbUmzug.TabIndex = 46
         '
-        'ArbeitsortTextBox
+        'txtArbeitsort
         '
-        Me.ArbeitsortTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "arbeitsort", True))
-        Me.ArbeitsortTextBox.Location = New System.Drawing.Point(124, 235)
-        Me.ArbeitsortTextBox.Multiline = True
-        Me.ArbeitsortTextBox.Name = "ArbeitsortTextBox"
-        Me.ArbeitsortTextBox.ReadOnly = True
-        Me.ArbeitsortTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.ArbeitsortTextBox.Size = New System.Drawing.Size(203, 71)
-        Me.ArbeitsortTextBox.TabIndex = 45
+        Me.txtArbeitsort.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "arbeitsort", True))
+        Me.txtArbeitsort.Location = New System.Drawing.Point(124, 235)
+        Me.txtArbeitsort.Multiline = True
+        Me.txtArbeitsort.Name = "txtArbeitsort"
+        Me.txtArbeitsort.ReadOnly = True
+        Me.txtArbeitsort.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtArbeitsort.Size = New System.Drawing.Size(203, 71)
+        Me.txtArbeitsort.TabIndex = 45
         '
-        'Teilzeit_wannComboBox
+        'cmbTeilzeit_wann
         '
-        Me.Teilzeit_wannComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "teilzeit_wann", True))
-        Me.Teilzeit_wannComboBox.Enabled = False
-        Me.Teilzeit_wannComboBox.FormattingEnabled = True
-        Me.Teilzeit_wannComboBox.Items.AddRange(New Object() {"", "egal", "Vormittags", "Nachmittags"})
-        Me.Teilzeit_wannComboBox.Location = New System.Drawing.Point(607, 122)
-        Me.Teilzeit_wannComboBox.Name = "Teilzeit_wannComboBox"
-        Me.Teilzeit_wannComboBox.Size = New System.Drawing.Size(230, 24)
-        Me.Teilzeit_wannComboBox.TabIndex = 15
+        Me.cmbTeilzeit_wann.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "teilzeit_wann", True))
+        Me.cmbTeilzeit_wann.Enabled = False
+        Me.cmbTeilzeit_wann.FormattingEnabled = True
+        Me.cmbTeilzeit_wann.Items.AddRange(New Object() {"", "egal", "Vormittags", "Nachmittags"})
+        Me.cmbTeilzeit_wann.Location = New System.Drawing.Point(607, 122)
+        Me.cmbTeilzeit_wann.Name = "cmbTeilzeit_wann"
+        Me.cmbTeilzeit_wann.Size = New System.Drawing.Size(230, 24)
+        Me.cmbTeilzeit_wann.TabIndex = 15
         '
-        'Teilzeit_stundenComboBox
+        'cmbTeilzeit_stunden
         '
-        Me.Teilzeit_stundenComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "teilzeit_stunden", True))
-        Me.Teilzeit_stundenComboBox.Enabled = False
-        Me.Teilzeit_stundenComboBox.FormattingEnabled = True
-        Me.Teilzeit_stundenComboBox.Items.AddRange(New Object() {"", "bis 20 Stunden", "bis 25 Stunden", "bis 30 Stunden", "ab 20 Stunden", "mehr als 20 Stunden", "mehr als 30 Stunden"})
-        Me.Teilzeit_stundenComboBox.Location = New System.Drawing.Point(124, 182)
-        Me.Teilzeit_stundenComboBox.Name = "Teilzeit_stundenComboBox"
-        Me.Teilzeit_stundenComboBox.Size = New System.Drawing.Size(203, 24)
-        Me.Teilzeit_stundenComboBox.TabIndex = 13
+        Me.cmbTeilzeit_stunden.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "teilzeit_stunden", True))
+        Me.cmbTeilzeit_stunden.Enabled = False
+        Me.cmbTeilzeit_stunden.FormattingEnabled = True
+        Me.cmbTeilzeit_stunden.Items.AddRange(New Object() {"", "bis 20 Stunden", "bis 25 Stunden", "bis 30 Stunden", "ab 20 Stunden", "mehr als 20 Stunden", "mehr als 30 Stunden"})
+        Me.cmbTeilzeit_stunden.Location = New System.Drawing.Point(124, 182)
+        Me.cmbTeilzeit_stunden.Name = "cmbTeilzeit_stunden"
+        Me.cmbTeilzeit_stunden.Size = New System.Drawing.Size(203, 24)
+        Me.cmbTeilzeit_stunden.TabIndex = 13
         '
-        'Vz_tzComboBox
+        'cmbVz_tz
         '
-        Me.Vz_tzComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "arbeitszeit", True))
-        Me.Vz_tzComboBox.FormattingEnabled = True
-        Me.Vz_tzComboBox.Items.AddRange(New Object() {"", "Vollzeit", "Teilzeit", "Teilzeit flexibel", "Vollzeit/Teilzeit"})
-        Me.Vz_tzComboBox.Location = New System.Drawing.Point(124, 122)
-        Me.Vz_tzComboBox.Name = "Vz_tzComboBox"
-        Me.Vz_tzComboBox.Size = New System.Drawing.Size(203, 24)
-        Me.Vz_tzComboBox.TabIndex = 11
+        Me.cmbVz_tz.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "arbeitszeit", True))
+        Me.cmbVz_tz.FormattingEnabled = True
+        Me.cmbVz_tz.Items.AddRange(New Object() {"", "Vollzeit", "Teilzeit", "Teilzeit flexibel", "Vollzeit/Teilzeit"})
+        Me.cmbVz_tz.Location = New System.Drawing.Point(124, 122)
+        Me.cmbVz_tz.Name = "cmbVz_tz"
+        Me.cmbVz_tz.Size = New System.Drawing.Size(203, 24)
+        Me.cmbVz_tz.TabIndex = 11
         '
-        'Za_vmTextBox
+        'txtZa_vm
         '
-        Me.Za_vmTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "Vermittlung", True))
-        Me.Za_vmTextBox.Location = New System.Drawing.Point(608, 35)
-        Me.Za_vmTextBox.Multiline = True
-        Me.Za_vmTextBox.Name = "Za_vmTextBox"
-        Me.Za_vmTextBox.ReadOnly = True
-        Me.Za_vmTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.Za_vmTextBox.Size = New System.Drawing.Size(230, 46)
-        Me.Za_vmTextBox.TabIndex = 9
+        Me.txtZa_vm.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "Vermittlung", True))
+        Me.txtZa_vm.Location = New System.Drawing.Point(608, 35)
+        Me.txtZa_vm.Multiline = True
+        Me.txtZa_vm.Name = "txtZa_vm"
+        Me.txtZa_vm.ReadOnly = True
+        Me.txtZa_vm.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtZa_vm.Size = New System.Drawing.Size(230, 46)
+        Me.txtZa_vm.TabIndex = 9
         '
-        'JobwunschTextBox
+        'txtJobwunsch
         '
-        Me.JobwunschTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "jobwunsch", True))
-        Me.JobwunschTextBox.Location = New System.Drawing.Point(124, 28)
-        Me.JobwunschTextBox.Multiline = True
-        Me.JobwunschTextBox.Name = "JobwunschTextBox"
-        Me.JobwunschTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.JobwunschTextBox.Size = New System.Drawing.Size(203, 69)
-        Me.JobwunschTextBox.TabIndex = 1
+        Me.txtJobwunsch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "jobwunsch", True))
+        Me.txtJobwunsch.Location = New System.Drawing.Point(124, 28)
+        Me.txtJobwunsch.Multiline = True
+        Me.txtJobwunsch.Name = "txtJobwunsch"
+        Me.txtJobwunsch.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtJobwunsch.Size = New System.Drawing.Size(203, 69)
+        Me.txtJobwunsch.TabIndex = 1
         '
         'TabPage3
         '
@@ -1728,13 +1728,13 @@ Partial Class frmInterviewer
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.White
         Me.GroupBox5.Controls.Add(StudienfaecherLabel)
-        Me.GroupBox5.Controls.Add(Me.StudienfaecherTextBox)
+        Me.GroupBox5.Controls.Add(Me.txtStudienfaecher)
         Me.GroupBox5.Controls.Add(Studium_abschlussLabel)
-        Me.GroupBox5.Controls.Add(Me.Studium_abschlussTextBox)
+        Me.GroupBox5.Controls.Add(Me.txtStudium_abschluss)
         Me.GroupBox5.Controls.Add(Ausbildung_qualifizierungLabel)
-        Me.GroupBox5.Controls.Add(Me.Ausbildung_qualifizierungTextBox)
+        Me.GroupBox5.Controls.Add(Me.txtAusbildung_qualifizierung)
         Me.GroupBox5.Controls.Add(AusbildungsberufLabel)
-        Me.GroupBox5.Controls.Add(Me.AusbildungsberufTextBox)
+        Me.GroupBox5.Controls.Add(Me.txtAusbildungsberuf)
         Me.GroupBox5.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox5.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox5.Name = "GroupBox5"
@@ -1743,51 +1743,51 @@ Partial Class frmInterviewer
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Berufsausbildung/Studium"
         '
-        'StudienfaecherTextBox
+        'txtStudienfaecher
         '
-        Me.StudienfaecherTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_ausbildungBindingSource, "studienfaecher", True))
-        Me.StudienfaecherTextBox.Location = New System.Drawing.Point(703, 157)
-        Me.StudienfaecherTextBox.Multiline = True
-        Me.StudienfaecherTextBox.Name = "StudienfaecherTextBox"
-        Me.StudienfaecherTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.StudienfaecherTextBox.Size = New System.Drawing.Size(274, 90)
-        Me.StudienfaecherTextBox.TabIndex = 7
+        Me.txtStudienfaecher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_ausbildungBindingSource, "studienfaecher", True))
+        Me.txtStudienfaecher.Location = New System.Drawing.Point(703, 157)
+        Me.txtStudienfaecher.Multiline = True
+        Me.txtStudienfaecher.Name = "txtStudienfaecher"
+        Me.txtStudienfaecher.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtStudienfaecher.Size = New System.Drawing.Size(274, 90)
+        Me.txtStudienfaecher.TabIndex = 7
         '
         'Bewerber_ausbildungBindingSource
         '
         Me.Bewerber_ausbildungBindingSource.DataMember = "bew_bewerber_ausbildung"
         Me.Bewerber_ausbildungBindingSource.DataSource = Me.BewBindingSource
         '
-        'Studium_abschlussTextBox
+        'txtStudium_abschluss
         '
-        Me.Studium_abschlussTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_ausbildungBindingSource, "studium_abschluss", True))
-        Me.Studium_abschlussTextBox.Location = New System.Drawing.Point(176, 157)
-        Me.Studium_abschlussTextBox.Multiline = True
-        Me.Studium_abschlussTextBox.Name = "Studium_abschlussTextBox"
-        Me.Studium_abschlussTextBox.ReadOnly = True
-        Me.Studium_abschlussTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.Studium_abschlussTextBox.Size = New System.Drawing.Size(296, 90)
-        Me.Studium_abschlussTextBox.TabIndex = 5
+        Me.txtStudium_abschluss.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_ausbildungBindingSource, "studium_abschluss", True))
+        Me.txtStudium_abschluss.Location = New System.Drawing.Point(176, 157)
+        Me.txtStudium_abschluss.Multiline = True
+        Me.txtStudium_abschluss.Name = "txtStudium_abschluss"
+        Me.txtStudium_abschluss.ReadOnly = True
+        Me.txtStudium_abschluss.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtStudium_abschluss.Size = New System.Drawing.Size(296, 90)
+        Me.txtStudium_abschluss.TabIndex = 5
         '
-        'Ausbildung_qualifizierungTextBox
+        'txtAusbildung_qualifizierung
         '
-        Me.Ausbildung_qualifizierungTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_ausbildungBindingSource, "ausbildung_qualifizierung", True))
-        Me.Ausbildung_qualifizierungTextBox.Location = New System.Drawing.Point(703, 31)
-        Me.Ausbildung_qualifizierungTextBox.Multiline = True
-        Me.Ausbildung_qualifizierungTextBox.Name = "Ausbildung_qualifizierungTextBox"
-        Me.Ausbildung_qualifizierungTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.Ausbildung_qualifizierungTextBox.Size = New System.Drawing.Size(274, 91)
-        Me.Ausbildung_qualifizierungTextBox.TabIndex = 3
+        Me.txtAusbildung_qualifizierung.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_ausbildungBindingSource, "ausbildung_qualifizierung", True))
+        Me.txtAusbildung_qualifizierung.Location = New System.Drawing.Point(703, 31)
+        Me.txtAusbildung_qualifizierung.Multiline = True
+        Me.txtAusbildung_qualifizierung.Name = "txtAusbildung_qualifizierung"
+        Me.txtAusbildung_qualifizierung.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtAusbildung_qualifizierung.Size = New System.Drawing.Size(274, 91)
+        Me.txtAusbildung_qualifizierung.TabIndex = 3
         '
-        'AusbildungsberufTextBox
+        'txtAusbildungsberuf
         '
-        Me.AusbildungsberufTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_ausbildungBindingSource, "ausbildungsberuf", True))
-        Me.AusbildungsberufTextBox.Location = New System.Drawing.Point(176, 34)
-        Me.AusbildungsberufTextBox.Multiline = True
-        Me.AusbildungsberufTextBox.Name = "AusbildungsberufTextBox"
-        Me.AusbildungsberufTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.AusbildungsberufTextBox.Size = New System.Drawing.Size(296, 88)
-        Me.AusbildungsberufTextBox.TabIndex = 1
+        Me.txtAusbildungsberuf.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_ausbildungBindingSource, "ausbildungsberuf", True))
+        Me.txtAusbildungsberuf.Location = New System.Drawing.Point(176, 34)
+        Me.txtAusbildungsberuf.Multiline = True
+        Me.txtAusbildungsberuf.Name = "txtAusbildungsberuf"
+        Me.txtAusbildungsberuf.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtAusbildungsberuf.Size = New System.Drawing.Size(296, 88)
+        Me.txtAusbildungsberuf.TabIndex = 1
         '
         'TabPage4
         '
@@ -1816,13 +1816,13 @@ Partial Class frmInterviewer
         '
         Me.GroupBox7.BackColor = System.Drawing.Color.White
         Me.GroupBox7.Controls.Add(Personalverantwortung_anzahlLabel)
-        Me.GroupBox7.Controls.Add(Me.Personalverantwortung_anzahlTextBox)
+        Me.GroupBox7.Controls.Add(Me.txtPersonalverantwortung_anzahl)
         Me.GroupBox7.Controls.Add(PersonalverantwortungLabel)
-        Me.GroupBox7.Controls.Add(Me.PersonalverantwortungComboBox)
+        Me.GroupBox7.Controls.Add(Me.cmbPersonalverantwortung)
         Me.GroupBox7.Controls.Add(Fuehrungsverantwortung_dauerLabel)
-        Me.GroupBox7.Controls.Add(Me.Fuehrungsverantwortung_dauerTextBox)
+        Me.GroupBox7.Controls.Add(Me.txtFuehrungsverantwortung_dauer)
         Me.GroupBox7.Controls.Add(FuehrungsverantwortungLabel)
-        Me.GroupBox7.Controls.Add(Me.FuehrungsverantwortungComboBox)
+        Me.GroupBox7.Controls.Add(Me.cmbFuehrungsverantwortung)
         Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox7.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox7.Location = New System.Drawing.Point(8, 335)
@@ -1832,56 +1832,56 @@ Partial Class frmInterviewer
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Führungserfahrung"
         '
-        'Personalverantwortung_anzahlTextBox
+        'txtPersonalverantwortung_anzahl
         '
-        Me.Personalverantwortung_anzahlTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "personalverantwortung_anzahl", True))
-        Me.Personalverantwortung_anzahlTextBox.Location = New System.Drawing.Point(677, 86)
-        Me.Personalverantwortung_anzahlTextBox.Name = "Personalverantwortung_anzahlTextBox"
-        Me.Personalverantwortung_anzahlTextBox.Size = New System.Drawing.Size(287, 23)
-        Me.Personalverantwortung_anzahlTextBox.TabIndex = 7
+        Me.txtPersonalverantwortung_anzahl.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "personalverantwortung_anzahl", True))
+        Me.txtPersonalverantwortung_anzahl.Location = New System.Drawing.Point(677, 86)
+        Me.txtPersonalverantwortung_anzahl.Name = "txtPersonalverantwortung_anzahl"
+        Me.txtPersonalverantwortung_anzahl.Size = New System.Drawing.Size(287, 23)
+        Me.txtPersonalverantwortung_anzahl.TabIndex = 7
         '
         'Bewerber_berufserfahrungBindingSource
         '
         Me.Bewerber_berufserfahrungBindingSource.DataMember = "bew_bewerber_berufserfahrung"
         Me.Bewerber_berufserfahrungBindingSource.DataSource = Me.BewBindingSource
         '
-        'PersonalverantwortungComboBox
+        'cmbPersonalverantwortung
         '
-        Me.PersonalverantwortungComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "personalverantwortung", True))
-        Me.PersonalverantwortungComboBox.FormattingEnabled = True
-        Me.PersonalverantwortungComboBox.Items.AddRange(New Object() {"keine Angabe", "Ja", "Nein"})
-        Me.PersonalverantwortungComboBox.Location = New System.Drawing.Point(213, 86)
-        Me.PersonalverantwortungComboBox.Name = "PersonalverantwortungComboBox"
-        Me.PersonalverantwortungComboBox.Size = New System.Drawing.Size(256, 24)
-        Me.PersonalverantwortungComboBox.TabIndex = 5
+        Me.cmbPersonalverantwortung.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "personalverantwortung", True))
+        Me.cmbPersonalverantwortung.FormattingEnabled = True
+        Me.cmbPersonalverantwortung.Items.AddRange(New Object() {"keine Angabe", "Ja", "Nein"})
+        Me.cmbPersonalverantwortung.Location = New System.Drawing.Point(213, 86)
+        Me.cmbPersonalverantwortung.Name = "cmbPersonalverantwortung"
+        Me.cmbPersonalverantwortung.Size = New System.Drawing.Size(256, 24)
+        Me.cmbPersonalverantwortung.TabIndex = 5
         '
-        'Fuehrungsverantwortung_dauerTextBox
+        'txtFuehrungsverantwortung_dauer
         '
-        Me.Fuehrungsverantwortung_dauerTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "fuehrungsverantwortung_dauer", True))
-        Me.Fuehrungsverantwortung_dauerTextBox.Location = New System.Drawing.Point(677, 27)
-        Me.Fuehrungsverantwortung_dauerTextBox.Name = "Fuehrungsverantwortung_dauerTextBox"
-        Me.Fuehrungsverantwortung_dauerTextBox.Size = New System.Drawing.Size(287, 23)
-        Me.Fuehrungsverantwortung_dauerTextBox.TabIndex = 3
+        Me.txtFuehrungsverantwortung_dauer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "fuehrungsverantwortung_dauer", True))
+        Me.txtFuehrungsverantwortung_dauer.Location = New System.Drawing.Point(677, 27)
+        Me.txtFuehrungsverantwortung_dauer.Name = "txtFuehrungsverantwortung_dauer"
+        Me.txtFuehrungsverantwortung_dauer.Size = New System.Drawing.Size(287, 23)
+        Me.txtFuehrungsverantwortung_dauer.TabIndex = 3
         '
-        'FuehrungsverantwortungComboBox
+        'cmbFuehrungsverantwortung
         '
-        Me.FuehrungsverantwortungComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "fuehrungsverantwortung", True))
-        Me.FuehrungsverantwortungComboBox.FormattingEnabled = True
-        Me.FuehrungsverantwortungComboBox.Items.AddRange(New Object() {"keine Angabe", "Ja", "Nein"})
-        Me.FuehrungsverantwortungComboBox.Location = New System.Drawing.Point(213, 27)
-        Me.FuehrungsverantwortungComboBox.Name = "FuehrungsverantwortungComboBox"
-        Me.FuehrungsverantwortungComboBox.Size = New System.Drawing.Size(256, 24)
-        Me.FuehrungsverantwortungComboBox.TabIndex = 1
+        Me.cmbFuehrungsverantwortung.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "fuehrungsverantwortung", True))
+        Me.cmbFuehrungsverantwortung.FormattingEnabled = True
+        Me.cmbFuehrungsverantwortung.Items.AddRange(New Object() {"keine Angabe", "Ja", "Nein"})
+        Me.cmbFuehrungsverantwortung.Location = New System.Drawing.Point(213, 27)
+        Me.cmbFuehrungsverantwortung.Name = "cmbFuehrungsverantwortung"
+        Me.cmbFuehrungsverantwortung.Size = New System.Drawing.Size(256, 24)
+        Me.cmbFuehrungsverantwortung.TabIndex = 1
         '
         'GroupBox6
         '
         Me.GroupBox6.BackColor = System.Drawing.Color.White
         Me.GroupBox6.Controls.Add(TaetigkeitenLabel)
-        Me.GroupBox6.Controls.Add(Me.TaetigkeitenTextBox)
+        Me.GroupBox6.Controls.Add(Me.txtTaetigkeiten)
         Me.GroupBox6.Controls.Add(Beruf_schwerpunkttaetigkeitLabel)
-        Me.GroupBox6.Controls.Add(Me.Beruf_schwerpunkttaetigkeitTextBox)
+        Me.GroupBox6.Controls.Add(Me.txtBeruf_schwerpunkttaetigkeit)
         Me.GroupBox6.Controls.Add(Beruf_positionLabel)
-        Me.GroupBox6.Controls.Add(Me.Beruf_positionTextBox)
+        Me.GroupBox6.Controls.Add(Me.txtBeruf_position)
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox6.Location = New System.Drawing.Point(8, 3)
@@ -1891,37 +1891,37 @@ Partial Class frmInterviewer
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Berufserfahrung"
         '
-        'TaetigkeitenTextBox
+        'txtTaetigkeiten
         '
-        Me.TaetigkeitenTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "tätigkeiten", True))
-        Me.TaetigkeitenTextBox.Location = New System.Drawing.Point(259, 154)
-        Me.TaetigkeitenTextBox.Multiline = True
-        Me.TaetigkeitenTextBox.Name = "TaetigkeitenTextBox"
-        Me.TaetigkeitenTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TaetigkeitenTextBox.Size = New System.Drawing.Size(705, 156)
-        Me.TaetigkeitenTextBox.TabIndex = 5
+        Me.txtTaetigkeiten.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "tätigkeiten", True))
+        Me.txtTaetigkeiten.Location = New System.Drawing.Point(259, 154)
+        Me.txtTaetigkeiten.Multiline = True
+        Me.txtTaetigkeiten.Name = "txtTaetigkeiten"
+        Me.txtTaetigkeiten.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtTaetigkeiten.Size = New System.Drawing.Size(705, 156)
+        Me.txtTaetigkeiten.TabIndex = 5
         '
-        'Beruf_schwerpunkttaetigkeitTextBox
+        'txtBeruf_schwerpunkttaetigkeit
         '
-        Me.Beruf_schwerpunkttaetigkeitTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "beruf_schwerpunkttaetigkeit", True))
-        Me.Beruf_schwerpunkttaetigkeitTextBox.Location = New System.Drawing.Point(677, 34)
-        Me.Beruf_schwerpunkttaetigkeitTextBox.Multiline = True
-        Me.Beruf_schwerpunkttaetigkeitTextBox.Name = "Beruf_schwerpunkttaetigkeitTextBox"
-        Me.Beruf_schwerpunkttaetigkeitTextBox.ReadOnly = True
-        Me.Beruf_schwerpunkttaetigkeitTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.Beruf_schwerpunkttaetigkeitTextBox.Size = New System.Drawing.Size(287, 84)
-        Me.Beruf_schwerpunkttaetigkeitTextBox.TabIndex = 3
+        Me.txtBeruf_schwerpunkttaetigkeit.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "beruf_schwerpunkttaetigkeit", True))
+        Me.txtBeruf_schwerpunkttaetigkeit.Location = New System.Drawing.Point(677, 34)
+        Me.txtBeruf_schwerpunkttaetigkeit.Multiline = True
+        Me.txtBeruf_schwerpunkttaetigkeit.Name = "txtBeruf_schwerpunkttaetigkeit"
+        Me.txtBeruf_schwerpunkttaetigkeit.ReadOnly = True
+        Me.txtBeruf_schwerpunkttaetigkeit.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtBeruf_schwerpunkttaetigkeit.Size = New System.Drawing.Size(287, 84)
+        Me.txtBeruf_schwerpunkttaetigkeit.TabIndex = 3
         '
-        'Beruf_positionTextBox
+        'txtBeruf_position
         '
-        Me.Beruf_positionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "beruf_position", True))
-        Me.Beruf_positionTextBox.Location = New System.Drawing.Point(168, 34)
-        Me.Beruf_positionTextBox.Multiline = True
-        Me.Beruf_positionTextBox.Name = "Beruf_positionTextBox"
-        Me.Beruf_positionTextBox.ReadOnly = True
-        Me.Beruf_positionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.Beruf_positionTextBox.Size = New System.Drawing.Size(301, 84)
-        Me.Beruf_positionTextBox.TabIndex = 1
+        Me.txtBeruf_position.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_berufserfahrungBindingSource, "beruf_position", True))
+        Me.txtBeruf_position.Location = New System.Drawing.Point(168, 34)
+        Me.txtBeruf_position.Multiline = True
+        Me.txtBeruf_position.Name = "txtBeruf_position"
+        Me.txtBeruf_position.ReadOnly = True
+        Me.txtBeruf_position.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtBeruf_position.Size = New System.Drawing.Size(301, 84)
+        Me.txtBeruf_position.TabIndex = 1
         '
         'TabPage5
         '
@@ -1948,47 +1948,47 @@ Partial Class frmInterviewer
         '
         Me.GroupBox8.BackColor = System.Drawing.Color.White
         Me.GroupBox8.Controls.Add(Auslandsaufenthalt_dauerLabel)
-        Me.GroupBox8.Controls.Add(Me.Auslandsaufenthalt_dauerTextBox)
+        Me.GroupBox8.Controls.Add(Me.txtAuslandsaufenthalt_dauer)
         Me.GroupBox8.Controls.Add(Auslandsaufenthalt_woLabel)
-        Me.GroupBox8.Controls.Add(Me.Auslandsaufenthalt_woTextBox)
+        Me.GroupBox8.Controls.Add(Me.txtAuslandsaufenthalt_wo)
         Me.GroupBox8.Controls.Add(AuslandsaufenthaltLabel)
-        Me.GroupBox8.Controls.Add(Me.AuslandsaufenthaltComboBox)
+        Me.GroupBox8.Controls.Add(Me.cmbAuslandsaufenthalt)
         Me.GroupBox8.Controls.Add(Deutsch_interviewerLabel)
-        Me.GroupBox8.Controls.Add(Me.Deutsch_interviewerComboBox)
+        Me.GroupBox8.Controls.Add(Me.cmbDeutsch_interviewer)
         Me.GroupBox8.Controls.Add(DeutschLabel)
-        Me.GroupBox8.Controls.Add(Me.DeutschTextBox)
+        Me.GroupBox8.Controls.Add(Me.txtDeutsch)
         Me.GroupBox8.Controls.Add(Niederlaendisch_interviewerLabel)
-        Me.GroupBox8.Controls.Add(Me.Niederlaendisch_interviewerComboBox)
+        Me.GroupBox8.Controls.Add(Me.cmbNiederlaendisch_interviewer)
         Me.GroupBox8.Controls.Add(NiederlaendischLabel)
-        Me.GroupBox8.Controls.Add(Me.NiederlaendischTextBox)
+        Me.GroupBox8.Controls.Add(Me.txtNiederlaendisch)
         Me.GroupBox8.Controls.Add(Russisch_interviewerLabel)
-        Me.GroupBox8.Controls.Add(Me.Russisch_interviewerComboBox)
+        Me.GroupBox8.Controls.Add(Me.cmbRussisch_interviewer)
         Me.GroupBox8.Controls.Add(RussischLabel)
-        Me.GroupBox8.Controls.Add(Me.RussischTextBox)
+        Me.GroupBox8.Controls.Add(Me.txtRussisch)
         Me.GroupBox8.Controls.Add(Tuerkisch_interviewerLabel)
-        Me.GroupBox8.Controls.Add(Me.Tuerkisch_interviewerComboBox)
+        Me.GroupBox8.Controls.Add(Me.cmbTuerkisch_interviewer)
         Me.GroupBox8.Controls.Add(TuerkischLabel)
-        Me.GroupBox8.Controls.Add(Me.TuerkischTextBox)
+        Me.GroupBox8.Controls.Add(Me.txtTuerkisch)
         Me.GroupBox8.Controls.Add(Italienisch_interviewerLabel)
-        Me.GroupBox8.Controls.Add(Me.Italienisch_interviewerComboBox)
+        Me.GroupBox8.Controls.Add(Me.cmbItalienisch_interviewer)
         Me.GroupBox8.Controls.Add(ItalienischLabel)
-        Me.GroupBox8.Controls.Add(Me.ItalienischTextBox)
+        Me.GroupBox8.Controls.Add(Me.txtItalienisch)
         Me.GroupBox8.Controls.Add(Spanisch_interviewerLabel)
-        Me.GroupBox8.Controls.Add(Me.Spanisch_interviewerComboBox)
+        Me.GroupBox8.Controls.Add(Me.cmbSpanisch_interviewer)
         Me.GroupBox8.Controls.Add(SpanischLabel)
-        Me.GroupBox8.Controls.Add(Me.SpanischTextBox)
+        Me.GroupBox8.Controls.Add(Me.txtSpanisch)
         Me.GroupBox8.Controls.Add(Französich_interviewerLabel)
-        Me.GroupBox8.Controls.Add(Me.Französich_interviewerComboBox)
+        Me.GroupBox8.Controls.Add(Me.cmbFranzösich_interviewer)
         Me.GroupBox8.Controls.Add(FranzoesischLabel)
-        Me.GroupBox8.Controls.Add(Me.FranzoesischTextBox)
+        Me.GroupBox8.Controls.Add(Me.txtFranzoesisch)
         Me.GroupBox8.Controls.Add(Englisch_interviewerLabel)
-        Me.GroupBox8.Controls.Add(Me.Englisch_interviewerComboBox)
+        Me.GroupBox8.Controls.Add(Me.cmbEnglisch_interviewer)
         Me.GroupBox8.Controls.Add(Me.Label3)
         Me.GroupBox8.Controls.Add(Me.Label2)
         Me.GroupBox8.Controls.Add(EnglischLabel)
-        Me.GroupBox8.Controls.Add(Me.EnglischTextBox)
+        Me.GroupBox8.Controls.Add(Me.txtEnglisch)
         Me.GroupBox8.Controls.Add(Muendlich_schriftlichLabel)
-        Me.GroupBox8.Controls.Add(Me.Muendlich_schriftlichComboBox)
+        Me.GroupBox8.Controls.Add(Me.cmbMuendlich_schriftlich)
         Me.GroupBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox8.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox8.Location = New System.Drawing.Point(8, 3)
@@ -1998,178 +1998,178 @@ Partial Class frmInterviewer
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Sprachkenntnisse"
         '
-        'Auslandsaufenthalt_dauerTextBox
+        'txtAuslandsaufenthalt_dauer
         '
-        Me.Auslandsaufenthalt_dauerTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "auslandsaufenthalt_dauer", True))
-        Me.Auslandsaufenthalt_dauerTextBox.Location = New System.Drawing.Point(699, 515)
-        Me.Auslandsaufenthalt_dauerTextBox.Multiline = True
-        Me.Auslandsaufenthalt_dauerTextBox.Name = "Auslandsaufenthalt_dauerTextBox"
-        Me.Auslandsaufenthalt_dauerTextBox.ReadOnly = True
-        Me.Auslandsaufenthalt_dauerTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.Auslandsaufenthalt_dauerTextBox.Size = New System.Drawing.Size(207, 71)
-        Me.Auslandsaufenthalt_dauerTextBox.TabIndex = 41
+        Me.txtAuslandsaufenthalt_dauer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "auslandsaufenthalt_dauer", True))
+        Me.txtAuslandsaufenthalt_dauer.Location = New System.Drawing.Point(699, 515)
+        Me.txtAuslandsaufenthalt_dauer.Multiline = True
+        Me.txtAuslandsaufenthalt_dauer.Name = "txtAuslandsaufenthalt_dauer"
+        Me.txtAuslandsaufenthalt_dauer.ReadOnly = True
+        Me.txtAuslandsaufenthalt_dauer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtAuslandsaufenthalt_dauer.Size = New System.Drawing.Size(207, 71)
+        Me.txtAuslandsaufenthalt_dauer.TabIndex = 41
         '
         'Bewerber_sprachenBindingSource
         '
         Me.Bewerber_sprachenBindingSource.DataMember = "bew_bewerber_sprachen"
         Me.Bewerber_sprachenBindingSource.DataSource = Me.BewBindingSource
         '
-        'Auslandsaufenthalt_woTextBox
+        'txtAuslandsaufenthalt_wo
         '
-        Me.Auslandsaufenthalt_woTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "auslandsaufenthalt_wo", True))
-        Me.Auslandsaufenthalt_woTextBox.Location = New System.Drawing.Point(180, 515)
-        Me.Auslandsaufenthalt_woTextBox.Multiline = True
-        Me.Auslandsaufenthalt_woTextBox.Name = "Auslandsaufenthalt_woTextBox"
-        Me.Auslandsaufenthalt_woTextBox.ReadOnly = True
-        Me.Auslandsaufenthalt_woTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.Auslandsaufenthalt_woTextBox.Size = New System.Drawing.Size(218, 71)
-        Me.Auslandsaufenthalt_woTextBox.TabIndex = 39
+        Me.txtAuslandsaufenthalt_wo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "auslandsaufenthalt_wo", True))
+        Me.txtAuslandsaufenthalt_wo.Location = New System.Drawing.Point(180, 515)
+        Me.txtAuslandsaufenthalt_wo.Multiline = True
+        Me.txtAuslandsaufenthalt_wo.Name = "txtAuslandsaufenthalt_wo"
+        Me.txtAuslandsaufenthalt_wo.ReadOnly = True
+        Me.txtAuslandsaufenthalt_wo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtAuslandsaufenthalt_wo.Size = New System.Drawing.Size(218, 71)
+        Me.txtAuslandsaufenthalt_wo.TabIndex = 39
         '
-        'AuslandsaufenthaltComboBox
+        'cmbAuslandsaufenthalt
         '
-        Me.AuslandsaufenthaltComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedItem", Me.Bewerber_sprachenBindingSource, "auslandsaufenthalt", True))
-        Me.AuslandsaufenthaltComboBox.FormattingEnabled = True
-        Me.AuslandsaufenthaltComboBox.Items.AddRange(New Object() {"", "Ja", "Nein", "Geplant"})
-        Me.AuslandsaufenthaltComboBox.Location = New System.Drawing.Point(167, 446)
-        Me.AuslandsaufenthaltComboBox.Name = "AuslandsaufenthaltComboBox"
-        Me.AuslandsaufenthaltComboBox.Size = New System.Drawing.Size(231, 24)
-        Me.AuslandsaufenthaltComboBox.TabIndex = 37
+        Me.cmbAuslandsaufenthalt.DataBindings.Add(New System.Windows.Forms.Binding("SelectedItem", Me.Bewerber_sprachenBindingSource, "auslandsaufenthalt", True))
+        Me.cmbAuslandsaufenthalt.FormattingEnabled = True
+        Me.cmbAuslandsaufenthalt.Items.AddRange(New Object() {"", "Ja", "Nein", "Geplant"})
+        Me.cmbAuslandsaufenthalt.Location = New System.Drawing.Point(167, 446)
+        Me.cmbAuslandsaufenthalt.Name = "cmbAuslandsaufenthalt"
+        Me.cmbAuslandsaufenthalt.Size = New System.Drawing.Size(231, 24)
+        Me.cmbAuslandsaufenthalt.TabIndex = 37
         '
-        'Deutsch_interviewerComboBox
+        'cmbDeutsch_interviewer
         '
-        Me.Deutsch_interviewerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "deutsch_interviewer", True))
-        Me.Deutsch_interviewerComboBox.FormattingEnabled = True
-        Me.Deutsch_interviewerComboBox.Location = New System.Drawing.Point(699, 391)
-        Me.Deutsch_interviewerComboBox.Name = "Deutsch_interviewerComboBox"
-        Me.Deutsch_interviewerComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.Deutsch_interviewerComboBox.TabIndex = 35
+        Me.cmbDeutsch_interviewer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "deutsch_interviewer", True))
+        Me.cmbDeutsch_interviewer.FormattingEnabled = True
+        Me.cmbDeutsch_interviewer.Location = New System.Drawing.Point(699, 391)
+        Me.cmbDeutsch_interviewer.Name = "cmbDeutsch_interviewer"
+        Me.cmbDeutsch_interviewer.Size = New System.Drawing.Size(121, 24)
+        Me.cmbDeutsch_interviewer.TabIndex = 35
         '
-        'DeutschTextBox
+        'txtDeutsch
         '
-        Me.DeutschTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "deutsch", True))
-        Me.DeutschTextBox.Location = New System.Drawing.Point(129, 391)
-        Me.DeutschTextBox.Name = "DeutschTextBox"
-        Me.DeutschTextBox.ReadOnly = True
-        Me.DeutschTextBox.Size = New System.Drawing.Size(269, 22)
-        Me.DeutschTextBox.TabIndex = 33
+        Me.txtDeutsch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "deutsch", True))
+        Me.txtDeutsch.Location = New System.Drawing.Point(129, 391)
+        Me.txtDeutsch.Name = "txtDeutsch"
+        Me.txtDeutsch.ReadOnly = True
+        Me.txtDeutsch.Size = New System.Drawing.Size(269, 22)
+        Me.txtDeutsch.TabIndex = 33
         '
-        'Niederlaendisch_interviewerComboBox
+        'cmbNiederlaendisch_interviewer
         '
-        Me.Niederlaendisch_interviewerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "niederlaendisch_interviewer", True))
-        Me.Niederlaendisch_interviewerComboBox.FormattingEnabled = True
-        Me.Niederlaendisch_interviewerComboBox.Location = New System.Drawing.Point(699, 348)
-        Me.Niederlaendisch_interviewerComboBox.Name = "Niederlaendisch_interviewerComboBox"
-        Me.Niederlaendisch_interviewerComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.Niederlaendisch_interviewerComboBox.TabIndex = 31
+        Me.cmbNiederlaendisch_interviewer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "niederlaendisch_interviewer", True))
+        Me.cmbNiederlaendisch_interviewer.FormattingEnabled = True
+        Me.cmbNiederlaendisch_interviewer.Location = New System.Drawing.Point(699, 348)
+        Me.cmbNiederlaendisch_interviewer.Name = "cmbNiederlaendisch_interviewer"
+        Me.cmbNiederlaendisch_interviewer.Size = New System.Drawing.Size(121, 24)
+        Me.cmbNiederlaendisch_interviewer.TabIndex = 31
         '
-        'NiederlaendischTextBox
+        'txtNiederlaendisch
         '
-        Me.NiederlaendischTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "niederlaendisch", True))
-        Me.NiederlaendischTextBox.Location = New System.Drawing.Point(129, 348)
-        Me.NiederlaendischTextBox.Name = "NiederlaendischTextBox"
-        Me.NiederlaendischTextBox.ReadOnly = True
-        Me.NiederlaendischTextBox.Size = New System.Drawing.Size(269, 22)
-        Me.NiederlaendischTextBox.TabIndex = 29
+        Me.txtNiederlaendisch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "niederlaendisch", True))
+        Me.txtNiederlaendisch.Location = New System.Drawing.Point(129, 348)
+        Me.txtNiederlaendisch.Name = "txtNiederlaendisch"
+        Me.txtNiederlaendisch.ReadOnly = True
+        Me.txtNiederlaendisch.Size = New System.Drawing.Size(269, 22)
+        Me.txtNiederlaendisch.TabIndex = 29
         '
-        'Russisch_interviewerComboBox
+        'cmbRussisch_interviewer
         '
-        Me.Russisch_interviewerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "russisch_interviewer", True))
-        Me.Russisch_interviewerComboBox.FormattingEnabled = True
-        Me.Russisch_interviewerComboBox.Location = New System.Drawing.Point(699, 297)
-        Me.Russisch_interviewerComboBox.Name = "Russisch_interviewerComboBox"
-        Me.Russisch_interviewerComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.Russisch_interviewerComboBox.TabIndex = 27
+        Me.cmbRussisch_interviewer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "russisch_interviewer", True))
+        Me.cmbRussisch_interviewer.FormattingEnabled = True
+        Me.cmbRussisch_interviewer.Location = New System.Drawing.Point(699, 297)
+        Me.cmbRussisch_interviewer.Name = "cmbRussisch_interviewer"
+        Me.cmbRussisch_interviewer.Size = New System.Drawing.Size(121, 24)
+        Me.cmbRussisch_interviewer.TabIndex = 27
         '
-        'RussischTextBox
+        'txtRussisch
         '
-        Me.RussischTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "russisch", True))
-        Me.RussischTextBox.Location = New System.Drawing.Point(129, 297)
-        Me.RussischTextBox.Name = "RussischTextBox"
-        Me.RussischTextBox.ReadOnly = True
-        Me.RussischTextBox.Size = New System.Drawing.Size(269, 22)
-        Me.RussischTextBox.TabIndex = 25
+        Me.txtRussisch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "russisch", True))
+        Me.txtRussisch.Location = New System.Drawing.Point(129, 297)
+        Me.txtRussisch.Name = "txtRussisch"
+        Me.txtRussisch.ReadOnly = True
+        Me.txtRussisch.Size = New System.Drawing.Size(269, 22)
+        Me.txtRussisch.TabIndex = 25
         '
-        'Tuerkisch_interviewerComboBox
+        'cmbTuerkisch_interviewer
         '
-        Me.Tuerkisch_interviewerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "tuerkisch_interviewer", True))
-        Me.Tuerkisch_interviewerComboBox.FormattingEnabled = True
-        Me.Tuerkisch_interviewerComboBox.Location = New System.Drawing.Point(699, 258)
-        Me.Tuerkisch_interviewerComboBox.Name = "Tuerkisch_interviewerComboBox"
-        Me.Tuerkisch_interviewerComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.Tuerkisch_interviewerComboBox.TabIndex = 23
+        Me.cmbTuerkisch_interviewer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "tuerkisch_interviewer", True))
+        Me.cmbTuerkisch_interviewer.FormattingEnabled = True
+        Me.cmbTuerkisch_interviewer.Location = New System.Drawing.Point(699, 258)
+        Me.cmbTuerkisch_interviewer.Name = "cmbTuerkisch_interviewer"
+        Me.cmbTuerkisch_interviewer.Size = New System.Drawing.Size(121, 24)
+        Me.cmbTuerkisch_interviewer.TabIndex = 23
         '
-        'TuerkischTextBox
+        'txtTuerkisch
         '
-        Me.TuerkischTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "tuerkisch", True))
-        Me.TuerkischTextBox.Location = New System.Drawing.Point(129, 258)
-        Me.TuerkischTextBox.Name = "TuerkischTextBox"
-        Me.TuerkischTextBox.ReadOnly = True
-        Me.TuerkischTextBox.Size = New System.Drawing.Size(269, 22)
-        Me.TuerkischTextBox.TabIndex = 21
+        Me.txtTuerkisch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "tuerkisch", True))
+        Me.txtTuerkisch.Location = New System.Drawing.Point(129, 258)
+        Me.txtTuerkisch.Name = "txtTuerkisch"
+        Me.txtTuerkisch.ReadOnly = True
+        Me.txtTuerkisch.Size = New System.Drawing.Size(269, 22)
+        Me.txtTuerkisch.TabIndex = 21
         '
-        'Italienisch_interviewerComboBox
+        'cmbItalienisch_interviewer
         '
-        Me.Italienisch_interviewerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "italienisch_interviewer", True))
-        Me.Italienisch_interviewerComboBox.FormattingEnabled = True
-        Me.Italienisch_interviewerComboBox.Location = New System.Drawing.Point(699, 218)
-        Me.Italienisch_interviewerComboBox.Name = "Italienisch_interviewerComboBox"
-        Me.Italienisch_interviewerComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.Italienisch_interviewerComboBox.TabIndex = 19
+        Me.cmbItalienisch_interviewer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "italienisch_interviewer", True))
+        Me.cmbItalienisch_interviewer.FormattingEnabled = True
+        Me.cmbItalienisch_interviewer.Location = New System.Drawing.Point(699, 218)
+        Me.cmbItalienisch_interviewer.Name = "cmbItalienisch_interviewer"
+        Me.cmbItalienisch_interviewer.Size = New System.Drawing.Size(121, 24)
+        Me.cmbItalienisch_interviewer.TabIndex = 19
         '
-        'ItalienischTextBox
+        'txtItalienisch
         '
-        Me.ItalienischTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "italienisch", True))
-        Me.ItalienischTextBox.Location = New System.Drawing.Point(129, 218)
-        Me.ItalienischTextBox.Name = "ItalienischTextBox"
-        Me.ItalienischTextBox.ReadOnly = True
-        Me.ItalienischTextBox.Size = New System.Drawing.Size(269, 22)
-        Me.ItalienischTextBox.TabIndex = 17
+        Me.txtItalienisch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "italienisch", True))
+        Me.txtItalienisch.Location = New System.Drawing.Point(129, 218)
+        Me.txtItalienisch.Name = "txtItalienisch"
+        Me.txtItalienisch.ReadOnly = True
+        Me.txtItalienisch.Size = New System.Drawing.Size(269, 22)
+        Me.txtItalienisch.TabIndex = 17
         '
-        'Spanisch_interviewerComboBox
+        'cmbSpanisch_interviewer
         '
-        Me.Spanisch_interviewerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "spanisch_interviewer", True))
-        Me.Spanisch_interviewerComboBox.FormattingEnabled = True
-        Me.Spanisch_interviewerComboBox.Location = New System.Drawing.Point(699, 176)
-        Me.Spanisch_interviewerComboBox.Name = "Spanisch_interviewerComboBox"
-        Me.Spanisch_interviewerComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.Spanisch_interviewerComboBox.TabIndex = 15
+        Me.cmbSpanisch_interviewer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "spanisch_interviewer", True))
+        Me.cmbSpanisch_interviewer.FormattingEnabled = True
+        Me.cmbSpanisch_interviewer.Location = New System.Drawing.Point(699, 176)
+        Me.cmbSpanisch_interviewer.Name = "cmbSpanisch_interviewer"
+        Me.cmbSpanisch_interviewer.Size = New System.Drawing.Size(121, 24)
+        Me.cmbSpanisch_interviewer.TabIndex = 15
         '
-        'SpanischTextBox
+        'txtSpanisch
         '
-        Me.SpanischTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "spanisch", True))
-        Me.SpanischTextBox.Location = New System.Drawing.Point(129, 176)
-        Me.SpanischTextBox.Name = "SpanischTextBox"
-        Me.SpanischTextBox.ReadOnly = True
-        Me.SpanischTextBox.Size = New System.Drawing.Size(269, 22)
-        Me.SpanischTextBox.TabIndex = 13
+        Me.txtSpanisch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "spanisch", True))
+        Me.txtSpanisch.Location = New System.Drawing.Point(129, 176)
+        Me.txtSpanisch.Name = "txtSpanisch"
+        Me.txtSpanisch.ReadOnly = True
+        Me.txtSpanisch.Size = New System.Drawing.Size(269, 22)
+        Me.txtSpanisch.TabIndex = 13
         '
-        'Französich_interviewerComboBox
+        'cmbFranzösich_interviewer
         '
-        Me.Französich_interviewerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "französich_interviewer", True))
-        Me.Französich_interviewerComboBox.FormattingEnabled = True
-        Me.Französich_interviewerComboBox.Location = New System.Drawing.Point(699, 138)
-        Me.Französich_interviewerComboBox.Name = "Französich_interviewerComboBox"
-        Me.Französich_interviewerComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.Französich_interviewerComboBox.TabIndex = 11
+        Me.cmbFranzösich_interviewer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "französich_interviewer", True))
+        Me.cmbFranzösich_interviewer.FormattingEnabled = True
+        Me.cmbFranzösich_interviewer.Location = New System.Drawing.Point(699, 138)
+        Me.cmbFranzösich_interviewer.Name = "cmbFranzösich_interviewer"
+        Me.cmbFranzösich_interviewer.Size = New System.Drawing.Size(121, 24)
+        Me.cmbFranzösich_interviewer.TabIndex = 11
         '
-        'FranzoesischTextBox
+        'txtFranzoesisch
         '
-        Me.FranzoesischTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "franzoesisch", True))
-        Me.FranzoesischTextBox.Location = New System.Drawing.Point(129, 138)
-        Me.FranzoesischTextBox.Name = "FranzoesischTextBox"
-        Me.FranzoesischTextBox.ReadOnly = True
-        Me.FranzoesischTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.FranzoesischTextBox.Size = New System.Drawing.Size(269, 22)
-        Me.FranzoesischTextBox.TabIndex = 9
+        Me.txtFranzoesisch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "franzoesisch", True))
+        Me.txtFranzoesisch.Location = New System.Drawing.Point(129, 138)
+        Me.txtFranzoesisch.Name = "txtFranzoesisch"
+        Me.txtFranzoesisch.ReadOnly = True
+        Me.txtFranzoesisch.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtFranzoesisch.Size = New System.Drawing.Size(269, 22)
+        Me.txtFranzoesisch.TabIndex = 9
         '
-        'Englisch_interviewerComboBox
+        'cmbEnglisch_interviewer
         '
-        Me.Englisch_interviewerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "englisch_interviewer", True))
-        Me.Englisch_interviewerComboBox.FormattingEnabled = True
-        Me.Englisch_interviewerComboBox.Location = New System.Drawing.Point(699, 94)
-        Me.Englisch_interviewerComboBox.Name = "Englisch_interviewerComboBox"
-        Me.Englisch_interviewerComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.Englisch_interviewerComboBox.TabIndex = 7
+        Me.cmbEnglisch_interviewer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "englisch_interviewer", True))
+        Me.cmbEnglisch_interviewer.FormattingEnabled = True
+        Me.cmbEnglisch_interviewer.Location = New System.Drawing.Point(699, 94)
+        Me.cmbEnglisch_interviewer.Name = "cmbEnglisch_interviewer"
+        Me.cmbEnglisch_interviewer.Size = New System.Drawing.Size(121, 24)
+        Me.cmbEnglisch_interviewer.TabIndex = 7
         '
         'Label3
         '
@@ -2189,24 +2189,24 @@ Partial Class frmInterviewer
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Laut Bewerber:"
         '
-        'EnglischTextBox
+        'txtEnglisch
         '
-        Me.EnglischTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "englisch", True))
-        Me.EnglischTextBox.Location = New System.Drawing.Point(129, 94)
-        Me.EnglischTextBox.Name = "EnglischTextBox"
-        Me.EnglischTextBox.ReadOnly = True
-        Me.EnglischTextBox.Size = New System.Drawing.Size(269, 22)
-        Me.EnglischTextBox.TabIndex = 3
+        Me.txtEnglisch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "englisch", True))
+        Me.txtEnglisch.Location = New System.Drawing.Point(129, 94)
+        Me.txtEnglisch.Name = "txtEnglisch"
+        Me.txtEnglisch.ReadOnly = True
+        Me.txtEnglisch.Size = New System.Drawing.Size(269, 22)
+        Me.txtEnglisch.TabIndex = 3
         '
-        'Muendlich_schriftlichComboBox
+        'cmbMuendlich_schriftlich
         '
-        Me.Muendlich_schriftlichComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "muendlich_schriftlich", True))
-        Me.Muendlich_schriftlichComboBox.FormattingEnabled = True
-        Me.Muendlich_schriftlichComboBox.Items.AddRange(New Object() {"", "mündlich", "schriftlich", "mündlich und schriftlich"})
-        Me.Muendlich_schriftlichComboBox.Location = New System.Drawing.Point(234, 24)
-        Me.Muendlich_schriftlichComboBox.Name = "Muendlich_schriftlichComboBox"
-        Me.Muendlich_schriftlichComboBox.Size = New System.Drawing.Size(246, 24)
-        Me.Muendlich_schriftlichComboBox.TabIndex = 1
+        Me.cmbMuendlich_schriftlich.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_sprachenBindingSource, "muendlich_schriftlich", True))
+        Me.cmbMuendlich_schriftlich.FormattingEnabled = True
+        Me.cmbMuendlich_schriftlich.Items.AddRange(New Object() {"", "mündlich", "schriftlich", "mündlich und schriftlich"})
+        Me.cmbMuendlich_schriftlich.Location = New System.Drawing.Point(234, 24)
+        Me.cmbMuendlich_schriftlich.Name = "cmbMuendlich_schriftlich"
+        Me.cmbMuendlich_schriftlich.Size = New System.Drawing.Size(246, 24)
+        Me.cmbMuendlich_schriftlich.TabIndex = 1
         '
         'TabPage6
         '
@@ -2273,7 +2273,7 @@ Partial Class frmInterviewer
         '
         Me.GroupBox11.BackColor = System.Drawing.Color.White
         Me.GroupBox11.Controls.Add(Me.Label5)
-        Me.GroupBox11.Controls.Add(Me.UlasTextBox)
+        Me.GroupBox11.Controls.Add(Me.txtUlas)
         Me.GroupBox11.Controls.Add(Me.PictureBox1)
         Me.GroupBox11.Controls.Add(Me.Label9)
         Me.GroupBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2294,15 +2294,15 @@ Partial Class frmInterviewer
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Ulas auswählen" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "oder ändern" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Doppelklick"
         '
-        'UlasTextBox
+        'txtUlas
         '
-        Me.UlasTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "ulas", True))
-        Me.UlasTextBox.Location = New System.Drawing.Point(730, 35)
-        Me.UlasTextBox.Multiline = True
-        Me.UlasTextBox.Name = "UlasTextBox"
-        Me.UlasTextBox.ReadOnly = True
-        Me.UlasTextBox.Size = New System.Drawing.Size(210, 283)
-        Me.UlasTextBox.TabIndex = 4
+        Me.txtUlas.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "ulas", True))
+        Me.txtUlas.Location = New System.Drawing.Point(730, 35)
+        Me.txtUlas.Multiline = True
+        Me.txtUlas.Name = "txtUlas"
+        Me.txtUlas.ReadOnly = True
+        Me.txtUlas.Size = New System.Drawing.Size(210, 283)
+        Me.txtUlas.TabIndex = 4
         '
         'PictureBox1
         '
@@ -2465,7 +2465,7 @@ Partial Class frmInterviewer
     Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents BewerberDataSet As bewerberpool.BewerberDataSet
     Friend WithEvents BewBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents InterviewerComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbInterviewer As System.Windows.Forms.ComboBox
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
@@ -2474,92 +2474,92 @@ Partial Class frmInterviewer
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents EmpfehlungTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents txtEmpfehlung As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents BeurteilungComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbBeurteilung As System.Windows.Forms.ComboBox
     Friend WithEvents BewTableAdapter As bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter
-    Friend WithEvents HaendedruckComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbHaendedruck As System.Windows.Forms.ComboBox
     Friend WithEvents Bew_bewerberdatenTableAdapter As bewerberpool.BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter
-    Friend WithEvents ParfumComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents RaucherComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbParfum As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbRaucher As System.Windows.Forms.ComboBox
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents JobwunschTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents txtJobwunsch As System.Windows.Forms.TextBox
     Friend WithEvents VerfuegbarkeitComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Za_vmTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Vz_tzComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Teilzeit_stundenComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Teilzeit_wannComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents ArbeitsortTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents UmzugComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents FuehrerscheinTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Pkw_oepnvTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Gehaltswunsch_jahrTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Gehaltswunsch_monatTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents txtZa_vm As System.Windows.Forms.TextBox
+    Friend WithEvents cmbVz_tz As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbTeilzeit_stunden As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbTeilzeit_wann As System.Windows.Forms.ComboBox
+    Friend WithEvents txtArbeitsort As System.Windows.Forms.TextBox
+    Friend WithEvents cmbUmzug As System.Windows.Forms.ComboBox
+    Friend WithEvents txtFuehrerschein As System.Windows.Forms.TextBox
+    Friend WithEvents txtPkw_oepnv As System.Windows.Forms.TextBox
+    Friend WithEvents txtGehaltswunsch_jahr As System.Windows.Forms.TextBox
+    Friend WithEvents txtGehaltswunsch_monat As System.Windows.Forms.TextBox
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents Bewerber_ausbildungBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Bewerber_ausbildungTableAdapter As bewerberpool.BewerberDataSetTableAdapters.bewerber_ausbildungTableAdapter
-    Friend WithEvents Ausbildung_qualifizierungTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents AusbildungsberufTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Studium_abschlussTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents StudienfaecherTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents txtAusbildung_qualifizierung As System.Windows.Forms.TextBox
+    Friend WithEvents txtAusbildungsberuf As System.Windows.Forms.TextBox
+    Friend WithEvents txtStudium_abschluss As System.Windows.Forms.TextBox
+    Friend WithEvents txtStudienfaecher As System.Windows.Forms.TextBox
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents Bewerber_berufserfahrungBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Bewerber_berufserfahrungTableAdapter As bewerberpool.BewerberDataSetTableAdapters.bewerber_berufserfahrungTableAdapter
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents EmailTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Tel_mobilTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Tel_festnetzTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents OrtsteilTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents OrtTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents PlzTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Alter_jahrTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents NameTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents VornameTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents AnredeComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Beruf_positionTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Beruf_schwerpunkttaetigkeitTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents txtEmail As System.Windows.Forms.TextBox
+    Friend WithEvents txtTel_mobil As System.Windows.Forms.TextBox
+    Friend WithEvents txtTel_festnetz As System.Windows.Forms.TextBox
+    Friend WithEvents txtOrtsteil As System.Windows.Forms.TextBox
+    Friend WithEvents txtOrt As System.Windows.Forms.TextBox
+    Friend WithEvents txtPlz As System.Windows.Forms.TextBox
+    Friend WithEvents txtAlter_jahr As System.Windows.Forms.TextBox
+    Friend WithEvents txtName As System.Windows.Forms.TextBox
+    Friend WithEvents txtVorname As System.Windows.Forms.TextBox
+    Friend WithEvents cmbAnrede As System.Windows.Forms.ComboBox
+    Friend WithEvents txtBeruf_position As System.Windows.Forms.TextBox
+    Friend WithEvents txtBeruf_schwerpunkttaetigkeit As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
-    Friend WithEvents FuehrungsverantwortungComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Fuehrungsverantwortung_dauerTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents PersonalverantwortungComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Personalverantwortung_anzahlTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents cmbFuehrungsverantwortung As System.Windows.Forms.ComboBox
+    Friend WithEvents txtFuehrungsverantwortung_dauer As System.Windows.Forms.TextBox
+    Friend WithEvents cmbPersonalverantwortung As System.Windows.Forms.ComboBox
+    Friend WithEvents txtPersonalverantwortung_anzahl As System.Windows.Forms.TextBox
     Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
     Friend WithEvents Panel6 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
     Friend WithEvents Bewerber_sprachenBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Bewerber_sprachenTableAdapter As bewerberpool.BewerberDataSetTableAdapters.bewerber_sprachenTableAdapter
-    Friend WithEvents Muendlich_schriftlichComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbMuendlich_schriftlich As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents EnglischTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Englisch_interviewerComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents txtEnglisch As System.Windows.Forms.TextBox
+    Friend WithEvents cmbEnglisch_interviewer As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Niederlaendisch_interviewerComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents NiederlaendischTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents RussischTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Tuerkisch_interviewerComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents TuerkischTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Italienisch_interviewerComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents ItalienischTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Spanisch_interviewerComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents SpanischTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Französich_interviewerComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents FranzoesischTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Deutsch_interviewerComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents DeutschTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents AuslandsaufenthaltComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Auslandsaufenthalt_dauerTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Auslandsaufenthalt_woTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents cmbNiederlaendisch_interviewer As System.Windows.Forms.ComboBox
+    Friend WithEvents txtNiederlaendisch As System.Windows.Forms.TextBox
+    Friend WithEvents txtRussisch As System.Windows.Forms.TextBox
+    Friend WithEvents cmbTuerkisch_interviewer As System.Windows.Forms.ComboBox
+    Friend WithEvents txtTuerkisch As System.Windows.Forms.TextBox
+    Friend WithEvents cmbItalienisch_interviewer As System.Windows.Forms.ComboBox
+    Friend WithEvents txtItalienisch As System.Windows.Forms.TextBox
+    Friend WithEvents cmbSpanisch_interviewer As System.Windows.Forms.ComboBox
+    Friend WithEvents txtSpanisch As System.Windows.Forms.TextBox
+    Friend WithEvents cmbFranzösich_interviewer As System.Windows.Forms.ComboBox
+    Friend WithEvents txtFranzoesisch As System.Windows.Forms.TextBox
+    Friend WithEvents cmbDeutsch_interviewer As System.Windows.Forms.ComboBox
+    Friend WithEvents txtDeutsch As System.Windows.Forms.TextBox
+    Friend WithEvents cmbAuslandsaufenthalt As System.Windows.Forms.ComboBox
+    Friend WithEvents txtAuslandsaufenthalt_dauer As System.Windows.Forms.TextBox
+    Friend WithEvents txtAuslandsaufenthalt_wo As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
     Friend WithEvents KuendigungsfristComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents BeendigungsgrundComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents MdETextBox As System.Windows.Forms.TextBox
-    Friend WithEvents MdEComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents txtMdE As System.Windows.Forms.TextBox
+    Friend WithEvents cmbMdE As System.Windows.Forms.ComboBox
     Friend WithEvents WechselwunschTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Beendigungsgrund_detailsTextBox As System.Windows.Forms.TextBox
     Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
@@ -2571,18 +2571,18 @@ Partial Class frmInterviewer
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents GroupBox12 As System.Windows.Forms.GroupBox
-    Friend WithEvents StrasseTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents txtStrasse As System.Windows.Forms.TextBox
     Friend WithEvents UlasBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents UlasTableAdapter As bewerberpool.BewerberDataSetTableAdapters.ulasTableAdapter
     Friend WithEvents RTEPersoenlichkeit As Telerik.WinControls.UI.RadRichTextEditor
-    Friend WithEvents Gdb_gradTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents txtGdb_grad As System.Windows.Forms.TextBox
     Friend WithEvents TableAdapterManager As bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents Russisch_interviewerComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents JahresgehaltTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents MonatsgehaltTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents UlasTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents cmbRussisch_interviewer As System.Windows.Forms.ComboBox
+    Friend WithEvents txtJahresgehalt As System.Windows.Forms.TextBox
+    Friend WithEvents txtMonatsgehalt As System.Windows.Forms.TextBox
+    Friend WithEvents txtUlas As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TaetigkeitenTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents txtTaetigkeiten As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents cmbAufmerksam As ComboBox

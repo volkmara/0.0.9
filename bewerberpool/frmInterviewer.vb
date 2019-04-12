@@ -63,7 +63,7 @@ Public Class frmInterviewer
         Me.cmbAufmerksam.Items.AddRange(New String() {"Agentur für Arbeit", "backinjob", "Gigajob", "Indeed", "Jobmonitor", "Jobomat", "Kalaydo", "meinestadt", "Monster", "Placement24", "Rekruter", "stellenmarkt", "Stepstone", "", "Facebook", "Twitter", "Xing", "Google", "Bing", "Yahoo", "Web.de", " ", "Bonner Generalanzeiger", "Kölner Stadtanzeiger", "Rhein-Sieg-Anzeiger", "Regionale Anzeigenblätter", "", "andere"})
     End Sub
 
-    Private Sub AnredeComboBox_Mousewheel(sender As Object, e As MouseEventArgs) Handles AnredeComboBox.MouseWheel, BeurteilungComboBox.MouseWheel, HaendedruckComboBox.MouseWheel, ParfumComboBox.MouseWheel, RaucherComboBox.MouseWheel, Vz_tzComboBox.MouseWheel, Teilzeit_stundenComboBox.MouseWheel, Teilzeit_wannComboBox.MouseWheel, UmzugComboBox.MouseWheel, VerfuegbarkeitComboBox.MouseWheel, MdEComboBox.MouseWheel, KuendigungsfristComboBox.MouseWheel, BeendigungsgrundComboBox.MouseWheel, PersonalverantwortungComboBox.MouseWheel, FuehrungsverantwortungComboBox.MouseWheel, AuslandsaufenthaltComboBox.MouseWheel, Englisch_interviewerComboBox.MouseWheel, Französich_interviewerComboBox.MouseWheel, Spanisch_interviewerComboBox.MouseWheel, Italienisch_interviewerComboBox.MouseWheel, Russisch_interviewerComboBox.MouseWheel, Niederlaendisch_interviewerComboBox.MouseWheel, Tuerkisch_interviewerComboBox.MouseWheel, Deutsch_interviewerComboBox.MouseWheel
+    Private Sub cmbAnrede_Mousewheel(sender As Object, e As MouseEventArgs) Handles cmbAnrede.MouseWheel, cmbBeurteilung.MouseWheel, cmbHaendedruck.MouseWheel, cmbParfum.MouseWheel, cmbRaucher.MouseWheel, cmbVz_tz.MouseWheel, cmbTeilzeit_stunden.MouseWheel, cmbTeilzeit_wann.MouseWheel, cmbUmzug.MouseWheel, VerfuegbarkeitComboBox.MouseWheel, cmbMdE.MouseWheel, KuendigungsfristComboBox.MouseWheel, BeendigungsgrundComboBox.MouseWheel, cmbPersonalverantwortung.MouseWheel, cmbFuehrungsverantwortung.MouseWheel, cmbAuslandsaufenthalt.MouseWheel, cmbEnglisch_interviewer.MouseWheel, cmbFranzösich_interviewer.MouseWheel, cmbSpanisch_interviewer.MouseWheel, cmbItalienisch_interviewer.MouseWheel, cmbRussisch_interviewer.MouseWheel, cmbNiederlaendisch_interviewer.MouseWheel, cmbTuerkisch_interviewer.MouseWheel, cmbDeutsch_interviewer.MouseWheel
         Dim HMEA As HandledMouseEventArgs = DirectCast(e, HandledMouseEventArgs)
         HMEA.Handled = True
     End Sub
@@ -102,6 +102,8 @@ Public Class frmInterviewer
             MessageBox.Show("Bitte alle Reiter nacheinander anklicken und die Felder in allen Reitern bearbeiten", "Alle Tabreiter anwählen", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             Exit Sub
         End If
+
+        Call Berufsausbildung_check()
 
         If Not frmMain.StandComboBox.Text = CStr("fertig") AndAlso usernameklar = "vilder" OrElse usernameklar = "schwarz" Then
             Call pflichtfelder()
@@ -193,51 +195,56 @@ Public Class frmInterviewer
 
         Dim pflichtfeld As New List(Of String)()
 
-        If VornameTextBox.Text = String.Empty Then
+        If cmbAnrede.Text = String.Empty Then
+            pflichtfeld.Add("Anrede")
+            cmbAnrede.BackColor = Color.Yellow
+        End If
+
+        If txtVorname.Text = String.Empty Then
             pflichtfeld.Add("Vorname")
-            VornameTextBox.BackColor = Color.Yellow
+            txtVorname.BackColor = Color.Yellow
         End If
 
-        If NameTextBox.Text = String.Empty Then
+        If txtName.Text = String.Empty Then
             pflichtfeld.Add("Nachname")
-            NameTextBox.BackColor = Color.Yellow
+            txtName.BackColor = Color.Yellow
         End If
 
-        If OrtTextBox.Text = String.Empty Then
+        If txtOrt.Text = String.Empty Then
             pflichtfeld.Add("Ort")
-            OrtTextBox.BackColor = Color.Yellow
+            txtOrt.BackColor = Color.Yellow
         End If
 
-        If PlzTextBox.Text = String.Empty Then
+        If txtPlz.Text = String.Empty Then
             pflichtfeld.Add("Plz")
-            PlzTextBox.BackColor = Color.Yellow
+            txtPlz.BackColor = Color.Yellow
         End If
 
-        If Tel_festnetzTextBox.Text = String.Empty AndAlso Tel_mobilTextBox.Text = String.Empty Then
+        If txtTel_festnetz.Text = String.Empty AndAlso txtTel_mobil.Text = String.Empty Then
             pflichtfeld.Add("Festnetz")
             pflichtfeld.Add("Handy")
-            Tel_festnetzTextBox.BackColor = Color.Yellow
-            Tel_mobilTextBox.BackColor = Color.Yellow
+            txtTel_festnetz.BackColor = Color.Yellow
+            txtTel_mobil.BackColor = Color.Yellow
         End If
 
-        If BeurteilungComboBox.Text = String.Empty Then
+        If cmbBeurteilung.Text = String.Empty Then
             pflichtfeld.Add("Beurteilung")
-            BeurteilungComboBox.BackColor = Color.Yellow
+            cmbBeurteilung.BackColor = Color.Yellow
         End If
 
-        If HaendedruckComboBox.Text = String.Empty Then
+        If cmbHaendedruck.Text = String.Empty Then
             pflichtfeld.Add("Händedruck")
-            HaendedruckComboBox.BackColor = Color.Yellow
+            cmbHaendedruck.BackColor = Color.Yellow
         End If
 
-        If ParfumComboBox.Text = String.Empty Then
+        If cmbParfum.Text = String.Empty Then
             pflichtfeld.Add("Parfüm")
-            ParfumComboBox.BackColor = Color.Yellow
+            cmbParfum.BackColor = Color.Yellow
         End If
 
-        If RaucherComboBox.Text = String.Empty Then
+        If cmbRaucher.Text = String.Empty Then
             pflichtfeld.Add("Raucher")
-            RaucherComboBox.BackColor = Color.Yellow
+            cmbRaucher.BackColor = Color.Yellow
         End If
 
         If VerfuegbarkeitComboBox.SelectedItem Is String.Empty Then
@@ -245,65 +252,65 @@ Public Class frmInterviewer
             VerfuegbarkeitComboBox.BackColor = Color.Yellow
         End If
 
-        If Za_vmTextBox.Text = String.Empty Then
+        If txtZa_vm.Text = String.Empty Then
             pflichtfeld.Add("ZA/VM")
-            Za_vmTextBox.BackColor = Color.Yellow
+            txtZa_vm.BackColor = Color.Yellow
         End If
 
-        If Vz_tzComboBox.Text = String.Empty Then
+        If cmbVz_tz.Text = String.Empty Then
             pflichtfeld.Add("VZ/TZ")
-            Vz_tzComboBox.BackColor = Color.Yellow
+            cmbVz_tz.BackColor = Color.Yellow
         End If
 
 
-        If ArbeitsortTextBox.Text = String.Empty Then
+        If txtArbeitsort.Text = String.Empty Then
             pflichtfeld.Add("Arbeitsort")
-            ArbeitsortTextBox.BackColor = Color.Yellow
+            txtArbeitsort.BackColor = Color.Yellow
         End If
 
-        If FuehrerscheinTextBox.Text = String.Empty Then
+        If txtFuehrerschein.Text = String.Empty Then
             pflichtfeld.Add("Führerschein")
-            FuehrerscheinTextBox.BackColor = Color.Yellow
+            txtFuehrerschein.BackColor = Color.Yellow
         End If
 
-        If Englisch_interviewerComboBox.Text = String.Empty Then
+        If cmbEnglisch_interviewer.Text = String.Empty Then
             pflichtfeld.Add("Englisch laut Interviewer")
-            Englisch_interviewerComboBox.BackColor = Color.Yellow
+            cmbEnglisch_interviewer.BackColor = Color.Yellow
         End If
 
-        If Französich_interviewerComboBox.Text = String.Empty Then
+        If cmbFranzösich_interviewer.Text = String.Empty Then
             pflichtfeld.Add("Französisch laut Interviewer")
-            Französich_interviewerComboBox.BackColor = Color.Yellow
+            cmbFranzösich_interviewer.BackColor = Color.Yellow
         End If
 
-        If Spanisch_interviewerComboBox.Text = String.Empty Then
+        If cmbSpanisch_interviewer.Text = String.Empty Then
             pflichtfeld.Add("Spanisch laut Interviewer")
-            Spanisch_interviewerComboBox.BackColor = Color.Yellow
+            cmbSpanisch_interviewer.BackColor = Color.Yellow
         End If
 
-        If Italienisch_interviewerComboBox.Text = String.Empty Then
+        If cmbItalienisch_interviewer.Text = String.Empty Then
             pflichtfeld.Add("Italienisch laut Interviewer")
-            Italienisch_interviewerComboBox.BackColor = Color.Yellow
+            cmbItalienisch_interviewer.BackColor = Color.Yellow
         End If
 
-        If Tuerkisch_interviewerComboBox.Text = String.Empty Then
+        If cmbTuerkisch_interviewer.Text = String.Empty Then
             pflichtfeld.Add("Türkisch laut Interviewer")
-            Tuerkisch_interviewerComboBox.BackColor = Color.Yellow
+            cmbTuerkisch_interviewer.BackColor = Color.Yellow
         End If
 
-        If Russisch_interviewerComboBox.Text = String.Empty Then
+        If cmbRussisch_interviewer.Text = String.Empty Then
             pflichtfeld.Add("Russisch laut Interviewer")
-            Russisch_interviewerComboBox.BackColor = Color.Yellow
+            cmbRussisch_interviewer.BackColor = Color.Yellow
         End If
 
-        If Niederlaendisch_interviewerComboBox.Text = String.Empty Then
+        If cmbNiederlaendisch_interviewer.Text = String.Empty Then
             pflichtfeld.Add("Niederländisch laut Interviewer")
-            Niederlaendisch_interviewerComboBox.BackColor = Color.Yellow
+            cmbNiederlaendisch_interviewer.BackColor = Color.Yellow
         End If
 
-        If Deutsch_interviewerComboBox.Text = String.Empty Then
+        If cmbDeutsch_interviewer.Text = String.Empty Then
             pflichtfeld.Add("Deutsch laut Interviewer")
-            Deutsch_interviewerComboBox.BackColor = Color.Yellow
+            cmbDeutsch_interviewer.BackColor = Color.Yellow
         End If
 
         If KuendigungsfristComboBox.Enabled AndAlso KuendigungsfristComboBox.Text = String.Empty Then
@@ -311,9 +318,9 @@ Public Class frmInterviewer
             KuendigungsfristComboBox.BackColor = Color.Yellow
         End If
 
-        If MdEComboBox.Text = CStr("Ja") AndAlso Not MdETextBox.ReadOnly AndAlso MdETextBox.Text = String.Empty Then
+        If cmbMdE.Text = CStr("Ja") AndAlso Not txtMdE.ReadOnly AndAlso txtMdE.Text = String.Empty Then
             pflichtfeld.Add("MdE")
-            MdETextBox.BackColor = Color.Yellow
+            txtMdE.BackColor = Color.Yellow
         End If
 
         If Beendigungsgrund_detailsTextBox.Text = String.Empty Then
@@ -331,29 +338,34 @@ Public Class frmInterviewer
         'BewerberbeschreibungTextBox.BackColor = Color.Yellow
         'End If
 
-        If InterviewerComboBox.Text = String.Empty Then
+        If cmbInterviewer.Text = String.Empty Then
             pflichtfeld.Add("Interviewer")
-            InterviewerComboBox.BackColor = Color.Yellow
+            cmbInterviewer.BackColor = Color.Yellow
         End If
 
-        If exportfilertf = CStr("{\rtf\ansi\ansicpg1252\uc1\deff0\deflang1033{\fonttbl{\f0 Verdana;}}{\colortbl\red0\green0\blue0 ;}{\*\defchp\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone}{\*\defpap\sl276\slmult1\ql\sa180\ltrpar}{\stylesheet{\s0\sqformat\spriority0\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\sl276\slmult1\ql\sa180\ltrpar Normal;}{\*\ts2\tsrowd\spriority59\trbrdrt\brdrnone\trbrdrb\brdrnone\trbrdrl\brdrnone\trbrdrr\brdrnone\trbrdrh\brdrnone\trbrdrv\brdrnone\trgaph0\trpaddl75\trpaddr75\trpaddt0\trpaddb0\clpadft3\clpadt0\clpadfr3\clpadr0\clpadfl3\clpadl0\clpadfb3\clpadb0\tsvertalt\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\sl276\slmult1\ql\sa180\ltrpar Table Normal;}}\nouicompat\viewkind4\paperw12240\paperh15840\margl1425\margr1425\margt1425\margb1425\deftab720\sectd\pgwsxn12240\pghsxn15840\marglsxn1425\margrsxn1425\margtsxn1425\margbsxn1425\headery720\footery720\pard\s0\sl276\slmult1\ql\sa180\ltrpar{\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\par}}") Then
+        'If exportfilertf = CStr("{\rtf\ansi\ansicpg1252\uc1\deff0\deflang1033{\fonttbl{\f0 Verdana;}}{\colortbl\red0\green0\blue0 ;}{\*\defchp\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone}{\*\defpap\sl276\slmult1\ql\sa180\ltrpar}{\stylesheet{\s0\sqformat\spriority0\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\sl276\slmult1\ql\sa180\ltrpar Normal;}{\*\ts2\tsrowd\spriority59\trbrdrt\brdrnone\trbrdrb\brdrnone\trbrdrl\brdrnone\trbrdrr\brdrnone\trbrdrh\brdrnone\trbrdrv\brdrnone\trgaph0\trpaddl75\trpaddr75\trpaddt0\trpaddb0\clpadft3\clpadt0\clpadfr3\clpadr0\clpadfl3\clpadl0\clpadfb3\clpadb0\tsvertalt\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\sl276\slmult1\ql\sa180\ltrpar Table Normal;}}\nouicompat\viewkind4\paperw12240\paperh15840\margl1425\margr1425\margt1425\margb1425\deftab720\sectd\pgwsxn12240\pghsxn15840\marglsxn1425\margrsxn1425\margtsxn1425\margbsxn1425\headery720\footery720\pard\s0\sl276\slmult1\ql\sa180\ltrpar{\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\par}}") Then
+        '    pflichtfeld.Add("Persönlichkeit, Äußeres etc.")
+        '    GroupBox10.BackColor = Color.Yellow
+        'End If
+
+        If exportfiletxt = String.Empty Then
             pflichtfeld.Add("Persönlichkeit, Äußeres etc.")
             GroupBox10.BackColor = Color.Yellow
         End If
 
-        If MonatsgehaltTextBox.Text = String.Empty Then
+        If txtMonatsgehalt.Text = String.Empty Then
             pflichtfeld.Add("Letztes Monatsgehalt")
-            MonatsgehaltTextBox.BackColor = Color.Yellow
+            txtMonatsgehalt.BackColor = Color.Yellow
         End If
 
-        If Gehaltswunsch_monatTextBox.Text = String.Empty Then
+        If txtGehaltswunsch_monat.Text = String.Empty Then
             pflichtfeld.Add("Monatswunschgehalt")
-            Gehaltswunsch_monatTextBox.BackColor = Color.Yellow
+            txtGehaltswunsch_monat.BackColor = Color.Yellow
         End If
 
-        If TaetigkeitenTextBox.Text = String.Empty Then
+        If txtTaetigkeiten.Text = String.Empty Then
             pflichtfeld.Add("Bisherige Tätigkeiten, berufliche Schwerpunkte, Zeugnistext")
-            TaetigkeitenTextBox.BackColor = Color.Yellow
+            txtTaetigkeiten.BackColor = Color.Yellow
         End If
 
         pflichtfeldliste = String.Join(vbCrLf, pflichtfeld)
@@ -362,41 +374,41 @@ Public Class frmInterviewer
     ' ========================================================================= Ende Pflichtfelder =========================================================================
 
     ' ========================================================================= Validierung ================================================================================
-    Private Sub AnredeComboBox_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles AnredeComboBox.Validating, BeurteilungComboBox.Validating, HaendedruckComboBox.Validating, ParfumComboBox.Validating, RaucherComboBox.Validating, VerfuegbarkeitComboBox.Validating, Za_vmTextBox.Validating, Vz_tzComboBox.Validating, ArbeitsortTextBox.Validating, FuehrerscheinTextBox.Validating, Pkw_oepnvTextBox.Validating, Tel_mobilTextBox.Validating, Tel_festnetzTextBox.Validating, AnredeComboBox.Validating, Englisch_interviewerComboBox.Validating, Französich_interviewerComboBox.Validating, Spanisch_interviewerComboBox.Validating, Italienisch_interviewerComboBox.Validating, Tuerkisch_interviewerComboBox.Validating, Russisch_interviewerComboBox.Validating, Niederlaendisch_interviewerComboBox.Validating, Deutsch_interviewerComboBox.Validating, KuendigungsfristComboBox.Validating, MdETextBox.Validating, Beendigungsgrund_detailsTextBox.Validating, WechselwunschTextBox.Validating, InterviewerComboBox.Validating, Gehaltswunsch_monatTextBox.Validating, TaetigkeitenTextBox.Validating, OrtsteilTextBox.Validating
+    Private Sub cmbAnrede_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmbAnrede.Validating, cmbBeurteilung.Validating, cmbHaendedruck.Validating, cmbParfum.Validating, cmbRaucher.Validating, VerfuegbarkeitComboBox.Validating, txtZa_vm.Validating, cmbVz_tz.Validating, txtArbeitsort.Validating, txtFuehrerschein.Validating, txtPkw_oepnv.Validating, txtTel_mobil.Validating, txtTel_festnetz.Validating, cmbAnrede.Validating, cmbEnglisch_interviewer.Validating, cmbFranzösich_interviewer.Validating, cmbSpanisch_interviewer.Validating, cmbItalienisch_interviewer.Validating, cmbTuerkisch_interviewer.Validating, cmbRussisch_interviewer.Validating, cmbNiederlaendisch_interviewer.Validating, cmbDeutsch_interviewer.Validating, KuendigungsfristComboBox.Validating, txtMdE.Validating, Beendigungsgrund_detailsTextBox.Validating, WechselwunschTextBox.Validating, cmbInterviewer.Validating, txtGehaltswunsch_monat.Validating, txtTaetigkeiten.Validating, txtOrtsteil.Validating
         Select Case True
 
-            Case sender Is AnredeComboBox
-                If AnredeComboBox.Text = String.Empty Then
+            Case sender Is cmbAnrede
+                If cmbAnrede.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Anrede fehlt")
                     ToolTip1.Show("Anrede fehlt", CType(sender, Control), 1500)
                 End If
-            Case sender Is Tel_festnetzTextBox
-                If Tel_festnetzTextBox.Text = String.Empty AndAlso Tel_mobilTextBox.Text = String.Empty Then
+            Case sender Is txtTel_festnetz
+                If txtTel_festnetz.Text = String.Empty AndAlso txtTel_mobil.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Entweder Festnetz oder Handy abfragen")
                     ToolTip1.Show("Entweder Festnetz oder Handy abfragen", CType(sender, Control), 1500)
                 End If
-            Case sender Is Tel_mobilTextBox
-                If Tel_festnetzTextBox.Text = String.Empty AndAlso Tel_mobilTextBox.Text = String.Empty Then
+            Case sender Is txtTel_mobil
+                If txtTel_festnetz.Text = String.Empty AndAlso txtTel_mobil.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Entweder Festnetz oder Handy abfragen")
                     ToolTip1.Show("Entweder Festnetz oder Handy abfragen", CType(sender, Control), 1500)
                 End If
-            Case sender Is BeurteilungComboBox
-                If BeurteilungComboBox.Text = String.Empty Then
+            Case sender Is cmbBeurteilung
+                If cmbBeurteilung.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Beurteilung fehlt")
                     ToolTip1.Show("Beurteilung fehlt", CType(sender, Control), 1500)
                 End If
-            Case sender Is HaendedruckComboBox
-                If HaendedruckComboBox.Text = String.Empty Then
+            Case sender Is cmbHaendedruck
+                If cmbHaendedruck.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Händedruck fehlt")
                     ToolTip1.Show("Händedruck fehlt", CType(sender, Control), 1500)
                 End If
-            Case sender Is ParfumComboBox
-                If ParfumComboBox.Text = String.Empty Then
+            Case sender Is cmbParfum
+                If cmbParfum.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Parfümeindruck fehlt")
                     ToolTip1.Show("Parfümeindruck fehlt", CType(sender, Control), 1500)
                 End If
-            Case sender Is RaucherComboBox
-                If RaucherComboBox.Text = String.Empty Then
+            Case sender Is cmbRaucher
+                If cmbRaucher.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Raucher?")
                     ToolTip1.Show("Raucher?", CType(sender, Control), 1500)
                 End If
@@ -406,80 +418,80 @@ Public Class frmInterviewer
                     ToolTip1.Show("Raucher?", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Za_vmTextBox
-                If Za_vmTextBox.Text = String.Empty Then
+            Case sender Is txtZa_vm
+                If txtZa_vm.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Vz_tzComboBox
-                If Vz_tzComboBox.Text = String.Empty Then
+            Case sender Is cmbVz_tz
+                If cmbVz_tz.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is ArbeitsortTextBox
-                If ArbeitsortTextBox.Text = String.Empty Then
+            Case sender Is txtArbeitsort
+                If txtArbeitsort.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is FuehrerscheinTextBox
-                If FuehrerscheinTextBox.Text = String.Empty Then
+            Case sender Is txtFuehrerschein
+                If txtFuehrerschein.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Pkw_oepnvTextBox
-                If Pkw_oepnvTextBox.Text = String.Empty Then
+            Case sender Is txtPkw_oepnv
+                If txtPkw_oepnv.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Englisch_interviewerComboBox
-                If Englisch_interviewerComboBox.Text = String.Empty Then
+            Case sender Is cmbEnglisch_interviewer
+                If cmbEnglisch_interviewer.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Französich_interviewerComboBox
-                If Französich_interviewerComboBox.Text = String.Empty Then
+            Case sender Is cmbFranzösich_interviewer
+                If cmbFranzösich_interviewer.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Spanisch_interviewerComboBox
-                If Spanisch_interviewerComboBox.Text = String.Empty Then
+            Case sender Is cmbSpanisch_interviewer
+                If cmbSpanisch_interviewer.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Italienisch_interviewerComboBox
-                If Italienisch_interviewerComboBox.Text = String.Empty Then
+            Case sender Is cmbItalienisch_interviewer
+                If cmbItalienisch_interviewer.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Tuerkisch_interviewerComboBox
-                If Tuerkisch_interviewerComboBox.Text = String.Empty Then
+            Case sender Is cmbTuerkisch_interviewer
+                If cmbTuerkisch_interviewer.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Russisch_interviewerComboBox
-                If Russisch_interviewerComboBox.Text = String.Empty Then
+            Case sender Is cmbRussisch_interviewer
+                If cmbRussisch_interviewer.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Niederlaendisch_interviewerComboBox
-                If Niederlaendisch_interviewerComboBox.Text = String.Empty Then
+            Case sender Is cmbNiederlaendisch_interviewer
+                If cmbNiederlaendisch_interviewer.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is Deutsch_interviewerComboBox
-                If Deutsch_interviewerComboBox.Text = String.Empty Then
+            Case sender Is cmbDeutsch_interviewer
+                If cmbDeutsch_interviewer.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
@@ -490,8 +502,8 @@ Public Class frmInterviewer
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is MdETextBox
-                If MdEComboBox.Text = CStr("Ja") AndAlso Not MdETextBox.ReadOnly AndAlso MdETextBox.Text = String.Empty Then
+            Case sender Is txtMdE
+                If cmbMdE.Text = CStr("Ja") AndAlso Not txtMdE.ReadOnly AndAlso txtMdE.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
@@ -514,53 +526,65 @@ Public Class frmInterviewer
                 'ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 'End If
 
-            Case sender Is InterviewerComboBox
-                If InterviewerComboBox.Text = String.Empty Then
+            Case sender Is cmbInterviewer
+                If cmbInterviewer.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
-            Case sender Is MonatsgehaltTextBox
-                If MonatsgehaltTextBox.Text = String.Empty Then
+            Case sender Is txtMonatsgehalt
+                If txtMonatsgehalt.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
-            Case sender Is Gehaltswunsch_monatTextBox
-                If Gehaltswunsch_monatTextBox.Text = String.Empty Then
-                    ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
-                    ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
-                End If
-
-            Case sender Is TaetigkeitenTextBox
-                If TaetigkeitenTextBox.Text = String.Empty Then
+            Case sender Is txtGehaltswunsch_monat
+                If txtGehaltswunsch_monat.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
 
-            Case sender Is OrtsteilTextBox
-                If TaetigkeitenTextBox.Text.Contains("Köln") Then
+            Case sender Is txtTaetigkeiten
+                If txtTaetigkeiten.Text = String.Empty Then
+                    ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
+                    ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
+                End If
+
+            Case sender Is txtOrtsteil
+                If txtTaetigkeiten.Text.Contains("Köln") Then
                     ErrorProvider1.SetError(CType(sender, Control), "Bitte den Ortsteil von Köln eintragen")
                     ToolTip1.Show("Bitte den Ortsteil von Köln eintragen", CType(sender, Control), 1500)
                 End If
         End Select
     End Sub
 
-    Private Sub Vz_tzComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Vz_tzComboBox.SelectedIndexChanged, AuslandsaufenthaltComboBox.SelectedIndexChanged, VerfuegbarkeitComboBox.SelectedIndexChanged, MdEComboBox.SelectedIndexChanged
+    Private Sub Berufsausbildung_check()
 
-        If Vz_tzComboBox.Text = String.Empty OrElse Vz_tzComboBox.Text = CStr("Vollzeit") Then
-            Teilzeit_stundenComboBox.Enabled = False
-            Teilzeit_wannComboBox.Enabled = False
+        If txtAusbildungsberuf.Text = String.Empty AndAlso txtAusbildung_qualifizierung.Text = String.Empty AndAlso txtStudium_abschluss.Text = String.Empty AndAlso txtStudienfaecher.Text = String.Empty Then
+            For Each txt As TextBox In Me.GroupBox5.Controls.OfType(Of TextBox)
+                txt.BackColor = Color.Yellow
+            Next
+
+            MessageBox.Show("Wenn die Felder ""Ausbildungsberufe"", ""Ausbildung Qualifizierung"", ""Studium Abschluss"" und ""Studienfächer"" leer sind, dann tragen Sie bitte im Feld ""Ausbildungsberufe"" ""Keine Ausbildung"" ein.", "Keine Ausbildung", MessageBoxButtons.OK, MessageBoxIcon.Hand)
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub Vz_tzComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbVz_tz.SelectedIndexChanged, cmbAuslandsaufenthalt.SelectedIndexChanged, VerfuegbarkeitComboBox.SelectedIndexChanged, cmbMdE.SelectedIndexChanged
+
+        If cmbVz_tz.Text = String.Empty OrElse cmbVz_tz.Text = CStr("Vollzeit") Then
+            cmbTeilzeit_stunden.Enabled = False
+            cmbTeilzeit_wann.Enabled = False
             '  ElseIf Vz_tzComboBox.Text = String.Empty Then
-        ElseIf Vz_tzComboBox.Text = CStr("Teilzeit") OrElse Vz_tzComboBox.Text = CStr("Vollzeit/Teilzeit") OrElse Vz_tzComboBox.Text = CStr("Teilzeit flexibel") Then
-            Teilzeit_stundenComboBox.Enabled = True
-            Teilzeit_wannComboBox.Enabled = True
+        ElseIf cmbVz_tz.Text = CStr("Teilzeit") OrElse cmbVz_tz.Text = CStr("Vollzeit/Teilzeit") OrElse cmbVz_tz.Text = CStr("Teilzeit flexibel") Then
+            cmbTeilzeit_stunden.Enabled = True
+            cmbTeilzeit_wann.Enabled = True
         End If
 
-        If AuslandsaufenthaltComboBox.Text = CStr("Ja") OrElse AuslandsaufenthaltComboBox.Text = CStr("Geplant") Then
-            Auslandsaufenthalt_dauerTextBox.ReadOnly = False
-            Auslandsaufenthalt_woTextBox.ReadOnly = False
+        If cmbAuslandsaufenthalt.Text = CStr("Ja") OrElse cmbAuslandsaufenthalt.Text = CStr("Geplant") Then
+            txtAuslandsaufenthalt_dauer.ReadOnly = False
+            txtAuslandsaufenthalt_wo.ReadOnly = False
         Else
-            Auslandsaufenthalt_dauerTextBox.ReadOnly = True
-            Auslandsaufenthalt_woTextBox.ReadOnly = True
+            txtAuslandsaufenthalt_dauer.ReadOnly = True
+            txtAuslandsaufenthalt_wo.ReadOnly = True
         End If
 
         If VerfuegbarkeitComboBox.Text = CStr("sofort") OrElse VerfuegbarkeitComboBox.Text = String.Empty Then
@@ -569,20 +593,20 @@ Public Class frmInterviewer
             KuendigungsfristComboBox.Enabled = True
         End If
 
-        If MdEComboBox.Text = CStr("Ja") Then
-            MdETextBox.ReadOnly = False
+        If cmbMdE.Text = CStr("Ja") Then
+            txtMdE.ReadOnly = False
         Else
-            MdETextBox.ReadOnly = True
+            txtMdE.ReadOnly = True
         End If
     End Sub
 
     Private Sub telefoneintrag()
-        If Tel_festnetzTextBox.Text = String.Empty Then
-            Tel_festnetzTextBox.Text = CStr("kein Eintrag")
+        If txtTel_festnetz.Text = String.Empty Then
+            txtTel_festnetz.Text = CStr("kein Eintrag")
         End If
 
-        If Tel_mobilTextBox.Text = String.Empty Then
-            Tel_mobilTextBox.Text = CStr("kein Eintrag")
+        If txtTel_mobil.Text = String.Empty Then
+            txtTel_mobil.Text = CStr("kein Eintrag")
         End If
     End Sub
     ' ========================================================================= Ende Validierung ========================================================================
@@ -642,7 +666,7 @@ Public Class frmInterviewer
         End Using
     End Sub
 
-    Private Sub SuchmaschineTextBox_DoubleClick(sender As Object, e As EventArgs) Handles Za_vmTextBox.DoubleClick, ArbeitsortTextBox.DoubleClick, FuehrerscheinTextBox.DoubleClick, Pkw_oepnvTextBox.DoubleClick, Studium_abschlussTextBox.DoubleClick, UlasTextBox.DoubleClick
+    Private Sub SuchmaschineTextBox_DoubleClick(sender As Object, e As EventArgs) Handles txtZa_vm.DoubleClick, txtArbeitsort.DoubleClick, txtFuehrerschein.DoubleClick, txtPkw_oepnv.DoubleClick, txtStudium_abschluss.DoubleClick, txtUlas.DoubleClick
         Select Case True
           '  Case sender Is SuchmaschineTextBox
             '     frmListboxen.suchmaschine_bool = True
@@ -660,33 +684,33 @@ Public Class frmInterviewer
             'frmListboxen.zeitung_bool = True
             '   Call listboxenaufrufen()
             'ZeitungTextBox.Text = CStr(frmListboxen.zeitung)
-            Case sender Is Za_vmTextBox
+            Case sender Is txtZa_vm
                 frmListboxen.zavm_bool = True
                 Call listboxenaufrufen()
-                Za_vmTextBox.Text = CStr(frmListboxen.zavm)
-            Case sender Is ArbeitsortTextBox
+                txtZa_vm.Text = CStr(frmListboxen.zavm)
+            Case sender Is txtArbeitsort
                 frmListboxen.arbeitsort_bool = True
                 Call listboxenaufrufen()
-                ArbeitsortTextBox.Text = CStr(frmListboxen.arbeitsort)
-            Case sender Is FuehrerscheinTextBox
+                txtArbeitsort.Text = CStr(frmListboxen.arbeitsort)
+            Case sender Is txtFuehrerschein
                 frmListboxen.fuehrerschein_bool = True
                 Call listboxenaufrufen()
-                FuehrerscheinTextBox.Text = CStr(frmListboxen.fueherschein)
-            Case sender Is Pkw_oepnvTextBox
+                txtFuehrerschein.Text = CStr(frmListboxen.fueherschein)
+            Case sender Is txtPkw_oepnv
                 frmListboxen.oepnv_bool = True
                 Call listboxenaufrufen()
-                Pkw_oepnvTextBox.Text = CStr(frmListboxen.oepnv)
-            Case sender Is Studium_abschlussTextBox
+                txtPkw_oepnv.Text = CStr(frmListboxen.oepnv)
+            Case sender Is txtStudium_abschluss
                 frmListboxen.studiumsabschluss_bool = True
                 Call listboxenaufrufen()
-                Studium_abschlussTextBox.Text = CStr(frmListboxen.studiumabschluss)
-            Case sender Is UlasTextBox
+                txtStudium_abschluss.Text = CStr(frmListboxen.studiumabschluss)
+            Case sender Is txtUlas
                 frmUlaseintragen.ulas_bool = True
                 Using frm = New frmUlaseintragen(Me)
                     Dim result = frm.ShowDialog(Me)
                 End Using
                 If frmUlaseintragen.ulas_wert <> String.Empty Then
-                    UlasTextBox.Text = CStr(frmUlaseintragen.ulas_wert)
+                    txtUlas.Text = CStr(frmUlaseintragen.ulas_wert)
                 End If
         End Select
     End Sub
@@ -725,68 +749,68 @@ Public Class frmInterviewer
     Private Sub sprachendaten()
         Dim fremdsprachen As New List(Of String)()
 
-        If Englisch_interviewerComboBox.SelectedIndex <> 0 Then
-            fremdsprachen.Add("E" & CInt(Me.Englisch_interviewerComboBox.SelectedIndex).ToString & vbCrLf)
+        If cmbEnglisch_interviewer.SelectedIndex <> 0 Then
+            fremdsprachen.Add("E" & CInt(Me.cmbEnglisch_interviewer.SelectedIndex).ToString & vbCrLf)
             'Else
             '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf EnglischTextBox.Text <> String.Empty AndAlso Me.Englisch_interviewerComboBox.SelectedIndex = 0 Then
-            fremdsprachen.Add("E" & CStr(Me.EnglischTextBox.Text.Substring(0, 1) & vbCrLf))
+        ElseIf txtEnglisch.Text <> String.Empty AndAlso Me.cmbEnglisch_interviewer.SelectedIndex = 0 Then
+            fremdsprachen.Add("E" & CStr(Me.txtEnglisch.Text.Substring(0, 1) & vbCrLf))
         End If
 
-        If Französich_interviewerComboBox.SelectedIndex <> 0 Then
-            fremdsprachen.Add("F" & CInt(Me.Französich_interviewerComboBox.SelectedIndex).ToString & vbCrLf)
+        If cmbFranzösich_interviewer.SelectedIndex <> 0 Then
+            fremdsprachen.Add("F" & CInt(Me.cmbFranzösich_interviewer.SelectedIndex).ToString & vbCrLf)
             'Else
             '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf FranzoesischTextBox.Text <> String.Empty AndAlso Französich_interviewerComboBox.SelectedIndex = 0 Then
-            fremdsprachen.Add("F" & CStr(Me.FranzoesischTextBox.Text.Substring(0, 1) & vbCrLf))
+        ElseIf txtFranzoesisch.Text <> String.Empty AndAlso cmbFranzösich_interviewer.SelectedIndex = 0 Then
+            fremdsprachen.Add("F" & CStr(Me.txtFranzoesisch.Text.Substring(0, 1) & vbCrLf))
         End If
 
-        If Spanisch_interviewerComboBox.SelectedIndex <> 0 Then
-            fremdsprachen.Add("S" & CInt(Me.Spanisch_interviewerComboBox.SelectedIndex).ToString & vbCrLf)
+        If cmbSpanisch_interviewer.SelectedIndex <> 0 Then
+            fremdsprachen.Add("S" & CInt(Me.cmbSpanisch_interviewer.SelectedIndex).ToString & vbCrLf)
             'Else
             '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf SpanischTextBox.Text <> String.Empty AndAlso Spanisch_interviewerComboBox.SelectedIndex = 0 Then
-            fremdsprachen.Add("S" & CStr(Me.SpanischTextBox.Text.Substring(0, 1) & vbCrLf))
+        ElseIf txtSpanisch.Text <> String.Empty AndAlso cmbSpanisch_interviewer.SelectedIndex = 0 Then
+            fremdsprachen.Add("S" & CStr(Me.txtSpanisch.Text.Substring(0, 1) & vbCrLf))
         End If
 
-        If Italienisch_interviewerComboBox.SelectedIndex <> 0 Then
-            fremdsprachen.Add("I" & CInt(Me.Italienisch_interviewerComboBox.SelectedIndex).ToString & vbCrLf)
+        If cmbItalienisch_interviewer.SelectedIndex <> 0 Then
+            fremdsprachen.Add("I" & CInt(Me.cmbItalienisch_interviewer.SelectedIndex).ToString & vbCrLf)
             'Else
             '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf ItalienischTextBox.Text <> String.Empty AndAlso Italienisch_interviewerComboBox.SelectedIndex = 0 Then
-            fremdsprachen.Add("I" & CStr(Me.ItalienischTextBox.Text.Substring(0, 1) & vbCrLf))
+        ElseIf txtItalienisch.Text <> String.Empty AndAlso cmbItalienisch_interviewer.SelectedIndex = 0 Then
+            fremdsprachen.Add("I" & CStr(Me.txtItalienisch.Text.Substring(0, 1) & vbCrLf))
         End If
 
-        If Tuerkisch_interviewerComboBox.SelectedIndex <> 0 Then
-            fremdsprachen.Add("T" & CInt(Me.Tuerkisch_interviewerComboBox.SelectedIndex).ToString & vbCrLf)
+        If cmbTuerkisch_interviewer.SelectedIndex <> 0 Then
+            fremdsprachen.Add("T" & CInt(Me.cmbTuerkisch_interviewer.SelectedIndex).ToString & vbCrLf)
             'Else
             '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf TuerkischTextBox.Text <> String.Empty AndAlso Tuerkisch_interviewerComboBox.SelectedIndex = 0 Then
-            fremdsprachen.Add("T" & CStr(Me.TuerkischTextBox.Text.Substring(0, 1) & vbCrLf))
+        ElseIf txtTuerkisch.Text <> String.Empty AndAlso cmbTuerkisch_interviewer.SelectedIndex = 0 Then
+            fremdsprachen.Add("T" & CStr(Me.txtTuerkisch.Text.Substring(0, 1) & vbCrLf))
         End If
 
-        If Russisch_interviewerComboBox.SelectedIndex <> 0 Then
-            fremdsprachen.Add("R" & CInt(Me.Russisch_interviewerComboBox.SelectedIndex).ToString & vbCrLf)
+        If cmbRussisch_interviewer.SelectedIndex <> 0 Then
+            fremdsprachen.Add("R" & CInt(Me.cmbRussisch_interviewer.SelectedIndex).ToString & vbCrLf)
             'Else
             '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf RussischTextBox.Text <> String.Empty AndAlso Russisch_interviewerComboBox.SelectedIndex = 0 Then
-            fremdsprachen.Add("R" & CStr(Me.RussischTextBox.Text.Substring(0, 1) & vbCrLf))
+        ElseIf txtRussisch.Text <> String.Empty AndAlso cmbRussisch_interviewer.SelectedIndex = 0 Then
+            fremdsprachen.Add("R" & CStr(Me.txtRussisch.Text.Substring(0, 1) & vbCrLf))
         End If
 
-        If Niederlaendisch_interviewerComboBox.SelectedIndex <> 0 Then
-            fremdsprachen.Add("N" & CInt(Me.Niederlaendisch_interviewerComboBox.SelectedIndex).ToString & vbCrLf)
+        If cmbNiederlaendisch_interviewer.SelectedIndex <> 0 Then
+            fremdsprachen.Add("N" & CInt(Me.cmbNiederlaendisch_interviewer.SelectedIndex).ToString & vbCrLf)
             'Else
             '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf NiederlaendischTextBox.Text <> String.Empty AndAlso Niederlaendisch_interviewerComboBox.SelectedIndex = 0 Then
-            fremdsprachen.Add("N" & CStr(Me.NiederlaendischTextBox.Text.Substring(0, 1) & vbCrLf))
+        ElseIf txtNiederlaendisch.Text <> String.Empty AndAlso cmbNiederlaendisch_interviewer.SelectedIndex = 0 Then
+            fremdsprachen.Add("N" & CStr(Me.txtNiederlaendisch.Text.Substring(0, 1) & vbCrLf))
         End If
 
-        If Deutsch_interviewerComboBox.SelectedIndex <> 0 Then
-            fremdsprachen.Add("D" & CInt(Me.Deutsch_interviewerComboBox.SelectedIndex).ToString & vbCrLf)
+        If cmbDeutsch_interviewer.SelectedIndex <> 0 Then
+            fremdsprachen.Add("D" & CInt(Me.cmbDeutsch_interviewer.SelectedIndex).ToString & vbCrLf)
             'Else
             '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf DeutschTextBox.Text <> String.Empty AndAlso Deutsch_interviewerComboBox.SelectedIndex = 0 Then
-            fremdsprachen.Add("D" & CStr(Me.DeutschTextBox.Text.Substring(0, 1) & vbCrLf))
+        ElseIf txtDeutsch.Text <> String.Empty AndAlso cmbDeutsch_interviewer.SelectedIndex = 0 Then
+            fremdsprachen.Add("D" & CStr(Me.txtDeutsch.Text.Substring(0, 1) & vbCrLf))
         End If
 
         sprachenliste = String.Join(String.Empty, fremdsprachen)

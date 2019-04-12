@@ -108,7 +108,7 @@ Module Module1
     End Function
 
     Public Sub Internetverbindung()
-        If Not Inet OrElse Not IsUrlValid("http://www.heyduck-personalservice.de", 1000) Then ' Die Function IsUrlValid steht in Module1
+        If Not Inet OrElse Not IsUrlValid("http://www.heyduck-personalservice.de", 2000) Then ' Die Function IsUrlValid steht in Module1
             MessageBox.Show("Es besteht keine Internetverbindung oder der Webserver ist nicht erreichbar", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
