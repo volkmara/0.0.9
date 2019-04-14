@@ -19,10 +19,16 @@ Public Class frmRundschreibenuebersicht
         Me.RundschreibenmonatTableAdapter.Fill(Me.BewerberDataSet.rundschreibenmonat)
         ' Me.BewBindingSource.Filter = "rundschreibenuebersichtjanein = 0"
         ' Me.RundschreibenBindingSource.Filter = "column9 <> 0"
-
     End Sub
 
-    Private Sub RGVRundschreibenMonat_ViewCellFormatting(sender As Object, e As Telerik.WinControls.UI.CellFormattingEventArgs) Handles RGVRundschreibenMonat.ViewCellFormatting, RGVBewerber.ViewCellFormatting
+    Private Sub frmRundschreibenuebersicht_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        'Call Bewerbersortieren()
+        'For i = 1 To 52
+        '    cmbKW.Items.Add(i)
+        'Next
+        Me.RundschreibenmonatBindingSource.Filter = "erledigt = 1"
+    End Sub
+    Private Sub RGVRundschreibenMonat_ViewCellFormatting(sender As Object, e As Telerik.WinControls.UI.CellFormattingEventArgs) Handles RGVRundschreibenMonat.ViewCellFormatting, RGVBewerber.ViewCellFormatting, RGVRundschreibenaktuell.ViewCellFormatting, RGVRundschreibenmonataktuell.ViewCellFormatting
         Dim newFont10 = New Font("Microsoft Sans Serif", 10.0, FontStyle.Bold)
 
         If TypeOf e.CellElement Is GridHeaderCellElement Then
@@ -45,26 +51,27 @@ Public Class frmRundschreibenuebersicht
     End Sub
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+
+        ' Werte in rundschreibenmonat.erledigt: 0 = noch nicht verwendet, 1 = enthält mindestens einen Bewerbereintrag, 2 = versandtes Rundschreiben
         If TabControl1.SelectedTab Is TabPage2 Then
-            'Me.BewBindingSource.Filter = "rundschreibenuebersichtjanein = 0"
+            ' Me.RundschreibenBindingSource1.Filter = "aktuell = 0"
+            Me.RundschreibenmonatBindingSource.Filter = "erledigt = 2"
+        ElseIf TabControl1.SelectedTab Is TabPage1 Then
+            ' Me.RundschreibenBindingSource.Filter = "aktuell = 1"
+            Me.RundschreibenmonatBindingSource.Filter = "erledigt = 1"
         End If
     End Sub
 
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs)
         Dim rundschreibenmonat = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
-        rundschreibenmonat.kw = CInt(cmbKW.SelectedItem)
+        'rundschreibenmonat.kw = CInt(cmbKW.SelectedItem)
         Me.Validate()
         Me.RundschreibenmonatBindingSource.EndEdit()
         Me.RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
     End Sub
 
-    Private Sub frmRundschreibenuebersicht_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        'Call Bewerbersortieren()
-        For i = 1 To 52
-            cmbKW.Items.Add(i)
-        Next
-    End Sub
+
     Private Sub Bewerbersortieren()
         ' Me.RGVBewerber.MasterTemplate.EnableSorting = True
         Dim descriptor As New SortDescriptor()
@@ -72,6 +79,4 @@ Public Class frmRundschreibenuebersicht
         descriptor.Direction = ListSortDirection.Ascending
         Me.RGVBewerber.MasterTemplate.SortDescriptors.Add(descriptor)
     End Sub
-
-
 End Class

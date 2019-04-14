@@ -1951,18 +1951,4 @@ Public Class frmMain
         frmListboxen.fibu_kontenrahmen = String.Empty
         frmListboxen.vztz = String.Empty
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Using frm = New frmRundschreiben(Me)
-            'frm.BewerberDataSet = Me.BewerberDataSet
-            'frm.BewTableAdapter = Me.BewTableAdapter
-            'frm.RundschreibenTableAdapter = Me.RundschreibenTableAdapter
-            'frm.BewBindingSource.DataSource = Me.BewBindingSource
-            'frm.RundschreibenBindingSource.DataSource = Me.RundschreibenBindingSource
-            'frm.BewBindingSource.Filter = "rundschreiben = 1"
-            Dim result = frm.ShowDialog(Me)
-        End Using
-        Me.BewBindingSource.RemoveFilter() ' muss wieder zurückgesetzt werden, wenn Fenster geschlossen wurde
-        frmMain.DBLoad()
-    End Sub
 End Class
