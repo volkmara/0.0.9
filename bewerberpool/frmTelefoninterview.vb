@@ -559,11 +559,6 @@ Public Class frmTelefoninterview
         For Each lbl In GroupBox11.Controls.OfType(Of Label)()
             lbl.ForeColor = Color.Black
         Next
-
-        For Each lbl In GroupBox12.Controls.OfType(Of Label)()
-            lbl.ForeColor = Color.Black
-        Next
-
     End Sub
     ' ========================================================================== Ende Labelformatierung ==================================================================
 

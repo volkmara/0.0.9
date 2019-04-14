@@ -47,7 +47,7 @@ Partial Class frmRundschreibendetail
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RundschreibenanmerkungenTextBox = New System.Windows.Forms.TextBox()
+        Me.txtRundschreibenanmerkungen = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.chkHomepage = New System.Windows.Forms.CheckBox()
         Me.StandTextBox = New System.Windows.Forms.TextBox()
@@ -292,7 +292,7 @@ Partial Class frmRundschreibendetail
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.RundschreibenanmerkungenTextBox)
+        Me.GroupBox2.Controls.Add(Me.txtRundschreibenanmerkungen)
         Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox2.Location = New System.Drawing.Point(3, 313)
         Me.GroupBox2.Name = "GroupBox2"
@@ -301,15 +301,14 @@ Partial Class frmRundschreibendetail
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Anmerkungen:"
         '
-        'RundschreibenanmerkungenTextBox
+        'txtRundschreibenanmerkungen
         '
-        Me.RundschreibenanmerkungenTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "rundschreibenanmerkungen", True))
-        Me.RundschreibenanmerkungenTextBox.Location = New System.Drawing.Point(6, 31)
-        Me.RundschreibenanmerkungenTextBox.Multiline = True
-        Me.RundschreibenanmerkungenTextBox.Name = "RundschreibenanmerkungenTextBox"
-        Me.RundschreibenanmerkungenTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.RundschreibenanmerkungenTextBox.Size = New System.Drawing.Size(474, 155)
-        Me.RundschreibenanmerkungenTextBox.TabIndex = 1
+        Me.txtRundschreibenanmerkungen.Location = New System.Drawing.Point(6, 31)
+        Me.txtRundschreibenanmerkungen.Multiline = True
+        Me.txtRundschreibenanmerkungen.Name = "txtRundschreibenanmerkungen"
+        Me.txtRundschreibenanmerkungen.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtRundschreibenanmerkungen.Size = New System.Drawing.Size(474, 155)
+        Me.txtRundschreibenanmerkungen.TabIndex = 1
         '
         'GroupBox1
         '
@@ -541,6 +540,6 @@ Partial Class frmRundschreibendetail
     Friend WithEvents StandTextBox As TextBox
     Friend WithEvents TableAdapterManager As BewerberDataSetTableAdapters.TableAdapterManager
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents RundschreibenanmerkungenTextBox As TextBox
+    Friend WithEvents txtRundschreibenanmerkungen As TextBox
     Friend WithEvents chkHomepage As CheckBox
 End Class

@@ -34,24 +34,32 @@ Public Class frmRundschreibendetail
         Next
         ListBox1.DataSource = liste
 
+        If frmMain.HeyduckDataSet.tt_news.Any(Function(x) x.tx_ttnewserweiterung_referenznummer = CStr(letzteid)) Then
+            chkHomepage.Checked = True
+        Else
+            chkHomepage.Checked = False
+        End If
+
+        Call Monateauslesen() ' Neue Monate eintragen
+
         ' Rundschreiben in Combobox eintragen; zuerst wird geprüft, ob die selektierte Bewerberid vorhanden ist, dann werden die bereits vorhandenen Bezeichnungen rauselektiert und von monatsliste subtrahiert, der Rest wird in cmbMonat eingetragen.
 
-        Dim monatsliste As String() = {"Februar 2019 (1)", "Februar 2019 (2)", "März 2019 (1)", "März 2019 (2)", "April 2019 (1)", "April 2019 (2)", "Mai 2019 (1)", "Mai 2019 (2)", "Juni 2019 (1)", "Juni 2019 (2)", "Juli 2019 (1)", "Juli 2019 (2)", "August 2019 (1)", "August 2019 (2)", "September 2019 (1)", "September 2019 (2)", "Oktober 2019 (1)", "Oktober 2019 (2)", "November 2019 (1)", "November 2019 (2)", "Dezember 2019 (1)", "Dezember 2019 (2)"}
+        'Dim monatsliste As String() = {"Februar 2019 (1)", "Februar 2019 (2)", "März 2019 (1)", "März 2019 (2)", "April 2019 (1)", "April 2019 (2)", "Mai 2019 (1)", "Mai 2019 (2)", "Juni 2019 (1)", "Juni 2019 (2)", "Juli 2019 (1)", "Juli 2019 (2)", "August 2019 (1)", "August 2019 (2)", "September 2019 (1)", "September 2019 (2)", "Oktober 2019 (1)", "Oktober 2019 (2)", "November 2019 (1)", "November 2019 (2)", "Dezember 2019 (1)", "Dezember 2019 (2)"}
 
-        '1. Wenn der ausgewählte Bewerber noch nie im RS war: Rundschreibenliste auslesen, bereits vergangene Monate und der Monat des letzten Rundschreibens werden rausselektiert
+        ''1. Wenn der ausgewählte Bewerber noch nie im RS war: Rundschreibenliste auslesen, bereits vergangene Monate und der Monat des letzten Rundschreibens werden rausselektiert
 
-        ' id der letzten Rundschreibens
-        Dim letztermonatausgelesen As Integer = BewerberDataSet.rundschreiben.Select(Function(x) x.idrundschreibenmonat).LastOrDefault - 1
+        '' id der letzten Rundschreibens
+        'Dim letztermonatausgelesen As Integer = BewerberDataSet.rundschreiben.Select(Function(x) x.idrundschreibenmonat).LastOrDefault - 1
 
-        ' Rundschreibenbezeichnungen
+        '' Rundschreibenbezeichnungen
 
-        Dim monateausgelesen = BewerberDataSet.rundschreiben.Where(Function(x) x.aktuell = 0 AndAlso x.idrundschreibenmonat <= letztermonatausgelesen).Select(Function(x) x.bezeichnung).ToList.Distinct
+        'Dim monateausgelesen = BewerberDataSet.rundschreiben.Where(Function(x) x.aktuell = 0 AndAlso x.idrundschreibenmonat <= letztermonatausgelesen).Select(Function(x) x.bezeichnung).ToList.Distinct
 
-            ' Das Array der Monate und die erstellte Monatsliste werden von einander subtrahiert
-            Dim result = monatsliste.Except(monateausgelesen)
-            For Each z In result
-                cmbMonat.Items.Add(z)
-            Next
+        '    ' Das Array der Monate und die erstellte Monatsliste werden von einander subtrahiert
+        '    Dim result = monatsliste.Except(monateausgelesen)
+        '    For Each z In result
+        '        cmbMonat.Items.Add(z)
+        '    Next
 
         'Else
 
@@ -70,13 +78,6 @@ Public Class frmRundschreibendetail
         '        cmbMonat.Items.Add(z)
         '    Next
         'End If
-
-        If frmMain.HeyduckDataSet.tt_news.Any(Function(x) x.tx_ttnewserweiterung_referenznummer = CStr(letzteid)) Then
-            chkHomepage.Checked = True
-        Else
-            chkHomepage.Checked = False
-        End If
-
     End Sub
 
     ' In der Tabelle Rundschreiben sind alle Bewerber bzw. deren Ids gespeichert, die a) bereits im Rundschreiben waren oder b) für das Rundschreiben vorgesehen sind. Bei Bewerbern, die bereits im Rundschreiben war, wird die Rundschreibenbezeichnung eingetragen und aktuell = 0, bei für das Rundschreiben vorgesehenen Bewerbern wird keine Rundschreibenbezeichnung eingetragen und aktuell = 1 gesetzt. 
@@ -92,7 +93,7 @@ Public Class frmRundschreibendetail
 
             Case sender Is btnNewandSave
 
-                ' Id des ausgewählten Monats ermitteln
+                ' Id des in der Combobox ausgewählten Monats ermitteln in der Tabelle "rundschreibenmonat" ermitteln
                 Dim monat As Integer = 0
                 Dim monatrundschreiben = BewerberDataSet.rundschreibenmonat.Where(Function(x) x.monat = cmbMonat.SelectedItem.ToString).Select(Function(x) x.idrundschreibenmonat)
 
@@ -100,7 +101,16 @@ Public Class frmRundschreibendetail
                     monat = x
                 Next
 
-                ' Es werden zuerst die Daten in der Tabelle rundschreiben eingetragen, die Rundschreibenbezeichnung jedoch nicht
+                ' Filter nach Monatsid auf Bindingsource der Tabelle "rundschreibenmonat" setzen, "1" eintragen, wenn ein Bewerber für einen Rundschreibenmonat eingetragen wird
+                RundschreibenmonatBindingSource.Filter = "idrundschreibenmonat = '" & monat & "'"
+                Dim rundschreibenmonat = DirectCast(DirectCast(RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
+                rundschreibenmonat.erledigt = 1
+
+                Me.Validate()
+                RundschreibenmonatBindingSource.EndEdit()
+                RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
+
+                ' Daten in Tabelle "rundschreiben" eingetragen
 
                 Dim rundschreiben = DirectCast(DirectCast(RundschreibenBindingSource.AddNew, DataRowView).Row, rundschreibenRow)
                 rundschreiben.bewid = CInt(letzteid)
@@ -109,22 +119,27 @@ Public Class frmRundschreibendetail
                 rundschreiben.bezeichnung = CStr(Me.cmbMonat.SelectedItem)
                 rundschreiben.idrundschreibenmonat = CInt(monat)
                 rundschreiben.homepage = CInt(0)
+                rundschreiben.anmerkungen = txtRundschreibenanmerkungen.Text
 
                 Me.Validate()
                 Me.RundschreibenBindingSource.EndEdit()
                 Me.RundschreibenTableAdapter.Update(Me.BewerberDataSet.rundschreiben)
 
-                'Es wird die Rundschreibenbezeichnung in Tabelle bew eingetragen
-                'Dim bewrundschreiben = DirectCast(DirectCast(BewBindingSource.Current, DataRowView).Row, bewRow)
-                'bewrundschreiben.rundschreibenjanein = CInt(1)
-                'bewrundschreiben.rundschreibenbezeichnung = CStr(cmbMonat.SelectedItem)
-                'bewrundschreiben.rundschreibenuebersichtjanein = CInt(1)
-
-                'Me.Validate()
-                'Me.BewBindingSource.EndEdit()
-                'Me.BewTableAdapter.Update(Me.BewerberDataSet.bew)
+                RundschreibenBindingSource.RemoveFilter()
                 Call gespeichert()
                 Me.Close()
         End Select
+    End Sub
+
+    Private Sub Monateauslesen() ' noch nicht versandte Rundschreibenmonate aus Tabelle "rundschreibenmonat" ermitteln
+
+        Dim monate = BewerberDataSet.rundschreibenmonat.Where(Function(x) x.erledigt = 1 OrElse x.erledigt = 0).Select(Function(x) x.monat).ToList.Distinct
+
+        Dim monatsliste As String = String.Empty
+
+        cmbMonat.Items.Clear()
+        For Each x In monate
+            cmbMonat.Items.Add(x)
+        Next
     End Sub
 End Class

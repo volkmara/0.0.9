@@ -88,6 +88,7 @@ Partial Class frmRundschreiben
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
         Me.RundschreibenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenTableAdapter()
+        Me.cmbRundschreibenbezeichnung = New System.Windows.Forms.ComboBox()
         AnredeLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
         NameLabel = New System.Windows.Forms.Label()
@@ -755,12 +756,21 @@ Partial Class frmRundschreiben
         '
         Me.RundschreibenTableAdapter.ClearBeforeFill = True
         '
+        'cmbRundschreibenbezeichnung
+        '
+        Me.cmbRundschreibenbezeichnung.FormattingEnabled = True
+        Me.cmbRundschreibenbezeichnung.Location = New System.Drawing.Point(841, 77)
+        Me.cmbRundschreibenbezeichnung.Name = "cmbRundschreibenbezeichnung"
+        Me.cmbRundschreibenbezeichnung.Size = New System.Drawing.Size(179, 21)
+        Me.cmbRundschreibenbezeichnung.TabIndex = 83
+        '
         'frmRundschreiben
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(1216, 987)
+        Me.ClientSize = New System.Drawing.Size(1217, 1002)
+        Me.Controls.Add(Me.cmbRundschreibenbezeichnung)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Tabellebtn)
         Me.Controls.Add(Me.btnClose)
@@ -836,4 +846,5 @@ Partial Class frmRundschreiben
     Friend WithEvents RundschreibenBindingSource As BindingSource
     Friend WithEvents RundschreibenTableAdapter As BewerberDataSetTableAdapters.rundschreibenTableAdapter
     Friend WithEvents chkHomepage As CheckBox
+    Friend WithEvents cmbRundschreibenbezeichnung As ComboBox
 End Class

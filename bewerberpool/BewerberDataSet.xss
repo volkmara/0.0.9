@@ -31,8 +31,8 @@
     <Shape ID="DesignTable:gewerblich" ZOrder="11" X="7047" Y="70" Height="324" Width="273" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:notizen" ZOrder="6" X="7693" Y="70" Height="286" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:ulas" ZOrder="7" X="7956" Y="55" Height="210" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:rundschreibenmonat" ZOrder="3" X="8596" Y="218" Height="134" Width="265" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:rundschreiben" ZOrder="5" X="8932" Y="55" Height="210" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:rundschreibenmonat" ZOrder="3" X="8596" Y="218" Height="153" Width="265" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:rundschreiben" ZOrder="5" X="8932" Y="55" Height="248" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:bew_bew_bewerberdaten" ZOrder="53" LineWidth="11">
@@ -355,15 +355,15 @@
       <RoutePoints>
         <Point>
           <X>8861</X>
-          <Y>273</Y>
+          <Y>311</Y>
         </Point>
         <Point>
           <X>8949</X>
-          <Y>273</Y>
+          <Y>311</Y>
         </Point>
         <Point>
           <X>8949</X>
-          <Y>265</Y>
+          <Y>303</Y>
         </Point>
       </RoutePoints>
     </Connector>

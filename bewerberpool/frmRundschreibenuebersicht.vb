@@ -17,7 +17,7 @@ Public Class frmRundschreibenuebersicht
         Me.RundschreibenTableAdapter.Fill(Me.BewerberDataSet.rundschreiben)
         Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
         Me.RundschreibenmonatTableAdapter.Fill(Me.BewerberDataSet.rundschreibenmonat)
-        Me.BewBindingSource.Filter = "rundschreibenuebersichtjanein = 0"
+        ' Me.BewBindingSource.Filter = "rundschreibenuebersichtjanein = 0"
         ' Me.RundschreibenBindingSource.Filter = "column9 <> 0"
 
     End Sub
@@ -44,6 +44,13 @@ Public Class frmRundschreibenuebersicht
         End If
     End Sub
 
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        If TabControl1.SelectedTab Is TabPage2 Then
+            'Me.BewBindingSource.Filter = "rundschreibenuebersichtjanein = 0"
+        End If
+    End Sub
+
+
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Dim rundschreibenmonat = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
         rundschreibenmonat.kw = CInt(cmbKW.SelectedItem)
@@ -65,4 +72,6 @@ Public Class frmRundschreibenuebersicht
         descriptor.Direction = ListSortDirection.Ascending
         Me.RGVBewerber.MasterTemplate.SortDescriptors.Add(descriptor)
     End Sub
+
+
 End Class

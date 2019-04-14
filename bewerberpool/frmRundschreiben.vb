@@ -29,7 +29,8 @@ Public Class frmRundschreiben
         Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
         Me.RundschreibenTableAdapter.Fill(Me.BewerberDataSet.rundschreiben)
 
-        BewBindingSource.Filter = "rundschreibenjanein = 1"
+        'BewBindingSource.Filter = "rundschreibenjanein = 1"
+        RundschreibenBindingSource.Filter = "aktuell = 1"
 
         Call Internetverbindung()
         If Inet Then
@@ -53,6 +54,7 @@ Public Class frmRundschreiben
 
         Me.RundschreibenGridView.MasterTemplate.ShowFilterCellOperatorText = False
 
+        Call Monateauslesen()
         Call rundschreibencheck()
         Call voreintraege()
     End Sub
@@ -301,4 +303,16 @@ Public Class frmRundschreiben
         End Using
     End Sub
 
+    Private Sub Monateauslesen()
+        Dim rundschreiben = BewerberDataSet.rundschreiben.Where(Function(x) x.aktuell = 1).Select(Function(x) x.bezeichnung).OrderByDescending(Function(x) x).Reverse.ToList.Distinct
+
+        For Each x In rundschreiben
+            cmbRundschreibenbezeichnung.Items.Add(x)
+        Next
+    End Sub
+
+    Private Sub cmbRundschreibenbezeichnung_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRundschreibenbezeichnung.SelectedIndexChanged
+        ' BewBindingSource.Filter = "rundschreibenjanein = '1' AND rundschreibenbezeichnung = '" & cmbRundschreibenbezeichnung.Text & "'"
+        RundschreibenBindingSource.Filter = "aktuell = '1' AND bezeichnung = '" & cmbRundschreibenbezeichnung.Text & "'"
+    End Sub
 End Class

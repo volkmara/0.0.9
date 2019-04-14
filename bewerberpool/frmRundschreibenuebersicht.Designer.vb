@@ -60,6 +60,9 @@ Partial Class frmRundschreibenuebersicht
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmbKW = New System.Windows.Forms.ComboBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +78,8 @@ Partial Class frmRundschreibenuebersicht
         CType(Me.RGVBewerber.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'BewBindingSource
@@ -92,7 +97,7 @@ Partial Class frmRundschreibenuebersicht
         Me.Label1.BackColor = System.Drawing.Color.Yellow
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Crimson
-        Me.Label1.Location = New System.Drawing.Point(13, 13)
+        Me.Label1.Location = New System.Drawing.Point(5, 818)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(455, 71)
         Me.Label1.TabIndex = 0
@@ -160,7 +165,7 @@ Partial Class frmRundschreibenuebersicht
         'SplitContainer1
         '
         Me.SplitContainer1.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.SplitContainer1.Location = New System.Drawing.Point(12, 101)
+        Me.SplitContainer1.Location = New System.Drawing.Point(6, 6)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -414,7 +419,7 @@ Partial Class frmRundschreibenuebersicht
         Me.GroupBox1.Controls.Add(Me.btnSave)
         Me.GroupBox1.Controls.Add(Me.cmbKW)
         Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox1.Location = New System.Drawing.Point(516, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(508, 817)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(489, 72)
         Me.GroupBox1.TabIndex = 17
@@ -438,13 +443,46 @@ Partial Class frmRundschreibenuebersicht
         Me.cmbKW.Size = New System.Drawing.Size(121, 24)
         Me.cmbKW.TabIndex = 0
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(9, 13)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(1321, 777)
+        Me.TabControl1.TabIndex = 18
+        '
+        'TabPage1
+        '
+        Me.TabPage1.AutoScroll = True
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1313, 748)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Rundschreiben in Vorbereitung"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.SplitContainer1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1313, 748)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Rundschreibenübersicht"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
         'frmRundschreibenuebersicht
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(1318, 550)
-        Me.Controls.Add(Me.SplitContainer1)
+        Me.ClientSize = New System.Drawing.Size(1337, 898)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -467,6 +505,8 @@ Partial Class frmRundschreibenuebersicht
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -488,4 +528,7 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents cmbKW As ComboBox
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
 End Class
