@@ -512,7 +512,7 @@ Public Class frmMain
 
 #Region "=============================================================================Buttons===================================================================================="
     ' Button Speichern, Neu anlegen, Daten laden, Drucken, neue anmerkung
-    Private Sub SpeichernRadMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernRadMenuItem.Click, SpeichernNeuladenRadMenuItem.Click, BewerberneuRadButton.Click, DatenladenRadMenuItem2.Click, DatenladenfilterRadMenuItem2.Click, FilterzurückRadButton.Click, DruckenRadMenuItem2.Click, DruckenRadMenuItem3.Click, DruckenRadMenuItem4.Click, NeueAnmerkungRadButton.Click, Interviewerbogen.Click, Kurzfragebogen.Click, TelefoninterviewRadMenuItem.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, btnBearbeitungspeichern.Click, Top10auswaehlen.Click, Top10ExceloeffnenRadMenuItem.Click, Top10anzeigen.Click, btnDatenBewerbertooleinlesen.Click, Rundschreibenuebersicht.Click
+    Private Sub SpeichernRadMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernRadMenuItem.Click, SpeichernNeuladenRadMenuItem.Click, BewerberneuRadButton.Click, DatenladenRadMenuItem2.Click, DatenladenfilterRadMenuItem2.Click, FilterzurückRadButton.Click, DruckenRadMenuItem2.Click, DruckenRadMenuItem3.Click, DruckenRadMenuItem4.Click, NeueAnmerkungRadButton.Click, Interviewerbogen.Click, Kurzfragebogen.Click, TelefoninterviewRadMenuItem.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, btnBearbeitungspeichern.Click, Top10auswaehlen.Click, Top10anzeigen.Click, btnDatenBewerbertooleinlesen.Click
         Select Case True
             Case sender Is SpeichernRadMenuItem
                 Call DBSpeichern()
@@ -631,31 +631,11 @@ Public Class frmMain
                 End If
 
             Case sender Is Top10anzeigen
+
+                Using frm = New frmRundschreibenuebersicht(Me)
+                    frm.ShowDialog(Me)
+                End Using
                 frmMain.DBLoad()
-
-                If Not BewerberDataSet.bew.Any(Function(x) x.rundschreibenjanein = CInt(1)) Then
-                    MessageBox.Show("Es wurden bisher keine Bewerber/innen für das nächste Rundschreiben ausgewählt worden.", "Keine Bewerber/innen ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Hand)
-                    Exit Sub
-                ElseIf BewerberDataSet.bew.Any(Function(x) x.rundschreibenjanein = CInt(1)) Then
-                    Using frm = New frmRundschreiben(Me)
-                        'frm.BewerberDataSet = Me.BewerberDataSet
-                        'frm.BewTableAdapter = Me.BewTableAdapter
-                        'frm.RundschreibenTableAdapter = Me.RundschreibenTableAdapter
-                        'frm.BewBindingSource.DataSource = Me.BewBindingSource
-                        'frm.RundschreibenBindingSource.DataSource = Me.RundschreibenBindingSource
-                        'frm.BewBindingSource.Filter = "rundschreiben = 1"
-                        Dim result = frm.ShowDialog(Me)
-                    End Using
-                    Me.BewBindingSource.RemoveFilter() ' muss wieder zurückgesetzt werden, wenn Fenster geschlossen wurde
-                    frmMain.DBLoad()
-                End If
-
-            Case sender Is Top10ExceloeffnenRadMenuItem
-                If connectionString.Contains("127.0.0.1") Then
-                    System.Diagnostics.Process.Start("E:\testxls.xls")
-                Else
-                    System.Diagnostics.Process.Start("X:\Formulare\Rundschreiben Top Ten mtl neu.xls")
-                End If
 
             Case sender Is btnDatenBewerbertooleinlesen ' xmldaten aus Bewerbertool einlesen
                 frmXmleinlesen.xmleinlesen_bool = False
@@ -674,12 +654,6 @@ Public Class frmMain
                         Call frmXmleinlesen.Backupeinspielen()
                     End If
                 End If
-            Case sender Is Rundschreibenuebersicht
-                'Using frm = New frmRundschreibenuebersicht(Me)
-                'Dim result = frm.ShowDialog(Me)
-                'End Using
-                Dim frm As New frmRundschreibenuebersicht(Me)
-                frm.Show()
         End Select
     End Sub
 

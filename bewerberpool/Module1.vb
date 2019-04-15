@@ -59,8 +59,6 @@ Module Module1
         End Using
     End Sub
 
-
-
     Public Sub gespeichert()
         MessageBox.Show("Daten erfolgreich gespeichert", "Daten erfolgreich gespeichert", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub

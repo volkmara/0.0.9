@@ -270,12 +270,6 @@
     <Compile Include="frmPersönlichkeitbearbeiten.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRundschreiben.Designer.vb">
-      <DependentUpon>frmRundschreiben.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmRundschreiben.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmRundschreibendetail.Designer.vb">
       <DependentUpon>frmRundschreibendetail.vb</DependentUpon>
     </Compile>
@@ -384,9 +378,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersönlichkeitbearbeiten.resx">
       <DependentUpon>frmPersönlichkeitbearbeiten.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRundschreiben.resx">
-      <DependentUpon>frmRundschreiben.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRundschreibendetail.resx">
       <DependentUpon>frmRundschreibendetail.vb</DependentUpon>

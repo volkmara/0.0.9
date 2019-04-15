@@ -1587,12 +1587,6 @@ Partial Class frmMain
         Me.Top10auswaehlen = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.Top10anzeigen = New Telerik.WinControls.UI.RadMenuItem()
-        Me.RadMenuSeparatorItem3 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
-        Me.Top10loeschenRadMenuItem = New Telerik.WinControls.UI.RadMenuItem()
-        Me.RadMenuSeparatorItem2 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
-        Me.Top10ExceloeffnenRadMenuItem = New Telerik.WinControls.UI.RadMenuItem()
-        Me.RadMenuSeparatorItem4 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
-        Me.Rundschreibenuebersicht = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         Me.btnDatenBewerbertooleinlesen = New Telerik.WinControls.UI.RadButton()
         Me.RundschreibenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -17967,7 +17961,7 @@ Partial Class frmMain
         Me.btnRundschreiben.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.btnRundschreiben.ForeColor = System.Drawing.Color.Red
         Me.btnRundschreiben.Image = CType(resources.GetObject("btnRundschreiben.Image"), System.Drawing.Image)
-        Me.btnRundschreiben.Items.AddRange(New Telerik.WinControls.RadItem() {Me.Top10auswaehlen, Me.RadMenuSeparatorItem1, Me.Top10anzeigen, Me.RadMenuSeparatorItem3, Me.Top10loeschenRadMenuItem, Me.RadMenuSeparatorItem2, Me.Top10ExceloeffnenRadMenuItem, Me.RadMenuSeparatorItem4, Me.Rundschreibenuebersicht})
+        Me.btnRundschreiben.Items.AddRange(New Telerik.WinControls.RadItem() {Me.Top10auswaehlen, Me.RadMenuSeparatorItem1, Me.Top10anzeigen})
         Me.btnRundschreiben.Location = New System.Drawing.Point(686, 28)
         Me.btnRundschreiben.Name = "btnRundschreiben"
         Me.btnRundschreiben.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
@@ -18006,47 +18000,7 @@ Partial Class frmMain
         'Top10anzeigen
         '
         Me.Top10anzeigen.Name = "Top10anzeigen"
-        Me.Top10anzeigen.Text = "    Top10-Bewerber anzeigen"
-        '
-        'RadMenuSeparatorItem3
-        '
-        Me.RadMenuSeparatorItem3.Name = "RadMenuSeparatorItem3"
-        Me.RadMenuSeparatorItem3.Text = "RadMenuSeparatorItem3"
-        Me.RadMenuSeparatorItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Top10loeschenRadMenuItem
-        '
-        Me.Top10loeschenRadMenuItem.DescriptionFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Top10loeschenRadMenuItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Top10loeschenRadMenuItem.Image = Nothing
-        Me.Top10loeschenRadMenuItem.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Top10loeschenRadMenuItem.Name = "Top10loeschenRadMenuItem"
-        Me.Top10loeschenRadMenuItem.Text = "    Auswahl für Rundschreiben löschen"
-        Me.Top10loeschenRadMenuItem.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.Top10loeschenRadMenuItem.UseCompatibleTextRendering = False
-        '
-        'RadMenuSeparatorItem2
-        '
-        Me.RadMenuSeparatorItem2.Name = "RadMenuSeparatorItem2"
-        Me.RadMenuSeparatorItem2.Text = "RadMenuSeparatorItem2"
-        Me.RadMenuSeparatorItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Top10ExceloeffnenRadMenuItem
-        '
-        Me.Top10ExceloeffnenRadMenuItem.Name = "Top10ExceloeffnenRadMenuItem"
-        Me.Top10ExceloeffnenRadMenuItem.Text = "    Excel-Datei öffnen"
-        '
-        'RadMenuSeparatorItem4
-        '
-        Me.RadMenuSeparatorItem4.Name = "RadMenuSeparatorItem4"
-        Me.RadMenuSeparatorItem4.Text = "RadMenuSeparatorItem4"
-        Me.RadMenuSeparatorItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Rundschreibenuebersicht
-        '
-        Me.Rundschreibenuebersicht.Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Rundschreibenuebersicht.Name = "Rundschreibenuebersicht"
-        Me.Rundschreibenuebersicht.Text = "    Rundschreibenübersicht anzeigen"
+        Me.Top10anzeigen.Text = "    Top10-Bewerber anzeigen/Rundschreibenübersicht"
         '
         'RadMenu1
         '
@@ -19531,16 +19485,10 @@ Partial Class frmMain
     Friend WithEvents BewGridView1 As Telerik.WinControls.UI.RadGridView
     Friend WithEvents btnRundschreiben As Telerik.WinControls.UI.RadDropDownButton
     Friend WithEvents Top10auswaehlen As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents Top10loeschenRadMenuItem As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents RadMenuSeparatorItem2 As Telerik.WinControls.UI.RadMenuSeparatorItem
-    Friend WithEvents Top10ExceloeffnenRadMenuItem As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
     Friend WithEvents RadMenuSeparatorItem1 As Telerik.WinControls.UI.RadMenuSeparatorItem
     Friend WithEvents Top10anzeigen As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents RadMenuSeparatorItem3 As Telerik.WinControls.UI.RadMenuSeparatorItem
     Friend WithEvents btnDatenBewerbertooleinlesen As Telerik.WinControls.UI.RadButton
-    Friend WithEvents RadMenuSeparatorItem4 As Telerik.WinControls.UI.RadMenuSeparatorItem
-    Friend WithEvents Rundschreibenuebersicht As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RundschreibenBindingSource As BindingSource
     Friend WithEvents RundschreibenTableAdapter As BewerberDataSetTableAdapters.rundschreibenTableAdapter
     Friend WithEvents AufmerksamTextBox As TextBox
