@@ -50,8 +50,10 @@ Public Class frmRundschreibenuebersicht
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
 
         ' Werte in rundschreibenmonat.erledigt: 0 = noch nicht verwendet, 1 = enthält mindestens einen Bewerbereintrag, 2 = versandtes Rundschreiben
+        ' werte in rundschreiben.gelöscht: 0 = nicht manuell gelöscht, 1 = manuell gelöscht
         If TabControl1.SelectedTab Is TabPage2 Then
-            Me.RundschreibenBindingSource1.Filter = "aktuell = 0 AND gelöscht = 1"
+            Me.RundschreibenBindingSource1.Filter = "aktuell = 0 AND gelöscht = 0"
+            'Me.RundschreibenBindingSource1.Filter = "aktuell = 0"
             Me.RundschreibenmonatBindingSource.Filter = "erledigt = 2"
         ElseIf TabControl1.SelectedTab Is TabPage1 Then
             Me.RundschreibenBindingSource1.Filter = "aktuell = 1"
@@ -108,8 +110,10 @@ Public Class frmRundschreibenuebersicht
                 Dim rundschreiben = DirectCast(DirectCast(RundschreibenBindingSource1.Current, DataRowView).Row, rundschreibenRow)
                 If rbtnNein.Checked Then
                     rundschreiben.aktuell = CInt(0)
+                    rundschreiben.gelöscht = CInt(1)
                 ElseIf rbtnJa.Checked Then
                     rundschreiben.aktuell = CInt(1)
+                    rundschreiben.gelöscht = CInt(0)
                 End If
 
                 Me.Validate()
@@ -124,7 +128,6 @@ Public Class frmRundschreibenuebersicht
                 Dim rs = BewerberDataSet.rundschreiben.Where(Function(x) x.aktuell = 1)
                 For Each x In rs
                     x.aktuell = CInt(0)
-                    x.gelöscht = CInt(1)
                 Next
 
                 Me.Validate()

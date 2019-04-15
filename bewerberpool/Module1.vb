@@ -6,7 +6,7 @@ Module Module1
     Public oaconnectionString As String = "Server=127.0.0.1; uid=root; pwd=heyduck1!; database=oa;"
     Public benutzerverwaltungConnectionString As String = "Server=127.0.0.1;user id=root;password=heyduck1!;persistsecurityinfo=True;database=benutzerverwaltung;"
     Public heyduckConnectionString As String = "server=heyduck-personalservice.de;user id=heyduck;password=heyduck1!;persistsecurityinfo=True;database=heyduck;"
-    ' Public connectionString As String = "Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;database=bewerberneu;"
+    'Public connectionString As String = "Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;database=bewerberneu;"
     'Public oaconnectionString As String = "Server=SERVER2012; user id=Adler; password=zgA7K$z!; database=oa;"
     'Public benutzerverwaltungConnectionString As String = "Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;persistsecurityinfo=True;database=benutzerverwaltung;"
 
