@@ -800,9 +800,13 @@ Public Class frmMain
                     System.Diagnostics.Process.Start(UlasbearbeitetListBox.SelectedItem.ToString)
                 End If
             Case sender Is RTEBewerberbeschreibung
-                Using frm = New frmPersönlichkeitbearbeiten(Me)
-                    Dim result = frm.ShowDialog(Me)
-                End Using
+                If BewGridView1.SelectedRows.Count = 0 Then
+                    MessageBox.Show("Sie haben keine(n) Bewerber/in in der Tabelle angeklickt. Eintrag kann nicht bearbeitet werden.", "Keine Bewerberauswahl", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                Else
+                    Using frm = New frmPersönlichkeitbearbeiten(Me)
+                        Dim result = frm.ShowDialog(Me)
+                    End Using
+                End If
             Case sender Is txtFuerstelle
                 frmOA.vorschlagenfuerstelle_bool = True
                 Using frm = New frmOA(Me)
@@ -1924,5 +1928,9 @@ Public Class frmMain
         frmListboxen.lug_buchhaltung_software = String.Empty
         frmListboxen.fibu_kontenrahmen = String.Empty
         frmListboxen.vztz = String.Empty
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MsgBox(BewGridView1.SelectedRows.Count)
     End Sub
 End Class

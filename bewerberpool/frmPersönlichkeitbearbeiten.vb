@@ -49,6 +49,7 @@ Public Class frmPersönlichkeitbearbeiten
 
     Private Sub bewerberbeschreibungladen() ' Lädt Bewerberbeschreibung und prüft, ob RTF oder nicht
 
+
         Dim bewgrid = DirectCast(DirectCast(frmMain.BewBindingSource.Current, DataRowView).Row, bewRow)
 
         ' Dim bewerberbeschreibung As String = String.Empty
