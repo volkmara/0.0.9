@@ -28,54 +28,58 @@ Partial Class frmRundschreibenuebersicht
         Dim Label1 As System.Windows.Forms.Label
         Dim Label5 As System.Windows.Forms.Label
         Dim RundschreibenLabel As System.Windows.Forms.Label
-        Dim GridViewDecimalColumn16 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn17 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim GridViewDecimalColumn18 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewDecimalColumn19 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewComboBoxColumn19 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewDecimalColumn20 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewDecimalColumn21 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewComboBoxColumn20 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn21 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn22 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn23 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn24 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn25 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn26 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn27 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim TableViewDefinition6 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim GridViewDecimalColumn22 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn23 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim TableViewDefinition7 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim GridViewDecimalColumn24 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewDecimalColumn25 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewComboBoxColumn28 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewDecimalColumn26 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewDecimalColumn27 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewDecimalColumn28 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewComboBoxColumn29 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn30 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn31 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn32 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn33 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn34 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn35 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewComboBoxColumn36 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
-        Dim GridViewDecimalColumn29 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn30 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim TableViewDefinition8 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewDecimalColumn31 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn32 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim TableViewDefinition9 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewDecimalColumn33 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn34 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewComboBoxColumn37 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewDecimalColumn35 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn36 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewComboBoxColumn38 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn39 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn40 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn41 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn42 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn43 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn44 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn45 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition10 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewDecimalColumn37 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn38 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim TableViewDefinition11 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewDecimalColumn39 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn40 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewComboBoxColumn46 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewDecimalColumn41 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn42 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn43 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewComboBoxColumn47 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn48 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn49 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn50 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn51 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn52 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn53 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn54 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewDecimalColumn44 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn45 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim TableViewDefinition12 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRundschreibenuebersicht))
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.RundschreibenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.RGVRundschreibenMonat = New Telerik.WinControls.UI.RadGridView()
+        Me.RundschreibenmonatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RGVBewerber = New Telerik.WinControls.UI.RadGridView()
         Me.RundschreibenBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -102,18 +106,24 @@ Partial Class frmRundschreibenuebersicht
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.BewBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.RundschreibenmonatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
-        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
         Me.RundschreibenmonatTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenmonatTableAdapter()
         Me.RundschreibenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenTableAdapter()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblAktuellesDatum = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblKW = New System.Windows.Forms.Label()
+        Me.btnKWspeichern = New Telerik.WinControls.UI.RadButton()
         AnmerkungenLabel = New System.Windows.Forms.Label()
         RundschreibenreihenfolgeLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
         Label5 = New System.Windows.Forms.Label()
         RundschreibenLabel = New System.Windows.Forms.Label()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -121,6 +131,7 @@ Partial Class frmRundschreibenuebersicht
         Me.SplitContainer1.SuspendLayout()
         CType(Me.RGVRundschreibenMonat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RGVRundschreibenMonat.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RundschreibenmonatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RGVBewerber, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RGVBewerber.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RundschreibenBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,9 +152,8 @@ Partial Class frmRundschreibenuebersicht
         CType(Me.btnSave_Rundschreiben, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.BewBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RundschreibenmonatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        CType(Me.btnKWspeichern, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AnmerkungenLabel
@@ -180,7 +190,7 @@ Partial Class frmRundschreibenuebersicht
         '
         Label5.AutoSize = True
         Label5.ForeColor = System.Drawing.Color.Crimson
-        Label5.Location = New System.Drawing.Point(676, 15)
+        Label5.Location = New System.Drawing.Point(713, 17)
         Label5.Name = "Label5"
         Label5.Size = New System.Drawing.Size(117, 16)
         Label5.TabIndex = 98
@@ -190,11 +200,21 @@ Partial Class frmRundschreibenuebersicht
         '
         RundschreibenLabel.AutoSize = True
         RundschreibenLabel.ForeColor = System.Drawing.Color.Crimson
-        RundschreibenLabel.Location = New System.Drawing.Point(285, 15)
+        RundschreibenLabel.Location = New System.Drawing.Point(322, 17)
         RundschreibenLabel.Name = "RundschreibenLabel"
         RundschreibenLabel.Size = New System.Drawing.Size(138, 32)
         RundschreibenLabel.TabIndex = 95
         RundschreibenLabel.Text = "Für Rundschreiben" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ausgewählt:"
+        '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewerberDataSet
+        '
+        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
+        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'RundschreibenBindingSource
         '
@@ -204,7 +224,7 @@ Partial Class frmRundschreibenuebersicht
         'SplitContainer1
         '
         Me.SplitContainer1.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.SplitContainer1.Location = New System.Drawing.Point(6, 6)
+        Me.SplitContainer1.Location = New System.Drawing.Point(6, 154)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -214,8 +234,8 @@ Partial Class frmRundschreibenuebersicht
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.RGVBewerber)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1301, 438)
-        Me.SplitContainer1.SplitterDistance = 280
+        Me.SplitContainer1.Size = New System.Drawing.Size(1503, 684)
+        Me.SplitContainer1.SplitterDistance = 323
         Me.SplitContainer1.TabIndex = 3
         '
         'RGVRundschreibenMonat
@@ -224,7 +244,7 @@ Partial Class frmRundschreibenuebersicht
         Me.RGVRundschreibenMonat.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.RGVRundschreibenMonat.Cursor = System.Windows.Forms.Cursors.Default
         Me.RGVRundschreibenMonat.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RGVRundschreibenMonat.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RGVRundschreibenMonat.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.RGVRundschreibenMonat.ForeColor = System.Drawing.SystemColors.ControlText
         Me.RGVRundschreibenMonat.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.RGVRundschreibenMonat.Location = New System.Drawing.Point(0, 0)
@@ -234,43 +254,50 @@ Partial Class frmRundschreibenuebersicht
         Me.RGVRundschreibenMonat.MasterTemplate.AllowAddNewRow = False
         Me.RGVRundschreibenMonat.MasterTemplate.AllowColumnReorder = False
         Me.RGVRundschreibenMonat.MasterTemplate.AllowDragToGroup = False
-        GridViewDecimalColumn16.DataType = GetType(Integer)
-        GridViewDecimalColumn16.EnableExpressionEditor = False
-        GridViewDecimalColumn16.FieldName = "idrundschreibenmonat"
-        GridViewDecimalColumn16.HeaderText = "idrundschreibenmonat"
-        GridViewDecimalColumn16.IsAutoGenerated = True
-        GridViewDecimalColumn16.IsVisible = False
-        GridViewDecimalColumn16.Name = "idrundschreibenmonat"
-        GridViewTextBoxColumn8.AllowGroup = False
-        GridViewTextBoxColumn8.EnableExpressionEditor = False
-        GridViewTextBoxColumn8.FieldName = "monat"
-        GridViewTextBoxColumn8.HeaderText = "Rundschreiben"
-        GridViewTextBoxColumn8.IsAutoGenerated = True
-        GridViewTextBoxColumn8.Name = "monat"
-        GridViewTextBoxColumn8.VisibleInColumnChooser = False
-        GridViewTextBoxColumn8.Width = 180
-        GridViewTextBoxColumn9.AllowGroup = False
-        GridViewTextBoxColumn9.DataType = GetType(Integer)
-        GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "kw"
-        GridViewTextBoxColumn9.HeaderText = "KW"
-        GridViewTextBoxColumn9.IsAutoGenerated = True
-        GridViewTextBoxColumn9.Name = "kw"
-        GridViewTextBoxColumn9.VisibleInColumnChooser = False
-        GridViewDecimalColumn17.DataType = GetType(Integer)
-        GridViewDecimalColumn17.FieldName = "erledigt"
-        GridViewDecimalColumn17.HeaderText = "erledigt"
-        GridViewDecimalColumn17.IsAutoGenerated = True
-        GridViewDecimalColumn17.Name = "erledigt"
-        Me.RGVRundschreibenMonat.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn16, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewDecimalColumn17})
+        GridViewDecimalColumn31.DataType = GetType(Integer)
+        GridViewDecimalColumn31.EnableExpressionEditor = False
+        GridViewDecimalColumn31.FieldName = "idrundschreibenmonat"
+        GridViewDecimalColumn31.HeaderText = "idrundschreibenmonat"
+        GridViewDecimalColumn31.IsAutoGenerated = True
+        GridViewDecimalColumn31.IsVisible = False
+        GridViewDecimalColumn31.Name = "idrundschreibenmonat"
+        GridViewTextBoxColumn17.AllowGroup = False
+        GridViewTextBoxColumn17.EnableExpressionEditor = False
+        GridViewTextBoxColumn17.FieldName = "monat"
+        GridViewTextBoxColumn17.HeaderText = "Rundschreiben"
+        GridViewTextBoxColumn17.IsAutoGenerated = True
+        GridViewTextBoxColumn17.Name = "monat"
+        GridViewTextBoxColumn17.VisibleInColumnChooser = False
+        GridViewTextBoxColumn17.Width = 180
+        GridViewTextBoxColumn18.AllowGroup = False
+        GridViewTextBoxColumn18.DataType = GetType(Integer)
+        GridViewTextBoxColumn18.EnableExpressionEditor = False
+        GridViewTextBoxColumn18.FieldName = "kw"
+        GridViewTextBoxColumn18.HeaderText = "KW"
+        GridViewTextBoxColumn18.IsAutoGenerated = True
+        GridViewTextBoxColumn18.Name = "kw"
+        GridViewTextBoxColumn18.VisibleInColumnChooser = False
+        GridViewDecimalColumn32.DataType = GetType(Integer)
+        GridViewDecimalColumn32.EnableExpressionEditor = False
+        GridViewDecimalColumn32.FieldName = "erledigt"
+        GridViewDecimalColumn32.HeaderText = "erledigt"
+        GridViewDecimalColumn32.IsAutoGenerated = True
+        GridViewDecimalColumn32.IsVisible = False
+        GridViewDecimalColumn32.Name = "erledigt"
+        Me.RGVRundschreibenMonat.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn31, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewDecimalColumn32})
         Me.RGVRundschreibenMonat.MasterTemplate.DataSource = Me.RundschreibenmonatBindingSource
         Me.RGVRundschreibenMonat.MasterTemplate.EnableGrouping = False
-        Me.RGVRundschreibenMonat.MasterTemplate.ViewDefinition = TableViewDefinition5
+        Me.RGVRundschreibenMonat.MasterTemplate.ViewDefinition = TableViewDefinition9
         Me.RGVRundschreibenMonat.Name = "RGVRundschreibenMonat"
         Me.RGVRundschreibenMonat.ReadOnly = True
         Me.RGVRundschreibenMonat.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.RGVRundschreibenMonat.Size = New System.Drawing.Size(280, 438)
+        Me.RGVRundschreibenMonat.Size = New System.Drawing.Size(323, 684)
         Me.RGVRundschreibenMonat.TabIndex = 0
+        '
+        'RundschreibenmonatBindingSource
+        '
+        Me.RundschreibenmonatBindingSource.DataMember = "rundschreibenmonat"
+        Me.RundschreibenmonatBindingSource.DataSource = Me.BewerberDataSet
         '
         'RGVBewerber
         '
@@ -286,164 +313,173 @@ Partial Class frmRundschreibenuebersicht
         '
         '
         Me.RGVBewerber.MasterTemplate.AllowAddNewRow = False
+        Me.RGVBewerber.MasterTemplate.AllowColumnChooser = False
         Me.RGVBewerber.MasterTemplate.AllowColumnReorder = False
         Me.RGVBewerber.MasterTemplate.AllowDragToGroup = False
-        GridViewDecimalColumn18.AllowGroup = False
-        GridViewDecimalColumn18.AllowSort = False
-        GridViewDecimalColumn18.DataType = GetType(Integer)
-        GridViewDecimalColumn18.EnableExpressionEditor = False
-        GridViewDecimalColumn18.FieldName = "id_rundschreiben"
-        GridViewDecimalColumn18.HeaderText = "id_rundschreiben"
-        GridViewDecimalColumn18.IsAutoGenerated = True
-        GridViewDecimalColumn18.IsVisible = False
-        GridViewDecimalColumn18.Name = "id_rundschreiben"
-        GridViewDecimalColumn18.VisibleInColumnChooser = False
-        GridViewDecimalColumn19.AllowGroup = False
-        GridViewDecimalColumn19.AllowSort = False
-        GridViewDecimalColumn19.DataType = GetType(Integer)
-        GridViewDecimalColumn19.EnableExpressionEditor = False
-        GridViewDecimalColumn19.FieldName = "bewid"
-        GridViewDecimalColumn19.HeaderText = "bewid"
-        GridViewDecimalColumn19.IsAutoGenerated = True
-        GridViewDecimalColumn19.IsVisible = False
-        GridViewDecimalColumn19.Name = "bewid"
-        GridViewDecimalColumn19.VisibleInColumnChooser = False
-        GridViewTextBoxColumn10.AllowGroup = False
-        GridViewTextBoxColumn10.AllowSort = False
-        GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "bezeichnung"
-        GridViewTextBoxColumn10.HeaderText = "bezeichnung"
-        GridViewTextBoxColumn10.IsAutoGenerated = True
-        GridViewTextBoxColumn10.IsVisible = False
-        GridViewTextBoxColumn10.Name = "bezeichnung"
-        GridViewTextBoxColumn10.VisibleInColumnChooser = False
-        GridViewComboBoxColumn19.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn19.DataType = GetType(Integer)
-        GridViewComboBoxColumn19.DisplayMember = "refnr"
-        GridViewComboBoxColumn19.EnableExpressionEditor = False
-        GridViewComboBoxColumn19.FieldName = "bewid"
-        GridViewComboBoxColumn19.HeaderText = "RefNr"
-        GridViewComboBoxColumn19.IsVisible = False
-        GridViewComboBoxColumn19.Name = "column9"
-        GridViewDecimalColumn20.AllowGroup = False
-        GridViewDecimalColumn20.AllowSort = False
-        GridViewDecimalColumn20.DataType = GetType(Integer)
-        GridViewDecimalColumn20.EnableExpressionEditor = False
-        GridViewDecimalColumn20.FieldName = "aktuell"
-        GridViewDecimalColumn20.HeaderText = "aktuell"
-        GridViewDecimalColumn20.IsAutoGenerated = True
-        GridViewDecimalColumn20.IsVisible = False
-        GridViewDecimalColumn20.Name = "aktuell"
-        GridViewDecimalColumn20.VisibleInColumnChooser = False
-        GridViewDecimalColumn21.AllowGroup = False
-        GridViewDecimalColumn21.AllowSort = False
-        GridViewDecimalColumn21.DataType = GetType(Integer)
-        GridViewDecimalColumn21.EnableExpressionEditor = False
-        GridViewDecimalColumn21.FieldName = "idrundschreibenmonat"
-        GridViewDecimalColumn21.HeaderText = "idrundschreibenmonat"
-        GridViewDecimalColumn21.IsAutoGenerated = True
-        GridViewDecimalColumn21.IsVisible = False
-        GridViewDecimalColumn21.Name = "idrundschreibenmonat"
-        GridViewDecimalColumn21.VisibleInColumnChooser = False
-        GridViewComboBoxColumn20.AllowGroup = False
-        GridViewComboBoxColumn20.AllowSort = False
-        GridViewComboBoxColumn20.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn20.DataType = GetType(Integer)
-        GridViewComboBoxColumn20.DisplayMember = "anrede"
-        GridViewComboBoxColumn20.EnableExpressionEditor = False
-        GridViewComboBoxColumn20.FieldName = "bewid"
-        GridViewComboBoxColumn20.HeaderText = "Anrede"
-        GridViewComboBoxColumn20.Name = "column2"
-        GridViewComboBoxColumn20.ValueMember = "id_bew"
-        GridViewComboBoxColumn20.VisibleInColumnChooser = False
-        GridViewComboBoxColumn20.Width = 80
-        GridViewComboBoxColumn21.AllowGroup = False
-        GridViewComboBoxColumn21.AllowSort = False
-        GridViewComboBoxColumn21.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn21.DataType = GetType(Integer)
-        GridViewComboBoxColumn21.DisplayMember = "vorname"
-        GridViewComboBoxColumn21.EnableExpressionEditor = False
-        GridViewComboBoxColumn21.FieldName = "bewid"
-        GridViewComboBoxColumn21.HeaderText = "Vorname"
-        GridViewComboBoxColumn21.Name = "column3"
-        GridViewComboBoxColumn21.ValueMember = "id_bew"
-        GridViewComboBoxColumn21.VisibleInColumnChooser = False
-        GridViewComboBoxColumn21.Width = 150
-        GridViewComboBoxColumn22.AllowGroup = False
-        GridViewComboBoxColumn22.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn22.DataType = GetType(Integer)
-        GridViewComboBoxColumn22.DisplayMember = "name"
-        GridViewComboBoxColumn22.EnableExpressionEditor = False
-        GridViewComboBoxColumn22.FieldName = "bewid"
-        GridViewComboBoxColumn22.HeaderText = "Nachname"
-        GridViewComboBoxColumn22.Name = "column1"
-        GridViewComboBoxColumn22.ValueMember = "id_bew"
-        GridViewComboBoxColumn22.VisibleInColumnChooser = False
-        GridViewComboBoxColumn22.Width = 200
-        GridViewComboBoxColumn23.AllowGroup = False
-        GridViewComboBoxColumn23.AllowSort = False
-        GridViewComboBoxColumn23.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn23.DataType = GetType(Integer)
-        GridViewComboBoxColumn23.DisplayMember = "stand"
-        GridViewComboBoxColumn23.EnableExpressionEditor = False
-        GridViewComboBoxColumn23.FieldName = "bewid"
-        GridViewComboBoxColumn23.HeaderText = "Stand"
-        GridViewComboBoxColumn23.Name = "column4"
-        GridViewComboBoxColumn23.ValueMember = "id_bew"
-        GridViewComboBoxColumn23.VisibleInColumnChooser = False
-        GridViewComboBoxColumn23.Width = 100
-        GridViewComboBoxColumn24.AllowGroup = False
-        GridViewComboBoxColumn24.AllowSort = False
-        GridViewComboBoxColumn24.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn24.DataType = GetType(Integer)
-        GridViewComboBoxColumn24.DisplayMember = "ulas"
-        GridViewComboBoxColumn24.EnableExpressionEditor = False
-        GridViewComboBoxColumn24.FieldName = "bewid"
-        GridViewComboBoxColumn24.HeaderText = "Ulas"
-        GridViewComboBoxColumn24.Name = "column5"
-        GridViewComboBoxColumn24.ValueMember = "id_bew"
-        GridViewComboBoxColumn24.VisibleInColumnChooser = False
-        GridViewComboBoxColumn25.AllowGroup = False
-        GridViewComboBoxColumn25.AllowSort = False
-        GridViewComboBoxColumn25.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn25.DataType = GetType(Integer)
-        GridViewComboBoxColumn25.DisplayMember = "alter"
-        GridViewComboBoxColumn25.EnableExpressionEditor = False
-        GridViewComboBoxColumn25.FieldName = "bewid"
-        GridViewComboBoxColumn25.HeaderText = "Alter"
-        GridViewComboBoxColumn25.Name = "column6"
-        GridViewComboBoxColumn25.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewComboBoxColumn25.ValueMember = "id_bew"
-        GridViewComboBoxColumn25.VisibleInColumnChooser = False
-        GridViewComboBoxColumn26.AllowGroup = False
-        GridViewComboBoxColumn26.AllowSort = False
-        GridViewComboBoxColumn26.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn26.DataType = GetType(Integer)
-        GridViewComboBoxColumn26.DisplayMember = "ort"
-        GridViewComboBoxColumn26.EnableExpressionEditor = False
-        GridViewComboBoxColumn26.FieldName = "bewid"
-        GridViewComboBoxColumn26.HeaderText = "Wohnort"
-        GridViewComboBoxColumn26.Name = "column7"
-        GridViewComboBoxColumn26.ValueMember = "id_bew"
-        GridViewComboBoxColumn26.VisibleInColumnChooser = False
-        GridViewComboBoxColumn26.Width = 150
-        GridViewComboBoxColumn27.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn27.DataType = GetType(Integer)
-        GridViewComboBoxColumn27.DisplayMember = "arbeitsort"
-        GridViewComboBoxColumn27.EnableExpressionEditor = False
-        GridViewComboBoxColumn27.FieldName = "bewid"
-        GridViewComboBoxColumn27.HeaderText = "Arbeitsort"
-        GridViewComboBoxColumn27.Name = "column8"
-        GridViewComboBoxColumn27.ValueMember = "id_bew"
-        GridViewComboBoxColumn27.Width = 150
-        Me.RGVBewerber.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn18, GridViewDecimalColumn19, GridViewTextBoxColumn10, GridViewComboBoxColumn19, GridViewDecimalColumn20, GridViewDecimalColumn21, GridViewComboBoxColumn20, GridViewComboBoxColumn21, GridViewComboBoxColumn22, GridViewComboBoxColumn23, GridViewComboBoxColumn24, GridViewComboBoxColumn25, GridViewComboBoxColumn26, GridViewComboBoxColumn27})
+        GridViewDecimalColumn33.AllowGroup = False
+        GridViewDecimalColumn33.AllowSort = False
+        GridViewDecimalColumn33.DataType = GetType(Integer)
+        GridViewDecimalColumn33.EnableExpressionEditor = False
+        GridViewDecimalColumn33.FieldName = "id_rundschreiben"
+        GridViewDecimalColumn33.HeaderText = "id_rundschreiben"
+        GridViewDecimalColumn33.IsAutoGenerated = True
+        GridViewDecimalColumn33.IsVisible = False
+        GridViewDecimalColumn33.Name = "id_rundschreiben"
+        GridViewDecimalColumn33.VisibleInColumnChooser = False
+        GridViewDecimalColumn34.AllowGroup = False
+        GridViewDecimalColumn34.AllowSort = False
+        GridViewDecimalColumn34.DataType = GetType(Integer)
+        GridViewDecimalColumn34.EnableExpressionEditor = False
+        GridViewDecimalColumn34.FieldName = "bewid"
+        GridViewDecimalColumn34.HeaderText = "bewid"
+        GridViewDecimalColumn34.IsAutoGenerated = True
+        GridViewDecimalColumn34.IsVisible = False
+        GridViewDecimalColumn34.Name = "bewid"
+        GridViewDecimalColumn34.VisibleInColumnChooser = False
+        GridViewTextBoxColumn19.AllowGroup = False
+        GridViewTextBoxColumn19.AllowSort = False
+        GridViewTextBoxColumn19.EnableExpressionEditor = False
+        GridViewTextBoxColumn19.FieldName = "bezeichnung"
+        GridViewTextBoxColumn19.HeaderText = "bezeichnung"
+        GridViewTextBoxColumn19.IsAutoGenerated = True
+        GridViewTextBoxColumn19.IsVisible = False
+        GridViewTextBoxColumn19.Name = "bezeichnung"
+        GridViewTextBoxColumn19.VisibleInColumnChooser = False
+        GridViewComboBoxColumn37.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn37.DataType = GetType(Integer)
+        GridViewComboBoxColumn37.DisplayMember = "refnr"
+        GridViewComboBoxColumn37.EnableExpressionEditor = False
+        GridViewComboBoxColumn37.FieldName = "bewid"
+        GridViewComboBoxColumn37.HeaderText = "RefNr"
+        GridViewComboBoxColumn37.IsVisible = False
+        GridViewComboBoxColumn37.Name = "column9"
+        GridViewDecimalColumn35.AllowGroup = False
+        GridViewDecimalColumn35.AllowSort = False
+        GridViewDecimalColumn35.DataType = GetType(Integer)
+        GridViewDecimalColumn35.EnableExpressionEditor = False
+        GridViewDecimalColumn35.FieldName = "aktuell"
+        GridViewDecimalColumn35.HeaderText = "aktuell"
+        GridViewDecimalColumn35.IsAutoGenerated = True
+        GridViewDecimalColumn35.IsVisible = False
+        GridViewDecimalColumn35.Name = "aktuell"
+        GridViewDecimalColumn35.VisibleInColumnChooser = False
+        GridViewDecimalColumn36.AllowGroup = False
+        GridViewDecimalColumn36.AllowSort = False
+        GridViewDecimalColumn36.DataType = GetType(Integer)
+        GridViewDecimalColumn36.EnableExpressionEditor = False
+        GridViewDecimalColumn36.FieldName = "idrundschreibenmonat"
+        GridViewDecimalColumn36.HeaderText = "idrundschreibenmonat"
+        GridViewDecimalColumn36.IsAutoGenerated = True
+        GridViewDecimalColumn36.IsVisible = False
+        GridViewDecimalColumn36.Name = "idrundschreibenmonat"
+        GridViewDecimalColumn36.VisibleInColumnChooser = False
+        GridViewComboBoxColumn38.AllowGroup = False
+        GridViewComboBoxColumn38.AllowSort = False
+        GridViewComboBoxColumn38.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn38.DataType = GetType(Integer)
+        GridViewComboBoxColumn38.DisplayMember = "anrede"
+        GridViewComboBoxColumn38.EnableExpressionEditor = False
+        GridViewComboBoxColumn38.FieldName = "bewid"
+        GridViewComboBoxColumn38.HeaderText = "Anrede"
+        GridViewComboBoxColumn38.Name = "column2"
+        GridViewComboBoxColumn38.ValueMember = "id_bew"
+        GridViewComboBoxColumn38.VisibleInColumnChooser = False
+        GridViewComboBoxColumn38.Width = 80
+        GridViewComboBoxColumn39.AllowGroup = False
+        GridViewComboBoxColumn39.AllowSort = False
+        GridViewComboBoxColumn39.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn39.DataType = GetType(Integer)
+        GridViewComboBoxColumn39.DisplayMember = "vorname"
+        GridViewComboBoxColumn39.EnableExpressionEditor = False
+        GridViewComboBoxColumn39.FieldName = "bewid"
+        GridViewComboBoxColumn39.HeaderText = "Vorname"
+        GridViewComboBoxColumn39.Name = "column3"
+        GridViewComboBoxColumn39.ValueMember = "id_bew"
+        GridViewComboBoxColumn39.VisibleInColumnChooser = False
+        GridViewComboBoxColumn39.Width = 150
+        GridViewComboBoxColumn40.AllowGroup = False
+        GridViewComboBoxColumn40.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn40.DataType = GetType(Integer)
+        GridViewComboBoxColumn40.DisplayMember = "name"
+        GridViewComboBoxColumn40.EnableExpressionEditor = False
+        GridViewComboBoxColumn40.FieldName = "bewid"
+        GridViewComboBoxColumn40.HeaderText = "Nachname"
+        GridViewComboBoxColumn40.Name = "column1"
+        GridViewComboBoxColumn40.ValueMember = "id_bew"
+        GridViewComboBoxColumn40.VisibleInColumnChooser = False
+        GridViewComboBoxColumn40.Width = 200
+        GridViewComboBoxColumn41.AllowGroup = False
+        GridViewComboBoxColumn41.AllowSort = False
+        GridViewComboBoxColumn41.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn41.DataType = GetType(Integer)
+        GridViewComboBoxColumn41.DisplayMember = "stand"
+        GridViewComboBoxColumn41.EnableExpressionEditor = False
+        GridViewComboBoxColumn41.FieldName = "bewid"
+        GridViewComboBoxColumn41.HeaderText = "Stand"
+        GridViewComboBoxColumn41.Name = "column4"
+        GridViewComboBoxColumn41.ValueMember = "id_bew"
+        GridViewComboBoxColumn41.VisibleInColumnChooser = False
+        GridViewComboBoxColumn41.Width = 100
+        GridViewComboBoxColumn42.AllowGroup = False
+        GridViewComboBoxColumn42.AllowSort = False
+        GridViewComboBoxColumn42.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn42.DataType = GetType(Integer)
+        GridViewComboBoxColumn42.DisplayMember = "ulas"
+        GridViewComboBoxColumn42.EnableExpressionEditor = False
+        GridViewComboBoxColumn42.FieldName = "bewid"
+        GridViewComboBoxColumn42.HeaderText = "Ulas"
+        GridViewComboBoxColumn42.Name = "column5"
+        GridViewComboBoxColumn42.ValueMember = "id_bew"
+        GridViewComboBoxColumn42.VisibleInColumnChooser = False
+        GridViewComboBoxColumn43.AllowGroup = False
+        GridViewComboBoxColumn43.AllowSort = False
+        GridViewComboBoxColumn43.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn43.DataType = GetType(Integer)
+        GridViewComboBoxColumn43.DisplayMember = "alter"
+        GridViewComboBoxColumn43.EnableExpressionEditor = False
+        GridViewComboBoxColumn43.FieldName = "bewid"
+        GridViewComboBoxColumn43.HeaderText = "Alter"
+        GridViewComboBoxColumn43.Name = "column6"
+        GridViewComboBoxColumn43.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewComboBoxColumn43.ValueMember = "id_bew"
+        GridViewComboBoxColumn43.VisibleInColumnChooser = False
+        GridViewComboBoxColumn44.AllowGroup = False
+        GridViewComboBoxColumn44.AllowSort = False
+        GridViewComboBoxColumn44.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn44.DataType = GetType(Integer)
+        GridViewComboBoxColumn44.DisplayMember = "ort"
+        GridViewComboBoxColumn44.EnableExpressionEditor = False
+        GridViewComboBoxColumn44.FieldName = "bewid"
+        GridViewComboBoxColumn44.HeaderText = "Wohnort"
+        GridViewComboBoxColumn44.Name = "column7"
+        GridViewComboBoxColumn44.ValueMember = "id_bew"
+        GridViewComboBoxColumn44.VisibleInColumnChooser = False
+        GridViewComboBoxColumn44.Width = 150
+        GridViewComboBoxColumn45.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn45.DataType = GetType(Integer)
+        GridViewComboBoxColumn45.DisplayMember = "arbeitsort"
+        GridViewComboBoxColumn45.EnableExpressionEditor = False
+        GridViewComboBoxColumn45.FieldName = "bewid"
+        GridViewComboBoxColumn45.HeaderText = "Arbeitsort"
+        GridViewComboBoxColumn45.Name = "column8"
+        GridViewComboBoxColumn45.ValueMember = "id_bew"
+        GridViewComboBoxColumn45.Width = 150
+        GridViewTextBoxColumn20.AllowGroup = False
+        GridViewTextBoxColumn20.AllowSort = False
+        GridViewTextBoxColumn20.EnableExpressionEditor = False
+        GridViewTextBoxColumn20.FieldName = "anmerkungen"
+        GridViewTextBoxColumn20.HeaderText = "Anmerkungen"
+        GridViewTextBoxColumn20.Name = "column10"
+        GridViewTextBoxColumn20.VisibleInColumnChooser = False
+        GridViewTextBoxColumn20.Width = 200
+        Me.RGVBewerber.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn33, GridViewDecimalColumn34, GridViewTextBoxColumn19, GridViewComboBoxColumn37, GridViewDecimalColumn35, GridViewDecimalColumn36, GridViewComboBoxColumn38, GridViewComboBoxColumn39, GridViewComboBoxColumn40, GridViewComboBoxColumn41, GridViewComboBoxColumn42, GridViewComboBoxColumn43, GridViewComboBoxColumn44, GridViewComboBoxColumn45, GridViewTextBoxColumn20})
         Me.RGVBewerber.MasterTemplate.DataSource = Me.RundschreibenBindingSource1
         Me.RGVBewerber.MasterTemplate.EnableGrouping = False
-        Me.RGVBewerber.MasterTemplate.ViewDefinition = TableViewDefinition6
+        Me.RGVBewerber.MasterTemplate.ViewDefinition = TableViewDefinition10
         Me.RGVBewerber.Name = "RGVBewerber"
         Me.RGVBewerber.ReadOnly = True
         Me.RGVBewerber.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.RGVBewerber.Size = New System.Drawing.Size(1017, 438)
+        Me.RGVBewerber.Size = New System.Drawing.Size(1176, 684)
         Me.RGVBewerber.TabIndex = 0
         '
         'RundschreibenBindingSource1
@@ -458,7 +494,7 @@ Partial Class frmRundschreibenuebersicht
         Me.TabControl1.Location = New System.Drawing.Point(9, 13)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1344, 873)
+        Me.TabControl1.Size = New System.Drawing.Size(1523, 873)
         Me.TabControl1.TabIndex = 18
         '
         'TabPage1
@@ -476,7 +512,7 @@ Partial Class frmRundschreibenuebersicht
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1336, 844)
+        Me.TabPage1.Size = New System.Drawing.Size(1515, 844)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Rundschreiben in Vorbereitung"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -500,13 +536,13 @@ Partial Class frmRundschreibenuebersicht
         Me.Panel1.Controls.Add(Me.AnmerkungenTextBox)
         Me.Panel1.Location = New System.Drawing.Point(6, 630)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1313, 205)
+        Me.Panel1.Size = New System.Drawing.Size(1500, 205)
         Me.Panel1.TabIndex = 94
         '
         'chkHomepage
         '
         Me.chkHomepage.AutoSize = True
-        Me.chkHomepage.Location = New System.Drawing.Point(808, 17)
+        Me.chkHomepage.Location = New System.Drawing.Point(845, 19)
         Me.chkHomepage.Name = "chkHomepage"
         Me.chkHomepage.Size = New System.Drawing.Size(15, 14)
         Me.chkHomepage.TabIndex = 99
@@ -516,7 +552,7 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Crimson
-        Me.Label2.Location = New System.Drawing.Point(285, 66)
+        Me.Label2.Location = New System.Drawing.Point(322, 62)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(292, 16)
         Me.Label2.TabIndex = 98
@@ -526,7 +562,7 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 16
-        Me.ListBox1.Location = New System.Drawing.Point(285, 89)
+        Me.ListBox1.Location = New System.Drawing.Point(325, 85)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(261, 100)
         Me.ListBox1.TabIndex = 97
@@ -545,7 +581,7 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.rbtnNein.AutoSize = True
         Me.rbtnNein.ForeColor = System.Drawing.Color.Crimson
-        Me.rbtnNein.Location = New System.Drawing.Point(566, 13)
+        Me.rbtnNein.Location = New System.Drawing.Point(603, 15)
         Me.rbtnNein.Name = "rbtnNein"
         Me.rbtnNein.Size = New System.Drawing.Size(58, 20)
         Me.rbtnNein.TabIndex = 97
@@ -557,7 +593,7 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.rbtnJa.AutoSize = True
         Me.rbtnJa.ForeColor = System.Drawing.Color.Crimson
-        Me.rbtnJa.Location = New System.Drawing.Point(508, 13)
+        Me.rbtnJa.Location = New System.Drawing.Point(545, 15)
         Me.rbtnJa.Name = "rbtnJa"
         Me.rbtnJa.Size = New System.Drawing.Size(43, 20)
         Me.rbtnJa.TabIndex = 96
@@ -596,8 +632,8 @@ Partial Class frmRundschreibenuebersicht
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.RGVRundschreibenaktuell)
-        Me.SplitContainer2.Size = New System.Drawing.Size(1313, 500)
-        Me.SplitContainer2.SplitterDistance = 282
+        Me.SplitContainer2.Size = New System.Drawing.Size(1500, 500)
+        Me.SplitContainer2.SplitterDistance = 322
         Me.SplitContainer2.TabIndex = 92
         '
         'RGVRundschreibenmonataktuell
@@ -616,44 +652,44 @@ Partial Class frmRundschreibenuebersicht
         Me.RGVRundschreibenmonataktuell.MasterTemplate.AllowAddNewRow = False
         Me.RGVRundschreibenmonataktuell.MasterTemplate.AllowColumnReorder = False
         Me.RGVRundschreibenmonataktuell.MasterTemplate.AllowDragToGroup = False
-        GridViewDecimalColumn22.DataType = GetType(Integer)
-        GridViewDecimalColumn22.EnableExpressionEditor = False
-        GridViewDecimalColumn22.FieldName = "idrundschreibenmonat"
-        GridViewDecimalColumn22.HeaderText = "idrundschreibenmonat"
-        GridViewDecimalColumn22.IsAutoGenerated = True
-        GridViewDecimalColumn22.IsVisible = False
-        GridViewDecimalColumn22.Name = "idrundschreibenmonat"
-        GridViewTextBoxColumn11.AllowGroup = False
-        GridViewTextBoxColumn11.EnableExpressionEditor = False
-        GridViewTextBoxColumn11.FieldName = "monat"
-        GridViewTextBoxColumn11.HeaderText = "Rundschreiben"
-        GridViewTextBoxColumn11.IsAutoGenerated = True
-        GridViewTextBoxColumn11.Name = "monat"
-        GridViewTextBoxColumn11.VisibleInColumnChooser = False
-        GridViewTextBoxColumn11.Width = 180
-        GridViewTextBoxColumn12.AllowGroup = False
-        GridViewTextBoxColumn12.DataType = GetType(Integer)
-        GridViewTextBoxColumn12.EnableExpressionEditor = False
-        GridViewTextBoxColumn12.FieldName = "kw"
-        GridViewTextBoxColumn12.HeaderText = "KW"
-        GridViewTextBoxColumn12.IsAutoGenerated = True
-        GridViewTextBoxColumn12.Name = "kw"
-        GridViewTextBoxColumn12.VisibleInColumnChooser = False
-        GridViewDecimalColumn23.DataType = GetType(Integer)
-        GridViewDecimalColumn23.EnableExpressionEditor = False
-        GridViewDecimalColumn23.FieldName = "erledigt"
-        GridViewDecimalColumn23.HeaderText = "erledigt"
-        GridViewDecimalColumn23.IsAutoGenerated = True
-        GridViewDecimalColumn23.IsVisible = False
-        GridViewDecimalColumn23.Name = "erledigt"
-        Me.RGVRundschreibenmonataktuell.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn22, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewDecimalColumn23})
+        GridViewDecimalColumn37.DataType = GetType(Integer)
+        GridViewDecimalColumn37.EnableExpressionEditor = False
+        GridViewDecimalColumn37.FieldName = "idrundschreibenmonat"
+        GridViewDecimalColumn37.HeaderText = "idrundschreibenmonat"
+        GridViewDecimalColumn37.IsAutoGenerated = True
+        GridViewDecimalColumn37.IsVisible = False
+        GridViewDecimalColumn37.Name = "idrundschreibenmonat"
+        GridViewTextBoxColumn21.AllowGroup = False
+        GridViewTextBoxColumn21.EnableExpressionEditor = False
+        GridViewTextBoxColumn21.FieldName = "monat"
+        GridViewTextBoxColumn21.HeaderText = "Rundschreiben"
+        GridViewTextBoxColumn21.IsAutoGenerated = True
+        GridViewTextBoxColumn21.Name = "monat"
+        GridViewTextBoxColumn21.VisibleInColumnChooser = False
+        GridViewTextBoxColumn21.Width = 180
+        GridViewTextBoxColumn22.AllowGroup = False
+        GridViewTextBoxColumn22.DataType = GetType(Integer)
+        GridViewTextBoxColumn22.EnableExpressionEditor = False
+        GridViewTextBoxColumn22.FieldName = "kw"
+        GridViewTextBoxColumn22.HeaderText = "KW"
+        GridViewTextBoxColumn22.IsAutoGenerated = True
+        GridViewTextBoxColumn22.Name = "kw"
+        GridViewTextBoxColumn22.VisibleInColumnChooser = False
+        GridViewDecimalColumn38.DataType = GetType(Integer)
+        GridViewDecimalColumn38.EnableExpressionEditor = False
+        GridViewDecimalColumn38.FieldName = "erledigt"
+        GridViewDecimalColumn38.HeaderText = "erledigt"
+        GridViewDecimalColumn38.IsAutoGenerated = True
+        GridViewDecimalColumn38.IsVisible = False
+        GridViewDecimalColumn38.Name = "erledigt"
+        Me.RGVRundschreibenmonataktuell.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn37, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewDecimalColumn38})
         Me.RGVRundschreibenmonataktuell.MasterTemplate.DataSource = Me.RundschreibenmonatBindingSource
         Me.RGVRundschreibenmonataktuell.MasterTemplate.EnableGrouping = False
-        Me.RGVRundschreibenmonataktuell.MasterTemplate.ViewDefinition = TableViewDefinition7
+        Me.RGVRundschreibenmonataktuell.MasterTemplate.ViewDefinition = TableViewDefinition11
         Me.RGVRundschreibenmonataktuell.Name = "RGVRundschreibenmonataktuell"
         Me.RGVRundschreibenmonataktuell.ReadOnly = True
         Me.RGVRundschreibenmonataktuell.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.RGVRundschreibenmonataktuell.Size = New System.Drawing.Size(282, 500)
+        Me.RGVRundschreibenmonataktuell.Size = New System.Drawing.Size(322, 500)
         Me.RGVRundschreibenmonataktuell.TabIndex = 0
         '
         'RGVRundschreibenaktuell
@@ -671,188 +707,193 @@ Partial Class frmRundschreibenuebersicht
         Me.RGVRundschreibenaktuell.MasterTemplate.AllowAddNewRow = False
         Me.RGVRundschreibenaktuell.MasterTemplate.AllowColumnReorder = False
         Me.RGVRundschreibenaktuell.MasterTemplate.AllowDragToGroup = False
-        GridViewDecimalColumn24.AllowGroup = False
-        GridViewDecimalColumn24.AllowSort = False
-        GridViewDecimalColumn24.DataType = GetType(Integer)
-        GridViewDecimalColumn24.EnableExpressionEditor = False
-        GridViewDecimalColumn24.FieldName = "id_rundschreiben"
-        GridViewDecimalColumn24.HeaderText = "id_rundschreiben"
-        GridViewDecimalColumn24.IsAutoGenerated = True
-        GridViewDecimalColumn24.IsVisible = False
-        GridViewDecimalColumn24.Name = "id_rundschreiben"
-        GridViewDecimalColumn24.VisibleInColumnChooser = False
-        GridViewDecimalColumn25.AllowGroup = False
-        GridViewDecimalColumn25.AllowSort = False
-        GridViewDecimalColumn25.DataType = GetType(Integer)
-        GridViewDecimalColumn25.EnableExpressionEditor = False
-        GridViewDecimalColumn25.FieldName = "bewid"
-        GridViewDecimalColumn25.HeaderText = "bewid"
-        GridViewDecimalColumn25.IsAutoGenerated = True
-        GridViewDecimalColumn25.IsVisible = False
-        GridViewDecimalColumn25.Name = "bewid"
-        GridViewDecimalColumn25.VisibleInColumnChooser = False
-        GridViewTextBoxColumn13.AllowGroup = False
-        GridViewTextBoxColumn13.AllowSort = False
-        GridViewTextBoxColumn13.EnableExpressionEditor = False
-        GridViewTextBoxColumn13.FieldName = "bezeichnung"
-        GridViewTextBoxColumn13.HeaderText = "bezeichnung"
-        GridViewTextBoxColumn13.IsAutoGenerated = True
-        GridViewTextBoxColumn13.IsVisible = False
-        GridViewTextBoxColumn13.Name = "bezeichnung"
-        GridViewTextBoxColumn13.VisibleInColumnChooser = False
-        GridViewComboBoxColumn28.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn28.DataType = GetType(Integer)
-        GridViewComboBoxColumn28.DisplayMember = "refnr"
-        GridViewComboBoxColumn28.EnableExpressionEditor = False
-        GridViewComboBoxColumn28.FieldName = "bewid"
-        GridViewComboBoxColumn28.HeaderText = "RefNr"
-        GridViewComboBoxColumn28.IsVisible = False
-        GridViewComboBoxColumn28.Name = "column9"
-        GridViewDecimalColumn26.AllowGroup = False
-        GridViewDecimalColumn26.AllowSort = False
-        GridViewDecimalColumn26.DataType = GetType(Integer)
-        GridViewDecimalColumn26.EnableExpressionEditor = False
-        GridViewDecimalColumn26.FieldName = "aktuell"
-        GridViewDecimalColumn26.HeaderText = "aktuell"
-        GridViewDecimalColumn26.IsAutoGenerated = True
-        GridViewDecimalColumn26.IsVisible = False
-        GridViewDecimalColumn26.Name = "aktuell"
-        GridViewDecimalColumn26.VisibleInColumnChooser = False
-        GridViewDecimalColumn27.AllowGroup = False
-        GridViewDecimalColumn27.AllowSort = False
-        GridViewDecimalColumn27.DataType = GetType(Integer)
-        GridViewDecimalColumn27.EnableExpressionEditor = False
-        GridViewDecimalColumn27.FieldName = "idrundschreibenmonat"
-        GridViewDecimalColumn27.HeaderText = "idrundschreibenmonat"
-        GridViewDecimalColumn27.IsAutoGenerated = True
-        GridViewDecimalColumn27.IsVisible = False
-        GridViewDecimalColumn27.Name = "idrundschreibenmonat"
-        GridViewDecimalColumn27.VisibleInColumnChooser = False
-        GridViewDecimalColumn28.DataType = GetType(Integer)
-        GridViewDecimalColumn28.EnableExpressionEditor = False
-        GridViewDecimalColumn28.FieldName = "refnr"
-        GridViewDecimalColumn28.HeaderText = "Refnr"
-        GridViewDecimalColumn28.IsAutoGenerated = True
-        GridViewDecimalColumn28.Name = "refnr"
-        GridViewComboBoxColumn29.AllowGroup = False
-        GridViewComboBoxColumn29.AllowSort = False
-        GridViewComboBoxColumn29.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn29.DataType = GetType(Integer)
-        GridViewComboBoxColumn29.DisplayMember = "anrede"
-        GridViewComboBoxColumn29.EnableExpressionEditor = False
-        GridViewComboBoxColumn29.FieldName = "bewid"
-        GridViewComboBoxColumn29.HeaderText = "Anrede"
-        GridViewComboBoxColumn29.Name = "column2"
-        GridViewComboBoxColumn29.ValueMember = "id_bew"
-        GridViewComboBoxColumn29.VisibleInColumnChooser = False
-        GridViewComboBoxColumn29.Width = 80
-        GridViewComboBoxColumn30.AllowGroup = False
-        GridViewComboBoxColumn30.AllowSort = False
-        GridViewComboBoxColumn30.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn30.DataType = GetType(Integer)
-        GridViewComboBoxColumn30.DisplayMember = "vorname"
-        GridViewComboBoxColumn30.EnableExpressionEditor = False
-        GridViewComboBoxColumn30.FieldName = "bewid"
-        GridViewComboBoxColumn30.HeaderText = "Vorname"
-        GridViewComboBoxColumn30.Name = "column3"
-        GridViewComboBoxColumn30.ValueMember = "id_bew"
-        GridViewComboBoxColumn30.VisibleInColumnChooser = False
-        GridViewComboBoxColumn30.Width = 150
-        GridViewComboBoxColumn31.AllowGroup = False
-        GridViewComboBoxColumn31.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn31.DataType = GetType(Integer)
-        GridViewComboBoxColumn31.DisplayMember = "name"
-        GridViewComboBoxColumn31.EnableExpressionEditor = False
-        GridViewComboBoxColumn31.FieldName = "bewid"
-        GridViewComboBoxColumn31.HeaderText = "Nachname"
-        GridViewComboBoxColumn31.Name = "column1"
-        GridViewComboBoxColumn31.ValueMember = "id_bew"
-        GridViewComboBoxColumn31.VisibleInColumnChooser = False
-        GridViewComboBoxColumn31.Width = 200
-        GridViewComboBoxColumn32.AllowGroup = False
-        GridViewComboBoxColumn32.AllowSort = False
-        GridViewComboBoxColumn32.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn32.DataType = GetType(Integer)
-        GridViewComboBoxColumn32.DisplayMember = "stand"
-        GridViewComboBoxColumn32.EnableExpressionEditor = False
-        GridViewComboBoxColumn32.FieldName = "bewid"
-        GridViewComboBoxColumn32.HeaderText = "Stand"
-        GridViewComboBoxColumn32.Name = "column4"
-        GridViewComboBoxColumn32.ValueMember = "id_bew"
-        GridViewComboBoxColumn32.VisibleInColumnChooser = False
-        GridViewComboBoxColumn32.Width = 100
-        GridViewComboBoxColumn33.AllowGroup = False
-        GridViewComboBoxColumn33.AllowSort = False
-        GridViewComboBoxColumn33.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn33.DataType = GetType(Integer)
-        GridViewComboBoxColumn33.DisplayMember = "ulas"
-        GridViewComboBoxColumn33.EnableExpressionEditor = False
-        GridViewComboBoxColumn33.FieldName = "bewid"
-        GridViewComboBoxColumn33.HeaderText = "Ulas"
-        GridViewComboBoxColumn33.Name = "column5"
-        GridViewComboBoxColumn33.ValueMember = "id_bew"
-        GridViewComboBoxColumn33.VisibleInColumnChooser = False
-        GridViewComboBoxColumn34.AllowGroup = False
-        GridViewComboBoxColumn34.AllowSort = False
-        GridViewComboBoxColumn34.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn34.DataType = GetType(Integer)
-        GridViewComboBoxColumn34.DisplayMember = "alter"
-        GridViewComboBoxColumn34.EnableExpressionEditor = False
-        GridViewComboBoxColumn34.FieldName = "bewid"
-        GridViewComboBoxColumn34.HeaderText = "Alter"
-        GridViewComboBoxColumn34.Name = "column6"
-        GridViewComboBoxColumn34.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewComboBoxColumn34.ValueMember = "id_bew"
-        GridViewComboBoxColumn34.VisibleInColumnChooser = False
-        GridViewComboBoxColumn35.AllowGroup = False
-        GridViewComboBoxColumn35.AllowSort = False
-        GridViewComboBoxColumn35.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn35.DataType = GetType(Integer)
-        GridViewComboBoxColumn35.DisplayMember = "ort"
-        GridViewComboBoxColumn35.EnableExpressionEditor = False
-        GridViewComboBoxColumn35.FieldName = "bewid"
-        GridViewComboBoxColumn35.HeaderText = "Wohnort"
-        GridViewComboBoxColumn35.Name = "column7"
-        GridViewComboBoxColumn35.ValueMember = "id_bew"
-        GridViewComboBoxColumn35.VisibleInColumnChooser = False
-        GridViewComboBoxColumn35.Width = 150
-        GridViewComboBoxColumn36.DataSource = Me.BewBindingSource
-        GridViewComboBoxColumn36.DataType = GetType(Integer)
-        GridViewComboBoxColumn36.DisplayMember = "arbeitsort"
-        GridViewComboBoxColumn36.EnableExpressionEditor = False
-        GridViewComboBoxColumn36.FieldName = "bewid"
-        GridViewComboBoxColumn36.HeaderText = "Arbeitsort"
-        GridViewComboBoxColumn36.Name = "column8"
-        GridViewComboBoxColumn36.ValueMember = "id_bew"
-        GridViewComboBoxColumn36.Width = 150
-        GridViewDecimalColumn29.DataType = GetType(Integer)
-        GridViewDecimalColumn29.EnableExpressionEditor = False
-        GridViewDecimalColumn29.FieldName = "homepage"
-        GridViewDecimalColumn29.HeaderText = "homepage"
-        GridViewDecimalColumn29.IsAutoGenerated = True
-        GridViewDecimalColumn29.IsVisible = False
-        GridViewDecimalColumn29.Name = "homepage"
-        GridViewTextBoxColumn14.EnableExpressionEditor = False
-        GridViewTextBoxColumn14.FieldName = "anmerkungen"
-        GridViewTextBoxColumn14.HeaderText = "anmerkungen"
-        GridViewTextBoxColumn14.IsAutoGenerated = True
-        GridViewTextBoxColumn14.IsVisible = False
-        GridViewTextBoxColumn14.Name = "anmerkungen"
-        GridViewDecimalColumn30.DataType = GetType(Integer)
-        GridViewDecimalColumn30.EnableExpressionEditor = False
-        GridViewDecimalColumn30.FieldName = "rundschreibenreihenfolge"
-        GridViewDecimalColumn30.HeaderText = "rundschreibenreihenfolge"
-        GridViewDecimalColumn30.IsAutoGenerated = True
-        GridViewDecimalColumn30.IsVisible = False
-        GridViewDecimalColumn30.Name = "rundschreibenreihenfolge"
-        Me.RGVRundschreibenaktuell.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn24, GridViewDecimalColumn25, GridViewTextBoxColumn13, GridViewComboBoxColumn28, GridViewDecimalColumn26, GridViewDecimalColumn27, GridViewDecimalColumn28, GridViewComboBoxColumn29, GridViewComboBoxColumn30, GridViewComboBoxColumn31, GridViewComboBoxColumn32, GridViewComboBoxColumn33, GridViewComboBoxColumn34, GridViewComboBoxColumn35, GridViewComboBoxColumn36, GridViewDecimalColumn29, GridViewTextBoxColumn14, GridViewDecimalColumn30})
+        GridViewDecimalColumn39.AllowGroup = False
+        GridViewDecimalColumn39.AllowSort = False
+        GridViewDecimalColumn39.DataType = GetType(Integer)
+        GridViewDecimalColumn39.EnableExpressionEditor = False
+        GridViewDecimalColumn39.FieldName = "id_rundschreiben"
+        GridViewDecimalColumn39.HeaderText = "id_rundschreiben"
+        GridViewDecimalColumn39.IsAutoGenerated = True
+        GridViewDecimalColumn39.IsVisible = False
+        GridViewDecimalColumn39.Name = "id_rundschreiben"
+        GridViewDecimalColumn39.VisibleInColumnChooser = False
+        GridViewDecimalColumn40.AllowGroup = False
+        GridViewDecimalColumn40.AllowSort = False
+        GridViewDecimalColumn40.DataType = GetType(Integer)
+        GridViewDecimalColumn40.EnableExpressionEditor = False
+        GridViewDecimalColumn40.FieldName = "bewid"
+        GridViewDecimalColumn40.HeaderText = "bewid"
+        GridViewDecimalColumn40.IsAutoGenerated = True
+        GridViewDecimalColumn40.IsVisible = False
+        GridViewDecimalColumn40.Name = "bewid"
+        GridViewDecimalColumn40.VisibleInColumnChooser = False
+        GridViewTextBoxColumn23.AllowGroup = False
+        GridViewTextBoxColumn23.AllowSort = False
+        GridViewTextBoxColumn23.EnableExpressionEditor = False
+        GridViewTextBoxColumn23.FieldName = "bezeichnung"
+        GridViewTextBoxColumn23.HeaderText = "bezeichnung"
+        GridViewTextBoxColumn23.IsAutoGenerated = True
+        GridViewTextBoxColumn23.IsVisible = False
+        GridViewTextBoxColumn23.Name = "bezeichnung"
+        GridViewTextBoxColumn23.VisibleInColumnChooser = False
+        GridViewComboBoxColumn46.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn46.DataType = GetType(Integer)
+        GridViewComboBoxColumn46.DisplayMember = "refnr"
+        GridViewComboBoxColumn46.EnableExpressionEditor = False
+        GridViewComboBoxColumn46.FieldName = "bewid"
+        GridViewComboBoxColumn46.HeaderText = "RefNr"
+        GridViewComboBoxColumn46.IsVisible = False
+        GridViewComboBoxColumn46.Name = "column9"
+        GridViewDecimalColumn41.AllowGroup = False
+        GridViewDecimalColumn41.AllowSort = False
+        GridViewDecimalColumn41.DataType = GetType(Integer)
+        GridViewDecimalColumn41.EnableExpressionEditor = False
+        GridViewDecimalColumn41.FieldName = "aktuell"
+        GridViewDecimalColumn41.HeaderText = "aktuell"
+        GridViewDecimalColumn41.IsAutoGenerated = True
+        GridViewDecimalColumn41.IsVisible = False
+        GridViewDecimalColumn41.Name = "aktuell"
+        GridViewDecimalColumn41.VisibleInColumnChooser = False
+        GridViewDecimalColumn42.AllowGroup = False
+        GridViewDecimalColumn42.AllowSort = False
+        GridViewDecimalColumn42.DataType = GetType(Integer)
+        GridViewDecimalColumn42.EnableExpressionEditor = False
+        GridViewDecimalColumn42.FieldName = "idrundschreibenmonat"
+        GridViewDecimalColumn42.HeaderText = "idrundschreibenmonat"
+        GridViewDecimalColumn42.IsAutoGenerated = True
+        GridViewDecimalColumn42.IsVisible = False
+        GridViewDecimalColumn42.Name = "idrundschreibenmonat"
+        GridViewDecimalColumn42.VisibleInColumnChooser = False
+        GridViewDecimalColumn43.DataType = GetType(Integer)
+        GridViewDecimalColumn43.EnableExpressionEditor = False
+        GridViewDecimalColumn43.FieldName = "refnr"
+        GridViewDecimalColumn43.HeaderText = "Refnr"
+        GridViewDecimalColumn43.IsAutoGenerated = True
+        GridViewDecimalColumn43.Name = "refnr"
+        GridViewComboBoxColumn47.AllowGroup = False
+        GridViewComboBoxColumn47.AllowSort = False
+        GridViewComboBoxColumn47.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn47.DataType = GetType(Integer)
+        GridViewComboBoxColumn47.DisplayMember = "anrede"
+        GridViewComboBoxColumn47.EnableExpressionEditor = False
+        GridViewComboBoxColumn47.FieldName = "bewid"
+        GridViewComboBoxColumn47.HeaderText = "Anrede"
+        GridViewComboBoxColumn47.Name = "column2"
+        GridViewComboBoxColumn47.ValueMember = "id_bew"
+        GridViewComboBoxColumn47.VisibleInColumnChooser = False
+        GridViewComboBoxColumn47.Width = 80
+        GridViewComboBoxColumn48.AllowGroup = False
+        GridViewComboBoxColumn48.AllowSort = False
+        GridViewComboBoxColumn48.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn48.DataType = GetType(Integer)
+        GridViewComboBoxColumn48.DisplayMember = "vorname"
+        GridViewComboBoxColumn48.EnableExpressionEditor = False
+        GridViewComboBoxColumn48.FieldName = "bewid"
+        GridViewComboBoxColumn48.HeaderText = "Vorname"
+        GridViewComboBoxColumn48.Name = "column3"
+        GridViewComboBoxColumn48.ValueMember = "id_bew"
+        GridViewComboBoxColumn48.VisibleInColumnChooser = False
+        GridViewComboBoxColumn48.Width = 150
+        GridViewComboBoxColumn49.AllowGroup = False
+        GridViewComboBoxColumn49.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn49.DataType = GetType(Integer)
+        GridViewComboBoxColumn49.DisplayMember = "name"
+        GridViewComboBoxColumn49.EnableExpressionEditor = False
+        GridViewComboBoxColumn49.FieldName = "bewid"
+        GridViewComboBoxColumn49.HeaderText = "Nachname"
+        GridViewComboBoxColumn49.Name = "column1"
+        GridViewComboBoxColumn49.ValueMember = "id_bew"
+        GridViewComboBoxColumn49.VisibleInColumnChooser = False
+        GridViewComboBoxColumn49.Width = 200
+        GridViewComboBoxColumn50.AllowGroup = False
+        GridViewComboBoxColumn50.AllowSort = False
+        GridViewComboBoxColumn50.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn50.DataType = GetType(Integer)
+        GridViewComboBoxColumn50.DisplayMember = "stand"
+        GridViewComboBoxColumn50.EnableExpressionEditor = False
+        GridViewComboBoxColumn50.FieldName = "bewid"
+        GridViewComboBoxColumn50.HeaderText = "Stand"
+        GridViewComboBoxColumn50.Name = "column4"
+        GridViewComboBoxColumn50.ValueMember = "id_bew"
+        GridViewComboBoxColumn50.VisibleInColumnChooser = False
+        GridViewComboBoxColumn50.Width = 100
+        GridViewComboBoxColumn51.AllowGroup = False
+        GridViewComboBoxColumn51.AllowSort = False
+        GridViewComboBoxColumn51.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn51.DataType = GetType(Integer)
+        GridViewComboBoxColumn51.DisplayMember = "ulas"
+        GridViewComboBoxColumn51.EnableExpressionEditor = False
+        GridViewComboBoxColumn51.FieldName = "bewid"
+        GridViewComboBoxColumn51.HeaderText = "Ulas"
+        GridViewComboBoxColumn51.Name = "column5"
+        GridViewComboBoxColumn51.ValueMember = "id_bew"
+        GridViewComboBoxColumn51.VisibleInColumnChooser = False
+        GridViewComboBoxColumn52.AllowGroup = False
+        GridViewComboBoxColumn52.AllowSort = False
+        GridViewComboBoxColumn52.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn52.DataType = GetType(Integer)
+        GridViewComboBoxColumn52.DisplayMember = "alter"
+        GridViewComboBoxColumn52.EnableExpressionEditor = False
+        GridViewComboBoxColumn52.FieldName = "bewid"
+        GridViewComboBoxColumn52.HeaderText = "Alter"
+        GridViewComboBoxColumn52.Name = "column6"
+        GridViewComboBoxColumn52.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewComboBoxColumn52.ValueMember = "id_bew"
+        GridViewComboBoxColumn52.VisibleInColumnChooser = False
+        GridViewComboBoxColumn53.AllowGroup = False
+        GridViewComboBoxColumn53.AllowSort = False
+        GridViewComboBoxColumn53.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn53.DataType = GetType(Integer)
+        GridViewComboBoxColumn53.DisplayMember = "ort"
+        GridViewComboBoxColumn53.EnableExpressionEditor = False
+        GridViewComboBoxColumn53.FieldName = "bewid"
+        GridViewComboBoxColumn53.HeaderText = "Wohnort"
+        GridViewComboBoxColumn53.Name = "column7"
+        GridViewComboBoxColumn53.ValueMember = "id_bew"
+        GridViewComboBoxColumn53.VisibleInColumnChooser = False
+        GridViewComboBoxColumn53.Width = 150
+        GridViewComboBoxColumn54.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn54.DataType = GetType(Integer)
+        GridViewComboBoxColumn54.DisplayMember = "arbeitsort"
+        GridViewComboBoxColumn54.EnableExpressionEditor = False
+        GridViewComboBoxColumn54.FieldName = "bewid"
+        GridViewComboBoxColumn54.HeaderText = "Arbeitsort"
+        GridViewComboBoxColumn54.Name = "column8"
+        GridViewComboBoxColumn54.ValueMember = "id_bew"
+        GridViewComboBoxColumn54.Width = 150
+        GridViewDecimalColumn44.DataType = GetType(Integer)
+        GridViewDecimalColumn44.EnableExpressionEditor = False
+        GridViewDecimalColumn44.FieldName = "homepage"
+        GridViewDecimalColumn44.HeaderText = "homepage"
+        GridViewDecimalColumn44.IsAutoGenerated = True
+        GridViewDecimalColumn44.IsVisible = False
+        GridViewDecimalColumn44.Name = "homepage"
+        GridViewTextBoxColumn24.EnableExpressionEditor = False
+        GridViewTextBoxColumn24.FieldName = "anmerkungen"
+        GridViewTextBoxColumn24.HeaderText = "anmerkungen"
+        GridViewTextBoxColumn24.IsAutoGenerated = True
+        GridViewTextBoxColumn24.IsVisible = False
+        GridViewTextBoxColumn24.Name = "anmerkungen"
+        GridViewDecimalColumn45.AllowGroup = False
+        GridViewDecimalColumn45.AllowResize = False
+        GridViewDecimalColumn45.AllowSort = False
+        GridViewDecimalColumn45.DataType = GetType(Integer)
+        GridViewDecimalColumn45.EnableExpressionEditor = False
+        GridViewDecimalColumn45.FieldName = "rundschreibenreihenfolge"
+        GridViewDecimalColumn45.HeaderText = "Reihenfolge"
+        GridViewDecimalColumn45.IsAutoGenerated = True
+        GridViewDecimalColumn45.Name = "rundschreibenreihenfolge"
+        GridViewDecimalColumn45.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewDecimalColumn45.VisibleInColumnChooser = False
+        GridViewDecimalColumn45.Width = 80
+        Me.RGVRundschreibenaktuell.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn39, GridViewDecimalColumn40, GridViewTextBoxColumn23, GridViewComboBoxColumn46, GridViewDecimalColumn41, GridViewDecimalColumn42, GridViewDecimalColumn43, GridViewComboBoxColumn47, GridViewComboBoxColumn48, GridViewComboBoxColumn49, GridViewComboBoxColumn50, GridViewComboBoxColumn51, GridViewComboBoxColumn52, GridViewComboBoxColumn53, GridViewComboBoxColumn54, GridViewDecimalColumn44, GridViewTextBoxColumn24, GridViewDecimalColumn45})
         Me.RGVRundschreibenaktuell.MasterTemplate.DataSource = Me.RundschreibenBindingSource1
         Me.RGVRundschreibenaktuell.MasterTemplate.EnableGrouping = False
-        Me.RGVRundschreibenaktuell.MasterTemplate.ViewDefinition = TableViewDefinition8
+        Me.RGVRundschreibenaktuell.MasterTemplate.ViewDefinition = TableViewDefinition12
         Me.RGVRundschreibenaktuell.Name = "RGVRundschreibenaktuell"
         Me.RGVRundschreibenaktuell.ReadOnly = True
         Me.RGVRundschreibenaktuell.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.RGVRundschreibenaktuell.Size = New System.Drawing.Size(1027, 500)
+        Me.RGVRundschreibenaktuell.Size = New System.Drawing.Size(1174, 500)
         Me.RGVRundschreibenaktuell.TabIndex = 0
         '
         'Label3
@@ -957,11 +998,12 @@ Partial Class frmRundschreibenuebersicht
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.Panel2)
         Me.TabPage2.Controls.Add(Me.SplitContainer1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1336, 844)
+        Me.TabPage2.Size = New System.Drawing.Size(1515, 844)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Rundschreibenübersicht"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -970,21 +1012,6 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.BewBindingSource1.DataMember = "rundschreiben_bew"
         Me.BewBindingSource1.DataSource = Me.RundschreibenBindingSource1
-        '
-        'RundschreibenmonatBindingSource
-        '
-        Me.RundschreibenmonatBindingSource.DataMember = "rundschreibenmonat"
-        Me.RundschreibenmonatBindingSource.DataSource = Me.BewerberDataSet
-        '
-        'BewerberDataSet
-        '
-        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
-        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BewBindingSource
-        '
-        Me.BewBindingSource.DataMember = "bew"
-        Me.BewBindingSource.DataSource = Me.BewerberDataSet
         '
         'BewTableAdapter
         '
@@ -1030,17 +1057,94 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.RundschreibenTableAdapter.ClearBeforeFill = True
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.btnKWspeichern)
+        Me.Panel2.Controls.Add(Me.lblKW)
+        Me.Panel2.Controls.Add(Me.Label8)
+        Me.Panel2.Controls.Add(Me.lblAktuellesDatum)
+        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Location = New System.Drawing.Point(7, 18)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(562, 117)
+        Me.Panel2.TabIndex = 5
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Crimson
+        Me.Label6.Location = New System.Drawing.Point(4, 7)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(202, 18)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Kalenderwoche eintragen:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(7, 44)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(128, 16)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Aktuelles Datum: "
+        '
+        'lblAktuellesDatum
+        '
+        Me.lblAktuellesDatum.AutoSize = True
+        Me.lblAktuellesDatum.BackColor = System.Drawing.Color.Yellow
+        Me.lblAktuellesDatum.Location = New System.Drawing.Point(220, 44)
+        Me.lblAktuellesDatum.Name = "lblAktuellesDatum"
+        Me.lblAktuellesDatum.Size = New System.Drawing.Size(120, 16)
+        Me.lblAktuellesDatum.TabIndex = 2
+        Me.lblAktuellesDatum.Text = "Aktuelles Datum"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(10, 77)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(178, 16)
+        Me.Label8.TabIndex = 3
+        Me.Label8.Text = "Aktuelle Kalenderwoche:"
+        '
+        'lblKW
+        '
+        Me.lblKW.AutoSize = True
+        Me.lblKW.BackColor = System.Drawing.Color.Yellow
+        Me.lblKW.Location = New System.Drawing.Point(223, 79)
+        Me.lblKW.Name = "lblKW"
+        Me.lblKW.Size = New System.Drawing.Size(31, 16)
+        Me.lblKW.TabIndex = 4
+        Me.lblKW.Text = "KW"
+        '
+        'btnKWspeichern
+        '
+        Me.btnKWspeichern.ForeColor = System.Drawing.Color.Red
+        Me.btnKWspeichern.Image = CType(resources.GetObject("btnKWspeichern.Image"), System.Drawing.Image)
+        Me.btnKWspeichern.Location = New System.Drawing.Point(382, 44)
+        Me.btnKWspeichern.Name = "btnKWspeichern"
+        Me.btnKWspeichern.Size = New System.Drawing.Size(163, 37)
+        Me.btnKWspeichern.TabIndex = 5
+        Me.btnKWspeichern.Text = "<html><strong>Kalenderwoche<br/>eintragen</strong></html>"
+        '
         'frmRundschreibenuebersicht
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(1366, 898)
+        Me.ClientSize = New System.Drawing.Size(1539, 898)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmRundschreibenuebersicht"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Rundschreibenübersicht"
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
@@ -1048,6 +1152,7 @@ Partial Class frmRundschreibenuebersicht
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.RGVRundschreibenMonat.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RGVRundschreibenMonat, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RundschreibenmonatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RGVBewerber.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RGVBewerber, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RundschreibenBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1070,9 +1175,9 @@ Partial Class frmRundschreibenuebersicht
         CType(Me.btnSave_Rundschreiben, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.BewBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RundschreibenmonatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        CType(Me.btnKWspeichern, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1112,4 +1217,11 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents chkHomepage As CheckBox
     Friend WithEvents rbtnNein As RadioButton
     Friend WithEvents rbtnJa As RadioButton
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents lblAktuellesDatum As Label
+    Friend WithEvents lblKW As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents btnKWspeichern As Telerik.WinControls.UI.RadButton
 End Class

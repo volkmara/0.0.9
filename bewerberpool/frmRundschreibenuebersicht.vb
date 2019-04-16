@@ -1,10 +1,14 @@
 ﻿Imports System.ComponentModel
+Imports System.Globalization
 Imports bewerberpool
 Imports bewerberpool.BewerberDataSet
 Imports Telerik.WinControls
 Imports Telerik.WinControls.Data
 Imports Telerik.WinControls.UI
 Public Class frmRundschreibenuebersicht
+
+    Public kw As Integer = 0
+
     Private frmMain As frmMain
 
     Public Sub New(frmMain As frmMain)
@@ -24,6 +28,11 @@ Public Class frmRundschreibenuebersicht
     Private Sub frmRundschreibenuebersicht_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Me.RundschreibenmonatBindingSource.Filter = "erledigt = 1"
         Me.RundschreibenBindingSource1.Filter = "aktuell = 1"
+
+        lblAktuellesDatum.Text = Date.Now.ToShortDateString
+
+        Call Kalenderwoche()
+        lblKW.Text = CStr(kw)
     End Sub
     Private Sub RGVRundschreibenMonat_ViewCellFormatting(sender As Object, e As Telerik.WinControls.UI.CellFormattingEventArgs) Handles RGVRundschreibenMonat.ViewCellFormatting, RGVBewerber.ViewCellFormatting, RGVRundschreibenaktuell.ViewCellFormatting, RGVRundschreibenmonataktuell.ViewCellFormatting
         Dim newFont10 = New Font("Microsoft Sans Serif", 10.0, FontStyle.Bold)
@@ -55,6 +64,8 @@ Public Class frmRundschreibenuebersicht
             Me.RundschreibenBindingSource1.Filter = "aktuell = 0 AND gelöscht = 0"
             'Me.RundschreibenBindingSource1.Filter = "aktuell = 0"
             Me.RundschreibenmonatBindingSource.Filter = "erledigt = 2"
+            Me.RGVBewerber.AutoSizeRows = True
+            Me.RGVBewerber.Columns(14).WrapText = True
         ElseIf TabControl1.SelectedTab Is TabPage1 Then
             Me.RundschreibenBindingSource1.Filter = "aktuell = 1"
             Me.RundschreibenmonatBindingSource.Filter = "erledigt = 1"
@@ -152,17 +163,30 @@ Public Class frmRundschreibenuebersicht
                 Me.RGVRundschreibenaktuell.Columns(14).WrapText = False
         End Select
     End Sub
-
 #End Region
 
 #Region "Tabpage 2: Rundschreibenübersicht"
-    Private Sub btnSave_Click(sender As Object, e As EventArgs)
-        Dim rundschreibenmonat = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
-        'rundschreibenmonat.kw = CInt(cmbKW.SelectedItem)
-        Me.Validate()
-        Me.RundschreibenmonatBindingSource.EndEdit()
-        Me.RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
-        Call gespeichert()
+
+    Private Sub Kalenderwoche()
+        kw = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(Now, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
+    End Sub
+
+    Private Sub btnKWspeichern_Click(sender As Object, e As EventArgs) Handles btnKWspeichern.Click
+
+        Dim rundschreibenmonat = DirectCast(DirectCast(RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
+
+        Dim kwtext As String = String.Concat("Soll die Kalenderwoche ", CStr(kw), " für das Rundschreiben ", rundschreibenmonat.monat, " eingetragen werden?")
+        Dim result As DialogResult = MessageBox.Show(kwtext, "Kalenderwoche eintragen", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+
+        If result = DialogResult.No Then
+            Exit Sub
+        ElseIf result = DialogResult.Yes Then
+            rundschreibenmonat.kw = kw
+            Me.Validate()
+            Me.RundschreibenBindingSource.EndEdit()
+            Me.RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
+            Call gespeichert()
+        End If
     End Sub
 #End Region
 End Class
