@@ -29,6 +29,13 @@ Public Class frmRundschreibenuebersicht
         Me.RundschreibenmonatBindingSource.Filter = "erledigt = 1"
         Me.RundschreibenBindingSource1.Filter = "aktuell = 1"
 
+        ' Button zum Eintragen der KW nur Anzeigen bei Hy und Adler
+        If loginflag = 8 OrElse loginflag = 9 Then
+            btnKWspeichern.Visible = True
+        Else
+            btnKWspeichern.Visible = False
+        End If
+
         lblAktuellesDatum.Text = Date.Now.ToShortDateString
 
         Call Kalenderwoche()

@@ -88,7 +88,6 @@ Public Class frmRundschreibendetail
 
         Select Case True
             Case sender Is btnClose
-                Me.BewBindingSource.RemoveFilter()
                 Me.Close()
 
             Case sender Is btnNewandSave
@@ -125,7 +124,6 @@ Public Class frmRundschreibendetail
                 Me.RundschreibenBindingSource.EndEdit()
                 Me.RundschreibenTableAdapter.Update(Me.BewerberDataSet.rundschreiben)
 
-                RundschreibenBindingSource.RemoveFilter()
                 Call gespeichert()
                 Me.Close()
         End Select

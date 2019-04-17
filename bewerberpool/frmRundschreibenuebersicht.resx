@@ -138,9 +138,6 @@
   <metadata name="BewerberDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="BewerberDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="RundschreibenBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>640, 13</value>
   </metadata>
@@ -154,36 +151,6 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABZ0RVh0U291
-        cmNlAENyeXN0YWwgUHJvamVjdOvj5IsAAATBSURBVFhH7ZdrTJtVGMdfTPy26FxmNhO3bMh0ZBpN9INf
-        /KJxfjF+MDOaGTPnohLKErMvkLlkcbqERRF2wTFAGIEx3OR+py1QChR6o5RyeaFAS+ntbSl0lNLOwd/n
-        vOUOmgwcmriT/HLOeZ7nnP//fdvmnHIA/lW4vOKy+JsV0uzc8oasnIpF6rNyyuqzfi1foHSZ7LK6JbJK
-        I6yMMVbWs/XifiLLGrmV0uyCsoo47q5M2WIR/BiweWGyCDCMuKAz26EesqOj34q2PgtaekbR2D0MWdcQ
-        GnQ86jQDqFb3o0rVK8LGtRSr1/KQ6gchN5ihMA5DaRpFW68FVmES+uFxjLp86DI7MOzwomPAihqlWsYM
-        yE2DI2jV9UCpNUKpMaJF3Y1mTTea1AY0dRog7+iCXNUFmUoPaZsODUR9O9GqFWFzBsuxGhnVsjVNHZH1
-        rWxfok1nFMft+h4Y+oeYgVruTkOLfHyc3I1aYLFYYbWOiYyNjcFms4mw/LjdDjvhcDhEnE4nXC7XEm63
-        ewEBguCGxyMQHhFB7L3weiNM+HxibY2ykxlQyP1+PwKBmQgzEWZWEYwQDCIYnI0wG2F2FaEIoRBC6whH
-        CIcRDt8H0xQN/FavkIdZASVMpr5tgWmxB6tRLBgIkftFA2vbo4gxrUAg8NjAYwMbG9gO/ttvYG17FLH/
-        hwGz5graa5MXZsttWwz4vcOYdd+GwKcjHJxaiEbahgbYQbJo4J9AVZkIzJYD02VorfxuXX7RQG0rHcdr
-        DaxtDxubnrRhauAiMJEJ+PLh7rqA+6GAmGNtpYHlN0DH7FYN9BiNojivOAe4LgHW7wnqx6+Ab0nGzD0X
-        5ufnNjYQpKNxMwZG1JkYViTCppDA2folAt0JwOA3AE89f4ZIovl5zPMXEdCfh9CWBL7qNAalZ8GrcrZu
-        oKf8FGA4CfR9Dhg/Abo/BvTHAN1HBI21xwHNZ8QXNP4aUMfR+DTQeAr6YsnWDfgnLNAXHsOD5g+A9qNA
-        85tA0+uA/FVA+jJQdwSoISpfASpeA6rfQqj4PXQWfArBYd7YwMOiUcmguHEUD6pIuCaWRF4Cqg6TKPXl
-        RMkh4O4LQFE0wnmxaMz4EFM+u3hNW/oVsPsZC6y+3/09K+s9TjN0ee8DpSRc8iJQTPxOwneIIhIvjMZc
-        XjQ0BccxOeEQ196bCqBOqanlSuRtLZP+abi8Ptg9E7A5vbA6BYzY3TDbnOCtDvRb7OgdGYfJbEO3eQyG
-        QSv0vAXa/lHoBkbFcWMRfemKYoDbJMi4FQ3kE3kHgdwDmMvcj876NNjcXjgELwTSa1Bp5Vx+adnJwprG
-        1IJqeWpB1V+TXyVbpnI90p/e4EXBmwcWIOEc6rP2ARnEL/tQ8ePbusX9bpFeUXnliQ3/r20G0w/PaJG9
-        H8gm4RsH4UnZG/Sl7A0hnebXKJ72HDrO7qhdu27VZLNclnC73cnPCsiMxURKTEiW+FTzNQl34npCVJwi
-        cWfn1KWYP5B2CCPnnh76OZ57cuXaVRttlusJ3JGxC3s87d/u1mZIor5Kief2sPjlBO4JGj+fJYk6o0va
-        1TeUuNN6VRLJLbJqo81yNYHblS7h3qWnow99fZ4ZSY3nDlPNO1S7YzkH7k/+1av3yjVDWQAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
-  <metadata name="Panel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="Tabellebtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABZ0RVh0U291
@@ -327,21 +294,6 @@
         5tMouS7Fe+npmP+BS0fnL/NXkf+KxUADAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="BewBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>441, 56</value>
-  </metadata>
-  <metadata name="BewTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>315, 17</value>
-  </metadata>
-  <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>462, 17</value>
-  </metadata>
-  <metadata name="RundschreibenmonatTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1299, 17</value>
-  </metadata>
-  <metadata name="RundschreibenTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>235, 56</value>
-  </metadata>
   <data name="btnKWspeichern.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
@@ -374,6 +326,21 @@
         5tMouS7Fe+npmP+BS0fnL/NXkf+KxUADAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="BewBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>441, 56</value>
+  </metadata>
+  <metadata name="BewTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>315, 17</value>
+  </metadata>
+  <metadata name="TableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>462, 17</value>
+  </metadata>
+  <metadata name="RundschreibenmonatTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1299, 17</value>
+  </metadata>
+  <metadata name="RundschreibenTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>235, 56</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>57</value>
   </metadata>
