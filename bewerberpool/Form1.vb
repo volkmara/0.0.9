@@ -755,7 +755,7 @@ Public Class frmMain
     ' `====================================================================== Formatierung bewgridview =====================================================
 
     ' =================================================================  Doppelklick Email, Homepage Beginn, Ulas, Bewerberbogen, Googlemaps, Persönlichkeit ============================
-    Private Sub EmailTextBox_DoubleClick(sender As Object, e As EventArgs) Handles EmailTextBox.DoubleClick, HomepagelinkTextBox.DoubleClick, txtOrt.DoubleClick, UlasListBox.DoubleClick, UlasbearbeitetListBox.DoubleClick, RTEBewerberbeschreibung.DoubleClick, Label16.DoubleClick, RefnrTextBox.DoubleClick, lblMehrAnmerkungen.DoubleClick, txtFuerstelle.DoubleClick
+    Private Sub EmailTextBox_DoubleClick(sender As Object, e As EventArgs) Handles EmailTextBox.DoubleClick, HomepagelinkTextBox.DoubleClick, txtOrt.DoubleClick, UlasListBox.DoubleClick, UlasbearbeitetListBox.DoubleClick, RTEBewerberbeschreibung.DoubleClick, Label16.DoubleClick, RefnrTextBox.DoubleClick, lblMehrAnmerkungen.DoubleClick, txtFuerstelle.DoubleClick, txtFuerkunde.DoubleClick
         Select Case True
             Case sender Is EmailTextBox
                 If CStr(EmailTextBox.Text) <> String.Empty Then
@@ -811,6 +811,10 @@ Public Class frmMain
                 frmOA.vorschlagenfuerstelle_bool = True
                 Using frm = New frmOA(Me)
                     Dim result = frm.ShowDialog()
+                End Using
+            Case sender Is txtFuerkunde
+                Using frm = New frmKundeOA(Me)
+                    Dim result = frm.ShowDialog(Me)
                 End Using
             Case sender Is Label16 ' Doppelklick auf Label 16 öffnet Fenster für Homepagedaten
                 Using frm = New frmHomepage(Me)
@@ -1623,7 +1627,7 @@ Public Class frmMain
             Dim betreff As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde auf ""alt"" gesetzt")
             Dim bodytext As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde auf ""alt"" gesetzt.", vbNewLine, "Papierulas müssen ebenfalls nach alt verschoben werden.")
 
-            email.receiver = "assistenz@heyduck-personalservice.de, kontakt@heyduck-personalservice.de, volkmar.adler@heyduck-zeitarbeit.de"
+            email.receiver = "assistenz@heyduck-personalservice.de, kontakt@heyduck-personalservice.de, volkmar.adler@heyduck-zeitarbeit.de, magdalenemersch@heyduck-personalservice.de"
             ' email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
             email.subject = CStr(betreff)
             email.body = CStr(bodytext)

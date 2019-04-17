@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\server2012\xchange\bewerberpool\publish\</InstallUrl>
     <UpdateUrl>\\server2012\xchange\bewerberpool\publish\</UpdateUrl>
-    <ApplicationRevision>169</ApplicationRevision>
+    <ApplicationRevision>170</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -228,6 +228,12 @@
     <Compile Include="frmInterviewer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmKundeOA.Designer.vb">
+      <DependentUpon>frmKundeOA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmKundeOA.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmKurzfragebogen.Designer.vb">
       <DependentUpon>frmKurzfragebogen.vb</DependentUpon>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInterviewer.resx">
       <DependentUpon>frmInterviewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKundeOA.resx">
+      <DependentUpon>frmKundeOA.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKurzfragebogen.resx">
       <DependentUpon>frmKurzfragebogen.vb</DependentUpon>
