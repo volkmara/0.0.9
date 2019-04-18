@@ -141,7 +141,8 @@ Public Class frmOA
 
             ' Felder in frmMain
             Case vorschlagenfuerstelle_bool
-                werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift.Substring(0, 50), vbNewLine)
+                'werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift.Substring(0, 50), vbNewLine)
+                werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift.Substring(0, 10), vbNewLine)
                 liste.Add(werte)
                 interviewerstellenliste = String.Join(vbNewLine, liste)
                 ListBox1.DataSource = liste

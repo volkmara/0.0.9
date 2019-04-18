@@ -94,6 +94,9 @@ Public Class frmMain
         Else
             BewerbervollstaendigloeschenRadMenuItem2.Visibility = ElementVisibility.Collapsed
         End If
+
+        BewGridView1.ColumnChooser.DesktopLocation = New Point(300, 100)
+        BewGridView1.ColumnChooser.Font = New Font("Segoe", 10, FontStyle.Bold)
     End Sub
 
     ' ============================================================================= Panel ausblenden, wenn kein Bewerber ausgewählt ===========================
@@ -1934,4 +1937,7 @@ Public Class frmMain
         frmListboxen.vztz = String.Empty
     End Sub
 
+    Private Sub BewGridView1_ColumnChooserCreated(sender As Object, e As ColumnChooserCreatedEventArgs) Handles BewGridView1.ColumnChooserCreated
+        e.ColumnChooser.EnableFilter = True
+    End Sub
 End Class
