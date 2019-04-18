@@ -1583,8 +1583,12 @@ Public Class frmMain
 
     ' Wenn Status auf ausgedruckt steht
     Private Sub fertig() ' Status fertig wird gesetzt, wenn Interviewerfragebogen ausgefüllt wurde
-        If StandComboBox.Text = CStr("ausgedruckt") OrElse StandComboBox.Text = CStr("ausgefüllt") Then
+
+        Dim bew = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+
+        If bew.status = CStr("ausgedruckt") OrElse bew.status = CStr("ausgefüllt") Then
             GroupBox1.BackColor = Color.Cyan
+            MessageBox.Show("Diese/r Bewerber/in ist noch nicht vollständig ausgefüllt. Bitte den Interviewerfragebogen öffnen und Einträge ergänzen", "Nicht vollständig ausgefüllt", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             GroupBox1.BackColor = Color.WhiteSmoke
         End If
