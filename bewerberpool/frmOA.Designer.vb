@@ -29,27 +29,26 @@ Partial Class frmOA
         Dim Oa_plzLabel As System.Windows.Forms.Label
         Dim Oa_geheimLabel As System.Windows.Forms.Label
         Dim Oa_qualifikationLabel As System.Windows.Forms.Label
-        Dim GridViewDecimalColumn3 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn4 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn28 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewDecimalColumn1 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn2 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOA))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RadRTEhtml = New Telerik.WinControls.UI.RadRichTextEditor()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Oa_geheimTextBox = New System.Windows.Forms.TextBox()
         Me.Oa_stelleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -60,6 +59,7 @@ Partial Class frmOA
         Me.Oa_zavmTextBox = New System.Windows.Forms.TextBox()
         Me.Oa_qualifikationTextBox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.OAGridView = New Telerik.WinControls.UI.RadGridView()
         Me.Oa_stelleTableAdapter = New bewerberpool.oaDataSetTableAdapters.oa_stelleTableAdapter()
@@ -74,6 +74,7 @@ Partial Class frmOA
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Oa_arbeitsortLabel = New System.Windows.Forms.Label()
         Oa_arbeitszeitLabel = New System.Windows.Forms.Label()
         Oa_zavmLabel = New System.Windows.Forms.Label()
@@ -175,18 +176,9 @@ Partial Class frmOA
         Me.RadRTEhtml.Size = New System.Drawing.Size(608, 297)
         Me.RadRTEhtml.TabIndex = 14
         '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.HorizontalScrollbar = True
-        Me.ListBox1.ItemHeight = 16
-        Me.ListBox1.Location = New System.Drawing.Point(7, 37)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(281, 164)
-        Me.ListBox1.TabIndex = 1
-        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.Oa_geheimTextBox)
         Me.GroupBox2.Controls.Add(Oa_geheimLabel)
         Me.GroupBox2.Controls.Add(Oa_arbeitsortLabel)
@@ -285,6 +277,16 @@ Partial Class frmOA
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Stellendaten:"
         '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.HorizontalScrollbar = True
+        Me.ListBox1.ItemHeight = 16
+        Me.ListBox1.Location = New System.Drawing.Point(7, 37)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(281, 164)
+        Me.ListBox1.TabIndex = 1
+        '
         'BewerberDataSet
         '
         Me.BewerberDataSet.DataSetName = "BewerberDataSet"
@@ -306,113 +308,113 @@ Partial Class frmOA
         Me.OAGridView.MasterTemplate.AllowColumnChooser = False
         Me.OAGridView.MasterTemplate.AllowDragToGroup = False
         Me.OAGridView.MasterTemplate.AllowEditRow = False
-        GridViewDecimalColumn3.DataType = GetType(Integer)
-        GridViewDecimalColumn3.EnableExpressionEditor = False
-        GridViewDecimalColumn3.FieldName = "oastelleID"
-        GridViewDecimalColumn3.HeaderText = "oastelleID"
-        GridViewDecimalColumn3.IsAutoGenerated = True
-        GridViewDecimalColumn3.IsVisible = False
-        GridViewDecimalColumn3.Name = "oastelleID"
-        GridViewTextBoxColumn15.EnableExpressionEditor = False
-        GridViewTextBoxColumn15.FieldName = "oa_status"
-        GridViewTextBoxColumn15.HeaderText = "oa_status"
-        GridViewTextBoxColumn15.IsAutoGenerated = True
-        GridViewTextBoxColumn15.IsVisible = False
-        GridViewTextBoxColumn15.Name = "oa_status"
-        GridViewTextBoxColumn16.EnableExpressionEditor = False
-        GridViewTextBoxColumn16.FieldName = "oa_kunde"
-        GridViewTextBoxColumn16.HeaderText = "Kunde"
-        GridViewTextBoxColumn16.IsAutoGenerated = True
-        GridViewTextBoxColumn16.MinWidth = 100
-        GridViewTextBoxColumn16.Name = "oa_kunde"
-        GridViewTextBoxColumn16.Width = 200
-        GridViewDecimalColumn4.DataType = GetType(Short)
-        GridViewDecimalColumn4.EnableExpressionEditor = False
-        GridViewDecimalColumn4.FieldName = "oa_referenznummer"
-        GridViewDecimalColumn4.HeaderText = "RefNr"
-        GridViewDecimalColumn4.IsAutoGenerated = True
-        GridViewDecimalColumn4.Name = "oa_referenznummer"
-        GridViewDecimalColumn4.VisibleInColumnChooser = False
-        GridViewDecimalColumn4.Width = 83
-        GridViewTextBoxColumn17.EnableExpressionEditor = False
-        GridViewTextBoxColumn17.FieldName = "oa_ueberschrift"
-        GridViewTextBoxColumn17.HeaderText = "Auftragsbeschreibung"
-        GridViewTextBoxColumn17.IsAutoGenerated = True
-        GridViewTextBoxColumn17.Name = "oa_ueberschrift"
-        GridViewTextBoxColumn17.Width = 380
-        GridViewTextBoxColumn18.EnableExpressionEditor = False
-        GridViewTextBoxColumn18.FieldName = "oa_plz"
-        GridViewTextBoxColumn18.HeaderText = "oa_plz"
-        GridViewTextBoxColumn18.IsAutoGenerated = True
-        GridViewTextBoxColumn18.IsVisible = False
-        GridViewTextBoxColumn18.Name = "oa_plz"
-        GridViewTextBoxColumn19.EnableExpressionEditor = False
-        GridViewTextBoxColumn19.FieldName = "oa_arbeitsort"
-        GridViewTextBoxColumn19.HeaderText = "Arbeitsort"
-        GridViewTextBoxColumn19.IsAutoGenerated = True
-        GridViewTextBoxColumn19.IsVisible = False
-        GridViewTextBoxColumn19.Name = "oa_arbeitsort"
-        GridViewTextBoxColumn19.Width = 83
-        GridViewTextBoxColumn20.EnableExpressionEditor = False
-        GridViewTextBoxColumn20.FieldName = "oa_qualifikation"
-        GridViewTextBoxColumn20.HeaderText = "oa_qualifikation"
-        GridViewTextBoxColumn20.IsAutoGenerated = True
-        GridViewTextBoxColumn20.IsVisible = False
-        GridViewTextBoxColumn20.Name = "oa_qualifikation"
-        GridViewTextBoxColumn21.EnableExpressionEditor = False
-        GridViewTextBoxColumn21.FieldName = "oa_text"
-        GridViewTextBoxColumn21.HeaderText = "oa_text"
-        GridViewTextBoxColumn21.IsAutoGenerated = True
-        GridViewTextBoxColumn21.IsVisible = False
-        GridViewTextBoxColumn21.Name = "oa_text"
-        GridViewTextBoxColumn22.EnableExpressionEditor = False
-        GridViewTextBoxColumn22.FieldName = "oa_texthtml"
-        GridViewTextBoxColumn22.HeaderText = "oa_texthtml"
-        GridViewTextBoxColumn22.IsAutoGenerated = True
-        GridViewTextBoxColumn22.IsVisible = False
-        GridViewTextBoxColumn22.Name = "oa_texthtml"
-        GridViewTextBoxColumn23.EnableExpressionEditor = False
-        GridViewTextBoxColumn23.FieldName = "oa_geheim"
-        GridViewTextBoxColumn23.HeaderText = "oa_geheim"
-        GridViewTextBoxColumn23.IsAutoGenerated = True
-        GridViewTextBoxColumn23.IsVisible = False
-        GridViewTextBoxColumn23.Name = "oa_geheim"
-        GridViewTextBoxColumn24.EnableExpressionEditor = False
-        GridViewTextBoxColumn24.FieldName = "oa_zavm"
-        GridViewTextBoxColumn24.HeaderText = "ZA/VM"
-        GridViewTextBoxColumn24.IsAutoGenerated = True
-        GridViewTextBoxColumn24.IsVisible = False
-        GridViewTextBoxColumn24.Name = "oa_zavm"
-        GridViewTextBoxColumn24.Width = 83
-        GridViewTextBoxColumn25.EnableExpressionEditor = False
-        GridViewTextBoxColumn25.FieldName = "oa_stand_aktuell"
-        GridViewTextBoxColumn25.HeaderText = "oa_stand_aktuell"
-        GridViewTextBoxColumn25.IsAutoGenerated = True
-        GridViewTextBoxColumn25.IsVisible = False
-        GridViewTextBoxColumn25.Name = "oa_stand_aktuell"
-        GridViewTextBoxColumn26.EnableExpressionEditor = False
-        GridViewTextBoxColumn26.FieldName = "oa_link"
-        GridViewTextBoxColumn26.HeaderText = "oa_link"
-        GridViewTextBoxColumn26.IsAutoGenerated = True
-        GridViewTextBoxColumn26.IsVisible = False
-        GridViewTextBoxColumn26.Name = "oa_link"
-        GridViewTextBoxColumn27.EnableExpressionEditor = False
-        GridViewTextBoxColumn27.FieldName = "oa_arbeitszeit"
-        GridViewTextBoxColumn27.HeaderText = "Arbeitszeit"
-        GridViewTextBoxColumn27.IsAutoGenerated = True
-        GridViewTextBoxColumn27.IsVisible = False
-        GridViewTextBoxColumn27.Name = "oa_arbeitszeit"
-        GridViewTextBoxColumn27.Width = 82
-        GridViewTextBoxColumn28.EnableExpressionEditor = False
-        GridViewTextBoxColumn28.FieldName = "oa_rtf_text"
-        GridViewTextBoxColumn28.HeaderText = "oa_rtf_text"
-        GridViewTextBoxColumn28.IsAutoGenerated = True
-        GridViewTextBoxColumn28.IsVisible = False
-        GridViewTextBoxColumn28.Name = "oa_rtf_text"
-        Me.OAGridView.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn3, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewDecimalColumn4, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewTextBoxColumn25, GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewTextBoxColumn28})
+        GridViewDecimalColumn1.DataType = GetType(Integer)
+        GridViewDecimalColumn1.EnableExpressionEditor = False
+        GridViewDecimalColumn1.FieldName = "oastelleID"
+        GridViewDecimalColumn1.HeaderText = "oastelleID"
+        GridViewDecimalColumn1.IsAutoGenerated = True
+        GridViewDecimalColumn1.IsVisible = False
+        GridViewDecimalColumn1.Name = "oastelleID"
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.FieldName = "oa_status"
+        GridViewTextBoxColumn1.HeaderText = "oa_status"
+        GridViewTextBoxColumn1.IsAutoGenerated = True
+        GridViewTextBoxColumn1.IsVisible = False
+        GridViewTextBoxColumn1.Name = "oa_status"
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.FieldName = "oa_kunde"
+        GridViewTextBoxColumn2.HeaderText = "Kunde"
+        GridViewTextBoxColumn2.IsAutoGenerated = True
+        GridViewTextBoxColumn2.MinWidth = 100
+        GridViewTextBoxColumn2.Name = "oa_kunde"
+        GridViewTextBoxColumn2.Width = 200
+        GridViewDecimalColumn2.DataType = GetType(Short)
+        GridViewDecimalColumn2.EnableExpressionEditor = False
+        GridViewDecimalColumn2.FieldName = "oa_referenznummer"
+        GridViewDecimalColumn2.HeaderText = "RefNr"
+        GridViewDecimalColumn2.IsAutoGenerated = True
+        GridViewDecimalColumn2.Name = "oa_referenznummer"
+        GridViewDecimalColumn2.VisibleInColumnChooser = False
+        GridViewDecimalColumn2.Width = 83
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.FieldName = "oa_ueberschrift"
+        GridViewTextBoxColumn3.HeaderText = "Auftragsbeschreibung"
+        GridViewTextBoxColumn3.IsAutoGenerated = True
+        GridViewTextBoxColumn3.Name = "oa_ueberschrift"
+        GridViewTextBoxColumn3.Width = 380
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.FieldName = "oa_plz"
+        GridViewTextBoxColumn4.HeaderText = "oa_plz"
+        GridViewTextBoxColumn4.IsAutoGenerated = True
+        GridViewTextBoxColumn4.IsVisible = False
+        GridViewTextBoxColumn4.Name = "oa_plz"
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.FieldName = "oa_arbeitsort"
+        GridViewTextBoxColumn5.HeaderText = "Arbeitsort"
+        GridViewTextBoxColumn5.IsAutoGenerated = True
+        GridViewTextBoxColumn5.IsVisible = False
+        GridViewTextBoxColumn5.Name = "oa_arbeitsort"
+        GridViewTextBoxColumn5.Width = 83
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.FieldName = "oa_qualifikation"
+        GridViewTextBoxColumn6.HeaderText = "oa_qualifikation"
+        GridViewTextBoxColumn6.IsAutoGenerated = True
+        GridViewTextBoxColumn6.IsVisible = False
+        GridViewTextBoxColumn6.Name = "oa_qualifikation"
+        GridViewTextBoxColumn7.EnableExpressionEditor = False
+        GridViewTextBoxColumn7.FieldName = "oa_text"
+        GridViewTextBoxColumn7.HeaderText = "oa_text"
+        GridViewTextBoxColumn7.IsAutoGenerated = True
+        GridViewTextBoxColumn7.IsVisible = False
+        GridViewTextBoxColumn7.Name = "oa_text"
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.FieldName = "oa_texthtml"
+        GridViewTextBoxColumn8.HeaderText = "oa_texthtml"
+        GridViewTextBoxColumn8.IsAutoGenerated = True
+        GridViewTextBoxColumn8.IsVisible = False
+        GridViewTextBoxColumn8.Name = "oa_texthtml"
+        GridViewTextBoxColumn9.EnableExpressionEditor = False
+        GridViewTextBoxColumn9.FieldName = "oa_geheim"
+        GridViewTextBoxColumn9.HeaderText = "oa_geheim"
+        GridViewTextBoxColumn9.IsAutoGenerated = True
+        GridViewTextBoxColumn9.IsVisible = False
+        GridViewTextBoxColumn9.Name = "oa_geheim"
+        GridViewTextBoxColumn10.EnableExpressionEditor = False
+        GridViewTextBoxColumn10.FieldName = "oa_zavm"
+        GridViewTextBoxColumn10.HeaderText = "ZA/VM"
+        GridViewTextBoxColumn10.IsAutoGenerated = True
+        GridViewTextBoxColumn10.IsVisible = False
+        GridViewTextBoxColumn10.Name = "oa_zavm"
+        GridViewTextBoxColumn10.Width = 83
+        GridViewTextBoxColumn11.EnableExpressionEditor = False
+        GridViewTextBoxColumn11.FieldName = "oa_stand_aktuell"
+        GridViewTextBoxColumn11.HeaderText = "oa_stand_aktuell"
+        GridViewTextBoxColumn11.IsAutoGenerated = True
+        GridViewTextBoxColumn11.IsVisible = False
+        GridViewTextBoxColumn11.Name = "oa_stand_aktuell"
+        GridViewTextBoxColumn12.EnableExpressionEditor = False
+        GridViewTextBoxColumn12.FieldName = "oa_link"
+        GridViewTextBoxColumn12.HeaderText = "oa_link"
+        GridViewTextBoxColumn12.IsAutoGenerated = True
+        GridViewTextBoxColumn12.IsVisible = False
+        GridViewTextBoxColumn12.Name = "oa_link"
+        GridViewTextBoxColumn13.EnableExpressionEditor = False
+        GridViewTextBoxColumn13.FieldName = "oa_arbeitszeit"
+        GridViewTextBoxColumn13.HeaderText = "Arbeitszeit"
+        GridViewTextBoxColumn13.IsAutoGenerated = True
+        GridViewTextBoxColumn13.IsVisible = False
+        GridViewTextBoxColumn13.Name = "oa_arbeitszeit"
+        GridViewTextBoxColumn13.Width = 82
+        GridViewTextBoxColumn14.EnableExpressionEditor = False
+        GridViewTextBoxColumn14.FieldName = "oa_rtf_text"
+        GridViewTextBoxColumn14.HeaderText = "oa_rtf_text"
+        GridViewTextBoxColumn14.IsAutoGenerated = True
+        GridViewTextBoxColumn14.IsVisible = False
+        GridViewTextBoxColumn14.Name = "oa_rtf_text"
+        Me.OAGridView.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn1, GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewDecimalColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14})
         Me.OAGridView.MasterTemplate.DataSource = Me.Oa_stelleBindingSource
         Me.OAGridView.MasterTemplate.EnableFiltering = True
-        Me.OAGridView.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.OAGridView.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.OAGridView.Name = "OAGridView"
         Me.OAGridView.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.OAGridView.Size = New System.Drawing.Size(696, 214)
@@ -539,6 +541,15 @@ Partial Class frmOA
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "2. Ausgewählte Stellen Stellen eintragen"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(410, 41)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 14
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmOA
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -602,4 +613,5 @@ Partial Class frmOA
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents Button1 As Button
 End Class

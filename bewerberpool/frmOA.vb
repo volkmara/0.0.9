@@ -136,13 +136,22 @@ Public Class frmOA
     Private Sub auswaehlen()
         Dim oawerte = DirectCast(DirectCast(Oa_stelleBindingSource.Current, DataRowView).Row, oa_stelleRow)
         Dim werte As String = String.Empty
+        Dim länge As Integer = 0
 
         Select Case True
 
+            ' Die Auftragsbezeichnungen aus OA werden übernommen und ggf. auf 50 Zeichen gekürzt
+
             ' Felder in frmMain
             Case vorschlagenfuerstelle_bool
-                'werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift.Substring(0, 50), vbNewLine)
-                werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift.Substring(0, 10), vbNewLine)
+
+                länge = oawerte.oa_ueberschrift.Length
+                If länge > 50 Then
+                    werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift.Substring(0, 50), vbNewLine)
+                ElseIf länge <= 50 Then
+                    werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift, vbNewLine)
+                End If
+
                 liste.Add(werte)
                 interviewerstellenliste = String.Join(vbNewLine, liste)
                 ListBox1.DataSource = liste
@@ -150,7 +159,13 @@ Public Class frmOA
             ' Felder im Interviewerfragebogen
 
             Case vorschlagenfuerstelle_interviewer_bool
-                werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift.Remove(50), vbNewLine)
+                länge = oawerte.oa_ueberschrift.Length
+                If länge > 50 Then
+                    werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift.Substring(0, 50), vbNewLine)
+                ElseIf länge <= 50 Then
+                    werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift, vbNewLine)
+                End If
+
                 liste.Add(werte)
                 interviewerstellenliste = String.Join(vbNewLine, liste)
                 ListBox1.DataSource = liste
@@ -246,6 +261,10 @@ Public Class frmOA
                 interviewerstellenliste = String.Empty
                 Me.Close()
         End Select
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 
     ' Private Sub frmOA_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing

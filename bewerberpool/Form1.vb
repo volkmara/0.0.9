@@ -181,6 +181,10 @@ Public Class frmMain
         Call topbewerberundinterviewerpruefen()
     End Sub
 
+    Private Sub BewGridView1_ColumnChooserCreated(sender As Object, e As ColumnChooserCreatedEventArgs) Handles BewGridView1.ColumnChooserCreated
+        e.ColumnChooser.EnableFilter = True
+    End Sub
+
 #Region " ======================================================================== Methoden zum Laden und Speichern ======================================"
     ' Daten aus DB laden
     Public Shared Sub DBLoad()
@@ -457,6 +461,7 @@ Public Class frmMain
         obj2.CellFont = newFont10
         Me.BewGridView1.Columns("Status").ConditionalFormattingObjectList.Add(obj2)
     End Sub
+
 #End Region
 
     ' ================================================================================ Hauptmenu ============================================================================
@@ -1941,7 +1946,4 @@ Public Class frmMain
         frmListboxen.vztz = String.Empty
     End Sub
 
-    Private Sub BewGridView1_ColumnChooserCreated(sender As Object, e As ColumnChooserCreatedEventArgs) Handles BewGridView1.ColumnChooserCreated
-        e.ColumnChooser.EnableFilter = True
-    End Sub
 End Class
