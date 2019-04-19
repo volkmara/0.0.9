@@ -795,6 +795,8 @@ Partial Public Class oaDataSet
         
         Private columnoa_kunde_name As Global.System.Data.DataColumn
         
+        Private columnoa_kunde_bewerber As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -847,6 +849,14 @@ Partial Public Class oaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property oa_kunde_bewerberColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnoa_kunde_bewerber
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -883,9 +893,9 @@ Partial Public Class oaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function Addoa_kundeRow(ByVal oa_kunde_name As String) As oa_kundeRow
+        Public Overloads Function Addoa_kundeRow(ByVal oa_kunde_name As String, ByVal oa_kunde_bewerber As String) As oa_kundeRow
             Dim rowoa_kundeRow As oa_kundeRow = CType(Me.NewRow,oa_kundeRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, oa_kunde_name}
+            Dim columnValuesArray() As Object = New Object() {Nothing, oa_kunde_name, oa_kunde_bewerber}
             rowoa_kundeRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowoa_kundeRow)
             Return rowoa_kundeRow
@@ -916,6 +926,7 @@ Partial Public Class oaDataSet
         Friend Sub InitVars()
             Me.columnoakundeID = MyBase.Columns("oakundeID")
             Me.columnoa_kunde_name = MyBase.Columns("oa_kunde_name")
+            Me.columnoa_kunde_bewerber = MyBase.Columns("oa_kunde_bewerber")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -925,6 +936,8 @@ Partial Public Class oaDataSet
             MyBase.Columns.Add(Me.columnoakundeID)
             Me.columnoa_kunde_name = New Global.System.Data.DataColumn("oa_kunde_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnoa_kunde_name)
+            Me.columnoa_kunde_bewerber = New Global.System.Data.DataColumn("oa_kunde_bewerber", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnoa_kunde_bewerber)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnoakundeID}, true))
             Me.columnoakundeID.AutoIncrement = true
             Me.columnoakundeID.AutoIncrementSeed = -1
@@ -932,6 +945,7 @@ Partial Public Class oaDataSet
             Me.columnoakundeID.AllowDBNull = false
             Me.columnoakundeID.Unique = true
             Me.columnoa_kunde_name.MaxLength = 255
+            Me.columnoa_kunde_bewerber.MaxLength = 5592405
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1536,6 +1550,21 @@ Partial Public Class oaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property oa_kunde_bewerber() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableoa_kunde.oa_kunde_bewerberColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Der Wert für Spalte oa_kunde_bewerber in Tabelle oa_kunde ist DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableoa_kunde.oa_kunde_bewerberColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function Isoa_kunde_nameNull() As Boolean
             Return Me.IsNull(Me.tableoa_kunde.oa_kunde_nameColumn)
         End Function
@@ -1544,6 +1573,18 @@ Partial Public Class oaDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub Setoa_kunde_nameNull()
             Me(Me.tableoa_kunde.oa_kunde_nameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isoa_kunde_bewerberNull() As Boolean
+            Return Me.IsNull(Me.tableoa_kunde.oa_kunde_bewerberColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setoa_kunde_bewerberNull()
+            Me(Me.tableoa_kunde.oa_kunde_bewerberColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -3048,6 +3089,7 @@ Namespace oaDataSetTableAdapters
             tableMapping.DataSetTable = "oa_kunde"
             tableMapping.ColumnMappings.Add("oakundeID", "oakundeID")
             tableMapping.ColumnMappings.Add("oa_kunde_name", "oa_kunde_name")
+            tableMapping.ColumnMappings.Add("oa_kunde_bewerber", "oa_kunde_bewerber")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -3081,7 +3123,7 @@ Namespace oaDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `oa_kunde` (`oa_kunde_name`) VALUES (@p1)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `oa_kunde` (`oa_kunde_name`, `oa_kunde_bewerber`) VALUES (@p1, @p2)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -3090,10 +3132,17 @@ Namespace oaDataSetTableAdapters
             param.IsNullable = true
             param.SourceColumn = "oa_kunde_name"
             Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p2"
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Text
+            param.IsNullable = true
+            param.SourceColumn = "oa_kunde_bewerber"
+            Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `oa_kunde` SET `oa_kunde_name` = @p1 WHERE ((`oakundeID` = @p2) AND ((@p3 "& _ 
-                "= 1 AND `oa_kunde_name` IS NULL) OR (`oa_kunde_name` = @p4)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `oa_kunde` SET `oa_kunde_name` = @p1, `oa_kunde_bewerber` = @p2 WHERE ((`o"& _ 
+                "akundeID` = @p3) AND ((@p4 = 1 AND `oa_kunde_name` IS NULL) OR (`oa_kunde_name` "& _ 
+                "= @p5)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -3104,6 +3153,12 @@ Namespace oaDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p2"
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Text
+            param.IsNullable = true
+            param.SourceColumn = "oa_kunde_bewerber"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p3"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -3111,7 +3166,7 @@ Namespace oaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
+            param.ParameterName = "@p4"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -3120,7 +3175,7 @@ Namespace oaDataSetTableAdapters
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
+            param.ParameterName = "@p5"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -3142,8 +3197,8 @@ Namespace oaDataSetTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        oakundeID, oa_kunde_name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            oa_kunde"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY oa_kun"& _ 
-                "de_name"
+            Me._commandCollection(0).CommandText = "SELECT oakundeID, oa_kunde_name, oa_kunde_bewerber FROM oa_kunde ORDER BY oa_kund"& _ 
+                "e_name"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -3231,11 +3286,16 @@ Namespace oaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal p1 As String, ByVal p2 As String) As Integer
             If (p1 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1,String)
+            End If
+            If (p2 Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(p2,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -3256,19 +3316,24 @@ Namespace oaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal p1 As String, ByVal p2 As Integer, ByVal p4 As String) As Integer
+        Public Overloads Overridable Function Update(ByVal p1 As String, ByVal p2 As String, ByVal p3 As Integer, ByVal p5 As String) As Integer
             If (p1 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(p1,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(p2,Integer)
-            If (p4 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            If (p2 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(p2,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(p3,Integer)
+            If (p5 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _

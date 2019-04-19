@@ -263,10 +263,6 @@ Public Class frmOA
         End Select
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-    End Sub
-
     ' Private Sub frmOA_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
     '    MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
     'End Sub
@@ -289,5 +285,4 @@ Public Class frmOA
     '    '  Me.GroupBox2.Visible = False
     'End If
     ' End Sub
-
 End Class

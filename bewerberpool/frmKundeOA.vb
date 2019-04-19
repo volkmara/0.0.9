@@ -1,8 +1,7 @@
 ﻿Imports System.ComponentModel
-Imports bewerberpool
 Imports bewerberpool.oaDataSet
+Imports bewerberpool.BewerberDataSet
 Imports Telerik.WinControls
-Imports Telerik.WinControls.Data
 Imports Telerik.WinControls.UI
 
 Public Class frmKundeOA
@@ -16,7 +15,15 @@ Public Class frmKundeOA
     End Sub
 
     Private Sub frmKundeOA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.BewerberDataSet = frmMain.BewerberDataSet
+        Me.BewTableAdapter = frmMain.BewTableAdapter
+        Me.BewBindingSource.DataSource = frmMain.BewBindingSource
+
+        'TODO: Diese Codezeile lädt Daten in die Tabelle "BewerberDataSet.bew". Sie können sie bei Bedarf verschieben oder entfernen.
+        Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
         Me.Oa_kundeTableAdapter.Fill(Me.OaDataSet.oa_kunde)
+
+
     End Sub
 
     Private Sub RGVOAkunde_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles RGVOAkunde.ViewCellFormatting
@@ -45,8 +52,28 @@ Public Class frmKundeOA
 
     Private Sub btnWerteeintragenFensterschliessen_Click(sender As Object, e As EventArgs) Handles btnWerteeintragenFensterschliessen.Click
         werte = String.Join(vbNewLine, liste)
+
+        Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+
+        ' Bewerber/in in OA speichern
+
+        Dim bewerberinoa As String = String.Concat(bewerber.name, ", ", bewerber.vorname, " , RefNr.(BP): ", CStr(bewerber.refnr), " , Wohnort: ", bewerber.ort, vbNewLine)
+        Dim oawerte = DirectCast(DirectCast(Oa_kundeBindingSource.Current, DataRowView).Row, oa_kundeRow)
+        oawerte.oa_kunde_bewerber = CStr(bewerberinoa)
+
+        Me.Validate()
+        Me.Oa_kundeBindingSource.EndEdit()
+        Me.Oa_kundeTableAdapter.Update(Me.OaDataSet.oa_kunde)
+
+        ' Kunde in BP speichern
+
         frmMain.txtFuerkunde.Text = CStr(werte)
-        MessageBox.Show("Bitte im Hauptfenster abspeichern, damit die Kundeneinträge in die Datenbank übernommen werden.", "Bitte speichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        bewerber.fuerkunde = CStr(werte)
+        Me.Validate()
+        Me.BewBindingSource.EndEdit()
+        Me.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
+
+        Call gespeichert()
         Call Mail_kunde()
         Me.Close()
     End Sub

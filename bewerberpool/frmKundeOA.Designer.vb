@@ -38,6 +38,8 @@ Partial Class frmKundeOA
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnWerteeintragenFensterschliessen = New Telerik.WinControls.UI.RadButton()
         Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         CType(Me.Oa_kundeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RGVOAkunde, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,6 +47,7 @@ Partial Class frmKundeOA
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnWerteeintragenFensterschliessen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -163,12 +166,21 @@ Partial Class frmKundeOA
         Me.BewerberDataSet.DataSetName = "BewerberDataSet"
         Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewTableAdapter
+        '
+        Me.BewTableAdapter.ClearBeforeFill = True
+        '
         'frmKundeOA
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkOrange
-        Me.ClientSize = New System.Drawing.Size(586, 671)
+        Me.ClientSize = New System.Drawing.Size(586, 661)
         Me.Controls.Add(Me.btnWerteeintragenFensterschliessen)
         Me.Controls.Add(Me.PictureBox13)
         Me.Controls.Add(Me.RGVOAkunde)
@@ -186,6 +198,7 @@ Partial Class frmKundeOA
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnWerteeintragenFensterschliessen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -200,4 +213,6 @@ Partial Class frmKundeOA
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents btnWerteeintragenFensterschliessen As Telerik.WinControls.UI.RadButton
     Friend WithEvents BewerberDataSet As BewerberDataSet
+    Friend WithEvents BewBindingSource As BindingSource
+    Friend WithEvents BewTableAdapter As BewerberDataSetTableAdapters.bewTableAdapter
 End Class
