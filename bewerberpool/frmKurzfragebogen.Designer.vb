@@ -335,8 +335,8 @@ Partial Class frmKurzfragebogen
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(1104, 44)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Bitte geben Sie Anrede, Vorname und Name des/r neuen Bewerber/in ein, für den ein" & _
-    " Kurzprofil angelegt werden soll." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bitte alle Felder ausfüllen, wenn nicht bekan" & _
+        Me.Label1.Text = "Bitte geben Sie Anrede, Vorname und Name des/r neuen Bewerber/in ein, für den ein" &
+    " Kurzprofil angelegt werden soll." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bitte alle Felder ausfüllen, wenn nicht bekan" &
     "nt, 0 oder Leerzeichen eingeben." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " "
         '
         'btnNeuerBewerber
@@ -362,6 +362,7 @@ Partial Class frmKurzfragebogen
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.btnNeuerBewerber)
         Me.Panel2.Controls.Add(Me.GroupBox2)
         Me.Panel2.Controls.Add(Me.GroupBox1)
@@ -569,6 +570,8 @@ Partial Class frmKurzfragebogen
         Me.TableAdapterManager.bewTableAdapter = Me.BewTableAdapter
         Me.TableAdapterManager.gewerblichTableAdapter = Nothing
         Me.TableAdapterManager.notizenTableAdapter = Nothing
+        Me.TableAdapterManager.rundschreibenmonatTableAdapter = Nothing
+        Me.TableAdapterManager.rundschreibenTableAdapter = Nothing
         Me.TableAdapterManager.ulasTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
@@ -578,7 +581,7 @@ Partial Class frmKurzfragebogen
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(1139, 819)
+        Me.ClientSize = New System.Drawing.Size(1145, 819)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmKurzfragebogen"

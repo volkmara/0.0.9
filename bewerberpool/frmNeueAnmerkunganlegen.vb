@@ -92,30 +92,34 @@ Public Class frmNeueAnmerkunganlegen
         exportfiletxt = allgemein.ExporttoTxt(Me.AnmerkungRTE.Document)
 
         If exportfiletxt <> String.Empty Then
-            Dim result As DialogResult = MessageBox.Show("Möchten Sie Ihre neue Anmerkung abspeichern, dann drücken Sie auf den Button ""OK"", wenn Sie nicht speichern wollen, auf den Button ""Nein""", "Neue Anmerkung speichern", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+            Dim result As DialogResult = MessageBox.Show("Möchten Sie Ihre neue Anmerkung abspeichern, dann drücken Sie auf den Button ""Ja"", wenn Sie nicht speichern wollen, auf den Button ""Nein""", "Neue Anmerkung speichern", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
             If result = Windows.Forms.DialogResult.Yes Then
-                rtfeintragen.betreff = CStr(BetreffListBox.SelectedItem.ToString)
-                rtfeintragen.anmerkungen_rtf = CStr(exportfilertf)
-                rtfeintragen.anmerkungen_text = CStr(exportfiletxt)
-                rtfeintragen.eingetragen_von = CStr(usernameklar)
-                '   rtfeintragen.geaendert_von = String.Empty ' darf nicht dbnull sein
-                rtfeintragen.eingetragen_am = Date.Now
-                rtfeintragen.geaendert_am = CDate("1970-01-01 00:00:00")
-                rtfeintragen.bewid = CInt(letzteid)
+                If CStr(BetreffListBox.SelectedItem.ToString) = String.Empty OrElse CStr(exportfilertf) = String.Empty OrElse CStr(exportfiletxt) = String.Empty Then
+                    MessageBox.Show("Bitte einen Betreff und/oder einen Anmerkungstext eintragen", "Fehlender Eintrag", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    rtfeintragen.betreff = CStr(BetreffListBox.SelectedItem.ToString)
+                    rtfeintragen.anmerkungen_rtf = CStr(exportfilertf)
+                    rtfeintragen.anmerkungen_text = CStr(exportfiletxt)
+                    rtfeintragen.eingetragen_von = CStr(usernameklar)
+                    '   rtfeintragen.geaendert_von = String.Empty ' darf nicht dbnull sein
+                    rtfeintragen.eingetragen_am = Date.Now
+                    rtfeintragen.geaendert_am = CDate("1970-01-01 00:00:00")
+                    rtfeintragen.bewid = CInt(letzteid)
 
-                Me.Validate()
-                Me.NotizenBindingSource.EndEdit()
-                Me.NotizenTableAdapter.Update(Me.BewerberDataSet.notizen)
-                Call gespeichert()
-                frmMain.NotizenTableAdapter.FillBy(frmMain.BewerberDataSet.notizen, CInt(letzteid))
-                'frmMain.NotizenTableAdapter.Fill(frmMain.BewerberDataSet.notizen)
-                'frmMain.NotizenRadGridView.Refresh()
-                ' frmMain.DBLoad() ' Datenbank wird neu geladen
-                frmMain.letzteanmerkunganzeigen() ' Letzte Anmerkung wird in frmMain in das Feld im Reiter Bewerber/in geladen
-                droptext = String.Empty
-                Me.Close()
+                    Me.Validate()
+                    Me.NotizenBindingSource.EndEdit()
+                    Me.NotizenTableAdapter.Update(Me.BewerberDataSet.notizen)
+                    Call gespeichert()
+                    frmMain.NotizenTableAdapter.FillBy(frmMain.BewerberDataSet.notizen, CInt(letzteid))
+                    'frmMain.NotizenTableAdapter.Fill(frmMain.BewerberDataSet.notizen)
+                    'frmMain.NotizenRadGridView.Refresh()
+                    ' frmMain.DBLoad() ' Datenbank wird neu geladen
+                    frmMain.letzteanmerkunganzeigen() ' Letzte Anmerkung wird in frmMain in das Feld im Reiter Bewerber/in geladen
+                    droptext = String.Empty
+                    Me.Close()
+                End If
             ElseIf result = Windows.Forms.DialogResult.No Then
-                Exit Sub
+                    Exit Sub
             End If
         Else
             MessageBox.Show("Keine Anmerkung eingetragen", "Keine Anmerkung eingetragen", MessageBoxButtons.OK, MessageBoxIcon.Hand)

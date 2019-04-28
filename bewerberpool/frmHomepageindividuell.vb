@@ -20,12 +20,11 @@ Public Class frmHomepageindividuell
     End Sub
 
     Private Sub frmHomepageindividuell_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        'Tt_newsBindingSource.Filter = "Tx_ttnewserweiterung_referenznummer = '" & rf & "'"
         Dim homepage = DirectCast(DirectCast(Tt_newsBindingSource.Current, DataRowView).Row, tt_newsRow)
         lblEintragsdatum.Text = TimestampzuDate(homepage.datetime).ToString
         lblEndtime.Text = TimestampzuDate(homepage.endtime).ToString
-
     End Sub
+
 
     Function TimestampzuDate(ByVal timestamp As Double) As DateTime
         Return New DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(timestamp).ToLocalTime()
@@ -46,7 +45,6 @@ Public Class frmHomepageindividuell
         MsgBox(homepagetime)
         MsgBox(TimestampzuDate(homepagetime))
         '  DateTimePicker1.Text = CStr(ConvertTimestamp(homepagetime))
-
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)

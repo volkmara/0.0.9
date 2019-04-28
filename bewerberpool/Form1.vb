@@ -490,9 +490,13 @@ Public Class frmMain
                     Dim result = frm.ShowDialog()
                 End Using
             Case sender Is DetailansichtRadMenuItem1
-                Using frm = New frmHomepageindividuell(Me)
-                    Dim result = frm.ShowDialog()
-                End Using
+                If Me.HeyduckDataSet.tt_news.Any(Function(x) x.tx_ttnewserweiterung_referenznummer = CStr(letzteid) AndAlso x.deleted = CInt(0)) Then
+                    Using frm = New frmHomepageindividuell(Me)
+                        Dim result = frm.ShowDialog()
+                    End Using
+                Else
+                    MessageBox.Show("Ein/e Bewerber/in mit dieser Referenznummer ist nicht auf der Homepage aktiv", "Bewerber/in nicht vorhanden", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
             Case sender Is BewerbervollstaendigloeschenRadMenuItem2
                 Call Bewerberkomplettloeschen()
         End Select

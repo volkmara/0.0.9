@@ -12,8 +12,7 @@ Imports Telerik.WinControls.RichTextEditor
 Public Class frmOA
 
     Public liste As New BindingList(Of String)() ' enthält die ausgewählten Einträge, Listbox wird daran gebunden
-
-    Public list As New List(Of String)()
+    Public interviewerstellenliste As String = String.Empty ' Stellenvorschläge des Interviewers für Bewerber
 
     Public Shared vorschlagenfuerstelle_bool As Boolean = False
     Public Shared vorschlagenfuerstelle_interviewer_bool As Boolean = False
@@ -27,29 +26,20 @@ Public Class frmOA
         InitializeComponent()
     End Sub
 
-    'Public ulas = BewerberDataSet.ulas.Where(Function(x) x.id_bew = letzteid)
-
-    Public Shared Property interviewerstellenliste As String = String.Empty ' Stellenvorschläge des Interviewers für Bewerber
-
     Sub New()
-        '' TODO: Complete member initialization 
         InitializeComponent()
     End Sub
 
     Sub New(frmMain As frmMain)
-        ' TODO: Complete member initialization 
         _frmMain = frmMain
         InitializeComponent()
     End Sub
 
     Private Sub frmOA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: Diese Codezeile lädt Daten in die Tabelle "BewerberDataSet.bew". Sie können sie bei Bedarf verschieben oder entfernen.
         Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
-        ' Me.UlasTableAdapter.Fill(Me.BewerberDataSet.ulas)
         Oa_stelleTableAdapter.Fill(OaDataSet.oa_stelle)
-        ' Dim ulas = BewerberDataSet.ulas.Where(Function(x) x.id_bew = letzteid)
-        ' Me.UlasBindingSource.Filter = "id_bew = '" & letzteid & "'"
         Me.BewBindingSource.DataSource = frmMain.BewBindingSource
+        Me.BewBindingSource.Filter = "id_bew = '" & letzteid & "'"
     End Sub
 
     Private Sub frmOA_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -98,31 +88,33 @@ Public Class frmOA
 
     ' Es werden die Werte ausgelesen, die bereits früher eingetragen wurden und in die Bindinglist eingetragen, die mit Listbox1 verbunden ist
     Private Sub voreintraege()
-        'Dim ulaswerte = DirectCast(DirectCast(Me.UlasBindingSource.Current, DataRowView).Row, ulasRow)
-        Dim ulaswerte = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+
+        Dim stellewerte = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
         Dim lines() As String
         Dim eintraege As String = String.Empty
 
         Select Case True
             'frmMain
             Case vorschlagenfuerstelle_bool
-                If ulaswerte.IsfuerstelleNull OrElse ulaswerte.fuerstelle = String.Empty Then
+                If stellewerte.IsfuerstelleNull OrElse stellewerte.fuerstelle = String.Empty Then
                     Return
                 Else
-                    eintraege = CStr(ulaswerte.fuerstelle)
+                    eintraege = CStr(stellewerte.fuerstelle)
                 End If
 
                 'frmInterviewer
             Case vorschlagenfuerstelle_interviewer_bool
-                If ulaswerte.IsfuerstelleNull OrElse ulaswerte.fuerstelle = String.Empty Then
+                If stellewerte.IsfuerstelleNull OrElse stellewerte.fuerstelle = String.Empty Then
                     Return
                 Else
-                    eintraege = CStr(ulaswerte.fuerstelle)
+                    eintraege = CStr(stellewerte.fuerstelle)
                 End If
         End Select
 
-        ' Wenn keine früheren Einträge vorhanden sind, wird nichts eingetragen und die Bindinglist nicht mit der Listbox1 verbunden
+        'Wenn keine früheren Einträge vorhanden sind, wird nichts eingetragen und die Bindinglist nicht mit der Listbox1 verbunden
+
         lines = eintraege.Split(vbNewLine.ToCharArray, StringSplitOptions.RemoveEmptyEntries)
+
         If lines.Count > 0 Then
             For Each item In lines
                 liste.Add(item)
@@ -139,7 +131,6 @@ Public Class frmOA
         Dim länge As Integer = 0
 
         Select Case True
-
             ' Die Auftragsbezeichnungen aus OA werden übernommen und ggf. auf 50 Zeichen gekürzt
 
             ' Felder in frmMain
@@ -147,16 +138,16 @@ Public Class frmOA
 
                 länge = oawerte.oa_ueberschrift.Length
                 If länge > 50 Then
-                    werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift.Substring(0, 50), vbNewLine)
+                    werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift.Substring(0, 50), vbNewLine, vbNewLine)
                 ElseIf länge <= 50 Then
-                    werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift, vbNewLine)
+                    werte = String.Concat("Refnr: ", oawerte.oa_referenznummer, ", Kunde: ", oawerte.oa_kunde, " , Stelle: ", oawerte.oa_ueberschrift, vbNewLine, vbNewLine)
                 End If
 
                 liste.Add(werte)
                 interviewerstellenliste = String.Join(vbNewLine, liste)
                 ListBox1.DataSource = liste
 
-            ' Felder im Interviewerfragebogen
+                ' Felder im Interviewerfragebogen
 
             Case vorschlagenfuerstelle_interviewer_bool
                 länge = oawerte.oa_ueberschrift.Length
@@ -211,13 +202,19 @@ Public Class frmOA
             ' frmMain
             Case vorschlagenfuerstelle_bool
                 If CStr(interviewerstellenliste) <> String.Empty Then
-                    frmMain.txtFuerstelle.Text = CStr(interviewerstellenliste)
+                    Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+                    bewerber.fuerstelle = CStr(interviewerstellenliste)
+                    'Me.Validate()
+                    'Me.BewBindingSource.EndEdit()
+
                 End If
 
             ' frmInterviewer
             Case vorschlagenfuerstelle_interviewer_bool
                 If CStr(interviewerstellenliste) <> String.Empty Then
-                    _frmInterviewer.txtFuerstelle.Text = CStr(interviewerstellenliste)
+                    Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+                    bewerber.fuerstelle = CStr(interviewerstellenliste)
+                    ' _frmInterviewer.txtFuerstelle.Text = CStr(interviewerstellenliste)
                 End If
         End Select
     End Sub
@@ -236,7 +233,6 @@ Public Class frmOA
 
                 liste.Clear()
                 interviewerstellenliste = String.Empty
-                ' MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Close()
 
             Case sender Is btnWerteeintragenFensterschliessen
@@ -244,7 +240,6 @@ Public Class frmOA
                     If liste.Count > 0 Then
                         Call datenuebertragen()
                         MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        ' frmMain.DBSpeichern()
                     End If
                 End If
 
@@ -263,26 +258,7 @@ Public Class frmOA
         End Select
     End Sub
 
-    ' Private Sub frmOA_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-    '    MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    'End Sub
-
-    'Private Sub frmOA_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-    '    MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    'End Sub
-
-
-    '  Private Sub columnsausblenden()
-    'If vorschlagenfuerkunde_bool OrElse vorschlagenfuerkunde_interviewer_bool Then
-    '    Me.OAGridView.Columns(3).IsVisible = False
-    '    Me.OAGridView.Columns(4).IsVisible = False
-    '    Me.OAGridView.Columns(6).IsVisible = False
-    '    Me.OAGridView.Columns(11).IsVisible = False
-    '    Me.OAGridView.Columns(14).IsVisible = False
-    '    Label1.Visible = False
-    '    RadRTEhtml.Visible = False
-    '    Me.OAGridView.Columns(2).Width = 500
-    '    '  Me.GroupBox2.Visible = False
-    'End If
-    ' End Sub
+    Private Sub frmOA_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Me.BewBindingSource.RemoveFilter()
+    End Sub
 End Class

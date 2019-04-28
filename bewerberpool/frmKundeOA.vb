@@ -15,15 +15,19 @@ Public Class frmKundeOA
     End Sub
 
     Private Sub frmKundeOA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.BewerberDataSet = frmMain.BewerberDataSet
-        Me.BewTableAdapter = frmMain.BewTableAdapter
-        Me.BewBindingSource.DataSource = frmMain.BewBindingSource
+        'Me.BewerberDataSet = frmMain.BewerberDataSet
+        'Me.BewTableAdapter = frmMain.BewTableAdapter
+        'Me.BewBindingSource.DataSource = frmMain.BewBindingSource
 
         'TODO: Diese Codezeile lädt Daten in die Tabelle "BewerberDataSet.bew". Sie können sie bei Bedarf verschieben oder entfernen.
         Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
         Me.Oa_kundeTableAdapter.Fill(Me.OaDataSet.oa_kunde)
+        Me.BewBindingSource.Filter = "id_bew = '" & letzteid & "'"
+    End Sub
 
-
+    Private Sub frmKundeOA_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Call Voreintraege()
+        lstOa_kunde_name.ClearSelected()
     End Sub
 
     Private Sub RGVOAkunde_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles RGVOAkunde.ViewCellFormatting
@@ -50,46 +54,79 @@ Public Class frmKundeOA
         liste.Remove(lstOa_kunde_name.SelectedItem.ToString)
     End Sub
 
-    Private Sub btnWerteeintragenFensterschliessen_Click(sender As Object, e As EventArgs) Handles btnWerteeintragenFensterschliessen.Click
-        werte = String.Join(vbNewLine, liste)
+    Private Sub Voreintraege()
+        Dim kundenwerte = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        Dim lines() As String
+        Dim eintraege As String = String.Empty
 
-        Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        If kundenwerte.IsfuerkundeNull OrElse kundenwerte.fuerkunde = String.Empty Then
+            Exit Sub
+        Else
+            eintraege = CStr(kundenwerte.fuerkunde)
 
-        ' Bewerber/in in OA speichern
+            lines = eintraege.Split(vbNewLine.ToCharArray, StringSplitOptions.RemoveEmptyEntries)
 
-        Dim bewerberinoa As String = String.Concat(bewerber.name, ", ", bewerber.vorname, " , RefNr.(BP): ", CStr(bewerber.refnr), " , Wohnort: ", bewerber.ort, vbNewLine)
-        Dim oawerte = DirectCast(DirectCast(Oa_kundeBindingSource.Current, DataRowView).Row, oa_kundeRow)
-        oawerte.oa_kunde_bewerber = CStr(bewerberinoa)
+            If lines.Count > 0 Then
+                For Each item In lines
+                    liste.Add(item)
+                Next
+                lstOa_kunde_name.DataSource = liste
+            Else
+                Exit Sub
+            End If
+        End If
+    End Sub
 
-        Me.Validate()
-        Me.Oa_kundeBindingSource.EndEdit()
-        Me.Oa_kundeTableAdapter.Update(Me.OaDataSet.oa_kunde)
 
-        ' Kunde in BP speichern
+    Private Sub btnWerteeintragenFensterschliessen_Click(sender As Object, e As EventArgs) Handles btnWerteeintragenFensterschliessen.Click, btnEintragloeschen.Click, btnCloseandDelete.Click
 
-        frmMain.txtFuerkunde.Text = CStr(werte)
-        bewerber.fuerkunde = CStr(werte)
-        Me.Validate()
-        Me.BewBindingSource.EndEdit()
-        Me.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
+        Select Case True
 
-        Call gespeichert()
-        Call Mail_kunde()
-        Me.Close()
+            Case sender Is btnWerteeintragenFensterschliessen
+                'Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+
+                ' Kunde in BP speichern
+
+                werte = String.Join(vbNewLine, liste)
+                'bewerber.fuerkunde = CStr(werte)
+                frmMain.txtFuerkunde.Text = CStr(werte)
+
+                MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Call Mail_kunde()
+                Me.Close()
+
+            Case sender Is btnEintragloeschen
+                If lstOa_kunde_name.SelectedItems.Count = 0 Then
+                    MessageBox.Show("Bitte erst einen Eintrag im Feld unter 2. auswählen", "Eintrag auswählen", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    liste.Remove(lstOa_kunde_name.SelectedItem.ToString)
+                End If
+
+            Case sender Is btnCloseandDelete
+                liste.Clear()
+                werte = String.Empty
+                Me.Close()
+        End Select
     End Sub
 
     Private Sub Mail_kunde()
         If Not connectionString.Contains("127.0.0.1") AndAlso frmMain.txtFuerkunde.Text <> String.Empty Then
             Dim email As New Mail
 
-            Dim betreff As String = String.Concat(frmMain.VornameTextBox.Text, " ", frmMain.NameTextBox.Text, " wurde als grundsätzlich geeignet für einen Kunden: von ", usernameklar, " eingetragen.")
+            'Dim betreff As String = String.Concat(frmMain.VornameTextBox.Text, " ", frmMain.NameTextBox.Text, " wurde als grundsätzlich geeignet für einen Kunden: von ", usernameklar, " eingetragen.")
 
-            Dim bodytext As String = String.Concat(frmMain.VornameTextBox.Text, " ", frmMain.NameTextBox.Text, " wurde als grundsätzlich geeignet für den/die Kunden: ", vbNewLine, vbNewLine, werte, vbNewLine, vbNewLine, "von: ", usernameklar, " eingetragen.")
+            Dim betreff As String = String.Concat("Bewerber wurden als grundsätzlich geeignet für einen Kunden: zuletzt von ", usernameklar, " eingetragen.")
+
+            Dim bodytext As String = String.Concat(werte, " wurde/n als grundsätzlich geeignet für den/die Kunden: ", vbNewLine, vbNewLine, werte, vbNewLine, vbNewLine, "zuletzt von: ", usernameklar, " eingetragen.")
 
             email.receiver = "kontakt@heyduck-personalservice.de, thomasfuerst@heyduck-personalservice.de, assistenz@heyduck-zeitarbeit.de"
             email.subject = CStr(betreff)
             email.body = CStr(bodytext)
             email.send()
         End If
+    End Sub
+
+    Private Sub frmKundeOA_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Me.BewBindingSource.RemoveFilter()
     End Sub
 End Class

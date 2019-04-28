@@ -350,6 +350,8 @@ Partial Public Class oaDataSet
         
         Private columnoa_rtf_text As Global.System.Data.DataColumn
         
+        Private columnoa_bewerberausbp As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -514,6 +516,14 @@ Partial Public Class oaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property oa_bewerberausbpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnoa_bewerberausbp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -550,9 +560,25 @@ Partial Public Class oaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function Addoa_stelleRow(ByVal oa_status As String, ByVal oa_kunde As String, ByVal oa_plz As String, ByVal oa_arbeitsort As String, ByVal oa_ueberschrift As String, ByVal oa_qualifikation As String, ByVal oa_text As String, ByVal oa_texthtml As String, ByVal oa_geheim As String, ByVal oa_zavm As String, ByVal oa_stand_aktuell As String, ByVal oa_referenznummer As Short, ByVal oa_link As String, ByVal oa_arbeitszeit As String, ByVal oa_rtf_text As String) As oa_stelleRow
+        Public Overloads Function Addoa_stelleRow( _
+                    ByVal oa_status As String,  _
+                    ByVal oa_kunde As String,  _
+                    ByVal oa_plz As String,  _
+                    ByVal oa_arbeitsort As String,  _
+                    ByVal oa_ueberschrift As String,  _
+                    ByVal oa_qualifikation As String,  _
+                    ByVal oa_text As String,  _
+                    ByVal oa_texthtml As String,  _
+                    ByVal oa_geheim As String,  _
+                    ByVal oa_zavm As String,  _
+                    ByVal oa_stand_aktuell As String,  _
+                    ByVal oa_referenznummer As Short,  _
+                    ByVal oa_link As String,  _
+                    ByVal oa_arbeitszeit As String,  _
+                    ByVal oa_rtf_text As String,  _
+                    ByVal oa_bewerberausbp As String) As oa_stelleRow
             Dim rowoa_stelleRow As oa_stelleRow = CType(Me.NewRow,oa_stelleRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, oa_status, oa_kunde, oa_plz, oa_arbeitsort, oa_ueberschrift, oa_qualifikation, oa_text, oa_texthtml, oa_geheim, oa_zavm, oa_stand_aktuell, oa_referenznummer, oa_link, oa_arbeitszeit, oa_rtf_text}
+            Dim columnValuesArray() As Object = New Object() {Nothing, oa_status, oa_kunde, oa_plz, oa_arbeitsort, oa_ueberschrift, oa_qualifikation, oa_text, oa_texthtml, oa_geheim, oa_zavm, oa_stand_aktuell, oa_referenznummer, oa_link, oa_arbeitszeit, oa_rtf_text, oa_bewerberausbp}
             rowoa_stelleRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowoa_stelleRow)
             Return rowoa_stelleRow
@@ -597,6 +623,7 @@ Partial Public Class oaDataSet
             Me.columnoa_link = MyBase.Columns("oa_link")
             Me.columnoa_arbeitszeit = MyBase.Columns("oa_arbeitszeit")
             Me.columnoa_rtf_text = MyBase.Columns("oa_rtf_text")
+            Me.columnoa_bewerberausbp = MyBase.Columns("oa_bewerberausbp")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -634,6 +661,8 @@ Partial Public Class oaDataSet
             MyBase.Columns.Add(Me.columnoa_arbeitszeit)
             Me.columnoa_rtf_text = New Global.System.Data.DataColumn("oa_rtf_text", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnoa_rtf_text)
+            Me.columnoa_bewerberausbp = New Global.System.Data.DataColumn("oa_bewerberausbp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnoa_bewerberausbp)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnoastelleID}, true))
             Me.columnoastelleID.AutoIncrement = true
             Me.columnoastelleID.AutoIncrementSeed = -1
@@ -654,6 +683,7 @@ Partial Public Class oaDataSet
             Me.columnoa_link.MaxLength = 255
             Me.columnoa_arbeitszeit.MaxLength = 20
             Me.columnoa_rtf_text.MaxLength = 5592405
+            Me.columnoa_bewerberausbp.MaxLength = 5592405
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1328,6 +1358,21 @@ Partial Public Class oaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property oa_bewerberausbp() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableoa_stelle.oa_bewerberausbpColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Der Wert für Spalte oa_bewerberausbp in Tabelle oa_stelle ist DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableoa_stelle.oa_bewerberausbpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function Isoa_statusNull() As Boolean
             Return Me.IsNull(Me.tableoa_stelle.oa_statusColumn)
         End Function
@@ -1504,6 +1549,18 @@ Partial Public Class oaDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub Setoa_rtf_textNull()
             Me(Me.tableoa_stelle.oa_rtf_textColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isoa_bewerberausbpNull() As Boolean
+            Return Me.IsNull(Me.tableoa_stelle.oa_bewerberausbpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setoa_bewerberausbpNull()
+            Me(Me.tableoa_stelle.oa_bewerberausbpColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1806,6 +1863,7 @@ Namespace oaDataSetTableAdapters
             tableMapping.ColumnMappings.Add("oa_link", "oa_link")
             tableMapping.ColumnMappings.Add("oa_arbeitszeit", "oa_arbeitszeit")
             tableMapping.ColumnMappings.Add("oa_rtf_text", "oa_rtf_text")
+            tableMapping.ColumnMappings.Add("oa_bewerberausbp", "oa_bewerberausbp")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -2039,8 +2097,8 @@ Namespace oaDataSetTableAdapters
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `oa_stelle` (`oa_status`, `oa_kunde`, `oa_plz`, `oa_arbeitsort`, `oa_"& _ 
                 "ueberschrift`, `oa_qualifikation`, `oa_text`, `oa_texthtml`, `oa_geheim`, `oa_za"& _ 
                 "vm`, `oa_stand_aktuell`, `oa_referenznummer`, `oa_link`, `oa_arbeitszeit`, `oa_r"& _ 
-                "tf_text`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12,"& _ 
-                " @p13, @p14, @p15)"
+                "tf_text`, `oa_bewerberausbp`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p"& _ 
+                "9, @p10, @p11, @p12, @p13, @p14, @p15, @p16)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -2144,24 +2202,30 @@ Namespace oaDataSetTableAdapters
             param.IsNullable = true
             param.SourceColumn = "oa_rtf_text"
             Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p16"
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Text
+            param.IsNullable = true
+            param.SourceColumn = "oa_bewerberausbp"
+            Me._adapter.InsertCommand.Parameters.Add(param)
             Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `oa_stelle` SET `oa_status` = @p1, `oa_kunde` = @p2, `oa_plz` = @p3, `oa_a"& _ 
                 "rbeitsort` = @p4, `oa_ueberschrift` = @p5, `oa_qualifikation` = @p6, `oa_text` ="& _ 
                 " @p7, `oa_texthtml` = @p8, `oa_geheim` = @p9, `oa_zavm` = @p10, `oa_stand_aktuel"& _ 
                 "l` = @p11, `oa_referenznummer` = @p12, `oa_link` = @p13, `oa_arbeitszeit` = @p14"& _ 
-                ", `oa_rtf_text` = @p15 WHERE ((`oastelleID` = @p16) AND ((@p17 = 1 AND `oa_statu"& _ 
-                "s` IS NULL) OR (`oa_status` = @p18)) AND ((@p19 = 1 AND `oa_kunde` IS NULL) OR ("& _ 
-                "`oa_kunde` = @p20)) AND ((@p21 = 1 AND `oa_plz` IS NULL) OR (`oa_plz` = @p22)) A"& _ 
-                "ND ((@p23 = 1 AND `oa_arbeitsort` IS NULL) OR (`oa_arbeitsort` = @p24)) AND ((@p"& _ 
-                "25 = 1 AND `oa_ueberschrift` IS NULL) OR (`oa_ueberschrift` = @p26)) AND ((@p27 "& _ 
-                "= 1 AND `oa_qualifikation` IS NULL) OR (`oa_qualifikation` = @p28)) AND ((@p29 ="& _ 
-                " 1 AND `oa_geheim` IS NULL) OR (`oa_geheim` = @p30)) AND ((@p31 = 1 AND `oa_zavm"& _ 
-                "` IS NULL) OR (`oa_zavm` = @p32)) AND ((@p33 = 1 AND `oa_stand_aktuell` IS NULL)"& _ 
-                " OR (`oa_stand_aktuell` = @p34)) AND ((@p35 = 1 AND `oa_referenznummer` IS NULL)"& _ 
-                " OR (`oa_referenznummer` = @p36)) AND ((@p37 = 1 AND `oa_link` IS NULL) OR (`oa_"& _ 
-                "link` = @p38)) AND ((@p39 = 1 AND `oa_arbeitszeit` IS NULL) OR (`oa_arbeitszeit`"& _ 
-                " = @p40)))"
+                ", `oa_rtf_text` = @p15, `oa_bewerberausbp` = @p16 WHERE ((`oastelleID` = @p17) A"& _ 
+                "ND ((@p18 = 1 AND `oa_status` IS NULL) OR (`oa_status` = @p19)) AND ((@p20 = 1 A"& _ 
+                "ND `oa_kunde` IS NULL) OR (`oa_kunde` = @p21)) AND ((@p22 = 1 AND `oa_plz` IS NU"& _ 
+                "LL) OR (`oa_plz` = @p23)) AND ((@p24 = 1 AND `oa_arbeitsort` IS NULL) OR (`oa_ar"& _ 
+                "beitsort` = @p25)) AND ((@p26 = 1 AND `oa_ueberschrift` IS NULL) OR (`oa_uebersc"& _ 
+                "hrift` = @p27)) AND ((@p28 = 1 AND `oa_qualifikation` IS NULL) OR (`oa_qualifika"& _ 
+                "tion` = @p29)) AND ((@p30 = 1 AND `oa_geheim` IS NULL) OR (`oa_geheim` = @p31)) "& _ 
+                "AND ((@p32 = 1 AND `oa_zavm` IS NULL) OR (`oa_zavm` = @p33)) AND ((@p34 = 1 AND "& _ 
+                "`oa_stand_aktuell` IS NULL) OR (`oa_stand_aktuell` = @p35)) AND ((@p36 = 1 AND `"& _ 
+                "oa_referenznummer` IS NULL) OR (`oa_referenznummer` = @p37)) AND ((@p38 = 1 AND "& _ 
+                "`oa_link` IS NULL) OR (`oa_link` = @p39)) AND ((@p40 = 1 AND `oa_arbeitszeit` IS"& _ 
+                " NULL) OR (`oa_arbeitszeit` = @p41)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
@@ -2267,6 +2331,12 @@ Namespace oaDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p16"
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Text
+            param.IsNullable = true
+            param.SourceColumn = "oa_bewerberausbp"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p17"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -2274,33 +2344,33 @@ Namespace oaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p17"
+            param.ParameterName = "@p18"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
             param.SourceColumn = "oa_status"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p18"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "oa_status"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p19"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "oa_kunde"
+            param.SourceColumn = "oa_status"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p20"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "oa_kunde"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p21"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -2308,33 +2378,33 @@ Namespace oaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p21"
+            param.ParameterName = "@p22"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
             param.SourceColumn = "oa_plz"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p22"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "oa_plz"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p23"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "oa_arbeitsort"
+            param.SourceColumn = "oa_plz"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p24"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "oa_arbeitsort"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p25"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -2342,33 +2412,33 @@ Namespace oaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p25"
+            param.ParameterName = "@p26"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
             param.SourceColumn = "oa_ueberschrift"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p26"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "oa_ueberschrift"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p27"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "oa_qualifikation"
+            param.SourceColumn = "oa_ueberschrift"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p28"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "oa_qualifikation"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p29"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -2376,33 +2446,33 @@ Namespace oaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p29"
+            param.ParameterName = "@p30"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
             param.SourceColumn = "oa_geheim"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p30"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "oa_geheim"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p31"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
-            param.SourceColumn = "oa_zavm"
+            param.SourceColumn = "oa_geheim"
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p32"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "oa_zavm"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p33"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -2410,7 +2480,7 @@ Namespace oaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p33"
+            param.ParameterName = "@p34"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -2419,7 +2489,7 @@ Namespace oaDataSetTableAdapters
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p34"
+            param.ParameterName = "@p35"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -2427,7 +2497,7 @@ Namespace oaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p35"
+            param.ParameterName = "@p36"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -2436,7 +2506,7 @@ Namespace oaDataSetTableAdapters
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p36"
+            param.ParameterName = "@p37"
             param.DbType = Global.System.Data.DbType.Int16
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int16
             param.IsNullable = true
@@ -2444,7 +2514,7 @@ Namespace oaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p37"
+            param.ParameterName = "@p38"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -2453,7 +2523,7 @@ Namespace oaDataSetTableAdapters
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p38"
+            param.ParameterName = "@p39"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -2461,7 +2531,7 @@ Namespace oaDataSetTableAdapters
             param.SourceVersion = Global.System.Data.DataRowVersion.Original
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p39"
+            param.ParameterName = "@p40"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
             param.IsNullable = true
@@ -2470,7 +2540,7 @@ Namespace oaDataSetTableAdapters
             param.SourceColumnNullMapping = true
             Me._adapter.UpdateCommand.Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p40"
+            param.ParameterName = "@p41"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.IsNullable = true
@@ -2492,10 +2562,10 @@ Namespace oaDataSetTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        oastelleID, oa_status, oa_kunde, oa_plz, oa_arbeitsort, oa_uebersch"& _ 
-                "rift, oa_qualifikation, oa_text, oa_texthtml, oa_geheim, oa_zavm, oa_stand_aktue"& _ 
-                "ll, oa_referenznummer, oa_link, oa_arbeitszeit, oa_rtf_text"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            oa_"& _ 
-                "stelle"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (oa_status = 'aktiv') ORDER BY oa_referenznummer DESC"
+            Me._commandCollection(0).CommandText = "SELECT oastelleID, oa_status, oa_kunde, oa_plz, oa_arbeitsort, oa_ueberschrift, o"& _ 
+                "a_qualifikation, oa_text, oa_texthtml, oa_geheim, oa_zavm, oa_stand_aktuell, oa_"& _ 
+                "referenznummer, oa_link, oa_arbeitszeit, oa_rtf_text, oa_bewerberausbp FROM oa_s"& _ 
+                "telle WHERE (oa_status = 'aktiv') ORDER BY oa_referenznummer DESC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2660,7 +2730,23 @@ Namespace oaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As String, ByVal p9 As String, ByVal p10 As String, ByVal p11 As String, ByVal p12 As Global.System.Nullable(Of Short), ByVal p13 As String, ByVal p14 As String, ByVal p15 As String) As Integer
+        Public Overloads Overridable Function Insert( _
+                    ByVal p1 As String,  _
+                    ByVal p2 As String,  _
+                    ByVal p3 As String,  _
+                    ByVal p4 As String,  _
+                    ByVal p5 As String,  _
+                    ByVal p6 As String,  _
+                    ByVal p7 As String,  _
+                    ByVal p8 As String,  _
+                    ByVal p9 As String,  _
+                    ByVal p10 As String,  _
+                    ByVal p11 As String,  _
+                    ByVal p12 As Global.System.Nullable(Of Short),  _
+                    ByVal p13 As String,  _
+                    ByVal p14 As String,  _
+                    ByVal p15 As String,  _
+                    ByVal p16 As String) As Integer
             If (p1 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -2736,6 +2822,11 @@ Namespace oaDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(14).Value = CType(p15,String)
             End If
+            If (p16 Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(15).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(15).Value = CType(p16,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2771,19 +2862,20 @@ Namespace oaDataSetTableAdapters
                     ByVal p13 As String,  _
                     ByVal p14 As String,  _
                     ByVal p15 As String,  _
-                    ByVal p16 As Integer,  _
-                    ByVal p18 As String,  _
-                    ByVal p20 As String,  _
-                    ByVal p22 As String,  _
-                    ByVal p24 As String,  _
-                    ByVal p26 As String,  _
-                    ByVal p28 As String,  _
-                    ByVal p30 As String,  _
-                    ByVal p32 As String,  _
-                    ByVal p34 As String,  _
-                    ByVal p36 As Global.System.Nullable(Of Short),  _
-                    ByVal p38 As String,  _
-                    ByVal p40 As String) As Integer
+                    ByVal p16 As String,  _
+                    ByVal p17 As Integer,  _
+                    ByVal p19 As String,  _
+                    ByVal p21 As String,  _
+                    ByVal p23 As String,  _
+                    ByVal p25 As String,  _
+                    ByVal p27 As String,  _
+                    ByVal p29 As String,  _
+                    ByVal p31 As String,  _
+                    ByVal p33 As String,  _
+                    ByVal p35 As String,  _
+                    ByVal p37 As Global.System.Nullable(Of Short),  _
+                    ByVal p39 As String,  _
+                    ByVal p41 As String) As Integer
             If (p1 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -2859,90 +2951,95 @@ Namespace oaDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(p15,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(p16,Integer)
-            If (p18 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            If (p16 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(p18,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(p16,String)
             End If
-            If (p20 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(p17,Integer)
+            If (p19 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(p20,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(p19,String)
             End If
-            If (p22 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            If (p21 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(p22,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(p21,String)
             End If
-            If (p24 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+            If (p23 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(p24,String)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(p23,String)
             End If
-            If (p26 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+            If (p25 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(p26,String)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(p25,String)
             End If
-            If (p28 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+            If (p27 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(p28,String)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(p27,String)
             End If
-            If (p30 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+            If (p29 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(p30,String)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(p29,String)
             End If
-            If (p32 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+            If (p31 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(p32,String)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(p31,String)
             End If
-            If (p34 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
+            If (p33 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(p34,String)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(p33,String)
             End If
-            If (p36.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(p36.Value,Short)
+            If (p35 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(p35,String)
             End If
-            If (p38 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
+            If (p37.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(p37.Value,Short)
             Else
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(p38,String)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
             End If
-            If (p40 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
+            If (p39 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(p40,String)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(p39,String)
+            End If
+            If (p41 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(p41,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
