@@ -105,15 +105,20 @@ Public Class frmRundschreibenuebersicht
 
 
     Private Sub RGVRundschreibenaktuell_Click(sender As Object, e As EventArgs) Handles RGVRundschreibenaktuell.Click
-        'Call Homepagecheck()
-        'Call Voreintraege()
-        ' Call Rundschreibencheck()
-    End Sub
-
-    Private Sub RGVRundschreibenaktuell_CurrentRowChanged(sender As Object, e As CurrentRowChangedEventArgs) Handles RGVRundschreibenaktuell.CurrentRowChanged
         Call Homepagecheck()
         Call Voreintraege()
         Call Rundschreibencheck()
+    End Sub
+
+    Private Sub RGVRundschreibenmonataktuell_Click(sender As Object, e As EventArgs) Handles RGVRundschreibenmonataktuell.Click
+        Dim rsmonataktuell = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
+        rsaktuellbezeichnung = CStr(rsmonataktuell.monat)
+    End Sub
+
+    Private Sub RGVRundschreibenaktuell_CurrentRowChanged(sender As Object, e As CurrentRowChangedEventArgs) Handles RGVRundschreibenaktuell.CurrentRowChanged
+        'Call Homepagecheck()
+        'Call Voreintraege()
+        'Call Rundschreibencheck()
     End Sub
 
     Private Sub Rundschreibencheck()
@@ -165,7 +170,7 @@ Public Class frmRundschreibenuebersicht
                     Me.RundschreibenBindingSource1.EndEdit()
                     Me.RundschreibenTableAdapter.Update(Me.BewerberDataSet.rundschreiben)
 
-                    Dim rsmonat = BewerberDataSet.rundschreibenmonat.Where(Function(x) x.erledigt = 1)
+                    Dim rsmonat = BewerberDataSet.rundschreibenmonat.Where(Function(x) x.erledigt = 1 AndAlso x.monat = CStr(rsaktuellbezeichnung))
                     For Each x In rsmonat
                         x.erledigt = CInt(2)
                     Next
@@ -210,9 +215,11 @@ Public Class frmRundschreibenuebersicht
         End If
     End Sub
 
-    Private Sub RGVRundschreibenmonataktuell_CurrentRowChanged(sender As Object, e As CurrentRowChangedEventArgs) Handles RGVRundschreibenmonataktuell.CurrentRowChanged
-        Dim rsmonataktuell = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
-        rsaktuellbezeichnung = CStr(rsmonataktuell.monat)
-    End Sub
+    'Private Sub RGVRundschreibenmonataktuell_CurrentRowChanged(sender As Object, e As CurrentRowChangedEventArgs) Handles RGVRundschreibenmonataktuell.CurrentRowChanged
+    '    Dim rsmonataktuell = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
+    '    rsaktuellbezeichnung = CStr(rsmonataktuell.monat)
+    'End Sub
+
+
 #End Region
 End Class
