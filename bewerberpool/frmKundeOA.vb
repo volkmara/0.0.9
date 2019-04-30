@@ -15,14 +15,14 @@ Public Class frmKundeOA
     End Sub
 
     Private Sub frmKundeOA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Me.BewerberDataSet = frmMain.BewerberDataSet
-        'Me.BewTableAdapter = frmMain.BewTableAdapter
-        'Me.BewBindingSource.DataSource = frmMain.BewBindingSource
+        Me.BewerberDataSet = frmMain.BewerberDataSet
+        Me.BewTableAdapter = frmMain.BewTableAdapter
+        Me.BewBindingSource.DataSource = frmMain.BewBindingSource
 
         'TODO: Diese Codezeile lädt Daten in die Tabelle "BewerberDataSet.bew". Sie können sie bei Bedarf verschieben oder entfernen.
         Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
         Me.Oa_kundeTableAdapter.Fill(Me.OaDataSet.oa_kunde)
-        Me.BewBindingSource.Filter = "id_bew = '" & letzteid & "'"
+        'Me.BewBindingSource.Filter = "id_bew = '" & letzteid & "'"
     End Sub
 
     Private Sub frmKundeOA_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -83,15 +83,18 @@ Public Class frmKundeOA
         Select Case True
 
             Case sender Is btnWerteeintragenFensterschliessen
-                'Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+                Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
 
                 ' Kunde in BP speichern
 
                 werte = String.Join(vbNewLine, liste)
-                'bewerber.fuerkunde = CStr(werte)
-                frmMain.txtFuerkunde.Text = CStr(werte)
+                bewerber.fuerkunde = CStr(werte)
+                'frmMain.txtFuerkunde.Text = CStr(werte)
+                'Me.Validate()
+                'Me.BewBindingSource.EndEdit()
+                'Me.BewTableAdapter.Update(Me.BewerberDataSet.bew)
 
-                MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Call Mail_kunde()
                 Me.Close()
 
@@ -127,6 +130,6 @@ Public Class frmKundeOA
     End Sub
 
     Private Sub frmKundeOA_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Me.BewBindingSource.RemoveFilter()
+        'Me.BewBindingSource.RemoveFilter()
     End Sub
 End Class

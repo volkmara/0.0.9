@@ -825,9 +825,14 @@ Public Class frmMain
                     Dim result = frm.ShowDialog()
                 End Using
             Case sender Is txtFuerkunde
+                Me.BewBindingSource.Filter = "id_bew = '" & letzteid & "'"
                 Using frm = New frmKundeOA(Me)
                     Dim result = frm.ShowDialog(Me)
                 End Using
+                Me.Validate()
+                Me.BewBindingSource.EndEdit()
+                Me.BewTableAdapter.Update(Me.BewerberDataSet.bew)
+                Me.BewBindingSource.RemoveFilter()
             Case sender Is Label16 ' Doppelklick auf Label 16 öffnet Fenster für Homepagedaten
                 Using frm = New frmHomepage(Me)
                     Dim result = frm.ShowDialog()

@@ -85,7 +85,7 @@ Partial Class frmRundschreibenuebersicht
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.chkHomepage = New System.Windows.Forms.CheckBox()
+        Me.chgNurhomepage = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.chkAufHomepage = New System.Windows.Forms.CheckBox()
@@ -494,7 +494,7 @@ Partial Class frmRundschreibenuebersicht
         Me.TabControl1.Location = New System.Drawing.Point(9, 13)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1523, 873)
+        Me.TabControl1.Size = New System.Drawing.Size(1535, 873)
         Me.TabControl1.TabIndex = 18
         '
         'TabPage1
@@ -512,7 +512,7 @@ Partial Class frmRundschreibenuebersicht
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1515, 844)
+        Me.TabPage1.Size = New System.Drawing.Size(1527, 844)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Rundschreiben in Vorbereitung"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -521,7 +521,7 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.chkHomepage)
+        Me.Panel1.Controls.Add(Me.chgNurhomepage)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.ListBox1)
         Me.Panel1.Controls.Add(Label5)
@@ -539,14 +539,14 @@ Partial Class frmRundschreibenuebersicht
         Me.Panel1.Size = New System.Drawing.Size(1500, 215)
         Me.Panel1.TabIndex = 94
         '
-        'chkHomepage
+        'chgNurhomepage
         '
-        Me.chkHomepage.AutoSize = True
-        Me.chkHomepage.Location = New System.Drawing.Point(845, 19)
-        Me.chkHomepage.Name = "chkHomepage"
-        Me.chkHomepage.Size = New System.Drawing.Size(15, 14)
-        Me.chkHomepage.TabIndex = 99
-        Me.chkHomepage.UseVisualStyleBackColor = True
+        Me.chgNurhomepage.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.RundschreibenBindingSource1, "nurhomepage", True))
+        Me.chgNurhomepage.Location = New System.Drawing.Point(836, 15)
+        Me.chgNurhomepage.Name = "chgNurhomepage"
+        Me.chgNurhomepage.Size = New System.Drawing.Size(104, 24)
+        Me.chgNurhomepage.TabIndex = 99
+        Me.chgNurhomepage.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -1004,7 +1004,7 @@ Partial Class frmRundschreibenuebersicht
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1515, 844)
+        Me.TabPage2.Size = New System.Drawing.Size(1527, 844)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Rundschreibenübersicht"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1138,7 +1138,7 @@ Partial Class frmRundschreibenuebersicht
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(1539, 898)
+        Me.ClientSize = New System.Drawing.Size(1548, 898)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -1216,7 +1216,6 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents chkAufHomepage As CheckBox
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents chkHomepage As CheckBox
     Friend WithEvents rbtnNein As RadioButton
     Friend WithEvents rbtnJa As RadioButton
     Friend WithEvents Panel2 As Panel
@@ -1226,4 +1225,5 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents lblKW As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents btnKWspeichern As Telerik.WinControls.UI.RadButton
+    Friend WithEvents chgNurhomepage As CheckBox
 End Class
