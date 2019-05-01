@@ -10,6 +10,8 @@ Imports bewerberpool.BewerberDataSet
 Public Class frmInterviewer
 
     Public pflichtfeldliste As String = String.Empty
+    ' Public pflichtfeldlistebeistart As String = String.Empty
+
     Public ulas As String = String.Empty
     Public exportfilertf As String = String.Empty
     Public exportfiletxt As String = String.Empty
@@ -58,11 +60,12 @@ Public Class frmInterviewer
 
         frmOA.vorschlagenfuerstelle_interviewer_bool = False
 
-
         Me.cmbAufmerksam.Items.AddRange(New String() {"Agentur für Arbeit", "backinjob", "Gigajob", "Indeed", "Jobmonitor", "Jobomat", "Kalaydo", "meinestadt", "Monster", "Placement24", "Rekruter", "stellenmarkt", "Stepstone", "", "Facebook", "Twitter", "Xing", "Google", "Bing", "Yahoo", "Web.de", " ", "Bonner Generalanzeiger", "Kölner Stadtanzeiger", "Rhein-Sieg-Anzeiger", "Regionale Anzeigenblätter", "", "andere"})
+
+        Call PflichtfelderbeiStart()
     End Sub
 
-    Private Sub cmbAnrede_Mousewheel(sender As Object, e As MouseEventArgs) Handles cmbAnrede.MouseWheel, cmbBeurteilung.MouseWheel, cmbHaendedruck.MouseWheel, cmbParfum.MouseWheel, cmbRaucher.MouseWheel, cmbVz_tz.MouseWheel, cmbTeilzeit_stunden.MouseWheel, cmbTeilzeit_wann.MouseWheel, cmbUmzug.MouseWheel, VerfuegbarkeitComboBox.MouseWheel, cmbMdE.MouseWheel, KuendigungsfristComboBox.MouseWheel, BeendigungsgrundComboBox.MouseWheel, cmbPersonalverantwortung.MouseWheel, cmbFuehrungsverantwortung.MouseWheel, cmbAuslandsaufenthalt.MouseWheel, cmbEnglisch_interviewer.MouseWheel, cmbFranzösich_interviewer.MouseWheel, cmbSpanisch_interviewer.MouseWheel, cmbItalienisch_interviewer.MouseWheel, cmbRussisch_interviewer.MouseWheel, cmbNiederlaendisch_interviewer.MouseWheel, cmbTuerkisch_interviewer.MouseWheel, cmbDeutsch_interviewer.MouseWheel
+    Private Sub cmbAnrede_Mousewheel(sender As Object, e As MouseEventArgs) Handles cmbAnrede.MouseWheel, cmbBeurteilung.MouseWheel, cmbHaendedruck.MouseWheel, cmbParfum.MouseWheel, cmbRaucher.MouseWheel, cmbVz_tz.MouseWheel, cmbTeilzeit_stunden.MouseWheel, cmbTeilzeit_wann.MouseWheel, cmbUmzug.MouseWheel, cmbVerfuegbarkeit.MouseWheel, cmbMdE.MouseWheel, KuendigungsfristComboBox.MouseWheel, BeendigungsgrundComboBox.MouseWheel, cmbPersonalverantwortung.MouseWheel, cmbFuehrungsverantwortung.MouseWheel, cmbAuslandsaufenthalt.MouseWheel, cmbEnglisch_interviewer.MouseWheel, cmbFranzösich_interviewer.MouseWheel, cmbSpanisch_interviewer.MouseWheel, cmbItalienisch_interviewer.MouseWheel, cmbRussisch_interviewer.MouseWheel, cmbNiederlaendisch_interviewer.MouseWheel, cmbTuerkisch_interviewer.MouseWheel, cmbDeutsch_interviewer.MouseWheel
         Dim HMEA As HandledMouseEventArgs = DirectCast(e, HandledMouseEventArgs)
         HMEA.Handled = True
     End Sub
@@ -102,9 +105,10 @@ Public Class frmInterviewer
             Exit Sub
         End If
 
+        Call Controlsaufweiss() ' Alle Controls, die beim Startcheck gelb gefärbt wurden, zurücksetzen
         Call Berufsausbildung_check()
 
-        If Not frmMain.StandComboBox.Text = CStr("fertig") AndAlso usernameklar = "vilder" OrElse usernameklar = "schwarz" Then
+        If Not frmMain.StandComboBox.Text = CStr("fertig") Then
             Call pflichtfelder()
         End If
 
@@ -246,9 +250,9 @@ Public Class frmInterviewer
             cmbRaucher.BackColor = Color.Yellow
         End If
 
-        If VerfuegbarkeitComboBox.SelectedItem Is String.Empty Then
+        If cmbVerfuegbarkeit.SelectedItem Is String.Empty Then
             pflichtfeld.Add("Verfügbarkeit")
-            VerfuegbarkeitComboBox.BackColor = Color.Yellow
+            cmbVerfuegbarkeit.BackColor = Color.Yellow
         End If
 
         If txtZa_vm.Text = String.Empty Then
@@ -368,12 +372,115 @@ Public Class frmInterviewer
         End If
 
         pflichtfeldliste = String.Join(vbCrLf, pflichtfeld)
-
     End Sub
+
+    ' Pflichtfelder anzeigen bei Start
+
+    Private Sub PflichtfelderbeiStart()
+
+        ' Dim pflichtfeldstartliste As New List(Of String)()
+        Dim kontaktdatenliste As New List(Of String)()
+        Dim beschäftigungliste As New List(Of String)()
+        Dim berufserfahrungliste As New List(Of String)()
+
+        Dim kontaktdaten As String = String.Empty
+        Dim beschäftigungsdaten As String = String.Empty
+        Dim berufserfahrungsdaten As String = String.Empty
+
+        Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        Dim bewerberdaten = DirectCast(DirectCast(Me.Bew_bewerberdatenBindingSource.Current, DataRowView).Row, bew_bewerberdatenRow)
+        Dim berufserfahrung = DirectCast(DirectCast(Me.Bewerber_berufserfahrungBindingSource.Current, DataRowView).Row, bewerber_berufserfahrungRow)
+        Dim ausbildung = DirectCast(DirectCast(Me.Bewerber_ausbildungBindingSource.Current, DataRowView).Row, bewerber_ausbildungRow)
+
+        ' Kontaktdaten
+        If bewerber.Istel_festnetzNull OrElse bewerber.tel_festnetz = String.Empty Then
+            kontaktdatenliste.Add("Festnetz")
+            txtTel_festnetz.BackColor = Color.Yellow
+        End If
+
+        If bewerber.Istel_mobilNull OrElse bewerber.tel_mobil = String.Empty Then
+            kontaktdatenliste.Add("Handy")
+            txtTel_mobil.BackColor = Color.Yellow
+        End If
+
+        If bewerber.IsbeurteilungNull OrElse bewerber.beurteilung = String.Empty Then
+            kontaktdatenliste.Add("Beurteilung")
+            cmbBeurteilung.BackColor = Color.Yellow
+        End If
+
+        If bewerberdaten.IshaendedruckNull OrElse bewerberdaten.haendedruck = String.Empty Then
+            kontaktdatenliste.Add("Händedruck")
+            cmbHaendedruck.BackColor = Color.Yellow
+        End If
+
+        If bewerberdaten.IsparfumNull OrElse bewerberdaten.parfum = String.Empty Then
+            kontaktdatenliste.Add("Parfüm")
+            cmbParfum.BackColor = Color.Yellow
+        End If
+
+        If bewerberdaten.IsraucherNull OrElse bewerberdaten.raucher = String.Empty Then
+            kontaktdatenliste.Add("Raucher")
+            cmbRaucher.BackColor = Color.Yellow
+        End If
+
+        ' Beschäftigung
+        If bewerber.IsarbeitszeitNull OrElse bewerber.arbeitszeit = String.Empty Then
+            beschäftigungliste.Add("VZ/TZ")
+            cmbVz_tz.BackColor = Color.Yellow
+        End If
+
+        If bewerber.IsverfügbarkeitNull OrElse bewerber.verfügbarkeit = String.Empty Then
+            beschäftigungliste.Add("Verfügbarkeit")
+            cmbVerfuegbarkeit.BackColor = Color.Yellow
+        End If
+
+        If bewerber.IsVermittlungNull OrElse bewerber.Vermittlung = String.Empty Then
+            beschäftigungliste.Add("ZA/VM")
+            txtZa_vm.BackColor = Color.Yellow
+        End If
+
+        If bewerber.IsarbeitszeitNull OrElse bewerber.arbeitszeit = String.Empty Then
+            beschäftigungliste.Add("VZ/TZ")
+            cmbVz_tz.BackColor = Color.Yellow
+        End If
+
+        If bewerber.IsarbeitsortNull OrElse bewerber.arbeitsort = String.Empty Then
+            beschäftigungliste.Add("Arbeitsort")
+            txtArbeitsort.BackColor = Color.Yellow
+        End If
+
+        If bewerberdaten.IsfuehrerscheinNull OrElse bewerberdaten.fuehrerschein = String.Empty Then
+            beschäftigungliste.Add("Führerschein")
+            txtFuehrerschein.BackColor = Color.Yellow
+        End If
+
+        If bewerberdaten.Ispkw_oepnvNull OrElse bewerberdaten.pkw_oepnv = String.Empty Then
+            beschäftigungliste.Add("PKW/ÖPNV")
+            txtPkw_oepnv.BackColor = Color.Yellow
+        End If
+
+        'Berufserfahrung
+
+        If bewerber.IstätigkeitenNull OrElse bewerber.tätigkeiten = String.Empty Then
+            berufserfahrungliste.Add("Bisherige Tätigkeiten, berufliche Schwerpunkte, Zeugnistext")
+            txtTaetigkeiten.BackColor = Color.Yellow
+        End If
+
+        kontaktdaten = String.Join(vbNewLine, kontaktdatenliste)
+        beschäftigungsdaten = String.Join(vbNewLine, beschäftigungliste)
+        berufserfahrungsdaten = String.Join(vbNewLine, berufserfahrungliste)
+
+        If kontaktdaten <> String.Empty OrElse beschäftigungsdaten <> String.Empty OrElse berufserfahrungsdaten <> String.Empty Then
+            Dim text As String = String.Concat("Diese Felder sind nicht ausgefüllt (gelb hinterlegt):", vbNewLine, vbNewLine, "Reiter: Kontaktdaten:", vbNewLine, vbNewLine, kontaktdaten, vbNewLine, vbNewLine, "Reiter: Beschäftigung:", vbNewLine, vbNewLine, beschäftigungsdaten, vbNewLine, vbNewLine, "Reiter: Berufserfahrung", vbNewLine, vbNewLine, berufserfahrungsdaten)
+            MessageBox.Show(text, "Felder nicht ausgefüllt", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+
     ' ========================================================================= Ende Pflichtfelder =========================================================================
 
     ' ========================================================================= Validierung ================================================================================
-    Private Sub cmbAnrede_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmbAnrede.Validating, cmbBeurteilung.Validating, cmbHaendedruck.Validating, cmbParfum.Validating, cmbRaucher.Validating, VerfuegbarkeitComboBox.Validating, txtZa_vm.Validating, cmbVz_tz.Validating, txtArbeitsort.Validating, txtFuehrerschein.Validating, txtPkw_oepnv.Validating, txtTel_mobil.Validating, txtTel_festnetz.Validating, cmbAnrede.Validating, cmbEnglisch_interviewer.Validating, cmbFranzösich_interviewer.Validating, cmbSpanisch_interviewer.Validating, cmbItalienisch_interviewer.Validating, cmbTuerkisch_interviewer.Validating, cmbRussisch_interviewer.Validating, cmbNiederlaendisch_interviewer.Validating, cmbDeutsch_interviewer.Validating, KuendigungsfristComboBox.Validating, txtMdE.Validating, Beendigungsgrund_detailsTextBox.Validating, WechselwunschTextBox.Validating, cmbInterviewer.Validating, txtGehaltswunsch_monat.Validating, txtTaetigkeiten.Validating, txtOrtsteil.Validating
+    Private Sub cmbAnrede_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmbAnrede.Validating, cmbBeurteilung.Validating, cmbHaendedruck.Validating, cmbParfum.Validating, cmbRaucher.Validating, cmbVerfuegbarkeit.Validating, txtZa_vm.Validating, cmbVz_tz.Validating, txtArbeitsort.Validating, txtFuehrerschein.Validating, txtPkw_oepnv.Validating, txtTel_mobil.Validating, txtTel_festnetz.Validating, cmbAnrede.Validating, cmbEnglisch_interviewer.Validating, cmbFranzösich_interviewer.Validating, cmbSpanisch_interviewer.Validating, cmbItalienisch_interviewer.Validating, cmbTuerkisch_interviewer.Validating, cmbRussisch_interviewer.Validating, cmbNiederlaendisch_interviewer.Validating, cmbDeutsch_interviewer.Validating, KuendigungsfristComboBox.Validating, txtMdE.Validating, Beendigungsgrund_detailsTextBox.Validating, WechselwunschTextBox.Validating, cmbInterviewer.Validating, txtGehaltswunsch_monat.Validating, txtTaetigkeiten.Validating, txtOrtsteil.Validating
         Select Case True
 
             Case sender Is cmbAnrede
@@ -411,8 +518,8 @@ Public Class frmInterviewer
                     ErrorProvider1.SetError(CType(sender, Control), "Raucher?")
                     ToolTip1.Show("Raucher?", CType(sender, Control), 1500)
                 End If
-            Case sender Is VerfuegbarkeitComboBox
-                If VerfuegbarkeitComboBox.Text = String.Empty Then
+            Case sender Is cmbVerfuegbarkeit
+                If cmbVerfuegbarkeit.Text = String.Empty Then
                     ErrorProvider1.SetError(CType(sender, Control), "Raucher?")
                     ToolTip1.Show("Raucher?", CType(sender, Control), 1500)
                 End If
@@ -554,7 +661,6 @@ Public Class frmInterviewer
                 End If
         End Select
     End Sub
-
     Private Sub Berufsausbildung_check()
 
         If txtAusbildungsberuf.Text = String.Empty AndAlso txtAusbildung_qualifizierung.Text = String.Empty AndAlso txtStudium_abschluss.Text = String.Empty AndAlso txtStudienfaecher.Text = String.Empty Then
@@ -567,7 +673,7 @@ Public Class frmInterviewer
         End If
     End Sub
 
-    Private Sub Vz_tzComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbVz_tz.SelectedIndexChanged, cmbAuslandsaufenthalt.SelectedIndexChanged, VerfuegbarkeitComboBox.SelectedIndexChanged, cmbMdE.SelectedIndexChanged
+    Private Sub Vz_tzComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbVz_tz.SelectedIndexChanged, cmbAuslandsaufenthalt.SelectedIndexChanged, cmbVerfuegbarkeit.SelectedIndexChanged, cmbMdE.SelectedIndexChanged
 
         If cmbVz_tz.Text = String.Empty OrElse cmbVz_tz.Text = CStr("Vollzeit") Then
             cmbTeilzeit_stunden.Enabled = False
@@ -586,7 +692,7 @@ Public Class frmInterviewer
             txtAuslandsaufenthalt_wo.ReadOnly = True
         End If
 
-        If VerfuegbarkeitComboBox.Text = CStr("sofort") OrElse VerfuegbarkeitComboBox.Text = String.Empty Then
+        If cmbVerfuegbarkeit.Text = CStr("sofort") OrElse cmbVerfuegbarkeit.Text = String.Empty Then
             KuendigungsfristComboBox.Enabled = False
         Else
             KuendigungsfristComboBox.Enabled = True
@@ -809,5 +915,51 @@ Public Class frmInterviewer
 
     Private Sub interviewerauffalse()
         frmOA.vorschlagenfuerstelle_interviewer_bool = False
+    End Sub
+
+
+    Private Sub Controlsaufweiss()
+
+        For Each tb In Me.GroupBox1.Controls.OfType(Of TextBox)()
+            If tb.BackColor = Color.Yellow Then
+                tb.BackColor = Color.White
+            End If
+        Next
+
+        For Each cmb In Me.GroupBox3.Controls.OfType(Of ComboBox)()
+            If cmb.BackColor = Color.Yellow Then
+                cmb.BackColor = Color.White
+            End If
+        Next
+
+        For Each tb In Me.GroupBox4.Controls.OfType(Of TextBox)()
+            If tb.BackColor = Color.Yellow Then
+                tb.BackColor = Color.White
+            End If
+        Next
+
+        For Each cmb In Me.GroupBox4.Controls.OfType(Of ComboBox)()
+            If cmb.BackColor = Color.Yellow Then
+                cmb.BackColor = Color.White
+            End If
+        Next
+
+        For Each tb In Me.GroupBox9.Controls.OfType(Of TextBox)()
+            If tb.BackColor = Color.Yellow Then
+                tb.BackColor = Color.White
+            End If
+        Next
+
+        For Each cmb In Me.GroupBox9.Controls.OfType(Of ComboBox)()
+            If cmb.BackColor = Color.Yellow Then
+                cmb.BackColor = Color.White
+            End If
+        Next
+
+        For Each tb In Me.GroupBox6.Controls.OfType(Of TextBox)()
+            If tb.BackColor = Color.Yellow Then
+                tb.BackColor = Color.White
+            End If
+        Next
     End Sub
 End Class

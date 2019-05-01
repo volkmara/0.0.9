@@ -140,7 +140,7 @@ Partial Class frmInterviewer
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BeendigungsgrundComboBox = New System.Windows.Forms.ComboBox()
         Me.KuendigungsfristComboBox = New System.Windows.Forms.ComboBox()
-        Me.VerfuegbarkeitComboBox = New System.Windows.Forms.ComboBox()
+        Me.cmbVerfuegbarkeit = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtJahresgehalt = New System.Windows.Forms.TextBox()
         Me.txtMonatsgehalt = New System.Windows.Forms.TextBox()
@@ -352,7 +352,7 @@ Partial Class frmInterviewer
         'EmpfehlungLabel
         '
         EmpfehlungLabel.AutoSize = True
-        EmpfehlungLabel.Location = New System.Drawing.Point(624, 32)
+        EmpfehlungLabel.Location = New System.Drawing.Point(600, 32)
         EmpfehlungLabel.Name = "EmpfehlungLabel"
         EmpfehlungLabel.Size = New System.Drawing.Size(149, 32)
         EmpfehlungLabel.TabIndex = 0
@@ -1105,7 +1105,6 @@ Partial Class frmInterviewer
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Controls.Add(Me.TabPage7)
-        Me.TabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
         Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(6, 6)
         Me.TabControl1.Name = "TabControl1"
@@ -1151,7 +1150,7 @@ Partial Class frmInterviewer
         Me.GroupBox3.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox3.Location = New System.Drawing.Point(7, 416)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(988, 280)
+        Me.GroupBox3.Size = New System.Drawing.Size(988, 104)
         Me.GroupBox3.TabIndex = 6
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Persönliches"
@@ -1338,7 +1337,7 @@ Partial Class frmInterviewer
         Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox2.Location = New System.Drawing.Point(6, 199)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(999, 210)
+        Me.GroupBox2.Size = New System.Drawing.Size(989, 210)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Kontakt durch:"
@@ -1365,7 +1364,7 @@ Partial Class frmInterviewer
         'txtEmpfehlung
         '
         Me.txtEmpfehlung.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "empfehlung", True))
-        Me.txtEmpfehlung.Location = New System.Drawing.Point(779, 32)
+        Me.txtEmpfehlung.Location = New System.Drawing.Point(760, 35)
         Me.txtEmpfehlung.Multiline = True
         Me.txtEmpfehlung.Name = "txtEmpfehlung"
         Me.txtEmpfehlung.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -1432,7 +1431,7 @@ Partial Class frmInterviewer
         Me.GroupBox9.Controls.Add(KuendigungsfristLabel)
         Me.GroupBox9.Controls.Add(Me.KuendigungsfristComboBox)
         Me.GroupBox9.Controls.Add(VerfuegbarkeitLabel)
-        Me.GroupBox9.Controls.Add(Me.VerfuegbarkeitComboBox)
+        Me.GroupBox9.Controls.Add(Me.cmbVerfuegbarkeit)
         Me.GroupBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox9.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox9.Location = New System.Drawing.Point(3, 538)
@@ -1495,15 +1494,15 @@ Partial Class frmInterviewer
         Me.KuendigungsfristComboBox.Size = New System.Drawing.Size(174, 24)
         Me.KuendigungsfristComboBox.TabIndex = 8
         '
-        'VerfuegbarkeitComboBox
+        'cmbVerfuegbarkeit
         '
-        Me.VerfuegbarkeitComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedItem", Me.BewBindingSource, "verfügbarkeit", True))
-        Me.VerfuegbarkeitComboBox.FormattingEnabled = True
-        Me.VerfuegbarkeitComboBox.Items.AddRange(New Object() {"", "sofort", "nach Absprache", "nach Kündigung"})
-        Me.VerfuegbarkeitComboBox.Location = New System.Drawing.Point(124, 28)
-        Me.VerfuegbarkeitComboBox.Name = "VerfuegbarkeitComboBox"
-        Me.VerfuegbarkeitComboBox.Size = New System.Drawing.Size(179, 24)
-        Me.VerfuegbarkeitComboBox.TabIndex = 7
+        Me.cmbVerfuegbarkeit.DataBindings.Add(New System.Windows.Forms.Binding("SelectedItem", Me.BewBindingSource, "verfügbarkeit", True))
+        Me.cmbVerfuegbarkeit.FormattingEnabled = True
+        Me.cmbVerfuegbarkeit.Items.AddRange(New Object() {"", "sofort", "nach Absprache", "nach Kündigung"})
+        Me.cmbVerfuegbarkeit.Location = New System.Drawing.Point(124, 28)
+        Me.cmbVerfuegbarkeit.Name = "cmbVerfuegbarkeit"
+        Me.cmbVerfuegbarkeit.Size = New System.Drawing.Size(179, 24)
+        Me.cmbVerfuegbarkeit.TabIndex = 7
         '
         'GroupBox4
         '
@@ -2485,7 +2484,7 @@ Partial Class frmInterviewer
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents txtJobwunsch As System.Windows.Forms.TextBox
-    Friend WithEvents VerfuegbarkeitComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbVerfuegbarkeit As System.Windows.Forms.ComboBox
     Friend WithEvents txtZa_vm As System.Windows.Forms.TextBox
     Friend WithEvents cmbVz_tz As System.Windows.Forms.ComboBox
     Friend WithEvents cmbTeilzeit_stunden As System.Windows.Forms.ComboBox
