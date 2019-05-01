@@ -149,7 +149,7 @@ Public Class frmMain
         ' End If
 
         Call panelausblenden() ' Panel ausblenden, wenn letzteid 0 ist
-        ' Call fertig() ' Wenn Status auf ausgedruckt steht
+        Call fertig() ' Wenn Status auf ausgedruckt steht
         'Call Anmerkung() ' Überprüft, ob eine Row mit der abgefragten bewid in der Notizen-DB enthalten ist
         'Call bewerberbeschreibungladen() ' Lädt Bewerberbeschreibung und prüft, ob RTF oder nicht
         Call letzteanmerkunganzeigen() ' zeigt letzte Anmerkung auf Tab Bewerber/in an, darf hier nicht aktiviert werden
@@ -168,7 +168,7 @@ Public Class frmMain
         Dim bewgrid = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
         letzteid = CInt(bewgrid.id_bew)
         Call panelausblenden()
-        Call fertig() ' Wenn Status auf ausgedruckt steht
+        'Call fertig() ' Wenn Status auf ausgedruckt steht
         Call Anmerkung() ' Überprüft, ob eine Row mit der abgefragten bewid in der Notizen-DB enthalten ist
         Call bewerberbeschreibungladen() ' Lädt Bewerberbeschreibung und prüft, ob RTF oder nicht
         Call letzteanmerkunganzeigen() ' zeigt letzte Anmerkung auf Tab Bewerber/in an, darf hier nicht aktiviert werden
