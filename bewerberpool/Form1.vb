@@ -123,7 +123,7 @@ Public Class frmMain
         DirectCast(e, HandledMouseEventArgs).Handled = True
     End Sub
 
-    Private Sub ComboBox1_MouseWheel(sender As Object, e As MouseEventArgs) Handles VerfuegbarkeitComboBox.MouseWheel, Teilzeit_stundenComboBox.MouseWheel, Teilzeit_wannComboBox.MouseWheel, AnredeComboBox.MouseWheel, StandComboBox.MouseWheel, StatusComboBox.MouseWheel, InterviewartComboBox.MouseWheel, InterviewerComboBox.MouseWheel, BrancheComboBox.MouseWheel, StaatsangehörigkeitComboBox.MouseWheel, AufenhaltstitelComboBox.MouseWheel, ArbeitserlaubnisComboBox.MouseWheel, FamilienstandComboBox.MouseWheel, Kinder_betreuungComboBox.MouseWheel, SteuerklasseComboBox.MouseWheel, KonfessionComboBox.MouseWheel, VorstrafenComboBox1.MouseWheel, KrankheitenComboBox1.MouseWheel, SchulabschlussComboBox.MouseWheel, HaendedruckComboBox.MouseWheel, ParfumComboBox.MouseWheel, RaucherComboBox.MouseWheel, SchulabschlussComboBox.MouseWheel, FuehrungsverantwortungComboBox.MouseWheel, PersonalverantwortungComboBox.MouseWheel
+    Private Sub ComboBox1_MouseWheel(sender As Object, e As MouseEventArgs) Handles VerfuegbarkeitComboBox.MouseWheel, Teilzeit_stundenComboBox.MouseWheel, Teilzeit_wannComboBox.MouseWheel, AnredeComboBox.MouseWheel, StandComboBox.MouseWheel, cmbStatus.MouseWheel, InterviewartComboBox.MouseWheel, InterviewerComboBox.MouseWheel, BrancheComboBox.MouseWheel, StaatsangehörigkeitComboBox.MouseWheel, AufenhaltstitelComboBox.MouseWheel, ArbeitserlaubnisComboBox.MouseWheel, FamilienstandComboBox.MouseWheel, Kinder_betreuungComboBox.MouseWheel, SteuerklasseComboBox.MouseWheel, KonfessionComboBox.MouseWheel, VorstrafenComboBox1.MouseWheel, KrankheitenComboBox1.MouseWheel, SchulabschlussComboBox.MouseWheel, HaendedruckComboBox.MouseWheel, ParfumComboBox.MouseWheel, RaucherComboBox.MouseWheel, SchulabschlussComboBox.MouseWheel, FuehrungsverantwortungComboBox.MouseWheel, PersonalverantwortungComboBox.MouseWheel
         Dim HMEA As HandledMouseEventArgs = DirectCast(e, HandledMouseEventArgs)
         HMEA.Handled = True
     End Sub
@@ -235,7 +235,7 @@ Public Class frmMain
     Public Shared Sub DBSpeichern()
 
         Call frmMain.Altersberechnung() ' berechnet das Alter anhand des Geburtstags
-        Call frmMain.sprachendaten() ' trägt Sprachkenntnisse (neu) ein
+        Call frmMain.Sprachendaten() ' trägt Sprachkenntnisse (neu) ein
         Dim bewspeichern = DirectCast(DirectCast(frmMain.BewBindingSource.Current, DataRowView).Row, bewRow)
         bewspeichern.geaendert_am = Date.Now.ToString
         bewspeichern.letztbearbeitung_von = CStr(usernameklar)
@@ -330,7 +330,7 @@ Public Class frmMain
         Call frmMain.BewerberaufHomepagedeaktivieren()
 
         ' Wenn Status = alt, Fenster für Anmerkung öffnen, Abspeichern zuerst, sonst öffnet sich das immer
-        Select Case frmMain.StatusComboBox.SelectedIndex
+        Select Case frmMain.cmbStatus.SelectedIndex
             Case 2 'alt
                 frmNeueAnmerkunganlegen.alt_bool = True
                 Using frm = New frmNeueAnmerkunganlegen(frmMain)
@@ -366,22 +366,25 @@ Public Class frmMain
 
     Private Sub BewerberaufHomepagedeaktivieren()
 
-        Dim homepage = HeyduckDataSet.tt_news.Where(Function(x) CInt(x.tx_ttnewserweiterung_referenznummer) = CInt(letzteid) AndAlso x.deleted = 0)
-
-        If StatusComboBox.SelectedIndex = CInt(2) OrElse StatusComboBox.SelectedIndex = CInt(4) OrElse StatusComboBox.SelectedIndex = CInt(5) OrElse StatusComboBox.SelectedIndex = CInt(6) OrElse StatusComboBox.SelectedIndex = CInt(7) Then
-            Dim result As DialogResult = MessageBox.Show("Soll der ausgewählte Bewerber/die ausgewählte Bewerberin auf der Homepage deaktiviert werden", "Bewerber/in deaktivieren", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
-            If result = DialogResult.Cancel Then
-                Exit Sub
-            ElseIf result = DialogResult.No Then
-                Exit Sub
-            ElseIf result = DialogResult.Yes Then
-                For Each x In homepage
-                    x.deleted = CInt(1)
-                    Me.Validate()
-                    Me.Tt_newsBindingSource.EndEdit()
-                    Me.Tt_newsTableAdapter.Update(Me.HeyduckDataSet.tt_news)
-                Next
-                Me.Tt_newsTableAdapter.Fill(Me.HeyduckDataSet.tt_news)
+        If Not HeyduckDataSet.tt_news.Any(Function(x) CInt(x.tx_ttnewserweiterung_referenznummer) = CInt(letzteid)) Then
+            Exit Sub
+        Else
+            Dim homepage = HeyduckDataSet.tt_news.Where(Function(x) CInt(x.tx_ttnewserweiterung_referenznummer) = CInt(letzteid) AndAlso x.deleted = 0)
+            If cmbStatus.Text <> CStr("aktuell") OrElse cmbStatus.Text <> CStr("vorläufig") Then
+                Dim result As DialogResult = MessageBox.Show("Soll der ausgewählte Bewerber/die ausgewählte Bewerberin auf der Homepage deaktiviert werden", "Bewerber/in deaktivieren", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
+                If result = DialogResult.Cancel Then
+                    Exit Sub
+                ElseIf result = DialogResult.No Then
+                    Exit Sub
+                ElseIf result = DialogResult.Yes Then
+                    For Each x In homepage
+                        x.deleted = CInt(1)
+                        Me.Validate()
+                        Me.Tt_newsBindingSource.EndEdit()
+                        Me.Tt_newsTableAdapter.Update(Me.HeyduckDataSet.tt_news)
+                    Next
+                    Me.Tt_newsTableAdapter.Fill(Me.HeyduckDataSet.tt_news)
+                End If
             End If
         End If
     End Sub
@@ -1569,7 +1572,7 @@ Public Class frmMain
 #End Region
 
     ' ========================================================================= Validierungen ===================================================
-    Private Sub AuslandsaufenthaltComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AuslandsaufenthaltComboBox.SelectedIndexChanged, StandComboBox.SelectedIndexChanged, StatusComboBox.SelectedIndexChanged, VerfuegbarkeitComboBox.SelectedIndexChanged
+    Private Sub AuslandsaufenthaltComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AuslandsaufenthaltComboBox.SelectedIndexChanged, StandComboBox.SelectedIndexChanged, cmbStatus.SelectedIndexChanged, VerfuegbarkeitComboBox.SelectedIndexChanged
         Select Case True
             Case sender Is AuslandsaufenthaltComboBox
                 If AuslandsaufenthaltComboBox.SelectedIndex > CInt(0) Then

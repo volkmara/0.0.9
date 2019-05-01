@@ -698,7 +698,7 @@ Partial Class frmMain
         Me.InterviewartComboBox = New System.Windows.Forms.ComboBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.StandComboBox = New System.Windows.Forms.ComboBox()
-        Me.StatusComboBox = New System.Windows.Forms.ComboBox()
+        Me.cmbStatus = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.JahresgehaltTextBox1 = New System.Windows.Forms.TextBox()
         Me.RundschreibenComboBox = New System.Windows.Forms.ComboBox()
@@ -8298,7 +8298,7 @@ Partial Class frmMain
         Me.GroupBox2.Controls.Add(StandLabel)
         Me.GroupBox2.Controls.Add(Me.StandComboBox)
         Me.GroupBox2.Controls.Add(StatusLabel)
-        Me.GroupBox2.Controls.Add(Me.StatusComboBox)
+        Me.GroupBox2.Controls.Add(Me.cmbStatus)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox2.Location = New System.Drawing.Point(8, 833)
@@ -8376,16 +8376,16 @@ Partial Class frmMain
         Me.StandComboBox.Size = New System.Drawing.Size(193, 24)
         Me.StandComboBox.TabIndex = 3
         '
-        'StatusComboBox
+        'cmbStatus
         '
-        Me.StatusComboBox.BackColor = System.Drawing.Color.Yellow
-        Me.StatusComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "stand", True))
-        Me.StatusComboBox.FormattingEnabled = True
-        Me.StatusComboBox.Items.AddRange(New Object() {"", "aktuell", "alt", "vorläufig", "eingestellt", "vermittelt", "eingestellt und vermittelt", "10"})
-        Me.StatusComboBox.Location = New System.Drawing.Point(101, 26)
-        Me.StatusComboBox.Name = "StatusComboBox"
-        Me.StatusComboBox.Size = New System.Drawing.Size(192, 24)
-        Me.StatusComboBox.TabIndex = 1
+        Me.cmbStatus.BackColor = System.Drawing.Color.Yellow
+        Me.cmbStatus.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "stand", True))
+        Me.cmbStatus.FormattingEnabled = True
+        Me.cmbStatus.Items.AddRange(New Object() {"", "aktuell", "alt", "vorläufig", "eingestellt", "vermittelt", "eingestellt und vermittelt", "10"})
+        Me.cmbStatus.Location = New System.Drawing.Point(101, 26)
+        Me.cmbStatus.Name = "cmbStatus"
+        Me.cmbStatus.Size = New System.Drawing.Size(192, 24)
+        Me.cmbStatus.TabIndex = 1
         '
         'GroupBox1
         '
@@ -18629,7 +18629,7 @@ Partial Class frmMain
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents HomepagelinkTextBox As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents StatusComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbStatus As System.Windows.Forms.ComboBox
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents StandComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents InterviewartComboBox As System.Windows.Forms.ComboBox
