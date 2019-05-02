@@ -32,7 +32,7 @@
     <Shape ID="DesignTable:notizen" ZOrder="7" X="7693" Y="70" Height="286" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:ulas" ZOrder="8" X="7956" Y="55" Height="210" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:rundschreibenmonat" ZOrder="4" X="8596" Y="218" Height="153" Width="265" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:rundschreiben" ZOrder="6" X="8932" Y="55" Height="286" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignTable:rundschreiben" ZOrder="6" X="8932" Y="55" Height="305" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:bew_bew_bewerberdaten" ZOrder="54" LineWidth="11">
@@ -355,15 +355,15 @@
       <RoutePoints>
         <Point>
           <X>8861</X>
-          <Y>349</Y>
+          <Y>368</Y>
         </Point>
         <Point>
           <X>8949</X>
-          <Y>349</Y>
+          <Y>368</Y>
         </Point>
         <Point>
           <X>8949</X>
-          <Y>341</Y>
+          <Y>360</Y>
         </Point>
       </RoutePoints>
     </Connector>

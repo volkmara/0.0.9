@@ -428,21 +428,11 @@ Public Class frmMain
     ' End Sub
 
     Private Sub rundschreibencheck()
-        ' Dim rundschreiben = DirectCast(DirectCast(RundschreibenBindingSource.Current, DataRowView).Row, rundschreibenRow)
-        Dim rundschreiben = DirectCast(DirectCast(BewBindingSource.Current, DataRowView).Row, bewRow)
-        If rundschreiben.IsrundschreibenjaneinNull Then
-            Exit Sub
-        ElseIf rundschreiben.rundschreibenjanein = CInt(1) Then
-            btnRundschreiben.BackColor = Color.LightSteelBlue
-        ElseIf Not rundschreiben.rundschreibenjanein = CInt(1) Then
+        If Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid AndAlso Not x.rundschreibenjanein AndAlso x.aktuell = 1) Then
             btnRundschreiben.BackColor = Color.WhiteSmoke
+        ElseIf Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid AndAlso x.rundschreibenjanein AndAlso x.aktuell = 1) Then
+            btnRundschreiben.BackColor = Color.LightSteelBlue
         End If
-
-        'If Not Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid) Then
-        'btnRundschreiben.BackColor = Color.WhiteSmoke
-        'ElseIf Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid) Then
-        'btnRundschreiben.BackColor = Color.LightSteelBlue
-        'End If
     End Sub
 
     Private Sub topbewerberundinterviewerpruefen()

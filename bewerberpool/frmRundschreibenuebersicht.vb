@@ -64,20 +64,25 @@ Public Class frmRundschreibenuebersicht
     End Sub
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
-
         ' Werte in rundschreibenmonat.erledigt: 0 = noch nicht verwendet, 1 = enthält mindestens einen Bewerbereintrag, 2 = versandtes Rundschreiben
         ' werte in rundschreiben.gelöscht: 0 = nicht manuell gelöscht, 1 = manuell gelöscht
         If TabControl1.SelectedTab Is TabPage2 Then
-
-            Me.RundschreibenBindingSource1.Filter = "aktuell = 0 AND nurhomepage = False AND gelöscht = 0 And bezeichnung = '" & rsaktuellbezeichnung & "'"
+            rsaktuellbezeichnung = String.Empty
             Me.RundschreibenmonatBindingSource.Filter = "erledigt = 2"
-            Me.RGVBewerber.AutoSizeRows = True
-            Me.RGVBewerber.Columns(14).WrapText = True
         ElseIf TabControl1.SelectedTab Is TabPage1 Then
+            rsaktuellbezeichnung = String.Empty
             Me.RundschreibenBindingSource1.Filter = "aktuell = 1"
             Me.RundschreibenmonatBindingSource.Filter = "erledigt = 1"
             Me.RGVRundschreibenmonataktuell.ClearSelection()
         End If
+    End Sub
+
+    Private Sub RGVRundschreibenMonat_Click(sender As Object, e As EventArgs) Handles RGVRundschreibenMonat.Click
+        Dim rsmonataktuell = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
+        rsaktuellbezeichnung = CStr(rsmonataktuell.monat)
+        Me.RundschreibenBindingSource1.Filter = "aktuell = 0 AND nurhomepage = False AND gelöscht = 0 And bezeichnung = '" & rsaktuellbezeichnung & "'"
+        Me.RGVBewerber.AutoSizeRows = True
+        Me.RGVBewerber.Columns(14).WrapText = True
     End Sub
 
 #Region "Tabpage 1: aktuelle Rundschreibenbewerber"
@@ -115,6 +120,7 @@ Public Class frmRundschreibenuebersicht
         rsaktuellbezeichnung = CStr(rsmonataktuell.monat)
     End Sub
 
+
     Private Sub RGVRundschreibenaktuell_CurrentRowChanged(sender As Object, e As CurrentRowChangedEventArgs) Handles RGVRundschreibenaktuell.CurrentRowChanged
         'Call Homepagecheck()
         'Call Voreintraege()
@@ -141,6 +147,7 @@ Public Class frmRundschreibenuebersicht
                 If rbtnNein.Checked Then
                     rundschreiben.aktuell = CInt(0)
                     rundschreiben.gelöscht = CInt(1)
+                    rundschreiben.rundschreibenjanein = False
                 ElseIf rbtnJa.Checked Then
                     rundschreiben.aktuell = CInt(1)
                     rundschreiben.gelöscht = CInt(0)
@@ -214,12 +221,5 @@ Public Class frmRundschreibenuebersicht
             Call gespeichert()
         End If
     End Sub
-
-    'Private Sub RGVRundschreibenmonataktuell_CurrentRowChanged(sender As Object, e As CurrentRowChangedEventArgs) Handles RGVRundschreibenmonataktuell.CurrentRowChanged
-    '    Dim rsmonataktuell = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
-    '    rsaktuellbezeichnung = CStr(rsmonataktuell.monat)
-    'End Sub
-
-
 #End Region
 End Class

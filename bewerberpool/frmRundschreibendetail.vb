@@ -119,6 +119,7 @@ Public Class frmRundschreibendetail
                 rundschreiben.idrundschreibenmonat = CInt(monat)
                 rundschreiben.homepage = CInt(0)
                 rundschreiben.anmerkungen = txtRundschreibenanmerkungen.Text
+                rundschreiben.rundschreibenjanein = True
 
                 Me.Validate()
                 Me.RundschreibenBindingSource.EndEdit()
