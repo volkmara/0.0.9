@@ -122,9 +122,9 @@ Public Class frmInterviewer
             bewspeichern.letztbearbeitung_von = CStr(usernameklar)
             bewspeichern.status = CStr("fertig")
             ' rundschreibenjanein ist nach dem Anlegen im Bewerbertool DBNull, muss nach dem Bearbeiten auf 0 gesetzt werden
-            If bewspeichern.IsrundschreibenjaneinNull Then
-                bewspeichern.rundschreibenjanein = CInt(0)
-            End If
+            'If bewspeichern.IsrundschreibenjaneinNull Then
+            '    bewspeichern.rundschreibenjanein = CInt(0)
+            'End If
 
             If frmUlaseintragen.ulas_wert <> String.Empty Then
                 bewspeichern.ulas = CStr(frmUlaseintragen.ulas_wert)

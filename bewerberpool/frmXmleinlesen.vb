@@ -218,7 +218,7 @@ Public Class frmXmleinlesen
         Me.BewBindingSource.Filter = "id_bew = '" & autoincrementwert & "'"
         Dim bew = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
         bew.erstkontakt = Date.Now
-        bew.rundschreibenjanein = 0
+        'bew.rundschreibenjanein = 0
         bew.topbewerberchecked = False
         Me.BewBindingSource.EndEdit()
         frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
