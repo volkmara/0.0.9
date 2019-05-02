@@ -84,7 +84,6 @@ Partial Class frmRundschreibenuebersicht
         Me.RundschreibenBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.chgNurhomepage = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -164,7 +163,7 @@ Partial Class frmRundschreibenuebersicht
         AnmerkungenLabel.ForeColor = System.Drawing.Color.Crimson
         AnmerkungenLabel.Location = New System.Drawing.Point(715, 62)
         AnmerkungenLabel.Name = "AnmerkungenLabel"
-        AnmerkungenLabel.Size = New System.Drawing.Size(106, 16)
+        AnmerkungenLabel.Size = New System.Drawing.Size(108, 16)
         AnmerkungenLabel.TabIndex = 92
         AnmerkungenLabel.Text = "Anmerkungen:"
         '
@@ -174,7 +173,7 @@ Partial Class frmRundschreibenuebersicht
         RundschreibenreihenfolgeLabel.ForeColor = System.Drawing.Color.Crimson
         RundschreibenreihenfolgeLabel.Location = New System.Drawing.Point(1104, 62)
         RundschreibenreihenfolgeLabel.Name = "RundschreibenreihenfolgeLabel"
-        RundschreibenreihenfolgeLabel.Size = New System.Drawing.Size(194, 16)
+        RundschreibenreihenfolgeLabel.Size = New System.Drawing.Size(196, 16)
         RundschreibenreihenfolgeLabel.TabIndex = 93
         RundschreibenreihenfolgeLabel.Text = "Rundschreibenreihenfolge:"
         '
@@ -184,7 +183,7 @@ Partial Class frmRundschreibenuebersicht
         Label1.ForeColor = System.Drawing.Color.Crimson
         Label1.Location = New System.Drawing.Point(3, 17)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(80, 32)
+        Label1.Size = New System.Drawing.Size(84, 32)
         Label1.TabIndex = 95
         Label1.Text = "Auf Home-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "page:"
         '
@@ -194,7 +193,7 @@ Partial Class frmRundschreibenuebersicht
         Label5.ForeColor = System.Drawing.Color.Crimson
         Label5.Location = New System.Drawing.Point(713, 17)
         Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(117, 16)
+        Label5.Size = New System.Drawing.Size(121, 16)
         Label5.TabIndex = 98
         Label5.Text = "Nur Homepage:"
         '
@@ -204,7 +203,7 @@ Partial Class frmRundschreibenuebersicht
         RundschreibenLabel.ForeColor = System.Drawing.Color.Crimson
         RundschreibenLabel.Location = New System.Drawing.Point(322, 17)
         RundschreibenLabel.Name = "RundschreibenLabel"
-        RundschreibenLabel.Size = New System.Drawing.Size(138, 32)
+        RundschreibenLabel.Size = New System.Drawing.Size(141, 32)
         RundschreibenLabel.TabIndex = 95
         RundschreibenLabel.Text = "Für Rundschreiben" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ausgewählt:"
         '
@@ -503,7 +502,6 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.TabPage1.AutoScroll = True
         Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.Panel1)
         Me.TabPage1.Controls.Add(Me.SplitContainer2)
         Me.TabPage1.Controls.Add(Me.Label3)
@@ -519,15 +517,6 @@ Partial Class frmRundschreibenuebersicht
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Rundschreiben in Vorbereitung"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(762, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 95
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -566,7 +555,7 @@ Partial Class frmRundschreibenuebersicht
         Me.Label2.ForeColor = System.Drawing.Color.Crimson
         Me.Label2.Location = New System.Drawing.Point(322, 62)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(292, 16)
+        Me.Label2.Size = New System.Drawing.Size(298, 16)
         Me.Label2.TabIndex = 98
         Me.Label2.Text = "Bereits in Rundschreiben vorgeschlagen:"
         '
@@ -595,7 +584,7 @@ Partial Class frmRundschreibenuebersicht
         Me.rbtnNein.ForeColor = System.Drawing.Color.Crimson
         Me.rbtnNein.Location = New System.Drawing.Point(603, 15)
         Me.rbtnNein.Name = "rbtnNein"
-        Me.rbtnNein.Size = New System.Drawing.Size(58, 20)
+        Me.rbtnNein.Size = New System.Drawing.Size(59, 20)
         Me.rbtnNein.TabIndex = 97
         Me.rbtnNein.TabStop = True
         Me.rbtnNein.Text = "Nein"
@@ -1063,7 +1052,7 @@ Partial Class frmRundschreibenuebersicht
         Me.lblKW.BackColor = System.Drawing.Color.Yellow
         Me.lblKW.Location = New System.Drawing.Point(223, 79)
         Me.lblKW.Name = "lblKW"
-        Me.lblKW.Size = New System.Drawing.Size(31, 16)
+        Me.lblKW.Size = New System.Drawing.Size(34, 16)
         Me.lblKW.TabIndex = 4
         Me.lblKW.Text = "KW"
         '
@@ -1072,7 +1061,7 @@ Partial Class frmRundschreibenuebersicht
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(7, 77)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(178, 16)
+        Me.Label8.Size = New System.Drawing.Size(183, 16)
         Me.Label8.TabIndex = 3
         Me.Label8.Text = "Aktuelle Kalenderwoche:"
         '
@@ -1082,7 +1071,7 @@ Partial Class frmRundschreibenuebersicht
         Me.lblAktuellesDatum.BackColor = System.Drawing.Color.Yellow
         Me.lblAktuellesDatum.Location = New System.Drawing.Point(220, 44)
         Me.lblAktuellesDatum.Name = "lblAktuellesDatum"
-        Me.lblAktuellesDatum.Size = New System.Drawing.Size(120, 16)
+        Me.lblAktuellesDatum.Size = New System.Drawing.Size(123, 16)
         Me.lblAktuellesDatum.TabIndex = 2
         Me.lblAktuellesDatum.Text = "Aktuelles Datum"
         '
@@ -1091,7 +1080,7 @@ Partial Class frmRundschreibenuebersicht
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(7, 44)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(128, 16)
+        Me.Label7.Size = New System.Drawing.Size(133, 16)
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "Aktuelles Datum: "
         '
@@ -1248,6 +1237,5 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents Label8 As Label
     Friend WithEvents btnKWspeichern As Telerik.WinControls.UI.RadButton
     Friend WithEvents chgNurhomepage As CheckBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
 End Class

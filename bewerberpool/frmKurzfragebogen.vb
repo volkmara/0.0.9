@@ -4,6 +4,7 @@ Imports bewerberpool.BewerberDataSet
 Public Class frmKurzfragebogen
 
     Private _frmMain As frmMain
+    Public bewidneu As Integer = 0
 
     Sub New(frmMain As frmMain)
         ' TODO: Complete member initialization 
@@ -15,8 +16,22 @@ Public Class frmKurzfragebogen
         Call Timerreload.Reload() ' Timer für DB-Reload starten
     End Sub
 
+    Private Sub frmKurzfragebogen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call Getbewid()
+        bewidneu = CInt(bewid + 1)
+        If Not bewidcheck(bewidneu) Then
+            Me.BewBindingSource.AddNew()
+            Me.Bew_bewerberdatenBindingSource.AddNew()
+        ElseIf bewidcheck(bewidneu) Then
+            Dim warnungstext As String = CStr("Ein Eintrag mit dieser ID existiert bereits. Neueintragen nicht möglich. Die weitere Verarbeitung wurde abgebrochen.")
+            MessageBox.Show(warnungstext, "ID bereits vorhanden", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            Exit Sub
+            Me.Close()
+        End If
+    End Sub
+
     Private Sub frmKurzfragebogen_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        Call frmMain.DBLoad()
+        ' Call frmMain.DBLoad()
         Call Timerreload.Timerstop() ' Timer für DB-Reload stoppen
     End Sub
 
@@ -29,48 +44,42 @@ Public Class frmKurzfragebogen
     ' ======================================================================== Schritt 1: Neuen Bewerber anlegen ============================================================
 
     Private Sub btnNeuerBewerber_Click(sender As Object, e As EventArgs) Handles btnNeuerBewerber.Click
-        Dim warnungstext As String = CStr("Ein Eintrag mit dieser ID existiert bereits. Neueintragen nicht möglich. Die weitere Verarbeitung wurde abgebrochen.")
+        Dim bewspeichern = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        Dim bewerberdaten = DirectCast(DirectCast(Me.Bew_bewerberdatenBindingSource.Current, DataRowView).Row, bew_bewerberdatenRow)
+        bewspeichern.anrede = CStr(cmbAnrede.Text)
+        bewspeichern.vorname = CStr(txtVorname.Text)
+        bewspeichern.name = CStr(txtName.Text)
+        bewspeichern.stand = CStr("aktuell")
+        bewspeichern.status = CStr("angelegt")
+        bewspeichern.erstkontakt = Date.Now
+        bewspeichern.plz = CInt(txtPlz.Text)
+        bewspeichern.ort = CStr(txtOrt.Text)
+        bewspeichern.strasse = CStr(StrasseTextBox.Text)
+        bewspeichern.tel_festnetz = CStr(txtTel_festnetz.Text)
+        bewspeichern.tel_mobil = CStr(txtTel_mobil.Text)
+        bewspeichern.email = CStr(txtEmail.Text)
+        bewspeichern.verfügbarkeit = CStr(cmbVerfuegbarkeit.Text)
+        bewspeichern.arbeitszeit = CStr(cmbVz_tz.Text)
+        bewspeichern.monatsgehalt = CInt(txtMonatsgehalt.Text)
+        bewspeichern.ausbildungsberuf = CStr(txtAusbildungsberuf.Text)
+        bewspeichern.Vermittlung = CStr(txtZa_vm.Text)
+        bewspeichern.ulas = CStr(txtUlas.Text)
+        bewspeichern.refnr = CInt(bewidneu)
+        bewspeichern.bewerberbeschreibung = CStr(allgemein.ExporttoRtf(RTEPersönlichkeit.Document))
+        bewerberdaten.rundschreiben = CStr(cmbRundschreiben.Text)
 
-        ' Neuen Eintrag in Tabelle bew anlegen, die ID dieses Eintrags wird in id_bew in allen anderen Tabellen übernommen
-        Call Getbewid()
-        Dim bewidneu = CInt(bewid + 1)
-        If Not bewidcheck(bewidneu) Then
-            frmMain.BewBindingSource.AddNew()
-            Dim bewspeichern = DirectCast(DirectCast(frmMain.BewBindingSource.Current, DataRowView).Row, bewRow)
-            bewspeichern.anrede = CStr(AnredeComboBox.Text)
-            bewspeichern.vorname = CStr(VornameTextBox.Text)
-            bewspeichern.name = CStr(NameTextBox.Text)
-            bewspeichern.stand = CStr("aktuell")
-            bewspeichern.status = CStr("angelegt")
-            bewspeichern.erstkontakt = Date.Now
-            bewspeichern.plz = CInt(PlzTextBox.Text)
-            bewspeichern.ort = CStr(OrtTextBox.Text)
-            bewspeichern.strasse = CStr(StrasseTextBox.Text)
-            bewspeichern.tel_festnetz = CStr(Tel_festnetzTextBox.Text)
-            bewspeichern.tel_mobil = CStr(Tel_mobilTextBox.Text)
-            bewspeichern.email = CStr(EmailTextBox.Text)
-            bewspeichern.verfügbarkeit = CStr(VerfuegbarkeitComboBox.Text)
-            bewspeichern.arbeitszeit = CStr(Vz_tzComboBox.Text)
-            bewspeichern.monatsgehalt = CInt(MonatsgehaltTextBox.Text)
-            bewspeichern.ausbildungsberuf = CStr(AusbildungsberufTextBox.Text)
-            bewspeichern.Vermittlung = CStr(frmListboxen.zavm)
-            bewspeichern.ulas = CStr(frmUlaseintragen.ulas_wert)
-            bewspeichern.refnr = CInt(bewidneu)
+        Me.Validate()
+        Me.BewBindingSource.EndEdit()
+        Me.BewTableAdapter.Update(Me.BewerberDataSet.bew)
 
-            Me.Validate()
-            '  frmMain.Validate()
-            frmMain.BewBindingSource.EndEdit()
-            frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
-            frmMain.DBLoad()
+        Me.Bew_bewerberdatenBindingSource.EndEdit()
+        Me.Bew_bewerberdatenTableAdapter.Update(Me.BewerberDataSet.bew_bewerberdaten)
 
-            Call inallentabellen.eintragen()
-            Me.Panel2.Visible = True
-            Me.Close()
-        ElseIf bewidcheck(bewidneu) Then
-            MessageBox.Show(warnungstext, "ID bereits vorhanden", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-            Exit Sub
-            Me.Close()
-        End If
+        Call inallentabellen.eintragen()
+        frmMain.DBLoad()
+
+        Me.Panel2.Visible = True
+        Me.Close()
     End Sub
 
     Private Function bewidcheck(ByVal test As Integer) As Boolean
@@ -78,47 +87,47 @@ Public Class frmKurzfragebogen
     End Function
 
     ' ================================================================================ Validierungen =======================================================
-    Private Sub AnredeComboBox_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles AnredeComboBox.Validating, VornameTextBox.Validating, NameTextBox.Validating, MonatsgehaltTextBox.Validating, Gehaltswunsch_monatTextBox.Validating, OrtTextBox.Validating, PlzTextBox.Validating, EmailTextBox.Validating
+    Private Sub cmbAnrede_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmbAnrede.Validating, txtVorname.Validating, txtName.Validating, txtMonatsgehalt.Validating, txtGehaltswunsch_monat.Validating, txtOrt.Validating, txtPlz.Validating, txtEmail.Validating
         Select Case True
-            Case sender Is AnredeComboBox
+            Case sender Is cmbAnrede
                 '  If AnredeComboBox.SelectedText = String.Empty Then
-                If AnredeComboBox.SelectedIndex = 0 Then
+                If cmbAnrede.SelectedIndex = 0 Then
                     MessageBox.Show("Bitte eine Anrede eingeben", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 End If
-            Case sender Is VornameTextBox
-                If VornameTextBox.Text = String.Empty Then
+            Case sender Is txtVorname
+                If txtVorname.Text = String.Empty Then
                     MessageBox.Show("Bitte einen Vornamen eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 End If
-            Case sender Is NameTextBox
-                If NameTextBox.Text = String.Empty Then
+            Case sender Is txtName
+                If txtName.Text = String.Empty Then
                     MessageBox.Show("Bitte einen Nachnamen eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 End If
-            Case sender Is MonatsgehaltTextBox
-                If MonatsgehaltTextBox.Text = String.Empty Then
+            Case sender Is txtMonatsgehalt
+                If txtMonatsgehalt.Text = String.Empty Then
                     MessageBox.Show("Bitte das letzte Monatsgehalt (nur Ziffern) eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 End If
-            Case sender Is Gehaltswunsch_monatTextBox
-                If Gehaltswunsch_monatTextBox.Text = String.Empty Then
+            Case sender Is txtGehaltswunsch_monat
+                If txtGehaltswunsch_monat.Text = String.Empty Then
                     MessageBox.Show("Bitte das angestrebte Monatsgehalt (nur Ziffern) eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 End If
-            Case sender Is OrtTextBox
-                If OrtTextBox.Text = String.Empty Then
+            Case sender Is txtOrt
+                If txtOrt.Text = String.Empty Then
                     MessageBox.Show("Bitte den Wohnort eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 End If
-            Case sender Is PlzTextBox
-                If Not IsNumeric(PlzTextBox.Text) Then
+            Case sender Is txtPlz
+                If Not IsNumeric(txtPlz.Text) Then
                     ToolTip1.Show("Bitte tragen Sie eine Postleitzahl mit fünf Ziffern ein.", CType(sender, Control), 1500)
-                ElseIf PlzTextBox.TextLength <= 4 Then
+                ElseIf txtPlz.TextLength <= 4 Then
                     ToolTip1.Show("Bitte geben Sie eine Postleitzahl mit fünf Ziffern ein.", CType(sender, Control), 1500)
-                ElseIf PlzTextBox.Text = "" Then
+                ElseIf txtPlz.Text = "" Then
                     ToolTip1.Show("Bitte geben Sie eine Postleitzahl mit fünf Ziffern ein.", CType(sender, Control), 1500)
                 End If
-            Case sender Is EmailTextBox
-                If EmailTextBox.Text.Trim = "" Then
+            Case sender Is txtEmail
+                If txtEmail.Text.Trim = "" Then
                     ErrorProvider1.SetError(CType(sender, Control), "Bitte geben Sie Ihre Emailadresse an")
                     ToolTip1.Show("Bitte geben Sie eine Emailadresse ein. ", CType(sender, Control), 1500)
                     e.Cancel = True
-                ElseIf Not ValidateEMail(EmailTextBox.Text) Then
+                ElseIf Not ValidateEMail(txtEmail.Text) Then
                     ErrorProvider1.SetError(CType(sender, Control), "Bitte geben Sie eine korrekte Emailadresse an")
                     ToolTip1.Show("Bitte geben Sie eine korrekte Emailadresse ein. ", CType(sender, Control), 1500)
                     e.Cancel = True
@@ -126,10 +135,6 @@ Public Class frmKurzfragebogen
         End Select
     End Sub
     ' =============================================================== Ende Schritt 1 ====================================================================
-
-    ' =============================================================== Schritt 2: Daten ==================================================================
-
-    ' `=============================================================== Ende Schritt 2 ==================================================================
 
     ' ================================================================ Validierungen ==================================================================
 
@@ -144,20 +149,21 @@ Public Class frmKurzfragebogen
 
     ' =================================================================== Ende Validierungen =============================================================
 
-    Private Sub Za_vmTextBox_DoubleClick(sender As Object, e As EventArgs) Handles Za_vmTextBox.DoubleClick, UlasTextBox.DoubleClick
+    Private Sub Za_vmTextBox_DoubleClick(sender As Object, e As EventArgs) Handles txtZa_vm.DoubleClick, txtUlas.DoubleClick
         Select Case True
-            Case sender Is Za_vmTextBox
+            Case sender Is txtZa_vm
                 frmListboxen.zavm_bool = True
                 Using frm = New frmListboxen(Me)
                     Dim result = frm.ShowDialog()
                 End Using
-                Za_vmTextBox.Text = CStr(frmListboxen.zavm)
-            Case sender Is UlasTextBox
+                txtZa_vm.Text = CStr(frmListboxen.zavm)
+            Case sender Is txtUlas
                 frmUlaseintragen.ulas_bool = True
                 Using frm = New frmUlaseintragen(Me)
                     Dim result = frm.ShowDialog(Me)
                 End Using
-                UlasTextBox.Text = CStr(frmUlaseintragen.ulas_wert)
+                txtUlas.Text = CStr(frmUlaseintragen.ulas_wert)
         End Select
     End Sub
+
 End Class

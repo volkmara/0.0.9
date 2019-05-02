@@ -288,12 +288,6 @@
     <Compile Include="frmRundschreibenuebersicht.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTelefoninterview.Designer.vb">
-      <DependentUpon>frmTelefoninterview.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmTelefoninterview.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmUlaseintragen.Designer.vb">
       <DependentUpon>frmUlaseintragen.vb</DependentUpon>
     </Compile>
@@ -393,9 +387,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRundschreibenuebersicht.resx">
       <DependentUpon>frmRundschreibenuebersicht.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTelefoninterview.resx">
-      <DependentUpon>frmTelefoninterview.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUlaseintragen.resx">
       <DependentUpon>frmUlaseintragen.vb</DependentUpon>

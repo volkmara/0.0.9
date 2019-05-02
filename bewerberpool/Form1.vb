@@ -600,10 +600,10 @@ Public Class frmMain
                     Dim result = frm.ShowDialog
                 End Using
 
-            Case sender Is TelefoninterviewRadMenuItem
-                Using frm = New frmTelefoninterview(Me)
-                    Dim result = frm.ShowDialog
-                End Using
+            'Case sender Is TelefoninterviewRadMenuItem
+            '    Using frm = New frmTelefoninterview(Me)
+            '        Dim result = frm.ShowDialog
+            '    End Using
 
             Case sender Is AufklappenRadMenuItem1
                 BewGridView1.AutoSizeRows = True

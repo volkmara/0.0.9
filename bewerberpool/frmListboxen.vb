@@ -3,7 +3,7 @@
     Private _frmMain As frmMain
     Private _frmKurzfragebogen As frmKurzfragebogen
     Private _frmInterviewer As frmInterviewer
-    Private _frmTelefoninterview As frmTelefoninterview
+    'Private _frmTelefoninterview As frmTelefoninterview
 
     Sub New(frmMain As frmMain)
         ' TODO: Complete member initialization 
@@ -22,10 +22,10 @@
         InitializeComponent()
     End Sub
 
-    Sub New(frmTelefoninterview As frmTelefoninterview)
-        _frmTelefoninterview = frmTelefoninterview
-        InitializeComponent()
-    End Sub
+    'Sub New(frmTelefoninterview As frmTelefoninterview)
+    '    _frmTelefoninterview = frmTelefoninterview
+    '    InitializeComponent()
+    'End Sub
 
     ' Bool-Variablen für frmMain
     Public Shared Property zavm_bool As Boolean = False
