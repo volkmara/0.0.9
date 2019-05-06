@@ -106,7 +106,7 @@ Public Class frmRundschreiben
     Private Sub voreintraege()
         Dim liste As New BindingList(Of String)
         ' Es werden nur die Rundschreiben aufgelistet, die zeitlich vor dem aktuellen Rundschreiben liegen, also die, bei denen x.aktuell = 0 ist
-        Dim bewrundschreiben = BewerberDataSet.rundschreiben.Where(Function(x) x.bewid = rundschreibenid AndAlso x.aktuell = CInt(0)).Select(Function(x) x.bezeichnung).Reverse
+        Dim bewrundschreiben = BewerberDataSet.rundschreiben.Where(Function(x) x.bewid = rundschreibenid And x.aktuell = CInt(0) And x.gelöscht = 0).Select(Function(x) x.bezeichnung).Reverse
 
         For Each x In bewrundschreiben
             liste.Add(x.ToString)

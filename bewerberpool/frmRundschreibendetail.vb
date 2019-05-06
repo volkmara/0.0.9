@@ -26,7 +26,7 @@ Public Class frmRundschreibendetail
     Private Sub frmRundschreibenneu_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         ' Es wird das gesamte Dataset durchlaufen und alle Rows selektiert, die bei denen bewid = letzteid ist, dann werden alle Einträgen dieser Rows in der Cell "bezeichnung" in umgekehrter Reihenfolge in eine List of String geschrieben, die als Datasource an die Listbox gehängt wird
 
-        Dim rundschreiben = BewerberDataSet.rundschreiben.Where(Function(x) x.bewid = letzteid AndAlso x.aktuell = 0).Select(Function(x) x.bezeichnung).Reverse
+        Dim rundschreiben = BewerberDataSet.rundschreiben.Where(Function(x) x.bewid = letzteid AndAlso x.aktuell = 0 AndAlso x.gelöscht = 0).Select(Function(x) x.bezeichnung).Reverse
 
         Dim liste As New List(Of String)()
         For Each x In rundschreiben

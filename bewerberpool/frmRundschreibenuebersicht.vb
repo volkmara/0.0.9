@@ -103,7 +103,7 @@ Public Class frmRundschreibenuebersicht
         Dim bewerberid As Integer = CInt(bewerber.bewid)
 
         ' Es werden nur die Rundschreiben aufgelistet, die zeitlich vor dem aktuellen Rundschreiben liegen, also die, bei denen x.aktuell = 0 ist
-        Dim bewrundschreiben = BewerberDataSet.rundschreiben.Where(Function(x) x.bewid = bewerberid AndAlso x.aktuell = CInt(0)).Select(Function(x) x.bezeichnung).Reverse.ToList
+        Dim bewrundschreiben = BewerberDataSet.rundschreiben.Where(Function(x) x.bewid = bewerberid AndAlso x.aktuell = CInt(0) AndAlso x.gelöscht = 0).Select(Function(x) x.bezeichnung).Reverse.ToList
 
         ListBox1.DataSource = bewrundschreiben
     End Sub
