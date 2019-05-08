@@ -146,9 +146,12 @@ Public Class frmXmleinlesen
         IO.File.WriteAllText(xmlneu, xmltextneu)
         xmlzumeinlesen = xmlneu.Replace("\", "/") ' \ ersetzen durch /, um in Sql einzulesen
 
-        ' Prüfen, ob neue id eingetragen wurde, sonst Abbruch
+        ' Prüfen, ob neue id eingetragen wurde und ob xml-Datei komplett ist, sonst Abbruch
         If xmlneu.Contains("<id_bew>1</id_bew>") Then
             MessageBox.Show("Die neue Referenznummer wurde nicht korrekt eingetragen! Die xml-Datei wird nicht eingelesen." & vbNewLine & vbNewLine & "Bitte den Pleitegeier verständigen.", "Fehler bei der Konvertierung der xml-Datei", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Close()
+        ElseIf Not xmlneu.Contains("<bew_bewerberdaten>") OrElse Not Not xmlneu.Contains("<bewerber_ausbildung>") OrElse Not Not xmlneu.Contains("<bewerber_berufserfahrung>") OrElse Not Not xmlneu.Contains("<bewerber_sprachen>") OrElse Not Not xmlneu.Contains("<bewerber_edv>") OrElse Not Not xmlneu.Contains("<bew_assistenz>") OrElse Not Not xmlneu.Contains("<bewerber_buero>") OrElse Not xmlneu.Contains("<bewerber_rae>") OrElse Not xmlneu.Contains("<bewerber_fibu>") OrElse Not xmlneu.Contains("<bew_bibuha>") OrElse Not xmlneu.Contains("<bewerber_controlling>") OrElse Not xmlneu.Contains("<bew_steuerfachangestellte>") OrElse Not xmlneu.Contains("<bew_lug>") OrElse Not xmlneu.Contains("<bewerber_vertrieb>") OrElse Not xmlneu.Contains("<bewerber_einkauf>") OrElse Not xmlneu.Contains("<bewerber_logistik>") OrElse Not xmlneu.Contains("<bewerber_versand>") OrElse Not xmlneu.Contains("<bewerber_marketing_design>") OrElse Not xmlneu.Contains("<bewerber_personal>") OrElse Not xmlneu.Contains("<bewerber_technik>") OrElse Not xmlneu.Contains("<bewerber_it>") OrElse Not xmlneu.Contains("<gewerblich>") OrElse Not xmlneu.Contains("<bew>") OrElse Not xmlneu.Contains("<ulas>") Then
+            MessageBox.Show("Die XML-Datei wurde nicht korrekt erstellt! Die xml-Datei wird nicht eingelesen." & vbNewLine & vbNewLine & "Bitte den Pleitegeier verständigen.", "Fehler bei der Erstellung der xml-Datei", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
         Else
             Dim result As DialogResult = MessageBox.Show("Alles in Ordnung. Die xml-Datei kann jetzt eingelesen werden.", "Alles in Ordnung", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
@@ -312,7 +315,10 @@ Public Class frmXmleinlesen
 
     ' eingespielte xml-Einträge prüfen
     Private Sub Eintraegepruefen()
-        If Not frmMain.BewerberDataSet.bew_assistenz.Any(Function(x) x.id_bew = CInt(autoincrementwert)) Then
+        If Not frmMain.BewerberDataSet.bew.Any(Function(x) x.id_bew = CInt(autoincrementwert)) Then
+            Call Message()
+            Exit Sub
+        ElseIf Not frmMain.BewerberDataSet.bew_assistenz.Any(Function(x) x.id_bew = CInt(autoincrementwert)) Then
             Call Message()
             Exit Sub
         ElseIf Not frmMain.BewerberDataSet.bew_bewerberdaten.Any(Function(x) x.id_bew = CInt(autoincrementwert)) Then
