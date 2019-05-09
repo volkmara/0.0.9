@@ -560,24 +560,36 @@ Public Class frmMain
                 End If
 
             Case sender Is DruckenRadMenuItem2
-                frmBogendruck.auswahlbewerberbogen_bool = True
-                Using frm = New frmBogendruck(Me)
-                    Dim result = frm.ShowDialog
-                End Using
+                If BewGridView1.SelectedRows.Count = 0 Then
+                    MessageBox.Show("Sie haben keine(n) Bewerber/in in der Tabelle angeklickt. Es kann nicht gedruckt werden.", "Keine Bewerberauswahl", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                Else
+                    frmBogendruck.auswahlbewerberbogen_bool = True
+                    Using frm = New frmBogendruck(Me)
+                        Dim result = frm.ShowDialog
+                    End Using
+                End If
                 frmBogendruck.auswahlbewerberbogen_bool = False
 
             Case sender Is DruckenRadMenuItem3
-                frmBogendruck.auswahlbewerberbogenergänzt_bool = True
-                Using frm = New frmBogendruck(Me)
-                    Dim result = frm.ShowDialog
-                End Using
+                If BewGridView1.SelectedRows.Count = 0 Then
+                    MessageBox.Show("Sie haben keine(n) Bewerber/in in der Tabelle angeklickt. Es kann nicht gedruckt werden.", "Keine Bewerberauswahl", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                Else
+                    frmBogendruck.auswahlbewerberbogenergänzt_bool = True
+                    Using frm = New frmBogendruck(Me)
+                        Dim result = frm.ShowDialog
+                    End Using
+                End If
                 frmBogendruck.auswahlbewerberbogenergänzt_bool = False
 
             Case sender Is DruckenRadMenuItem4
-                frmBogendruck.auswahlkopfbogen_bool = True
-                Using frm = New frmBogendruck(Me)
-                    Dim result = frm.ShowDialog
-                End Using
+                If BewGridView1.SelectedRows.Count = 0 Then
+                    MessageBox.Show("Sie haben keine(n) Bewerber/in in der Tabelle angeklickt. Es kann nicht gedruckt werden.", "Keine Bewerberauswahl", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                Else
+                    frmBogendruck.auswahlkopfbogen_bool = True
+                    Using frm = New frmBogendruck(Me)
+                        Dim result = frm.ShowDialog
+                    End Using
+                End If
                 frmBogendruck.auswahlkopfbogen_bool = False
 
             Case sender Is NeueAnmerkungRadButton
@@ -1946,6 +1958,10 @@ Public Class frmMain
         frmListboxen.lug_buchhaltung_software = String.Empty
         frmListboxen.fibu_kontenrahmen = String.Empty
         frmListboxen.vztz = String.Empty
+    End Sub
+
+    Private Sub PruefenobBewerberausgewaehlt()
+
     End Sub
 
 End Class
