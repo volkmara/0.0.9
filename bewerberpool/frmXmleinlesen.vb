@@ -9,7 +9,7 @@ Public Class frmXmleinlesen
     Public xmlneuverzeichnis As String = String.Empty ' Verzeichnis, in dem die bearbeiteten Dateien gespeichert werden
     Public xmlaltverzeichnis As String = String.Empty ' unbearbeitete Originaldateien werden in dieses Verzeichnis verschoben
     Public xmlzumeinlesen As String = String.Empty ' Verzeichnisstring zum Einlesen in DB
-    Public xmltextneu As String = String.Empty
+    Public xmltextneu As String = String.Empty ' in einen String eingelesene xml-Datei
     Public xmlneu As String = String.Empty
     Public xmlalt As String = String.Empty
     Public filename As String = String.Empty
@@ -75,15 +75,15 @@ Public Class frmXmleinlesen
     End Sub
 
     Private Sub Xmlersetzungen()
-        Call GetAutoincrement()
 
         Call frmMain.DBLoad()
 
         Me.Label2.Visible = True
         Me.Panel1.Visible = True
 
-        Me.Label4.Text = CStr(bewidneu)
-        Me.Label6.Text = CStr(bewidneu)
+        Me.Label4.Text = CStr(autoincrementwert)
+        Me.Label6.Text = CStr(autoincrementwert)
+
         Dim text As String = File.ReadAllText(lstXml.SelectedItem.ToString)
 
         xmltextneu = text.Replace("<id_bewerberdaten>1", String.Concat("<id_bewerberdaten>", autoincrementwert)).Replace("<id_bew>1", String.Concat("<id_bew>", autoincrementwert)).Replace("<id_ausbildung>1", String.Concat("<id_ausbildung>", autoincrementwert)).Replace("<id_berufserfahrung>1", String.Concat("<id_berufserfahrung>", autoincrementwert)).Replace("<id_sprachen>1", String.Concat("<id_sprachen>", autoincrementwert)).Replace("<id_edv>1", String.Concat("<id_edv>", autoincrementwert)).Replace("<id_assistenz>1", String.Concat("<id_assistenz>", autoincrementwert)).Replace("<id_buero>1", String.Concat("<id_buero>", autoincrementwert)).Replace("<id_rae>1", String.Concat("<id_rae>", autoincrementwert)).Replace("<id_fibu>1", String.Concat("<id_fibu>", autoincrementwert)).Replace("<id_bibuha>1", String.Concat("<id_bibuha>", autoincrementwert)).Replace("<id_controlling>1", String.Concat("<id_controlling>", autoincrementwert)).Replace("<id_steuerfachang>1", String.Concat("<id_steuerfachang>", autoincrementwert)).Replace("<id_lug>1", String.Concat("<id_lug>", autoincrementwert)).Replace("<id_vertrieb>1", String.Concat("<id_vertrieb>", autoincrementwert)).Replace("<id_einkauf>1", String.Concat("<id_einkauf>", autoincrementwert)).Replace("<id_logistik>1", String.Concat("<id_logistik>", autoincrementwert)).Replace("<id_versand>1", String.Concat("<id_versand>", autoincrementwert)).Replace("<id_m_d>1", String.Concat("<id_m_d>", autoincrementwert)).Replace("<id_personal>1", String.Concat("<id_personal>", autoincrementwert)).Replace("<id_technik>1", String.Concat("<id_technik>", autoincrementwert)).Replace("<id_it>1", String.Concat("<id_it>", autoincrementwert)).Replace("<id_gewerblich>1", String.Concat("<id_gewerblich>", autoincrementwert)).Replace("<refnr>1", String.Concat("<refnr>", autoincrementwert)).Replace("<id_ulas>1", String.Concat("<id_ulas>", autoincrementwert))
@@ -142,17 +142,20 @@ Public Class frmXmleinlesen
         ' xmlzumeinlesen = xmlneu.Replace("\", "/") ' \ ersetzen durch /, um in Sql einzulesen
 
         xmlalt = String.Concat(xmlaltverzeichnis, "\", dateiname)
+        IO.File.WriteAllText(xmlneu, xmltextneu) ' Liest xmldatei in einem String ein
 
-        IO.File.WriteAllText(xmlneu, xmltextneu)
         xmlzumeinlesen = xmlneu.Replace("\", "/") ' \ ersetzen durch /, um in Sql einzulesen
 
         ' Prüfen, ob neue id eingetragen wurde und ob xml-Datei komplett ist, sonst Abbruch
-        If xmlneu.Contains("<id_bew>1</id_bew>") Then
-            MessageBox.Show("Die neue Referenznummer wurde nicht korrekt eingetragen! Die xml-Datei wird nicht eingelesen." & vbNewLine & vbNewLine & "Bitte den Pleitegeier verständigen.", "Fehler bei der Konvertierung der xml-Datei", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Me.Close()
-        ElseIf Not xmlneu.Contains("<bew_bewerberdaten>") OrElse Not Not xmlneu.Contains("<bewerber_ausbildung>") OrElse Not Not xmlneu.Contains("<bewerber_berufserfahrung>") OrElse Not Not xmlneu.Contains("<bewerber_sprachen>") OrElse Not Not xmlneu.Contains("<bewerber_edv>") OrElse Not Not xmlneu.Contains("<bew_assistenz>") OrElse Not Not xmlneu.Contains("<bewerber_buero>") OrElse Not xmlneu.Contains("<bewerber_rae>") OrElse Not xmlneu.Contains("<bewerber_fibu>") OrElse Not xmlneu.Contains("<bew_bibuha>") OrElse Not xmlneu.Contains("<bewerber_controlling>") OrElse Not xmlneu.Contains("<bew_steuerfachangestellte>") OrElse Not xmlneu.Contains("<bew_lug>") OrElse Not xmlneu.Contains("<bewerber_vertrieb>") OrElse Not xmlneu.Contains("<bewerber_einkauf>") OrElse Not xmlneu.Contains("<bewerber_logistik>") OrElse Not xmlneu.Contains("<bewerber_versand>") OrElse Not xmlneu.Contains("<bewerber_marketing_design>") OrElse Not xmlneu.Contains("<bewerber_personal>") OrElse Not xmlneu.Contains("<bewerber_technik>") OrElse Not xmlneu.Contains("<bewerber_it>") OrElse Not xmlneu.Contains("<gewerblich>") OrElse Not xmlneu.Contains("<bew>") OrElse Not xmlneu.Contains("<ulas>") Then
+
+        If Not xmltextneu.Contains("<bew_bewerberdaten>") OrElse Not xmltextneu.Contains("<bewerber_ausbildung>") OrElse Not xmltextneu.Contains("<bewerber_berufserfahrung>") OrElse Not xmltextneu.Contains("<bewerber_sprachen>") OrElse Not xmltextneu.Contains("<bewerber_edv>") OrElse Not xmltextneu.Contains("<bew_assistenz>") OrElse Not xmltextneu.Contains("<bewerber_buero>") OrElse Not xmltextneu.Contains("<bewerber_rae>") OrElse Not xmltextneu.Contains("<bewerber_fibu>") OrElse Not xmltextneu.Contains("<bew_bibuha>") OrElse Not xmltextneu.Contains("<bewerber_controlling>") OrElse Not xmltextneu.Contains("<bew_steuerfachangestellte>") OrElse Not xmltextneu.Contains("<bew_lug>") OrElse Not xmltextneu.Contains("<bewerber_vertrieb>") OrElse Not xmltextneu.Contains("<bewerber_einkauf>") OrElse Not xmltextneu.Contains("<bewerber_logistik>") OrElse Not xmltextneu.Contains("<bewerber_versand>") OrElse Not xmltextneu.Contains("<bewerber_marketing_design>") OrElse Not xmltextneu.Contains("<bewerber_personal>") OrElse Not xmltextneu.Contains("<bewerber_technik>") OrElse Not xmltextneu.Contains("<bewerber_it>") OrElse Not xmltextneu.Contains("<gewerblich>") OrElse Not xmltextneu.Contains("<bew>") OrElse Not xmltextneu.Contains("<ulas>") Then
             MessageBox.Show("Die XML-Datei wurde nicht korrekt erstellt! Die xml-Datei wird nicht eingelesen." & vbNewLine & vbNewLine & "Bitte den Pleitegeier verständigen.", "Fehler bei der Erstellung der xml-Datei", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
+
+        ElseIf xmltextneu.Contains("<id_bew>1</id_bew>") Then
+            MessageBox.Show("Die neue Referenznummer wurde nicht korrekt eingetragen! Die xml-Datei wird nicht eingelesen." & vbNewLine & vbNewLine & "Bitte den Pleitegeier verständigen.", "Fehler bei der Konvertierung der xml-Datei", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Close()
+
         Else
             Dim result As DialogResult = MessageBox.Show("Alles in Ordnung. Die xml-Datei kann jetzt eingelesen werden.", "Alles in Ordnung", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
             If result = DialogResult.Yes Then

@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\server2012\xchange\bewerberpool\publish\</InstallUrl>
     <UpdateUrl>\\server2012\xchange\bewerberpool\publish\</UpdateUrl>
-    <ApplicationRevision>183</ApplicationRevision>
+    <ApplicationRevision>186</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -210,6 +210,12 @@
     <Compile Include="frmBogendruck.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmFarblegende.Designer.vb">
+      <DependentUpon>frmFarblegende.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFarblegende.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmHomepage.Designer.vb">
       <DependentUpon>frmHomepage.vb</DependentUpon>
     </Compile>
@@ -348,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBogendruck.resx">
       <DependentUpon>frmBogendruck.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFarblegende.resx">
+      <DependentUpon>frmFarblegende.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHomepage.resx">
       <DependentUpon>frmHomepage.vb</DependentUpon>

@@ -458,7 +458,7 @@ Public Class frmMain
 #End Region
 
     ' ================================================================================ Hauptmenu ============================================================================
-    Private Sub BewerbungsgesprächRadMenuItem1_Click(sender As Object, e As EventArgs) Handles VersionRadMenuItem1.Click, BewerberloeschenRadMenuItem2.Click, BenutzerverwaltungRadMenuItem2.Click, UnterlagenspeichernRadMenuItem.Click, Bewerber_innenaufHomepageRadMenuItem1.Click, DetailansichtRadMenuItem1.Click, BewerbervollstaendigloeschenRadMenuItem2.Click
+    Private Sub BewerbungsgesprächRadMenuItem1_Click(sender As Object, e As EventArgs) Handles VersionRadMenuItem1.Click, BewerberloeschenRadMenuItem2.Click, BenutzerverwaltungRadMenuItem2.Click, UnterlagenspeichernRadMenuItem.Click, Bewerber_innenaufHomepageRadMenuItem1.Click, DetailansichtRadMenuItem1.Click, BewerbervollstaendigloeschenRadMenuItem2.Click, FarblegendeMenuItem1.Click
         Select Case True
             Case sender Is VersionRadMenuItem1
                 Using frm = New frmVersionshinweise(Me)
@@ -492,6 +492,10 @@ Public Class frmMain
                 End If
             Case sender Is BewerbervollstaendigloeschenRadMenuItem2
                 Call Bewerberkomplettloeschen()
+            Case sender Is FarblegendeMenuItem1
+                Using frm = New frmFarblegende(Me)
+                    Dim result = frm.ShowDialog()
+                End Using
         End Select
     End Sub
 
@@ -1960,8 +1964,9 @@ Public Class frmMain
         frmListboxen.vztz = String.Empty
     End Sub
 
-    Private Sub PruefenobBewerberausgewaehlt()
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Call GetAutoincrement()
+        MsgBox(autoincrementwert)
     End Sub
-
 End Class

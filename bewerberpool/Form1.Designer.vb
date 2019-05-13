@@ -1581,6 +1581,7 @@ Partial Class frmMain
         Me.RadMenuSeparatorItem1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.Top10anzeigen = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
+        Me.FarblegendeMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.btnDatenBewerbertooleinlesen = New Telerik.WinControls.UI.RadButton()
         Me.RundschreibenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tt_newsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -1618,6 +1619,7 @@ Partial Class frmMain
         Me.Oa_stelleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Oa_stelleTableAdapter = New bewerberpool.oaDataSetTableAdapters.oa_stelleTableAdapter()
         Me.TableAdapterManager1 = New bewerberpool.oaDataSetTableAdapters.TableAdapterManager()
+        Me.Button1 = New System.Windows.Forms.Button()
         NameLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
         AnredeLabel = New System.Windows.Forms.Label()
@@ -2406,7 +2408,7 @@ Partial Class frmMain
         NameLabel.AutoSize = True
         NameLabel.Location = New System.Drawing.Point(5, 19)
         NameLabel.Name = "NameLabel"
-        NameLabel.Size = New System.Drawing.Size(55, 16)
+        NameLabel.Size = New System.Drawing.Size(53, 16)
         NameLabel.TabIndex = 0
         NameLabel.Text = "Name:"
         '
@@ -2415,7 +2417,7 @@ Partial Class frmMain
         VornameLabel.AutoSize = True
         VornameLabel.Location = New System.Drawing.Point(5, 64)
         VornameLabel.Name = "VornameLabel"
-        VornameLabel.Size = New System.Drawing.Size(76, 16)
+        VornameLabel.Size = New System.Drawing.Size(74, 16)
         VornameLabel.TabIndex = 2
         VornameLabel.Text = "Vorname:"
         '
@@ -2424,7 +2426,7 @@ Partial Class frmMain
         AnredeLabel.AutoSize = True
         AnredeLabel.Location = New System.Drawing.Point(5, 102)
         AnredeLabel.Name = "AnredeLabel"
-        AnredeLabel.Size = New System.Drawing.Size(64, 16)
+        AnredeLabel.Size = New System.Drawing.Size(62, 16)
         AnredeLabel.TabIndex = 4
         AnredeLabel.Text = "Anrede:"
         '
@@ -2433,7 +2435,7 @@ Partial Class frmMain
         UlasLabel.AutoSize = True
         UlasLabel.Location = New System.Drawing.Point(6, 19)
         UlasLabel.Name = "UlasLabel"
-        UlasLabel.Size = New System.Drawing.Size(86, 64)
+        UlasLabel.Size = New System.Drawing.Size(83, 64)
         UlasLabel.TabIndex = 6
         UlasLabel.Text = "Ulas " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Doppel-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "klick zum" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Eintragen):"
         '
@@ -2442,7 +2444,7 @@ Partial Class frmMain
         Alter_jahrLabel.AutoSize = True
         Alter_jahrLabel.Location = New System.Drawing.Point(8, 133)
         Alter_jahrLabel.Name = "Alter_jahrLabel"
-        Alter_jahrLabel.Size = New System.Drawing.Size(46, 16)
+        Alter_jahrLabel.Size = New System.Drawing.Size(44, 16)
         Alter_jahrLabel.TabIndex = 8
         Alter_jahrLabel.Text = "Alter:"
         '
@@ -2451,7 +2453,7 @@ Partial Class frmMain
         OrtLabel.AutoSize = True
         OrtLabel.Location = New System.Drawing.Point(6, 207)
         OrtLabel.Name = "OrtLabel"
-        OrtLabel.Size = New System.Drawing.Size(34, 16)
+        OrtLabel.Size = New System.Drawing.Size(32, 16)
         OrtLabel.TabIndex = 10
         OrtLabel.Text = "Ort:"
         '
@@ -2460,7 +2462,7 @@ Partial Class frmMain
         PlzLabel.AutoSize = True
         PlzLabel.Location = New System.Drawing.Point(8, 174)
         PlzLabel.Name = "PlzLabel"
-        PlzLabel.Size = New System.Drawing.Size(35, 16)
+        PlzLabel.Size = New System.Drawing.Size(33, 16)
         PlzLabel.TabIndex = 12
         PlzLabel.Text = "Plz:"
         '
@@ -2469,7 +2471,7 @@ Partial Class frmMain
         StrasseLabel.AutoSize = True
         StrasseLabel.Location = New System.Drawing.Point(3, 273)
         StrasseLabel.Name = "StrasseLabel"
-        StrasseLabel.Size = New System.Drawing.Size(60, 16)
+        StrasseLabel.Size = New System.Drawing.Size(58, 16)
         StrasseLabel.TabIndex = 14
         StrasseLabel.Text = "Straße:"
         '
@@ -2478,7 +2480,7 @@ Partial Class frmMain
         Gehalt_monatLabel.AutoSize = True
         Gehalt_monatLabel.Location = New System.Drawing.Point(0, 296)
         Gehalt_monatLabel.Name = "Gehalt_monatLabel"
-        Gehalt_monatLabel.Size = New System.Drawing.Size(65, 48)
+        Gehalt_monatLabel.Size = New System.Drawing.Size(63, 48)
         Gehalt_monatLabel.TabIndex = 1
         Gehalt_monatLabel.Text = "Letztes" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Monats-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gehalt:"
         '
@@ -2487,7 +2489,7 @@ Partial Class frmMain
         Tel_festnetzLabel.AutoSize = True
         Tel_festnetzLabel.Location = New System.Drawing.Point(0, 409)
         Tel_festnetzLabel.Name = "Tel_festnetzLabel"
-        Tel_festnetzLabel.Size = New System.Drawing.Size(72, 32)
+        Tel_festnetzLabel.Size = New System.Drawing.Size(70, 32)
         Tel_festnetzLabel.TabIndex = 1
         Tel_festnetzLabel.Text = "Telefon " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Festnetz:"
         '
@@ -2505,7 +2507,7 @@ Partial Class frmMain
         EmailLabel.AutoSize = True
         EmailLabel.Location = New System.Drawing.Point(3, 517)
         EmailLabel.Name = "EmailLabel"
-        EmailLabel.Size = New System.Drawing.Size(53, 16)
+        EmailLabel.Size = New System.Drawing.Size(51, 16)
         EmailLabel.TabIndex = 22
         EmailLabel.Text = "Email:"
         '
@@ -2514,7 +2516,7 @@ Partial Class frmMain
         HomepagelinkLabel.AutoSize = True
         HomepagelinkLabel.Location = New System.Drawing.Point(8, 36)
         HomepagelinkLabel.Name = "HomepagelinkLabel"
-        HomepagelinkLabel.Size = New System.Drawing.Size(90, 32)
+        HomepagelinkLabel.Size = New System.Drawing.Size(86, 32)
         HomepagelinkLabel.TabIndex = 36
         HomepagelinkLabel.Text = "Link Home-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "page:"
         '
@@ -2523,7 +2525,7 @@ Partial Class frmMain
         StatusLabel.AutoSize = True
         StatusLabel.Location = New System.Drawing.Point(6, 73)
         StatusLabel.Name = "StatusLabel"
-        StatusLabel.Size = New System.Drawing.Size(57, 16)
+        StatusLabel.Size = New System.Drawing.Size(55, 16)
         StatusLabel.TabIndex = 0
         StatusLabel.Text = "Status:"
         '
@@ -2532,7 +2534,7 @@ Partial Class frmMain
         StandLabel.AutoSize = True
         StandLabel.Location = New System.Drawing.Point(6, 32)
         StandLabel.Name = "StandLabel"
-        StandLabel.Size = New System.Drawing.Size(54, 16)
+        StandLabel.Size = New System.Drawing.Size(52, 16)
         StandLabel.TabIndex = 2
         StandLabel.Text = "Stand:"
         '
@@ -2541,7 +2543,7 @@ Partial Class frmMain
         ErstkontaktLabel.AutoSize = True
         ErstkontaktLabel.Location = New System.Drawing.Point(6, 110)
         ErstkontaktLabel.Name = "ErstkontaktLabel"
-        ErstkontaktLabel.Size = New System.Drawing.Size(91, 16)
+        ErstkontaktLabel.Size = New System.Drawing.Size(89, 16)
         ErstkontaktLabel.TabIndex = 39
         ErstkontaktLabel.Text = "Erstkontakt:"
         '
@@ -2550,7 +2552,7 @@ Partial Class frmMain
         InterviewartLabel.AutoSize = True
         InterviewartLabel.Location = New System.Drawing.Point(6, 197)
         InterviewartLabel.Name = "InterviewartLabel"
-        InterviewartLabel.Size = New System.Drawing.Size(75, 16)
+        InterviewartLabel.Size = New System.Drawing.Size(73, 16)
         InterviewartLabel.TabIndex = 1
         InterviewartLabel.Text = "Interview:"
         '
@@ -2559,7 +2561,7 @@ Partial Class frmMain
         Letztbearbeitung_vonLabel.AutoSize = True
         Letztbearbeitung_vonLabel.Location = New System.Drawing.Point(6, 239)
         Letztbearbeitung_vonLabel.Name = "Letztbearbeitung_vonLabel"
-        Letztbearbeitung_vonLabel.Size = New System.Drawing.Size(107, 32)
+        Letztbearbeitung_vonLabel.Size = New System.Drawing.Size(105, 32)
         Letztbearbeitung_vonLabel.TabIndex = 1
         Letztbearbeitung_vonLabel.Text = "Letzte Bear-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beitung durch:"
         '
@@ -2568,7 +2570,7 @@ Partial Class frmMain
         Geaendert_amLabel.AutoSize = True
         Geaendert_amLabel.Location = New System.Drawing.Point(6, 287)
         Geaendert_amLabel.Name = "Geaendert_amLabel"
-        Geaendert_amLabel.Size = New System.Drawing.Size(95, 32)
+        Geaendert_amLabel.Size = New System.Drawing.Size(91, 32)
         Geaendert_amLabel.TabIndex = 1
         Geaendert_amLabel.Text = "Letzte Bear-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beitung am:"
         '
@@ -2577,7 +2579,7 @@ Partial Class frmMain
         Bisherige_taetigkeitenLabel.AutoSize = True
         Bisherige_taetigkeitenLabel.Location = New System.Drawing.Point(6, 113)
         Bisherige_taetigkeitenLabel.Name = "Bisherige_taetigkeitenLabel"
-        Bisherige_taetigkeitenLabel.Size = New System.Drawing.Size(241, 32)
+        Bisherige_taetigkeitenLabel.Size = New System.Drawing.Size(236, 32)
         Bisherige_taetigkeitenLabel.TabIndex = 2
         Bisherige_taetigkeitenLabel.Text = "Bisherige Tätigkeiten, berufliche " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Schwerpunkte, Zeugnistext:"
         '
@@ -2586,7 +2588,7 @@ Partial Class frmMain
         BrancheLabel.AutoSize = True
         BrancheLabel.Location = New System.Drawing.Point(6, 429)
         BrancheLabel.Name = "BrancheLabel"
-        BrancheLabel.Size = New System.Drawing.Size(71, 32)
+        BrancheLabel.Size = New System.Drawing.Size(69, 32)
         BrancheLabel.TabIndex = 2
         BrancheLabel.Text = "Letzte " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Branche:"
         '
@@ -2604,7 +2606,7 @@ Partial Class frmMain
         MonatsgehaltLabel2.AutoSize = True
         MonatsgehaltLabel2.Location = New System.Drawing.Point(6, 641)
         MonatsgehaltLabel2.Name = "MonatsgehaltLabel2"
-        MonatsgehaltLabel2.Size = New System.Drawing.Size(102, 32)
+        MonatsgehaltLabel2.Size = New System.Drawing.Size(101, 32)
         MonatsgehaltLabel2.TabIndex = 37
         MonatsgehaltLabel2.Text = "Monatsgehalt" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Euro):"
         '
@@ -2613,7 +2615,7 @@ Partial Class frmMain
         KuendigungsfristLabel1.AutoSize = True
         KuendigungsfristLabel1.Location = New System.Drawing.Point(7, 183)
         KuendigungsfristLabel1.Name = "KuendigungsfristLabel1"
-        KuendigungsfristLabel1.Size = New System.Drawing.Size(119, 32)
+        KuendigungsfristLabel1.Size = New System.Drawing.Size(117, 32)
         KuendigungsfristLabel1.TabIndex = 36
         KuendigungsfristLabel1.Text = "Kündigungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "frist/Absprache:"
         '
@@ -2622,7 +2624,7 @@ Partial Class frmMain
         JahresgehaltLabel.AutoSize = True
         JahresgehaltLabel.Location = New System.Drawing.Point(6, 693)
         JahresgehaltLabel.Name = "JahresgehaltLabel"
-        JahresgehaltLabel.Size = New System.Drawing.Size(103, 16)
+        JahresgehaltLabel.Size = New System.Drawing.Size(102, 16)
         JahresgehaltLabel.TabIndex = 10
         JahresgehaltLabel.Text = "Jahresgehalt:"
         '
@@ -2631,7 +2633,7 @@ Partial Class frmMain
         Arbeitsort_kmLabel.AutoSize = True
         Arbeitsort_kmLabel.Location = New System.Drawing.Point(6, 569)
         Arbeitsort_kmLabel.Name = "Arbeitsort_kmLabel"
-        Arbeitsort_kmLabel.Size = New System.Drawing.Size(114, 48)
+        Arbeitsort_kmLabel.Size = New System.Drawing.Size(112, 48)
         Arbeitsort_kmLabel.TabIndex = 10
         Arbeitsort_kmLabel.Text = "Entfernung zum" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gewünschten" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Arbeitsort:"
         '
@@ -2640,7 +2642,7 @@ Partial Class frmMain
         ArbeitsortLabel.AutoSize = True
         ArbeitsortLabel.Location = New System.Drawing.Point(8, 467)
         ArbeitsortLabel.Name = "ArbeitsortLabel"
-        ArbeitsortLabel.Size = New System.Drawing.Size(102, 32)
+        ArbeitsortLabel.Size = New System.Drawing.Size(100, 32)
         ArbeitsortLabel.TabIndex = 8
         ArbeitsortLabel.Text = "Gewünschter " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Arbeitsort:"
         '
@@ -2649,7 +2651,7 @@ Partial Class frmMain
         JobwunschLabel.AutoSize = True
         JobwunschLabel.Location = New System.Drawing.Point(6, 31)
         JobwunschLabel.Name = "JobwunschLabel"
-        JobwunschLabel.Size = New System.Drawing.Size(89, 16)
+        JobwunschLabel.Size = New System.Drawing.Size(88, 16)
         JobwunschLabel.TabIndex = 6
         JobwunschLabel.Text = "Jobwunsch:"
         '
@@ -2658,7 +2660,7 @@ Partial Class frmMain
         ArbeitsartLabel.AutoSize = True
         ArbeitsartLabel.Location = New System.Drawing.Point(8, 397)
         ArbeitsartLabel.Name = "ArbeitsartLabel"
-        ArbeitsartLabel.Size = New System.Drawing.Size(63, 16)
+        ArbeitsartLabel.Size = New System.Drawing.Size(58, 16)
         ArbeitsartLabel.TabIndex = 4
         ArbeitsartLabel.Text = "ZA/VM:"
         '
@@ -2667,7 +2669,7 @@ Partial Class frmMain
         Vz_tzLabel.AutoSize = True
         Vz_tzLabel.Location = New System.Drawing.Point(7, 230)
         Vz_tzLabel.Name = "Vz_tzLabel"
-        Vz_tzLabel.Size = New System.Drawing.Size(65, 32)
+        Vz_tzLabel.Size = New System.Drawing.Size(64, 32)
         Vz_tzLabel.TabIndex = 2
         Vz_tzLabel.Text = "Vollzeit/" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Teilzeit:"
         '
@@ -2676,7 +2678,7 @@ Partial Class frmMain
         VerfuegbarkeitLabel.AutoSize = True
         VerfuegbarkeitLabel.Location = New System.Drawing.Point(7, 140)
         VerfuegbarkeitLabel.Name = "VerfuegbarkeitLabel"
-        VerfuegbarkeitLabel.Size = New System.Drawing.Size(107, 16)
+        VerfuegbarkeitLabel.Size = New System.Drawing.Size(105, 16)
         VerfuegbarkeitLabel.TabIndex = 0
         VerfuegbarkeitLabel.Text = "Verfügbarkeit:"
         '
@@ -2685,7 +2687,7 @@ Partial Class frmMain
         BeurteilungLabel.AutoSize = True
         BeurteilungLabel.Location = New System.Drawing.Point(6, 31)
         BeurteilungLabel.Name = "BeurteilungLabel"
-        BeurteilungLabel.Size = New System.Drawing.Size(92, 16)
+        BeurteilungLabel.Size = New System.Drawing.Size(90, 16)
         BeurteilungLabel.TabIndex = 12
         BeurteilungLabel.Text = "Beurteilung:"
         '
@@ -2703,7 +2705,7 @@ Partial Class frmMain
         Persoenlichkeit_bpoolLabel.AutoSize = True
         Persoenlichkeit_bpoolLabel.Location = New System.Drawing.Point(6, 674)
         Persoenlichkeit_bpoolLabel.Name = "Persoenlichkeit_bpoolLabel"
-        Persoenlichkeit_bpoolLabel.Size = New System.Drawing.Size(107, 32)
+        Persoenlichkeit_bpoolLabel.Size = New System.Drawing.Size(106, 32)
         Persoenlichkeit_bpoolLabel.TabIndex = 12
         Persoenlichkeit_bpoolLabel.Text = "Persönlichkeit" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bpool alt:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -2712,7 +2714,7 @@ Partial Class frmMain
         It_datenbank_durchschnittLabel.AutoSize = True
         It_datenbank_durchschnittLabel.Location = New System.Drawing.Point(6, 846)
         It_datenbank_durchschnittLabel.Name = "It_datenbank_durchschnittLabel"
-        It_datenbank_durchschnittLabel.Size = New System.Drawing.Size(109, 16)
+        It_datenbank_durchschnittLabel.Size = New System.Drawing.Size(105, 16)
         It_datenbank_durchschnittLabel.TabIndex = 13
         It_datenbank_durchschnittLabel.Text = "IT Datenbank:"
         '
@@ -2721,7 +2723,7 @@ Partial Class frmMain
         It_programmiersprache_durchschnittLabel.AutoSize = True
         It_programmiersprache_durchschnittLabel.Location = New System.Drawing.Point(6, 806)
         It_programmiersprache_durchschnittLabel.Name = "It_programmiersprache_durchschnittLabel"
-        It_programmiersprache_durchschnittLabel.Size = New System.Drawing.Size(179, 16)
+        It_programmiersprache_durchschnittLabel.Size = New System.Drawing.Size(175, 16)
         It_programmiersprache_durchschnittLabel.TabIndex = 13
         It_programmiersprache_durchschnittLabel.Text = "IT Programmiersprache:"
         '
@@ -2730,7 +2732,7 @@ Partial Class frmMain
         It_programmierung_durchschnittLabel.AutoSize = True
         It_programmierung_durchschnittLabel.Location = New System.Drawing.Point(6, 760)
         It_programmierung_durchschnittLabel.Name = "It_programmierung_durchschnittLabel"
-        It_programmierung_durchschnittLabel.Size = New System.Drawing.Size(148, 16)
+        It_programmierung_durchschnittLabel.Size = New System.Drawing.Size(144, 16)
         It_programmierung_durchschnittLabel.TabIndex = 13
         It_programmierung_durchschnittLabel.Text = "IT Programmierung:"
         '
@@ -2739,7 +2741,7 @@ Partial Class frmMain
         It_server_durchschnittLabel.AutoSize = True
         It_server_durchschnittLabel.Location = New System.Drawing.Point(6, 717)
         It_server_durchschnittLabel.Name = "It_server_durchschnittLabel"
-        It_server_durchschnittLabel.Size = New System.Drawing.Size(80, 16)
+        It_server_durchschnittLabel.Size = New System.Drawing.Size(76, 16)
         It_server_durchschnittLabel.TabIndex = 13
         It_server_durchschnittLabel.Text = "IT Server:"
         '
@@ -2748,7 +2750,7 @@ Partial Class frmMain
         It_desktop_durchschnittLabel.AutoSize = True
         It_desktop_durchschnittLabel.Location = New System.Drawing.Point(9, 680)
         It_desktop_durchschnittLabel.Name = "It_desktop_durchschnittLabel"
-        It_desktop_durchschnittLabel.Size = New System.Drawing.Size(92, 16)
+        It_desktop_durchschnittLabel.Size = New System.Drawing.Size(88, 16)
         It_desktop_durchschnittLabel.TabIndex = 1
         It_desktop_durchschnittLabel.Text = "IT Desktop:"
         '
@@ -2757,7 +2759,7 @@ Partial Class frmMain
         It_durchschnittLabel.AutoSize = True
         It_durchschnittLabel.Location = New System.Drawing.Point(9, 634)
         It_durchschnittLabel.Name = "It_durchschnittLabel"
-        It_durchschnittLabel.Size = New System.Drawing.Size(28, 16)
+        It_durchschnittLabel.Size = New System.Drawing.Size(26, 16)
         It_durchschnittLabel.TabIndex = 1
         It_durchschnittLabel.Text = "IT:"
         '
@@ -2766,7 +2768,7 @@ Partial Class frmMain
         Technik_software_durchschnittLabel.AutoSize = True
         Technik_software_durchschnittLabel.Location = New System.Drawing.Point(9, 596)
         Technik_software_durchschnittLabel.Name = "Technik_software_durchschnittLabel"
-        Technik_software_durchschnittLabel.Size = New System.Drawing.Size(134, 16)
+        Technik_software_durchschnittLabel.Size = New System.Drawing.Size(131, 16)
         Technik_software_durchschnittLabel.TabIndex = 1
         Technik_software_durchschnittLabel.Text = "Technik Software:"
         '
@@ -2775,7 +2777,7 @@ Partial Class frmMain
         Technik_durchschnittLabel.AutoSize = True
         Technik_durchschnittLabel.Location = New System.Drawing.Point(9, 555)
         Technik_durchschnittLabel.Name = "Technik_durchschnittLabel"
-        Technik_durchschnittLabel.Size = New System.Drawing.Size(68, 16)
+        Technik_durchschnittLabel.Size = New System.Drawing.Size(67, 16)
         Technik_durchschnittLabel.TabIndex = 1
         Technik_durchschnittLabel.Text = "Technik:"
         '
@@ -2784,7 +2786,7 @@ Partial Class frmMain
         Personal_durchschnittLabel.AutoSize = True
         Personal_durchschnittLabel.Location = New System.Drawing.Point(6, 514)
         Personal_durchschnittLabel.Name = "Personal_durchschnittLabel"
-        Personal_durchschnittLabel.Size = New System.Drawing.Size(76, 16)
+        Personal_durchschnittLabel.Size = New System.Drawing.Size(74, 16)
         Personal_durchschnittLabel.TabIndex = 13
         Personal_durchschnittLabel.Text = "Personal:"
         '
@@ -2793,7 +2795,7 @@ Partial Class frmMain
         Versand_durchschnittLabel.AutoSize = True
         Versand_durchschnittLabel.Location = New System.Drawing.Point(6, 478)
         Versand_durchschnittLabel.Name = "Versand_durchschnittLabel"
-        Versand_durchschnittLabel.Size = New System.Drawing.Size(72, 16)
+        Versand_durchschnittLabel.Size = New System.Drawing.Size(70, 16)
         Versand_durchschnittLabel.TabIndex = 13
         Versand_durchschnittLabel.Text = "Versand:"
         '
@@ -2802,7 +2804,7 @@ Partial Class frmMain
         Logistik_durchschnittLabel.AutoSize = True
         Logistik_durchschnittLabel.Location = New System.Drawing.Point(6, 434)
         Logistik_durchschnittLabel.Name = "Logistik_durchschnittLabel"
-        Logistik_durchschnittLabel.Size = New System.Drawing.Size(68, 16)
+        Logistik_durchschnittLabel.Size = New System.Drawing.Size(66, 16)
         Logistik_durchschnittLabel.TabIndex = 13
         Logistik_durchschnittLabel.Text = "Logistik:"
         '
@@ -2811,7 +2813,7 @@ Partial Class frmMain
         M_d_design_durchschnittLabel.AutoSize = True
         M_d_design_durchschnittLabel.Location = New System.Drawing.Point(6, 388)
         M_d_design_durchschnittLabel.Name = "M_d_design_durchschnittLabel"
-        M_d_design_durchschnittLabel.Size = New System.Drawing.Size(63, 16)
+        M_d_design_durchschnittLabel.Size = New System.Drawing.Size(61, 16)
         M_d_design_durchschnittLabel.TabIndex = 13
         M_d_design_durchschnittLabel.Text = "Design:"
         '
@@ -2820,7 +2822,7 @@ Partial Class frmMain
         M_d_marketing_durchschnittLabel.AutoSize = True
         M_d_marketing_durchschnittLabel.Location = New System.Drawing.Point(6, 339)
         M_d_marketing_durchschnittLabel.Name = "M_d_marketing_durchschnittLabel"
-        M_d_marketing_durchschnittLabel.Size = New System.Drawing.Size(82, 16)
+        M_d_marketing_durchschnittLabel.Size = New System.Drawing.Size(80, 16)
         M_d_marketing_durchschnittLabel.TabIndex = 13
         M_d_marketing_durchschnittLabel.Text = "Marketing:"
         '
@@ -2829,7 +2831,7 @@ Partial Class frmMain
         Einkauf_durchschnittLabel.AutoSize = True
         Einkauf_durchschnittLabel.Location = New System.Drawing.Point(6, 294)
         Einkauf_durchschnittLabel.Name = "Einkauf_durchschnittLabel"
-        Einkauf_durchschnittLabel.Size = New System.Drawing.Size(65, 16)
+        Einkauf_durchschnittLabel.Size = New System.Drawing.Size(63, 16)
         Einkauf_durchschnittLabel.TabIndex = 13
         Einkauf_durchschnittLabel.Text = "Einkauf:"
         '
@@ -2838,7 +2840,7 @@ Partial Class frmMain
         Vertrieb_summeLabel.AutoSize = True
         Vertrieb_summeLabel.Location = New System.Drawing.Point(6, 251)
         Vertrieb_summeLabel.Name = "Vertrieb_summeLabel"
-        Vertrieb_summeLabel.Size = New System.Drawing.Size(69, 16)
+        Vertrieb_summeLabel.Size = New System.Drawing.Size(67, 16)
         Vertrieb_summeLabel.TabIndex = 13
         Vertrieb_summeLabel.Text = "Vertrieb:"
         '
@@ -2847,7 +2849,7 @@ Partial Class frmMain
         Controlling_durchschnittLabel.AutoSize = True
         Controlling_durchschnittLabel.Location = New System.Drawing.Point(6, 213)
         Controlling_durchschnittLabel.Name = "Controlling_durchschnittLabel"
-        Controlling_durchschnittLabel.Size = New System.Drawing.Size(89, 16)
+        Controlling_durchschnittLabel.Size = New System.Drawing.Size(86, 16)
         Controlling_durchschnittLabel.TabIndex = 13
         Controlling_durchschnittLabel.Text = "Controlling:"
         '
@@ -2856,7 +2858,7 @@ Partial Class frmMain
         Bibuha_durchschnittLabel.AutoSize = True
         Bibuha_durchschnittLabel.Location = New System.Drawing.Point(6, 177)
         Bibuha_durchschnittLabel.Name = "Bibuha_durchschnittLabel"
-        Bibuha_durchschnittLabel.Size = New System.Drawing.Size(139, 16)
+        Bibuha_durchschnittLabel.Size = New System.Drawing.Size(137, 16)
         Bibuha_durchschnittLabel.TabIndex = 13
         Bibuha_durchschnittLabel.Text = "Bilanzbuchhaltung:"
         '
@@ -2865,7 +2867,7 @@ Partial Class frmMain
         Fibu_durchschnittLabel.AutoSize = True
         Fibu_durchschnittLabel.Location = New System.Drawing.Point(6, 136)
         Fibu_durchschnittLabel.Name = "Fibu_durchschnittLabel"
-        Fibu_durchschnittLabel.Size = New System.Drawing.Size(142, 16)
+        Fibu_durchschnittLabel.Size = New System.Drawing.Size(140, 16)
         Fibu_durchschnittLabel.TabIndex = 13
         Fibu_durchschnittLabel.Text = "Finanzbuchhaltung:"
         '
@@ -2874,7 +2876,7 @@ Partial Class frmMain
         Rae_durchschnittLabel.AutoSize = True
         Rae_durchschnittLabel.Location = New System.Drawing.Point(6, 99)
         Rae_durchschnittLabel.Name = "Rae_durchschnittLabel"
-        Rae_durchschnittLabel.Size = New System.Drawing.Size(165, 16)
+        Rae_durchschnittLabel.Size = New System.Drawing.Size(159, 16)
         Rae_durchschnittLabel.TabIndex = 13
         Rae_durchschnittLabel.Text = "RAE-Fachangestellte:"
         '
@@ -2883,7 +2885,7 @@ Partial Class frmMain
         DurchschnittLabel.AutoSize = True
         DurchschnittLabel.Location = New System.Drawing.Point(6, 63)
         DurchschnittLabel.Name = "DurchschnittLabel"
-        DurchschnittLabel.Size = New System.Drawing.Size(80, 16)
+        DurchschnittLabel.Size = New System.Drawing.Size(78, 16)
         DurchschnittLabel.TabIndex = 13
         DurchschnittLabel.Text = "Assistenz:"
         '
@@ -2892,7 +2894,7 @@ Partial Class frmMain
         Buero_durchschnittLabel.AutoSize = True
         Buero_durchschnittLabel.Location = New System.Drawing.Point(6, 29)
         Buero_durchschnittLabel.Name = "Buero_durchschnittLabel"
-        Buero_durchschnittLabel.Size = New System.Drawing.Size(46, 16)
+        Buero_durchschnittLabel.Size = New System.Drawing.Size(44, 16)
         Buero_durchschnittLabel.TabIndex = 13
         Buero_durchschnittLabel.Text = "Büro:"
         '
@@ -2903,7 +2905,7 @@ Partial Class frmMain
         SprachkenntnisseLabel.ForeColor = System.Drawing.Color.Crimson
         SprachkenntnisseLabel.Location = New System.Drawing.Point(1, 182)
         SprachkenntnisseLabel.Name = "SprachkenntnisseLabel"
-        SprachkenntnisseLabel.Size = New System.Drawing.Size(87, 32)
+        SprachkenntnisseLabel.Size = New System.Drawing.Size(86, 32)
         SprachkenntnisseLabel.TabIndex = 13
         SprachkenntnisseLabel.Text = "Sprach-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "kenntnisse:"
         '
@@ -2912,7 +2914,7 @@ Partial Class frmMain
         EnglischLabel1.AutoSize = True
         EnglischLabel1.Location = New System.Drawing.Point(1464, 17)
         EnglischLabel1.Name = "EnglischLabel1"
-        EnglischLabel1.Size = New System.Drawing.Size(73, 16)
+        EnglischLabel1.Size = New System.Drawing.Size(71, 16)
         EnglischLabel1.TabIndex = 8
         EnglischLabel1.Text = "Englisch:"
         '
@@ -2921,7 +2923,7 @@ Partial Class frmMain
         Label11.AutoSize = True
         Label11.Location = New System.Drawing.Point(1464, 17)
         Label11.Name = "Label11"
-        Label11.Size = New System.Drawing.Size(73, 16)
+        Label11.Size = New System.Drawing.Size(71, 16)
         Label11.TabIndex = 8
         Label11.Text = "Englisch:"
         '
@@ -2930,7 +2932,7 @@ Partial Class frmMain
         Studium_sonstigesLabel.AutoSize = True
         Studium_sonstigesLabel.Location = New System.Drawing.Point(6, 210)
         Studium_sonstigesLabel.Name = "Studium_sonstigesLabel"
-        Studium_sonstigesLabel.Size = New System.Drawing.Size(83, 32)
+        Studium_sonstigesLabel.Size = New System.Drawing.Size(81, 32)
         Studium_sonstigesLabel.TabIndex = 4
         Studium_sonstigesLabel.Text = "Studium " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sonstiges:"
         '
@@ -2939,7 +2941,7 @@ Partial Class frmMain
         StudienfaecherLabel.AutoSize = True
         StudienfaecherLabel.Location = New System.Drawing.Point(11, 135)
         StudienfaecherLabel.Name = "StudienfaecherLabel"
-        StudienfaecherLabel.Size = New System.Drawing.Size(109, 16)
+        StudienfaecherLabel.Size = New System.Drawing.Size(107, 16)
         StudienfaecherLabel.TabIndex = 2
         StudienfaecherLabel.Text = "Studienfächer:"
         '
@@ -2948,7 +2950,7 @@ Partial Class frmMain
         Studium_abschlussLabel.AutoSize = True
         Studium_abschlussLabel.Location = New System.Drawing.Point(11, 31)
         Studium_abschlussLabel.Name = "Studium_abschlussLabel"
-        Studium_abschlussLabel.Size = New System.Drawing.Size(85, 16)
+        Studium_abschlussLabel.Size = New System.Drawing.Size(83, 16)
         Studium_abschlussLabel.TabIndex = 0
         Studium_abschlussLabel.Text = "Abschluss:"
         '
@@ -2957,7 +2959,7 @@ Partial Class frmMain
         Ausbildungsberuf_bpoolLabel.AutoSize = True
         Ausbildungsberuf_bpoolLabel.Location = New System.Drawing.Point(6, 361)
         Ausbildungsberuf_bpoolLabel.Name = "Ausbildungsberuf_bpoolLabel"
-        Ausbildungsberuf_bpoolLabel.Size = New System.Drawing.Size(111, 48)
+        Ausbildungsberuf_bpoolLabel.Size = New System.Drawing.Size(109, 48)
         Ausbildungsberuf_bpoolLabel.TabIndex = 8
         Ausbildungsberuf_bpoolLabel.Text = "Ausbildungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beruf " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bewerberpool:"
         '
@@ -2966,7 +2968,7 @@ Partial Class frmMain
         Ausbildung_sonstigesLabel.AutoSize = True
         Ausbildung_sonstigesLabel.Location = New System.Drawing.Point(6, 264)
         Ausbildung_sonstigesLabel.Name = "Ausbildung_sonstigesLabel"
-        Ausbildung_sonstigesLabel.Size = New System.Drawing.Size(91, 32)
+        Ausbildung_sonstigesLabel.Size = New System.Drawing.Size(89, 32)
         Ausbildung_sonstigesLabel.TabIndex = 6
         Ausbildung_sonstigesLabel.Text = "Ausbildung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sonstiges:"
         '
@@ -2975,7 +2977,7 @@ Partial Class frmMain
         Ausbildung_qualifizierungLabel.AutoSize = True
         Ausbildung_qualifizierungLabel.Location = New System.Drawing.Point(6, 176)
         Ausbildung_qualifizierungLabel.Name = "Ausbildung_qualifizierungLabel"
-        Ausbildung_qualifizierungLabel.Size = New System.Drawing.Size(125, 16)
+        Ausbildung_qualifizierungLabel.Size = New System.Drawing.Size(123, 16)
         Ausbildung_qualifizierungLabel.TabIndex = 4
         Ausbildung_qualifizierungLabel.Text = "Qualifizierungen:"
         '
@@ -2984,7 +2986,7 @@ Partial Class frmMain
         AusbildungsberufLabel.AutoSize = True
         AusbildungsberufLabel.Location = New System.Drawing.Point(6, 89)
         AusbildungsberufLabel.Name = "AusbildungsberufLabel"
-        AusbildungsberufLabel.Size = New System.Drawing.Size(134, 16)
+        AusbildungsberufLabel.Size = New System.Drawing.Size(132, 16)
         AusbildungsberufLabel.TabIndex = 2
         AusbildungsberufLabel.Text = "Ausbildungsberuf:"
         '
@@ -2993,7 +2995,7 @@ Partial Class frmMain
         SchulabschlussLabel.AutoSize = True
         SchulabschlussLabel.Location = New System.Drawing.Point(6, 35)
         SchulabschlussLabel.Name = "SchulabschlussLabel"
-        SchulabschlussLabel.Size = New System.Drawing.Size(122, 16)
+        SchulabschlussLabel.Size = New System.Drawing.Size(120, 16)
         SchulabschlussLabel.TabIndex = 0
         SchulabschlussLabel.Text = "Schulabschluss:"
         '
@@ -3002,7 +3004,7 @@ Partial Class frmMain
         Personalverantwortung_anzahlLabel.AutoSize = True
         Personalverantwortung_anzahlLabel.Location = New System.Drawing.Point(6, 201)
         Personalverantwortung_anzahlLabel.Name = "Personalverantwortung_anzahlLabel"
-        Personalverantwortung_anzahlLabel.Size = New System.Drawing.Size(109, 48)
+        Personalverantwortung_anzahlLabel.Size = New System.Drawing.Size(108, 48)
         Personalverantwortung_anzahlLabel.TabIndex = 6
         Personalverantwortung_anzahlLabel.Text = "Personal-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verantwortung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Anzahl:"
         '
@@ -3011,7 +3013,7 @@ Partial Class frmMain
         PersonalverantwortungLabel.AutoSize = True
         PersonalverantwortungLabel.Location = New System.Drawing.Point(6, 146)
         PersonalverantwortungLabel.Name = "PersonalverantwortungLabel"
-        PersonalverantwortungLabel.Size = New System.Drawing.Size(109, 32)
+        PersonalverantwortungLabel.Size = New System.Drawing.Size(108, 32)
         PersonalverantwortungLabel.TabIndex = 4
         PersonalverantwortungLabel.Text = "Personal-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verantwortung:"
         '
@@ -3020,7 +3022,7 @@ Partial Class frmMain
         Fuehrungsverantwortung_dauerLabel.AutoSize = True
         Fuehrungsverantwortung_dauerLabel.Location = New System.Drawing.Point(6, 83)
         Fuehrungsverantwortung_dauerLabel.Name = "Fuehrungsverantwortung_dauerLabel"
-        Fuehrungsverantwortung_dauerLabel.Size = New System.Drawing.Size(109, 48)
+        Fuehrungsverantwortung_dauerLabel.Size = New System.Drawing.Size(108, 48)
         Fuehrungsverantwortung_dauerLabel.TabIndex = 2
         Fuehrungsverantwortung_dauerLabel.Text = "Dauer " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Führungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verantwortung:"
         '
@@ -3029,7 +3031,7 @@ Partial Class frmMain
         FuehrungsverantwortungLabel.AutoSize = True
         FuehrungsverantwortungLabel.Location = New System.Drawing.Point(6, 29)
         FuehrungsverantwortungLabel.Name = "FuehrungsverantwortungLabel"
-        FuehrungsverantwortungLabel.Size = New System.Drawing.Size(109, 32)
+        FuehrungsverantwortungLabel.Size = New System.Drawing.Size(108, 32)
         FuehrungsverantwortungLabel.TabIndex = 0
         FuehrungsverantwortungLabel.Text = "Führungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verantwortung:"
         '
@@ -3038,7 +3040,7 @@ Partial Class frmMain
         Beruf_bpoolLabel.AutoSize = True
         Beruf_bpoolLabel.Location = New System.Drawing.Point(9, 151)
         Beruf_bpoolLabel.Name = "Beruf_bpoolLabel"
-        Beruf_bpoolLabel.Size = New System.Drawing.Size(94, 64)
+        Beruf_bpoolLabel.Size = New System.Drawing.Size(92, 64)
         Beruf_bpoolLabel.TabIndex = 6
         Beruf_bpoolLabel.Text = "Berufserfah-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "fahrung Be-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "werberpool " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "alt:"
         '
@@ -3047,7 +3049,7 @@ Partial Class frmMain
         Beruf_schwerpunkttaetigkeitLabel.AutoSize = True
         Beruf_schwerpunkttaetigkeitLabel.Location = New System.Drawing.Point(6, 90)
         Beruf_schwerpunkttaetigkeitLabel.Name = "Beruf_schwerpunkttaetigkeitLabel"
-        Beruf_schwerpunkttaetigkeitLabel.Size = New System.Drawing.Size(102, 32)
+        Beruf_schwerpunkttaetigkeitLabel.Size = New System.Drawing.Size(100, 32)
         Beruf_schwerpunkttaetigkeitLabel.TabIndex = 4
         Beruf_schwerpunkttaetigkeitLabel.Text = "Schwerpunkt-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "tätigkeiten:"
         '
@@ -3056,7 +3058,7 @@ Partial Class frmMain
         Beruf_positionLabel.AutoSize = True
         Beruf_positionLabel.Location = New System.Drawing.Point(6, 32)
         Beruf_positionLabel.Name = "Beruf_positionLabel"
-        Beruf_positionLabel.Size = New System.Drawing.Size(91, 32)
+        Beruf_positionLabel.Size = New System.Drawing.Size(90, 32)
         Beruf_positionLabel.TabIndex = 0
         Beruf_positionLabel.Text = "Frühere " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tätigkeiten:"
         '
@@ -3065,7 +3067,7 @@ Partial Class frmMain
         Zuletzt_angewendetLabel.AutoSize = True
         Zuletzt_angewendetLabel.Location = New System.Drawing.Point(13, 510)
         Zuletzt_angewendetLabel.Name = "Zuletzt_angewendetLabel"
-        Zuletzt_angewendetLabel.Size = New System.Drawing.Size(97, 48)
+        Zuletzt_angewendetLabel.Size = New System.Drawing.Size(96, 48)
         Zuletzt_angewendetLabel.TabIndex = 20
         Zuletzt_angewendetLabel.Text = "Zuletzt " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beruflich" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "angewendet:"
         '
@@ -3074,7 +3076,7 @@ Partial Class frmMain
         SonstigeLabel.AutoSize = True
         SonstigeLabel.Location = New System.Drawing.Point(16, 606)
         SonstigeLabel.Name = "SonstigeLabel"
-        SonstigeLabel.Size = New System.Drawing.Size(87, 48)
+        SonstigeLabel.Size = New System.Drawing.Size(86, 48)
         SonstigeLabel.TabIndex = 18
         SonstigeLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sprach-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "kenntnisse:"
         '
@@ -3083,7 +3085,7 @@ Partial Class frmMain
         RussischLabel.AutoSize = True
         RussischLabel.Location = New System.Drawing.Point(16, 339)
         RussischLabel.Name = "RussischLabel"
-        RussischLabel.Size = New System.Drawing.Size(77, 16)
+        RussischLabel.Size = New System.Drawing.Size(75, 16)
         RussischLabel.TabIndex = 16
         RussischLabel.Text = "Russisch:"
         '
@@ -3092,7 +3094,7 @@ Partial Class frmMain
         TuerkischLabel.AutoSize = True
         TuerkischLabel.Location = New System.Drawing.Point(14, 297)
         TuerkischLabel.Name = "TuerkischLabel"
-        TuerkischLabel.Size = New System.Drawing.Size(72, 16)
+        TuerkischLabel.Size = New System.Drawing.Size(71, 16)
         TuerkischLabel.TabIndex = 14
         TuerkischLabel.Text = "Türkisch:"
         '
@@ -3101,7 +3103,7 @@ Partial Class frmMain
         ItalienischLabel.AutoSize = True
         ItalienischLabel.Location = New System.Drawing.Point(14, 255)
         ItalienischLabel.Name = "ItalienischLabel"
-        ItalienischLabel.Size = New System.Drawing.Size(84, 16)
+        ItalienischLabel.Size = New System.Drawing.Size(82, 16)
         ItalienischLabel.TabIndex = 12
         ItalienischLabel.Text = "Italienisch:"
         '
@@ -3110,7 +3112,7 @@ Partial Class frmMain
         SpanischLabel.AutoSize = True
         SpanischLabel.Location = New System.Drawing.Point(14, 212)
         SpanischLabel.Name = "SpanischLabel"
-        SpanischLabel.Size = New System.Drawing.Size(78, 16)
+        SpanischLabel.Size = New System.Drawing.Size(76, 16)
         SpanischLabel.TabIndex = 10
         SpanischLabel.Text = "Spanisch:"
         '
@@ -3119,7 +3121,7 @@ Partial Class frmMain
         NiederlaendischLabel.AutoSize = True
         NiederlaendischLabel.Location = New System.Drawing.Point(14, 172)
         NiederlaendischLabel.Name = "NiederlaendischLabel"
-        NiederlaendischLabel.Size = New System.Drawing.Size(119, 16)
+        NiederlaendischLabel.Size = New System.Drawing.Size(117, 16)
         NiederlaendischLabel.TabIndex = 7
         NiederlaendischLabel.Text = "Niederländisch:"
         '
@@ -3128,7 +3130,7 @@ Partial Class frmMain
         FranzoesischLabel.AutoSize = True
         FranzoesischLabel.Location = New System.Drawing.Point(14, 117)
         FranzoesischLabel.Name = "FranzoesischLabel"
-        FranzoesischLabel.Size = New System.Drawing.Size(97, 16)
+        FranzoesischLabel.Size = New System.Drawing.Size(95, 16)
         FranzoesischLabel.TabIndex = 4
         FranzoesischLabel.Text = "Französisch:"
         '
@@ -3137,7 +3139,7 @@ Partial Class frmMain
         EnglischLabel.AutoSize = True
         EnglischLabel.Location = New System.Drawing.Point(14, 68)
         EnglischLabel.Name = "EnglischLabel"
-        EnglischLabel.Size = New System.Drawing.Size(73, 16)
+        EnglischLabel.Size = New System.Drawing.Size(71, 16)
         EnglischLabel.TabIndex = 1
         EnglischLabel.Text = "Englisch:"
         '
@@ -3146,7 +3148,7 @@ Partial Class frmMain
         Label19.AutoSize = True
         Label19.Location = New System.Drawing.Point(1464, 17)
         Label19.Name = "Label19"
-        Label19.Size = New System.Drawing.Size(73, 16)
+        Label19.Size = New System.Drawing.Size(71, 16)
         Label19.TabIndex = 8
         Label19.Text = "Englisch:"
         '
@@ -3155,7 +3157,7 @@ Partial Class frmMain
         Label30.AutoSize = True
         Label30.Location = New System.Drawing.Point(1464, 17)
         Label30.Name = "Label30"
-        Label30.Size = New System.Drawing.Size(73, 16)
+        Label30.Size = New System.Drawing.Size(71, 16)
         Label30.TabIndex = 8
         Label30.Text = "Englisch:"
         '
@@ -3164,7 +3166,7 @@ Partial Class frmMain
         Label40.AutoSize = True
         Label40.Location = New System.Drawing.Point(1464, 17)
         Label40.Name = "Label40"
-        Label40.Size = New System.Drawing.Size(73, 16)
+        Label40.Size = New System.Drawing.Size(71, 16)
         Label40.TabIndex = 8
         Label40.Text = "Englisch:"
         '
@@ -3173,7 +3175,7 @@ Partial Class frmMain
         Label55.AutoSize = True
         Label55.Location = New System.Drawing.Point(1464, 17)
         Label55.Name = "Label55"
-        Label55.Size = New System.Drawing.Size(73, 16)
+        Label55.Size = New System.Drawing.Size(71, 16)
         Label55.TabIndex = 8
         Label55.Text = "Englisch:"
         '
@@ -3182,7 +3184,7 @@ Partial Class frmMain
         Label64.AutoSize = True
         Label64.Location = New System.Drawing.Point(1464, 17)
         Label64.Name = "Label64"
-        Label64.Size = New System.Drawing.Size(73, 16)
+        Label64.Size = New System.Drawing.Size(71, 16)
         Label64.TabIndex = 8
         Label64.Text = "Englisch:"
         '
@@ -3245,7 +3247,7 @@ Partial Class frmMain
         UmzugLabel.AutoSize = True
         UmzugLabel.Location = New System.Drawing.Point(6, 157)
         UmzugLabel.Name = "UmzugLabel"
-        UmzugLabel.Size = New System.Drawing.Size(94, 32)
+        UmzugLabel.Size = New System.Drawing.Size(93, 32)
         UmzugLabel.TabIndex = 4
         UmzugLabel.Text = "Umzugs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "bereitschaft:"
         '
@@ -3254,7 +3256,7 @@ Partial Class frmMain
         Fahrzeit_maxLabel.AutoSize = True
         Fahrzeit_maxLabel.Location = New System.Drawing.Point(6, 122)
         Fahrzeit_maxLabel.Name = "Fahrzeit_maxLabel"
-        Fahrzeit_maxLabel.Size = New System.Drawing.Size(80, 32)
+        Fahrzeit_maxLabel.Size = New System.Drawing.Size(78, 32)
         Fahrzeit_maxLabel.TabIndex = 2
         Fahrzeit_maxLabel.Text = "Maximale " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Fahrzeit:"
         '
@@ -3263,7 +3265,7 @@ Partial Class frmMain
         Pkw_oepnvLabel.AutoSize = True
         Pkw_oepnvLabel.Location = New System.Drawing.Point(6, 32)
         Pkw_oepnvLabel.Name = "Pkw_oepnvLabel"
-        Pkw_oepnvLabel.Size = New System.Drawing.Size(113, 32)
+        Pkw_oepnvLabel.Size = New System.Drawing.Size(111, 32)
         Pkw_oepnvLabel.TabIndex = 0
         Pkw_oepnvLabel.Text = "Verkehrsmittel " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "zur Arbeit:"
         '
@@ -3272,7 +3274,7 @@ Partial Class frmMain
         Beendigungsgrund_detailsLabel.AutoSize = True
         Beendigungsgrund_detailsLabel.Location = New System.Drawing.Point(16, 119)
         Beendigungsgrund_detailsLabel.Name = "Beendigungsgrund_detailsLabel"
-        Beendigungsgrund_detailsLabel.Size = New System.Drawing.Size(144, 32)
+        Beendigungsgrund_detailsLabel.Size = New System.Drawing.Size(142, 32)
         Beendigungsgrund_detailsLabel.TabIndex = 16
         Beendigungsgrund_detailsLabel.Text = "Beendigungsgrund " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Details:"
         '
@@ -3281,7 +3283,7 @@ Partial Class frmMain
         KuendigungsfristLabel.AutoSize = True
         KuendigungsfristLabel.Location = New System.Drawing.Point(16, 35)
         KuendigungsfristLabel.Name = "KuendigungsfristLabel"
-        KuendigungsfristLabel.Size = New System.Drawing.Size(120, 16)
+        KuendigungsfristLabel.Size = New System.Drawing.Size(117, 16)
         KuendigungsfristLabel.TabIndex = 14
         KuendigungsfristLabel.Text = "Kündigungsfrist:"
         '
@@ -3290,7 +3292,7 @@ Partial Class frmMain
         BeendigungsgrundLabel.AutoSize = True
         BeendigungsgrundLabel.Location = New System.Drawing.Point(16, 78)
         BeendigungsgrundLabel.Name = "BeendigungsgrundLabel"
-        BeendigungsgrundLabel.Size = New System.Drawing.Size(115, 16)
+        BeendigungsgrundLabel.Size = New System.Drawing.Size(112, 16)
         BeendigungsgrundLabel.TabIndex = 6
         BeendigungsgrundLabel.Text = "Beendet durch:"
         '
@@ -3299,7 +3301,7 @@ Partial Class frmMain
         Pdl_welcheLabel.AutoSize = True
         Pdl_welcheLabel.Location = New System.Drawing.Point(12, 64)
         Pdl_welcheLabel.Name = "Pdl_welcheLabel"
-        Pdl_welcheLabel.Size = New System.Drawing.Size(103, 16)
+        Pdl_welcheLabel.Size = New System.Drawing.Size(97, 16)
         Pdl_welcheLabel.TabIndex = 2
         Pdl_welcheLabel.Text = "Welche PDL:"
         '
@@ -3308,7 +3310,7 @@ Partial Class frmMain
         PdlLabel.AutoSize = True
         PdlLabel.Location = New System.Drawing.Point(12, 24)
         PdlLabel.Name = "PdlLabel"
-        PdlLabel.Size = New System.Drawing.Size(142, 16)
+        PdlLabel.Size = New System.Drawing.Size(135, 16)
         PdlLabel.TabIndex = 0
         PdlLabel.Text = "Erfahrung mit PDL:"
         '
@@ -3317,7 +3319,7 @@ Partial Class frmMain
         Unternehmen_neinLabel.AutoSize = True
         Unternehmen_neinLabel.Location = New System.Drawing.Point(6, 71)
         Unternehmen_neinLabel.Name = "Unternehmen_neinLabel"
-        Unternehmen_neinLabel.Size = New System.Drawing.Size(153, 32)
+        Unternehmen_neinLabel.Size = New System.Drawing.Size(149, 32)
         Unternehmen_neinLabel.TabIndex = 6
         Unternehmen_neinLabel.Text = "Keine Beschäftigung" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "bei:"
         '
@@ -3326,7 +3328,7 @@ Partial Class frmMain
         JobwunschLabel1.AutoSize = True
         JobwunschLabel1.Location = New System.Drawing.Point(6, 23)
         JobwunschLabel1.Name = "JobwunschLabel1"
-        JobwunschLabel1.Size = New System.Drawing.Size(170, 16)
+        JobwunschLabel1.Size = New System.Drawing.Size(168, 16)
         JobwunschLabel1.TabIndex = 0
         JobwunschLabel1.Text = "Beschäftigungswunsch:"
         '
@@ -3335,7 +3337,7 @@ Partial Class frmMain
         Medien_andereLabel.AutoSize = True
         Medien_andereLabel.Location = New System.Drawing.Point(6, 491)
         Medien_andereLabel.Name = "Medien_andereLabel"
-        Medien_andereLabel.Size = New System.Drawing.Size(121, 16)
+        Medien_andereLabel.Size = New System.Drawing.Size(117, 16)
         Medien_andereLabel.TabIndex = 8
         Medien_andereLabel.Text = "Andere Medien:"
         '
@@ -3344,7 +3346,7 @@ Partial Class frmMain
         ZeitungLabel.AutoSize = True
         ZeitungLabel.Location = New System.Drawing.Point(6, 420)
         ZeitungLabel.Name = "ZeitungLabel"
-        ZeitungLabel.Size = New System.Drawing.Size(65, 16)
+        ZeitungLabel.Size = New System.Drawing.Size(63, 16)
         ZeitungLabel.TabIndex = 6
         ZeitungLabel.Text = "Zeitung:"
         '
@@ -3353,7 +3355,7 @@ Partial Class frmMain
         JobboerseLabel.AutoSize = True
         JobboerseLabel.Location = New System.Drawing.Point(6, 355)
         JobboerseLabel.Name = "JobboerseLabel"
-        JobboerseLabel.Size = New System.Drawing.Size(79, 16)
+        JobboerseLabel.Size = New System.Drawing.Size(78, 16)
         JobboerseLabel.TabIndex = 4
         JobboerseLabel.Text = "Jobbörse:"
         '
@@ -3362,7 +3364,7 @@ Partial Class frmMain
         SuchmaschineLabel.AutoSize = True
         SuchmaschineLabel.Location = New System.Drawing.Point(6, 292)
         SuchmaschineLabel.Name = "SuchmaschineLabel"
-        SuchmaschineLabel.Size = New System.Drawing.Size(114, 16)
+        SuchmaschineLabel.Size = New System.Drawing.Size(112, 16)
         SuchmaschineLabel.TabIndex = 2
         SuchmaschineLabel.Text = "Suchmaschine:"
         '
@@ -3371,7 +3373,7 @@ Partial Class frmMain
         EmpfehlungLabel.AutoSize = True
         EmpfehlungLabel.Location = New System.Drawing.Point(6, 224)
         EmpfehlungLabel.Name = "EmpfehlungLabel"
-        EmpfehlungLabel.Size = New System.Drawing.Size(117, 16)
+        EmpfehlungLabel.Size = New System.Drawing.Size(114, 16)
         EmpfehlungLabel.TabIndex = 0
         EmpfehlungLabel.Text = "Empfohlen von:"
         '
@@ -3380,7 +3382,7 @@ Partial Class frmMain
         DeutschLabel.AutoSize = True
         DeutschLabel.Location = New System.Drawing.Point(16, 385)
         DeutschLabel.Name = "DeutschLabel"
-        DeutschLabel.Size = New System.Drawing.Size(70, 16)
+        DeutschLabel.Size = New System.Drawing.Size(68, 16)
         DeutschLabel.TabIndex = 22
         DeutschLabel.Text = "Deutsch:"
         '
@@ -3389,7 +3391,7 @@ Partial Class frmMain
         Edv_bpoolLabel.AutoSize = True
         Edv_bpoolLabel.Location = New System.Drawing.Point(14, 106)
         Edv_bpoolLabel.Name = "Edv_bpoolLabel"
-        Edv_bpoolLabel.Size = New System.Drawing.Size(111, 32)
+        Edv_bpoolLabel.Size = New System.Drawing.Size(109, 32)
         Edv_bpoolLabel.TabIndex = 2
         Edv_bpoolLabel.Text = "EDV laut " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bewerberpool:"
         '
@@ -3398,7 +3400,7 @@ Partial Class frmMain
         Software_sonstigeLabel.AutoSize = True
         Software_sonstigeLabel.Location = New System.Drawing.Point(14, 23)
         Software_sonstigeLabel.Name = "Software_sonstigeLabel"
-        Software_sonstigeLabel.Size = New System.Drawing.Size(87, 48)
+        Software_sonstigeLabel.Size = New System.Drawing.Size(86, 48)
         Software_sonstigeLabel.TabIndex = 0
         Software_sonstigeLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Software-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "kenntnisse:"
         '
@@ -3407,7 +3409,7 @@ Partial Class frmMain
         Sap_moduleLabel.AutoSize = True
         Sap_moduleLabel.Location = New System.Drawing.Point(6, 214)
         Sap_moduleLabel.Name = "Sap_moduleLabel"
-        Sap_moduleLabel.Size = New System.Drawing.Size(104, 16)
+        Sap_moduleLabel.Size = New System.Drawing.Size(98, 16)
         Sap_moduleLabel.TabIndex = 18
         Sap_moduleLabel.Text = "SAP-Module:"
         '
@@ -3416,7 +3418,7 @@ Partial Class frmMain
         OracleLabel.AutoSize = True
         OracleLabel.Location = New System.Drawing.Point(6, 149)
         OracleLabel.Name = "OracleLabel"
-        OracleLabel.Size = New System.Drawing.Size(60, 16)
+        OracleLabel.Size = New System.Drawing.Size(58, 16)
         OracleLabel.TabIndex = 16
         OracleLabel.Text = "Oracle:"
         '
@@ -3425,7 +3427,7 @@ Partial Class frmMain
         LexwareLabel.AutoSize = True
         LexwareLabel.Location = New System.Drawing.Point(292, 84)
         LexwareLabel.Name = "LexwareLabel"
-        LexwareLabel.Size = New System.Drawing.Size(71, 16)
+        LexwareLabel.Size = New System.Drawing.Size(69, 16)
         LexwareLabel.TabIndex = 14
         LexwareLabel.Text = "Lexware:"
         '
@@ -3434,7 +3436,7 @@ Partial Class frmMain
         KhksageLabel.AutoSize = True
         KhksageLabel.Location = New System.Drawing.Point(185, 84)
         KhksageLabel.Name = "KhksageLabel"
-        KhksageLabel.Size = New System.Drawing.Size(85, 16)
+        KhksageLabel.Size = New System.Drawing.Size(78, 16)
         KhksageLabel.TabIndex = 12
         KhksageLabel.Text = "KHKSage:"
         '
@@ -3443,7 +3445,7 @@ Partial Class frmMain
         Microsoft_navisionLabel.AutoSize = True
         Microsoft_navisionLabel.Location = New System.Drawing.Point(93, 84)
         Microsoft_navisionLabel.Name = "Microsoft_navisionLabel"
-        Microsoft_navisionLabel.Size = New System.Drawing.Size(75, 16)
+        Microsoft_navisionLabel.Size = New System.Drawing.Size(73, 16)
         Microsoft_navisionLabel.TabIndex = 10
         Microsoft_navisionLabel.Text = "Navision:"
         '
@@ -3452,7 +3454,7 @@ Partial Class frmMain
         Microsoft_dynamicsLabel.AutoSize = True
         Microsoft_dynamicsLabel.Location = New System.Drawing.Point(3, 84)
         Microsoft_dynamicsLabel.Name = "Microsoft_dynamicsLabel"
-        Microsoft_dynamicsLabel.Size = New System.Drawing.Size(82, 16)
+        Microsoft_dynamicsLabel.Size = New System.Drawing.Size(80, 16)
         Microsoft_dynamicsLabel.TabIndex = 8
         Microsoft_dynamicsLabel.Text = "Dynamics:"
         '
@@ -3461,7 +3463,7 @@ Partial Class frmMain
         As400Label.AutoSize = True
         As400Label.Location = New System.Drawing.Point(292, 26)
         As400Label.Name = "As400Label"
-        As400Label.Size = New System.Drawing.Size(62, 16)
+        As400Label.Size = New System.Drawing.Size(56, 16)
         As400Label.TabIndex = 6
         As400Label.Text = "AS400:"
         '
@@ -3470,7 +3472,7 @@ Partial Class frmMain
         DatevproLabel.AutoSize = True
         DatevproLabel.Location = New System.Drawing.Point(185, 26)
         DatevproLabel.Name = "DatevproLabel"
-        DatevproLabel.Size = New System.Drawing.Size(80, 16)
+        DatevproLabel.Size = New System.Drawing.Size(77, 16)
         DatevproLabel.TabIndex = 4
         DatevproLabel.Text = "DatevPro:"
         '
@@ -3479,7 +3481,7 @@ Partial Class frmMain
         DatevLabel.AutoSize = True
         DatevLabel.Location = New System.Drawing.Point(93, 26)
         DatevLabel.Name = "DatevLabel"
-        DatevLabel.Size = New System.Drawing.Size(55, 16)
+        DatevLabel.Size = New System.Drawing.Size(53, 16)
         DatevLabel.TabIndex = 2
         DatevLabel.Text = "Datev:"
         '
@@ -3488,7 +3490,7 @@ Partial Class frmMain
         SapLabel.AutoSize = True
         SapLabel.Location = New System.Drawing.Point(6, 26)
         SapLabel.Name = "SapLabel"
-        SapLabel.Size = New System.Drawing.Size(46, 16)
+        SapLabel.Size = New System.Drawing.Size(42, 16)
         SapLabel.TabIndex = 0
         SapLabel.Text = "SAP:"
         '
@@ -3497,7 +3499,7 @@ Partial Class frmMain
         Lotus_notesLabel.AutoSize = True
         Lotus_notesLabel.Location = New System.Drawing.Point(292, 83)
         Lotus_notesLabel.Name = "Lotus_notesLabel"
-        Lotus_notesLabel.Size = New System.Drawing.Size(98, 16)
+        Lotus_notesLabel.Size = New System.Drawing.Size(94, 16)
         Lotus_notesLabel.TabIndex = 1
         Lotus_notesLabel.Text = "Lotus Notes:"
         '
@@ -3506,7 +3508,7 @@ Partial Class frmMain
         ThunderbirdLabel.AutoSize = True
         ThunderbirdLabel.Location = New System.Drawing.Point(185, 87)
         ThunderbirdLabel.Name = "ThunderbirdLabel"
-        ThunderbirdLabel.Size = New System.Drawing.Size(97, 16)
+        ThunderbirdLabel.Size = New System.Drawing.Size(96, 16)
         ThunderbirdLabel.TabIndex = 12
         ThunderbirdLabel.Text = "Thunderbird:"
         '
@@ -3515,7 +3517,7 @@ Partial Class frmMain
         ProjectLabel.AutoSize = True
         ProjectLabel.Location = New System.Drawing.Point(93, 87)
         ProjectLabel.Name = "ProjectLabel"
-        ProjectLabel.Size = New System.Drawing.Size(63, 16)
+        ProjectLabel.Size = New System.Drawing.Size(61, 16)
         ProjectLabel.TabIndex = 10
         ProjectLabel.Text = "Project:"
         '
@@ -3524,7 +3526,7 @@ Partial Class frmMain
         AccessLabel.AutoSize = True
         AccessLabel.Location = New System.Drawing.Point(6, 87)
         AccessLabel.Name = "AccessLabel"
-        AccessLabel.Size = New System.Drawing.Size(65, 16)
+        AccessLabel.Size = New System.Drawing.Size(63, 16)
         AccessLabel.TabIndex = 8
         AccessLabel.Text = "Access:"
         '
@@ -3533,7 +3535,7 @@ Partial Class frmMain
         OutlookLabel.AutoSize = True
         OutlookLabel.Location = New System.Drawing.Point(292, 27)
         OutlookLabel.Name = "OutlookLabel"
-        OutlookLabel.Size = New System.Drawing.Size(67, 16)
+        OutlookLabel.Size = New System.Drawing.Size(65, 16)
         OutlookLabel.TabIndex = 6
         OutlookLabel.Text = "Outlook:"
         '
@@ -3542,7 +3544,7 @@ Partial Class frmMain
         PowerpointLabel.AutoSize = True
         PowerpointLabel.Location = New System.Drawing.Point(185, 27)
         PowerpointLabel.Name = "PowerpointLabel"
-        PowerpointLabel.Size = New System.Drawing.Size(93, 16)
+        PowerpointLabel.Size = New System.Drawing.Size(90, 16)
         PowerpointLabel.TabIndex = 4
         PowerpointLabel.Text = "PowerPoint:"
         '
@@ -3551,7 +3553,7 @@ Partial Class frmMain
         ExcelLabel.AutoSize = True
         ExcelLabel.Location = New System.Drawing.Point(93, 27)
         ExcelLabel.Name = "ExcelLabel"
-        ExcelLabel.Size = New System.Drawing.Size(52, 16)
+        ExcelLabel.Size = New System.Drawing.Size(50, 16)
         ExcelLabel.TabIndex = 2
         ExcelLabel.Text = "Excel:"
         '
@@ -3560,7 +3562,7 @@ Partial Class frmMain
         WordLabel.AutoSize = True
         WordLabel.Location = New System.Drawing.Point(6, 27)
         WordLabel.Name = "WordLabel"
-        WordLabel.Size = New System.Drawing.Size(51, 16)
+        WordLabel.Size = New System.Drawing.Size(49, 16)
         WordLabel.TabIndex = 0
         WordLabel.Text = "Word:"
         '
@@ -3569,7 +3571,7 @@ Partial Class frmMain
         Buero_rechnungstellungLabel1.AutoSize = True
         Buero_rechnungstellungLabel1.Location = New System.Drawing.Point(6, 159)
         Buero_rechnungstellungLabel1.Name = "Buero_rechnungstellungLabel1"
-        Buero_rechnungstellungLabel1.Size = New System.Drawing.Size(137, 16)
+        Buero_rechnungstellungLabel1.Size = New System.Drawing.Size(135, 16)
         Buero_rechnungstellungLabel1.TabIndex = 12
         Buero_rechnungstellungLabel1.Text = "Rechnungstellung:"
         '
@@ -3578,7 +3580,7 @@ Partial Class frmMain
         Buero_sonstigesLabel.AutoSize = True
         Buero_sonstigesLabel.Location = New System.Drawing.Point(11, 219)
         Buero_sonstigesLabel.Name = "Buero_sonstigesLabel"
-        Buero_sonstigesLabel.Size = New System.Drawing.Size(83, 16)
+        Buero_sonstigesLabel.Size = New System.Drawing.Size(81, 16)
         Buero_sonstigesLabel.TabIndex = 10
         Buero_sonstigesLabel.Text = "Sonstiges:"
         '
@@ -3587,7 +3589,7 @@ Partial Class frmMain
         Buero_sachbearbeitungLabel.AutoSize = True
         Buero_sachbearbeitungLabel.Location = New System.Drawing.Point(256, 87)
         Buero_sachbearbeitungLabel.Name = "Buero_sachbearbeitungLabel"
-        Buero_sachbearbeitungLabel.Size = New System.Drawing.Size(132, 32)
+        Buero_sachbearbeitungLabel.Size = New System.Drawing.Size(130, 32)
         Buero_sachbearbeitungLabel.TabIndex = 8
         Buero_sachbearbeitungLabel.Text = "Allgemeine " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sachbearbeitung:"
         '
@@ -3596,7 +3598,7 @@ Partial Class frmMain
         Buero_materialverwaltungLabel.AutoSize = True
         Buero_materialverwaltungLabel.Location = New System.Drawing.Point(6, 102)
         Buero_materialverwaltungLabel.Name = "Buero_materialverwaltungLabel"
-        Buero_materialverwaltungLabel.Size = New System.Drawing.Size(144, 16)
+        Buero_materialverwaltungLabel.Size = New System.Drawing.Size(142, 16)
         Buero_materialverwaltungLabel.TabIndex = 6
         Buero_materialverwaltungLabel.Text = "Materialverwaltung:"
         '
@@ -3605,7 +3607,7 @@ Partial Class frmMain
         Buero_personalverwaltungLabel.AutoSize = True
         Buero_personalverwaltungLabel.Location = New System.Drawing.Point(256, 21)
         Buero_personalverwaltungLabel.Name = "Buero_personalverwaltungLabel"
-        Buero_personalverwaltungLabel.Size = New System.Drawing.Size(87, 32)
+        Buero_personalverwaltungLabel.Size = New System.Drawing.Size(86, 32)
         Buero_personalverwaltungLabel.TabIndex = 4
         Buero_personalverwaltungLabel.Text = "Personal-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verwaltung:"
         '
@@ -3614,7 +3616,7 @@ Partial Class frmMain
         Buero_rechnungstellungLabel.AutoSize = True
         Buero_rechnungstellungLabel.Location = New System.Drawing.Point(128, 21)
         Buero_rechnungstellungLabel.Name = "Buero_rechnungstellungLabel"
-        Buero_rechnungstellungLabel.Size = New System.Drawing.Size(100, 16)
+        Buero_rechnungstellungLabel.Size = New System.Drawing.Size(98, 16)
         Buero_rechnungstellungLabel.TabIndex = 2
         Buero_rechnungstellungLabel.Text = "Fakturierung:"
         '
@@ -3623,7 +3625,7 @@ Partial Class frmMain
         Buero_vorbereitende_buchhaltungLabel.AutoSize = True
         Buero_vorbereitende_buchhaltungLabel.Location = New System.Drawing.Point(6, 21)
         Buero_vorbereitende_buchhaltungLabel.Name = "Buero_vorbereitende_buchhaltungLabel"
-        Buero_vorbereitende_buchhaltungLabel.Size = New System.Drawing.Size(113, 32)
+        Buero_vorbereitende_buchhaltungLabel.Size = New System.Drawing.Size(111, 32)
         Buero_vorbereitende_buchhaltungLabel.TabIndex = 0
         Buero_vorbereitende_buchhaltungLabel.Text = "Vorbereitende " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Buchhaltung:"
         '
@@ -3632,7 +3634,7 @@ Partial Class frmMain
         Buero_dateneingabeLabel.AutoSize = True
         Buero_dateneingabeLabel.Location = New System.Drawing.Point(178, 79)
         Buero_dateneingabeLabel.Name = "Buero_dateneingabeLabel"
-        Buero_dateneingabeLabel.Size = New System.Drawing.Size(112, 16)
+        Buero_dateneingabeLabel.Size = New System.Drawing.Size(110, 16)
         Buero_dateneingabeLabel.TabIndex = 10
         Buero_dateneingabeLabel.Text = "Dateneingabe:"
         '
@@ -3641,7 +3643,7 @@ Partial Class frmMain
         Buero_serienbriefeLabel.AutoSize = True
         Buero_serienbriefeLabel.Location = New System.Drawing.Point(6, 79)
         Buero_serienbriefeLabel.Name = "Buero_serienbriefeLabel"
-        Buero_serienbriefeLabel.Size = New System.Drawing.Size(99, 16)
+        Buero_serienbriefeLabel.Size = New System.Drawing.Size(97, 16)
         Buero_serienbriefeLabel.TabIndex = 8
         Buero_serienbriefeLabel.Text = "Serienbriefe:"
         '
@@ -3650,7 +3652,7 @@ Partial Class frmMain
         Buero_korresponenz_stichworteLabel.AutoSize = True
         Buero_korresponenz_stichworteLabel.Location = New System.Drawing.Point(283, 28)
         Buero_korresponenz_stichworteLabel.Name = "Buero_korresponenz_stichworteLabel"
-        Buero_korresponenz_stichworteLabel.Size = New System.Drawing.Size(85, 16)
+        Buero_korresponenz_stichworteLabel.Size = New System.Drawing.Size(83, 16)
         Buero_korresponenz_stichworteLabel.TabIndex = 6
         Buero_korresponenz_stichworteLabel.Text = "Stichworte:"
         '
@@ -3659,7 +3661,7 @@ Partial Class frmMain
         Buero_korresponenz_phonodiktatLabel.AutoSize = True
         Buero_korresponenz_phonodiktatLabel.Location = New System.Drawing.Point(178, 29)
         Buero_korresponenz_phonodiktatLabel.Name = "Buero_korresponenz_phonodiktatLabel"
-        Buero_korresponenz_phonodiktatLabel.Size = New System.Drawing.Size(96, 16)
+        Buero_korresponenz_phonodiktatLabel.Size = New System.Drawing.Size(94, 16)
         Buero_korresponenz_phonodiktatLabel.TabIndex = 4
         Buero_korresponenz_phonodiktatLabel.Text = "Phonodiktat:"
         '
@@ -3668,7 +3670,7 @@ Partial Class frmMain
         Buero_korresponenz_diktatLabel.AutoSize = True
         Buero_korresponenz_diktatLabel.Location = New System.Drawing.Point(96, 27)
         Buero_korresponenz_diktatLabel.Name = "Buero_korresponenz_diktatLabel"
-        Buero_korresponenz_diktatLabel.Size = New System.Drawing.Size(54, 16)
+        Buero_korresponenz_diktatLabel.Size = New System.Drawing.Size(52, 16)
         Buero_korresponenz_diktatLabel.TabIndex = 2
         Buero_korresponenz_diktatLabel.Text = "Diktat:"
         '
@@ -3677,7 +3679,7 @@ Partial Class frmMain
         Buero_korrespondenz_freiLabel.AutoSize = True
         Buero_korrespondenz_freiLabel.Location = New System.Drawing.Point(6, 27)
         Buero_korrespondenz_freiLabel.Name = "Buero_korrespondenz_freiLabel"
-        Buero_korrespondenz_freiLabel.Size = New System.Drawing.Size(41, 16)
+        Buero_korrespondenz_freiLabel.Size = New System.Drawing.Size(39, 16)
         Buero_korrespondenz_freiLabel.TabIndex = 0
         Buero_korrespondenz_freiLabel.Text = "Frei:"
         '
@@ -3686,7 +3688,7 @@ Partial Class frmMain
         Buero_ablageLabel.AutoSize = True
         Buero_ablageLabel.Location = New System.Drawing.Point(263, 142)
         Buero_ablageLabel.Name = "Buero_ablageLabel"
-        Buero_ablageLabel.Size = New System.Drawing.Size(64, 16)
+        Buero_ablageLabel.Size = New System.Drawing.Size(62, 16)
         Buero_ablageLabel.TabIndex = 1
         Buero_ablageLabel.Text = "Ablage:"
         '
@@ -3695,7 +3697,7 @@ Partial Class frmMain
         Buero_sitzungsvorbereitungLabel.AutoSize = True
         Buero_sitzungsvorbereitungLabel.Location = New System.Drawing.Point(6, 143)
         Buero_sitzungsvorbereitungLabel.Name = "Buero_sitzungsvorbereitungLabel"
-        Buero_sitzungsvorbereitungLabel.Size = New System.Drawing.Size(159, 16)
+        Buero_sitzungsvorbereitungLabel.Size = New System.Drawing.Size(157, 16)
         Buero_sitzungsvorbereitungLabel.TabIndex = 10
         Buero_sitzungsvorbereitungLabel.Text = "Sitzungsvorbereitung:"
         '
@@ -3704,7 +3706,7 @@ Partial Class frmMain
         Buero_wiedervorlageLabel.AutoSize = True
         Buero_wiedervorlageLabel.Location = New System.Drawing.Point(263, 88)
         Buero_wiedervorlageLabel.Name = "Buero_wiedervorlageLabel"
-        Buero_wiedervorlageLabel.Size = New System.Drawing.Size(117, 16)
+        Buero_wiedervorlageLabel.Size = New System.Drawing.Size(115, 16)
         Buero_wiedervorlageLabel.TabIndex = 8
         Buero_wiedervorlageLabel.Text = "Wiedervorlage:"
         '
@@ -3713,7 +3715,7 @@ Partial Class frmMain
         Buero_termin_fristenLabel.AutoSize = True
         Buero_termin_fristenLabel.Location = New System.Drawing.Point(6, 88)
         Buero_termin_fristenLabel.Name = "Buero_termin_fristenLabel"
-        Buero_termin_fristenLabel.Size = New System.Drawing.Size(153, 16)
+        Buero_termin_fristenLabel.Size = New System.Drawing.Size(149, 16)
         Buero_termin_fristenLabel.TabIndex = 6
         Buero_termin_fristenLabel.Text = "Termine und Fristen:"
         '
@@ -3722,7 +3724,7 @@ Partial Class frmMain
         Buero_postbearbeitungLabel.AutoSize = True
         Buero_postbearbeitungLabel.Location = New System.Drawing.Point(263, 18)
         Buero_postbearbeitungLabel.Name = "Buero_postbearbeitungLabel"
-        Buero_postbearbeitungLabel.Size = New System.Drawing.Size(128, 16)
+        Buero_postbearbeitungLabel.Size = New System.Drawing.Size(126, 16)
         Buero_postbearbeitungLabel.TabIndex = 4
         Buero_postbearbeitungLabel.Text = "Postbearbeitung:"
         '
@@ -3731,7 +3733,7 @@ Partial Class frmMain
         Buero_telefonzentraleLabel.AutoSize = True
         Buero_telefonzentraleLabel.Location = New System.Drawing.Point(119, 18)
         Buero_telefonzentraleLabel.Name = "Buero_telefonzentraleLabel"
-        Buero_telefonzentraleLabel.Size = New System.Drawing.Size(121, 16)
+        Buero_telefonzentraleLabel.Size = New System.Drawing.Size(120, 16)
         Buero_telefonzentraleLabel.TabIndex = 2
         Buero_telefonzentraleLabel.Text = "Telefonzentrale:"
         '
@@ -3740,7 +3742,7 @@ Partial Class frmMain
         Buero_empfangLabel.AutoSize = True
         Buero_empfangLabel.Location = New System.Drawing.Point(6, 18)
         Buero_empfangLabel.Name = "Buero_empfangLabel"
-        Buero_empfangLabel.Size = New System.Drawing.Size(75, 16)
+        Buero_empfangLabel.Size = New System.Drawing.Size(73, 16)
         Buero_empfangLabel.TabIndex = 0
         Buero_empfangLabel.Text = "Empfang:"
         '
@@ -3749,7 +3751,7 @@ Partial Class frmMain
         SonstigeLabel1.AutoSize = True
         SonstigeLabel1.Location = New System.Drawing.Point(9, 297)
         SonstigeLabel1.Name = "SonstigeLabel1"
-        SonstigeLabel1.Size = New System.Drawing.Size(85, 48)
+        SonstigeLabel1.Size = New System.Drawing.Size(84, 48)
         SonstigeLabel1.TabIndex = 20
         SonstigeLabel1.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Assistenz-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "tätigkeiten:"
         '
@@ -3758,7 +3760,7 @@ Partial Class frmMain
         DokumentenmanagementLabel.AutoSize = True
         DokumentenmanagementLabel.Location = New System.Drawing.Point(262, 206)
         DokumentenmanagementLabel.Name = "DokumentenmanagementLabel"
-        DokumentenmanagementLabel.Size = New System.Drawing.Size(102, 32)
+        DokumentenmanagementLabel.Size = New System.Drawing.Size(101, 32)
         DokumentenmanagementLabel.TabIndex = 18
         DokumentenmanagementLabel.Text = "Dokumenten-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "management:"
         '
@@ -3767,7 +3769,7 @@ Partial Class frmMain
         ProjektmanagementLabel.AutoSize = True
         ProjektmanagementLabel.Location = New System.Drawing.Point(138, 206)
         ProjektmanagementLabel.Name = "ProjektmanagementLabel"
-        ProjektmanagementLabel.Size = New System.Drawing.Size(102, 32)
+        ProjektmanagementLabel.Size = New System.Drawing.Size(101, 32)
         ProjektmanagementLabel.TabIndex = 16
         ProjektmanagementLabel.Text = "Projekt-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "management:"
         '
@@ -3776,7 +3778,7 @@ Partial Class frmMain
         VeranstaltungsmanagementLabel.AutoSize = True
         VeranstaltungsmanagementLabel.Location = New System.Drawing.Point(6, 206)
         VeranstaltungsmanagementLabel.Name = "VeranstaltungsmanagementLabel"
-        VeranstaltungsmanagementLabel.Size = New System.Drawing.Size(118, 32)
+        VeranstaltungsmanagementLabel.Size = New System.Drawing.Size(116, 32)
         VeranstaltungsmanagementLabel.TabIndex = 14
         VeranstaltungsmanagementLabel.Text = "Veranstaltungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "management:"
         '
@@ -3785,7 +3787,7 @@ Partial Class frmMain
         ÜbersetzungenLabel.AutoSize = True
         ÜbersetzungenLabel.Location = New System.Drawing.Point(138, 154)
         ÜbersetzungenLabel.Name = "ÜbersetzungenLabel"
-        ÜbersetzungenLabel.Size = New System.Drawing.Size(117, 16)
+        ÜbersetzungenLabel.Size = New System.Drawing.Size(116, 16)
         ÜbersetzungenLabel.TabIndex = 12
         ÜbersetzungenLabel.Text = "Übersetzungen:"
         '
@@ -3794,7 +3796,7 @@ Partial Class frmMain
         PräsentationenLabel.AutoSize = True
         PräsentationenLabel.Location = New System.Drawing.Point(6, 154)
         PräsentationenLabel.Name = "PräsentationenLabel"
-        PräsentationenLabel.Size = New System.Drawing.Size(118, 16)
+        PräsentationenLabel.Size = New System.Drawing.Size(116, 16)
         PräsentationenLabel.TabIndex = 10
         PräsentationenLabel.Text = "Präsentationen:"
         '
@@ -3803,7 +3805,7 @@ Partial Class frmMain
         TermineLabel.AutoSize = True
         TermineLabel.Location = New System.Drawing.Point(262, 154)
         TermineLabel.Name = "TermineLabel"
-        TermineLabel.Size = New System.Drawing.Size(70, 16)
+        TermineLabel.Size = New System.Drawing.Size(69, 16)
         TermineLabel.TabIndex = 8
         TermineLabel.Text = "Termine:"
         '
@@ -3812,7 +3814,7 @@ Partial Class frmMain
         ReisekostenabrechnungLabel.AutoSize = True
         ReisekostenabrechnungLabel.Location = New System.Drawing.Point(138, 79)
         ReisekostenabrechnungLabel.Name = "ReisekostenabrechnungLabel"
-        ReisekostenabrechnungLabel.Size = New System.Drawing.Size(182, 16)
+        ReisekostenabrechnungLabel.Size = New System.Drawing.Size(180, 16)
         ReisekostenabrechnungLabel.TabIndex = 6
         ReisekostenabrechnungLabel.Text = "Reisekostenabrechnung:"
         '
@@ -3821,7 +3823,7 @@ Partial Class frmMain
         ReiseplanungLabel.AutoSize = True
         ReiseplanungLabel.Location = New System.Drawing.Point(6, 79)
         ReiseplanungLabel.Name = "ReiseplanungLabel"
-        ReiseplanungLabel.Size = New System.Drawing.Size(110, 16)
+        ReiseplanungLabel.Size = New System.Drawing.Size(108, 16)
         ReiseplanungLabel.TabIndex = 4
         ReiseplanungLabel.Text = "Reiseplanung:"
         '
@@ -3830,7 +3832,7 @@ Partial Class frmMain
         Korrespondenz_fremdsprachigLabel.AutoSize = True
         Korrespondenz_fremdsprachigLabel.Location = New System.Drawing.Point(138, 27)
         Korrespondenz_fremdsprachigLabel.Name = "Korrespondenz_fremdsprachigLabel"
-        Korrespondenz_fremdsprachigLabel.Size = New System.Drawing.Size(223, 16)
+        Korrespondenz_fremdsprachigLabel.Size = New System.Drawing.Size(219, 16)
         Korrespondenz_fremdsprachigLabel.TabIndex = 2
         Korrespondenz_fremdsprachigLabel.Text = "Korrespondenz fremdsprachig:"
         '
@@ -3839,7 +3841,7 @@ Partial Class frmMain
         KorrespondenzLabel1.AutoSize = True
         KorrespondenzLabel1.Location = New System.Drawing.Point(6, 27)
         KorrespondenzLabel1.Name = "KorrespondenzLabel1"
-        KorrespondenzLabel1.Size = New System.Drawing.Size(119, 16)
+        KorrespondenzLabel1.Size = New System.Drawing.Size(116, 16)
         KorrespondenzLabel1.TabIndex = 0
         KorrespondenzLabel1.Text = "Korrespondenz:"
         '
@@ -3848,7 +3850,7 @@ Partial Class frmMain
         Rae_sonstige_softwareLabel.AutoSize = True
         Rae_sonstige_softwareLabel.Location = New System.Drawing.Point(13, 154)
         Rae_sonstige_softwareLabel.Name = "Rae_sonstige_softwareLabel"
-        Rae_sonstige_softwareLabel.Size = New System.Drawing.Size(141, 16)
+        Rae_sonstige_softwareLabel.Size = New System.Drawing.Size(137, 16)
         Rae_sonstige_softwareLabel.TabIndex = 14
         Rae_sonstige_softwareLabel.Text = "Sonstige Software:"
         '
@@ -3857,7 +3859,7 @@ Partial Class frmMain
         Rae_syndicusLabel.AutoSize = True
         Rae_syndicusLabel.Location = New System.Drawing.Point(168, 86)
         Rae_syndicusLabel.Name = "Rae_syndicusLabel"
-        Rae_syndicusLabel.Size = New System.Drawing.Size(77, 16)
+        Rae_syndicusLabel.Size = New System.Drawing.Size(75, 16)
         Rae_syndicusLabel.TabIndex = 12
         Rae_syndicusLabel.Text = "Syndicus:"
         '
@@ -3866,7 +3868,7 @@ Partial Class frmMain
         Rae_renostarLabel.AutoSize = True
         Rae_renostarLabel.Location = New System.Drawing.Point(88, 86)
         Rae_renostarLabel.Name = "Rae_renostarLabel"
-        Rae_renostarLabel.Size = New System.Drawing.Size(84, 16)
+        Rae_renostarLabel.Size = New System.Drawing.Size(80, 16)
         Rae_renostarLabel.TabIndex = 10
         Rae_renostarLabel.Text = "ReNoStar:"
         '
@@ -3875,7 +3877,7 @@ Partial Class frmMain
         Rae_rawinLabel.AutoSize = True
         Rae_rawinLabel.Location = New System.Drawing.Point(6, 86)
         Rae_rawinLabel.Name = "Rae_rawinLabel"
-        Rae_rawinLabel.Size = New System.Drawing.Size(58, 16)
+        Rae_rawinLabel.Size = New System.Drawing.Size(55, 16)
         Rae_rawinLabel.TabIndex = 8
         Rae_rawinLabel.Text = "RAwin:"
         '
@@ -3884,7 +3886,7 @@ Partial Class frmMain
         Rae_lawfirmLabel.AutoSize = True
         Rae_lawfirmLabel.Location = New System.Drawing.Point(264, 28)
         Rae_lawfirmLabel.Name = "Rae_lawfirmLabel"
-        Rae_lawfirmLabel.Size = New System.Drawing.Size(66, 16)
+        Rae_lawfirmLabel.Size = New System.Drawing.Size(64, 16)
         Rae_lawfirmLabel.TabIndex = 6
         Rae_lawfirmLabel.Text = "Lawfirm:"
         '
@@ -3893,7 +3895,7 @@ Partial Class frmMain
         Rae_advowareLabel.AutoSize = True
         Rae_advowareLabel.Location = New System.Drawing.Point(168, 28)
         Rae_advowareLabel.Name = "Rae_advowareLabel"
-        Rae_advowareLabel.Size = New System.Drawing.Size(83, 16)
+        Rae_advowareLabel.Size = New System.Drawing.Size(81, 16)
         Rae_advowareLabel.TabIndex = 4
         Rae_advowareLabel.Text = "Advoware:"
         '
@@ -3902,7 +3904,7 @@ Partial Class frmMain
         Rae_ramicroLabel.AutoSize = True
         Rae_ramicroLabel.Location = New System.Drawing.Point(88, 28)
         Rae_ramicroLabel.Name = "Rae_ramicroLabel"
-        Rae_ramicroLabel.Size = New System.Drawing.Size(75, 16)
+        Rae_ramicroLabel.Size = New System.Drawing.Size(71, 16)
         Rae_ramicroLabel.TabIndex = 2
         Rae_ramicroLabel.Text = "RAMicro:"
         '
@@ -3911,7 +3913,7 @@ Partial Class frmMain
         Rae_annotextLabel.AutoSize = True
         Rae_annotextLabel.Location = New System.Drawing.Point(6, 27)
         Rae_annotextLabel.Name = "Rae_annotextLabel"
-        Rae_annotextLabel.Size = New System.Drawing.Size(73, 16)
+        Rae_annotextLabel.Size = New System.Drawing.Size(71, 16)
         Rae_annotextLabel.TabIndex = 0
         Rae_annotextLabel.Text = "Annotext:"
         '
@@ -3920,7 +3922,7 @@ Partial Class frmMain
         Rae_sonstigesLabel.AutoSize = True
         Rae_sonstigesLabel.Location = New System.Drawing.Point(8, 297)
         Rae_sonstigesLabel.Name = "Rae_sonstigesLabel"
-        Rae_sonstigesLabel.Size = New System.Drawing.Size(83, 16)
+        Rae_sonstigesLabel.Size = New System.Drawing.Size(81, 16)
         Rae_sonstigesLabel.TabIndex = 16
         Rae_sonstigesLabel.Text = "Sonstiges:"
         '
@@ -3929,7 +3931,7 @@ Partial Class frmMain
         Rae_fristenkontrolleLabel.AutoSize = True
         Rae_fristenkontrolleLabel.Location = New System.Drawing.Point(8, 85)
         Rae_fristenkontrolleLabel.Name = "Rae_fristenkontrolleLabel"
-        Rae_fristenkontrolleLabel.Size = New System.Drawing.Size(121, 16)
+        Rae_fristenkontrolleLabel.Size = New System.Drawing.Size(119, 16)
         Rae_fristenkontrolleLabel.TabIndex = 14
         Rae_fristenkontrolleLabel.Text = "Fristenkontrolle:"
         '
@@ -3938,7 +3940,7 @@ Partial Class frmMain
         Rae_zwangsvollstreckungLabel.AutoSize = True
         Rae_zwangsvollstreckungLabel.Location = New System.Drawing.Point(8, 154)
         Rae_zwangsvollstreckungLabel.Name = "Rae_zwangsvollstreckungLabel"
-        Rae_zwangsvollstreckungLabel.Size = New System.Drawing.Size(159, 16)
+        Rae_zwangsvollstreckungLabel.Size = New System.Drawing.Size(157, 16)
         Rae_zwangsvollstreckungLabel.TabIndex = 12
         Rae_zwangsvollstreckungLabel.Text = "Zwangsvollstreckung:"
         '
@@ -3947,7 +3949,7 @@ Partial Class frmMain
         Rae_mahnverfahrenLabel.AutoSize = True
         Rae_mahnverfahrenLabel.Location = New System.Drawing.Point(139, 86)
         Rae_mahnverfahrenLabel.Name = "Rae_mahnverfahrenLabel"
-        Rae_mahnverfahrenLabel.Size = New System.Drawing.Size(116, 16)
+        Rae_mahnverfahrenLabel.Size = New System.Drawing.Size(114, 16)
         Rae_mahnverfahrenLabel.TabIndex = 10
         Rae_mahnverfahrenLabel.Text = "Mahnverfahren:"
         '
@@ -3956,7 +3958,7 @@ Partial Class frmMain
         Rae_honorarLabel.AutoSize = True
         Rae_honorarLabel.Location = New System.Drawing.Point(139, 206)
         Rae_honorarLabel.Name = "Rae_honorarLabel"
-        Rae_honorarLabel.Size = New System.Drawing.Size(94, 32)
+        Rae_honorarLabel.Size = New System.Drawing.Size(93, 32)
         Rae_honorarLabel.TabIndex = 8
         Rae_honorarLabel.Text = "Honorar-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "berechnung:"
         '
@@ -3965,7 +3967,7 @@ Partial Class frmMain
         Rae_gerichtskostenLabel.AutoSize = True
         Rae_gerichtskostenLabel.Location = New System.Drawing.Point(8, 222)
         Rae_gerichtskostenLabel.Name = "Rae_gerichtskostenLabel"
-        Rae_gerichtskostenLabel.Size = New System.Drawing.Size(117, 16)
+        Rae_gerichtskostenLabel.Size = New System.Drawing.Size(115, 16)
         Rae_gerichtskostenLabel.TabIndex = 6
         Rae_gerichtskostenLabel.Text = "Gerichtskosten:"
         '
@@ -3974,7 +3976,7 @@ Partial Class frmMain
         Rae_mandantenbetreuungLabel.AutoSize = True
         Rae_mandantenbetreuungLabel.Location = New System.Drawing.Point(251, 13)
         Rae_mandantenbetreuungLabel.Name = "Rae_mandantenbetreuungLabel"
-        Rae_mandantenbetreuungLabel.Size = New System.Drawing.Size(91, 32)
+        Rae_mandantenbetreuungLabel.Size = New System.Drawing.Size(89, 32)
         Rae_mandantenbetreuungLabel.TabIndex = 4
         Rae_mandantenbetreuungLabel.Text = "Mandanten-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "betreuung:"
         '
@@ -3983,7 +3985,7 @@ Partial Class frmMain
         Rae_schriftsatzLabel.AutoSize = True
         Rae_schriftsatzLabel.Location = New System.Drawing.Point(139, 28)
         Rae_schriftsatzLabel.Name = "Rae_schriftsatzLabel"
-        Rae_schriftsatzLabel.Size = New System.Drawing.Size(94, 16)
+        Rae_schriftsatzLabel.Size = New System.Drawing.Size(92, 16)
         Rae_schriftsatzLabel.TabIndex = 2
         Rae_schriftsatzLabel.Text = "Schriftsätze:"
         '
@@ -3992,7 +3994,7 @@ Partial Class frmMain
         Rae_korrespondenzLabel.AutoSize = True
         Rae_korrespondenzLabel.Location = New System.Drawing.Point(8, 27)
         Rae_korrespondenzLabel.Name = "Rae_korrespondenzLabel"
-        Rae_korrespondenzLabel.Size = New System.Drawing.Size(119, 16)
+        Rae_korrespondenzLabel.Size = New System.Drawing.Size(116, 16)
         Rae_korrespondenzLabel.TabIndex = 0
         Rae_korrespondenzLabel.Text = "Korrespondenz:"
         '
@@ -4001,7 +4003,7 @@ Partial Class frmMain
         Vertrieb_sonstigesLabel.AutoSize = True
         Vertrieb_sonstigesLabel.Location = New System.Drawing.Point(6, 227)
         Vertrieb_sonstigesLabel.Name = "Vertrieb_sonstigesLabel"
-        Vertrieb_sonstigesLabel.Size = New System.Drawing.Size(85, 48)
+        Vertrieb_sonstigesLabel.Size = New System.Drawing.Size(84, 48)
         Vertrieb_sonstigesLabel.TabIndex = 16
         Vertrieb_sonstigesLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Vertriebs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "tätigkeiten:"
         '
@@ -4010,7 +4012,7 @@ Partial Class frmMain
         Vertrieb_statistikLabel.AutoSize = True
         Vertrieb_statistikLabel.Location = New System.Drawing.Point(306, 160)
         Vertrieb_statistikLabel.Name = "Vertrieb_statistikLabel"
-        Vertrieb_statistikLabel.Size = New System.Drawing.Size(86, 16)
+        Vertrieb_statistikLabel.Size = New System.Drawing.Size(84, 16)
         Vertrieb_statistikLabel.TabIndex = 14
         Vertrieb_statistikLabel.Text = "Statistiken:"
         '
@@ -4019,7 +4021,7 @@ Partial Class frmMain
         Vertrieb_neukundengewinnungLabel.AutoSize = True
         Vertrieb_neukundengewinnungLabel.Location = New System.Drawing.Point(128, 160)
         Vertrieb_neukundengewinnungLabel.Name = "Vertrieb_neukundengewinnungLabel"
-        Vertrieb_neukundengewinnungLabel.Size = New System.Drawing.Size(165, 16)
+        Vertrieb_neukundengewinnungLabel.Size = New System.Drawing.Size(163, 16)
         Vertrieb_neukundengewinnungLabel.TabIndex = 12
         Vertrieb_neukundengewinnungLabel.Text = "Neukundengewinnung:"
         '
@@ -4028,7 +4030,7 @@ Partial Class frmMain
         Vertrieb_keyaccountLabel.AutoSize = True
         Vertrieb_keyaccountLabel.Location = New System.Drawing.Point(6, 145)
         Vertrieb_keyaccountLabel.Name = "Vertrieb_keyaccountLabel"
-        Vertrieb_keyaccountLabel.Size = New System.Drawing.Size(103, 32)
+        Vertrieb_keyaccountLabel.Size = New System.Drawing.Size(101, 32)
         Vertrieb_keyaccountLabel.TabIndex = 10
         Vertrieb_keyaccountLabel.Text = "Keyaccount-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Management:"
         '
@@ -4037,7 +4039,7 @@ Partial Class frmMain
         Vertrieb_reklamationsbearbeitungLabel.AutoSize = True
         Vertrieb_reklamationsbearbeitungLabel.Location = New System.Drawing.Point(177, 93)
         Vertrieb_reklamationsbearbeitungLabel.Name = "Vertrieb_reklamationsbearbeitungLabel"
-        Vertrieb_reklamationsbearbeitungLabel.Size = New System.Drawing.Size(192, 16)
+        Vertrieb_reklamationsbearbeitungLabel.Size = New System.Drawing.Size(190, 16)
         Vertrieb_reklamationsbearbeitungLabel.TabIndex = 8
         Vertrieb_reklamationsbearbeitungLabel.Text = "Reklamationsbearbeitung:"
         '
@@ -4046,7 +4048,7 @@ Partial Class frmMain
         Vertrieb_auftragsbearbeitungLabel.AutoSize = True
         Vertrieb_auftragsbearbeitungLabel.Location = New System.Drawing.Point(6, 93)
         Vertrieb_auftragsbearbeitungLabel.Name = "Vertrieb_auftragsbearbeitungLabel"
-        Vertrieb_auftragsbearbeitungLabel.Size = New System.Drawing.Size(154, 16)
+        Vertrieb_auftragsbearbeitungLabel.Size = New System.Drawing.Size(152, 16)
         Vertrieb_auftragsbearbeitungLabel.TabIndex = 6
         Vertrieb_auftragsbearbeitungLabel.Text = "Auftragsbearbeitung:"
         '
@@ -4055,7 +4057,7 @@ Partial Class frmMain
         Vertrieb_kundenservice_callcenterLabel.AutoSize = True
         Vertrieb_kundenservice_callcenterLabel.Location = New System.Drawing.Point(248, 27)
         Vertrieb_kundenservice_callcenterLabel.Name = "Vertrieb_kundenservice_callcenterLabel"
-        Vertrieb_kundenservice_callcenterLabel.Size = New System.Drawing.Size(117, 32)
+        Vertrieb_kundenservice_callcenterLabel.Size = New System.Drawing.Size(114, 32)
         Vertrieb_kundenservice_callcenterLabel.TabIndex = 4
         Vertrieb_kundenservice_callcenterLabel.Text = "Kundenservice " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Callcenter:"
         '
@@ -4064,7 +4066,7 @@ Partial Class frmMain
         Vertrieb_kundenservice_telefonischLabel.AutoSize = True
         Vertrieb_kundenservice_telefonischLabel.Location = New System.Drawing.Point(128, 27)
         Vertrieb_kundenservice_telefonischLabel.Name = "Vertrieb_kundenservice_telefonischLabel"
-        Vertrieb_kundenservice_telefonischLabel.Size = New System.Drawing.Size(117, 32)
+        Vertrieb_kundenservice_telefonischLabel.Size = New System.Drawing.Size(114, 32)
         Vertrieb_kundenservice_telefonischLabel.TabIndex = 2
         Vertrieb_kundenservice_telefonischLabel.Text = "Kundenservice " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "telefonisch:"
         '
@@ -4073,7 +4075,7 @@ Partial Class frmMain
         Vertrieb_kundenservice_persönlichLabel.AutoSize = True
         Vertrieb_kundenservice_persönlichLabel.Location = New System.Drawing.Point(6, 27)
         Vertrieb_kundenservice_persönlichLabel.Name = "Vertrieb_kundenservice_persönlichLabel"
-        Vertrieb_kundenservice_persönlichLabel.Size = New System.Drawing.Size(117, 32)
+        Vertrieb_kundenservice_persönlichLabel.Size = New System.Drawing.Size(114, 32)
         Vertrieb_kundenservice_persönlichLabel.TabIndex = 0
         Vertrieb_kundenservice_persönlichLabel.Text = "Kundenservice " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "persönlich:"
         '
@@ -4082,7 +4084,7 @@ Partial Class frmMain
         Vertrieb_weltweitLabel.AutoSize = True
         Vertrieb_weltweitLabel.Location = New System.Drawing.Point(217, 87)
         Vertrieb_weltweitLabel.Name = "Vertrieb_weltweitLabel"
-        Vertrieb_weltweitLabel.Size = New System.Drawing.Size(72, 16)
+        Vertrieb_weltweitLabel.Size = New System.Drawing.Size(70, 16)
         Vertrieb_weltweitLabel.TabIndex = 12
         Vertrieb_weltweitLabel.Text = "Weltweit:"
         '
@@ -4091,7 +4093,7 @@ Partial Class frmMain
         Vertrieb_europaweitLabel.AutoSize = True
         Vertrieb_europaweitLabel.Location = New System.Drawing.Point(107, 87)
         Vertrieb_europaweitLabel.Name = "Vertrieb_europaweitLabel"
-        Vertrieb_europaweitLabel.Size = New System.Drawing.Size(91, 16)
+        Vertrieb_europaweitLabel.Size = New System.Drawing.Size(89, 16)
         Vertrieb_europaweitLabel.TabIndex = 10
         Vertrieb_europaweitLabel.Text = "Europaweit:"
         '
@@ -4100,7 +4102,7 @@ Partial Class frmMain
         Vertrieb_nationalLabel.AutoSize = True
         Vertrieb_nationalLabel.Location = New System.Drawing.Point(6, 87)
         Vertrieb_nationalLabel.Name = "Vertrieb_nationalLabel"
-        Vertrieb_nationalLabel.Size = New System.Drawing.Size(72, 16)
+        Vertrieb_nationalLabel.Size = New System.Drawing.Size(70, 16)
         Vertrieb_nationalLabel.TabIndex = 8
         Vertrieb_nationalLabel.Text = "National:"
         '
@@ -4109,7 +4111,7 @@ Partial Class frmMain
         Vertrieb_operativLabel.AutoSize = True
         Vertrieb_operativLabel.Location = New System.Drawing.Point(320, 29)
         Vertrieb_operativLabel.Name = "Vertrieb_operativLabel"
-        Vertrieb_operativLabel.Size = New System.Drawing.Size(73, 16)
+        Vertrieb_operativLabel.Size = New System.Drawing.Size(71, 16)
         Vertrieb_operativLabel.TabIndex = 6
         Vertrieb_operativLabel.Text = "Operativ:"
         '
@@ -4118,7 +4120,7 @@ Partial Class frmMain
         Vertrieb_strategischLabel.AutoSize = True
         Vertrieb_strategischLabel.Location = New System.Drawing.Point(217, 29)
         Vertrieb_strategischLabel.Name = "Vertrieb_strategischLabel"
-        Vertrieb_strategischLabel.Size = New System.Drawing.Size(92, 16)
+        Vertrieb_strategischLabel.Size = New System.Drawing.Size(90, 16)
         Vertrieb_strategischLabel.TabIndex = 4
         Vertrieb_strategischLabel.Text = "Strategisch:"
         '
@@ -4127,7 +4129,7 @@ Partial Class frmMain
         Vertrieb_aussendienstLabel.AutoSize = True
         Vertrieb_aussendienstLabel.Location = New System.Drawing.Point(107, 29)
         Vertrieb_aussendienstLabel.Name = "Vertrieb_aussendienstLabel"
-        Vertrieb_aussendienstLabel.Size = New System.Drawing.Size(100, 16)
+        Vertrieb_aussendienstLabel.Size = New System.Drawing.Size(98, 16)
         Vertrieb_aussendienstLabel.TabIndex = 2
         Vertrieb_aussendienstLabel.Text = "Außendienst:"
         '
@@ -4136,7 +4138,7 @@ Partial Class frmMain
         Vertrieb_innendienstLabel.AutoSize = True
         Vertrieb_innendienstLabel.Location = New System.Drawing.Point(6, 29)
         Vertrieb_innendienstLabel.Name = "Vertrieb_innendienstLabel"
-        Vertrieb_innendienstLabel.Size = New System.Drawing.Size(93, 16)
+        Vertrieb_innendienstLabel.Size = New System.Drawing.Size(91, 16)
         Vertrieb_innendienstLabel.TabIndex = 0
         Vertrieb_innendienstLabel.Text = "Innendienst:"
         '
@@ -4145,7 +4147,7 @@ Partial Class frmMain
         Einkauf_sonstigesLabel.AutoSize = True
         Einkauf_sonstigesLabel.Location = New System.Drawing.Point(6, 230)
         Einkauf_sonstigesLabel.Name = "Einkauf_sonstigesLabel"
-        Einkauf_sonstigesLabel.Size = New System.Drawing.Size(84, 48)
+        Einkauf_sonstigesLabel.Size = New System.Drawing.Size(83, 48)
         Einkauf_sonstigesLabel.TabIndex = 20
         Einkauf_sonstigesLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Einkaufs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "aktivitäten:"
         '
@@ -4154,7 +4156,7 @@ Partial Class frmMain
         Einkauf_statistikLabel.AutoSize = True
         Einkauf_statistikLabel.Location = New System.Drawing.Point(227, 160)
         Einkauf_statistikLabel.Name = "Einkauf_statistikLabel"
-        Einkauf_statistikLabel.Size = New System.Drawing.Size(69, 16)
+        Einkauf_statistikLabel.Size = New System.Drawing.Size(67, 16)
         Einkauf_statistikLabel.TabIndex = 18
         Einkauf_statistikLabel.Text = "Statistik:"
         '
@@ -4163,7 +4165,7 @@ Partial Class frmMain
         Einkauf_budgetplanungLabel.AutoSize = True
         Einkauf_budgetplanungLabel.Location = New System.Drawing.Point(114, 145)
         Einkauf_budgetplanungLabel.Name = "Einkauf_budgetplanungLabel"
-        Einkauf_budgetplanungLabel.Size = New System.Drawing.Size(68, 32)
+        Einkauf_budgetplanungLabel.Size = New System.Drawing.Size(67, 32)
         Einkauf_budgetplanungLabel.TabIndex = 16
         Einkauf_budgetplanungLabel.Text = "Budget-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "planung:"
         '
@@ -4172,7 +4174,7 @@ Partial Class frmMain
         Einkauf_marktbeobachtungLabel.AutoSize = True
         Einkauf_marktbeobachtungLabel.Location = New System.Drawing.Point(6, 145)
         Einkauf_marktbeobachtungLabel.Name = "Einkauf_marktbeobachtungLabel"
-        Einkauf_marktbeobachtungLabel.Size = New System.Drawing.Size(103, 32)
+        Einkauf_marktbeobachtungLabel.Size = New System.Drawing.Size(102, 32)
         Einkauf_marktbeobachtungLabel.TabIndex = 14
         Einkauf_marktbeobachtungLabel.Text = "Markt-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beobachtung:"
         '
@@ -4181,7 +4183,7 @@ Partial Class frmMain
         Einkauf_materialdispositionLabel.AutoSize = True
         Einkauf_materialdispositionLabel.Location = New System.Drawing.Point(302, 73)
         Einkauf_materialdispositionLabel.Name = "Einkauf_materialdispositionLabel"
-        Einkauf_materialdispositionLabel.Size = New System.Drawing.Size(89, 32)
+        Einkauf_materialdispositionLabel.Size = New System.Drawing.Size(88, 32)
         Einkauf_materialdispositionLabel.TabIndex = 12
         Einkauf_materialdispositionLabel.Text = "Material-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "disposition:"
         '
@@ -4190,7 +4192,7 @@ Partial Class frmMain
         Einkauf_wareneingangLabel.AutoSize = True
         Einkauf_wareneingangLabel.Location = New System.Drawing.Point(227, 73)
         Einkauf_wareneingangLabel.Name = "Einkauf_wareneingangLabel"
-        Einkauf_wareneingangLabel.Size = New System.Drawing.Size(69, 32)
+        Einkauf_wareneingangLabel.Size = New System.Drawing.Size(68, 32)
         Einkauf_wareneingangLabel.TabIndex = 10
         Einkauf_wareneingangLabel.Text = "Waren-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "eingang:"
         '
@@ -4199,7 +4201,7 @@ Partial Class frmMain
         Einkauf_lieferantenverhandlungenLabel.AutoSize = True
         Einkauf_lieferantenverhandlungenLabel.Location = New System.Drawing.Point(114, 75)
         Einkauf_lieferantenverhandlungenLabel.Name = "Einkauf_lieferantenverhandlungenLabel"
-        Einkauf_lieferantenverhandlungenLabel.Size = New System.Drawing.Size(115, 32)
+        Einkauf_lieferantenverhandlungenLabel.Size = New System.Drawing.Size(114, 32)
         Einkauf_lieferantenverhandlungenLabel.TabIndex = 8
         Einkauf_lieferantenverhandlungenLabel.Text = "Lieferanten-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verhandlungen:"
         '
@@ -4208,7 +4210,7 @@ Partial Class frmMain
         Einkauf_angeboteLabel.AutoSize = True
         Einkauf_angeboteLabel.Location = New System.Drawing.Point(6, 90)
         Einkauf_angeboteLabel.Name = "Einkauf_angeboteLabel"
-        Einkauf_angeboteLabel.Size = New System.Drawing.Size(81, 16)
+        Einkauf_angeboteLabel.Size = New System.Drawing.Size(79, 16)
         Einkauf_angeboteLabel.TabIndex = 6
         Einkauf_angeboteLabel.Text = "Angebote:"
         '
@@ -4217,7 +4219,7 @@ Partial Class frmMain
         Einkauf_fertig_halbfertigwarenLabel.AutoSize = True
         Einkauf_fertig_halbfertigwarenLabel.Location = New System.Drawing.Point(227, 14)
         Einkauf_fertig_halbfertigwarenLabel.Name = "Einkauf_fertig_halbfertigwarenLabel"
-        Einkauf_fertig_halbfertigwarenLabel.Size = New System.Drawing.Size(94, 32)
+        Einkauf_fertig_halbfertigwarenLabel.Size = New System.Drawing.Size(91, 32)
         Einkauf_fertig_halbfertigwarenLabel.TabIndex = 4
         Einkauf_fertig_halbfertigwarenLabel.Text = "Fertig/Halb-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "fertigwaren:"
         '
@@ -4226,7 +4228,7 @@ Partial Class frmMain
         Einkauf_hilfsstoffeLabel.AutoSize = True
         Einkauf_hilfsstoffeLabel.Location = New System.Drawing.Point(114, 28)
         Einkauf_hilfsstoffeLabel.Name = "Einkauf_hilfsstoffeLabel"
-        Einkauf_hilfsstoffeLabel.Size = New System.Drawing.Size(83, 16)
+        Einkauf_hilfsstoffeLabel.Size = New System.Drawing.Size(81, 16)
         Einkauf_hilfsstoffeLabel.TabIndex = 2
         Einkauf_hilfsstoffeLabel.Text = "Hilfsstoffe:"
         '
@@ -4235,7 +4237,7 @@ Partial Class frmMain
         Einkauf_rohstoffeLabel.AutoSize = True
         Einkauf_rohstoffeLabel.Location = New System.Drawing.Point(6, 28)
         Einkauf_rohstoffeLabel.Name = "Einkauf_rohstoffeLabel"
-        Einkauf_rohstoffeLabel.Size = New System.Drawing.Size(80, 16)
+        Einkauf_rohstoffeLabel.Size = New System.Drawing.Size(78, 16)
         Einkauf_rohstoffeLabel.TabIndex = 0
         Einkauf_rohstoffeLabel.Text = "Rohstoffe:"
         '
@@ -4244,7 +4246,7 @@ Partial Class frmMain
         Einkauf_internationalLabel.AutoSize = True
         Einkauf_internationalLabel.Location = New System.Drawing.Point(302, 30)
         Einkauf_internationalLabel.Name = "Einkauf_internationalLabel"
-        Einkauf_internationalLabel.Size = New System.Drawing.Size(99, 16)
+        Einkauf_internationalLabel.Size = New System.Drawing.Size(97, 16)
         Einkauf_internationalLabel.TabIndex = 6
         Einkauf_internationalLabel.Text = "International:"
         '
@@ -4253,7 +4255,7 @@ Partial Class frmMain
         Einkauf_nationalLabel.AutoSize = True
         Einkauf_nationalLabel.Location = New System.Drawing.Point(213, 30)
         Einkauf_nationalLabel.Name = "Einkauf_nationalLabel"
-        Einkauf_nationalLabel.Size = New System.Drawing.Size(72, 16)
+        Einkauf_nationalLabel.Size = New System.Drawing.Size(70, 16)
         Einkauf_nationalLabel.TabIndex = 4
         Einkauf_nationalLabel.Text = "National:"
         '
@@ -4262,7 +4264,7 @@ Partial Class frmMain
         Einkauf_operativLabel.AutoSize = True
         Einkauf_operativLabel.Location = New System.Drawing.Point(114, 30)
         Einkauf_operativLabel.Name = "Einkauf_operativLabel"
-        Einkauf_operativLabel.Size = New System.Drawing.Size(73, 16)
+        Einkauf_operativLabel.Size = New System.Drawing.Size(71, 16)
         Einkauf_operativLabel.TabIndex = 2
         Einkauf_operativLabel.Text = "Operativ:"
         '
@@ -4271,7 +4273,7 @@ Partial Class frmMain
         Einkauf_strategischLabel.AutoSize = True
         Einkauf_strategischLabel.Location = New System.Drawing.Point(6, 30)
         Einkauf_strategischLabel.Name = "Einkauf_strategischLabel"
-        Einkauf_strategischLabel.Size = New System.Drawing.Size(92, 16)
+        Einkauf_strategischLabel.Size = New System.Drawing.Size(90, 16)
         Einkauf_strategischLabel.TabIndex = 0
         Einkauf_strategischLabel.Text = "Strategisch:"
         '
@@ -4280,7 +4282,7 @@ Partial Class frmMain
         Logistik_sonstigeLabel.AutoSize = True
         Logistik_sonstigeLabel.Location = New System.Drawing.Point(6, 218)
         Logistik_sonstigeLabel.Name = "Logistik_sonstigeLabel"
-        Logistik_sonstigeLabel.Size = New System.Drawing.Size(78, 48)
+        Logistik_sonstigeLabel.Size = New System.Drawing.Size(77, 48)
         Logistik_sonstigeLabel.TabIndex = 14
         Logistik_sonstigeLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Logistik-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "aufgaben:"
         '
@@ -4289,7 +4291,7 @@ Partial Class frmMain
         Logistik_staplerscheinLabel.AutoSize = True
         Logistik_staplerscheinLabel.Location = New System.Drawing.Point(6, 168)
         Logistik_staplerscheinLabel.Name = "Logistik_staplerscheinLabel"
-        Logistik_staplerscheinLabel.Size = New System.Drawing.Size(109, 16)
+        Logistik_staplerscheinLabel.Size = New System.Drawing.Size(107, 16)
         Logistik_staplerscheinLabel.TabIndex = 12
         Logistik_staplerscheinLabel.Text = "Staplerschein:"
         '
@@ -4298,7 +4300,7 @@ Partial Class frmMain
         Logistik_verhandlungenLabel.AutoSize = True
         Logistik_verhandlungenLabel.Location = New System.Drawing.Point(256, 104)
         Logistik_verhandlungenLabel.Name = "Logistik_verhandlungenLabel"
-        Logistik_verhandlungenLabel.Size = New System.Drawing.Size(118, 16)
+        Logistik_verhandlungenLabel.Size = New System.Drawing.Size(116, 16)
         Logistik_verhandlungenLabel.TabIndex = 10
         Logistik_verhandlungenLabel.Text = "Verhandlungen:"
         '
@@ -4307,7 +4309,7 @@ Partial Class frmMain
         Logistik_lieferueberwachungLabel.AutoSize = True
         Logistik_lieferueberwachungLabel.Location = New System.Drawing.Point(143, 90)
         Logistik_lieferueberwachungLabel.Name = "Logistik_lieferueberwachungLabel"
-        Logistik_lieferueberwachungLabel.Size = New System.Drawing.Size(104, 32)
+        Logistik_lieferueberwachungLabel.Size = New System.Drawing.Size(103, 32)
         Logistik_lieferueberwachungLabel.TabIndex = 8
         Logistik_lieferueberwachungLabel.Text = "Liefer-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "überwachung:"
         '
@@ -4316,7 +4318,7 @@ Partial Class frmMain
         Logistik_warenbestandsueberwachungLabel.AutoSize = True
         Logistik_warenbestandsueberwachungLabel.Location = New System.Drawing.Point(6, 89)
         Logistik_warenbestandsueberwachungLabel.Name = "Logistik_warenbestandsueberwachungLabel"
-        Logistik_warenbestandsueberwachungLabel.Size = New System.Drawing.Size(124, 32)
+        Logistik_warenbestandsueberwachungLabel.Size = New System.Drawing.Size(122, 32)
         Logistik_warenbestandsueberwachungLabel.TabIndex = 6
         Logistik_warenbestandsueberwachungLabel.Text = "Warenbestands-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "überwachung:"
         '
@@ -4325,7 +4327,7 @@ Partial Class frmMain
         Logistik_wareneingangskontrolleLabel.AutoSize = True
         Logistik_wareneingangskontrolleLabel.Location = New System.Drawing.Point(185, 17)
         Logistik_wareneingangskontrolleLabel.Name = "Logistik_wareneingangskontrolleLabel"
-        Logistik_wareneingangskontrolleLabel.Size = New System.Drawing.Size(124, 32)
+        Logistik_wareneingangskontrolleLabel.Size = New System.Drawing.Size(122, 32)
         Logistik_wareneingangskontrolleLabel.TabIndex = 4
         Logistik_wareneingangskontrolleLabel.Text = "Wareneingangs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "kontrolle:"
         '
@@ -4334,7 +4336,7 @@ Partial Class frmMain
         Logistik_warenannahmeLabel.AutoSize = True
         Logistik_warenannahmeLabel.Location = New System.Drawing.Point(98, 17)
         Logistik_warenannahmeLabel.Name = "Logistik_warenannahmeLabel"
-        Logistik_warenannahmeLabel.Size = New System.Drawing.Size(76, 32)
+        Logistik_warenannahmeLabel.Size = New System.Drawing.Size(75, 32)
         Logistik_warenannahmeLabel.TabIndex = 2
         Logistik_warenannahmeLabel.Text = "Waren-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "annahme:"
         '
@@ -4343,7 +4345,7 @@ Partial Class frmMain
         Logistik_lagerverwaltungLabel.AutoSize = True
         Logistik_lagerverwaltungLabel.Location = New System.Drawing.Point(6, 21)
         Logistik_lagerverwaltungLabel.Name = "Logistik_lagerverwaltungLabel"
-        Logistik_lagerverwaltungLabel.Size = New System.Drawing.Size(87, 32)
+        Logistik_lagerverwaltungLabel.Size = New System.Drawing.Size(86, 32)
         Logistik_lagerverwaltungLabel.TabIndex = 0
         Logistik_lagerverwaltungLabel.Text = "Lager-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verwaltung:"
         '
@@ -4352,7 +4354,7 @@ Partial Class frmMain
         Versand_akkreditiveLabel.AutoSize = True
         Versand_akkreditiveLabel.Location = New System.Drawing.Point(195, 88)
         Versand_akkreditiveLabel.Name = "Versand_akkreditiveLabel"
-        Versand_akkreditiveLabel.Size = New System.Drawing.Size(92, 16)
+        Versand_akkreditiveLabel.Size = New System.Drawing.Size(90, 16)
         Versand_akkreditiveLabel.TabIndex = 1
         Versand_akkreditiveLabel.Text = "Akkreditive:"
         '
@@ -4361,7 +4363,7 @@ Partial Class frmMain
         Versand_sonstigesLabel.AutoSize = True
         Versand_sonstigesLabel.Location = New System.Drawing.Point(6, 148)
         Versand_sonstigesLabel.Name = "Versand_sonstigesLabel"
-        Versand_sonstigesLabel.Size = New System.Drawing.Size(83, 32)
+        Versand_sonstigesLabel.Size = New System.Drawing.Size(81, 32)
         Versand_sonstigesLabel.TabIndex = 12
         Versand_sonstigesLabel.Text = "Versand " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sonstiges:"
         '
@@ -4370,7 +4372,7 @@ Partial Class frmMain
         Versand_exportLabel.AutoSize = True
         Versand_exportLabel.Location = New System.Drawing.Point(98, 88)
         Versand_exportLabel.Name = "Versand_exportLabel"
-        Versand_exportLabel.Size = New System.Drawing.Size(58, 16)
+        Versand_exportLabel.Size = New System.Drawing.Size(56, 16)
         Versand_exportLabel.TabIndex = 10
         Versand_exportLabel.Text = "Export:"
         '
@@ -4379,7 +4381,7 @@ Partial Class frmMain
         Versand_importLabel.AutoSize = True
         Versand_importLabel.Location = New System.Drawing.Point(6, 89)
         Versand_importLabel.Name = "Versand_importLabel"
-        Versand_importLabel.Size = New System.Drawing.Size(57, 16)
+        Versand_importLabel.Size = New System.Drawing.Size(55, 16)
         Versand_importLabel.TabIndex = 8
         Versand_importLabel.Text = "Import:"
         '
@@ -4388,7 +4390,7 @@ Partial Class frmMain
         Versand_zollpapiereLabel.AutoSize = True
         Versand_zollpapiereLabel.Location = New System.Drawing.Point(285, 32)
         Versand_zollpapiereLabel.Name = "Versand_zollpapiereLabel"
-        Versand_zollpapiereLabel.Size = New System.Drawing.Size(94, 16)
+        Versand_zollpapiereLabel.Size = New System.Drawing.Size(92, 16)
         Versand_zollpapiereLabel.TabIndex = 6
         Versand_zollpapiereLabel.Text = "Zollpapiere:"
         '
@@ -4397,7 +4399,7 @@ Partial Class frmMain
         Versand_lkw_frachtLabel.AutoSize = True
         Versand_lkw_frachtLabel.Location = New System.Drawing.Point(195, 32)
         Versand_lkw_frachtLabel.Name = "Versand_lkw_frachtLabel"
-        Versand_lkw_frachtLabel.Size = New System.Drawing.Size(78, 16)
+        Versand_lkw_frachtLabel.Size = New System.Drawing.Size(76, 16)
         Versand_lkw_frachtLabel.TabIndex = 4
         Versand_lkw_frachtLabel.Text = "Lkwfracht:"
         '
@@ -4406,7 +4408,7 @@ Partial Class frmMain
         Versand_seefrachtLabel.AutoSize = True
         Versand_seefrachtLabel.Location = New System.Drawing.Point(95, 32)
         Versand_seefrachtLabel.Name = "Versand_seefrachtLabel"
-        Versand_seefrachtLabel.Size = New System.Drawing.Size(80, 16)
+        Versand_seefrachtLabel.Size = New System.Drawing.Size(78, 16)
         Versand_seefrachtLabel.TabIndex = 2
         Versand_seefrachtLabel.Text = "Seefracht:"
         '
@@ -4415,7 +4417,7 @@ Partial Class frmMain
         Versand_luftfrachtLabel.AutoSize = True
         Versand_luftfrachtLabel.Location = New System.Drawing.Point(6, 32)
         Versand_luftfrachtLabel.Name = "Versand_luftfrachtLabel"
-        Versand_luftfrachtLabel.Size = New System.Drawing.Size(76, 16)
+        Versand_luftfrachtLabel.Size = New System.Drawing.Size(74, 16)
         Versand_luftfrachtLabel.TabIndex = 0
         Versand_luftfrachtLabel.Text = "Luftfracht:"
         '
@@ -4424,7 +4426,7 @@ Partial Class frmMain
         M_d_cms_sonstigeLabel.AutoSize = True
         M_d_cms_sonstigeLabel.Location = New System.Drawing.Point(210, 180)
         M_d_cms_sonstigeLabel.Name = "M_d_cms_sonstigeLabel"
-        M_d_cms_sonstigeLabel.Size = New System.Drawing.Size(70, 32)
+        M_d_cms_sonstigeLabel.Size = New System.Drawing.Size(69, 32)
         M_d_cms_sonstigeLabel.TabIndex = 22
         M_d_cms_sonstigeLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CMS:"
         '
@@ -4433,7 +4435,7 @@ Partial Class frmMain
         M_d_software_grafische_sonstigeLabel.AutoSize = True
         M_d_software_grafische_sonstigeLabel.Location = New System.Drawing.Point(6, 180)
         M_d_software_grafische_sonstigeLabel.Name = "M_d_software_grafische_sonstigeLabel"
-        M_d_software_grafische_sonstigeLabel.Size = New System.Drawing.Size(71, 48)
+        M_d_software_grafische_sonstigeLabel.Size = New System.Drawing.Size(70, 48)
         M_d_software_grafische_sonstigeLabel.TabIndex = 20
         M_d_software_grafische_sonstigeLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Grafik-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "software:"
         '
@@ -4442,7 +4444,7 @@ Partial Class frmMain
         M_d_joomlaLabel.AutoSize = True
         M_d_joomlaLabel.Location = New System.Drawing.Point(125, 122)
         M_d_joomlaLabel.Name = "M_d_joomlaLabel"
-        M_d_joomlaLabel.Size = New System.Drawing.Size(64, 16)
+        M_d_joomlaLabel.Size = New System.Drawing.Size(63, 16)
         M_d_joomlaLabel.TabIndex = 18
         M_d_joomlaLabel.Text = "Joomla:"
         '
@@ -4451,7 +4453,7 @@ Partial Class frmMain
         M_d_drupalLabel.AutoSize = True
         M_d_drupalLabel.Location = New System.Drawing.Point(7, 122)
         M_d_drupalLabel.Name = "M_d_drupalLabel"
-        M_d_drupalLabel.Size = New System.Drawing.Size(60, 16)
+        M_d_drupalLabel.Size = New System.Drawing.Size(58, 16)
         M_d_drupalLabel.TabIndex = 16
         M_d_drupalLabel.Text = "Drupal:"
         '
@@ -4460,7 +4462,7 @@ Partial Class frmMain
         M_d_wordpressLabel.AutoSize = True
         M_d_wordpressLabel.Location = New System.Drawing.Point(311, 71)
         M_d_wordpressLabel.Name = "M_d_wordpressLabel"
-        M_d_wordpressLabel.Size = New System.Drawing.Size(90, 16)
+        M_d_wordpressLabel.Size = New System.Drawing.Size(88, 16)
         M_d_wordpressLabel.TabIndex = 14
         M_d_wordpressLabel.Text = "Wordpress:"
         '
@@ -4469,7 +4471,7 @@ Partial Class frmMain
         M_d_typo3Label.AutoSize = True
         M_d_typo3Label.Location = New System.Drawing.Point(223, 71)
         M_d_typo3Label.Name = "M_d_typo3Label"
-        M_d_typo3Label.Size = New System.Drawing.Size(58, 16)
+        M_d_typo3Label.Size = New System.Drawing.Size(56, 16)
         M_d_typo3Label.TabIndex = 12
         M_d_typo3Label.Text = "Typo3:"
         '
@@ -4478,7 +4480,7 @@ Partial Class frmMain
         M_d_coreldrawLabel.AutoSize = True
         M_d_coreldrawLabel.Location = New System.Drawing.Point(125, 71)
         M_d_coreldrawLabel.Name = "M_d_coreldrawLabel"
-        M_d_coreldrawLabel.Size = New System.Drawing.Size(93, 16)
+        M_d_coreldrawLabel.Size = New System.Drawing.Size(88, 16)
         M_d_coreldrawLabel.TabIndex = 10
         M_d_coreldrawLabel.Text = "Corel Draw:"
         '
@@ -4487,7 +4489,7 @@ Partial Class frmMain
         M_d_dreamweaverLabel.AutoSize = True
         M_d_dreamweaverLabel.Location = New System.Drawing.Point(6, 71)
         M_d_dreamweaverLabel.Name = "M_d_dreamweaverLabel"
-        M_d_dreamweaverLabel.Size = New System.Drawing.Size(110, 16)
+        M_d_dreamweaverLabel.Size = New System.Drawing.Size(108, 16)
         M_d_dreamweaverLabel.TabIndex = 8
         M_d_dreamweaverLabel.Text = "Dreamweaver:"
         '
@@ -4496,7 +4498,7 @@ Partial Class frmMain
         M_d_acrobatLabel.AutoSize = True
         M_d_acrobatLabel.Location = New System.Drawing.Point(313, 25)
         M_d_acrobatLabel.Name = "M_d_acrobatLabel"
-        M_d_acrobatLabel.Size = New System.Drawing.Size(68, 16)
+        M_d_acrobatLabel.Size = New System.Drawing.Size(66, 16)
         M_d_acrobatLabel.TabIndex = 6
         M_d_acrobatLabel.Text = "Acrobat:"
         '
@@ -4505,7 +4507,7 @@ Partial Class frmMain
         M_d_illustratorLabel.AutoSize = True
         M_d_illustratorLabel.Location = New System.Drawing.Point(223, 25)
         M_d_illustratorLabel.Name = "M_d_illustratorLabel"
-        M_d_illustratorLabel.Size = New System.Drawing.Size(78, 16)
+        M_d_illustratorLabel.Size = New System.Drawing.Size(76, 16)
         M_d_illustratorLabel.TabIndex = 4
         M_d_illustratorLabel.Text = "Illustrator:"
         '
@@ -4514,7 +4516,7 @@ Partial Class frmMain
         M_d_indesignLabel.AutoSize = True
         M_d_indesignLabel.Location = New System.Drawing.Point(125, 25)
         M_d_indesignLabel.Name = "M_d_indesignLabel"
-        M_d_indesignLabel.Size = New System.Drawing.Size(73, 16)
+        M_d_indesignLabel.Size = New System.Drawing.Size(71, 16)
         M_d_indesignLabel.TabIndex = 2
         M_d_indesignLabel.Text = "Indesign:"
         '
@@ -4523,7 +4525,7 @@ Partial Class frmMain
         M_d_photoshopLabel.AutoSize = True
         M_d_photoshopLabel.Location = New System.Drawing.Point(6, 25)
         M_d_photoshopLabel.Name = "M_d_photoshopLabel"
-        M_d_photoshopLabel.Size = New System.Drawing.Size(88, 16)
+        M_d_photoshopLabel.Size = New System.Drawing.Size(86, 16)
         M_d_photoshopLabel.TabIndex = 0
         M_d_photoshopLabel.Text = "Photoshop:"
         '
@@ -4532,7 +4534,7 @@ Partial Class frmMain
         M_d_design_sonstigeLabel.AutoSize = True
         M_d_design_sonstigeLabel.Location = New System.Drawing.Point(6, 179)
         M_d_design_sonstigeLabel.Name = "M_d_design_sonstigeLabel"
-        M_d_design_sonstigeLabel.Size = New System.Drawing.Size(83, 32)
+        M_d_design_sonstigeLabel.Size = New System.Drawing.Size(81, 32)
         M_d_design_sonstigeLabel.TabIndex = 12
         M_d_design_sonstigeLabel.Text = "Design " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sonstiges:"
         '
@@ -4541,7 +4543,7 @@ Partial Class frmMain
         M_d_seoLabel.AutoSize = True
         M_d_seoLabel.Location = New System.Drawing.Point(125, 110)
         M_d_seoLabel.Name = "M_d_seoLabel"
-        M_d_seoLabel.Size = New System.Drawing.Size(203, 16)
+        M_d_seoLabel.Size = New System.Drawing.Size(201, 16)
         M_d_seoLabel.TabIndex = 10
         M_d_seoLabel.Text = "Suchmaschinenoptimierung:"
         '
@@ -4550,7 +4552,7 @@ Partial Class frmMain
         M_d_socialmediaLabel.AutoSize = True
         M_d_socialmediaLabel.Location = New System.Drawing.Point(6, 110)
         M_d_socialmediaLabel.Name = "M_d_socialmediaLabel"
-        M_d_socialmediaLabel.Size = New System.Drawing.Size(107, 16)
+        M_d_socialmediaLabel.Size = New System.Drawing.Size(103, 16)
         M_d_socialmediaLabel.TabIndex = 8
         M_d_socialmediaLabel.Text = "Social Media:"
         '
@@ -4559,7 +4561,7 @@ Partial Class frmMain
         M_d_videoschnittLabel.AutoSize = True
         M_d_videoschnittLabel.Location = New System.Drawing.Point(321, 35)
         M_d_videoschnittLabel.Name = "M_d_videoschnittLabel"
-        M_d_videoschnittLabel.Size = New System.Drawing.Size(57, 32)
+        M_d_videoschnittLabel.Size = New System.Drawing.Size(56, 32)
         M_d_videoschnittLabel.TabIndex = 6
         M_d_videoschnittLabel.Text = "Video-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "schnitt:"
         '
@@ -4568,7 +4570,7 @@ Partial Class frmMain
         M_d_contentLabel.AutoSize = True
         M_d_contentLabel.Location = New System.Drawing.Point(223, 34)
         M_d_contentLabel.Name = "M_d_contentLabel"
-        M_d_contentLabel.Size = New System.Drawing.Size(81, 32)
+        M_d_contentLabel.Size = New System.Drawing.Size(80, 32)
         M_d_contentLabel.TabIndex = 4
         M_d_contentLabel.Text = "Content-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "erstellung:"
         '
@@ -4577,7 +4579,7 @@ Partial Class frmMain
         M_d_homepageLabel.AutoSize = True
         M_d_homepageLabel.Location = New System.Drawing.Point(125, 34)
         M_d_homepageLabel.Name = "M_d_homepageLabel"
-        M_d_homepageLabel.Size = New System.Drawing.Size(92, 32)
+        M_d_homepageLabel.Size = New System.Drawing.Size(90, 32)
         M_d_homepageLabel.TabIndex = 2
         M_d_homepageLabel.Text = "Homepage-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "design:"
         '
@@ -4586,7 +4588,7 @@ Partial Class frmMain
         M_d_grafikerstellungLabel.AutoSize = True
         M_d_grafikerstellungLabel.Location = New System.Drawing.Point(6, 34)
         M_d_grafikerstellungLabel.Name = "M_d_grafikerstellungLabel"
-        M_d_grafikerstellungLabel.Size = New System.Drawing.Size(81, 32)
+        M_d_grafikerstellungLabel.Size = New System.Drawing.Size(80, 32)
         M_d_grafikerstellungLabel.TabIndex = 0
         M_d_grafikerstellungLabel.Text = "Grafik" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "erstellung:"
         '
@@ -4595,7 +4597,7 @@ Partial Class frmMain
         M_d_sonstigeLabel.AutoSize = True
         M_d_sonstigeLabel.Location = New System.Drawing.Point(7, 254)
         M_d_sonstigeLabel.Name = "M_d_sonstigeLabel"
-        M_d_sonstigeLabel.Size = New System.Drawing.Size(97, 48)
+        M_d_sonstigeLabel.Size = New System.Drawing.Size(96, 48)
         M_d_sonstigeLabel.TabIndex = 20
         M_d_sonstigeLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Marketing-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "maßnahmen:"
         '
@@ -4604,7 +4606,7 @@ Partial Class frmMain
         M_d_marktanalyseLabel.AutoSize = True
         M_d_marktanalyseLabel.Location = New System.Drawing.Point(206, 170)
         M_d_marktanalyseLabel.Name = "M_d_marktanalyseLabel"
-        M_d_marktanalyseLabel.Size = New System.Drawing.Size(107, 16)
+        M_d_marktanalyseLabel.Size = New System.Drawing.Size(105, 16)
         M_d_marktanalyseLabel.TabIndex = 18
         M_d_marktanalyseLabel.Text = "Marktanalyse:"
         '
@@ -4613,7 +4615,7 @@ Partial Class frmMain
         M_d_budgetplanungLabel.AutoSize = True
         M_d_budgetplanungLabel.Location = New System.Drawing.Point(113, 168)
         M_d_budgetplanungLabel.Name = "M_d_budgetplanungLabel"
-        M_d_budgetplanungLabel.Size = New System.Drawing.Size(68, 32)
+        M_d_budgetplanungLabel.Size = New System.Drawing.Size(67, 32)
         M_d_budgetplanungLabel.TabIndex = 16
         M_d_budgetplanungLabel.Text = "Budget-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "planung:"
         '
@@ -4622,7 +4624,7 @@ Partial Class frmMain
         M_d_messeLabel.AutoSize = True
         M_d_messeLabel.Location = New System.Drawing.Point(206, 103)
         M_d_messeLabel.Name = "M_d_messeLabel"
-        M_d_messeLabel.Size = New System.Drawing.Size(191, 16)
+        M_d_messeLabel.Size = New System.Drawing.Size(186, 16)
         M_d_messeLabel.TabIndex = 14
         M_d_messeLabel.Text = "Messen, Veranstaltungen:"
         '
@@ -4631,7 +4633,7 @@ Partial Class frmMain
         M_d_ciLabel.AutoSize = True
         M_d_ciLabel.Location = New System.Drawing.Point(6, 168)
         M_d_ciLabel.Name = "M_d_ciLabel"
-        M_d_ciLabel.Size = New System.Drawing.Size(79, 32)
+        M_d_ciLabel.Size = New System.Drawing.Size(77, 32)
         M_d_ciLabel.TabIndex = 12
         M_d_ciLabel.Text = "Corporate" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Identity:"
         '
@@ -4640,7 +4642,7 @@ Partial Class frmMain
         M_d_crossLabel.AutoSize = True
         M_d_crossLabel.Location = New System.Drawing.Point(108, 88)
         M_d_crossLabel.Name = "M_d_crossLabel"
-        M_d_crossLabel.Size = New System.Drawing.Size(82, 32)
+        M_d_crossLabel.Size = New System.Drawing.Size(80, 32)
         M_d_crossLabel.TabIndex = 6
         M_d_crossLabel.Text = "Cross-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Marketing:"
         '
@@ -4649,7 +4651,7 @@ Partial Class frmMain
         M_d_direkt_onlineLabel.AutoSize = True
         M_d_direkt_onlineLabel.Location = New System.Drawing.Point(6, 88)
         M_d_direkt_onlineLabel.Name = "M_d_direkt_onlineLabel"
-        M_d_direkt_onlineLabel.Size = New System.Drawing.Size(81, 32)
+        M_d_direkt_onlineLabel.Size = New System.Drawing.Size(80, 32)
         M_d_direkt_onlineLabel.TabIndex = 8
         M_d_direkt_onlineLabel.Text = "Direkt-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "marketing:"
         '
@@ -4658,7 +4660,7 @@ Partial Class frmMain
         M_d_kinoLabel.AutoSize = True
         M_d_kinoLabel.Location = New System.Drawing.Point(306, 31)
         M_d_kinoLabel.Name = "M_d_kinoLabel"
-        M_d_kinoLabel.Size = New System.Drawing.Size(45, 16)
+        M_d_kinoLabel.Size = New System.Drawing.Size(42, 16)
         M_d_kinoLabel.TabIndex = 6
         M_d_kinoLabel.Text = "Kino:"
         '
@@ -4667,7 +4669,7 @@ Partial Class frmMain
         M_d_tvLabel.AutoSize = True
         M_d_tvLabel.Location = New System.Drawing.Point(206, 31)
         M_d_tvLabel.Name = "M_d_tvLabel"
-        M_d_tvLabel.Size = New System.Drawing.Size(34, 16)
+        M_d_tvLabel.Size = New System.Drawing.Size(32, 16)
         M_d_tvLabel.TabIndex = 4
         M_d_tvLabel.Text = "TV:"
         '
@@ -4676,7 +4678,7 @@ Partial Class frmMain
         M_d_onlineLabel.AutoSize = True
         M_d_onlineLabel.Location = New System.Drawing.Point(108, 30)
         M_d_onlineLabel.Name = "M_d_onlineLabel"
-        M_d_onlineLabel.Size = New System.Drawing.Size(58, 16)
+        M_d_onlineLabel.Size = New System.Drawing.Size(56, 16)
         M_d_onlineLabel.TabIndex = 2
         M_d_onlineLabel.Text = "Online:"
         '
@@ -4685,7 +4687,7 @@ Partial Class frmMain
         M_d_printLabel.AutoSize = True
         M_d_printLabel.Location = New System.Drawing.Point(6, 31)
         M_d_printLabel.Name = "M_d_printLabel"
-        M_d_printLabel.Size = New System.Drawing.Size(45, 16)
+        M_d_printLabel.Size = New System.Drawing.Size(43, 16)
         M_d_printLabel.TabIndex = 0
         M_d_printLabel.Text = "Print:"
         '
@@ -4695,7 +4697,7 @@ Partial Class frmMain
         Fibu_softwareLabel.ForeColor = System.Drawing.Color.Crimson
         Fibu_softwareLabel.Location = New System.Drawing.Point(10, 129)
         Fibu_softwareLabel.Name = "Fibu_softwareLabel"
-        Fibu_softwareLabel.Size = New System.Drawing.Size(151, 64)
+        Fibu_softwareLabel.Size = New System.Drawing.Size(149, 64)
         Fibu_softwareLabel.TabIndex = 6
         Fibu_softwareLabel.Text = "Erfahrung im " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Umgang mit" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Finanzbuchhaltungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "software:"
         '
@@ -4705,7 +4707,7 @@ Partial Class frmMain
         Fibu_erfahrungLabel.ForeColor = System.Drawing.Color.Crimson
         Fibu_erfahrungLabel.Location = New System.Drawing.Point(11, 39)
         Fibu_erfahrungLabel.Name = "Fibu_erfahrungLabel"
-        Fibu_erfahrungLabel.Size = New System.Drawing.Size(142, 32)
+        Fibu_erfahrungLabel.Size = New System.Drawing.Size(140, 32)
         Fibu_erfahrungLabel.TabIndex = 4
         Fibu_erfahrungLabel.Text = "Finanzbuchhaltung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Erfahrung von:"
         '
@@ -4714,7 +4716,7 @@ Partial Class frmMain
         Fibu_immobilienLabel.AutoSize = True
         Fibu_immobilienLabel.Location = New System.Drawing.Point(282, 255)
         Fibu_immobilienLabel.Name = "Fibu_immobilienLabel"
-        Fibu_immobilienLabel.Size = New System.Drawing.Size(96, 32)
+        Fibu_immobilienLabel.Size = New System.Drawing.Size(95, 32)
         Fibu_immobilienLabel.TabIndex = 18
         Fibu_immobilienLabel.Text = "Immobilien-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "buchhaltung:"
         '
@@ -4723,7 +4725,7 @@ Partial Class frmMain
         Fibu_reisekosten_buchhaltungLabel.AutoSize = True
         Fibu_reisekosten_buchhaltungLabel.Location = New System.Drawing.Point(159, 253)
         Fibu_reisekosten_buchhaltungLabel.Name = "Fibu_reisekosten_buchhaltungLabel"
-        Fibu_reisekosten_buchhaltungLabel.Size = New System.Drawing.Size(102, 32)
+        Fibu_reisekosten_buchhaltungLabel.Size = New System.Drawing.Size(100, 32)
         Fibu_reisekosten_buchhaltungLabel.TabIndex = 18
         Fibu_reisekosten_buchhaltungLabel.Text = "Reisekosten-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "buchhaltung:"
         '
@@ -4732,7 +4734,7 @@ Partial Class frmMain
         Fibu_reisekosten_abrechnungLabel.AutoSize = True
         Fibu_reisekosten_abrechnungLabel.Location = New System.Drawing.Point(6, 253)
         Fibu_reisekosten_abrechnungLabel.Name = "Fibu_reisekosten_abrechnungLabel"
-        Fibu_reisekosten_abrechnungLabel.Size = New System.Drawing.Size(102, 32)
+        Fibu_reisekosten_abrechnungLabel.Size = New System.Drawing.Size(100, 32)
         Fibu_reisekosten_abrechnungLabel.TabIndex = 18
         Fibu_reisekosten_abrechnungLabel.Text = "Reisekosten-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "abrechnung:"
         '
@@ -4741,7 +4743,7 @@ Partial Class frmMain
         Fibu_kassenbuch_programmLabel.AutoSize = True
         Fibu_kassenbuch_programmLabel.Location = New System.Drawing.Point(8, 181)
         Fibu_kassenbuch_programmLabel.Name = "Fibu_kassenbuch_programmLabel"
-        Fibu_kassenbuch_programmLabel.Size = New System.Drawing.Size(99, 32)
+        Fibu_kassenbuch_programmLabel.Size = New System.Drawing.Size(96, 32)
         Fibu_kassenbuch_programmLabel.TabIndex = 18
         Fibu_kassenbuch_programmLabel.Text = "Kassenbuch " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "EDV:"
         '
@@ -4750,7 +4752,7 @@ Partial Class frmMain
         Fibu_kassenbuch_excelLabel.AutoSize = True
         Fibu_kassenbuch_excelLabel.Location = New System.Drawing.Point(282, 104)
         Fibu_kassenbuch_excelLabel.Name = "Fibu_kassenbuch_excelLabel"
-        Fibu_kassenbuch_excelLabel.Size = New System.Drawing.Size(99, 32)
+        Fibu_kassenbuch_excelLabel.Size = New System.Drawing.Size(96, 32)
         Fibu_kassenbuch_excelLabel.TabIndex = 18
         Fibu_kassenbuch_excelLabel.Text = "Kassenbuch " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Excel:"
         '
@@ -4759,7 +4761,7 @@ Partial Class frmMain
         Fibu_kassenbuch_papierLabel.AutoSize = True
         Fibu_kassenbuch_papierLabel.Location = New System.Drawing.Point(159, 106)
         Fibu_kassenbuch_papierLabel.Name = "Fibu_kassenbuch_papierLabel"
-        Fibu_kassenbuch_papierLabel.Size = New System.Drawing.Size(99, 32)
+        Fibu_kassenbuch_papierLabel.Size = New System.Drawing.Size(96, 32)
         Fibu_kassenbuch_papierLabel.TabIndex = 18
         Fibu_kassenbuch_papierLabel.Text = "Kassenbuch " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "manuell:"
         '
@@ -4768,7 +4770,7 @@ Partial Class frmMain
         Fibu_sonstigeLabel.AutoSize = True
         Fibu_sonstigeLabel.Location = New System.Drawing.Point(8, 326)
         Fibu_sonstigeLabel.Name = "Fibu_sonstigeLabel"
-        Fibu_sonstigeLabel.Size = New System.Drawing.Size(107, 48)
+        Fibu_sonstigeLabel.Size = New System.Drawing.Size(105, 48)
         Fibu_sonstigeLabel.TabIndex = 12
         Fibu_sonstigeLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Buchhaltungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "tätigkeiten:"
         '
@@ -4777,7 +4779,7 @@ Partial Class frmMain
         Fibu_mahnwesen_mahnbescheidLabel.AutoSize = True
         Fibu_mahnwesen_mahnbescheidLabel.Location = New System.Drawing.Point(282, 197)
         Fibu_mahnwesen_mahnbescheidLabel.Name = "Fibu_mahnwesen_mahnbescheidLabel"
-        Fibu_mahnwesen_mahnbescheidLabel.Size = New System.Drawing.Size(95, 16)
+        Fibu_mahnwesen_mahnbescheidLabel.Size = New System.Drawing.Size(93, 16)
         Fibu_mahnwesen_mahnbescheidLabel.TabIndex = 4
         Fibu_mahnwesen_mahnbescheidLabel.Text = "Mahnwesen:"
         '
@@ -4786,7 +4788,7 @@ Partial Class frmMain
         Fibu_rechnungspruefungLabel.AutoSize = True
         Fibu_rechnungspruefungLabel.Location = New System.Drawing.Point(159, 181)
         Fibu_rechnungspruefungLabel.Name = "Fibu_rechnungspruefungLabel"
-        Fibu_rechnungspruefungLabel.Size = New System.Drawing.Size(92, 32)
+        Fibu_rechnungspruefungLabel.Size = New System.Drawing.Size(90, 32)
         Fibu_rechnungspruefungLabel.TabIndex = 8
         Fibu_rechnungspruefungLabel.Text = "Rechnungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "prüfung:"
         '
@@ -4795,7 +4797,7 @@ Partial Class frmMain
         Fibu_kassenbuch_bankLabel.AutoSize = True
         Fibu_kassenbuch_bankLabel.Location = New System.Drawing.Point(6, 104)
         Fibu_kassenbuch_bankLabel.Name = "Fibu_kassenbuch_bankLabel"
-        Fibu_kassenbuch_bankLabel.Size = New System.Drawing.Size(104, 32)
+        Fibu_kassenbuch_bankLabel.Size = New System.Drawing.Size(100, 32)
         Fibu_kassenbuch_bankLabel.TabIndex = 6
         Fibu_kassenbuch_bankLabel.Text = "Kassenbuch, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bank:"
         '
@@ -4804,7 +4806,7 @@ Partial Class frmMain
         Fibu_bwaLabel.AutoSize = True
         Fibu_bwaLabel.Location = New System.Drawing.Point(282, 44)
         Fibu_bwaLabel.Name = "Fibu_bwaLabel"
-        Fibu_bwaLabel.Size = New System.Drawing.Size(50, 16)
+        Fibu_bwaLabel.Size = New System.Drawing.Size(46, 16)
         Fibu_bwaLabel.TabIndex = 4
         Fibu_bwaLabel.Text = "BWA:"
         '
@@ -4813,7 +4815,7 @@ Partial Class frmMain
         Fibu_zahlungsverkehrLabel.AutoSize = True
         Fibu_zahlungsverkehrLabel.Location = New System.Drawing.Point(161, 28)
         Fibu_zahlungsverkehrLabel.Name = "Fibu_zahlungsverkehrLabel"
-        Fibu_zahlungsverkehrLabel.Size = New System.Drawing.Size(78, 32)
+        Fibu_zahlungsverkehrLabel.Size = New System.Drawing.Size(76, 32)
         Fibu_zahlungsverkehrLabel.TabIndex = 2
         Fibu_zahlungsverkehrLabel.Text = "Zahlungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verkehr:"
         '
@@ -4822,7 +4824,7 @@ Partial Class frmMain
         Fibu_kontenabstimmung_oplistenLabel.AutoSize = True
         Fibu_kontenabstimmung_oplistenLabel.Location = New System.Drawing.Point(6, 28)
         Fibu_kontenabstimmung_oplistenLabel.Name = "Fibu_kontenabstimmung_oplistenLabel"
-        Fibu_kontenabstimmung_oplistenLabel.Size = New System.Drawing.Size(145, 32)
+        Fibu_kontenabstimmung_oplistenLabel.Size = New System.Drawing.Size(142, 32)
         Fibu_kontenabstimmung_oplistenLabel.TabIndex = 0
         Fibu_kontenabstimmung_oplistenLabel.Text = "Kontenabstimmung," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "OP-Listen:"
         '
@@ -4831,7 +4833,7 @@ Partial Class frmMain
         Fibu_bilanzLabel.AutoSize = True
         Fibu_bilanzLabel.Location = New System.Drawing.Point(199, 25)
         Fibu_bilanzLabel.Name = "Fibu_bilanzLabel"
-        Fibu_bilanzLabel.Size = New System.Drawing.Size(131, 16)
+        Fibu_bilanzLabel.Size = New System.Drawing.Size(129, 16)
         Fibu_bilanzLabel.TabIndex = 2
         Fibu_bilanzLabel.Text = "Bilanzaufstellung:"
         '
@@ -4840,7 +4842,7 @@ Partial Class frmMain
         Fibu_abschlussLabel.AutoSize = True
         Fibu_abschlussLabel.Location = New System.Drawing.Point(6, 25)
         Fibu_abschlussLabel.Name = "Fibu_abschlussLabel"
-        Fibu_abschlussLabel.Size = New System.Drawing.Size(142, 16)
+        Fibu_abschlussLabel.Size = New System.Drawing.Size(140, 16)
         Fibu_abschlussLabel.TabIndex = 0
         Fibu_abschlussLabel.Text = "Abschlussarbeiten:"
         '
@@ -4849,7 +4851,7 @@ Partial Class frmMain
         Fibu_kontenrahmenLabel.AutoSize = True
         Fibu_kontenrahmenLabel.Location = New System.Drawing.Point(6, 160)
         Fibu_kontenrahmenLabel.Name = "Fibu_kontenrahmenLabel"
-        Fibu_kontenrahmenLabel.Size = New System.Drawing.Size(113, 16)
+        Fibu_kontenrahmenLabel.Size = New System.Drawing.Size(110, 16)
         Fibu_kontenrahmenLabel.TabIndex = 41
         Fibu_kontenrahmenLabel.Text = "Kontenrahmen:"
         '
@@ -4858,7 +4860,7 @@ Partial Class frmMain
         Fibu_dateneingabeLabel.AutoSize = True
         Fibu_dateneingabeLabel.Location = New System.Drawing.Point(200, 79)
         Fibu_dateneingabeLabel.Name = "Fibu_dateneingabeLabel"
-        Fibu_dateneingabeLabel.Size = New System.Drawing.Size(107, 32)
+        Fibu_dateneingabeLabel.Size = New System.Drawing.Size(105, 32)
         Fibu_dateneingabeLabel.TabIndex = 41
         Fibu_dateneingabeLabel.Text = "Eingabe von " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Massendaten:"
         '
@@ -4867,7 +4869,7 @@ Partial Class frmMain
         Fibu_kontieren_selbständigLabel.AutoSize = True
         Fibu_kontieren_selbständigLabel.Location = New System.Drawing.Point(6, 95)
         Fibu_kontieren_selbständigLabel.Name = "Fibu_kontieren_selbständigLabel"
-        Fibu_kontieren_selbständigLabel.Size = New System.Drawing.Size(186, 16)
+        Fibu_kontieren_selbständigLabel.Size = New System.Drawing.Size(181, 16)
         Fibu_kontieren_selbständigLabel.TabIndex = 41
         Fibu_kontieren_selbständigLabel.Text = "Selbständiges Kontieren:"
         '
@@ -4876,7 +4878,7 @@ Partial Class frmMain
         Fibu_sachkontenLabel.AutoSize = True
         Fibu_sachkontenLabel.Location = New System.Drawing.Point(282, 29)
         Fibu_sachkontenLabel.Name = "Fibu_sachkontenLabel"
-        Fibu_sachkontenLabel.Size = New System.Drawing.Size(95, 16)
+        Fibu_sachkontenLabel.Size = New System.Drawing.Size(93, 16)
         Fibu_sachkontenLabel.TabIndex = 6
         Fibu_sachkontenLabel.Text = "Sachkonten:"
         '
@@ -4885,7 +4887,7 @@ Partial Class frmMain
         Fibu_anlagenLabel.AutoSize = True
         Fibu_anlagenLabel.Location = New System.Drawing.Point(199, 29)
         Fibu_anlagenLabel.Name = "Fibu_anlagenLabel"
-        Fibu_anlagenLabel.Size = New System.Drawing.Size(71, 16)
+        Fibu_anlagenLabel.Size = New System.Drawing.Size(69, 16)
         Fibu_anlagenLabel.TabIndex = 4
         Fibu_anlagenLabel.Text = "Anlagen:"
         '
@@ -4894,7 +4896,7 @@ Partial Class frmMain
         Fibu_kreditorenLabel.AutoSize = True
         Fibu_kreditorenLabel.Location = New System.Drawing.Point(101, 29)
         Fibu_kreditorenLabel.Name = "Fibu_kreditorenLabel"
-        Fibu_kreditorenLabel.Size = New System.Drawing.Size(86, 16)
+        Fibu_kreditorenLabel.Size = New System.Drawing.Size(83, 16)
         Fibu_kreditorenLabel.TabIndex = 2
         Fibu_kreditorenLabel.Text = "Kreditoren:"
         '
@@ -4903,7 +4905,7 @@ Partial Class frmMain
         Fibu_debitorenLabel.AutoSize = True
         Fibu_debitorenLabel.Location = New System.Drawing.Point(6, 29)
         Fibu_debitorenLabel.Name = "Fibu_debitorenLabel"
-        Fibu_debitorenLabel.Size = New System.Drawing.Size(82, 16)
+        Fibu_debitorenLabel.Size = New System.Drawing.Size(80, 16)
         Fibu_debitorenLabel.TabIndex = 0
         Fibu_debitorenLabel.Text = "Debitoren:"
         '
@@ -4912,7 +4914,7 @@ Partial Class frmMain
         Bibuha_sonstigesLabel.AutoSize = True
         Bibuha_sonstigesLabel.Location = New System.Drawing.Point(6, 143)
         Bibuha_sonstigesLabel.Name = "Bibuha_sonstigesLabel"
-        Bibuha_sonstigesLabel.Size = New System.Drawing.Size(140, 48)
+        Bibuha_sonstigesLabel.Size = New System.Drawing.Size(138, 48)
         Bibuha_sonstigesLabel.TabIndex = 2
         Bibuha_sonstigesLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bilanzbuchhaltung-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "aktivitäten:"
         '
@@ -4921,7 +4923,7 @@ Partial Class frmMain
         Bibuha_softwareLabel.AutoSize = True
         Bibuha_softwareLabel.Location = New System.Drawing.Point(6, 36)
         Bibuha_softwareLabel.Name = "Bibuha_softwareLabel"
-        Bibuha_softwareLabel.Size = New System.Drawing.Size(148, 32)
+        Bibuha_softwareLabel.Size = New System.Drawing.Size(146, 32)
         Bibuha_softwareLabel.TabIndex = 0
         Bibuha_softwareLabel.Text = "Bilanzbuchhaltungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "software:"
         '
@@ -4930,7 +4932,7 @@ Partial Class frmMain
         Bibuha_intercompanyabstimmungLabel.AutoSize = True
         Bibuha_intercompanyabstimmungLabel.Location = New System.Drawing.Point(6, 76)
         Bibuha_intercompanyabstimmungLabel.Name = "Bibuha_intercompanyabstimmungLabel"
-        Bibuha_intercompanyabstimmungLabel.Size = New System.Drawing.Size(190, 16)
+        Bibuha_intercompanyabstimmungLabel.Size = New System.Drawing.Size(188, 16)
         Bibuha_intercompanyabstimmungLabel.TabIndex = 6
         Bibuha_intercompanyabstimmungLabel.Text = "Intercompanyabstimmung:"
         '
@@ -4939,7 +4941,7 @@ Partial Class frmMain
         Bibuha_bewertungLabel.AutoSize = True
         Bibuha_bewertungLabel.Location = New System.Drawing.Point(300, 28)
         Bibuha_bewertungLabel.Name = "Bibuha_bewertungLabel"
-        Bibuha_bewertungLabel.Size = New System.Drawing.Size(86, 16)
+        Bibuha_bewertungLabel.Size = New System.Drawing.Size(84, 16)
         Bibuha_bewertungLabel.TabIndex = 4
         Bibuha_bewertungLabel.Text = "Bewertung:"
         '
@@ -4948,7 +4950,7 @@ Partial Class frmMain
         Bibuha_wertberichtigungLabel.AutoSize = True
         Bibuha_wertberichtigungLabel.Location = New System.Drawing.Point(147, 28)
         Bibuha_wertberichtigungLabel.Name = "Bibuha_wertberichtigungLabel"
-        Bibuha_wertberichtigungLabel.Size = New System.Drawing.Size(148, 16)
+        Bibuha_wertberichtigungLabel.Size = New System.Drawing.Size(146, 16)
         Bibuha_wertberichtigungLabel.TabIndex = 2
         Bibuha_wertberichtigungLabel.Text = "Wertberichtigungen:"
         '
@@ -4957,7 +4959,7 @@ Partial Class frmMain
         Bibuha_abschreibungLabel.AutoSize = True
         Bibuha_abschreibungLabel.Location = New System.Drawing.Point(6, 28)
         Bibuha_abschreibungLabel.Name = "Bibuha_abschreibungLabel"
-        Bibuha_abschreibungLabel.Size = New System.Drawing.Size(126, 16)
+        Bibuha_abschreibungLabel.Size = New System.Drawing.Size(124, 16)
         Bibuha_abschreibungLabel.TabIndex = 0
         Bibuha_abschreibungLabel.Text = "Abschreibungen:"
         '
@@ -4966,7 +4968,7 @@ Partial Class frmMain
         Bibuha_sondernbilanzen_welcheLabel.AutoSize = True
         Bibuha_sondernbilanzen_welcheLabel.Location = New System.Drawing.Point(6, 85)
         Bibuha_sondernbilanzen_welcheLabel.Name = "Bibuha_sondernbilanzen_welcheLabel"
-        Bibuha_sondernbilanzen_welcheLabel.Size = New System.Drawing.Size(123, 32)
+        Bibuha_sondernbilanzen_welcheLabel.Size = New System.Drawing.Size(119, 32)
         Bibuha_sondernbilanzen_welcheLabel.TabIndex = 4
         Bibuha_sondernbilanzen_welcheLabel.Text = "Welche Sonder-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "bilanzen:"
         '
@@ -4975,7 +4977,7 @@ Partial Class frmMain
         Bibuha_sondernbilanzenLabel.AutoSize = True
         Bibuha_sondernbilanzenLabel.Location = New System.Drawing.Point(160, 27)
         Bibuha_sondernbilanzenLabel.Name = "Bibuha_sondernbilanzenLabel"
-        Bibuha_sondernbilanzenLabel.Size = New System.Drawing.Size(122, 16)
+        Bibuha_sondernbilanzenLabel.Size = New System.Drawing.Size(120, 16)
         Bibuha_sondernbilanzenLabel.TabIndex = 2
         Bibuha_sondernbilanzenLabel.Text = "Sonderbilanzen:"
         '
@@ -4984,7 +4986,7 @@ Partial Class frmMain
         Bibuha_konzernabschlussLabel.AutoSize = True
         Bibuha_konzernabschlussLabel.Location = New System.Drawing.Point(6, 27)
         Bibuha_konzernabschlussLabel.Name = "Bibuha_konzernabschlussLabel"
-        Bibuha_konzernabschlussLabel.Size = New System.Drawing.Size(140, 16)
+        Bibuha_konzernabschlussLabel.Size = New System.Drawing.Size(137, 16)
         Bibuha_konzernabschlussLabel.TabIndex = 0
         Bibuha_konzernabschlussLabel.Text = "Konzernabschluss:"
         '
@@ -4993,7 +4995,7 @@ Partial Class frmMain
         Bibuha_soxxLabel.AutoSize = True
         Bibuha_soxxLabel.Location = New System.Drawing.Point(102, 82)
         Bibuha_soxxLabel.Name = "Bibuha_soxxLabel"
-        Bibuha_soxxLabel.Size = New System.Drawing.Size(58, 16)
+        Bibuha_soxxLabel.Size = New System.Drawing.Size(51, 16)
         Bibuha_soxxLabel.TabIndex = 10
         Bibuha_soxxLabel.Text = "SOXX:"
         '
@@ -5002,7 +5004,7 @@ Partial Class frmMain
         Bibuha_nlgaapLabel.AutoSize = True
         Bibuha_nlgaapLabel.Location = New System.Drawing.Point(6, 82)
         Bibuha_nlgaapLabel.Name = "Bibuha_nlgaapLabel"
-        Bibuha_nlgaapLabel.Size = New System.Drawing.Size(85, 16)
+        Bibuha_nlgaapLabel.Size = New System.Drawing.Size(77, 16)
         Bibuha_nlgaapLabel.TabIndex = 8
         Bibuha_nlgaapLabel.Text = "NL-GAAP:"
         '
@@ -5011,7 +5013,7 @@ Partial Class frmMain
         Bibuha_ukgaapLabel.AutoSize = True
         Bibuha_ukgaapLabel.Location = New System.Drawing.Point(294, 24)
         Bibuha_ukgaapLabel.Name = "Bibuha_ukgaapLabel"
-        Bibuha_ukgaapLabel.Size = New System.Drawing.Size(87, 16)
+        Bibuha_ukgaapLabel.Size = New System.Drawing.Size(78, 16)
         Bibuha_ukgaapLabel.TabIndex = 6
         Bibuha_ukgaapLabel.Text = "UK-GAAP:"
         '
@@ -5020,7 +5022,7 @@ Partial Class frmMain
         Bibuha_usgaapLabel.AutoSize = True
         Bibuha_usgaapLabel.Location = New System.Drawing.Point(193, 24)
         Bibuha_usgaapLabel.Name = "Bibuha_usgaapLabel"
-        Bibuha_usgaapLabel.Size = New System.Drawing.Size(87, 16)
+        Bibuha_usgaapLabel.Size = New System.Drawing.Size(79, 16)
         Bibuha_usgaapLabel.TabIndex = 4
         Bibuha_usgaapLabel.Text = "US-GAAP:"
         '
@@ -5029,7 +5031,7 @@ Partial Class frmMain
         Bibuha_ifrsLabel.AutoSize = True
         Bibuha_ifrsLabel.Location = New System.Drawing.Point(102, 24)
         Bibuha_ifrsLabel.Name = "Bibuha_ifrsLabel"
-        Bibuha_ifrsLabel.Size = New System.Drawing.Size(51, 16)
+        Bibuha_ifrsLabel.Size = New System.Drawing.Size(46, 16)
         Bibuha_ifrsLabel.TabIndex = 2
         Bibuha_ifrsLabel.Text = "IFRS:"
         '
@@ -5038,7 +5040,7 @@ Partial Class frmMain
         Bibuha_hgbLabel.AutoSize = True
         Bibuha_hgbLabel.Location = New System.Drawing.Point(6, 24)
         Bibuha_hgbLabel.Name = "Bibuha_hgbLabel"
-        Bibuha_hgbLabel.Size = New System.Drawing.Size(48, 16)
+        Bibuha_hgbLabel.Size = New System.Drawing.Size(44, 16)
         Bibuha_hgbLabel.TabIndex = 0
         Bibuha_hgbLabel.Text = "HGB:"
         '
@@ -5047,7 +5049,7 @@ Partial Class frmMain
         Bibuha_woLabel.AutoSize = True
         Bibuha_woLabel.Location = New System.Drawing.Point(6, 115)
         Bibuha_woLabel.Name = "Bibuha_woLabel"
-        Bibuha_woLabel.Size = New System.Drawing.Size(149, 32)
+        Bibuha_woLabel.Size = New System.Drawing.Size(146, 32)
         Bibuha_woLabel.TabIndex = 4
         Bibuha_woLabel.Text = "Erfahrung erworben " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "bei:"
         '
@@ -5056,7 +5058,7 @@ Partial Class frmMain
         Bibuha_erfahrungLabel.AutoSize = True
         Bibuha_erfahrungLabel.Location = New System.Drawing.Point(6, 77)
         Bibuha_erfahrungLabel.Name = "Bibuha_erfahrungLabel"
-        Bibuha_erfahrungLabel.Size = New System.Drawing.Size(80, 16)
+        Bibuha_erfahrungLabel.Size = New System.Drawing.Size(78, 16)
         Bibuha_erfahrungLabel.TabIndex = 2
         Bibuha_erfahrungLabel.Text = "Erfahrung:"
         '
@@ -5065,7 +5067,7 @@ Partial Class frmMain
         Bibuha_bilanzbuchhalterLabel.AutoSize = True
         Bibuha_bilanzbuchhalterLabel.Location = New System.Drawing.Point(6, 27)
         Bibuha_bilanzbuchhalterLabel.Name = "Bibuha_bilanzbuchhalterLabel"
-        Bibuha_bilanzbuchhalterLabel.Size = New System.Drawing.Size(145, 32)
+        Bibuha_bilanzbuchhalterLabel.Size = New System.Drawing.Size(143, 32)
         Bibuha_bilanzbuchhalterLabel.TabIndex = 0
         Bibuha_bilanzbuchhalterLabel.Text = "Abschluss als " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bilanzbuchhalter/in:"
         '
@@ -5152,7 +5154,7 @@ Partial Class frmMain
         Controlling_report_controlling_systemeLabel.AutoSize = True
         Controlling_report_controlling_systemeLabel.Location = New System.Drawing.Point(15, 654)
         Controlling_report_controlling_systemeLabel.Name = "Controlling_report_controlling_systemeLabel"
-        Controlling_report_controlling_systemeLabel.Size = New System.Drawing.Size(100, 48)
+        Controlling_report_controlling_systemeLabel.Size = New System.Drawing.Size(98, 48)
         Controlling_report_controlling_systemeLabel.TabIndex = 7
         Controlling_report_controlling_systemeLabel.Text = "Erfahrung mit" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Controlling-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "systemen:"
         '
@@ -5161,7 +5163,7 @@ Partial Class frmMain
         Controlling_sonstigesLabel.AutoSize = True
         Controlling_sonstigesLabel.Location = New System.Drawing.Point(15, 550)
         Controlling_sonstigesLabel.Name = "Controlling_sonstigesLabel"
-        Controlling_sonstigesLabel.Size = New System.Drawing.Size(90, 48)
+        Controlling_sonstigesLabel.Size = New System.Drawing.Size(87, 48)
         Controlling_sonstigesLabel.TabIndex = 5
         Controlling_sonstigesLabel.Text = "Sonstige " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Controlling-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "tätigkeiten:"
         '
@@ -5256,7 +5258,7 @@ Partial Class frmMain
         Controlling_soxxLabel.AutoSize = True
         Controlling_soxxLabel.Location = New System.Drawing.Point(101, 78)
         Controlling_soxxLabel.Name = "Controlling_soxxLabel"
-        Controlling_soxxLabel.Size = New System.Drawing.Size(58, 16)
+        Controlling_soxxLabel.Size = New System.Drawing.Size(51, 16)
         Controlling_soxxLabel.TabIndex = 10
         Controlling_soxxLabel.Text = "SOXX:"
         '
@@ -5265,7 +5267,7 @@ Partial Class frmMain
         Controlling_abschluesse_nlgaapLabel.AutoSize = True
         Controlling_abschluesse_nlgaapLabel.Location = New System.Drawing.Point(6, 78)
         Controlling_abschluesse_nlgaapLabel.Name = "Controlling_abschluesse_nlgaapLabel"
-        Controlling_abschluesse_nlgaapLabel.Size = New System.Drawing.Size(85, 16)
+        Controlling_abschluesse_nlgaapLabel.Size = New System.Drawing.Size(77, 16)
         Controlling_abschluesse_nlgaapLabel.TabIndex = 8
         Controlling_abschluesse_nlgaapLabel.Text = "NL-GAAP:"
         '
@@ -5274,7 +5276,7 @@ Partial Class frmMain
         Controlling_abschluesse_ukgaapLabel.AutoSize = True
         Controlling_abschluesse_ukgaapLabel.Location = New System.Drawing.Point(278, 18)
         Controlling_abschluesse_ukgaapLabel.Name = "Controlling_abschluesse_ukgaapLabel"
-        Controlling_abschluesse_ukgaapLabel.Size = New System.Drawing.Size(87, 16)
+        Controlling_abschluesse_ukgaapLabel.Size = New System.Drawing.Size(78, 16)
         Controlling_abschluesse_ukgaapLabel.TabIndex = 6
         Controlling_abschluesse_ukgaapLabel.Text = "UK-GAAP:"
         '
@@ -5283,7 +5285,7 @@ Partial Class frmMain
         Controlling_finanz_usgaapLabel.AutoSize = True
         Controlling_finanz_usgaapLabel.Location = New System.Drawing.Point(192, 18)
         Controlling_finanz_usgaapLabel.Name = "Controlling_finanz_usgaapLabel"
-        Controlling_finanz_usgaapLabel.Size = New System.Drawing.Size(87, 16)
+        Controlling_finanz_usgaapLabel.Size = New System.Drawing.Size(79, 16)
         Controlling_finanz_usgaapLabel.TabIndex = 4
         Controlling_finanz_usgaapLabel.Text = "US-GAAP:"
         '
@@ -5292,7 +5294,7 @@ Partial Class frmMain
         Controlling_abschluesse_ifrsLabel.AutoSize = True
         Controlling_abschluesse_ifrsLabel.Location = New System.Drawing.Point(101, 18)
         Controlling_abschluesse_ifrsLabel.Name = "Controlling_abschluesse_ifrsLabel"
-        Controlling_abschluesse_ifrsLabel.Size = New System.Drawing.Size(51, 16)
+        Controlling_abschluesse_ifrsLabel.Size = New System.Drawing.Size(46, 16)
         Controlling_abschluesse_ifrsLabel.TabIndex = 2
         Controlling_abschluesse_ifrsLabel.Text = "IFRS:"
         '
@@ -5301,7 +5303,7 @@ Partial Class frmMain
         Controlling_abschluesse_hgbLabel.AutoSize = True
         Controlling_abschluesse_hgbLabel.Location = New System.Drawing.Point(6, 18)
         Controlling_abschluesse_hgbLabel.Name = "Controlling_abschluesse_hgbLabel"
-        Controlling_abschluesse_hgbLabel.Size = New System.Drawing.Size(48, 16)
+        Controlling_abschluesse_hgbLabel.Size = New System.Drawing.Size(44, 16)
         Controlling_abschluesse_hgbLabel.TabIndex = 0
         Controlling_abschluesse_hgbLabel.Text = "HGB:"
         '
@@ -5349,7 +5351,7 @@ Partial Class frmMain
         Controlling_auswertungenLabel.AutoSize = True
         Controlling_auswertungenLabel.Location = New System.Drawing.Point(114, 150)
         Controlling_auswertungenLabel.Name = "Controlling_auswertungenLabel"
-        Controlling_auswertungenLabel.Size = New System.Drawing.Size(110, 16)
+        Controlling_auswertungenLabel.Size = New System.Drawing.Size(108, 16)
         Controlling_auswertungenLabel.TabIndex = 41
         Controlling_auswertungenLabel.Text = "Auswertungen:"
         '
@@ -5439,7 +5441,7 @@ Partial Class frmMain
         Controlling_swotLabel.AutoSize = True
         Controlling_swotLabel.Location = New System.Drawing.Point(6, 207)
         Controlling_swotLabel.Name = "Controlling_swotLabel"
-        Controlling_swotLabel.Size = New System.Drawing.Size(61, 16)
+        Controlling_swotLabel.Size = New System.Drawing.Size(57, 16)
         Controlling_swotLabel.TabIndex = 2
         Controlling_swotLabel.Text = "SWOT:"
         '
@@ -5448,7 +5450,7 @@ Partial Class frmMain
         Controlling_cashmanagementLabel.AutoSize = True
         Controlling_cashmanagementLabel.Location = New System.Drawing.Point(256, 150)
         Controlling_cashmanagementLabel.Name = "Controlling_cashmanagementLabel"
-        Controlling_cashmanagementLabel.Size = New System.Drawing.Size(139, 16)
+        Controlling_cashmanagementLabel.Size = New System.Drawing.Size(136, 16)
         Controlling_cashmanagementLabel.TabIndex = 14
         Controlling_cashmanagementLabel.Text = "Cashmanagement:"
         '
@@ -5457,7 +5459,7 @@ Partial Class frmMain
         Controlling_analysen_statistikLabel.AutoSize = True
         Controlling_analysen_statistikLabel.Location = New System.Drawing.Point(6, 150)
         Controlling_analysen_statistikLabel.Name = "Controlling_analysen_statistikLabel"
-        Controlling_analysen_statistikLabel.Size = New System.Drawing.Size(86, 16)
+        Controlling_analysen_statistikLabel.Size = New System.Drawing.Size(84, 16)
         Controlling_analysen_statistikLabel.TabIndex = 12
         Controlling_analysen_statistikLabel.Text = "Statistiken:"
         '
@@ -5466,7 +5468,7 @@ Partial Class frmMain
         Controlling_reportingLabel.AutoSize = True
         Controlling_reportingLabel.Location = New System.Drawing.Point(256, 85)
         Controlling_reportingLabel.Name = "Controlling_reportingLabel"
-        Controlling_reportingLabel.Size = New System.Drawing.Size(82, 16)
+        Controlling_reportingLabel.Size = New System.Drawing.Size(80, 16)
         Controlling_reportingLabel.TabIndex = 10
         Controlling_reportingLabel.Text = "Reporting:"
         '
@@ -5475,7 +5477,7 @@ Partial Class frmMain
         Controlling_forecastLabel.AutoSize = True
         Controlling_forecastLabel.Location = New System.Drawing.Point(114, 85)
         Controlling_forecastLabel.Name = "Controlling_forecastLabel"
-        Controlling_forecastLabel.Size = New System.Drawing.Size(75, 16)
+        Controlling_forecastLabel.Size = New System.Drawing.Size(73, 16)
         Controlling_forecastLabel.TabIndex = 8
         Controlling_forecastLabel.Text = "Forecast:"
         '
@@ -5484,7 +5486,7 @@ Partial Class frmMain
         Controlling_budgetierungLabel.AutoSize = True
         Controlling_budgetierungLabel.Location = New System.Drawing.Point(6, 85)
         Controlling_budgetierungLabel.Name = "Controlling_budgetierungLabel"
-        Controlling_budgetierungLabel.Size = New System.Drawing.Size(106, 16)
+        Controlling_budgetierungLabel.Size = New System.Drawing.Size(104, 16)
         Controlling_budgetierungLabel.TabIndex = 6
         Controlling_budgetierungLabel.Text = "Budgetierung:"
         '
@@ -5493,7 +5495,7 @@ Partial Class frmMain
         Controlling_deckungsbeitragsrechnungLabel.AutoSize = True
         Controlling_deckungsbeitragsrechnungLabel.Location = New System.Drawing.Point(256, 10)
         Controlling_deckungsbeitragsrechnungLabel.Name = "Controlling_deckungsbeitragsrechnungLabel"
-        Controlling_deckungsbeitragsrechnungLabel.Size = New System.Drawing.Size(141, 32)
+        Controlling_deckungsbeitragsrechnungLabel.Size = New System.Drawing.Size(139, 32)
         Controlling_deckungsbeitragsrechnungLabel.TabIndex = 4
         Controlling_deckungsbeitragsrechnungLabel.Text = "Deckungsbeitrags-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rechnung:"
         '
@@ -5502,7 +5504,7 @@ Partial Class frmMain
         Controlling_kostenrechnungLabel.AutoSize = True
         Controlling_kostenrechnungLabel.Location = New System.Drawing.Point(114, 25)
         Controlling_kostenrechnungLabel.Name = "Controlling_kostenrechnungLabel"
-        Controlling_kostenrechnungLabel.Size = New System.Drawing.Size(125, 16)
+        Controlling_kostenrechnungLabel.Size = New System.Drawing.Size(122, 16)
         Controlling_kostenrechnungLabel.TabIndex = 2
         Controlling_kostenrechnungLabel.Text = "Kostenrechnung:"
         '
@@ -5511,7 +5513,7 @@ Partial Class frmMain
         Controlling_kennzahlenLabel.AutoSize = True
         Controlling_kennzahlenLabel.Location = New System.Drawing.Point(6, 25)
         Controlling_kennzahlenLabel.Name = "Controlling_kennzahlenLabel"
-        Controlling_kennzahlenLabel.Size = New System.Drawing.Size(94, 16)
+        Controlling_kennzahlenLabel.Size = New System.Drawing.Size(91, 16)
         Controlling_kennzahlenLabel.TabIndex = 0
         Controlling_kennzahlenLabel.Text = "Kennzahlen:"
         '
@@ -5520,7 +5522,7 @@ Partial Class frmMain
         Controlling_typLabel.AutoSize = True
         Controlling_typLabel.Location = New System.Drawing.Point(11, 37)
         Controlling_typLabel.Name = "Controlling_typLabel"
-        Controlling_typLabel.Size = New System.Drawing.Size(154, 32)
+        Controlling_typLabel.Size = New System.Drawing.Size(151, 32)
         Controlling_typLabel.TabIndex = 1
         Controlling_typLabel.Text = "Controllingerfahrung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in:"
         '
@@ -5541,7 +5543,7 @@ Partial Class frmMain
         Me.Label45.ForeColor = System.Drawing.Color.Crimson
         Me.Label45.Location = New System.Drawing.Point(11, 9)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(84, 16)
+        Me.Label45.Size = New System.Drawing.Size(82, 16)
         Me.Label45.TabIndex = 1
         Me.Label45.Text = "Controlling"
         '
@@ -5550,7 +5552,7 @@ Partial Class frmMain
         Steuerfachang_softwareLabel.AutoSize = True
         Steuerfachang_softwareLabel.Location = New System.Drawing.Point(11, 520)
         Steuerfachang_softwareLabel.Name = "Steuerfachang_softwareLabel"
-        Steuerfachang_softwareLabel.Size = New System.Drawing.Size(74, 16)
+        Steuerfachang_softwareLabel.Size = New System.Drawing.Size(72, 16)
         Steuerfachang_softwareLabel.TabIndex = 8
         Steuerfachang_softwareLabel.Text = "Software:"
         '
@@ -5559,7 +5561,7 @@ Partial Class frmMain
         Steuerfachang_sonstigeLabel.AutoSize = True
         Steuerfachang_sonstigeLabel.Location = New System.Drawing.Point(6, 197)
         Steuerfachang_sonstigeLabel.Name = "Steuerfachang_sonstigeLabel"
-        Steuerfachang_sonstigeLabel.Size = New System.Drawing.Size(91, 32)
+        Steuerfachang_sonstigeLabel.Size = New System.Drawing.Size(90, 32)
         Steuerfachang_sonstigeLabel.TabIndex = 16
         Steuerfachang_sonstigeLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tätigkeiten:"
         '
@@ -5568,7 +5570,7 @@ Partial Class frmMain
         Steuerfachang_rechtsbehelfeLabel.AutoSize = True
         Steuerfachang_rechtsbehelfeLabel.Location = New System.Drawing.Point(155, 144)
         Steuerfachang_rechtsbehelfeLabel.Name = "Steuerfachang_rechtsbehelfeLabel"
-        Steuerfachang_rechtsbehelfeLabel.Size = New System.Drawing.Size(114, 16)
+        Steuerfachang_rechtsbehelfeLabel.Size = New System.Drawing.Size(112, 16)
         Steuerfachang_rechtsbehelfeLabel.TabIndex = 14
         Steuerfachang_rechtsbehelfeLabel.Text = "Rechtsbehelfe:"
         '
@@ -5577,7 +5579,7 @@ Partial Class frmMain
         Steuerfachang_korrespondenzLabel.AutoSize = True
         Steuerfachang_korrespondenzLabel.Location = New System.Drawing.Point(6, 141)
         Steuerfachang_korrespondenzLabel.Name = "Steuerfachang_korrespondenzLabel"
-        Steuerfachang_korrespondenzLabel.Size = New System.Drawing.Size(119, 16)
+        Steuerfachang_korrespondenzLabel.Size = New System.Drawing.Size(116, 16)
         Steuerfachang_korrespondenzLabel.TabIndex = 12
         Steuerfachang_korrespondenzLabel.Text = "Korrespondenz:"
         '
@@ -5586,7 +5588,7 @@ Partial Class frmMain
         Steuerfachang_rechnungswesenLabel.AutoSize = True
         Steuerfachang_rechnungswesenLabel.Location = New System.Drawing.Point(257, 93)
         Steuerfachang_rechnungswesenLabel.Name = "Steuerfachang_rechnungswesenLabel"
-        Steuerfachang_rechnungswesenLabel.Size = New System.Drawing.Size(135, 16)
+        Steuerfachang_rechnungswesenLabel.Size = New System.Drawing.Size(133, 16)
         Steuerfachang_rechnungswesenLabel.TabIndex = 10
         Steuerfachang_rechnungswesenLabel.Text = "Rechnungswesen:"
         '
@@ -5595,7 +5597,7 @@ Partial Class frmMain
         Steuerfachang_mandantenbetreuungLabel.AutoSize = True
         Steuerfachang_mandantenbetreuungLabel.Location = New System.Drawing.Point(155, 81)
         Steuerfachang_mandantenbetreuungLabel.Name = "Steuerfachang_mandantenbetreuungLabel"
-        Steuerfachang_mandantenbetreuungLabel.Size = New System.Drawing.Size(91, 32)
+        Steuerfachang_mandantenbetreuungLabel.Size = New System.Drawing.Size(89, 32)
         Steuerfachang_mandantenbetreuungLabel.TabIndex = 8
         Steuerfachang_mandantenbetreuungLabel.Text = "Mandanten-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "betreuung:"
         '
@@ -5604,7 +5606,7 @@ Partial Class frmMain
         Steuerfachang_lohnabrechnungLabel.AutoSize = True
         Steuerfachang_lohnabrechnungLabel.Location = New System.Drawing.Point(6, 93)
         Steuerfachang_lohnabrechnungLabel.Name = "Steuerfachang_lohnabrechnungLabel"
-        Steuerfachang_lohnabrechnungLabel.Size = New System.Drawing.Size(128, 16)
+        Steuerfachang_lohnabrechnungLabel.Size = New System.Drawing.Size(126, 16)
         Steuerfachang_lohnabrechnungLabel.TabIndex = 6
         Steuerfachang_lohnabrechnungLabel.Text = "Lohnabrechnung:"
         '
@@ -5613,7 +5615,7 @@ Partial Class frmMain
         Steuerfachang_lohnbuchhaltungLabel.AutoSize = True
         Steuerfachang_lohnbuchhaltungLabel.Location = New System.Drawing.Point(257, 31)
         Steuerfachang_lohnbuchhaltungLabel.Name = "Steuerfachang_lohnbuchhaltungLabel"
-        Steuerfachang_lohnbuchhaltungLabel.Size = New System.Drawing.Size(130, 16)
+        Steuerfachang_lohnbuchhaltungLabel.Size = New System.Drawing.Size(128, 16)
         Steuerfachang_lohnbuchhaltungLabel.TabIndex = 4
         Steuerfachang_lohnbuchhaltungLabel.Text = "Lohnbuchhaltung:"
         '
@@ -5622,7 +5624,7 @@ Partial Class frmMain
         Steuerfachang_abschlüsseLabel.AutoSize = True
         Steuerfachang_abschlüsseLabel.Location = New System.Drawing.Point(155, 16)
         Steuerfachang_abschlüsseLabel.Name = "Steuerfachang_abschlüsseLabel"
-        Steuerfachang_abschlüsseLabel.Size = New System.Drawing.Size(89, 32)
+        Steuerfachang_abschlüsseLabel.Size = New System.Drawing.Size(88, 32)
         Steuerfachang_abschlüsseLabel.TabIndex = 2
         Steuerfachang_abschlüsseLabel.Text = "Abschlüsse" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Mitarbeit):"
         '
@@ -5631,7 +5633,7 @@ Partial Class frmMain
         Steuerfachang_finanzbuchhaltungLabel.AutoSize = True
         Steuerfachang_finanzbuchhaltungLabel.Location = New System.Drawing.Point(6, 31)
         Steuerfachang_finanzbuchhaltungLabel.Name = "Steuerfachang_finanzbuchhaltungLabel"
-        Steuerfachang_finanzbuchhaltungLabel.Size = New System.Drawing.Size(142, 16)
+        Steuerfachang_finanzbuchhaltungLabel.Size = New System.Drawing.Size(140, 16)
         Steuerfachang_finanzbuchhaltungLabel.TabIndex = 0
         Steuerfachang_finanzbuchhaltungLabel.Text = "Finanzbuchhaltung:"
         '
@@ -5640,7 +5642,7 @@ Partial Class frmMain
         Steuerfachang_woLabel.AutoSize = True
         Steuerfachang_woLabel.Location = New System.Drawing.Point(3, 109)
         Steuerfachang_woLabel.Name = "Steuerfachang_woLabel"
-        Steuerfachang_woLabel.Size = New System.Drawing.Size(107, 16)
+        Steuerfachang_woLabel.Size = New System.Drawing.Size(104, 16)
         Steuerfachang_woLabel.TabIndex = 5
         Steuerfachang_woLabel.Text = "Erfahrung bei:"
         '
@@ -5649,7 +5651,7 @@ Partial Class frmMain
         Steuerfachang_letzte_anstellung_von_bisLabel.AutoSize = True
         Steuerfachang_letzte_anstellung_von_bisLabel.Location = New System.Drawing.Point(141, 30)
         Steuerfachang_letzte_anstellung_von_bisLabel.Name = "Steuerfachang_letzte_anstellung_von_bisLabel"
-        Steuerfachang_letzte_anstellung_von_bisLabel.Size = New System.Drawing.Size(133, 32)
+        Steuerfachang_letzte_anstellung_von_bisLabel.Size = New System.Drawing.Size(129, 32)
         Steuerfachang_letzte_anstellung_von_bisLabel.TabIndex = 3
         Steuerfachang_letzte_anstellung_von_bisLabel.Text = "Letzte Anstellung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "von - bis:"
         '
@@ -5658,7 +5660,7 @@ Partial Class frmMain
         Steuerfachang_abschluss_wannLabel.AutoSize = True
         Steuerfachang_abschluss_wannLabel.Location = New System.Drawing.Point(3, 45)
         Steuerfachang_abschluss_wannLabel.Name = "Steuerfachang_abschluss_wannLabel"
-        Steuerfachang_abschluss_wannLabel.Size = New System.Drawing.Size(125, 16)
+        Steuerfachang_abschluss_wannLabel.Size = New System.Drawing.Size(122, 16)
         Steuerfachang_abschluss_wannLabel.TabIndex = 2
         Steuerfachang_abschluss_wannLabel.Text = "Abschluss wann:"
         '
@@ -5668,7 +5670,7 @@ Partial Class frmMain
         Personal_sonstigesLabel.ForeColor = System.Drawing.Color.Crimson
         Personal_sonstigesLabel.Location = New System.Drawing.Point(9, 624)
         Personal_sonstigesLabel.Name = "Personal_sonstigesLabel"
-        Personal_sonstigesLabel.Size = New System.Drawing.Size(96, 64)
+        Personal_sonstigesLabel.Size = New System.Drawing.Size(95, 64)
         Personal_sonstigesLabel.TabIndex = 48
         Personal_sonstigesLabel.Text = "Sonstige " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Personal-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verwaltungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "tätigkeiten:"
         '
@@ -5677,7 +5679,7 @@ Partial Class frmMain
         Personal_personalentwicklungLabel.AutoSize = True
         Personal_personalentwicklungLabel.Location = New System.Drawing.Point(6, 85)
         Personal_personalentwicklungLabel.Name = "Personal_personalentwicklungLabel"
-        Personal_personalentwicklungLabel.Size = New System.Drawing.Size(93, 32)
+        Personal_personalentwicklungLabel.Size = New System.Drawing.Size(92, 32)
         Personal_personalentwicklungLabel.TabIndex = 6
         Personal_personalentwicklungLabel.Text = "Personal-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "entwicklung:"
         '
@@ -5686,7 +5688,7 @@ Partial Class frmMain
         Personal_assessmentcenterLabel.AutoSize = True
         Personal_assessmentcenterLabel.Location = New System.Drawing.Point(281, 17)
         Personal_assessmentcenterLabel.Name = "Personal_assessmentcenterLabel"
-        Personal_assessmentcenterLabel.Size = New System.Drawing.Size(99, 32)
+        Personal_assessmentcenterLabel.Size = New System.Drawing.Size(97, 32)
         Personal_assessmentcenterLabel.TabIndex = 4
         Personal_assessmentcenterLabel.Text = "Assessment-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "center:"
         '
@@ -5695,7 +5697,7 @@ Partial Class frmMain
         Personal_bewerbungsgesprächeLabel.AutoSize = True
         Personal_bewerbungsgesprächeLabel.Location = New System.Drawing.Point(139, 17)
         Personal_bewerbungsgesprächeLabel.Name = "Personal_bewerbungsgesprächeLabel"
-        Personal_bewerbungsgesprächeLabel.Size = New System.Drawing.Size(100, 32)
+        Personal_bewerbungsgesprächeLabel.Size = New System.Drawing.Size(98, 32)
         Personal_bewerbungsgesprächeLabel.TabIndex = 2
         Personal_bewerbungsgesprächeLabel.Text = "Bewerbungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gespräche:"
         '
@@ -5704,7 +5706,7 @@ Partial Class frmMain
         Personal_rekrutierungLabel.AutoSize = True
         Personal_rekrutierungLabel.Location = New System.Drawing.Point(6, 32)
         Personal_rekrutierungLabel.Name = "Personal_rekrutierungLabel"
-        Personal_rekrutierungLabel.Size = New System.Drawing.Size(102, 16)
+        Personal_rekrutierungLabel.Size = New System.Drawing.Size(100, 16)
         Personal_rekrutierungLabel.TabIndex = 0
         Personal_rekrutierungLabel.Text = "Rekrutierung:"
         '
@@ -5713,7 +5715,7 @@ Partial Class frmMain
         Personal_zeiterfassung_softwareLabel.AutoSize = True
         Personal_zeiterfassung_softwareLabel.Location = New System.Drawing.Point(6, 334)
         Personal_zeiterfassung_softwareLabel.Name = "Personal_zeiterfassung_softwareLabel"
-        Personal_zeiterfassung_softwareLabel.Size = New System.Drawing.Size(117, 32)
+        Personal_zeiterfassung_softwareLabel.Size = New System.Drawing.Size(115, 32)
         Personal_zeiterfassung_softwareLabel.TabIndex = 22
         Personal_zeiterfassung_softwareLabel.Text = "Zeiterfassungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "software:"
         '
@@ -5722,7 +5724,7 @@ Partial Class frmMain
         Personal_zeiterfassungLabel.AutoSize = True
         Personal_zeiterfassungLabel.Location = New System.Drawing.Point(281, 261)
         Personal_zeiterfassungLabel.Name = "Personal_zeiterfassungLabel"
-        Personal_zeiterfassungLabel.Size = New System.Drawing.Size(108, 16)
+        Personal_zeiterfassungLabel.Size = New System.Drawing.Size(106, 16)
         Personal_zeiterfassungLabel.TabIndex = 22
         Personal_zeiterfassungLabel.Text = "Zeiterfassung:"
         '
@@ -5731,7 +5733,7 @@ Partial Class frmMain
         Personal_betriebsratLabel.AutoSize = True
         Personal_betriebsratLabel.Location = New System.Drawing.Point(6, 260)
         Personal_betriebsratLabel.Name = "Personal_betriebsratLabel"
-        Personal_betriebsratLabel.Size = New System.Drawing.Size(124, 48)
+        Personal_betriebsratLabel.Size = New System.Drawing.Size(123, 48)
         Personal_betriebsratLabel.TabIndex = 18
         Personal_betriebsratLabel.Text = "Zusammenarbeit" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit dem" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Betriebsrat:"
         '
@@ -5740,7 +5742,7 @@ Partial Class frmMain
         Personal_ausbildungLabel.AutoSize = True
         Personal_ausbildungLabel.Location = New System.Drawing.Point(281, 198)
         Personal_ausbildungLabel.Name = "Personal_ausbildungLabel"
-        Personal_ausbildungLabel.Size = New System.Drawing.Size(91, 16)
+        Personal_ausbildungLabel.Size = New System.Drawing.Size(89, 16)
         Personal_ausbildungLabel.TabIndex = 6
         Personal_ausbildungLabel.Text = "Ausbildung:"
         '
@@ -5749,7 +5751,7 @@ Partial Class frmMain
         Personal_bavLabel.AutoSize = True
         Personal_bavLabel.Location = New System.Drawing.Point(139, 183)
         Personal_bavLabel.Name = "Personal_bavLabel"
-        Personal_bavLabel.Size = New System.Drawing.Size(132, 32)
+        Personal_bavLabel.Size = New System.Drawing.Size(130, 32)
         Personal_bavLabel.TabIndex = 14
         Personal_bavLabel.Text = "Betriebliche" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Altersversorgung:"
         '
@@ -5758,7 +5760,7 @@ Partial Class frmMain
         Personal_lohnsteuerLabel.AutoSize = True
         Personal_lohnsteuerLabel.Location = New System.Drawing.Point(6, 183)
         Personal_lohnsteuerLabel.Name = "Personal_lohnsteuerLabel"
-        Personal_lohnsteuerLabel.Size = New System.Drawing.Size(91, 32)
+        Personal_lohnsteuerLabel.Size = New System.Drawing.Size(89, 32)
         Personal_lohnsteuerLabel.TabIndex = 12
         Personal_lohnsteuerLabel.Text = "Lohnsteuer-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "recht:"
         '
@@ -5767,7 +5769,7 @@ Partial Class frmMain
         Personal_sozversrechtLabel.AutoSize = True
         Personal_sozversrechtLabel.Location = New System.Drawing.Point(281, 112)
         Personal_sozversrechtLabel.Name = "Personal_sozversrechtLabel"
-        Personal_sozversrechtLabel.Size = New System.Drawing.Size(122, 32)
+        Personal_sozversrechtLabel.Size = New System.Drawing.Size(121, 32)
         Personal_sozversrechtLabel.TabIndex = 10
         Personal_sozversrechtLabel.Text = "Sozialverver-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "sicherungsrecht:"
         '
@@ -5776,7 +5778,7 @@ Partial Class frmMain
         Personal_arbeitsrechtLabel.AutoSize = True
         Personal_arbeitsrechtLabel.Location = New System.Drawing.Point(143, 113)
         Personal_arbeitsrechtLabel.Name = "Personal_arbeitsrechtLabel"
-        Personal_arbeitsrechtLabel.Size = New System.Drawing.Size(97, 16)
+        Personal_arbeitsrechtLabel.Size = New System.Drawing.Size(95, 16)
         Personal_arbeitsrechtLabel.TabIndex = 8
         Personal_arbeitsrechtLabel.Text = "Arbeitsrecht:"
         '
@@ -5785,7 +5787,7 @@ Partial Class frmMain
         Personal_tarifvertragLabel.AutoSize = True
         Personal_tarifvertragLabel.Location = New System.Drawing.Point(6, 113)
         Personal_tarifvertragLabel.Name = "Personal_tarifvertragLabel"
-        Personal_tarifvertragLabel.Size = New System.Drawing.Size(103, 16)
+        Personal_tarifvertragLabel.Size = New System.Drawing.Size(102, 16)
         Personal_tarifvertragLabel.TabIndex = 6
         Personal_tarifvertragLabel.Text = "Tarifverträge:"
         '
@@ -5794,7 +5796,7 @@ Partial Class frmMain
         Personal_vertraegeLabel.AutoSize = True
         Personal_vertraegeLabel.Location = New System.Drawing.Point(281, 25)
         Personal_vertraegeLabel.Name = "Personal_vertraegeLabel"
-        Personal_vertraegeLabel.Size = New System.Drawing.Size(112, 32)
+        Personal_vertraegeLabel.Size = New System.Drawing.Size(109, 32)
         Personal_vertraegeLabel.TabIndex = 4
         Personal_vertraegeLabel.Text = "Verträge, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Zeugnisse etc."
         '
@@ -5803,7 +5805,7 @@ Partial Class frmMain
         Personal_melde_bescheinigungswesenLabel.AutoSize = True
         Personal_melde_bescheinigungswesenLabel.Location = New System.Drawing.Point(143, 17)
         Personal_melde_bescheinigungswesenLabel.Name = "Personal_melde_bescheinigungswesenLabel"
-        Personal_melde_bescheinigungswesenLabel.Size = New System.Drawing.Size(125, 48)
+        Personal_melde_bescheinigungswesenLabel.Size = New System.Drawing.Size(123, 48)
         Personal_melde_bescheinigungswesenLabel.TabIndex = 2
         Personal_melde_bescheinigungswesenLabel.Text = "Melde- und  " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Bescheinigungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wesen:"
         '
@@ -5812,7 +5814,7 @@ Partial Class frmMain
         Personal_sachbearbeitungLabel.AutoSize = True
         Personal_sachbearbeitungLabel.Location = New System.Drawing.Point(6, 49)
         Personal_sachbearbeitungLabel.Name = "Personal_sachbearbeitungLabel"
-        Personal_sachbearbeitungLabel.Size = New System.Drawing.Size(132, 16)
+        Personal_sachbearbeitungLabel.Size = New System.Drawing.Size(130, 16)
         Personal_sachbearbeitungLabel.TabIndex = 0
         Personal_sachbearbeitungLabel.Text = "Sachbearbeitung:"
         '
@@ -5821,7 +5823,7 @@ Partial Class frmMain
         Lug_abrechnung_reisekostenLabel.AutoSize = True
         Lug_abrechnung_reisekostenLabel.Location = New System.Drawing.Point(13, 525)
         Lug_abrechnung_reisekostenLabel.Name = "Lug_abrechnung_reisekostenLabel"
-        Lug_abrechnung_reisekostenLabel.Size = New System.Drawing.Size(102, 32)
+        Lug_abrechnung_reisekostenLabel.Size = New System.Drawing.Size(100, 32)
         Lug_abrechnung_reisekostenLabel.TabIndex = 24
         Lug_abrechnung_reisekostenLabel.Text = "Reisekosten-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "abrechnung:"
         '
@@ -5839,7 +5841,7 @@ Partial Class frmMain
         Lug_abrechnung_minijobLabel.AutoSize = True
         Lug_abrechnung_minijobLabel.Location = New System.Drawing.Point(13, 410)
         Lug_abrechnung_minijobLabel.Name = "Lug_abrechnung_minijobLabel"
-        Lug_abrechnung_minijobLabel.Size = New System.Drawing.Size(112, 48)
+        Lug_abrechnung_minijobLabel.Size = New System.Drawing.Size(110, 48)
         Lug_abrechnung_minijobLabel.TabIndex = 22
         Lug_abrechnung_minijobLabel.Text = "Abrechnung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "geringfügige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Beschäftigung:"
         '
@@ -5848,7 +5850,7 @@ Partial Class frmMain
         Lug_abrechnung_sonstigesLabel.AutoSize = True
         Lug_abrechnung_sonstigesLabel.Location = New System.Drawing.Point(13, 658)
         Lug_abrechnung_sonstigesLabel.Name = "Lug_abrechnung_sonstigesLabel"
-        Lug_abrechnung_sonstigesLabel.Size = New System.Drawing.Size(90, 32)
+        Lug_abrechnung_sonstigesLabel.Size = New System.Drawing.Size(87, 32)
         Lug_abrechnung_sonstigesLabel.TabIndex = 14
         Lug_abrechnung_sonstigesLabel.Text = "Sonstige " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Kenntnisse:"
         '
@@ -5857,7 +5859,7 @@ Partial Class frmMain
         Lug_abrechnung_softwareLabel.AutoSize = True
         Lug_abrechnung_softwareLabel.Location = New System.Drawing.Point(11, 580)
         Lug_abrechnung_softwareLabel.Name = "Lug_abrechnung_softwareLabel"
-        Lug_abrechnung_softwareLabel.Size = New System.Drawing.Size(162, 16)
+        Lug_abrechnung_softwareLabel.Size = New System.Drawing.Size(160, 16)
         Lug_abrechnung_softwareLabel.TabIndex = 12
         Lug_abrechnung_softwareLabel.Text = "Abrechnungssoftware:"
         '
@@ -5866,7 +5868,7 @@ Partial Class frmMain
         Lug_abrechnung_tarifvertrag_welcheLabel.AutoSize = True
         Lug_abrechnung_tarifvertrag_welcheLabel.Location = New System.Drawing.Point(11, 322)
         Lug_abrechnung_tarifvertrag_welcheLabel.Name = "Lug_abrechnung_tarifvertrag_welcheLabel"
-        Lug_abrechnung_tarifvertrag_welcheLabel.Size = New System.Drawing.Size(161, 16)
+        Lug_abrechnung_tarifvertrag_welcheLabel.Size = New System.Drawing.Size(158, 16)
         Lug_abrechnung_tarifvertrag_welcheLabel.TabIndex = 10
         Lug_abrechnung_tarifvertrag_welcheLabel.Text = "Welche Tarifverträge:"
         '
@@ -5875,7 +5877,7 @@ Partial Class frmMain
         Lug_abrechnung_tarifvertragLabel.AutoSize = True
         Lug_abrechnung_tarifvertragLabel.Location = New System.Drawing.Point(11, 260)
         Lug_abrechnung_tarifvertragLabel.Name = "Lug_abrechnung_tarifvertragLabel"
-        Lug_abrechnung_tarifvertragLabel.Size = New System.Drawing.Size(132, 32)
+        Lug_abrechnung_tarifvertragLabel.Size = New System.Drawing.Size(130, 32)
         Lug_abrechnung_tarifvertragLabel.TabIndex = 8
         Lug_abrechnung_tarifvertragLabel.Text = "Abrechnung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "nach Tarifvertrag:"
         '
@@ -5884,7 +5886,7 @@ Partial Class frmMain
         Lug_abrechnung_baulohnLabel.AutoSize = True
         Lug_abrechnung_baulohnLabel.Location = New System.Drawing.Point(11, 226)
         Lug_abrechnung_baulohnLabel.Name = "Lug_abrechnung_baulohnLabel"
-        Lug_abrechnung_baulohnLabel.Size = New System.Drawing.Size(70, 16)
+        Lug_abrechnung_baulohnLabel.Size = New System.Drawing.Size(68, 16)
         Lug_abrechnung_baulohnLabel.TabIndex = 6
         Lug_abrechnung_baulohnLabel.Text = "Baulohn:"
         '
@@ -5893,7 +5895,7 @@ Partial Class frmMain
         Lug_abrechnung_anzahlLabel.AutoSize = True
         Lug_abrechnung_anzahlLabel.Location = New System.Drawing.Point(13, 160)
         Lug_abrechnung_anzahlLabel.Name = "Lug_abrechnung_anzahlLabel"
-        Lug_abrechnung_anzahlLabel.Size = New System.Drawing.Size(146, 48)
+        Lug_abrechnung_anzahlLabel.Size = New System.Drawing.Size(142, 48)
         Lug_abrechnung_anzahlLabel.TabIndex = 4
         Lug_abrechnung_anzahlLabel.Text = "Abrechnung für" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Anzahl Mitarbeiter/" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "innen):"
         '
@@ -5902,7 +5904,7 @@ Partial Class frmMain
         Lug_abrechnung_woLabel.AutoSize = True
         Lug_abrechnung_woLabel.Location = New System.Drawing.Point(11, 77)
         Lug_abrechnung_woLabel.Name = "Lug_abrechnung_woLabel"
-        Lug_abrechnung_woLabel.Size = New System.Drawing.Size(104, 32)
+        Lug_abrechnung_woLabel.Size = New System.Drawing.Size(102, 32)
         Lug_abrechnung_woLabel.TabIndex = 2
         Lug_abrechnung_woLabel.Text = "Kenntnisse " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "erworben bei:"
         '
@@ -5911,7 +5913,7 @@ Partial Class frmMain
         Lug_abrechnungLabel.AutoSize = True
         Lug_abrechnungLabel.Location = New System.Drawing.Point(11, 31)
         Lug_abrechnungLabel.Name = "Lug_abrechnungLabel"
-        Lug_abrechnungLabel.Size = New System.Drawing.Size(90, 16)
+        Lug_abrechnungLabel.Size = New System.Drawing.Size(87, 16)
         Lug_abrechnungLabel.TabIndex = 0
         Lug_abrechnungLabel.Text = "Kenntnisse:"
         '
@@ -5920,7 +5922,7 @@ Partial Class frmMain
         Lug_buchhaltung_reisekostenLabel.AutoSize = True
         Lug_buchhaltung_reisekostenLabel.Location = New System.Drawing.Point(6, 426)
         Lug_buchhaltung_reisekostenLabel.Name = "Lug_buchhaltung_reisekostenLabel"
-        Lug_buchhaltung_reisekostenLabel.Size = New System.Drawing.Size(102, 32)
+        Lug_buchhaltung_reisekostenLabel.Size = New System.Drawing.Size(100, 32)
         Lug_buchhaltung_reisekostenLabel.TabIndex = 24
         Lug_buchhaltung_reisekostenLabel.Text = "Reisekosten-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "buchhaltung:"
         '
@@ -5929,7 +5931,7 @@ Partial Class frmMain
         Lug_buchhaltung_provisionLabel.AutoSize = True
         Lug_buchhaltung_provisionLabel.Location = New System.Drawing.Point(6, 376)
         Lug_buchhaltung_provisionLabel.Name = "Lug_buchhaltung_provisionLabel"
-        Lug_buchhaltung_provisionLabel.Size = New System.Drawing.Size(96, 32)
+        Lug_buchhaltung_provisionLabel.Size = New System.Drawing.Size(95, 32)
         Lug_buchhaltung_provisionLabel.TabIndex = 23
         Lug_buchhaltung_provisionLabel.Text = "Provisions-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "buchhaltung:"
         '
@@ -5938,7 +5940,7 @@ Partial Class frmMain
         Lug_buchhaltung_sonstigesLabel.AutoSize = True
         Lug_buchhaltung_sonstigesLabel.Location = New System.Drawing.Point(6, 477)
         Lug_buchhaltung_sonstigesLabel.Name = "Lug_buchhaltung_sonstigesLabel"
-        Lug_buchhaltung_sonstigesLabel.Size = New System.Drawing.Size(90, 32)
+        Lug_buchhaltung_sonstigesLabel.Size = New System.Drawing.Size(87, 32)
         Lug_buchhaltung_sonstigesLabel.TabIndex = 8
         Lug_buchhaltung_sonstigesLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Kenntnisse:"
         '
@@ -5947,7 +5949,7 @@ Partial Class frmMain
         Lug_buchhaltung_minijobLabel.AutoSize = True
         Lug_buchhaltung_minijobLabel.Location = New System.Drawing.Point(6, 318)
         Lug_buchhaltung_minijobLabel.Name = "Lug_buchhaltung_minijobLabel"
-        Lug_buchhaltung_minijobLabel.Size = New System.Drawing.Size(112, 48)
+        Lug_buchhaltung_minijobLabel.Size = New System.Drawing.Size(110, 48)
         Lug_buchhaltung_minijobLabel.TabIndex = 22
         Lug_buchhaltung_minijobLabel.Text = "Buchhaltung" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "geringfügige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Beschäftigung:"
         '
@@ -5956,7 +5958,7 @@ Partial Class frmMain
         Lug_buchhaltung_softwareLabel.AutoSize = True
         Lug_buchhaltung_softwareLabel.Location = New System.Drawing.Point(2, 225)
         Lug_buchhaltung_softwareLabel.Name = "Lug_buchhaltung_softwareLabel"
-        Lug_buchhaltung_softwareLabel.Size = New System.Drawing.Size(107, 32)
+        Lug_buchhaltung_softwareLabel.Size = New System.Drawing.Size(105, 32)
         Lug_buchhaltung_softwareLabel.TabIndex = 6
         Lug_buchhaltung_softwareLabel.Text = "Buchhaltungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "software:"
         '
@@ -5965,7 +5967,7 @@ Partial Class frmMain
         Lug_buchhaltung_anzahlLabel.AutoSize = True
         Lug_buchhaltung_anzahlLabel.Location = New System.Drawing.Point(2, 159)
         Lug_buchhaltung_anzahlLabel.Name = "Lug_buchhaltung_anzahlLabel"
-        Lug_buchhaltung_anzahlLabel.Size = New System.Drawing.Size(146, 48)
+        Lug_buchhaltung_anzahlLabel.Size = New System.Drawing.Size(142, 48)
         Lug_buchhaltung_anzahlLabel.TabIndex = 4
         Lug_buchhaltung_anzahlLabel.Text = "Buchhaltung für " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Anzahl Mitarbeiter/" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "innen):"
         '
@@ -5974,7 +5976,7 @@ Partial Class frmMain
         Lug_buchhaltung_woLabel.AutoSize = True
         Lug_buchhaltung_woLabel.Location = New System.Drawing.Point(6, 77)
         Lug_buchhaltung_woLabel.Name = "Lug_buchhaltung_woLabel"
-        Lug_buchhaltung_woLabel.Size = New System.Drawing.Size(104, 32)
+        Lug_buchhaltung_woLabel.Size = New System.Drawing.Size(102, 32)
         Lug_buchhaltung_woLabel.TabIndex = 2
         Lug_buchhaltung_woLabel.Text = "Kenntnisse" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "erworben bei:"
         '
@@ -5983,7 +5985,7 @@ Partial Class frmMain
         Lug_buchhaltungLabel.AutoSize = True
         Lug_buchhaltungLabel.Location = New System.Drawing.Point(6, 30)
         Lug_buchhaltungLabel.Name = "Lug_buchhaltungLabel"
-        Lug_buchhaltungLabel.Size = New System.Drawing.Size(90, 16)
+        Lug_buchhaltungLabel.Size = New System.Drawing.Size(87, 16)
         Lug_buchhaltungLabel.TabIndex = 0
         Lug_buchhaltungLabel.Text = "Kenntnisse:"
         '
@@ -6001,7 +6003,7 @@ Partial Class frmMain
         Technik_turbocadLabel.AutoSize = True
         Technik_turbocadLabel.Location = New System.Drawing.Point(105, 204)
         Technik_turbocadLabel.Name = "Technik_turbocadLabel"
-        Technik_turbocadLabel.Size = New System.Drawing.Size(89, 16)
+        Technik_turbocadLabel.Size = New System.Drawing.Size(84, 16)
         Technik_turbocadLabel.TabIndex = 26
         Technik_turbocadLabel.Text = "TurboCAD:"
         '
@@ -6010,7 +6012,7 @@ Partial Class frmMain
         Technik_solidworksLabel.AutoSize = True
         Technik_solidworksLabel.Location = New System.Drawing.Point(6, 204)
         Technik_solidworksLabel.Name = "Technik_solidworksLabel"
-        Technik_solidworksLabel.Size = New System.Drawing.Size(90, 16)
+        Technik_solidworksLabel.Size = New System.Drawing.Size(88, 16)
         Technik_solidworksLabel.TabIndex = 24
         Technik_solidworksLabel.Text = "Solidworks:"
         '
@@ -6019,7 +6021,7 @@ Partial Class frmMain
         Technik_solidedgeLabel.AutoSize = True
         Technik_solidedgeLabel.Location = New System.Drawing.Point(291, 145)
         Technik_solidedgeLabel.Name = "Technik_solidedgeLabel"
-        Technik_solidedgeLabel.Size = New System.Drawing.Size(88, 16)
+        Technik_solidedgeLabel.Size = New System.Drawing.Size(85, 16)
         Technik_solidedgeLabel.TabIndex = 22
         Technik_solidedgeLabel.Text = "SolidEdge:"
         '
@@ -6028,7 +6030,7 @@ Partial Class frmMain
         Technik_microstationLabel.AutoSize = True
         Technik_microstationLabel.Location = New System.Drawing.Point(192, 145)
         Technik_microstationLabel.Name = "Technik_microstationLabel"
-        Technik_microstationLabel.Size = New System.Drawing.Size(98, 16)
+        Technik_microstationLabel.Size = New System.Drawing.Size(96, 16)
         Technik_microstationLabel.TabIndex = 20
         Technik_microstationLabel.Text = "Microstation:"
         '
@@ -6037,7 +6039,7 @@ Partial Class frmMain
         Technik_megacadLabel.AutoSize = True
         Technik_megacadLabel.Location = New System.Drawing.Point(105, 145)
         Technik_megacadLabel.Name = "Technik_megacadLabel"
-        Technik_megacadLabel.Size = New System.Drawing.Size(88, 16)
+        Technik_megacadLabel.Size = New System.Drawing.Size(82, 16)
         Technik_megacadLabel.TabIndex = 18
         Technik_megacadLabel.Text = "MegaCAD:"
         '
@@ -6046,7 +6048,7 @@ Partial Class frmMain
         Technik_inventorLabel.AutoSize = True
         Technik_inventorLabel.Location = New System.Drawing.Point(6, 145)
         Technik_inventorLabel.Name = "Technik_inventorLabel"
-        Technik_inventorLabel.Size = New System.Drawing.Size(69, 16)
+        Technik_inventorLabel.Size = New System.Drawing.Size(67, 16)
         Technik_inventorLabel.TabIndex = 16
         Technik_inventorLabel.Text = "Inventor:"
         '
@@ -6055,7 +6057,7 @@ Partial Class frmMain
         Technik_hicadLabel.AutoSize = True
         Technik_hicadLabel.Location = New System.Drawing.Point(291, 89)
         Technik_hicadLabel.Name = "Technik_hicadLabel"
-        Technik_hicadLabel.Size = New System.Drawing.Size(64, 16)
+        Technik_hicadLabel.Size = New System.Drawing.Size(58, 16)
         Technik_hicadLabel.TabIndex = 14
         Technik_hicadLabel.Text = "HiCAD:"
         '
@@ -6064,7 +6066,7 @@ Partial Class frmMain
         Technik_intellicadLabel.AutoSize = True
         Technik_intellicadLabel.Location = New System.Drawing.Point(195, 89)
         Technik_intellicadLabel.Name = "Technik_intellicadLabel"
-        Technik_intellicadLabel.Size = New System.Drawing.Size(86, 16)
+        Technik_intellicadLabel.Size = New System.Drawing.Size(80, 16)
         Technik_intellicadLabel.TabIndex = 12
         Technik_intellicadLabel.Text = "IntelliCAD:"
         '
@@ -6073,7 +6075,7 @@ Partial Class frmMain
         Technik_autodeskLabel.AutoSize = True
         Technik_autodeskLabel.Location = New System.Drawing.Point(105, 89)
         Technik_autodeskLabel.Name = "Technik_autodeskLabel"
-        Technik_autodeskLabel.Size = New System.Drawing.Size(82, 16)
+        Technik_autodeskLabel.Size = New System.Drawing.Size(79, 16)
         Technik_autodeskLabel.TabIndex = 10
         Technik_autodeskLabel.Text = "AutoDesk:"
         '
@@ -6082,7 +6084,7 @@ Partial Class frmMain
         Technik_autocad3dLabel.AutoSize = True
         Technik_autocad3dLabel.Location = New System.Drawing.Point(6, 89)
         Technik_autocad3dLabel.Name = "Technik_autocad3dLabel"
-        Technik_autocad3dLabel.Size = New System.Drawing.Size(106, 16)
+        Technik_autocad3dLabel.Size = New System.Drawing.Size(97, 16)
         Technik_autocad3dLabel.TabIndex = 8
         Technik_autocad3dLabel.Text = "AutoCAD 3D:"
         '
@@ -6091,7 +6093,7 @@ Partial Class frmMain
         Technik_autocad2dLabel.AutoSize = True
         Technik_autocad2dLabel.Location = New System.Drawing.Point(291, 32)
         Technik_autocad2dLabel.Name = "Technik_autocad2dLabel"
-        Technik_autocad2dLabel.Size = New System.Drawing.Size(106, 16)
+        Technik_autocad2dLabel.Size = New System.Drawing.Size(97, 16)
         Technik_autocad2dLabel.TabIndex = 6
         Technik_autocad2dLabel.Text = "AutoCAD 2D:"
         '
@@ -6100,7 +6102,7 @@ Partial Class frmMain
         Technik_arcadLabel.AutoSize = True
         Technik_arcadLabel.Location = New System.Drawing.Point(195, 32)
         Technik_arcadLabel.Name = "Technik_arcadLabel"
-        Technik_arcadLabel.Size = New System.Drawing.Size(64, 16)
+        Technik_arcadLabel.Size = New System.Drawing.Size(58, 16)
         Technik_arcadLabel.TabIndex = 4
         Technik_arcadLabel.Text = "ArCAD:"
         '
@@ -6109,7 +6111,7 @@ Partial Class frmMain
         Technik_allplanLabel.AutoSize = True
         Technik_allplanLabel.Location = New System.Drawing.Point(105, 32)
         Technik_allplanLabel.Name = "Technik_allplanLabel"
-        Technik_allplanLabel.Size = New System.Drawing.Size(64, 16)
+        Technik_allplanLabel.Size = New System.Drawing.Size(61, 16)
         Technik_allplanLabel.TabIndex = 2
         Technik_allplanLabel.Text = "AllPlan:"
         '
@@ -6118,7 +6120,7 @@ Partial Class frmMain
         Technik_3dcadLabel.AutoSize = True
         Technik_3dcadLabel.Location = New System.Drawing.Point(6, 32)
         Technik_3dcadLabel.Name = "Technik_3dcadLabel"
-        Technik_3dcadLabel.Size = New System.Drawing.Size(69, 16)
+        Technik_3dcadLabel.Size = New System.Drawing.Size(62, 16)
         Technik_3dcadLabel.TabIndex = 0
         Technik_3dcadLabel.Text = "3DCAD:"
         '
@@ -6127,7 +6129,7 @@ Partial Class frmMain
         Technik_sonstigeLabel.AutoSize = True
         Technik_sonstigeLabel.Location = New System.Drawing.Point(6, 364)
         Technik_sonstigeLabel.Name = "Technik_sonstigeLabel"
-        Technik_sonstigeLabel.Size = New System.Drawing.Size(83, 16)
+        Technik_sonstigeLabel.Size = New System.Drawing.Size(81, 16)
         Technik_sonstigeLabel.TabIndex = 30
         Technik_sonstigeLabel.Text = "Sonstiges:"
         '
@@ -6136,7 +6138,7 @@ Partial Class frmMain
         Technik_brandschutzLabel.AutoSize = True
         Technik_brandschutzLabel.Location = New System.Drawing.Point(288, 298)
         Technik_brandschutzLabel.Name = "Technik_brandschutzLabel"
-        Technik_brandschutzLabel.Size = New System.Drawing.Size(98, 16)
+        Technik_brandschutzLabel.Size = New System.Drawing.Size(96, 16)
         Technik_brandschutzLabel.TabIndex = 28
         Technik_brandschutzLabel.Text = "Brandschutz:"
         '
@@ -6145,7 +6147,7 @@ Partial Class frmMain
         Technik_bauplanungLabel.AutoSize = True
         Technik_bauplanungLabel.Location = New System.Drawing.Point(158, 298)
         Technik_bauplanungLabel.Name = "Technik_bauplanungLabel"
-        Technik_bauplanungLabel.Size = New System.Drawing.Size(96, 16)
+        Technik_bauplanungLabel.Size = New System.Drawing.Size(94, 16)
         Technik_bauplanungLabel.TabIndex = 26
         Technik_bauplanungLabel.Text = "Bauplanung:"
         '
@@ -6154,7 +6156,7 @@ Partial Class frmMain
         Technik_fertigungLabel.AutoSize = True
         Technik_fertigungLabel.Location = New System.Drawing.Point(6, 298)
         Technik_fertigungLabel.Name = "Technik_fertigungLabel"
-        Technik_fertigungLabel.Size = New System.Drawing.Size(79, 16)
+        Technik_fertigungLabel.Size = New System.Drawing.Size(77, 16)
         Technik_fertigungLabel.TabIndex = 24
         Technik_fertigungLabel.Text = "Fertigung:"
         '
@@ -6163,7 +6165,7 @@ Partial Class frmMain
         Technik_cad3dLabel.AutoSize = True
         Technik_cad3dLabel.Location = New System.Drawing.Point(288, 250)
         Technik_cad3dLabel.Name = "Technik_cad3dLabel"
-        Technik_cad3dLabel.Size = New System.Drawing.Size(74, 16)
+        Technik_cad3dLabel.Size = New System.Drawing.Size(66, 16)
         Technik_cad3dLabel.TabIndex = 22
         Technik_cad3dLabel.Text = "CAD 3D:"
         '
@@ -6172,7 +6174,7 @@ Partial Class frmMain
         Technik_cad2dLabel.AutoSize = True
         Technik_cad2dLabel.Location = New System.Drawing.Point(158, 250)
         Technik_cad2dLabel.Name = "Technik_cad2dLabel"
-        Technik_cad2dLabel.Size = New System.Drawing.Size(74, 16)
+        Technik_cad2dLabel.Size = New System.Drawing.Size(66, 16)
         Technik_cad2dLabel.TabIndex = 20
         Technik_cad2dLabel.Text = "CAD 2D:"
         '
@@ -6181,7 +6183,7 @@ Partial Class frmMain
         Technik_cncLabel.AutoSize = True
         Technik_cncLabel.Location = New System.Drawing.Point(6, 250)
         Technik_cncLabel.Name = "Technik_cncLabel"
-        Technik_cncLabel.Size = New System.Drawing.Size(49, 16)
+        Technik_cncLabel.Size = New System.Drawing.Size(43, 16)
         Technik_cncLabel.TabIndex = 18
         Technik_cncLabel.Text = "CNC:"
         '
@@ -6190,7 +6192,7 @@ Partial Class frmMain
         Technik_steuerungLabel.AutoSize = True
         Technik_steuerungLabel.Location = New System.Drawing.Point(288, 178)
         Technik_steuerungLabel.Name = "Technik_steuerungLabel"
-        Technik_steuerungLabel.Size = New System.Drawing.Size(125, 32)
+        Technik_steuerungLabel.Size = New System.Drawing.Size(123, 32)
         Technik_steuerungLabel.TabIndex = 16
         Technik_steuerungLabel.Text = "Steuerung," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Automatisierung:"
         '
@@ -6199,7 +6201,7 @@ Partial Class frmMain
         Technik_projekt_auslandLabel.AutoSize = True
         Technik_projekt_auslandLabel.Location = New System.Drawing.Point(158, 178)
         Technik_projekt_auslandLabel.Name = "Technik_projekt_auslandLabel"
-        Technik_projekt_auslandLabel.Size = New System.Drawing.Size(136, 32)
+        Technik_projekt_auslandLabel.Size = New System.Drawing.Size(134, 32)
         Technik_projekt_auslandLabel.TabIndex = 14
         Technik_projekt_auslandLabel.Text = "Projektbegleitung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ausland:"
         '
@@ -6208,7 +6210,7 @@ Partial Class frmMain
         Technik_projekt_inlandLabel.AutoSize = True
         Technik_projekt_inlandLabel.Location = New System.Drawing.Point(6, 178)
         Technik_projekt_inlandLabel.Name = "Technik_projekt_inlandLabel"
-        Technik_projekt_inlandLabel.Size = New System.Drawing.Size(136, 32)
+        Technik_projekt_inlandLabel.Size = New System.Drawing.Size(134, 32)
         Technik_projekt_inlandLabel.TabIndex = 12
         Technik_projekt_inlandLabel.Text = "Projektbegleitung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Inland:"
         '
@@ -6217,7 +6219,7 @@ Partial Class frmMain
         Technik_stücklistenLabel.AutoSize = True
         Technik_stücklistenLabel.Location = New System.Drawing.Point(291, 123)
         Technik_stücklistenLabel.Name = "Technik_stücklistenLabel"
-        Technik_stücklistenLabel.Size = New System.Drawing.Size(89, 16)
+        Technik_stücklistenLabel.Size = New System.Drawing.Size(87, 16)
         Technik_stücklistenLabel.TabIndex = 10
         Technik_stücklistenLabel.Text = "Stücklisten:"
         '
@@ -6226,7 +6228,7 @@ Partial Class frmMain
         Technik_techn_zeichnungenLabel.AutoSize = True
         Technik_techn_zeichnungenLabel.Location = New System.Drawing.Point(158, 108)
         Technik_techn_zeichnungenLabel.Name = "Technik_techn_zeichnungenLabel"
-        Technik_techn_zeichnungenLabel.Size = New System.Drawing.Size(102, 32)
+        Technik_techn_zeichnungenLabel.Size = New System.Drawing.Size(100, 32)
         Technik_techn_zeichnungenLabel.TabIndex = 8
         Technik_techn_zeichnungenLabel.Text = "Technische" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Zeichnungen:"
         '
@@ -6235,7 +6237,7 @@ Partial Class frmMain
         Technik_dokumentationsunterlagenLabel.AutoSize = True
         Technik_dokumentationsunterlagenLabel.Location = New System.Drawing.Point(6, 108)
         Technik_dokumentationsunterlagenLabel.Name = "Technik_dokumentationsunterlagenLabel"
-        Technik_dokumentationsunterlagenLabel.Size = New System.Drawing.Size(126, 32)
+        Technik_dokumentationsunterlagenLabel.Size = New System.Drawing.Size(124, 32)
         Technik_dokumentationsunterlagenLabel.TabIndex = 6
         Technik_dokumentationsunterlagenLabel.Text = "Dokumentations-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "unterlagen:"
         '
@@ -6244,7 +6246,7 @@ Partial Class frmMain
         Technik_konstruktionLabel.AutoSize = True
         Technik_konstruktionLabel.Location = New System.Drawing.Point(287, 42)
         Technik_konstruktionLabel.Name = "Technik_konstruktionLabel"
-        Technik_konstruktionLabel.Size = New System.Drawing.Size(99, 16)
+        Technik_konstruktionLabel.Size = New System.Drawing.Size(96, 16)
         Technik_konstruktionLabel.TabIndex = 4
         Technik_konstruktionLabel.Text = "Konstruktion:"
         '
@@ -6253,7 +6255,7 @@ Partial Class frmMain
         Technik_anlagenbauLabel.AutoSize = True
         Technik_anlagenbauLabel.Location = New System.Drawing.Point(158, 42)
         Technik_anlagenbauLabel.Name = "Technik_anlagenbauLabel"
-        Technik_anlagenbauLabel.Size = New System.Drawing.Size(97, 16)
+        Technik_anlagenbauLabel.Size = New System.Drawing.Size(95, 16)
         Technik_anlagenbauLabel.TabIndex = 2
         Technik_anlagenbauLabel.Text = "Anlagenbau:"
         '
@@ -6262,7 +6264,7 @@ Partial Class frmMain
         Technik_maschinenbauLabel.AutoSize = True
         Technik_maschinenbauLabel.Location = New System.Drawing.Point(4, 42)
         Technik_maschinenbauLabel.Name = "Technik_maschinenbauLabel"
-        Technik_maschinenbauLabel.Size = New System.Drawing.Size(114, 16)
+        Technik_maschinenbauLabel.Size = New System.Drawing.Size(112, 16)
         Technik_maschinenbauLabel.TabIndex = 0
         Technik_maschinenbauLabel.Text = "Maschinenbau:"
         '
@@ -6271,7 +6273,7 @@ Partial Class frmMain
         It_sonstige_datenbankenLabel.AutoSize = True
         It_sonstige_datenbankenLabel.Location = New System.Drawing.Point(6, 285)
         It_sonstige_datenbankenLabel.Name = "It_sonstige_datenbankenLabel"
-        It_sonstige_datenbankenLabel.Size = New System.Drawing.Size(75, 48)
+        It_sonstige_datenbankenLabel.Size = New System.Drawing.Size(73, 48)
         It_sonstige_datenbankenLabel.TabIndex = 28
         It_sonstige_datenbankenLabel.Text = "Sonstige " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Daten-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "banken:"
         '
@@ -6280,7 +6282,7 @@ Partial Class frmMain
         It_visualfoxproLabel.AutoSize = True
         It_visualfoxproLabel.Location = New System.Drawing.Point(104, 206)
         It_visualfoxproLabel.Name = "It_visualfoxproLabel"
-        It_visualfoxproLabel.Size = New System.Drawing.Size(64, 32)
+        It_visualfoxproLabel.Size = New System.Drawing.Size(61, 32)
         It_visualfoxproLabel.TabIndex = 26
         It_visualfoxproLabel.Text = "Visual" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FoxPro:"
         '
@@ -6289,7 +6291,7 @@ Partial Class frmMain
         It_postgresqlLabel.AutoSize = True
         It_postgresqlLabel.Location = New System.Drawing.Point(7, 221)
         It_postgresqlLabel.Name = "It_postgresqlLabel"
-        It_postgresqlLabel.Size = New System.Drawing.Size(100, 16)
+        It_postgresqlLabel.Size = New System.Drawing.Size(95, 16)
         It_postgresqlLabel.TabIndex = 24
         It_postgresqlLabel.Text = "PostgreSQL:"
         '
@@ -6298,7 +6300,7 @@ Partial Class frmMain
         It_oracleLabel.AutoSize = True
         It_oracleLabel.Location = New System.Drawing.Point(300, 150)
         It_oracleLabel.Name = "It_oracleLabel"
-        It_oracleLabel.Size = New System.Drawing.Size(60, 16)
+        It_oracleLabel.Size = New System.Drawing.Size(58, 16)
         It_oracleLabel.TabIndex = 22
         It_oracleLabel.Text = "Oracle:"
         '
@@ -6307,7 +6309,7 @@ Partial Class frmMain
         It_mysqlLabel.AutoSize = True
         It_mysqlLabel.Location = New System.Drawing.Point(208, 150)
         It_mysqlLabel.Name = "It_mysqlLabel"
-        It_mysqlLabel.Size = New System.Drawing.Size(66, 16)
+        It_mysqlLabel.Size = New System.Drawing.Size(61, 16)
         It_mysqlLabel.TabIndex = 20
         It_mysqlLabel.Text = "MySQL:"
         '
@@ -6316,7 +6318,7 @@ Partial Class frmMain
         It_mssql_serverLabel.AutoSize = True
         It_mssql_serverLabel.Location = New System.Drawing.Point(104, 135)
         It_mssql_serverLabel.Name = "It_mssql_serverLabel"
-        It_mssql_serverLabel.Size = New System.Drawing.Size(98, 32)
+        It_mssql_serverLabel.Size = New System.Drawing.Size(92, 32)
         It_mssql_serverLabel.TabIndex = 18
         It_mssql_serverLabel.Text = "Microsoft" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SQL-Server:"
         '
@@ -6325,7 +6327,7 @@ Partial Class frmMain
         It_maxdbLabel.AutoSize = True
         It_maxdbLabel.Location = New System.Drawing.Point(7, 150)
         It_maxdbLabel.Name = "It_maxdbLabel"
-        It_maxdbLabel.Size = New System.Drawing.Size(65, 16)
+        It_maxdbLabel.Size = New System.Drawing.Size(61, 16)
         It_maxdbLabel.TabIndex = 16
         It_maxdbLabel.Text = "MaxDB:"
         '
@@ -6334,7 +6336,7 @@ Partial Class frmMain
         It_interbaseLabel.AutoSize = True
         It_interbaseLabel.Location = New System.Drawing.Point(300, 86)
         It_interbaseLabel.Name = "It_interbaseLabel"
-        It_interbaseLabel.Size = New System.Drawing.Size(79, 16)
+        It_interbaseLabel.Size = New System.Drawing.Size(77, 16)
         It_interbaseLabel.TabIndex = 14
         It_interbaseLabel.Text = "Interbase:"
         '
@@ -6343,7 +6345,7 @@ Partial Class frmMain
         It_ingresLabel.AutoSize = True
         It_ingresLabel.Location = New System.Drawing.Point(208, 86)
         It_ingresLabel.Name = "It_ingresLabel"
-        It_ingresLabel.Size = New System.Drawing.Size(57, 16)
+        It_ingresLabel.Size = New System.Drawing.Size(55, 16)
         It_ingresLabel.TabIndex = 12
         It_ingresLabel.Text = "Ingres:"
         '
@@ -6352,7 +6354,7 @@ Partial Class frmMain
         It_informixLabel.AutoSize = True
         It_informixLabel.Location = New System.Drawing.Point(104, 86)
         It_informixLabel.Name = "It_informixLabel"
-        It_informixLabel.Size = New System.Drawing.Size(67, 16)
+        It_informixLabel.Size = New System.Drawing.Size(65, 16)
         It_informixLabel.TabIndex = 10
         It_informixLabel.Text = "Informix:"
         '
@@ -6361,7 +6363,7 @@ Partial Class frmMain
         It_imsLabel.AutoSize = True
         It_imsLabel.Location = New System.Drawing.Point(7, 86)
         It_imsLabel.Name = "It_imsLabel"
-        It_imsLabel.Size = New System.Drawing.Size(42, 16)
+        It_imsLabel.Size = New System.Drawing.Size(38, 16)
         It_imsLabel.TabIndex = 8
         It_imsLabel.Text = "IMS:"
         '
@@ -6370,7 +6372,7 @@ Partial Class frmMain
         It_filemakerLabel.AutoSize = True
         It_filemakerLabel.Location = New System.Drawing.Point(300, 31)
         It_filemakerLabel.Name = "It_filemakerLabel"
-        It_filemakerLabel.Size = New System.Drawing.Size(83, 16)
+        It_filemakerLabel.Size = New System.Drawing.Size(81, 16)
         It_filemakerLabel.TabIndex = 6
         It_filemakerLabel.Text = "Filemaker:"
         '
@@ -6379,7 +6381,7 @@ Partial Class frmMain
         It_db2Label.AutoSize = True
         It_db2Label.Location = New System.Drawing.Point(208, 31)
         It_db2Label.Name = "It_db2Label"
-        It_db2Label.Size = New System.Drawing.Size(45, 16)
+        It_db2Label.Size = New System.Drawing.Size(41, 16)
         It_db2Label.TabIndex = 4
         It_db2Label.Text = "DB2:"
         '
@@ -6388,7 +6390,7 @@ Partial Class frmMain
         It_berkeleyLabel.AutoSize = True
         It_berkeleyLabel.Location = New System.Drawing.Point(104, 32)
         It_berkeleyLabel.Name = "It_berkeleyLabel"
-        It_berkeleyLabel.Size = New System.Drawing.Size(104, 16)
+        It_berkeleyLabel.Size = New System.Drawing.Size(99, 16)
         It_berkeleyLabel.TabIndex = 2
         It_berkeleyLabel.Text = "Berkeley DB:"
         '
@@ -6397,7 +6399,7 @@ Partial Class frmMain
         It_adabasLabel.AutoSize = True
         It_adabasLabel.Location = New System.Drawing.Point(6, 31)
         It_adabasLabel.Name = "It_adabasLabel"
-        It_adabasLabel.Size = New System.Drawing.Size(68, 16)
+        It_adabasLabel.Size = New System.Drawing.Size(66, 16)
         It_adabasLabel.TabIndex = 0
         It_adabasLabel.Text = "Adabas:"
         '
@@ -6406,7 +6408,7 @@ Partial Class frmMain
         It_programmiersprachen_sonstigeLabel.AutoSize = True
         It_programmiersprachen_sonstigeLabel.Location = New System.Drawing.Point(104, 142)
         It_programmiersprachen_sonstigeLabel.Name = "It_programmiersprachen_sonstigeLabel"
-        It_programmiersprachen_sonstigeLabel.Size = New System.Drawing.Size(104, 48)
+        It_programmiersprachen_sonstigeLabel.Size = New System.Drawing.Size(102, 48)
         It_programmiersprachen_sonstigeLabel.TabIndex = 18
         It_programmiersprachen_sonstigeLabel.Text = "Sonstige " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Programmier-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "sprachen:"
         '
@@ -6415,7 +6417,7 @@ Partial Class frmMain
         It_javascriptLabel.AutoSize = True
         It_javascriptLabel.Location = New System.Drawing.Point(7, 142)
         It_javascriptLabel.Name = "It_javascriptLabel"
-        It_javascriptLabel.Size = New System.Drawing.Size(88, 16)
+        It_javascriptLabel.Size = New System.Drawing.Size(86, 16)
         It_javascriptLabel.TabIndex = 16
         It_javascriptLabel.Text = "JavaScript:"
         '
@@ -6424,7 +6426,7 @@ Partial Class frmMain
         It_phpLabel.AutoSize = True
         It_phpLabel.Location = New System.Drawing.Point(300, 82)
         It_phpLabel.Name = "It_phpLabel"
-        It_phpLabel.Size = New System.Drawing.Size(47, 16)
+        It_phpLabel.Size = New System.Drawing.Size(43, 16)
         It_phpLabel.TabIndex = 14
         It_phpLabel.Text = "PHP:"
         '
@@ -6433,7 +6435,7 @@ Partial Class frmMain
         It_htmlLabel.AutoSize = True
         It_htmlLabel.Location = New System.Drawing.Point(206, 82)
         It_htmlLabel.Name = "It_htmlLabel"
-        It_htmlLabel.Size = New System.Drawing.Size(45, 16)
+        It_htmlLabel.Size = New System.Drawing.Size(43, 16)
         It_htmlLabel.TabIndex = 12
         It_htmlLabel.Text = "Html:"
         '
@@ -6442,7 +6444,7 @@ Partial Class frmMain
         It_javaLabel.AutoSize = True
         It_javaLabel.Location = New System.Drawing.Point(104, 82)
         It_javaLabel.Name = "It_javaLabel"
-        It_javaLabel.Size = New System.Drawing.Size(47, 16)
+        It_javaLabel.Size = New System.Drawing.Size(46, 16)
         It_javaLabel.TabIndex = 10
         It_javaLabel.Text = "Java:"
         '
@@ -6451,7 +6453,7 @@ Partial Class frmMain
         It_vbaLabel.AutoSize = True
         It_vbaLabel.Location = New System.Drawing.Point(7, 82)
         It_vbaLabel.Name = "It_vbaLabel"
-        It_vbaLabel.Size = New System.Drawing.Size(46, 16)
+        It_vbaLabel.Size = New System.Drawing.Size(42, 16)
         It_vbaLabel.TabIndex = 8
         It_vbaLabel.Text = "VBA:"
         '
@@ -6460,7 +6462,7 @@ Partial Class frmMain
         It_vb_netLabel.AutoSize = True
         It_vb_netLabel.Location = New System.Drawing.Point(300, 25)
         It_vb_netLabel.Name = "It_vb_netLabel"
-        It_vb_netLabel.Size = New System.Drawing.Size(73, 16)
+        It_vb_netLabel.Size = New System.Drawing.Size(67, 16)
         It_vb_netLabel.TabIndex = 6
         It_vb_netLabel.Text = "VB NET:"
         '
@@ -6469,7 +6471,7 @@ Partial Class frmMain
         It_csharpLabel.AutoSize = True
         It_csharpLabel.Location = New System.Drawing.Point(206, 25)
         It_csharpLabel.Name = "It_csharpLabel"
-        It_csharpLabel.Size = New System.Drawing.Size(34, 16)
+        It_csharpLabel.Size = New System.Drawing.Size(30, 16)
         It_csharpLabel.TabIndex = 4
         It_csharpLabel.Text = "C#:"
         '
@@ -6478,7 +6480,7 @@ Partial Class frmMain
         It_cplusLabel.AutoSize = True
         It_cplusLabel.Location = New System.Drawing.Point(104, 25)
         It_cplusLabel.Name = "It_cplusLabel"
-        It_cplusLabel.Size = New System.Drawing.Size(35, 16)
+        It_cplusLabel.Size = New System.Drawing.Size(30, 16)
         It_cplusLabel.TabIndex = 2
         It_cplusLabel.Text = "C+:"
         '
@@ -6487,7 +6489,7 @@ Partial Class frmMain
         It_cLabel.AutoSize = True
         It_cLabel.Location = New System.Drawing.Point(6, 25)
         It_cLabel.Name = "It_cLabel"
-        It_cLabel.Size = New System.Drawing.Size(25, 16)
+        It_cLabel.Size = New System.Drawing.Size(22, 16)
         It_cLabel.TabIndex = 0
         It_cLabel.Text = "C:"
         '
@@ -6496,7 +6498,7 @@ Partial Class frmMain
         It_programmierung_sonstigeLabel.AutoSize = True
         It_programmierung_sonstigeLabel.Location = New System.Drawing.Point(104, 156)
         It_programmierung_sonstigeLabel.Name = "It_programmierung_sonstigeLabel"
-        It_programmierung_sonstigeLabel.Size = New System.Drawing.Size(104, 48)
+        It_programmierung_sonstigeLabel.Size = New System.Drawing.Size(102, 48)
         It_programmierung_sonstigeLabel.TabIndex = 14
         It_programmierung_sonstigeLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Programmier-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "kenntnisse:"
         '
@@ -6505,7 +6507,7 @@ Partial Class frmMain
         It_appprogrammierungLabel.AutoSize = True
         It_appprogrammierungLabel.Location = New System.Drawing.Point(7, 156)
         It_appprogrammierungLabel.Name = "It_appprogrammierungLabel"
-        It_appprogrammierungLabel.Size = New System.Drawing.Size(101, 32)
+        It_appprogrammierungLabel.Size = New System.Drawing.Size(99, 32)
         It_appprogrammierungLabel.TabIndex = 12
         It_appprogrammierungLabel.Text = "Appprogram-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mierung:"
         '
@@ -6514,7 +6516,7 @@ Partial Class frmMain
         It_programmierung_maschinenLabel.AutoSize = True
         It_programmierung_maschinenLabel.Location = New System.Drawing.Point(289, 90)
         It_programmierung_maschinenLabel.Name = "It_programmierung_maschinenLabel"
-        It_programmierung_maschinenLabel.Size = New System.Drawing.Size(126, 32)
+        It_programmierung_maschinenLabel.Size = New System.Drawing.Size(125, 32)
         It_programmierung_maschinenLabel.TabIndex = 10
         It_programmierung_maschinenLabel.Text = "Maschinen-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "programmierung:"
         '
@@ -6523,7 +6525,7 @@ Partial Class frmMain
         It_programmierung_serversideLabel.AutoSize = True
         It_programmierung_serversideLabel.Location = New System.Drawing.Point(147, 90)
         It_programmierung_serversideLabel.Name = "It_programmierung_serversideLabel"
-        It_programmierung_serversideLabel.Size = New System.Drawing.Size(128, 32)
+        It_programmierung_serversideLabel.Size = New System.Drawing.Size(126, 32)
         It_programmierung_serversideLabel.TabIndex = 2
         It_programmierung_serversideLabel.Text = "Serverseitige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Programmierung:"
         '
@@ -6532,7 +6534,7 @@ Partial Class frmMain
         It_programmierung_clientsideLabel.AutoSize = True
         It_programmierung_clientsideLabel.Location = New System.Drawing.Point(7, 90)
         It_programmierung_clientsideLabel.Name = "It_programmierung_clientsideLabel"
-        It_programmierung_clientsideLabel.Size = New System.Drawing.Size(128, 32)
+        It_programmierung_clientsideLabel.Size = New System.Drawing.Size(126, 32)
         It_programmierung_clientsideLabel.TabIndex = 6
         It_programmierung_clientsideLabel.Text = "Clientseitige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Programmierung:"
         '
@@ -6541,7 +6543,7 @@ Partial Class frmMain
         It_webprogrammierungLabel.AutoSize = True
         It_webprogrammierungLabel.Location = New System.Drawing.Point(289, 26)
         It_webprogrammierungLabel.Name = "It_webprogrammierungLabel"
-        It_webprogrammierungLabel.Size = New System.Drawing.Size(105, 32)
+        It_webprogrammierungLabel.Size = New System.Drawing.Size(103, 32)
         It_webprogrammierungLabel.TabIndex = 4
         It_webprogrammierungLabel.Text = "Webprogram-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mierung:"
         '
@@ -6550,7 +6552,7 @@ Partial Class frmMain
         It_datenbankprogrammierungLabel.AutoSize = True
         It_datenbankprogrammierungLabel.Location = New System.Drawing.Point(145, 26)
         It_datenbankprogrammierungLabel.Name = "It_datenbankprogrammierungLabel"
-        It_datenbankprogrammierungLabel.Size = New System.Drawing.Size(126, 32)
+        It_datenbankprogrammierungLabel.Size = New System.Drawing.Size(125, 32)
         It_datenbankprogrammierungLabel.TabIndex = 2
         It_datenbankprogrammierungLabel.Text = "Datenbank-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "programmierung:"
         '
@@ -6559,7 +6561,7 @@ Partial Class frmMain
         It_anwendungsprogrammierungLabel.AutoSize = True
         It_anwendungsprogrammierungLabel.Location = New System.Drawing.Point(6, 26)
         It_anwendungsprogrammierungLabel.Name = "It_anwendungsprogrammierungLabel"
-        It_anwendungsprogrammierungLabel.Size = New System.Drawing.Size(126, 32)
+        It_anwendungsprogrammierungLabel.Size = New System.Drawing.Size(125, 32)
         It_anwendungsprogrammierungLabel.TabIndex = 0
         It_anwendungsprogrammierungLabel.Text = "Anwendungs-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "programmierung:"
         '
@@ -6568,7 +6570,7 @@ Partial Class frmMain
         It_server_sonstigeLabel.AutoSize = True
         It_server_sonstigeLabel.Location = New System.Drawing.Point(3, 246)
         It_server_sonstigeLabel.Name = "It_server_sonstigeLabel"
-        It_server_sonstigeLabel.Size = New System.Drawing.Size(134, 32)
+        It_server_sonstigeLabel.Size = New System.Drawing.Size(132, 32)
         It_server_sonstigeLabel.TabIndex = 24
         It_server_sonstigeLabel.Text = "Sonstige " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Serverkenntnisse:"
         '
@@ -6577,7 +6579,7 @@ Partial Class frmMain
         It_virtualisierungLabel.AutoSize = True
         It_virtualisierungLabel.Location = New System.Drawing.Point(297, 167)
         It_virtualisierungLabel.Name = "It_virtualisierungLabel"
-        It_virtualisierungLabel.Size = New System.Drawing.Size(113, 16)
+        It_virtualisierungLabel.Size = New System.Drawing.Size(111, 16)
         It_virtualisierungLabel.TabIndex = 22
         It_virtualisierungLabel.Text = "Virtualisierung:"
         '
@@ -6586,7 +6588,7 @@ Partial Class frmMain
         It_backupLabel.AutoSize = True
         It_backupLabel.Location = New System.Drawing.Point(213, 167)
         It_backupLabel.Name = "It_backupLabel"
-        It_backupLabel.Size = New System.Drawing.Size(66, 16)
+        It_backupLabel.Size = New System.Drawing.Size(64, 16)
         It_backupLabel.TabIndex = 20
         It_backupLabel.Text = "Backup:"
         '
@@ -6595,7 +6597,7 @@ Partial Class frmMain
         It_macosx_serverLabel.AutoSize = True
         It_macosx_serverLabel.Location = New System.Drawing.Point(115, 167)
         It_macosx_serverLabel.Name = "It_macosx_serverLabel"
-        It_macosx_serverLabel.Size = New System.Drawing.Size(72, 32)
+        It_macosx_serverLabel.Size = New System.Drawing.Size(67, 32)
         It_macosx_serverLabel.TabIndex = 18
         It_macosx_serverLabel.Text = "MacOSX" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server:"
         '
@@ -6604,7 +6606,7 @@ Partial Class frmMain
         It_debian_serverLabel.AutoSize = True
         It_debian_serverLabel.Location = New System.Drawing.Point(6, 166)
         It_debian_serverLabel.Name = "It_debian_serverLabel"
-        It_debian_serverLabel.Size = New System.Drawing.Size(64, 32)
+        It_debian_serverLabel.Size = New System.Drawing.Size(62, 32)
         It_debian_serverLabel.TabIndex = 16
         It_debian_serverLabel.Text = "Debian " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server:"
         '
@@ -6613,7 +6615,7 @@ Partial Class frmMain
         It_centos_serverLabel.AutoSize = True
         It_centos_serverLabel.Location = New System.Drawing.Point(315, 90)
         It_centos_serverLabel.Name = "It_centos_serverLabel"
-        It_centos_serverLabel.Size = New System.Drawing.Size(69, 32)
+        It_centos_serverLabel.Size = New System.Drawing.Size(64, 32)
         It_centos_serverLabel.TabIndex = 14
         It_centos_serverLabel.Text = "CentOS " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server:"
         '
@@ -6622,7 +6624,7 @@ Partial Class frmMain
         It_redhat_serverLabel.AutoSize = True
         It_redhat_serverLabel.Location = New System.Drawing.Point(214, 90)
         It_redhat_serverLabel.Name = "It_redhat_serverLabel"
-        It_redhat_serverLabel.Size = New System.Drawing.Size(64, 32)
+        It_redhat_serverLabel.Size = New System.Drawing.Size(62, 32)
         It_redhat_serverLabel.TabIndex = 12
         It_redhat_serverLabel.Text = "Redhat " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server:"
         '
@@ -6631,7 +6633,7 @@ Partial Class frmMain
         It_suse_serverLabel.AutoSize = True
         It_suse_serverLabel.Location = New System.Drawing.Point(114, 90)
         It_suse_serverLabel.Name = "It_suse_serverLabel"
-        It_suse_serverLabel.Size = New System.Drawing.Size(60, 32)
+        It_suse_serverLabel.Size = New System.Drawing.Size(58, 32)
         It_suse_serverLabel.TabIndex = 10
         It_suse_serverLabel.Text = "SuSE " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server:"
         '
@@ -6640,7 +6642,7 @@ Partial Class frmMain
         It_ubuntu_serverLabel.AutoSize = True
         It_ubuntu_serverLabel.Location = New System.Drawing.Point(6, 90)
         It_ubuntu_serverLabel.Name = "It_ubuntu_serverLabel"
-        It_ubuntu_serverLabel.Size = New System.Drawing.Size(60, 32)
+        It_ubuntu_serverLabel.Size = New System.Drawing.Size(58, 32)
         It_ubuntu_serverLabel.TabIndex = 8
         It_ubuntu_serverLabel.Text = "Ubuntu" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server:"
         '
@@ -6649,7 +6651,7 @@ Partial Class frmMain
         It_win_exchangeLabel.AutoSize = True
         It_win_exchangeLabel.Location = New System.Drawing.Point(315, 17)
         It_win_exchangeLabel.Name = "It_win_exchangeLabel"
-        It_win_exchangeLabel.Size = New System.Drawing.Size(82, 32)
+        It_win_exchangeLabel.Size = New System.Drawing.Size(80, 32)
         It_win_exchangeLabel.TabIndex = 6
         It_win_exchangeLabel.Text = "Windows" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Exchange:"
         '
@@ -6658,7 +6660,7 @@ Partial Class frmMain
         It_winserver_2012Label.AutoSize = True
         It_winserver_2012Label.Location = New System.Drawing.Point(214, 17)
         It_winserver_2012Label.Name = "It_winserver_2012Label"
-        It_winserver_2012Label.Size = New System.Drawing.Size(101, 32)
+        It_winserver_2012Label.Size = New System.Drawing.Size(94, 32)
         It_winserver_2012Label.TabIndex = 4
         It_winserver_2012Label.Text = "Windows" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server 2012:"
         '
@@ -6667,7 +6669,7 @@ Partial Class frmMain
         It_winserver_2008Label.AutoSize = True
         It_winserver_2008Label.Location = New System.Drawing.Point(114, 17)
         It_winserver_2008Label.Name = "It_winserver_2008Label"
-        It_winserver_2008Label.Size = New System.Drawing.Size(101, 32)
+        It_winserver_2008Label.Size = New System.Drawing.Size(94, 32)
         It_winserver_2008Label.TabIndex = 2
         It_winserver_2008Label.Text = "Windows" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server 2008:"
         '
@@ -6676,7 +6678,7 @@ Partial Class frmMain
         It_winserver_2003Label.AutoSize = True
         It_winserver_2003Label.Location = New System.Drawing.Point(6, 17)
         It_winserver_2003Label.Name = "It_winserver_2003Label"
-        It_winserver_2003Label.Size = New System.Drawing.Size(101, 32)
+        It_winserver_2003Label.Size = New System.Drawing.Size(94, 32)
         It_winserver_2003Label.TabIndex = 0
         It_winserver_2003Label.Text = "Windows" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server 2003:"
         '
@@ -6685,7 +6687,7 @@ Partial Class frmMain
         It_linuxLabel.AutoSize = True
         It_linuxLabel.Location = New System.Drawing.Point(214, 28)
         It_linuxLabel.Name = "It_linuxLabel"
-        It_linuxLabel.Size = New System.Drawing.Size(49, 16)
+        It_linuxLabel.Size = New System.Drawing.Size(47, 16)
         It_linuxLabel.TabIndex = 18
         It_linuxLabel.Text = "Linux:"
         '
@@ -6694,7 +6696,7 @@ Partial Class frmMain
         It_windowsLabel.AutoSize = True
         It_windowsLabel.Location = New System.Drawing.Point(7, 28)
         It_windowsLabel.Name = "It_windowsLabel"
-        It_windowsLabel.Size = New System.Drawing.Size(76, 16)
+        It_windowsLabel.Size = New System.Drawing.Size(74, 16)
         It_windowsLabel.TabIndex = 17
         It_windowsLabel.Text = "Windows:"
         '
@@ -6703,7 +6705,7 @@ Partial Class frmMain
         It_macosxLabel.AutoSize = True
         It_macosxLabel.Location = New System.Drawing.Point(115, 28)
         It_macosxLabel.Name = "It_macosxLabel"
-        It_macosxLabel.Size = New System.Drawing.Size(82, 16)
+        It_macosxLabel.Size = New System.Drawing.Size(75, 16)
         It_macosxLabel.TabIndex = 16
         It_macosxLabel.Text = "MacOS X:"
         '
@@ -6712,7 +6714,7 @@ Partial Class frmMain
         It_erfahrung_sonstigeLabel.AutoSize = True
         It_erfahrung_sonstigeLabel.Location = New System.Drawing.Point(114, 259)
         It_erfahrung_sonstigeLabel.Name = "It_erfahrung_sonstigeLabel"
-        It_erfahrung_sonstigeLabel.Size = New System.Drawing.Size(101, 32)
+        It_erfahrung_sonstigeLabel.Size = New System.Drawing.Size(97, 32)
         It_erfahrung_sonstigeLabel.TabIndex = 26
         It_erfahrung_sonstigeLabel.Text = "Sonstige" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "IT-Erfahrung:"
         '
@@ -6721,7 +6723,7 @@ Partial Class frmMain
         It_third_levelLabel.AutoSize = True
         It_third_levelLabel.Location = New System.Drawing.Point(5, 259)
         It_third_levelLabel.Name = "It_third_levelLabel"
-        It_third_levelLabel.Size = New System.Drawing.Size(88, 32)
+        It_third_levelLabel.Size = New System.Drawing.Size(86, 32)
         It_third_levelLabel.TabIndex = 24
         It_third_levelLabel.Text = "Third Level" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Support:"
         '
@@ -6730,7 +6732,7 @@ Partial Class frmMain
         It_second_levelLabel.AutoSize = True
         It_second_levelLabel.Location = New System.Drawing.Point(315, 178)
         It_second_levelLabel.Name = "It_second_levelLabel"
-        It_second_levelLabel.Size = New System.Drawing.Size(106, 32)
+        It_second_levelLabel.Size = New System.Drawing.Size(103, 32)
         It_second_levelLabel.TabIndex = 22
         It_second_levelLabel.Text = "Second Level" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Support:"
         '
@@ -6739,7 +6741,7 @@ Partial Class frmMain
         It_first_levelLabel.AutoSize = True
         It_first_levelLabel.Location = New System.Drawing.Point(214, 178)
         It_first_levelLabel.Name = "It_first_levelLabel"
-        It_first_levelLabel.Size = New System.Drawing.Size(83, 32)
+        It_first_levelLabel.Size = New System.Drawing.Size(80, 32)
         It_first_levelLabel.TabIndex = 20
         It_first_levelLabel.Text = "First Level" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Support:"
         '
@@ -6748,7 +6750,7 @@ Partial Class frmMain
         It_verteilte_standorteLabel.AutoSize = True
         It_verteilte_standorteLabel.Location = New System.Drawing.Point(115, 178)
         It_verteilte_standorteLabel.Name = "It_verteilte_standorteLabel"
-        It_verteilte_standorteLabel.Size = New System.Drawing.Size(81, 32)
+        It_verteilte_standorteLabel.Size = New System.Drawing.Size(79, 32)
         It_verteilte_standorteLabel.TabIndex = 18
         It_verteilte_standorteLabel.Text = "Verteilte " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Standorte:"
         '
@@ -6757,7 +6759,7 @@ Partial Class frmMain
         It_telefonanlagenLabel.AutoSize = True
         It_telefonanlagenLabel.Location = New System.Drawing.Point(7, 178)
         It_telefonanlagenLabel.Name = "It_telefonanlagenLabel"
-        It_telefonanlagenLabel.Size = New System.Drawing.Size(69, 32)
+        It_telefonanlagenLabel.Size = New System.Drawing.Size(68, 32)
         It_telefonanlagenLabel.TabIndex = 16
         It_telefonanlagenLabel.Text = "Telefon-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "anlagen:"
         '
@@ -6766,7 +6768,7 @@ Partial Class frmMain
         It_dienstleisterLabel.AutoSize = True
         It_dienstleisterLabel.Location = New System.Drawing.Point(315, 108)
         It_dienstleisterLabel.Name = "It_dienstleisterLabel"
-        It_dienstleisterLabel.Size = New System.Drawing.Size(101, 32)
+        It_dienstleisterLabel.Size = New System.Drawing.Size(99, 32)
         It_dienstleisterLabel.TabIndex = 14
         It_dienstleisterLabel.Text = "Externe" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Dienstleister:"
         '
@@ -6775,7 +6777,7 @@ Partial Class frmMain
         It_lizenzmanagementLabel.AutoSize = True
         It_lizenzmanagementLabel.Location = New System.Drawing.Point(214, 108)
         It_lizenzmanagementLabel.Name = "It_lizenzmanagementLabel"
-        It_lizenzmanagementLabel.Size = New System.Drawing.Size(102, 32)
+        It_lizenzmanagementLabel.Size = New System.Drawing.Size(101, 32)
         It_lizenzmanagementLabel.TabIndex = 12
         It_lizenzmanagementLabel.Text = "Lizenz-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "management:"
         '
@@ -6784,7 +6786,7 @@ Partial Class frmMain
         It_beschaffung_softwareLabel.AutoSize = True
         It_beschaffung_softwareLabel.Location = New System.Drawing.Point(115, 108)
         It_beschaffung_softwareLabel.Name = "It_beschaffung_softwareLabel"
-        It_beschaffung_softwareLabel.Size = New System.Drawing.Size(99, 32)
+        It_beschaffung_softwareLabel.Size = New System.Drawing.Size(97, 32)
         It_beschaffung_softwareLabel.TabIndex = 10
         It_beschaffung_softwareLabel.Text = "Beschaffung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Software:"
         '
@@ -6793,7 +6795,7 @@ Partial Class frmMain
         It_beschaffung_hardwareLabel.AutoSize = True
         It_beschaffung_hardwareLabel.Location = New System.Drawing.Point(7, 108)
         It_beschaffung_hardwareLabel.Name = "It_beschaffung_hardwareLabel"
-        It_beschaffung_hardwareLabel.Size = New System.Drawing.Size(99, 32)
+        It_beschaffung_hardwareLabel.Size = New System.Drawing.Size(97, 32)
         It_beschaffung_hardwareLabel.TabIndex = 8
         It_beschaffung_hardwareLabel.Text = "Beschaffung " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Hardware:"
         '
@@ -6802,7 +6804,7 @@ Partial Class frmMain
         It_budgetueberwachungLabel.AutoSize = True
         It_budgetueberwachungLabel.Location = New System.Drawing.Point(315, 26)
         It_budgetueberwachungLabel.Name = "It_budgetueberwachungLabel"
-        It_budgetueberwachungLabel.Size = New System.Drawing.Size(95, 32)
+        It_budgetueberwachungLabel.Size = New System.Drawing.Size(93, 32)
         It_budgetueberwachungLabel.TabIndex = 6
         It_budgetueberwachungLabel.Text = "Budgetüber-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wachung:"
         '
@@ -6811,7 +6813,7 @@ Partial Class frmMain
         It_budgetplanungLabel.AutoSize = True
         It_budgetplanungLabel.Location = New System.Drawing.Point(213, 26)
         It_budgetplanungLabel.Name = "It_budgetplanungLabel"
-        It_budgetplanungLabel.Size = New System.Drawing.Size(68, 32)
+        It_budgetplanungLabel.Size = New System.Drawing.Size(67, 32)
         It_budgetplanungLabel.TabIndex = 4
         It_budgetplanungLabel.Text = "Budget-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "planung:"
         '
@@ -6820,7 +6822,7 @@ Partial Class frmMain
         It_planrealisierungLabel.AutoSize = True
         It_planrealisierungLabel.Location = New System.Drawing.Point(115, 26)
         It_planrealisierungLabel.Name = "It_planrealisierungLabel"
-        It_planrealisierungLabel.Size = New System.Drawing.Size(77, 32)
+        It_planrealisierungLabel.Size = New System.Drawing.Size(75, 32)
         It_planrealisierungLabel.TabIndex = 2
         It_planrealisierungLabel.Text = "Planreali-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "sierung:"
         '
@@ -6829,7 +6831,7 @@ Partial Class frmMain
         It_strategische_planungLabel.AutoSize = True
         It_strategische_planungLabel.Location = New System.Drawing.Point(5, 26)
         It_strategische_planungLabel.Name = "It_strategische_planungLabel"
-        It_strategische_planungLabel.Size = New System.Drawing.Size(101, 32)
+        It_strategische_planungLabel.Size = New System.Drawing.Size(99, 32)
         It_strategische_planungLabel.TabIndex = 0
         It_strategische_planungLabel.Text = "Strategische " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Planung:"
         '
@@ -6838,7 +6840,7 @@ Partial Class frmMain
         SicherheitsbeauftragterLabel.AutoSize = True
         SicherheitsbeauftragterLabel.Location = New System.Drawing.Point(8, 82)
         SicherheitsbeauftragterLabel.Name = "SicherheitsbeauftragterLabel"
-        SicherheitsbeauftragterLabel.Size = New System.Drawing.Size(170, 32)
+        SicherheitsbeauftragterLabel.Size = New System.Drawing.Size(169, 32)
         SicherheitsbeauftragterLabel.TabIndex = 2
         SicherheitsbeauftragterLabel.Text = "Sicherheitsbeauftragter" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(von - bis):"
         '
@@ -6847,7 +6849,7 @@ Partial Class frmMain
         ErsthelferLabel.AutoSize = True
         ErsthelferLabel.Location = New System.Drawing.Point(6, 27)
         ErsthelferLabel.Name = "ErsthelferLabel"
-        ErsthelferLabel.Size = New System.Drawing.Size(87, 32)
+        ErsthelferLabel.Size = New System.Drawing.Size(81, 32)
         ErsthelferLabel.TabIndex = 0
         ErsthelferLabel.Text = "Ersthelfer" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(von - bis):"
         '
@@ -6856,7 +6858,7 @@ Partial Class frmMain
         KommissionierenLabel.AutoSize = True
         KommissionierenLabel.Location = New System.Drawing.Point(6, 176)
         KommissionierenLabel.Name = "KommissionierenLabel"
-        KommissionierenLabel.Size = New System.Drawing.Size(98, 16)
+        KommissionierenLabel.Size = New System.Drawing.Size(95, 16)
         KommissionierenLabel.TabIndex = 14
         KommissionierenLabel.Text = "Kommission:"
         '
@@ -6865,7 +6867,7 @@ Partial Class frmMain
         HochregalLabel.AutoSize = True
         HochregalLabel.Location = New System.Drawing.Point(271, 99)
         HochregalLabel.Name = "HochregalLabel"
-        HochregalLabel.Size = New System.Drawing.Size(87, 32)
+        HochregalLabel.Size = New System.Drawing.Size(85, 32)
         HochregalLabel.TabIndex = 13
         HochregalLabel.Text = "Hochregal-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "lager:"
         '
@@ -6874,7 +6876,7 @@ Partial Class frmMain
         RegalLabel.AutoSize = True
         RegalLabel.Location = New System.Drawing.Point(147, 115)
         RegalLabel.Name = "RegalLabel"
-        RegalLabel.Size = New System.Drawing.Size(92, 16)
+        RegalLabel.Size = New System.Drawing.Size(90, 16)
         RegalLabel.TabIndex = 12
         RegalLabel.Text = "Regallager:"
         '
@@ -6883,7 +6885,7 @@ Partial Class frmMain
         FliessbandLabel.AutoSize = True
         FliessbandLabel.Location = New System.Drawing.Point(4, 115)
         FliessbandLabel.Name = "FliessbandLabel"
-        FliessbandLabel.Size = New System.Drawing.Size(91, 16)
+        FliessbandLabel.Size = New System.Drawing.Size(89, 16)
         FliessbandLabel.TabIndex = 11
         FliessbandLabel.Text = "Fliessband:"
         '
@@ -6892,7 +6894,7 @@ Partial Class frmMain
         BestandsverwaltungLabel.AutoSize = True
         BestandsverwaltungLabel.Location = New System.Drawing.Point(271, 26)
         BestandsverwaltungLabel.Name = "BestandsverwaltungLabel"
-        BestandsverwaltungLabel.Size = New System.Drawing.Size(87, 32)
+        BestandsverwaltungLabel.Size = New System.Drawing.Size(86, 32)
         BestandsverwaltungLabel.TabIndex = 10
         BestandsverwaltungLabel.Text = "Bestands-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "verwaltung:"
         '
@@ -6901,7 +6903,7 @@ Partial Class frmMain
         Beladen_entladenLabel.AutoSize = True
         Beladen_entladenLabel.Location = New System.Drawing.Point(147, 26)
         Beladen_entladenLabel.Name = "Beladen_entladenLabel"
-        Beladen_entladenLabel.Size = New System.Drawing.Size(102, 32)
+        Beladen_entladenLabel.Size = New System.Drawing.Size(99, 32)
         Beladen_entladenLabel.TabIndex = 2
         Beladen_entladenLabel.Text = "Beladen und " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "entladen:"
         '
@@ -6910,7 +6912,7 @@ Partial Class frmMain
         VerpackenLabel.AutoSize = True
         VerpackenLabel.Location = New System.Drawing.Point(6, 42)
         VerpackenLabel.Name = "VerpackenLabel"
-        VerpackenLabel.Size = New System.Drawing.Size(89, 16)
+        VerpackenLabel.Size = New System.Drawing.Size(87, 16)
         VerpackenLabel.TabIndex = 0
         VerpackenLabel.Text = "Verpacken:"
         '
@@ -6919,7 +6921,7 @@ Partial Class frmMain
         SpezialfahrzeugeLabel.AutoSize = True
         SpezialfahrzeugeLabel.Location = New System.Drawing.Point(6, 268)
         SpezialfahrzeugeLabel.Name = "SpezialfahrzeugeLabel"
-        SpezialfahrzeugeLabel.Size = New System.Drawing.Size(134, 16)
+        SpezialfahrzeugeLabel.Size = New System.Drawing.Size(132, 16)
         SpezialfahrzeugeLabel.TabIndex = 8
         SpezialfahrzeugeLabel.Text = "Spezialfahrzeuge:"
         '
@@ -6928,7 +6930,7 @@ Partial Class frmMain
         StaplerscheinLabel.AutoSize = True
         StaplerscheinLabel.Location = New System.Drawing.Point(6, 204)
         StaplerscheinLabel.Name = "StaplerscheinLabel"
-        StaplerscheinLabel.Size = New System.Drawing.Size(104, 32)
+        StaplerscheinLabel.Size = New System.Drawing.Size(103, 32)
         StaplerscheinLabel.TabIndex = 6
         StaplerscheinLabel.Text = "Staplerschein" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(gültig bis):"
         '
@@ -6937,7 +6939,7 @@ Partial Class frmMain
         KranfuehrerLabel.AutoSize = True
         KranfuehrerLabel.Location = New System.Drawing.Point(8, 147)
         KranfuehrerLabel.Name = "KranfuehrerLabel"
-        KranfuehrerLabel.Size = New System.Drawing.Size(89, 32)
+        KranfuehrerLabel.Size = New System.Drawing.Size(85, 32)
         KranfuehrerLabel.TabIndex = 4
         KranfuehrerLabel.Text = "Kranführer" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(gültig bis):"
         '
@@ -6955,7 +6957,7 @@ Partial Class frmMain
         GefahrguttransportLabel.AutoSize = True
         GefahrguttransportLabel.Location = New System.Drawing.Point(6, 28)
         GefahrguttransportLabel.Name = "GefahrguttransportLabel"
-        GefahrguttransportLabel.Size = New System.Drawing.Size(137, 32)
+        GefahrguttransportLabel.Size = New System.Drawing.Size(136, 32)
         GefahrguttransportLabel.TabIndex = 0
         GefahrguttransportLabel.Text = "Gefahrguttransport" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(gültig bis):"
         '
@@ -6964,7 +6966,7 @@ Partial Class frmMain
         HydraulikLabel.AutoSize = True
         HydraulikLabel.Location = New System.Drawing.Point(271, 492)
         HydraulikLabel.Name = "HydraulikLabel"
-        HydraulikLabel.Size = New System.Drawing.Size(80, 16)
+        HydraulikLabel.Size = New System.Drawing.Size(78, 16)
         HydraulikLabel.TabIndex = 8
         HydraulikLabel.Text = "Hydraulik:"
         '
@@ -6973,7 +6975,7 @@ Partial Class frmMain
         PneumatikLabel.AutoSize = True
         PneumatikLabel.Location = New System.Drawing.Point(147, 492)
         PneumatikLabel.Name = "PneumatikLabel"
-        PneumatikLabel.Size = New System.Drawing.Size(86, 16)
+        PneumatikLabel.Size = New System.Drawing.Size(84, 16)
         PneumatikLabel.TabIndex = 44
         PneumatikLabel.Text = "Pneumatik:"
         '
@@ -6982,7 +6984,7 @@ Partial Class frmMain
         StanzenLabel.AutoSize = True
         StanzenLabel.Location = New System.Drawing.Point(6, 492)
         StanzenLabel.Name = "StanzenLabel"
-        StanzenLabel.Size = New System.Drawing.Size(69, 16)
+        StanzenLabel.Size = New System.Drawing.Size(67, 16)
         StanzenLabel.TabIndex = 42
         StanzenLabel.Text = "Stanzen:"
         '
@@ -6991,7 +6993,7 @@ Partial Class frmMain
         GiessenLabel.AutoSize = True
         GiessenLabel.Location = New System.Drawing.Point(271, 439)
         GiessenLabel.Name = "GiessenLabel"
-        GiessenLabel.Size = New System.Drawing.Size(64, 16)
+        GiessenLabel.Size = New System.Drawing.Size(62, 16)
         GiessenLabel.TabIndex = 40
         GiessenLabel.Text = "Gießen:"
         '
@@ -7000,7 +7002,7 @@ Partial Class frmMain
         HobelnLabel.AutoSize = True
         HobelnLabel.Location = New System.Drawing.Point(147, 439)
         HobelnLabel.Name = "HobelnLabel"
-        HobelnLabel.Size = New System.Drawing.Size(64, 16)
+        HobelnLabel.Size = New System.Drawing.Size(62, 16)
         HobelnLabel.TabIndex = 38
         HobelnLabel.Text = "Hobeln:"
         '
@@ -7009,7 +7011,7 @@ Partial Class frmMain
         SchleifenLabel.AutoSize = True
         SchleifenLabel.Location = New System.Drawing.Point(6, 439)
         SchleifenLabel.Name = "SchleifenLabel"
-        SchleifenLabel.Size = New System.Drawing.Size(78, 16)
+        SchleifenLabel.Size = New System.Drawing.Size(76, 16)
         SchleifenLabel.TabIndex = 36
         SchleifenLabel.Text = "Schleifen:"
         '
@@ -7018,7 +7020,7 @@ Partial Class frmMain
         RichtenLabel.AutoSize = True
         RichtenLabel.Location = New System.Drawing.Point(271, 381)
         RichtenLabel.Name = "RichtenLabel"
-        RichtenLabel.Size = New System.Drawing.Size(66, 16)
+        RichtenLabel.Size = New System.Drawing.Size(64, 16)
         RichtenLabel.TabIndex = 34
         RichtenLabel.Text = "Richten:"
         '
@@ -7027,7 +7029,7 @@ Partial Class frmMain
         FormenLabel.AutoSize = True
         FormenLabel.Location = New System.Drawing.Point(147, 381)
         FormenLabel.Name = "FormenLabel"
-        FormenLabel.Size = New System.Drawing.Size(66, 16)
+        FormenLabel.Size = New System.Drawing.Size(64, 16)
         FormenLabel.TabIndex = 32
         FormenLabel.Text = "Formen:"
         '
@@ -7036,7 +7038,7 @@ Partial Class frmMain
         PressenLabel.AutoSize = True
         PressenLabel.Location = New System.Drawing.Point(6, 381)
         PressenLabel.Name = "PressenLabel"
-        PressenLabel.Size = New System.Drawing.Size(71, 16)
+        PressenLabel.Size = New System.Drawing.Size(69, 16)
         PressenLabel.TabIndex = 30
         PressenLabel.Text = "Pressen:"
         '
@@ -7045,7 +7047,7 @@ Partial Class frmMain
         WalzenLabel.AutoSize = True
         WalzenLabel.Location = New System.Drawing.Point(271, 325)
         WalzenLabel.Name = "WalzenLabel"
-        WalzenLabel.Size = New System.Drawing.Size(65, 16)
+        WalzenLabel.Size = New System.Drawing.Size(63, 16)
         WalzenLabel.TabIndex = 28
         WalzenLabel.Text = "Walzen:"
         '
@@ -7054,7 +7056,7 @@ Partial Class frmMain
         BiegenLabel.AutoSize = True
         BiegenLabel.Location = New System.Drawing.Point(147, 325)
         BiegenLabel.Name = "BiegenLabel"
-        BiegenLabel.Size = New System.Drawing.Size(63, 16)
+        BiegenLabel.Size = New System.Drawing.Size(61, 16)
         BiegenLabel.TabIndex = 26
         BiegenLabel.Text = "Biegen:"
         '
@@ -7063,7 +7065,7 @@ Partial Class frmMain
         SchmiedenLabel.AutoSize = True
         SchmiedenLabel.Location = New System.Drawing.Point(6, 325)
         SchmiedenLabel.Name = "SchmiedenLabel"
-        SchmiedenLabel.Size = New System.Drawing.Size(91, 16)
+        SchmiedenLabel.Size = New System.Drawing.Size(89, 16)
         SchmiedenLabel.TabIndex = 24
         SchmiedenLabel.Text = "Schmieden:"
         '
@@ -7072,7 +7074,7 @@ Partial Class frmMain
         BohrenLabel.AutoSize = True
         BohrenLabel.Location = New System.Drawing.Point(271, 266)
         BohrenLabel.Name = "BohrenLabel"
-        BohrenLabel.Size = New System.Drawing.Size(63, 16)
+        BohrenLabel.Size = New System.Drawing.Size(61, 16)
         BohrenLabel.TabIndex = 22
         BohrenLabel.Text = "Bohren:"
         '
@@ -7081,7 +7083,7 @@ Partial Class frmMain
         Fraesen_cncLabel.AutoSize = True
         Fraesen_cncLabel.Location = New System.Drawing.Point(147, 250)
         Fraesen_cncLabel.Name = "Fraesen_cncLabel"
-        Fraesen_cncLabel.Size = New System.Drawing.Size(62, 32)
+        Fraesen_cncLabel.Size = New System.Drawing.Size(60, 32)
         Fraesen_cncLabel.TabIndex = 20
         Fraesen_cncLabel.Text = "Fräsen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CNC:"
         '
@@ -7090,7 +7092,7 @@ Partial Class frmMain
         Fraesen_konventionellLabel.AutoSize = True
         Fraesen_konventionellLabel.Location = New System.Drawing.Point(6, 250)
         Fraesen_konventionellLabel.Name = "Fraesen_konventionellLabel"
-        Fraesen_konventionellLabel.Size = New System.Drawing.Size(105, 32)
+        Fraesen_konventionellLabel.Size = New System.Drawing.Size(104, 32)
         Fraesen_konventionellLabel.TabIndex = 18
         Fraesen_konventionellLabel.Text = "Fräsen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "konventionell:"
         '
@@ -7099,7 +7101,7 @@ Partial Class frmMain
         Drehen_cncLabel.AutoSize = True
         Drehen_cncLabel.Location = New System.Drawing.Point(271, 180)
         Drehen_cncLabel.Name = "Drehen_cncLabel"
-        Drehen_cncLabel.Size = New System.Drawing.Size(64, 32)
+        Drehen_cncLabel.Size = New System.Drawing.Size(62, 32)
         Drehen_cncLabel.TabIndex = 16
         Drehen_cncLabel.Text = "Drehen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CNC:"
         '
@@ -7108,7 +7110,7 @@ Partial Class frmMain
         Drehen_konventionellLabel.AutoSize = True
         Drehen_konventionellLabel.Location = New System.Drawing.Point(147, 180)
         Drehen_konventionellLabel.Name = "Drehen_konventionellLabel"
-        Drehen_konventionellLabel.Size = New System.Drawing.Size(105, 32)
+        Drehen_konventionellLabel.Size = New System.Drawing.Size(104, 32)
         Drehen_konventionellLabel.TabIndex = 14
         Drehen_konventionellLabel.Text = "Drehen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "konventionell:"
         '
@@ -7117,7 +7119,7 @@ Partial Class frmMain
         Loeten_weichLabel.AutoSize = True
         Loeten_weichLabel.Location = New System.Drawing.Point(6, 196)
         Loeten_weichLabel.Name = "Loeten_weichLabel"
-        Loeten_weichLabel.Size = New System.Drawing.Size(91, 16)
+        Loeten_weichLabel.Size = New System.Drawing.Size(89, 16)
         Loeten_weichLabel.TabIndex = 12
         Loeten_weichLabel.Text = "Weichlöten:"
         '
@@ -7126,7 +7128,7 @@ Partial Class frmMain
         Loeten_hartLabel.AutoSize = True
         Loeten_hartLabel.Location = New System.Drawing.Point(271, 122)
         Loeten_hartLabel.Name = "Loeten_hartLabel"
-        Loeten_hartLabel.Size = New System.Drawing.Size(77, 16)
+        Loeten_hartLabel.Size = New System.Drawing.Size(75, 16)
         Loeten_hartLabel.TabIndex = 10
         Loeten_hartLabel.Text = "Hartlöten:"
         '
@@ -7135,7 +7137,7 @@ Partial Class frmMain
         Schweissen_mig_argonLabel.AutoSize = True
         Schweissen_mig_argonLabel.Location = New System.Drawing.Point(147, 106)
         Schweissen_mig_argonLabel.Name = "Schweissen_mig_argonLabel"
-        Schweissen_mig_argonLabel.Size = New System.Drawing.Size(96, 32)
+        Schweissen_mig_argonLabel.Size = New System.Drawing.Size(94, 32)
         Schweissen_mig_argonLabel.TabIndex = 8
         Schweissen_mig_argonLabel.Text = "Schweissen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "MIG Argon:"
         '
@@ -7144,7 +7146,7 @@ Partial Class frmMain
         Schweissen_mag_co2Label.AutoSize = True
         Schweissen_mag_co2Label.Location = New System.Drawing.Point(6, 106)
         Schweissen_mag_co2Label.Name = "Schweissen_mag_co2Label"
-        Schweissen_mag_co2Label.Size = New System.Drawing.Size(91, 32)
+        Schweissen_mag_co2Label.Size = New System.Drawing.Size(90, 32)
         Schweissen_mag_co2Label.TabIndex = 6
         Schweissen_mag_co2Label.Text = "Schweissen" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mag CO2:"
         '
@@ -7153,7 +7155,7 @@ Partial Class frmMain
         Schweissen_elektroLabel.AutoSize = True
         Schweissen_elektroLabel.Location = New System.Drawing.Point(271, 28)
         Schweissen_elektroLabel.Name = "Schweissen_elektroLabel"
-        Schweissen_elektroLabel.Size = New System.Drawing.Size(91, 32)
+        Schweissen_elektroLabel.Size = New System.Drawing.Size(90, 32)
         Schweissen_elektroLabel.TabIndex = 4
         Schweissen_elektroLabel.Text = "Schweissen" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Elektro:"
         '
@@ -7162,7 +7164,7 @@ Partial Class frmMain
         Schweissen_autogenLabel.AutoSize = True
         Schweissen_autogenLabel.Location = New System.Drawing.Point(147, 28)
         Schweissen_autogenLabel.Name = "Schweissen_autogenLabel"
-        Schweissen_autogenLabel.Size = New System.Drawing.Size(96, 32)
+        Schweissen_autogenLabel.Size = New System.Drawing.Size(94, 32)
         Schweissen_autogenLabel.TabIndex = 2
         Schweissen_autogenLabel.Text = "Autogenes" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Schweissen:"
         '
@@ -7171,7 +7173,7 @@ Partial Class frmMain
         SchweissenLabel.AutoSize = True
         SchweissenLabel.Location = New System.Drawing.Point(6, 44)
         SchweissenLabel.Name = "SchweissenLabel"
-        SchweissenLabel.Size = New System.Drawing.Size(96, 16)
+        SchweissenLabel.Size = New System.Drawing.Size(94, 16)
         SchweissenLabel.TabIndex = 0
         SchweissenLabel.Text = "Schweissen:"
         '
@@ -7180,7 +7182,7 @@ Partial Class frmMain
         HausmeistertätigkeitLabel.AutoSize = True
         HausmeistertätigkeitLabel.Location = New System.Drawing.Point(271, 25)
         HausmeistertätigkeitLabel.Name = "HausmeistertätigkeitLabel"
-        HausmeistertätigkeitLabel.Size = New System.Drawing.Size(102, 32)
+        HausmeistertätigkeitLabel.Size = New System.Drawing.Size(100, 32)
         HausmeistertätigkeitLabel.TabIndex = 8
         HausmeistertätigkeitLabel.Text = "Hausmeister-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "tätigkeit:"
         '
@@ -7198,7 +7200,7 @@ Partial Class frmMain
         UmzugLabel1.AutoSize = True
         UmzugLabel1.Location = New System.Drawing.Point(147, 34)
         UmzugLabel1.Name = "UmzugLabel1"
-        UmzugLabel1.Size = New System.Drawing.Size(70, 16)
+        UmzugLabel1.Size = New System.Drawing.Size(68, 16)
         UmzugLabel1.TabIndex = 7
         UmzugLabel1.Text = "Umzüge:"
         '
@@ -7207,7 +7209,7 @@ Partial Class frmMain
         AussenanlagenLabel.AutoSize = True
         AussenanlagenLabel.Location = New System.Drawing.Point(12, 107)
         AussenanlagenLabel.Name = "AussenanlagenLabel"
-        AussenanlagenLabel.Size = New System.Drawing.Size(114, 16)
+        AussenanlagenLabel.Size = New System.Drawing.Size(112, 16)
         AussenanlagenLabel.TabIndex = 9
         AussenanlagenLabel.Text = "Außenanlagen:"
         '
@@ -7216,7 +7218,7 @@ Partial Class frmMain
         PostverteilungLabel.AutoSize = True
         PostverteilungLabel.Location = New System.Drawing.Point(12, 34)
         PostverteilungLabel.Name = "PostverteilungLabel"
-        PostverteilungLabel.Size = New System.Drawing.Size(113, 16)
+        PostverteilungLabel.Size = New System.Drawing.Size(111, 16)
         PostverteilungLabel.TabIndex = 6
         PostverteilungLabel.Text = "Postverteilung:"
         '
@@ -7225,7 +7227,7 @@ Partial Class frmMain
         WinterdienstLabel.AutoSize = True
         WinterdienstLabel.Location = New System.Drawing.Point(271, 107)
         WinterdienstLabel.Name = "WinterdienstLabel"
-        WinterdienstLabel.Size = New System.Drawing.Size(100, 16)
+        WinterdienstLabel.Size = New System.Drawing.Size(98, 16)
         WinterdienstLabel.TabIndex = 11
         WinterdienstLabel.Text = "Winterdienst:"
         '
@@ -7234,7 +7236,7 @@ Partial Class frmMain
         FahrdienstLabel.AutoSize = True
         FahrdienstLabel.Location = New System.Drawing.Point(147, 107)
         FahrdienstLabel.Name = "FahrdienstLabel"
-        FahrdienstLabel.Size = New System.Drawing.Size(87, 16)
+        FahrdienstLabel.Size = New System.Drawing.Size(85, 16)
         FahrdienstLabel.TabIndex = 10
         FahrdienstLabel.Text = "Fahrdienst:"
         '
@@ -7243,7 +7245,7 @@ Partial Class frmMain
         AnmerkungenLabel.AutoSize = True
         AnmerkungenLabel.Location = New System.Drawing.Point(13, 690)
         AnmerkungenLabel.Name = "AnmerkungenLabel"
-        AnmerkungenLabel.Size = New System.Drawing.Size(134, 80)
+        AnmerkungenLabel.Size = New System.Drawing.Size(131, 80)
         AnmerkungenLabel.TabIndex = 29
         AnmerkungenLabel.Text = "Anmerkungen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Sprachgebrauch," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Akzent, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sprachbe-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "herrschung):"
         '
@@ -7252,7 +7254,7 @@ Partial Class frmMain
         AusbildungsberufLabel1.AutoSize = True
         AusbildungsberufLabel1.Location = New System.Drawing.Point(6, 28)
         AusbildungsberufLabel1.Name = "AusbildungsberufLabel1"
-        AusbildungsberufLabel1.Size = New System.Drawing.Size(91, 48)
+        AusbildungsberufLabel1.Size = New System.Drawing.Size(90, 48)
         AusbildungsberufLabel1.TabIndex = 14
         AusbildungsberufLabel1.Text = "Ausbildung/" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Studiums-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "abschluss:"
         '
@@ -7261,7 +7263,7 @@ Partial Class frmMain
         Muendlich_schriftlichLabel.AutoSize = True
         Muendlich_schriftlichLabel.Location = New System.Drawing.Point(16, 445)
         Muendlich_schriftlichLabel.Name = "Muendlich_schriftlichLabel"
-        Muendlich_schriftlichLabel.Size = New System.Drawing.Size(116, 48)
+        Muendlich_schriftlichLabel.Size = New System.Drawing.Size(115, 48)
         Muendlich_schriftlichLabel.TabIndex = 31
         Muendlich_schriftlichLabel.Text = "Sprachkennt-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "nisse mündlich/" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "schriftlich:"
         '
@@ -7297,7 +7299,7 @@ Partial Class frmMain
         InterviewerLabel.AutoSize = True
         InterviewerLabel.Location = New System.Drawing.Point(6, 153)
         InterviewerLabel.Name = "InterviewerLabel"
-        InterviewerLabel.Size = New System.Drawing.Size(89, 16)
+        InterviewerLabel.Size = New System.Drawing.Size(87, 16)
         InterviewerLabel.TabIndex = 39
         InterviewerLabel.Text = "Interviewer:"
         '
@@ -7306,7 +7308,7 @@ Partial Class frmMain
         HaendedruckLabel.AutoSize = True
         HaendedruckLabel.Location = New System.Drawing.Point(20, 516)
         HaendedruckLabel.Name = "HaendedruckLabel"
-        HaendedruckLabel.Size = New System.Drawing.Size(98, 16)
+        HaendedruckLabel.Size = New System.Drawing.Size(96, 16)
         HaendedruckLabel.TabIndex = 24
         HaendedruckLabel.Text = "Händedruck:"
         '
@@ -7315,7 +7317,7 @@ Partial Class frmMain
         ParfumLabel.AutoSize = True
         ParfumLabel.Location = New System.Drawing.Point(20, 572)
         ParfumLabel.Name = "ParfumLabel"
-        ParfumLabel.Size = New System.Drawing.Size(62, 16)
+        ParfumLabel.Size = New System.Drawing.Size(60, 16)
         ParfumLabel.TabIndex = 24
         ParfumLabel.Text = "Parfüm:"
         '
@@ -7324,7 +7326,7 @@ Partial Class frmMain
         RaucherLabel.AutoSize = True
         RaucherLabel.Location = New System.Drawing.Point(20, 625)
         RaucherLabel.Name = "RaucherLabel"
-        RaucherLabel.Size = New System.Drawing.Size(72, 16)
+        RaucherLabel.Size = New System.Drawing.Size(70, 16)
         RaucherLabel.TabIndex = 35
         RaucherLabel.Text = "Raucher:"
         '
@@ -7333,7 +7335,7 @@ Partial Class frmMain
         Label77.AutoSize = True
         Label77.Location = New System.Drawing.Point(1464, 17)
         Label77.Name = "Label77"
-        Label77.Size = New System.Drawing.Size(73, 16)
+        Label77.Size = New System.Drawing.Size(71, 16)
         Label77.TabIndex = 8
         Label77.Text = "Englisch:"
         '
@@ -7342,7 +7344,7 @@ Partial Class frmMain
         EdvkenntnisseLabel.AutoSize = True
         EdvkenntnisseLabel.Location = New System.Drawing.Point(10, 24)
         EdvkenntnisseLabel.Name = "EdvkenntnisseLabel"
-        EdvkenntnisseLabel.Size = New System.Drawing.Size(115, 16)
+        EdvkenntnisseLabel.Size = New System.Drawing.Size(113, 16)
         EdvkenntnisseLabel.TabIndex = 4
         EdvkenntnisseLabel.Text = "Edvkenntnisse:"
         '
@@ -7352,7 +7354,7 @@ Partial Class frmMain
         Teilzeit_stundenLabel.ForeColor = System.Drawing.Color.Crimson
         Teilzeit_stundenLabel.Location = New System.Drawing.Point(8, 305)
         Teilzeit_stundenLabel.Name = "Teilzeit_stundenLabel"
-        Teilzeit_stundenLabel.Size = New System.Drawing.Size(70, 32)
+        Teilzeit_stundenLabel.Size = New System.Drawing.Size(68, 32)
         Teilzeit_stundenLabel.TabIndex = 40
         Teilzeit_stundenLabel.Text = "Teilzeit " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Stunden:"
         '
@@ -7361,7 +7363,7 @@ Partial Class frmMain
         Teilzeit_wannLabel.AutoSize = True
         Teilzeit_wannLabel.Location = New System.Drawing.Point(8, 341)
         Teilzeit_wannLabel.Name = "Teilzeit_wannLabel"
-        Teilzeit_wannLabel.Size = New System.Drawing.Size(64, 32)
+        Teilzeit_wannLabel.Size = New System.Drawing.Size(63, 32)
         Teilzeit_wannLabel.TabIndex = 42
         Teilzeit_wannLabel.Text = "Teilzeit " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wann:"
         '
@@ -7370,7 +7372,7 @@ Partial Class frmMain
         RundschreibenLabel.AutoSize = True
         RundschreibenLabel.Location = New System.Drawing.Point(0, 558)
         RundschreibenLabel.Name = "RundschreibenLabel"
-        RundschreibenLabel.Size = New System.Drawing.Size(118, 32)
+        RundschreibenLabel.Size = New System.Drawing.Size(116, 32)
         RundschreibenLabel.TabIndex = 41
         RundschreibenLabel.Text = "Einwilligung" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Rundschreiben:"
         '
@@ -7388,7 +7390,7 @@ Partial Class frmMain
         JahresgehaltLabel1.AutoSize = True
         JahresgehaltLabel1.Location = New System.Drawing.Point(0, 351)
         JahresgehaltLabel1.Name = "JahresgehaltLabel1"
-        JahresgehaltLabel1.Size = New System.Drawing.Size(61, 48)
+        JahresgehaltLabel1.Size = New System.Drawing.Size(60, 48)
         JahresgehaltLabel1.TabIndex = 43
         JahresgehaltLabel1.Text = "Letztes" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Jahres-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gehalt:"
         '
@@ -7397,7 +7399,7 @@ Partial Class frmMain
         Label5.AutoSize = True
         Label5.Location = New System.Drawing.Point(6, 32)
         Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(43, 16)
+        Label5.Size = New System.Drawing.Size(39, 16)
         Label5.TabIndex = 0
         Label5.Text = "PLZ:"
         '
@@ -7406,7 +7408,7 @@ Partial Class frmMain
         OrtLabel1.AutoSize = True
         OrtLabel1.Location = New System.Drawing.Point(6, 71)
         OrtLabel1.Name = "OrtLabel1"
-        OrtLabel1.Size = New System.Drawing.Size(34, 16)
+        OrtLabel1.Size = New System.Drawing.Size(32, 16)
         OrtLabel1.TabIndex = 2
         OrtLabel1.Text = "Ort:"
         '
@@ -7415,7 +7417,7 @@ Partial Class frmMain
         OrtsteilLabel.AutoSize = True
         OrtsteilLabel.Location = New System.Drawing.Point(10, 120)
         OrtsteilLabel.Name = "OrtsteilLabel"
-        OrtsteilLabel.Size = New System.Drawing.Size(63, 16)
+        OrtsteilLabel.Size = New System.Drawing.Size(61, 16)
         OrtsteilLabel.TabIndex = 4
         OrtsteilLabel.Text = "Ortsteil:"
         '
@@ -7424,7 +7426,7 @@ Partial Class frmMain
         Label4.AutoSize = True
         Label4.Location = New System.Drawing.Point(6, 170)
         Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(67, 16)
+        Label4.Size = New System.Drawing.Size(65, 16)
         Label4.TabIndex = 6
         Label4.Text = "Strasse:"
         '
@@ -7433,7 +7435,7 @@ Partial Class frmMain
         Label3.AutoSize = True
         Label3.Location = New System.Drawing.Point(6, 206)
         Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(72, 16)
+        Label3.Size = New System.Drawing.Size(70, 16)
         Label3.TabIndex = 8
         Label3.Text = "Festnetz:"
         '
@@ -7442,7 +7444,7 @@ Partial Class frmMain
         Label2.AutoSize = True
         Label2.Location = New System.Drawing.Point(6, 289)
         Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(53, 16)
+        Label2.Size = New System.Drawing.Size(51, 16)
         Label2.TabIndex = 10
         Label2.Text = "Email:"
         '
@@ -7451,7 +7453,7 @@ Partial Class frmMain
         GeburtstagLabel.AutoSize = True
         GeburtstagLabel.Location = New System.Drawing.Point(6, 326)
         GeburtstagLabel.Name = "GeburtstagLabel"
-        GeburtstagLabel.Size = New System.Drawing.Size(90, 16)
+        GeburtstagLabel.Size = New System.Drawing.Size(88, 16)
         GeburtstagLabel.TabIndex = 12
         GeburtstagLabel.Text = "Geburtstag:"
         '
@@ -7460,7 +7462,7 @@ Partial Class frmMain
         StaatsangehörigkeitLabel.AutoSize = True
         StaatsangehörigkeitLabel.Location = New System.Drawing.Point(6, 366)
         StaatsangehörigkeitLabel.Name = "StaatsangehörigkeitLabel"
-        StaatsangehörigkeitLabel.Size = New System.Drawing.Size(93, 16)
+        StaatsangehörigkeitLabel.Size = New System.Drawing.Size(91, 16)
         StaatsangehörigkeitLabel.TabIndex = 14
         StaatsangehörigkeitLabel.Text = "Nationalität:"
         '
@@ -7469,7 +7471,7 @@ Partial Class frmMain
         AufenhaltstitelLabel.AutoSize = True
         AufenhaltstitelLabel.Location = New System.Drawing.Point(6, 410)
         AufenhaltstitelLabel.Name = "AufenhaltstitelLabel"
-        AufenhaltstitelLabel.Size = New System.Drawing.Size(71, 32)
+        AufenhaltstitelLabel.Size = New System.Drawing.Size(70, 32)
         AufenhaltstitelLabel.TabIndex = 16
         AufenhaltstitelLabel.Text = "Aufent-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "haltstitel:"
         '
@@ -7478,7 +7480,7 @@ Partial Class frmMain
         ArbeitserlaubnisLabel.AutoSize = True
         ArbeitserlaubnisLabel.Location = New System.Drawing.Point(6, 454)
         ArbeitserlaubnisLabel.Name = "ArbeitserlaubnisLabel"
-        ArbeitserlaubnisLabel.Size = New System.Drawing.Size(77, 32)
+        ArbeitserlaubnisLabel.Size = New System.Drawing.Size(76, 32)
         ArbeitserlaubnisLabel.TabIndex = 18
         ArbeitserlaubnisLabel.Text = "Arbeits-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "erlaubnis:"
         '
@@ -7487,7 +7489,7 @@ Partial Class frmMain
         Alter_jahrLabel1.AutoSize = True
         Alter_jahrLabel1.Location = New System.Drawing.Point(6, 505)
         Alter_jahrLabel1.Name = "Alter_jahrLabel1"
-        Alter_jahrLabel1.Size = New System.Drawing.Size(46, 16)
+        Alter_jahrLabel1.Size = New System.Drawing.Size(44, 16)
         Alter_jahrLabel1.TabIndex = 20
         Alter_jahrLabel1.Text = "Alter:"
         '
@@ -7496,7 +7498,7 @@ Partial Class frmMain
         FamilienstandLabel.AutoSize = True
         FamilienstandLabel.Location = New System.Drawing.Point(6, 544)
         FamilienstandLabel.Name = "FamilienstandLabel"
-        FamilienstandLabel.Size = New System.Drawing.Size(74, 32)
+        FamilienstandLabel.Size = New System.Drawing.Size(72, 32)
         FamilienstandLabel.TabIndex = 22
         FamilienstandLabel.Text = "Familien-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "stand:"
         '
@@ -7505,7 +7507,7 @@ Partial Class frmMain
         KinderLabel.AutoSize = True
         KinderLabel.Location = New System.Drawing.Point(6, 590)
         KinderLabel.Name = "KinderLabel"
-        KinderLabel.Size = New System.Drawing.Size(59, 16)
+        KinderLabel.Size = New System.Drawing.Size(56, 16)
         KinderLabel.TabIndex = 24
         KinderLabel.Text = "Kinder:"
         '
@@ -7514,7 +7516,7 @@ Partial Class frmMain
         Kinder_betreuungLabel.AutoSize = True
         Kinder_betreuungLabel.Location = New System.Drawing.Point(6, 630)
         Kinder_betreuungLabel.Name = "Kinder_betreuungLabel"
-        Kinder_betreuungLabel.Size = New System.Drawing.Size(82, 32)
+        Kinder_betreuungLabel.Size = New System.Drawing.Size(81, 32)
         Kinder_betreuungLabel.TabIndex = 26
         Kinder_betreuungLabel.Text = "Kinder-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "betreuung:"
         '
@@ -7523,7 +7525,7 @@ Partial Class frmMain
         SteuerklasseLabel.AutoSize = True
         SteuerklasseLabel.Location = New System.Drawing.Point(6, 683)
         SteuerklasseLabel.Name = "SteuerklasseLabel"
-        SteuerklasseLabel.Size = New System.Drawing.Size(105, 16)
+        SteuerklasseLabel.Size = New System.Drawing.Size(103, 16)
         SteuerklasseLabel.TabIndex = 28
         SteuerklasseLabel.Text = "Steuerklasse:"
         '
@@ -7532,7 +7534,7 @@ Partial Class frmMain
         KonfessionLabel.AutoSize = True
         KonfessionLabel.Location = New System.Drawing.Point(6, 732)
         KonfessionLabel.Name = "KonfessionLabel"
-        KonfessionLabel.Size = New System.Drawing.Size(91, 16)
+        KonfessionLabel.Size = New System.Drawing.Size(88, 16)
         KonfessionLabel.TabIndex = 31
         KonfessionLabel.Text = "Konfession:"
         '
@@ -7541,7 +7543,7 @@ Partial Class frmMain
         FuehrerscheinLabel.AutoSize = True
         FuehrerscheinLabel.Location = New System.Drawing.Point(6, 775)
         FuehrerscheinLabel.Name = "FuehrerscheinLabel"
-        FuehrerscheinLabel.Size = New System.Drawing.Size(103, 16)
+        FuehrerscheinLabel.Size = New System.Drawing.Size(101, 16)
         FuehrerscheinLabel.TabIndex = 35
         FuehrerscheinLabel.Text = "Führerschein:"
         '
@@ -7550,7 +7552,7 @@ Partial Class frmMain
         Label1.AutoSize = True
         Label1.Location = New System.Drawing.Point(9, 248)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(52, 16)
+        Label1.Size = New System.Drawing.Size(50, 16)
         Label1.TabIndex = 37
         Label1.Text = "Mobil:"
         '
@@ -7559,7 +7561,7 @@ Partial Class frmMain
         Gehaltswunsch_jahrLabel.AutoSize = True
         Gehaltswunsch_jahrLabel.Location = New System.Drawing.Point(3, 790)
         Gehaltswunsch_jahrLabel.Name = "Gehaltswunsch_jahrLabel"
-        Gehaltswunsch_jahrLabel.Size = New System.Drawing.Size(117, 32)
+        Gehaltswunsch_jahrLabel.Size = New System.Drawing.Size(115, 32)
         Gehaltswunsch_jahrLabel.TabIndex = 49
         Gehaltswunsch_jahrLabel.Text = "Gehaltswunsch " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Jahr):"
         '
@@ -7568,7 +7570,7 @@ Partial Class frmMain
         Label6.AutoSize = True
         Label6.Location = New System.Drawing.Point(7, 734)
         Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(109, 32)
+        Label6.Size = New System.Drawing.Size(107, 32)
         Label6.TabIndex = 47
         Label6.Text = "Gehaltwunsch " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Monat):"
         '
@@ -7577,7 +7579,7 @@ Partial Class frmMain
         RefnrLabel.AutoSize = True
         RefnrLabel.Location = New System.Drawing.Point(3, 140)
         RefnrLabel.Name = "RefnrLabel"
-        RefnrLabel.Size = New System.Drawing.Size(55, 16)
+        RefnrLabel.Size = New System.Drawing.Size(52, 16)
         RefnrLabel.TabIndex = 43
         RefnrLabel.Text = "RefNr:"
         '
@@ -7586,7 +7588,7 @@ Partial Class frmMain
         TopbewerberLabel.AutoSize = True
         TopbewerberLabel.Location = New System.Drawing.Point(3, 177)
         TopbewerberLabel.Name = "TopbewerberLabel"
-        TopbewerberLabel.Size = New System.Drawing.Size(123, 16)
+        TopbewerberLabel.Size = New System.Drawing.Size(122, 16)
         TopbewerberLabel.TabIndex = 14
         TopbewerberLabel.Text = "Topbewerber/in:"
         '
@@ -7595,7 +7597,7 @@ Partial Class frmMain
         Aufmerksam_andereLabel.AutoSize = True
         Aufmerksam_andereLabel.Location = New System.Drawing.Point(12, 100)
         Aufmerksam_andereLabel.Name = "Aufmerksam_andereLabel"
-        Aufmerksam_andereLabel.Size = New System.Drawing.Size(278, 16)
+        Aufmerksam_andereLabel.Size = New System.Drawing.Size(273, 16)
         Aufmerksam_andereLabel.TabIndex = 12
         Aufmerksam_andereLabel.Text = "Durch anderes aufmerksam geworden:"
         '
@@ -7605,7 +7607,7 @@ Partial Class frmMain
         EdvkenntnisseLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         EdvkenntnisseLabel1.Location = New System.Drawing.Point(0, 269)
         EdvkenntnisseLabel1.Name = "EdvkenntnisseLabel1"
-        EdvkenntnisseLabel1.Size = New System.Drawing.Size(105, 32)
+        EdvkenntnisseLabel1.Size = New System.Drawing.Size(99, 32)
         EdvkenntnisseLabel1.TabIndex = 18
         EdvkenntnisseLabel1.Text = "EDV-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Kenntnisse:   "
         '
@@ -8728,7 +8730,7 @@ Partial Class frmMain
         Me.rbtnHomepagesichtbarNein.ForeColor = System.Drawing.Color.Black
         Me.rbtnHomepagesichtbarNein.Location = New System.Drawing.Point(264, 100)
         Me.rbtnHomepagesichtbarNein.Name = "rbtnHomepagesichtbarNein"
-        Me.rbtnHomepagesichtbarNein.Size = New System.Drawing.Size(59, 20)
+        Me.rbtnHomepagesichtbarNein.Size = New System.Drawing.Size(58, 20)
         Me.rbtnHomepagesichtbarNein.TabIndex = 41
         Me.rbtnHomepagesichtbarNein.TabStop = True
         Me.rbtnHomepagesichtbarNein.Text = "Nein"
@@ -8751,7 +8753,7 @@ Partial Class frmMain
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(6, 96)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(109, 32)
+        Me.Label8.Size = New System.Drawing.Size(107, 32)
         Me.Label8.TabIndex = 39
         Me.Label8.Text = "Auf Home-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "page sichtbar:"
         '
@@ -9095,7 +9097,7 @@ Partial Class frmMain
         Me.Label73.AutoSize = True
         Me.Label73.Location = New System.Drawing.Point(9, 768)
         Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(179, 32)
+        Me.Label73.Size = New System.Drawing.Size(176, 32)
         Me.Label73.TabIndex = 20
         Me.Label73.Text = "Charaktereigenschaften " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "laut Bewerber/in:"
         '
@@ -9104,7 +9106,7 @@ Partial Class frmMain
         Me.Label69.AutoSize = True
         Me.Label69.Location = New System.Drawing.Point(6, 66)
         Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(222, 32)
+        Me.Label69.Size = New System.Drawing.Size(216, 32)
         Me.Label69.TabIndex = 15
         Me.Label69.Text = "Persönlichkeit etc. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Änderungen mit Doppelklick):"
         '
@@ -9162,6 +9164,7 @@ Partial Class frmMain
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox4.Controls.Add(Me.Button1)
         Me.GroupBox4.Controls.Add(Gehaltswunsch_jahrLabel)
         Me.GroupBox4.Controls.Add(Me.Gehaltswunsch_jahrTextBox)
         Me.GroupBox4.Controls.Add(Label6)
@@ -9434,7 +9437,7 @@ Partial Class frmMain
         Me.Label82.ForeColor = System.Drawing.Color.Black
         Me.Label82.Location = New System.Drawing.Point(12, 27)
         Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(347, 48)
+        Me.Label82.Size = New System.Drawing.Size(335, 48)
         Me.Label82.TabIndex = 33
         Me.Label82.Text = "(Datei öffnen mit Doppelklick auf einen Eintrag, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Rechtsklick neue Datei spe" &
     "ichern oder" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Speicherverzeichnis im Explorer öffnen)"
@@ -9479,7 +9482,7 @@ Partial Class frmMain
         Me.Label27.AutoSize = True
         Me.Label27.Location = New System.Drawing.Point(12, 32)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(351, 16)
+        Me.Label27.Size = New System.Drawing.Size(340, 16)
         Me.Label27.TabIndex = 12
         Me.Label27.Text = "Suchmaschine, Jobbörse, Zeitung, Social Media"
         '
@@ -9567,7 +9570,7 @@ Partial Class frmMain
         Me.Label81.ForeColor = System.Drawing.Color.Black
         Me.Label81.Location = New System.Drawing.Point(12, 24)
         Me.Label81.Name = "Label81"
-        Me.Label81.Size = New System.Drawing.Size(347, 48)
+        Me.Label81.Size = New System.Drawing.Size(335, 48)
         Me.Label81.TabIndex = 31
         Me.Label81.Text = "(Datei öffnen mit Doppelklick auf einen Eintrag, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Rechtsklick neue Datei spe" &
     "ichern oder" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Speicherverzeichnis im Explorer öffnen)"
@@ -10211,7 +10214,7 @@ Partial Class frmMain
         Me.Label49.AutoSize = True
         Me.Label49.Location = New System.Drawing.Point(713, 8)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(92, 32)
+        Me.Label49.Size = New System.Drawing.Size(90, 32)
         Me.Label49.TabIndex = 13
         Me.Label49.Text = "Ausbildung-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beruf:"
         '
@@ -10220,7 +10223,7 @@ Partial Class frmMain
         Me.Label47.AutoSize = True
         Me.Label47.Location = New System.Drawing.Point(1196, 8)
         Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(48, 32)
+        Me.Label47.Size = New System.Drawing.Size(47, 32)
         Me.Label47.TabIndex = 11
         Me.Label47.Text = "Ab" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wann:"
         '
@@ -10229,7 +10232,7 @@ Partial Class frmMain
         Me.Label46.AutoSize = True
         Me.Label46.Location = New System.Drawing.Point(551, 16)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(59, 16)
+        Me.Label46.Size = New System.Drawing.Size(55, 16)
         Me.Label46.TabIndex = 10
         Me.Label46.Text = "VZ/TZ:"
         '
@@ -10306,7 +10309,7 @@ Partial Class frmMain
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.Location = New System.Drawing.Point(8, 16)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(102, 16)
+        Me.Label25.Size = New System.Drawing.Size(99, 16)
         Me.Label25.TabIndex = 0
         Me.Label25.Text = "Bewerber/in: "
         '
@@ -10521,7 +10524,7 @@ Partial Class frmMain
         Me.Label72.AutoSize = True
         Me.Label72.Location = New System.Drawing.Point(713, 8)
         Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(92, 32)
+        Me.Label72.Size = New System.Drawing.Size(90, 32)
         Me.Label72.TabIndex = 13
         Me.Label72.Text = "Ausbildung-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beruf:"
         '
@@ -10530,7 +10533,7 @@ Partial Class frmMain
         Me.Label75.AutoSize = True
         Me.Label75.Location = New System.Drawing.Point(1206, 8)
         Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(48, 32)
+        Me.Label75.Size = New System.Drawing.Size(47, 32)
         Me.Label75.TabIndex = 11
         Me.Label75.Text = "Ab" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wann:"
         '
@@ -10539,7 +10542,7 @@ Partial Class frmMain
         Me.Label76.AutoSize = True
         Me.Label76.Location = New System.Drawing.Point(551, 16)
         Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(59, 16)
+        Me.Label76.Size = New System.Drawing.Size(55, 16)
         Me.Label76.TabIndex = 10
         Me.Label76.Text = "VZ/TZ:"
         '
@@ -10616,7 +10619,7 @@ Partial Class frmMain
         Me.Label78.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label78.Location = New System.Drawing.Point(8, 16)
         Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(102, 16)
+        Me.Label78.Size = New System.Drawing.Size(99, 16)
         Me.Label78.TabIndex = 0
         Me.Label78.Text = "Bewerber/in: "
         '
@@ -10863,7 +10866,7 @@ Partial Class frmMain
         Me.Label14.ForeColor = System.Drawing.Color.Crimson
         Me.Label14.Location = New System.Drawing.Point(10, 4)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(125, 16)
+        Me.Label14.Size = New System.Drawing.Size(119, 16)
         Me.Label14.TabIndex = 1
         Me.Label14.Text = "EDV-Kenntnisse"
         '
@@ -11290,7 +11293,7 @@ Partial Class frmMain
         Me.Label13.ForeColor = System.Drawing.Color.Gray
         Me.Label13.Location = New System.Drawing.Point(7, 29)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(332, 18)
+        Me.Label13.Size = New System.Drawing.Size(325, 18)
         Me.Label13.TabIndex = 0
         Me.Label13.Text = "Einschätzung des Interviewers: gelb hinterlegt"
         '
@@ -11595,7 +11598,7 @@ Partial Class frmMain
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(713, 8)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(92, 32)
+        Me.Label7.Size = New System.Drawing.Size(90, 32)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Ausbildung-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beruf:"
         '
@@ -11604,7 +11607,7 @@ Partial Class frmMain
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(1165, 8)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(48, 32)
+        Me.Label9.Size = New System.Drawing.Size(47, 32)
         Me.Label9.TabIndex = 11
         Me.Label9.Text = "Ab" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wann:"
         '
@@ -11613,7 +11616,7 @@ Partial Class frmMain
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(551, 16)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(59, 16)
+        Me.Label10.Size = New System.Drawing.Size(55, 16)
         Me.Label10.TabIndex = 10
         Me.Label10.Text = "VZ/TZ:"
         '
@@ -11690,7 +11693,7 @@ Partial Class frmMain
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(8, 16)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(102, 16)
+        Me.Label12.Size = New System.Drawing.Size(99, 16)
         Me.Label12.TabIndex = 0
         Me.Label12.Text = "Bewerber/in: "
         '
@@ -11953,7 +11956,7 @@ Partial Class frmMain
         Me.Label24.ForeColor = System.Drawing.Color.Crimson
         Me.Label24.Location = New System.Drawing.Point(12, 9)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(215, 16)
+        Me.Label24.Size = New System.Drawing.Size(214, 16)
         Me.Label24.TabIndex = 5
         Me.Label24.Text = "Rechtsanwaltsfachangestellte"
         '
@@ -11986,7 +11989,7 @@ Partial Class frmMain
         Me.Label23.ForeColor = System.Drawing.Color.Crimson
         Me.Label23.Location = New System.Drawing.Point(6, 9)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(75, 16)
+        Me.Label23.Size = New System.Drawing.Size(74, 16)
         Me.Label23.TabIndex = 4
         Me.Label23.Text = "Assistenz"
         '
@@ -12157,7 +12160,7 @@ Partial Class frmMain
         Me.Label21.ForeColor = System.Drawing.Color.Crimson
         Me.Label21.Location = New System.Drawing.Point(11, 9)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(123, 16)
+        Me.Label21.Size = New System.Drawing.Size(121, 16)
         Me.Label21.TabIndex = 1
         Me.Label21.Text = "Büro/Sekretariat"
         '
@@ -12453,7 +12456,7 @@ Partial Class frmMain
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(713, 8)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(92, 32)
+        Me.Label15.Size = New System.Drawing.Size(90, 32)
         Me.Label15.TabIndex = 13
         Me.Label15.Text = "Ausbildung-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beruf:"
         '
@@ -12462,7 +12465,7 @@ Partial Class frmMain
         Me.Label17.AutoSize = True
         Me.Label17.Location = New System.Drawing.Point(1202, 8)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(48, 32)
+        Me.Label17.Size = New System.Drawing.Size(47, 32)
         Me.Label17.TabIndex = 11
         Me.Label17.Text = "Ab" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wann:"
         '
@@ -12471,7 +12474,7 @@ Partial Class frmMain
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(551, 16)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(59, 16)
+        Me.Label18.Size = New System.Drawing.Size(55, 16)
         Me.Label18.TabIndex = 10
         Me.Label18.Text = "VZ/TZ:"
         '
@@ -12548,7 +12551,7 @@ Partial Class frmMain
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.Location = New System.Drawing.Point(8, 16)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(102, 16)
+        Me.Label20.Size = New System.Drawing.Size(99, 16)
         Me.Label20.TabIndex = 0
         Me.Label20.Text = "Bewerber/in: "
         '
@@ -12967,7 +12970,7 @@ Partial Class frmMain
         Me.Label35.ForeColor = System.Drawing.Color.Crimson
         Me.Label35.Location = New System.Drawing.Point(11, 9)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(142, 16)
+        Me.Label35.Size = New System.Drawing.Size(138, 16)
         Me.Label35.TabIndex = 5
         Me.Label35.Text = "Marketing / Design"
         '
@@ -13211,7 +13214,7 @@ Partial Class frmMain
         Me.Label34.ForeColor = System.Drawing.Color.Crimson
         Me.Label34.Location = New System.Drawing.Point(11, 9)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(137, 16)
+        Me.Label34.Size = New System.Drawing.Size(133, 16)
         Me.Label34.TabIndex = 6
         Me.Label34.Text = "Versand / Logistik"
         '
@@ -13437,7 +13440,7 @@ Partial Class frmMain
         Me.Label33.ForeColor = System.Drawing.Color.Crimson
         Me.Label33.Location = New System.Drawing.Point(11, 9)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(60, 16)
+        Me.Label33.Size = New System.Drawing.Size(59, 16)
         Me.Label33.TabIndex = 4
         Me.Label33.Text = "Einkauf"
         '
@@ -13673,7 +13676,7 @@ Partial Class frmMain
         Me.Label32.ForeColor = System.Drawing.Color.Crimson
         Me.Label32.Location = New System.Drawing.Point(11, 9)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(64, 16)
+        Me.Label32.Size = New System.Drawing.Size(63, 16)
         Me.Label32.TabIndex = 3
         Me.Label32.Text = "Vertrieb"
         '
@@ -13713,7 +13716,7 @@ Partial Class frmMain
         Me.Label26.AutoSize = True
         Me.Label26.Location = New System.Drawing.Point(713, 8)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(92, 32)
+        Me.Label26.Size = New System.Drawing.Size(90, 32)
         Me.Label26.TabIndex = 13
         Me.Label26.Text = "Ausbildung-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beruf:"
         '
@@ -13722,7 +13725,7 @@ Partial Class frmMain
         Me.Label28.AutoSize = True
         Me.Label28.Location = New System.Drawing.Point(1183, 8)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(48, 32)
+        Me.Label28.Size = New System.Drawing.Size(47, 32)
         Me.Label28.TabIndex = 11
         Me.Label28.Text = "Ab" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wann:"
         '
@@ -13731,7 +13734,7 @@ Partial Class frmMain
         Me.Label29.AutoSize = True
         Me.Label29.Location = New System.Drawing.Point(551, 16)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(59, 16)
+        Me.Label29.Size = New System.Drawing.Size(55, 16)
         Me.Label29.TabIndex = 10
         Me.Label29.Text = "VZ/TZ:"
         '
@@ -13808,7 +13811,7 @@ Partial Class frmMain
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.Location = New System.Drawing.Point(8, 16)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(102, 16)
+        Me.Label31.Size = New System.Drawing.Size(99, 16)
         Me.Label31.TabIndex = 0
         Me.Label31.Text = "Bewerber/in: "
         '
@@ -14039,7 +14042,7 @@ Partial Class frmMain
         Me.Label50.ForeColor = System.Drawing.Color.Crimson
         Me.Label50.Location = New System.Drawing.Point(11, 9)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(160, 16)
+        Me.Label50.Size = New System.Drawing.Size(159, 16)
         Me.Label50.TabIndex = 2
         Me.Label50.Text = "Steuerfachangestellte"
         '
@@ -14357,7 +14360,7 @@ Partial Class frmMain
         Me.Label44.ForeColor = System.Drawing.Color.Crimson
         Me.Label44.Location = New System.Drawing.Point(11, 9)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(134, 16)
+        Me.Label44.Size = New System.Drawing.Size(133, 16)
         Me.Label44.TabIndex = 3
         Me.Label44.Text = "Bilanzbuchhaltung"
         '
@@ -14710,7 +14713,7 @@ Partial Class frmMain
         Me.Label42.ForeColor = System.Drawing.Color.Crimson
         Me.Label42.Location = New System.Drawing.Point(11, 9)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(137, 16)
+        Me.Label42.Size = New System.Drawing.Size(136, 16)
         Me.Label42.TabIndex = 0
         Me.Label42.Text = "Finanzbuchhaltung"
         '
@@ -14770,7 +14773,7 @@ Partial Class frmMain
         Me.Label36.AutoSize = True
         Me.Label36.Location = New System.Drawing.Point(713, 8)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(92, 32)
+        Me.Label36.Size = New System.Drawing.Size(90, 32)
         Me.Label36.TabIndex = 13
         Me.Label36.Text = "Ausbildung-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beruf:"
         '
@@ -14779,7 +14782,7 @@ Partial Class frmMain
         Me.Label38.AutoSize = True
         Me.Label38.Location = New System.Drawing.Point(1165, 8)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(48, 32)
+        Me.Label38.Size = New System.Drawing.Size(47, 32)
         Me.Label38.TabIndex = 11
         Me.Label38.Text = "Ab" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wann:"
         '
@@ -14788,7 +14791,7 @@ Partial Class frmMain
         Me.Label39.AutoSize = True
         Me.Label39.Location = New System.Drawing.Point(551, 16)
         Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(59, 16)
+        Me.Label39.Size = New System.Drawing.Size(55, 16)
         Me.Label39.TabIndex = 10
         Me.Label39.Text = "VZ/TZ:"
         '
@@ -14865,7 +14868,7 @@ Partial Class frmMain
         Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label41.Location = New System.Drawing.Point(8, 16)
         Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(102, 16)
+        Me.Label41.Size = New System.Drawing.Size(99, 16)
         Me.Label41.TabIndex = 0
         Me.Label41.Text = "Bewerber/in: "
         '
@@ -15039,7 +15042,7 @@ Partial Class frmMain
         Me.Label59.ForeColor = System.Drawing.Color.Crimson
         Me.Label59.Location = New System.Drawing.Point(17, 16)
         Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(220, 16)
+        Me.Label59.Size = New System.Drawing.Size(215, 16)
         Me.Label59.TabIndex = 24
         Me.Label59.Text = "Lohn- und Gehaltsbuchhaltung"
         '
@@ -15230,7 +15233,7 @@ Partial Class frmMain
         Me.Label58.ForeColor = System.Drawing.Color.Crimson
         Me.Label58.Location = New System.Drawing.Point(16, 15)
         Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(218, 16)
+        Me.Label58.Size = New System.Drawing.Size(213, 16)
         Me.Label58.TabIndex = 23
         Me.Label58.Text = "Lohn- und Gehaltsabrechnung"
         '
@@ -15488,7 +15491,7 @@ Partial Class frmMain
         Me.Label57.ForeColor = System.Drawing.Color.Crimson
         Me.Label57.Location = New System.Drawing.Point(12, 15)
         Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(145, 16)
+        Me.Label57.Size = New System.Drawing.Size(144, 16)
         Me.Label57.TabIndex = 17
         Me.Label57.Text = "Personalverwaltung"
         '
@@ -15528,7 +15531,7 @@ Partial Class frmMain
         Me.Label51.AutoSize = True
         Me.Label51.Location = New System.Drawing.Point(713, 8)
         Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(92, 32)
+        Me.Label51.Size = New System.Drawing.Size(90, 32)
         Me.Label51.TabIndex = 13
         Me.Label51.Text = "Ausbildung-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beruf:"
         '
@@ -15537,7 +15540,7 @@ Partial Class frmMain
         Me.Label53.AutoSize = True
         Me.Label53.Location = New System.Drawing.Point(1119, 9)
         Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(48, 32)
+        Me.Label53.Size = New System.Drawing.Size(47, 32)
         Me.Label53.TabIndex = 11
         Me.Label53.Text = "Ab" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wann:"
         '
@@ -15546,7 +15549,7 @@ Partial Class frmMain
         Me.Label54.AutoSize = True
         Me.Label54.Location = New System.Drawing.Point(551, 16)
         Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(59, 16)
+        Me.Label54.Size = New System.Drawing.Size(55, 16)
         Me.Label54.TabIndex = 10
         Me.Label54.Text = "VZ/TZ:"
         '
@@ -15623,7 +15626,7 @@ Partial Class frmMain
         Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label56.Location = New System.Drawing.Point(8, 16)
         Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(102, 16)
+        Me.Label56.Size = New System.Drawing.Size(99, 16)
         Me.Label56.TabIndex = 0
         Me.Label56.Text = "Bewerber/in: "
         '
@@ -16219,7 +16222,7 @@ Partial Class frmMain
         Me.Label68.ForeColor = System.Drawing.Color.Crimson
         Me.Label68.Location = New System.Drawing.Point(11, 9)
         Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(178, 16)
+        Me.Label68.Size = New System.Drawing.Size(176, 16)
         Me.Label68.TabIndex = 6
         Me.Label68.Text = "Gewerbliche Tätigkeiten"
         '
@@ -16854,7 +16857,7 @@ Partial Class frmMain
         Me.Label67.ForeColor = System.Drawing.Color.Crimson
         Me.Label67.Location = New System.Drawing.Point(11, 9)
         Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(23, 16)
+        Me.Label67.Size = New System.Drawing.Size(22, 16)
         Me.Label67.TabIndex = 5
         Me.Label67.Text = "IT"
         '
@@ -17461,7 +17464,7 @@ Partial Class frmMain
         Me.Label60.AutoSize = True
         Me.Label60.Location = New System.Drawing.Point(713, 8)
         Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(92, 32)
+        Me.Label60.Size = New System.Drawing.Size(90, 32)
         Me.Label60.TabIndex = 13
         Me.Label60.Text = "Ausbildung-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "beruf:"
         '
@@ -17470,7 +17473,7 @@ Partial Class frmMain
         Me.Label62.AutoSize = True
         Me.Label62.Location = New System.Drawing.Point(1119, 7)
         Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(48, 32)
+        Me.Label62.Size = New System.Drawing.Size(47, 32)
         Me.Label62.TabIndex = 11
         Me.Label62.Text = "Ab" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "wann:"
         '
@@ -17479,7 +17482,7 @@ Partial Class frmMain
         Me.Label63.AutoSize = True
         Me.Label63.Location = New System.Drawing.Point(551, 16)
         Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(59, 16)
+        Me.Label63.Size = New System.Drawing.Size(55, 16)
         Me.Label63.TabIndex = 10
         Me.Label63.Text = "VZ/TZ:"
         '
@@ -17556,7 +17559,7 @@ Partial Class frmMain
         Me.Label65.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label65.Location = New System.Drawing.Point(8, 16)
         Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(102, 16)
+        Me.Label65.Size = New System.Drawing.Size(99, 16)
         Me.Label65.TabIndex = 0
         Me.Label65.Text = "Bewerber/in: "
         '
@@ -18002,11 +18005,16 @@ Partial Class frmMain
         Me.RadMenu1.BackColor = System.Drawing.Color.NavajoWhite
         Me.RadMenu1.Dock = System.Windows.Forms.DockStyle.None
         Me.RadMenu1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.BewerberRadMenuItem1, Me.HomepageRadMenuItem1, Me.AnleitungenRadMenuItem1, Me.AdminfunktionenRadMenuItem1, Me.VersionRadMenuItem1})
+        Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.BewerberRadMenuItem1, Me.HomepageRadMenuItem1, Me.AnleitungenRadMenuItem1, Me.FarblegendeMenuItem1, Me.AdminfunktionenRadMenuItem1, Me.VersionRadMenuItem1})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
         Me.RadMenu1.Size = New System.Drawing.Size(780, 21)
         Me.RadMenu1.TabIndex = 69
+        '
+        'FarblegendeMenuItem1
+        '
+        Me.FarblegendeMenuItem1.Name = "FarblegendeMenuItem1"
+        Me.FarblegendeMenuItem1.Text = "Farblegende"
         '
         'btnDatenBewerbertooleinlesen
         '
@@ -18199,6 +18207,15 @@ Partial Class frmMain
         Me.TableAdapterManager1.oa_kundeTableAdapter = Nothing
         Me.TableAdapterManager1.oa_stelleTableAdapter = Me.Oa_stelleTableAdapter
         Me.TableAdapterManager1.UpdateOrder = bewerberpool.oaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(25, 63)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 51
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmMain
         '
@@ -19541,4 +19558,6 @@ Partial Class frmMain
     Friend WithEvents txtFuerstelle As TextBox
     Friend WithEvents GroupBox78 As GroupBox
     Friend WithEvents txtFuerkunde As TextBox
+    Friend WithEvents FarblegendeMenuItem1 As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents Button1 As Button
 End Class
