@@ -76,6 +76,8 @@ Public Class frmXmleinlesen
 
     Private Sub Xmlersetzungen()
 
+        Call GetAutoincrement() ' Das muss unbedingt ausgeführt werden, sonst klappt das Einlesen nicht
+
         Call frmMain.DBLoad()
 
         Me.Label2.Visible = True

@@ -430,7 +430,7 @@ Public Class frmMain
     Private Sub rundschreibencheck()
         If Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid AndAlso Not x.rundschreibenjanein AndAlso x.aktuell = 1) Then
             btnRundschreiben.BackColor = Color.WhiteSmoke
-        ElseIf Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid AndAlso x.rundschreibenjanein AndAlso x.aktuell = 1 AndAlso x.gelöscht = 0) Then
+        ElseIf Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid AndAlso x.rundschreibenjanein AndAlso x.aktuell = 1 AndAlso x.gelöscht = 0 OrElse x.IsgelöschtNull) Then
             btnRundschreiben.BackColor = Color.LightSteelBlue
         End If
     End Sub
@@ -1964,9 +1964,4 @@ Public Class frmMain
         frmListboxen.vztz = String.Empty
     End Sub
 
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Call GetAutoincrement()
-        MsgBox(autoincrementwert)
-    End Sub
 End Class

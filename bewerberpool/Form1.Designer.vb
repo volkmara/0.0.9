@@ -1619,7 +1619,6 @@ Partial Class frmMain
         Me.Oa_stelleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Oa_stelleTableAdapter = New bewerberpool.oaDataSetTableAdapters.oa_stelleTableAdapter()
         Me.TableAdapterManager1 = New bewerberpool.oaDataSetTableAdapters.TableAdapterManager()
-        Me.Button1 = New System.Windows.Forms.Button()
         NameLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
         AnredeLabel = New System.Windows.Forms.Label()
@@ -9164,7 +9163,6 @@ Partial Class frmMain
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.GroupBox4.Controls.Add(Me.Button1)
         Me.GroupBox4.Controls.Add(Gehaltswunsch_jahrLabel)
         Me.GroupBox4.Controls.Add(Me.Gehaltswunsch_jahrTextBox)
         Me.GroupBox4.Controls.Add(Label6)
@@ -18208,15 +18206,6 @@ Partial Class frmMain
         Me.TableAdapterManager1.oa_stelleTableAdapter = Me.Oa_stelleTableAdapter
         Me.TableAdapterManager1.UpdateOrder = bewerberpool.oaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(25, 63)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 51
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -19559,5 +19548,4 @@ Partial Class frmMain
     Friend WithEvents GroupBox78 As GroupBox
     Friend WithEvents txtFuerkunde As TextBox
     Friend WithEvents FarblegendeMenuItem1 As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents Button1 As Button
 End Class
