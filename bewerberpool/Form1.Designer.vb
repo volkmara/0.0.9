@@ -2441,7 +2441,7 @@ Partial Class frmMain
         'Alter_jahrLabel
         '
         Alter_jahrLabel.AutoSize = True
-        Alter_jahrLabel.Location = New System.Drawing.Point(8, 133)
+        Alter_jahrLabel.Location = New System.Drawing.Point(10, 96)
         Alter_jahrLabel.Name = "Alter_jahrLabel"
         Alter_jahrLabel.Size = New System.Drawing.Size(44, 16)
         Alter_jahrLabel.TabIndex = 8
@@ -2450,7 +2450,7 @@ Partial Class frmMain
         'OrtLabel
         '
         OrtLabel.AutoSize = True
-        OrtLabel.Location = New System.Drawing.Point(6, 207)
+        OrtLabel.Location = New System.Drawing.Point(8, 170)
         OrtLabel.Name = "OrtLabel"
         OrtLabel.Size = New System.Drawing.Size(32, 16)
         OrtLabel.TabIndex = 10
@@ -2459,7 +2459,7 @@ Partial Class frmMain
         'PlzLabel
         '
         PlzLabel.AutoSize = True
-        PlzLabel.Location = New System.Drawing.Point(8, 174)
+        PlzLabel.Location = New System.Drawing.Point(10, 137)
         PlzLabel.Name = "PlzLabel"
         PlzLabel.Size = New System.Drawing.Size(33, 16)
         PlzLabel.TabIndex = 12
@@ -2468,7 +2468,7 @@ Partial Class frmMain
         'StrasseLabel
         '
         StrasseLabel.AutoSize = True
-        StrasseLabel.Location = New System.Drawing.Point(3, 273)
+        StrasseLabel.Location = New System.Drawing.Point(5, 223)
         StrasseLabel.Name = "StrasseLabel"
         StrasseLabel.Size = New System.Drawing.Size(58, 16)
         StrasseLabel.TabIndex = 14
@@ -2477,7 +2477,7 @@ Partial Class frmMain
         'Gehalt_monatLabel
         '
         Gehalt_monatLabel.AutoSize = True
-        Gehalt_monatLabel.Location = New System.Drawing.Point(0, 296)
+        Gehalt_monatLabel.Location = New System.Drawing.Point(6, 253)
         Gehalt_monatLabel.Name = "Gehalt_monatLabel"
         Gehalt_monatLabel.Size = New System.Drawing.Size(63, 48)
         Gehalt_monatLabel.TabIndex = 1
@@ -2486,7 +2486,7 @@ Partial Class frmMain
         'Tel_festnetzLabel
         '
         Tel_festnetzLabel.AutoSize = True
-        Tel_festnetzLabel.Location = New System.Drawing.Point(0, 409)
+        Tel_festnetzLabel.Location = New System.Drawing.Point(3, 373)
         Tel_festnetzLabel.Name = "Tel_festnetzLabel"
         Tel_festnetzLabel.Size = New System.Drawing.Size(70, 32)
         Tel_festnetzLabel.TabIndex = 1
@@ -2495,7 +2495,7 @@ Partial Class frmMain
         'Tel_mobilLabel
         '
         Tel_mobilLabel.AutoSize = True
-        Tel_mobilLabel.Location = New System.Drawing.Point(0, 455)
+        Tel_mobilLabel.Location = New System.Drawing.Point(6, 416)
         Tel_mobilLabel.Name = "Tel_mobilLabel"
         Tel_mobilLabel.Size = New System.Drawing.Size(61, 32)
         Tel_mobilLabel.TabIndex = 1
@@ -2504,7 +2504,7 @@ Partial Class frmMain
         'EmailLabel
         '
         EmailLabel.AutoSize = True
-        EmailLabel.Location = New System.Drawing.Point(3, 517)
+        EmailLabel.Location = New System.Drawing.Point(9, 468)
         EmailLabel.Name = "EmailLabel"
         EmailLabel.Size = New System.Drawing.Size(51, 16)
         EmailLabel.TabIndex = 22
@@ -7369,7 +7369,7 @@ Partial Class frmMain
         'RundschreibenLabel
         '
         RundschreibenLabel.AutoSize = True
-        RundschreibenLabel.Location = New System.Drawing.Point(0, 558)
+        RundschreibenLabel.Location = New System.Drawing.Point(3, 504)
         RundschreibenLabel.Name = "RundschreibenLabel"
         RundschreibenLabel.Size = New System.Drawing.Size(116, 32)
         RundschreibenLabel.TabIndex = 41
@@ -7387,7 +7387,7 @@ Partial Class frmMain
         'JahresgehaltLabel1
         '
         JahresgehaltLabel1.AutoSize = True
-        JahresgehaltLabel1.Location = New System.Drawing.Point(0, 351)
+        JahresgehaltLabel1.Location = New System.Drawing.Point(3, 318)
         JahresgehaltLabel1.Name = "JahresgehaltLabel1"
         JahresgehaltLabel1.Size = New System.Drawing.Size(60, 48)
         JahresgehaltLabel1.TabIndex = 43
@@ -8259,7 +8259,7 @@ Partial Class frmMain
         Me.GroupBox2.Controls.Add(Me.cmbStatus)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 833)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 776)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(307, 334)
         Me.GroupBox2.TabIndex = 1
@@ -8378,7 +8378,7 @@ Partial Class frmMain
         Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox1.Location = New System.Drawing.Point(8, 226)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(307, 603)
+        Me.GroupBox1.Size = New System.Drawing.Size(307, 544)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -8386,7 +8386,7 @@ Partial Class frmMain
         '
         Me.JahresgehaltTextBox1.BackColor = System.Drawing.Color.LightGreen
         Me.JahresgehaltTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "jahresgehalt", True))
-        Me.JahresgehaltTextBox1.Location = New System.Drawing.Point(95, 360)
+        Me.JahresgehaltTextBox1.Location = New System.Drawing.Point(100, 318)
         Me.JahresgehaltTextBox1.Name = "JahresgehaltTextBox1"
         Me.JahresgehaltTextBox1.Size = New System.Drawing.Size(193, 22)
         Me.JahresgehaltTextBox1.TabIndex = 42
@@ -8396,7 +8396,7 @@ Partial Class frmMain
         Me.RundschreibenComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "rundschreiben", True))
         Me.RundschreibenComboBox.FormattingEnabled = True
         Me.RundschreibenComboBox.Items.AddRange(New Object() {"", "Ja", "Nein"})
-        Me.RundschreibenComboBox.Location = New System.Drawing.Point(144, 555)
+        Me.RundschreibenComboBox.Location = New System.Drawing.Point(152, 509)
         Me.RundschreibenComboBox.Name = "RundschreibenComboBox"
         Me.RundschreibenComboBox.Size = New System.Drawing.Size(142, 24)
         Me.RundschreibenComboBox.TabIndex = 15
@@ -8409,7 +8409,7 @@ Partial Class frmMain
         'StrasseTextBox
         '
         Me.StrasseTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "strasse", True))
-        Me.StrasseTextBox.Location = New System.Drawing.Point(95, 270)
+        Me.StrasseTextBox.Location = New System.Drawing.Point(97, 223)
         Me.StrasseTextBox.Name = "StrasseTextBox"
         Me.StrasseTextBox.Size = New System.Drawing.Size(196, 22)
         Me.StrasseTextBox.TabIndex = 2
@@ -8417,7 +8417,7 @@ Partial Class frmMain
         'lblgooglemaps
         '
         Me.lblgooglemaps.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblgooglemaps.Location = New System.Drawing.Point(7, 234)
+        Me.lblgooglemaps.Location = New System.Drawing.Point(9, 197)
         Me.lblgooglemaps.Name = "lblgooglemaps"
         Me.lblgooglemaps.Size = New System.Drawing.Size(207, 22)
         Me.lblgooglemaps.TabIndex = 41
@@ -8436,7 +8436,7 @@ Partial Class frmMain
         'PictureBox5
         '
         Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(47, 207)
+        Me.PictureBox5.Location = New System.Drawing.Point(49, 170)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(17, 20)
         Me.PictureBox5.TabIndex = 39
@@ -8446,7 +8446,7 @@ Partial Class frmMain
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(60, 517)
+        Me.PictureBox1.Location = New System.Drawing.Point(63, 467)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(17, 20)
         Me.PictureBox1.TabIndex = 36
@@ -8456,7 +8456,7 @@ Partial Class frmMain
         'EmailTextBox
         '
         Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "email", True))
-        Me.EmailTextBox.Location = New System.Drawing.Point(92, 514)
+        Me.EmailTextBox.Location = New System.Drawing.Point(99, 465)
         Me.EmailTextBox.Name = "EmailTextBox"
         Me.EmailTextBox.Size = New System.Drawing.Size(195, 22)
         Me.EmailTextBox.TabIndex = 23
@@ -8464,7 +8464,7 @@ Partial Class frmMain
         'Tel_mobilTextBox
         '
         Me.Tel_mobilTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "tel_mobil", True))
-        Me.Tel_mobilTextBox.Location = New System.Drawing.Point(93, 465)
+        Me.Tel_mobilTextBox.Location = New System.Drawing.Point(100, 416)
         Me.Tel_mobilTextBox.Name = "Tel_mobilTextBox"
         Me.Tel_mobilTextBox.Size = New System.Drawing.Size(194, 22)
         Me.Tel_mobilTextBox.TabIndex = 2
@@ -8472,7 +8472,7 @@ Partial Class frmMain
         'Tel_festnetzTextBox
         '
         Me.Tel_festnetzTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "tel_festnetz", True))
-        Me.Tel_festnetzTextBox.Location = New System.Drawing.Point(93, 419)
+        Me.Tel_festnetzTextBox.Location = New System.Drawing.Point(99, 373)
         Me.Tel_festnetzTextBox.Name = "Tel_festnetzTextBox"
         Me.Tel_festnetzTextBox.Size = New System.Drawing.Size(195, 22)
         Me.Tel_festnetzTextBox.TabIndex = 2
@@ -8481,7 +8481,7 @@ Partial Class frmMain
         '
         Me.Gehalt_monatTextBox.BackColor = System.Drawing.Color.LightGreen
         Me.Gehalt_monatTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "monatsgehalt", True))
-        Me.Gehalt_monatTextBox.Location = New System.Drawing.Point(94, 312)
+        Me.Gehalt_monatTextBox.Location = New System.Drawing.Point(97, 262)
         Me.Gehalt_monatTextBox.Name = "Gehalt_monatTextBox"
         Me.Gehalt_monatTextBox.Size = New System.Drawing.Size(194, 22)
         Me.Gehalt_monatTextBox.TabIndex = 2
@@ -8489,7 +8489,7 @@ Partial Class frmMain
         'PlzTextBox
         '
         Me.PlzTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "plz", True))
-        Me.PlzTextBox.Location = New System.Drawing.Point(95, 171)
+        Me.PlzTextBox.Location = New System.Drawing.Point(97, 134)
         Me.PlzTextBox.Name = "PlzTextBox"
         Me.PlzTextBox.Size = New System.Drawing.Size(100, 22)
         Me.PlzTextBox.TabIndex = 13
@@ -8497,7 +8497,7 @@ Partial Class frmMain
         'txtOrt
         '
         Me.txtOrt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "ort", True))
-        Me.txtOrt.Location = New System.Drawing.Point(95, 204)
+        Me.txtOrt.Location = New System.Drawing.Point(97, 167)
         Me.txtOrt.Name = "txtOrt"
         Me.txtOrt.Size = New System.Drawing.Size(195, 22)
         Me.txtOrt.TabIndex = 11
@@ -8505,7 +8505,7 @@ Partial Class frmMain
         'Alter_jahrTextBox
         '
         Me.Alter_jahrTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "alter", True))
-        Me.Alter_jahrTextBox.Location = New System.Drawing.Point(97, 130)
+        Me.Alter_jahrTextBox.Location = New System.Drawing.Point(99, 93)
         Me.Alter_jahrTextBox.Name = "Alter_jahrTextBox"
         Me.Alter_jahrTextBox.ReadOnly = True
         Me.Alter_jahrTextBox.Size = New System.Drawing.Size(100, 22)
@@ -8519,7 +8519,7 @@ Partial Class frmMain
         Me.txtUlas.Name = "txtUlas"
         Me.txtUlas.ReadOnly = True
         Me.txtUlas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtUlas.Size = New System.Drawing.Size(193, 95)
+        Me.txtUlas.Size = New System.Drawing.Size(193, 66)
         Me.txtUlas.TabIndex = 7
         '
         'Panel2
