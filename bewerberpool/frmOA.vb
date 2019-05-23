@@ -201,13 +201,13 @@ Public Class frmOA
 
             ' frmMain
             Case vorschlagenfuerstelle_bool
-                If CStr(interviewerstellenliste) <> String.Empty Then
-                    Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+                ' If CStr(interviewerstellenliste) <> String.Empty Then
+                Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
                     bewerber.fuerstelle = CStr(interviewerstellenliste)
                     'Me.Validate()
                     'Me.BewBindingSource.EndEdit()
 
-                End If
+                'End If
 
             ' frmInterviewer
             Case vorschlagenfuerstelle_interviewer_bool
@@ -236,17 +236,18 @@ Public Class frmOA
                 Me.Close()
 
             Case sender Is btnWerteeintragenFensterschliessen
+
                 If vorschlagenfuerstelle_bool Then
-                    If liste.Count > 0 Then
-                        Call datenuebertragen()
-                        MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
+                    ' If liste.Count > 0 Then
+                    Call datenuebertragen()
+                    MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    'End If
                 End If
 
                 If vorschlagenfuerstelle_interviewer_bool Then
-                    If liste.Count > 0 Then
-                        Call datenuebertragen()
-                    End If
+                    'If liste.Count > 0 Then
+                    Call datenuebertragen()
+                    'End If
                 End If
 
                 vorschlagenfuerstelle_bool = False

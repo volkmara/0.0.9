@@ -42,7 +42,7 @@ Public Class frmKundeOA
     End Sub
 
     Private Sub RGVOAkunde_DoubleClick(sender As Object, e As EventArgs) Handles RGVOAkunde.DoubleClick
-        Dim werte As String = String.Empty
+        ' Dim werte As String = String.Empty
 
         Dim oawerte = DirectCast(DirectCast(Oa_kundeBindingSource.Current, DataRowView).Row, oa_kundeRow)
 
@@ -95,7 +95,7 @@ Public Class frmKundeOA
                 'Me.BewTableAdapter.Update(Me.BewerberDataSet.bew)
 
                 ' MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Call Mail_kunde()
+                '  Call Mail_kunde()
                 Me.Close()
 
             Case sender Is btnEintragloeschen
