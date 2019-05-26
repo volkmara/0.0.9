@@ -120,6 +120,7 @@ Public Class frmRundschreibendetail
                 rundschreiben.homepage = CInt(0)
                 rundschreiben.anmerkungen = txtRundschreibenanmerkungen.Text
                 rundschreiben.rundschreibenjanein = True
+                rundschreiben.nurhomepage = False
 
                 Me.Validate()
                 Me.RundschreibenBindingSource.EndEdit()

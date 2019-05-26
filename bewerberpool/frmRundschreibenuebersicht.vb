@@ -167,7 +167,7 @@ Public Class frmRundschreibenuebersicht
                     Dim result As DialogResult = MessageBox.Show("Bitte erst in der linken Spalte einen Eintrag anklicken.", "Eintrag auswählen", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Exit Sub
                 Else
-                    Dim rs = BewerberDataSet.rundschreiben.Where(Function(x) x.aktuell = 1 AndAlso x.homepage = CInt(False) AndAlso x.bezeichnung = CStr(rsaktuellbezeichnung))
+                    Dim rs = BewerberDataSet.rundschreiben.Where(Function(x) x.aktuell = 1 AndAlso x.bezeichnung = CStr(rsaktuellbezeichnung) AndAlso x.nurhomepage = False)
 
                     For Each x In rs
                         x.aktuell = CInt(0)
