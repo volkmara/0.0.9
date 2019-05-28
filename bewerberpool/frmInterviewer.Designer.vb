@@ -1040,7 +1040,7 @@ Partial Class frmInterviewer
         '
         Me.cmbInterviewer.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "interviewer", True))
         Me.cmbInterviewer.FormattingEnabled = True
-        Me.cmbInterviewer.Items.AddRange(New Object() {"", "Devilder", "Fürst", "Heyduck", "Mersch", "Leinweber"})
+        Me.cmbInterviewer.Items.AddRange(New Object() {"", "Devilder", "Fürst", "Heyduck", "Hilger", "Schweiger"})
         Me.cmbInterviewer.Location = New System.Drawing.Point(865, 40)
         Me.cmbInterviewer.Name = "cmbInterviewer"
         Me.cmbInterviewer.Size = New System.Drawing.Size(151, 24)

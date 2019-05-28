@@ -8270,7 +8270,7 @@ Partial Class frmMain
         Me.InterviewerComboBox.BackColor = System.Drawing.Color.LightGreen
         Me.InterviewerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "interviewer", True))
         Me.InterviewerComboBox.FormattingEnabled = True
-        Me.InterviewerComboBox.Items.AddRange(New Object() {"", "Devilder", "Fürst", "Heyduck", "Mersch", "Nieweld", "Schwarz"})
+        Me.InterviewerComboBox.Items.AddRange(New Object() {"", "Devilder", "Fürst", "Heyduck", "Hilger", "Schweiger"})
         Me.InterviewerComboBox.Location = New System.Drawing.Point(101, 150)
         Me.InterviewerComboBox.Name = "InterviewerComboBox"
         Me.InterviewerComboBox.Size = New System.Drawing.Size(192, 24)
