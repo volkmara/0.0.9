@@ -214,7 +214,7 @@ Public Class frmOA
                 If CStr(interviewerstellenliste) <> String.Empty Then
                     Dim bewerber = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
                     bewerber.fuerstelle = CStr(interviewerstellenliste)
-                    ' _frmInterviewer.txtFuerstelle.Text = CStr(interviewerstellenliste)
+                    _frmInterviewer.txtFuerstelle.Text = CStr(interviewerstellenliste)
                 End If
         End Select
     End Sub

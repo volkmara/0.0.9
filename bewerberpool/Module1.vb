@@ -115,4 +115,11 @@ Module Module1
     Public Sub Speichernhinweis()
         MessageBox.Show("Speichern nicht vergessen, Einträge wurden geändert", "Speichern nicht vergessen", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
+
+    ' Kein Bewerber ausgewählt
+    Private Sub KeinBewerber()
+        If frmMain.BewGridView1.SelectedRows.Count = 0 Then
+            MessageBox.Show("Bitte wählen Sie zuerst eine/n Bewerber/in in der Tabelle aus", "Keine Bewerberauswahl", MessageBoxButtons.OK, MessageBoxIcon.Hand)
+        End If
+    End Sub
 End Module

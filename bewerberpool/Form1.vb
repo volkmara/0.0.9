@@ -606,10 +606,13 @@ Public Class frmMain
                 Call anmerkunggeaendertspeichern()
 
             Case sender Is Interviewerbogen
-                ' Call Intervieweraufrufen()
-                Using frm = New frmInterviewer(Me)
-                    Dim result = frm.ShowDialog(Me)
-                End Using
+                If Not Panel1.Visible OrElse Not Rowausgewählt_check(row_ausgewählt_bool) Then
+                    MessageBox.Show("Bitte wählen Sie zuerst eine/n Bewerber/in in der Tabelle aus", "Keine Bewerberauswahl", MessageBoxButtons.OK, MessageBoxIcon.Hand)
+                Else
+                    Using frm = New frmInterviewer(Me)
+                        Dim result = frm.ShowDialog(Me)
+                    End Using
+                End If
 
             Case sender Is Kurzfragebogen
                 Using frm = New frmKurzfragebogen(Me)
