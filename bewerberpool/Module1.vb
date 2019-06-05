@@ -2,13 +2,13 @@
 Imports System.Net
 
 Module Module1
-    Public connectionString As String = "Server=127.0.0.1; uid=root; pwd=heyduck1!; Convert Zero Datetime=True; persistsecurityinfo=True; database=bewerberneu;"
-    Public oaconnectionString As String = "Server=127.0.0.1; uid=root; pwd=heyduck1!; database=oa;"
-    Public benutzerverwaltungConnectionString As String = "Server=127.0.0.1;user id=root;password=heyduck1!;persistsecurityinfo=True;database=benutzerverwaltung;"
+    'Public connectionString As String = "Server=127.0.0.1; uid=root; pwd=heyduck1!; Convert Zero Datetime=True; persistsecurityinfo=True; database=bewerberneu;"
+    'Public oaconnectionString As String = "Server=127.0.0.1; uid=root; pwd=heyduck1!; database=oa;"
+    'Public benutzerverwaltungConnectionString As String = "Server=127.0.0.1;user id=root;password=heyduck1!;persistsecurityinfo=True;database=benutzerverwaltung;"
     Public heyduckConnectionString As String = "server=heyduck-personalservice.de;user id=heyduck;password=heyduck1!;persistsecurityinfo=True;database=heyduck;"
-    'Public connectionString As String = "Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;database=bewerberneu;"
-    'Public oaconnectionString As String = "Server=SERVER2012; user id=Adler; password=zgA7K$z!; database=oa;"
-    'Public benutzerverwaltungConnectionString As String = "Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;persistsecurityinfo=True;database=benutzerverwaltung;"
+    Public connectionString As String = "Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;database=bewerberneu;"
+    Public oaconnectionString As String = "Server=SERVER2012; user id=Adler; password=zgA7K$z!; database=oa;"
+    Public benutzerverwaltungConnectionString As String = "Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;persistsecurityinfo=True;database=benutzerverwaltung;"
 
     ' Public username As String = String.Empty
     Public usernameklar As String = String.Empty
@@ -114,12 +114,5 @@ Module Module1
     ' Auf Speichern hinweisen, wenn aus anderer Form Änderungen übernommen wurden.
     Public Sub Speichernhinweis()
         MessageBox.Show("Speichern nicht vergessen, Einträge wurden geändert", "Speichern nicht vergessen", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    End Sub
-
-    ' Kein Bewerber ausgewählt
-    Private Sub KeinBewerber()
-        If frmMain.BewGridView1.SelectedRows.Count = 0 Then
-            MessageBox.Show("Bitte wählen Sie zuerst eine/n Bewerber/in in der Tabelle aus", "Keine Bewerberauswahl", MessageBoxButtons.OK, MessageBoxIcon.Hand)
-        End If
     End Sub
 End Module

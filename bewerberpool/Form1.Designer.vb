@@ -18232,7 +18232,7 @@ Partial Class frmMain
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Bewerberpool 0.4.2"
+        Me.Text = "Bewerberpool 0.4.3"
         Panel27.ResumeLayout(False)
         Panel27.PerformLayout
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).EndInit

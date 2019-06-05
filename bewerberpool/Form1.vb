@@ -78,7 +78,7 @@ Public Class frmMain
         Call formatierung.Labelfarbe()
         Call tabellen.tabellenheader()
         Call Comboboxfill() ' Werte in Sprachencomboboxen eintragen, Index 0 setzen
-        Me.BewGridView1.Rows(0).IsCurrent = True
+        ' Me.BewGridView1.Rows(0).IsCurrent = True
         ' Me.BewGridView1.Columns(24).WrapText = True
         'letzteid = CInt(Me.BewGridView1.CurrentRow.Cells(0).Value)
         Me.BewGridView1.MasterTemplate.ShowFilterCellOperatorText = False
@@ -1668,6 +1668,21 @@ Public Class frmMain
         End If
     End Sub
 
+    Private Sub Vollstaendigloeschen() ' email verschicken, wenn Bewerber vollständig physikalisch aus der DB gelöscht wurde
+        If Not connectionString.Contains("127.0.0.1") Then
+            Dim email As New Mail
+
+            Dim betreff As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde vollständig gelöscht.")
+            Dim bodytext As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde vollständig gelöscht.", vbNewLine, "Papierulas müssen ebenfalls vernichtet werden.")
+
+            email.receiver = "assistenz@heyduck-personalservice.de, kontakt@heyduck-personalservice.de, volkmar.adler@heyduck-zeitarbeit.de, magdalenemersch@heyduck-personalservice.de"
+            ' email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
+            email.subject = CStr(betreff)
+            email.body = CStr(bodytext)
+            email.send()
+        End If
+    End Sub
+
     Private Sub mailtopbewerber() ' Mail an hy, wenn Bewerber als Topbewerber markiert wird
 
         Dim bewerber = DirectCast(DirectCast(BewBindingSource.Current, DataRowView).Row, bewRow)
@@ -1933,6 +1948,7 @@ Public Class frmMain
             Next
             Me.TableAdapterManager.UpdateAll(Me.BewerberDataSet)
             MessageBox.Show("Datensatz erfolgreich gelöscht", "Datensatz gelöscht", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Call Vollstaendigloeschen()
         ElseIf result = DialogResult.No Then
             MessageBox.Show("Datensatz wurde nicht gelöscht", "Datensatz nicht gelöscht", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
