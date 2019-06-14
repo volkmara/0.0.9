@@ -1668,20 +1668,6 @@ Public Class frmMain
         End If
     End Sub
 
-    Private Sub Vollstaendigloeschen() ' email verschicken, wenn Bewerber vollständig physikalisch aus der DB gelöscht wurde
-        If Not connectionString.Contains("127.0.0.1") Then
-            Dim email As New Mail
-
-            Dim betreff As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde vollständig gelöscht.")
-            Dim bodytext As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde vollständig gelöscht.", vbNewLine, "Papierulas müssen ebenfalls vernichtet werden.")
-
-            email.receiver = "assistenz@heyduck-personalservice.de, kontakt@heyduck-personalservice.de, volkmar.adler@heyduck-zeitarbeit.de, magdalenemersch@heyduck-personalservice.de"
-            ' email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
-            email.subject = CStr(betreff)
-            email.body = CStr(bodytext)
-            email.send()
-        End If
-    End Sub
 
     Private Sub mailtopbewerber() ' Mail an hy, wenn Bewerber als Topbewerber markiert wird
 
@@ -1700,8 +1686,9 @@ Public Class frmMain
                 bodytext = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde von ", usernameklar, " als Topbewerber/in Zeitarbeit markiert.")
             End If
 
-            email.receiver = "kontakt@heyduck-personalservice.de, beatrixhambitzer@heyduck-personalservice.de, susannehanner@heyduck-personalservice.de"
+            'email.receiver = "kontakt@heyduck-personalservice.de, beatrixhambitzer@heyduck-personalservice.de, susannehanner@heyduck-personalservice.de"
             'email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
+            email.receiver = EmailTextBox1.Text
 
             email.subject = CStr(betreff)
             email.body = CStr(bodytext)
@@ -1854,12 +1841,33 @@ Public Class frmMain
 
 #End Region
 
+
+    ' Bewerber komplett aus DB löschen, interne und Mail an gelöschten Bewerber schicken.
     Private Sub Bewerberkomplettloeschen()
 
         Dim result As DialogResult = MessageBox.Show("Wollen Sie diesen Datensatz vollständig und endgültig löschen? Der Vorgang kann nicht rückgängig gemacht werden.", "Vollständig löschen?", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
         If result = DialogResult.Yes Then
 
+            'Text für interne Löschnachricht
+            Dim betreffintern As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde vollständig gelöscht.")
+            Dim bodytextintern As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde vollständig gelöscht.", vbNewLine, "Papierulas müssen ebenfalls vernichtet werden.")
+
+            ' Text für Löschnachricht an Bewerber
+
+            Dim betreffextern As String = "Ihre Daten wurden vollständig gelöscht"
+            Dim anrede As String = String.Empty
+            If AnredeComboBox.Text.Contains("Herr") Then
+                anrede = "Sehr geehrter Herr "
+            ElseIf AnredeComboBox.Text.Contains("Frau") Then
+                anrede = "Sehr geehrte Frau "
+            End If
+
+            Dim bodytextextern As String = String.Concat(anrede, NameTextBox.Text, ", ", vbNewLine, vbNewLine, "Ihrer Aufforderung, die bei uns über Sie gespeicherten oder archivierten Informationen gemäß DSGVO zu löschen, sind wir gerne nachgekommen.", vbNewLine, vbNewLine, "Wir bestätigen Ihnen, dass sämtliche Informationen über Sie in unseren Datenbanken gelöscht wurden, soweit diese nicht für Abrechnungszwecke oder aus anderen zulässigen Gründen benötigt werden. Ausdrucke Ihrer Unterlagen wurden vollständig vernichtet, die Ursprungsdateien, die Sie uns übermittelt hatten, wurden gelöscht.", vbNewLine, vbNewLine, "Mit freundichen Grüßen", vbNewLine, "Heyduck Personalservice", vbNewLine, "Anja Heyduck", vbNewLine, "Geschäftsführerin", vbNewLine, "Josef-Dietzgen Str. 3", vbNewLine, "53773 Hennef")
+
+            Dim empfaenger As String = EmailTextBox1.Text
+
+            ' Daten löschen
             If BewerberDataSet.notizen.Any(Function(y) y.bewid = letzteid) Then
                 Dim notizen = BewerberDataSet.notizen.Where(Function(x) x.bewid = letzteid)
                 For Each x In notizen
@@ -1948,9 +1956,30 @@ Public Class frmMain
             Next
             Me.TableAdapterManager.UpdateAll(Me.BewerberDataSet)
             MessageBox.Show("Datensatz erfolgreich gelöscht", "Datensatz gelöscht", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Call Vollstaendigloeschen()
+
+            ' Löschnachricht intern versenden
+
+            If Not connectionString.Contains("127.0.0.1") Then
+                Dim email As New Mail
+                'email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
+                email.receiver = "assistenz@heyduck-personalservice.de, kontakt@heyduck-personalservice.de, volkmar.adler@heyduck-zeitarbeit.de, magdalenemersch@heyduck-personalservice.de"
+
+                email.subject = CStr(betreffintern)
+                email.body = CStr(bodytextintern)
+                email.send()
+
+                ' Löschnachricht an Bewerber versenden
+
+                Dim email1 As New Mail
+                ' email1.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
+                email1.receiver = empfaenger
+                email1.subject = betreffextern
+                email1.body = bodytextextern
+                email1.send()
+            End If
+
         ElseIf result = DialogResult.No Then
-            MessageBox.Show("Datensatz wurde nicht gelöscht", "Datensatz nicht gelöscht", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Datensatz wurde nicht gelöscht", "Datensatz nicht gelöscht", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
     End Sub
@@ -1982,5 +2011,4 @@ Public Class frmMain
         frmListboxen.fibu_kontenrahmen = String.Empty
         frmListboxen.vztz = String.Empty
     End Sub
-
 End Class

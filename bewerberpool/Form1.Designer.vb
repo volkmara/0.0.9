@@ -9414,18 +9414,18 @@ Partial Class frmMain
         '
         Me.ContextMenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BearbeiteeulasspeichernToolStripMenuItem, Me.explorerToolStripMenuItem})
         Me.ContextMenuStrip3.Name = "ContextMenuStrip3"
-        Me.ContextMenuStrip3.Size = New System.Drawing.Size(233, 48)
+        Me.ContextMenuStrip3.Size = New System.Drawing.Size(234, 48)
         '
         'BearbeiteeulasspeichernToolStripMenuItem
         '
         Me.BearbeiteeulasspeichernToolStripMenuItem.Name = "BearbeiteeulasspeichernToolStripMenuItem"
-        Me.BearbeiteeulasspeichernToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+        Me.BearbeiteeulasspeichernToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
         Me.BearbeiteeulasspeichernToolStripMenuItem.Text = "Bearbeitete Ulas speichern"
         '
         'explorerToolStripMenuItem
         '
         Me.explorerToolStripMenuItem.Name = "explorerToolStripMenuItem"
-        Me.explorerToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+        Me.explorerToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
         Me.explorerToolStripMenuItem.Text = "Verzeichnis im Explorer öffnen"
         '
         'Label82
@@ -9589,19 +9589,19 @@ Partial Class frmMain
         '
         Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UlasspeichernToolStripMenuItem, Me.UlasexplorerToolStripMenuItem})
         Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(233, 48)
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(234, 48)
         '
         'UlasspeichernToolStripMenuItem
         '
         Me.UlasspeichernToolStripMenuItem.Image = CType(resources.GetObject("UlasspeichernToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UlasspeichernToolStripMenuItem.Name = "UlasspeichernToolStripMenuItem"
-        Me.UlasspeichernToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+        Me.UlasspeichernToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
         Me.UlasspeichernToolStripMenuItem.Text = "Originalulas speichern"
         '
         'UlasexplorerToolStripMenuItem
         '
         Me.UlasexplorerToolStripMenuItem.Name = "UlasexplorerToolStripMenuItem"
-        Me.UlasexplorerToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+        Me.UlasexplorerToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
         Me.UlasexplorerToolStripMenuItem.Text = "Verzeichnis im Explorer öffnen"
         '
         'Panel9
