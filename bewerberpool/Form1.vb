@@ -428,7 +428,7 @@ Public Class frmMain
     ' End Sub
 
     Private Sub rundschreibencheck()
-        If Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid AndAlso Not x.rundschreibenjanein AndAlso x.aktuell = 1) Then
+        If Not Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid) Then
             btnRundschreiben.BackColor = Color.WhiteSmoke
         ElseIf Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid AndAlso x.rundschreibenjanein AndAlso x.aktuell = 1 AndAlso x.gelöscht = 0 OrElse x.IsgelöschtNull) Then
             btnRundschreiben.BackColor = Color.LightSteelBlue
