@@ -520,8 +520,8 @@ Public Class frmMain
     ' ================================================================================ Ende Bewerber auf gelöscht setzen ========================================================
 
 #Region "=============================================================================Buttons===================================================================================="
-    ' Button Speichern, Neu anlegen, Daten laden, Drucken, neue anmerkung
-    Private Sub SpeichernRadMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernRadMenuItem.Click, SpeichernNeuladenRadMenuItem.Click, BewerberneuRadButton.Click, DatenladenRadMenuItem2.Click, DatenladenfilterRadMenuItem2.Click, FilterzurückRadButton.Click, DruckenRadMenuItem2.Click, DruckenRadMenuItem3.Click, DruckenRadMenuItem4.Click, NeueAnmerkungRadButton.Click, Interviewerbogen.Click, Kurzfragebogen.Click, TelefoninterviewRadMenuItem.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, btnBearbeitungspeichern.Click, Top10auswaehlen.Click, Top10anzeigen.Click, btnDatenBewerbertooleinlesen.Click
+    ' Button Speichern, Neu anlegen, Daten laden, Drucken, neue anmerkung, Spalten einblenden Anmerkungen
+    Private Sub SpeichernRadMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernRadMenuItem.Click, SpeichernNeuladenRadMenuItem.Click, BewerberneuRadButton.Click, DatenladenRadMenuItem2.Click, DatenladenfilterRadMenuItem2.Click, FilterzurückRadButton.Click, DruckenRadMenuItem2.Click, DruckenRadMenuItem3.Click, DruckenRadMenuItem4.Click, NeueAnmerkungRadButton.Click, Interviewerbogen.Click, Kurzfragebogen.Click, TelefoninterviewRadMenuItem.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, btnBearbeitungspeichern.Click, Top10auswaehlen.Click, Top10anzeigen.Click, btnDatenBewerbertooleinlesen.Click, btnSpalteneinblendenAnmerkungen.Click
         Select Case True
             Case sender Is SpeichernRadMenuItem
                 Call DBSpeichern()
@@ -678,6 +678,10 @@ Public Class frmMain
                         Call frmXmleinlesen.Backupeinspielen()
                     End If
                 End If
+
+            Case sender Is btnSpalteneinblendenAnmerkungen
+                Me.NotizenRadGridView.Columns(7).IsVisible = True
+                Me.NotizenRadGridView.Columns(8).IsVisible = True
         End Select
     End Sub
 
