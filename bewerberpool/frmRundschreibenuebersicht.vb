@@ -139,7 +139,7 @@ Public Class frmRundschreibenuebersicht
         End If
     End Sub
 
-    Private Sub btnSave_Rundschreiben_Click(sender As Object, e As EventArgs) Handles btnSave_Rundschreiben.Click, btnEintraegeloeschen.Click, btnRundschreibenaktuell_Close.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click
+    Private Sub btnSave_Rundschreiben_Click(sender As Object, e As EventArgs) Handles btnSave_Rundschreiben.Click, btnEintraegeloeschenunduebertragen.Click, btnRundschreibenaktuell_Close.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, btnEintraegeloeschen.Click
 
         Select Case True
             Case sender Is btnSave_Rundschreiben
@@ -161,7 +161,7 @@ Public Class frmRundschreibenuebersicht
             Case sender Is btnRundschreibenaktuell_Close
                 Me.Close()
 
-            Case sender Is btnEintraegeloeschen
+            Case sender Is btnEintraegeloeschenunduebertragen
 
                 If rsaktuellbezeichnung = String.Empty Then
                     Dim result As DialogResult = MessageBox.Show("Bitte erst in der linken Spalte einen Eintrag anklicken.", "Eintrag auswählen", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -187,6 +187,18 @@ Public Class frmRundschreibenuebersicht
                     Me.RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
                     Call gespeichert()
                 End If
+
+            Case sender Is btnEintraegeloeschen
+                Dim rsloeschen = BewerberDataSet.rundschreiben.Where(Function(x) x.bezeichnung = CStr(rsaktuellbezeichnung) And x.aktuell = 1 And x.gelöscht = 0)
+                For Each x In rsloeschen
+                    x.gelöscht = 1
+                    x.aktuell = 0
+                Next
+
+                Me.Validate()
+                Me.RundschreibenBindingSource1.EndEdit()
+                Me.RundschreibenTableAdapter.Update(Me.BewerberDataSet.rundschreiben)
+                Call gespeichert()
 
             Case sender Is AufklappenRadMenuItem1
                 Me.RGVRundschreibenaktuell.AutoSizeRows = True
