@@ -15,6 +15,7 @@ Public Class frmXmleinlesen
     Public filename As String = String.Empty
     Public bewidneu As Integer = 1
     '  Public filename As String = String.Empty
+
     Public eintraegekorrekt_bool As Boolean = True
     Public Shared Property sqlfile As String = String.Empty
     Public Shared Property xmleinlesen_bool As Boolean = False
@@ -396,7 +397,7 @@ Public Class frmXmleinlesen
 
     Private Sub Message()
         MessageBox.Show("Die xml-Datei wurde nicht korrekt in die Datenbank eingespielt." & vbNewLine & vbNewLine & "Das Backup wird zur Fehlerbereinigung eingespielt." & vbNewLine & vbNewLine & "Bitte lesen Sie die xml-Datei erneut ein.", "Xml-Datei wurde nicht korrekt eingespielt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-        eintraegekorrekt_bool = False
+        'eintraegekorrekt_bool = False
         Call Backupeinspielen()
     End Sub
 End Class

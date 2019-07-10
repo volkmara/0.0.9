@@ -188,7 +188,7 @@ Public Class frmRundschreibenuebersicht
                 End If
 
             Case sender Is btnEintraegeloeschen
-                Dim rsloeschen = BewerberDataSet.rundschreiben.Where(Function(x) x.bezeichnung = CStr(rsaktuellbezeichnung) And x.aktuell = 1 And x.gelöscht = 0)
+                Dim rsloeschen = BewerberDataSet.rundschreiben.Where(Function(x) x.bezeichnung = CStr(rsaktuellbezeichnung) And x.aktuell = 1)
                 For Each x In rsloeschen
                     x.gelöscht = 1
                     x.aktuell = 0

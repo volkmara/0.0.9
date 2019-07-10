@@ -93,8 +93,7 @@ Public Class frmInterviewer
     End Sub
 
 #Region "Buttons"
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        ' Call inallentabellen.prüfen() ' prüfen, ob in allen Tabellen die Id vorhanden ist, ansonsten anlegen
+    Private Sub btnUebernehmen_Click(sender As Object, e As EventArgs) Handles btnUebernehmen.Click
         Call export()
         Call telefoneintrag()
         Call sprachendaten() ' trägt Sprachen im Feld "Sprachkenntnisse" im Reiter "Bewerber/in" ein
@@ -112,47 +111,8 @@ Public Class frmInterviewer
             Call pflichtfelder()
         End If
 
-        If pflichtfeldliste <> String.Empty Then
-            MessageBox.Show("Haben Sie vergessen, diese Felder auszufüllen? " & vbCrLf & vbCrLf & pflichtfeldliste & vbCrLf & vbCrLf & "Nicht schlimm, das kann ja mal passieren. Bitte ergänzen 'Sie' einfach Ihre Angaben. " & vbCrLf & vbCrLf & "Vielen Dank", "Pflichtfelder bitte ausfüllen", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            pflichtfeldliste = String.Empty
-            Exit Sub
-        Else
-            Dim bewspeichern = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
-            bewspeichern.geaendert_am = Date.Now.ToString
-            bewspeichern.letztbearbeitung_von = CStr(usernameklar)
-            bewspeichern.status = CStr("fertig")
-            ' rundschreibenjanein ist nach dem Anlegen im Bewerbertool DBNull, muss nach dem Bearbeiten auf 0 gesetzt werden
-            'If bewspeichern.IsrundschreibenjaneinNull Then
-            '    bewspeichern.rundschreibenjanein = CInt(0)
-            'End If
-
-            If frmUlaseintragen.ulas_wert <> String.Empty Then
-                bewspeichern.ulas = CStr(frmUlaseintragen.ulas_wert)
-            End If
-
-            bewspeichern.interviewart = CStr("Bewerbergespräch")
-
-            bewspeichern.bewerberbeschreibung = CStr(exportfilertf)
-            bewspeichern.bewerberbeschreibung_text = CStr(exportfiletxt)
-            bewspeichern.sprachkenntnisse = CStr(sprachenliste)
-
-            Me.Validate()
-            Me.BewBindingSource.EndEdit()
-            Me.Bew_bewerberdatenBindingSource.EndEdit()
-            Me.UlasBindingSource.EndEdit()
-            Me.Bewerber_berufserfahrungBindingSource.EndEdit()
-            Me.Bewerber_ausbildungBindingSource.EndEdit()
-            Me.Bewerber_sprachenBindingSource.EndEdit()
-
-            frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
-            frmMain.Bew_bewerberdatenTableAdapter.Update(frmMain.BewerberDataSet.bew_bewerberdaten)
-            frmMain.Bewerber_ausbildungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_ausbildung)
-            frmMain.Bewerber_berufserfahrungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_berufserfahrung)
-            frmMain.Bewerber_sprachenTableAdapter.Update(frmMain.BewerberDataSet.bewerber_sprachen)
-            frmMain.UlasTableAdapter.Update(frmMain.BewerberDataSet.ulas)
-            frmMain.BewGridView1.FilterDescriptors.Clear()
-            Call gespeichert()
-            '  pflichtfeldliste = String.Empty
+        Dim result As DialogResult = MessageBox.Show("Einträge übernehmen?", "Einträge übernehmen?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = Windows.Forms.DialogResult.Yes Then
 
             ' OpenFD für Originalunterlagen öffnen
 
@@ -166,10 +126,10 @@ Public Class frmInterviewer
             Dim abspeichern As String = String.Concat("Sie können jetzt die Originalunterlagen des Bewerbers/der Bewerberin abspeichern.", vbNewLine, vbNewLine, "Weitere Dateien können ggf. später über das Feld ""Originalunterlagen Bewerber/in"" im Reiter ""Daten"" hochgeladen werden (Rechtsklick).")
 
             If Not IO.Directory.Exists(zielverzeichnis) Then
-                Dim result As DialogResult = MessageBox.Show(CStr(abspeichern), "Unterlagen speichern", MessageBoxButtons.YesNo, MessageBoxIcon.Hand)
-                If result = Windows.Forms.DialogResult.Yes Then
+                Dim result1 As DialogResult = MessageBox.Show(CStr(abspeichern), "Unterlagen speichern", MessageBoxButtons.YesNo, MessageBoxIcon.Hand)
+                If result1 = Windows.Forms.DialogResult.Yes Then
                     Call ulasspeichern.originalulasspeichern()
-                ElseIf result = Windows.Forms.DialogResult.No Then
+                ElseIf result1 = Windows.Forms.DialogResult.No Then
                     Me.Close()
                 End If
             Else
@@ -178,19 +138,113 @@ Public Class frmInterviewer
                 Me.Close() ' Wird geschlossen, wenn origulas (=> wenn zielverzeichnis existiert) bereits vorhanden sind
             End If
 
-            frmMain.DBLoad()
+            Dim interviewer = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+            interviewer.status = CStr("fertig")
+            Me.Validate()
+
+            MessageBox.Show("Bitte abspeichern, um die Änderungen aus dem Interviewerfragebogen in die DB zu übernehmen", "Bitte abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Me.Close()
+
+        ElseIf result = Windows.Forms.DialogResult.No Then
+            Exit Sub
         End If
+
+
+
+
+        '' Call inallentabellen.prüfen() ' prüfen, ob in allen Tabellen die Id vorhanden ist, ansonsten anlegen
+        'Call export()
+        'Call telefoneintrag()
+        'Call sprachendaten() ' trägt Sprachen im Feld "Sprachkenntnisse" im Reiter "Bewerber/In" ein
+
+        '' Validierung vorm Speichern
+        'If Not frmMain.StandComboBox.Text = CStr("fertig") AndAlso TabControl1.SelectedTab IsNot TabPage7 Then
+        '    MessageBox.Show("Bitte alle Reiter nacheinander anklicken und die Felder In allen Reitern bearbeiten", "Alle Tabreiter anwählen", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+        '    Exit Sub
+        'End If
+
+        'Call Controlsaufweiss() ' Alle Controls, die beim Startcheck gelb gefärbt wurden, zurücksetzen
+        'Call Berufsausbildung_check()
+
+        'If Not frmMain.StandComboBox.Text = CStr("fertig") Then
+        '    Call pflichtfelder()
+        'End If
+
+        'If pflichtfeldliste <> String.Empty Then
+        '    MessageBox.Show("Haben Sie vergessen, diese Felder auszufüllen? " & vbCrLf & vbCrLf & pflichtfeldliste & vbCrLf & vbCrLf & "Nicht schlimm, das kann ja mal passieren. Bitte ergänzen 'Sie' einfach Ihre Angaben. " & vbCrLf & vbCrLf & "Vielen Dank", "Pflichtfelder bitte ausfüllen", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    pflichtfeldliste = String.Empty
+        '    Exit Sub
+        'Else
+        '    Dim bewspeichern = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        '    bewspeichern.geaendert_am = Date.Now.ToString
+        '    bewspeichern.letztbearbeitung_von = CStr(usernameklar)
+        '    bewspeichern.status = CStr("fertig")
+        '    ' rundschreibenjanein ist nach dem Anlegen im Bewerbertool DBNull, muss nach dem Bearbeiten auf 0 gesetzt werden
+        '    'If bewspeichern.IsrundschreibenjaneinNull Then
+        '    '    bewspeichern.rundschreibenjanein = CInt(0)
+        '    'End If
+
+        '    If frmUlaseintragen.ulas_wert <> String.Empty Then
+        '        bewspeichern.ulas = CStr(frmUlaseintragen.ulas_wert)
+        '    End If
+
+        '    bewspeichern.interviewart = CStr("Bewerbergespräch")
+
+        '    bewspeichern.bewerberbeschreibung = CStr(exportfilertf)
+        '    bewspeichern.bewerberbeschreibung_text = CStr(exportfiletxt)
+        '    bewspeichern.sprachkenntnisse = CStr(sprachenliste)
+
+        '    Me.Validate()
+        '    Me.BewBindingSource.EndEdit()
+        '    Me.Bew_bewerberdatenBindingSource.EndEdit()
+        '    Me.UlasBindingSource.EndEdit()
+        '    Me.Bewerber_berufserfahrungBindingSource.EndEdit()
+        '    Me.Bewerber_ausbildungBindingSource.EndEdit()
+        '    Me.Bewerber_sprachenBindingSource.EndEdit()
+
+        '    frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
+        '    frmMain.Bew_bewerberdatenTableAdapter.Update(frmMain.BewerberDataSet.bew_bewerberdaten)
+        '    frmMain.Bewerber_ausbildungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_ausbildung)
+        '    frmMain.Bewerber_berufserfahrungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_berufserfahrung)
+        '    frmMain.Bewerber_sprachenTableAdapter.Update(frmMain.BewerberDataSet.bewerber_sprachen)
+        '    frmMain.UlasTableAdapter.Update(frmMain.BewerberDataSet.ulas)
+        '    frmMain.BewGridView1.FilterDescriptors.Clear()
+        '    Call gespeichert()
+        '    '  pflichtfeldliste = String.Empty
+
+        '    ' OpenFD für Originalunterlagen öffnen
+
+        '    If connectionString.Contains("127.0.0.1") Then
+        '        verzeichnis = CStr("e:\heyduck\ulas\")
+        '    Else
+        '        verzeichnis = CStr("x:\ulas\")
+        '    End If
+        '    Dim zielverzeichnis As String = String.Concat(verzeichnis, letzteid, "\", "Originale", "\")
+
+        '    Dim abspeichern As String = String.Concat("Sie können jetzt die Originalunterlagen des Bewerbers/der Bewerberin abspeichern.", vbNewLine, vbNewLine, "Weitere Dateien können ggf. später über das Feld ""Originalunterlagen Bewerber/in"" im Reiter ""Daten"" hochgeladen werden (Rechtsklick).")
+
+        '    If Not IO.Directory.Exists(zielverzeichnis) Then
+        '        Dim result As DialogResult = MessageBox.Show(CStr(abspeichern), "Unterlagen speichern", MessageBoxButtons.YesNo, MessageBoxIcon.Hand)
+        '        If result = Windows.Forms.DialogResult.Yes Then
+        '            Call ulasspeichern.originalulasspeichern()
+        '        ElseIf result = Windows.Forms.DialogResult.No Then
+        '            Me.Close()
+        '        End If
+        '    Else
+        '        Dim ulasprüfen As String = String.Concat("Das Verzeichnis für Originalunterlagen dieses Bewerbers/dieser Bewerberin existiert bereits. Bitte überprüfen Sie die Unterlagen. ", vbNewLine, vbNewLine, "Vorhandene Unterlagen können ggf. später über das Feld ""Originalunterlagen Bewerber/in"" im Reiter ""Daten"" überschrieben werden (Rechtsklick)")
+        '        MessageBox.Show(ulasprüfen, "Verzeichnis vorhanden", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '        Me.Close() ' Wird geschlossen, wenn origulas (=> wenn zielverzeichnis existiert) bereits vorhanden sind
+        '    End If
+
+        '    frmMain.DBLoad()
+        '    Me.Close()
+        'End If
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-
-        Dim result As DialogResult = MessageBox.Show("Möchten Sie ihre Eingaben vorher speichern?", "Speichern?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If result = Windows.Forms.DialogResult.No Then
-            Me.Close()
-        ElseIf result = Windows.Forms.DialogResult.Yes Then
-            Exit Sub
-        End If
+        Me.BewBindingSource.RemoveFilter()
+        Me.Close()
     End Sub
 #End Region
     ' ========================================================================= Pflichtfelder =============================================================================

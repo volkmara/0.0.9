@@ -103,7 +103,7 @@ Partial Class frmInterviewer
         Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnUebernehmen = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -1008,7 +1008,7 @@ Partial Class frmInterviewer
         Me.Panel1.Controls.Add(InterviewerLabel)
         Me.Panel1.Controls.Add(Me.cmbInterviewer)
         Me.Panel1.Controls.Add(Me.btnClose)
-        Me.Panel1.Controls.Add(Me.btnSave)
+        Me.Panel1.Controls.Add(Me.btnUebernehmen)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(6, 8)
@@ -1070,19 +1070,19 @@ Partial Class frmInterviewer
         Me.btnClose.Text = "       Fenster" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "       schließen"
         Me.btnClose.UseVisualStyleBackColor = False
         '
-        'btnSave
+        'btnUebernehmen
         '
-        Me.btnSave.BackColor = System.Drawing.Color.Gainsboro
-        Me.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
-        Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSave.Location = New System.Drawing.Point(276, 22)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(169, 57)
-        Me.btnSave.TabIndex = 2
-        Me.btnSave.Text = "           Änderungen" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "           speichern"
-        Me.btnSave.UseVisualStyleBackColor = False
+        Me.btnUebernehmen.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnUebernehmen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow
+        Me.btnUebernehmen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUebernehmen.Image = CType(resources.GetObject("btnUebernehmen.Image"), System.Drawing.Image)
+        Me.btnUebernehmen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnUebernehmen.Location = New System.Drawing.Point(276, 22)
+        Me.btnUebernehmen.Name = "btnUebernehmen"
+        Me.btnUebernehmen.Size = New System.Drawing.Size(169, 57)
+        Me.btnUebernehmen.TabIndex = 2
+        Me.btnUebernehmen.Text = "           Änderungen" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "           übernehmen"
+        Me.btnUebernehmen.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -2460,7 +2460,7 @@ Partial Class frmInterviewer
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents btnSave As System.Windows.Forms.Button
+    Friend WithEvents btnUebernehmen As System.Windows.Forms.Button
     Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents BewerberDataSet As bewerberpool.BewerberDataSet
     Friend WithEvents BewBindingSource As System.Windows.Forms.BindingSource

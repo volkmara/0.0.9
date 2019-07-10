@@ -45,6 +45,8 @@ Public Class frmMain
     Public alter As Integer
     Public row_ausgewählt_bool As Boolean = False
 
+    Public Shared Property oa_ausgewaehlt As Boolean = False ' wird true, wenn eine Stelle aus OA einem Bewerber zugeordnet wird; 
+
     ' Für Drag and Drop
     Private _GrabOffset As Size
     Private Const _Tolerance As Double = 5 ^ 2
@@ -326,6 +328,10 @@ Public Class frmMain
         frmMain.GewerblichTableAdapter.Update(frmMain.BewerberDataSet.gewerblich)
         Call gespeichert() ' Messagebox wird angezeigt
         ' Call frmMain.topbewerbercheck()
+
+        If oa_ausgewaehlt Then
+            frmMain.BewBindingSource.RemoveFilter()
+        End If
 
         Call frmMain.BewerberaufHomepagedeaktivieren()
 
