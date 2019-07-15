@@ -140,6 +140,13 @@ Public Class frmInterviewer
 
             Dim interviewer = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
             interviewer.status = CStr("fertig")
+            interviewer.interviewart = CStr("Bewerbergespräch")
+            interviewer.geaendert_am = Date.Now.ToString
+            interviewer.letztbearbeitung_von = CStr(usernameklar)
+            interviewer.bewerberbeschreibung = CStr(exportfilertf)
+            interviewer.bewerberbeschreibung_text = CStr(exportfiletxt)
+            interviewer.sprachkenntnisse = CStr(sprachenliste)
+
             Me.Validate()
 
             MessageBox.Show("Bitte abspeichern, um die Änderungen aus dem Interviewerfragebogen in die DB zu übernehmen", "Bitte abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
