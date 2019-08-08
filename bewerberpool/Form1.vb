@@ -45,7 +45,9 @@ Public Class frmMain
     Public alter As Integer
     Public row_ausgewählt_bool As Boolean = False
 
-    Public Shared Property oa_ausgewaehlt As Boolean = False ' wird true, wenn eine Stelle aus OA einem Bewerber zugeordnet wird; 
+    Public Shared Property oa_ausgewaehlt As Boolean = False ' wird true, wenn eine Stelle aus OA einem Bewerber zugeordnet wird
+
+    Public Shared Property kurzfrage As Boolean = False ' notwendig, damit Inallentabellen.eintragen richtig funktioniert
 
     ' Für Drag and Drop
     Private _GrabOffset As Size

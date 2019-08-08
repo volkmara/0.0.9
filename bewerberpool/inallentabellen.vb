@@ -20,7 +20,7 @@ Public Class inallentabellen
             Exit Sub
         End If
 
-        If Not frmKurzfragebogen.Kurzfragebogen Then
+        If Not frmMain.kurzfrage Then
             If Not inbewerberdaten(bewid) Then
                 Dim bewerberdaten = DirectCast(DirectCast(frmMain.Bew_bewerberdatenBindingSource.AddNew, DataRowView).Row, bew_bewerberdatenRow)
                 bewerberdaten.id_bew = CInt(bewid)

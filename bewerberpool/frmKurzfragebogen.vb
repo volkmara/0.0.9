@@ -5,7 +5,7 @@ Public Class frmKurzfragebogen
 
     Private _frmMain As frmMain
     Public bewidneu As Integer = 0
-    Public Shared Property Kurzfragebogen As Boolean = False ' notwendig, damit Inallentabellen.eintragen richtig funktioniert
+    ' Public Shared Property Kurzfragebogen As Boolean = False ' notwendig, damit Inallentabellen.eintragen richtig funktioniert
 
     Sub New(frmMain As frmMain)
         ' TODO: Complete member initialization 
@@ -21,7 +21,7 @@ Public Class frmKurzfragebogen
         Me.BewBindingSource.DataSource = frmMain.BewBindingSource
         Me.Bew_bewerberdatenBindingSource.DataSource = frmMain.Bew_bewerberdatenBindingSource
 
-        Kurzfragebogen = True
+        frmMain.kurzfrage = True
         Call Getbewid()
         bewidneu = CInt(bewid + 1)
         Me.BewBindingSource.AddNew()
