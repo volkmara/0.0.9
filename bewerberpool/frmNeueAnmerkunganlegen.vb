@@ -56,7 +56,7 @@ Public Class frmNeueAnmerkunganlegen
 
         Select Case True
             Case anmerkungneu_bool
-                Me.BetreffListBox.Items.AddRange(New Object() {"Angebot", vbNewLine, "Anmerkungen zum Bewerbungsgespräch", vbNewLine, "Telefonkontakt", "Emailkontakt", "Email mit Nachfrage nach aktuellem Stand versandt", vbNewLine, "Vorsicht", vbNewLine, "von uns eingestellt", "von uns vermittelt", "hat neue Stelle", "hat neue Stelle, sucht weiter", vbNewLine, "sucht noch", "sucht wieder", vbNewLine, "Rundschreiben", vbNewLine, "Persönlichkeit/Äußeres etc."})
+                Me.BetreffListBox.Items.AddRange(New Object() {"Angebot", vbNewLine, "Anmerkungen zum Bewerbungsgespräch", vbNewLine, "Telefonkontakt", "Emailkontakt", "Email mit Nachfrage nach aktuellem Stand versandt", vbNewLine, "Vorsicht", vbNewLine, "von uns eingestellt", "von uns vermittelt", "hat neue Stelle", "hat neue Stelle, sucht weiter", vbNewLine, "sucht noch", "sucht wieder", vbNewLine, "Rundschreiben", vbNewLine, "Persönlichkeit/Äußeres etc.", vbNewLine, "Kununu"})
             Case alt_bool
                 Me.BetreffListBox.Items.AddRange(New Object() {"hat neue Stelle", "hat neue Stelle, sucht weiter", "Bewerber/in ist nicht zu erreichen"})
             Case eingestellt_bool
@@ -69,7 +69,7 @@ Public Class frmNeueAnmerkunganlegen
                 Me.BetreffListBox.Items.Add("von uns eingestellt und vermittelt")
                 Me.BetreffListBox.SelectedIndex = 0
             Case anmerkungdragdrop_bool
-                Me.BetreffListBox.Items.AddRange(New Object() {"Angebot", vbNewLine, "Anmerkungen zum Bewerbungsgespräch", vbNewLine, "Telefonkontakt", "Emailkontakt", "Vorsicht", vbNewLine, "von uns eingestellt", "von uns vermittelt", "hat neue Stelle", "hat neue Stelle, sucht weiter", vbNewLine, "sucht noch", "sucht wieder", vbNewLine, "Rundschreiben", vbNewLine, "Persönlichkeit/Äußeres etc."})
+                Me.BetreffListBox.Items.AddRange(New Object() {"Angebot", vbNewLine, "Anmerkungen zum Bewerbungsgespräch", vbNewLine, "Telefonkontakt", "Emailkontakt", "Vorsicht", vbNewLine, "von uns eingestellt", "von uns vermittelt", "hat neue Stelle", "hat neue Stelle, sucht weiter", vbNewLine, "sucht noch", "sucht wieder", vbNewLine, "Rundschreiben", vbNewLine, "Persönlichkeit/Äußeres etc.", vbNewLine, "Kununu"})
                 Dim provider1 As New Telerik.WinForms.Documents.FormatProviders.Txt.TxtFormatProvider
                 Me.AnmerkungRTE.Document = provider1.Import(droptext)
         End Select

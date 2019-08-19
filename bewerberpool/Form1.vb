@@ -1698,9 +1698,9 @@ Public Class frmMain
                 bodytext = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde von ", usernameklar, " als Topbewerber/in Zeitarbeit markiert.")
             End If
 
-            'email.receiver = "kontakt@heyduck-personalservice.de, beatrixhambitzer@heyduck-personalservice.de, susannehanner@heyduck-personalservice.de"
+            email.receiver = "kontakt@heyduck-personalservice.de, beatrixhambitzer@heyduck-personalservice.de, susannehanner@heyduck-personalservice.de"
             'email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
-            email.receiver = EmailTextBox1.Text
+            'email.receiver = EmailTextBox1.Text
 
             email.subject = CStr(betreff)
             email.body = CStr(bodytext)
