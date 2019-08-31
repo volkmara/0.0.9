@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmNeueAnmerkunganlegen
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmNeueAnmerkunganlegen
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmNeueAnmerkunganlegen))
@@ -33,10 +33,13 @@ Partial Class frmNeueAnmerkunganlegen
         Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.NotizenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NotizenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.notizenTableAdapter()
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.Panel1.SuspendLayout()
         CType(Me.AnmerkungRTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NotizenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -51,7 +54,7 @@ Partial Class frmNeueAnmerkunganlegen
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(3, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(934, 534)
+        Me.Panel1.Size = New System.Drawing.Size(940, 541)
         Me.Panel1.TabIndex = 0
         '
         'btnClose
@@ -122,12 +125,21 @@ Partial Class frmNeueAnmerkunganlegen
         '
         Me.NotizenTableAdapter.ClearBeforeFill = True
         '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewTableAdapter
+        '
+        Me.BewTableAdapter.ClearBeforeFill = True
+        '
         'frmNeueAnmerkunganlegen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(941, 551)
+        Me.ClientSize = New System.Drawing.Size(943, 553)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmNeueAnmerkunganlegen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
@@ -136,6 +148,7 @@ Partial Class frmNeueAnmerkunganlegen
         CType(Me.AnmerkungRTE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NotizenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -148,4 +161,6 @@ Partial Class frmNeueAnmerkunganlegen
     Friend WithEvents NotizenBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents NotizenTableAdapter As bewerberpool.BewerberDataSetTableAdapters.notizenTableAdapter
     Friend WithEvents btnClose As System.Windows.Forms.Button
+    Friend WithEvents BewBindingSource As BindingSource
+    Friend WithEvents BewTableAdapter As BewerberDataSetTableAdapters.bewTableAdapter
 End Class

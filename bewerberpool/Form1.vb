@@ -99,6 +99,7 @@ Public Class frmMain
             BewerbervollstaendigloeschenRadMenuItem2.Visibility = ElementVisibility.Collapsed
         End If
 
+        'Formatierung ColumnChooser
         BewGridView1.ColumnChooser.DesktopLocation = New Point(300, 100)
         BewGridView1.ColumnChooser.Font = New Font("Segoe", 10, FontStyle.Bold)
     End Sub

@@ -28,7 +28,10 @@ Public Class frmNeueAnmerkunganlegen
     Public exportfiletxt As String = String.Empty
 
     Private Sub frmNeueAnmerkunganlegen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
         Me.NotizenTableAdapter.FillBy(Me.BewerberDataSet.notizen, CInt(letzteid))
+        Me.BewBindingSource.DataSource = frmMain.BewBindingSource.Current
         ' frmMain.NotizenTableAdapter.FillBy(frmMain.BewerberDataSet.notizen, CInt(letzteid))
         ' Me.NotizenBindingSource.DataSource = frmMain.NotizenBindingSource.Current
         ' Me.NotizenBindingSource.AddNew()
@@ -81,6 +84,7 @@ Public Class frmNeueAnmerkunganlegen
         Dim provider As New Telerik.WinForms.Documents.FormatProviders.Rtf.RtfFormatProvider()
 
         Dim rtfeintragen = DirectCast(DirectCast(Me.NotizenBindingSource.Current, DataRowView).Row, notizenRow)
+        Dim bew = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow) ' um das Datum der letzten Anmerkung bei einem Bewerber in bew einzutragen, damit das gefiltert werden kann
 
         ' RTF und txt auslesen
         '  Dim exportfilertf As String = String.Empty
@@ -106,9 +110,13 @@ Public Class frmNeueAnmerkunganlegen
                     rtfeintragen.geaendert_am = CDate("1970-01-01 00:00:00")
                     rtfeintragen.bewid = CInt(letzteid)
 
+                    bew.letztes_datum_anmerkung = Date.Now ' um das Datum der letzten Anmerkung bei einem Bewerber in bew einzutragen, damit das gefiltert werden kann
+
                     Me.Validate()
                     Me.NotizenBindingSource.EndEdit()
                     Me.NotizenTableAdapter.Update(Me.BewerberDataSet.notizen)
+                    Me.BewBindingSource.EndEdit()
+                    frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
                     Call gespeichert()
                     frmMain.NotizenTableAdapter.FillBy(frmMain.BewerberDataSet.notizen, CInt(letzteid))
                     'frmMain.NotizenTableAdapter.Fill(frmMain.BewerberDataSet.notizen)
