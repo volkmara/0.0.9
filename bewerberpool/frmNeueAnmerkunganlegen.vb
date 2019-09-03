@@ -90,7 +90,7 @@ Public Class frmNeueAnmerkunganlegen
         '  Dim exportfilertf As String = String.Empty
         ' Dim exportfiletxt As String = String.Empty
 
-        Call doppelteleerzeilen() ' entfernt doppelte Leerzeilen in Richtext und Text
+        ' Call doppelteleerzeilen() ' entfernt doppelte Leerzeilen in Richtext und Text
 
         exportfilertf = allgemein.ExporttoRtf(Me.AnmerkungRTE.Document)
         exportfiletxt = allgemein.ExporttoTxt(Me.AnmerkungRTE.Document)
@@ -139,14 +139,14 @@ Public Class frmNeueAnmerkunganlegen
     End Sub
 
     ' Entfernt doppelte Leerzeilen aus RTE-Editor-Richtext
-    Private Sub doppelteleerzeilen()
-        Dim provider As New Telerik.WinForms.Documents.FormatProviders.Rtf.RtfFormatProvider()
-        Dim text As String = provider.Export(AnmerkungRTE.Document)
-        Dim textneu As String = String.Empty
-        Dim rausrein As String = "{\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\par}"
-        Dim raus As String = "{\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\par}\pard\s0\sl276\slmult1\ql\sa180\ltrpar{\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\par}\pard\s0\sl276\slmult1\ql\sa180\ltrpar"
-
-        textneu = text.Replace(raus, rausrein)
-        Me.AnmerkungRTE.Document = provider.Import(textneu)
+    Private Sub AnmerkungRTE_Enter(sender As Object, e As EventArgs) Handles AnmerkungRTE.Enter
+        Dim text1 As String = Clipboard.GetText
+        If text1 Is Nothing OrElse text1 = String.Empty Then
+            Exit Sub
+        Else
+            Dim text2 As String = text1.Replace(vbCrLf & vbCrLf & vbCrLf, vbCrLf)
+            AnmerkungRTE.Text = text2.Replace(vbCrLf & vbCrLf, vbCrLf)
+            Clipboard.Clear()
+        End If
     End Sub
 End Class
