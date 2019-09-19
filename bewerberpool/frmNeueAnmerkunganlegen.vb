@@ -30,12 +30,10 @@ Public Class frmNeueAnmerkunganlegen
     Private Sub frmNeueAnmerkunganlegen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
-        Me.NotizenTableAdapter.FillBy(Me.BewerberDataSet.notizen, CInt(letzteid))
-        Me.BewBindingSource.DataSource = frmMain.BewBindingSource.Current
-        ' frmMain.NotizenTableAdapter.FillBy(frmMain.BewerberDataSet.notizen, CInt(letzteid))
-        ' Me.NotizenBindingSource.DataSource = frmMain.NotizenBindingSource.Current
-        ' Me.NotizenBindingSource.AddNew()
-        Call neueanmerkunganlegen()
+        Me.NotizenTableAdapter.Fill(Me.BewerberDataSet.notizen)
+        Me.BewBindingSource.DataSource = frmMain.BewBindingSource
+
+        Call neueanmerkunganlegen() ' Den Text der Anmerkung vorgenerieren
         ' Fenster in den Vordergrund und wieder freigeben
         TopMost = True
         TopMost = False
@@ -55,7 +53,6 @@ Public Class frmNeueAnmerkunganlegen
         Dim provider As New Telerik.WinForms.Documents.FormatProviders.Rtf.RtfFormatProvider()
         Dim contentleer As String = CStr("{\rtf\ansi\ansicpg1252\uc1\deff0\deflang1033{\fonttbl{\f0 Verdana;}}{\colortbl\red0\green0\blue0 ;}{\*\defchp\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone}{\*\defpap\sl276\slmult1\ql\sa180\ltrpar}{\stylesheet{\s0\sqformat\spriority0\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\sl276\slmult1\ql\sa180\ltrpar Normal;}{\*\ts2\tsrowd\spriority59\trbrdrt\brdrnone\trbrdrb\brdrnone\trbrdrl\brdrnone\trbrdrr\brdrnone\trbrdrh\brdrnone\trbrdrv\brdrnone\trgaph0\trpaddl75\trpaddr75\trpaddt0\trpaddb0\clpadft3\clpadt0\clpadfr3\clpadr0\clpadfl3\clpadl0\clpadfb3\clpadb0\tsvertalt\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\sl276\slmult1\ql\sa180\ltrpar Table Normal;}}\nouicompat\viewkind4\paperw12240\paperh15840\margl1425\margr1425\margt1425\margb1425\deftab720\sectd\pgwsxn12240\pghsxn15840\marglsxn1425\margrsxn1425\margtsxn1425\margbsxn1425\headery720\footery720\pard\s0\sl276\slmult1\ql\sa180\ltrpar{\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone  }{\ltrch\f0\fs24\i0\b0\strike0\cf0\ulc0\ulnone\par}}")
         Me.AnmerkungRTE.Document = provider.Import(contentleer)
-        Dim rtfeintragen = DirectCast(DirectCast(Me.NotizenBindingSource.AddNew, DataRowView).Row, notizenRow)
 
         Select Case True
             Case anmerkungneu_bool
@@ -83,15 +80,10 @@ Public Class frmNeueAnmerkunganlegen
     Private Sub btnNeueAnmerkungSpeichern_Click(sender As Object, e As EventArgs) Handles btnNeueAnmerkungSpeichern.Click
         Dim provider As New Telerik.WinForms.Documents.FormatProviders.Rtf.RtfFormatProvider()
 
-        Dim rtfeintragen = DirectCast(DirectCast(Me.NotizenBindingSource.Current, DataRowView).Row, notizenRow)
+        Dim notizeneintragen = DirectCast(DirectCast(Me.NotizenBindingSource.AddNew, DataRowView).Row, notizenRow)
         Dim bew = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow) ' um das Datum der letzten Anmerkung bei einem Bewerber in bew einzutragen, damit das gefiltert werden kann
 
-        ' RTF und txt auslesen
-        '  Dim exportfilertf As String = String.Empty
-        ' Dim exportfiletxt As String = String.Empty
-
-        ' Call doppelteleerzeilen() ' entfernt doppelte Leerzeilen in Richtext und Text
-
+        ' den eingegebenen Anmerkungstext auslesen, um ihn in DB zu speichern
         exportfilertf = allgemein.ExporttoRtf(Me.AnmerkungRTE.Document)
         exportfiletxt = allgemein.ExporttoTxt(Me.AnmerkungRTE.Document)
 
@@ -101,26 +93,29 @@ Public Class frmNeueAnmerkunganlegen
                 If CStr(BetreffListBox.SelectedItem.ToString) = String.Empty OrElse CStr(exportfilertf) = String.Empty OrElse CStr(exportfiletxt) = String.Empty Then
                     MessageBox.Show("Bitte einen Betreff und/oder einen Anmerkungstext eintragen", "Fehlender Eintrag", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
-                    rtfeintragen.betreff = CStr(BetreffListBox.SelectedItem.ToString)
-                    rtfeintragen.anmerkungen_rtf = CStr(exportfilertf)
-                    rtfeintragen.anmerkungen_text = CStr(exportfiletxt)
-                    rtfeintragen.eingetragen_von = CStr(usernameklar)
+                    notizeneintragen.betreff = CStr(BetreffListBox.SelectedItem.ToString)
+                    notizeneintragen.anmerkungen_rtf = CStr(exportfilertf)
+                    notizeneintragen.anmerkungen_text = CStr(exportfiletxt)
+                    notizeneintragen.eingetragen_von = CStr(usernameklar)
                     '   rtfeintragen.geaendert_von = String.Empty ' darf nicht dbnull sein
-                    rtfeintragen.eingetragen_am = Date.Now
-                    rtfeintragen.geaendert_am = CDate("1970-01-01 00:00:00")
-                    rtfeintragen.bewid = CInt(letzteid)
+                    notizeneintragen.eingetragen_am = Date.Now
+                    notizeneintragen.geaendert_am = CDate("1970-01-01 00:00:00")
+                    notizeneintragen.bewid = CInt(letzteid)
 
                     bew.letztes_datum_anmerkung = Date.Now ' um das Datum der letzten Anmerkung bei einem Bewerber in bew einzutragen, damit das gefiltert werden kann
 
                     Me.Validate()
                     Me.NotizenBindingSource.EndEdit()
                     Me.NotizenTableAdapter.Update(Me.BewerberDataSet.notizen)
+
                     Me.BewBindingSource.EndEdit()
                     frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
+
                     Call gespeichert()
-                    frmMain.NotizenTableAdapter.FillBy(frmMain.BewerberDataSet.notizen, CInt(letzteid))
-                    'frmMain.NotizenTableAdapter.Fill(frmMain.BewerberDataSet.notizen)
-                    'frmMain.NotizenRadGridView.Refresh()
+
+                    'frmMain.NotizenTableAdapter.FillBy(frmMain.BewerberDataSet.notizen, CInt(letzteid))
+                    frmMain.NotizenTableAdapter.Fill(frmMain.BewerberDataSet.notizen)
+                    frmMain.BewTableAdapter.Fill(frmMain.BewerberDataSet.bew)
                     ' frmMain.DBLoad() ' Datenbank wird neu geladen
                     frmMain.letzteanmerkunganzeigen() ' Letzte Anmerkung wird in frmMain in das Feld im Reiter Bewerber/in geladen
                     droptext = String.Empty

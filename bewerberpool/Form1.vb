@@ -2031,6 +2031,4 @@ Public Class frmMain
             e.Status = UpdateStatus.Continue
         End If
     End Sub
-
-
 End Class
