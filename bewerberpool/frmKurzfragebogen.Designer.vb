@@ -44,12 +44,16 @@ Partial Class frmKurzfragebogen
         Dim Label3 As System.Windows.Forms.Label
         Dim InterviewartLabel As System.Windows.Forms.Label
         Dim RundschreibenLabel As System.Windows.Forms.Label
+        Dim GeburtstagLabel As System.Windows.Forms.Label
+        Dim StaatsangehörigkeitLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmKurzfragebogen))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.cmbRundschreiben = New System.Windows.Forms.ComboBox()
+        Me.cmbStaatsangehörigkeit = New System.Windows.Forms.ComboBox()
         Me.Bew_bewerberdatenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
+        Me.txtGeburtstag = New System.Windows.Forms.TextBox()
+        Me.cmbRundschreiben = New System.Windows.Forms.ComboBox()
         Me.cmbInterviewart = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtUlas = New System.Windows.Forms.TextBox()
@@ -70,16 +74,17 @@ Partial Class frmKurzfragebogen
         Me.cmbVz_tz = New System.Windows.Forms.ComboBox()
         Me.cmbVerfuegbarkeit = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtPlz = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtTel_mobil = New System.Windows.Forms.TextBox()
         Me.txtTel_festnetz = New System.Windows.Forms.TextBox()
         Me.StrasseTextBox = New System.Windows.Forms.TextBox()
         Me.txtOrt = New System.Windows.Forms.TextBox()
-        Me.txtPlz = New System.Windows.Forms.TextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.Bew_bewerberdatenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter()
+        Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
         AnredeLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
         NameLabel = New System.Windows.Forms.Label()
@@ -101,6 +106,8 @@ Partial Class frmKurzfragebogen
         Label3 = New System.Windows.Forms.Label()
         InterviewartLabel = New System.Windows.Forms.Label()
         RundschreibenLabel = New System.Windows.Forms.Label()
+        GeburtstagLabel = New System.Windows.Forms.Label()
+        StaatsangehörigkeitLabel = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Bew_bewerberdatenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -302,10 +309,32 @@ Partial Class frmKurzfragebogen
         RundschreibenLabel.TabIndex = 12
         RundschreibenLabel.Text = "Rundschreiben:"
         '
+        'GeburtstagLabel
+        '
+        GeburtstagLabel.AutoSize = True
+        GeburtstagLabel.Location = New System.Drawing.Point(28, 229)
+        GeburtstagLabel.Name = "GeburtstagLabel"
+        GeburtstagLabel.Size = New System.Drawing.Size(88, 16)
+        GeburtstagLabel.TabIndex = 14
+        GeburtstagLabel.Text = "Geburtstag:"
+        '
+        'StaatsangehörigkeitLabel
+        '
+        StaatsangehörigkeitLabel.AutoSize = True
+        StaatsangehörigkeitLabel.Location = New System.Drawing.Point(613, 229)
+        StaatsangehörigkeitLabel.Name = "StaatsangehörigkeitLabel"
+        StaatsangehörigkeitLabel.Size = New System.Drawing.Size(91, 16)
+        StaatsangehörigkeitLabel.TabIndex = 16
+        StaatsangehörigkeitLabel.Text = "Nationalität:"
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.cmbStaatsangehörigkeit)
+        Me.Panel1.Controls.Add(StaatsangehörigkeitLabel)
+        Me.Panel1.Controls.Add(GeburtstagLabel)
+        Me.Panel1.Controls.Add(Me.txtGeburtstag)
         Me.Panel1.Controls.Add(RundschreibenLabel)
         Me.Panel1.Controls.Add(Me.cmbRundschreiben)
         Me.Panel1.Controls.Add(InterviewartLabel)
@@ -323,18 +352,17 @@ Partial Class frmKurzfragebogen
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(6, 7)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1129, 234)
+        Me.Panel1.Size = New System.Drawing.Size(1129, 270)
         Me.Panel1.TabIndex = 0
         '
-        'cmbRundschreiben
+        'cmbStaatsangehörigkeit
         '
-        Me.cmbRundschreiben.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "rundschreiben", True))
-        Me.cmbRundschreiben.FormattingEnabled = True
-        Me.cmbRundschreiben.Items.AddRange(New Object() {"Ja", "Nein"})
-        Me.cmbRundschreiben.Location = New System.Drawing.Point(792, 182)
-        Me.cmbRundschreiben.Name = "cmbRundschreiben"
-        Me.cmbRundschreiben.Size = New System.Drawing.Size(206, 24)
-        Me.cmbRundschreiben.TabIndex = 13
+        Me.cmbStaatsangehörigkeit.FormattingEnabled = True
+        Me.cmbStaatsangehörigkeit.Items.AddRange(New Object() {"deutsch", "belgisch", "britisch", "chinesisch", "französisch", "griechisch", "italienisch", "japanisch", "kroatisch", "niederländisch", "polnisch", "portugiesisch", "russisch", "slowakisch", "slowenisch", "spanisch", "tschechisch", "türkisch", "ukrainisch", "ungarisch", "USA"})
+        Me.cmbStaatsangehörigkeit.Location = New System.Drawing.Point(792, 226)
+        Me.cmbStaatsangehörigkeit.Name = "cmbStaatsangehörigkeit"
+        Me.cmbStaatsangehörigkeit.Size = New System.Drawing.Size(206, 24)
+        Me.cmbStaatsangehörigkeit.TabIndex = 49
         '
         'Bew_bewerberdatenBindingSource
         '
@@ -350,6 +378,22 @@ Partial Class frmKurzfragebogen
         '
         Me.BewerberDataSet.DataSetName = "BewerberDataSet"
         Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'txtGeburtstag
+        '
+        Me.txtGeburtstag.Location = New System.Drawing.Point(135, 226)
+        Me.txtGeburtstag.Name = "txtGeburtstag"
+        Me.txtGeburtstag.Size = New System.Drawing.Size(213, 22)
+        Me.txtGeburtstag.TabIndex = 15
+        '
+        'cmbRundschreiben
+        '
+        Me.cmbRundschreiben.FormattingEnabled = True
+        Me.cmbRundschreiben.Items.AddRange(New Object() {"Ja", "Nein"})
+        Me.cmbRundschreiben.Location = New System.Drawing.Point(792, 182)
+        Me.cmbRundschreiben.Name = "cmbRundschreiben"
+        Me.cmbRundschreiben.Size = New System.Drawing.Size(206, 24)
+        Me.cmbRundschreiben.TabIndex = 13
         '
         'cmbInterviewart
         '
@@ -443,7 +487,7 @@ Partial Class frmKurzfragebogen
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.GroupBox2)
         Me.Panel2.Controls.Add(Me.GroupBox1)
-        Me.Panel2.Location = New System.Drawing.Point(6, 247)
+        Me.Panel2.Location = New System.Drawing.Point(6, 278)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1129, 637)
         Me.Panel2.TabIndex = 1
@@ -490,7 +534,6 @@ Partial Class frmKurzfragebogen
         '
         'cmbEnglisch
         '
-        Me.cmbEnglisch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "englisch", True))
         Me.cmbEnglisch.FormattingEnabled = True
         Me.cmbEnglisch.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
         Me.cmbEnglisch.Location = New System.Drawing.Point(160, 291)
@@ -567,6 +610,7 @@ Partial Class frmKurzfragebogen
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox1.Controls.Add(Me.txtPlz)
         Me.GroupBox1.Controls.Add(EmailLabel)
         Me.GroupBox1.Controls.Add(Me.txtEmail)
         Me.GroupBox1.Controls.Add(Tel_mobilLabel)
@@ -578,7 +622,6 @@ Partial Class frmKurzfragebogen
         Me.GroupBox1.Controls.Add(OrtLabel)
         Me.GroupBox1.Controls.Add(Me.txtOrt)
         Me.GroupBox1.Controls.Add(PlzLabel)
-        Me.GroupBox1.Controls.Add(Me.txtPlz)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox1.Location = New System.Drawing.Point(8, 16)
@@ -587,6 +630,14 @@ Partial Class frmKurzfragebogen
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Kontaktdaten"
+        '
+        'txtPlz
+        '
+        Me.txtPlz.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "plz", True))
+        Me.txtPlz.Location = New System.Drawing.Point(89, 37)
+        Me.txtPlz.Name = "txtPlz"
+        Me.txtPlz.Size = New System.Drawing.Size(166, 22)
+        Me.txtPlz.TabIndex = 12
         '
         'txtEmail
         '
@@ -628,14 +679,6 @@ Partial Class frmKurzfragebogen
         Me.txtOrt.Size = New System.Drawing.Size(255, 22)
         Me.txtOrt.TabIndex = 3
         '
-        'txtPlz
-        '
-        Me.txtPlz.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "plz", True))
-        Me.txtPlz.Location = New System.Drawing.Point(89, 37)
-        Me.txtPlz.Name = "txtPlz"
-        Me.txtPlz.Size = New System.Drawing.Size(100, 22)
-        Me.txtPlz.TabIndex = 1
-        '
         'ToolTip1
         '
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning
@@ -652,13 +695,45 @@ Partial Class frmKurzfragebogen
         '
         Me.Bew_bewerberdatenTableAdapter.ClearBeforeFill = True
         '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.bew_assistenzTableAdapter = Nothing
+        Me.TableAdapterManager.bew_bewerberdatenTableAdapter = Me.Bew_bewerberdatenTableAdapter
+        Me.TableAdapterManager.bew_bibuhaTableAdapter = Nothing
+        Me.TableAdapterManager.bew_lugTableAdapter = Nothing
+        Me.TableAdapterManager.bew_steuerfachangestellteTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_ausbildungTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_berufserfahrungTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_bueroTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_controllingTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_edvTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_einkaufTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_fibuTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_itTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_logistikTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_marketing_designTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_personalTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_raeTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_sprachenTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_technikTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_versandTableAdapter = Nothing
+        Me.TableAdapterManager.bewerber_vertriebTableAdapter = Nothing
+        Me.TableAdapterManager.bewTableAdapter = Me.BewTableAdapter
+        Me.TableAdapterManager.gewerblichTableAdapter = Nothing
+        Me.TableAdapterManager.notizenTableAdapter = Nothing
+        Me.TableAdapterManager.rundschreibenmonatTableAdapter = Nothing
+        Me.TableAdapterManager.rundschreibenTableAdapter = Nothing
+        Me.TableAdapterManager.ulasTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'frmKurzfragebogen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(1152, 884)
+        Me.ClientSize = New System.Drawing.Size(1152, 924)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmKurzfragebogen"
@@ -691,7 +766,6 @@ Partial Class frmKurzfragebogen
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents txtOrt As System.Windows.Forms.TextBox
-    Friend WithEvents txtPlz As System.Windows.Forms.TextBox
     Friend WithEvents StrasseTextBox As System.Windows.Forms.TextBox
     Friend WithEvents txtEmail As System.Windows.Forms.TextBox
     Friend WithEvents txtTel_mobil As System.Windows.Forms.TextBox
@@ -714,4 +788,8 @@ Partial Class frmKurzfragebogen
     Friend WithEvents Bew_bewerberdatenBindingSource As BindingSource
     Friend WithEvents Bew_bewerberdatenTableAdapter As BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter
     Friend WithEvents cmbRundschreiben As ComboBox
+    Friend WithEvents txtGeburtstag As TextBox
+    Friend WithEvents TableAdapterManager As BewerberDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents cmbStaatsangehörigkeit As ComboBox
+    Friend WithEvents txtPlz As TextBox
 End Class

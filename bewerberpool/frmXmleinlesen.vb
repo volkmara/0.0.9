@@ -15,6 +15,7 @@ Public Class frmXmleinlesen
     Public filename As String = String.Empty
     Public bewidneu As Integer = 1
     '  Public filename As String = String.Empty
+
     Public eintraegekorrekt_bool As Boolean = True
     Public Shared Property sqlfile As String = String.Empty
     Public Shared Property xmleinlesen_bool As Boolean = False
@@ -253,11 +254,11 @@ Public Class frmXmleinlesen
         If Not connectionString.Contains("127.0.0.1") Then
             workdir = "x:\mysqldump\"
             sqlfile = String.Concat(workdir, "dump.sql")
-            sqlstring = ("mysqldump.exe -u Adler -pzgA7K$z! -h server2012 bewerberneu > x:\mysqldump\dump.sql")
+            sqlstring = ("mysqldump.exe -u Adler -pzgA7K$z! -h server2012 bewerberneu bew_assistenz bew_bewerberdaten bew_bibuha bew_lug bew_steuerfachangestellte bewerber_ausbildung bewerber_berufserfahrung bewerber_buero bewerber_controlling bewerber_edv bewerber_einkauf bewerber_fibu bewerber_it bewerber_logistik bewerber_marketing_design bewerber_personal bewerber_rae bewerber_sprachen bewerber_technik bewerber_versand bewerber_vertrieb gewerblich ulas > x:\mysqldump\dump.sql")
         Else
             workdir = "e:\heyduck\mysqldump\"
             sqlfile = String.Concat(workdir, "dump.sql")
-            sqlstring = ("mysqldump.exe -u root -pheyduck1! bewerberneu > e:\heyduck\mysqldump\dump.sql")
+            sqlstring = ("mysqldump.exe -u root -pheyduck1! bewerberneu bew_assistenz bew_bewerberdaten bew_bibuha bew_lug bew_steuerfachangestellte bewerber_ausbildung bewerber_berufserfahrung bewerber_buero bewerber_controlling bewerber_edv bewerber_einkauf bewerber_fibu bewerber_it bewerber_logistik bewerber_marketing_design bewerber_personal bewerber_rae bewerber_sprachen bewerber_technik bewerber_versand bewerber_vertrieb gewerblich ulas > e:\heyduck\mysqldump\dump.sql")
         End If
 
         Dim myProcess As New Process()
@@ -396,7 +397,7 @@ Public Class frmXmleinlesen
 
     Private Sub Message()
         MessageBox.Show("Die xml-Datei wurde nicht korrekt in die Datenbank eingespielt." & vbNewLine & vbNewLine & "Das Backup wird zur Fehlerbereinigung eingespielt." & vbNewLine & vbNewLine & "Bitte lesen Sie die xml-Datei erneut ein.", "Xml-Datei wurde nicht korrekt eingespielt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-        eintraegekorrekt_bool = False
+        'eintraegekorrekt_bool = False
         Call Backupeinspielen()
     End Sub
 End Class

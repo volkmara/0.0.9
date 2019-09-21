@@ -101,7 +101,7 @@ Partial Class frmRundschreibenuebersicht
         Me.AufklappenRadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.EinklappenRadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.btnRundschreibenaktuell_Close = New Telerik.WinControls.UI.RadButton()
-        Me.btnEintraegeloeschen = New Telerik.WinControls.UI.RadButton()
+        Me.btnEintraegeloeschenunduebertragen = New Telerik.WinControls.UI.RadButton()
         Me.btnSave_Rundschreiben = New Telerik.WinControls.UI.RadButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -117,6 +117,7 @@ Partial Class frmRundschreibenuebersicht
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
         Me.RundschreibenmonatTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenmonatTableAdapter()
         Me.RundschreibenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenTableAdapter()
+        Me.btnEintraegeloeschen = New Telerik.WinControls.UI.RadButton()
         AnmerkungenLabel = New System.Windows.Forms.Label()
         RundschreibenreihenfolgeLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
@@ -148,12 +149,13 @@ Partial Class frmRundschreibenuebersicht
         CType(Me.RGVRundschreibenaktuell.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tabellebtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnRundschreibenaktuell_Close, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnEintraegeloeschen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnEintraegeloeschenunduebertragen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSave_Rundschreiben, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.btnKWspeichern, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BewBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnEintraegeloeschen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AnmerkungenLabel
@@ -501,12 +503,13 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.TabPage1.AutoScroll = True
         Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabPage1.Controls.Add(Me.btnEintraegeloeschen)
         Me.TabPage1.Controls.Add(Me.Panel1)
         Me.TabPage1.Controls.Add(Me.SplitContainer2)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.Tabellebtn)
         Me.TabPage1.Controls.Add(Me.btnRundschreibenaktuell_Close)
-        Me.TabPage1.Controls.Add(Me.btnEintraegeloeschen)
+        Me.TabPage1.Controls.Add(Me.btnEintraegeloeschenunduebertragen)
         Me.TabPage1.Controls.Add(Me.btnSave_Rundschreiben)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
@@ -902,7 +905,7 @@ Partial Class frmRundschreibenuebersicht
         Me.Label3.BackColor = System.Drawing.Color.Yellow
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Crimson
-        Me.Label3.Location = New System.Drawing.Point(6, 57)
+        Me.Label3.Location = New System.Drawing.Point(6, 62)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(759, 54)
         Me.Label3.TabIndex = 90
@@ -965,23 +968,24 @@ Partial Class frmRundschreibenuebersicht
         Me.btnRundschreibenaktuell_Close.TabIndex = 88
         Me.btnRundschreibenaktuell_Close.Text = "<html><strong>   Fenster schließen>/strong></html>"
         '
-        'btnEintraegeloeschen
+        'btnEintraegeloeschenunduebertragen
         '
-        Me.btnEintraegeloeschen.ForeColor = System.Drawing.Color.Red
-        Me.btnEintraegeloeschen.Image = CType(resources.GetObject("btnEintraegeloeschen.Image"), System.Drawing.Image)
-        Me.btnEintraegeloeschen.Location = New System.Drawing.Point(430, 12)
-        Me.btnEintraegeloeschen.Name = "btnEintraegeloeschen"
-        Me.btnEintraegeloeschen.Size = New System.Drawing.Size(163, 37)
-        Me.btnEintraegeloeschen.TabIndex = 87
-        Me.btnEintraegeloeschen.Text = "<html><strong>   Monatsauswahl <br/>löschen>/strong></html>"
+        Me.btnEintraegeloeschenunduebertragen.ForeColor = System.Drawing.Color.Red
+        Me.btnEintraegeloeschenunduebertragen.Image = CType(resources.GetObject("btnEintraegeloeschenunduebertragen.Image"), System.Drawing.Image)
+        Me.btnEintraegeloeschenunduebertragen.Location = New System.Drawing.Point(430, 12)
+        Me.btnEintraegeloeschenunduebertragen.Name = "btnEintraegeloeschenunduebertragen"
+        Me.btnEintraegeloeschenunduebertragen.Size = New System.Drawing.Size(201, 47)
+        Me.btnEintraegeloeschenunduebertragen.TabIndex = 87
+        Me.btnEintraegeloeschenunduebertragen.Text = "<html><strong> <br/>   Monatsauswahl löschen><br/>und übertragen</strong><br/></h" &
+    "tml>"
         '
         'btnSave_Rundschreiben
         '
         Me.btnSave_Rundschreiben.ForeColor = System.Drawing.Color.Red
         Me.btnSave_Rundschreiben.Image = CType(resources.GetObject("btnSave_Rundschreiben.Image"), System.Drawing.Image)
-        Me.btnSave_Rundschreiben.Location = New System.Drawing.Point(249, 12)
+        Me.btnSave_Rundschreiben.Location = New System.Drawing.Point(249, 10)
         Me.btnSave_Rundschreiben.Name = "btnSave_Rundschreiben"
-        Me.btnSave_Rundschreiben.Size = New System.Drawing.Size(163, 37)
+        Me.btnSave_Rundschreiben.Size = New System.Drawing.Size(163, 49)
         Me.btnSave_Rundschreiben.TabIndex = 86
         Me.btnSave_Rundschreiben.Text = "<html><strong>Speichern>/strong></html>"
         '
@@ -1133,6 +1137,16 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.RundschreibenTableAdapter.ClearBeforeFill = True
         '
+        'btnEintraegeloeschen
+        '
+        Me.btnEintraegeloeschen.ForeColor = System.Drawing.Color.Red
+        Me.btnEintraegeloeschen.Image = CType(resources.GetObject("btnEintraegeloeschen.Image"), System.Drawing.Image)
+        Me.btnEintraegeloeschen.Location = New System.Drawing.Point(657, 10)
+        Me.btnEintraegeloeschen.Name = "btnEintraegeloeschen"
+        Me.btnEintraegeloeschen.Size = New System.Drawing.Size(201, 47)
+        Me.btnEintraegeloeschen.TabIndex = 95
+        Me.btnEintraegeloeschen.Text = "<html><strong> <br/>   Einträge löschen></strong><br/></html>"
+        '
         'frmRundschreibenuebersicht
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -1173,13 +1187,14 @@ Partial Class frmRundschreibenuebersicht
         CType(Me.RGVRundschreibenaktuell, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tabellebtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnRundschreibenaktuell_Close, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnEintraegeloeschen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnEintraegeloeschenunduebertragen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnSave_Rundschreiben, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.btnKWspeichern, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BewBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnEintraegeloeschen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1202,7 +1217,7 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents AufklappenRadMenuItem1 As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents EinklappenRadMenuItem1 As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents btnRundschreibenaktuell_Close As Telerik.WinControls.UI.RadButton
-    Friend WithEvents btnEintraegeloeschen As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btnEintraegeloeschenunduebertragen As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnSave_Rundschreiben As Telerik.WinControls.UI.RadButton
     Friend WithEvents Label4 As Label
     Friend WithEvents SplitContainer2 As SplitContainer
@@ -1226,4 +1241,5 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents Label8 As Label
     Friend WithEvents btnKWspeichern As Telerik.WinControls.UI.RadButton
     Friend WithEvents chgNurhomepage As CheckBox
+    Friend WithEvents btnEintraegeloeschen As Telerik.WinControls.UI.RadButton
 End Class

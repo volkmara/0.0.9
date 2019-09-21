@@ -64,7 +64,7 @@ Public Class frmRundschreibenuebersicht
     End Sub
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
-        ' Werte in rundschreibenmonat.erledigt: 0 = noch nicht verwendet, 1 = enthält mindestens einen Bewerbereintrag, 2 = versandtes Rundschreiben
+        ' Werte in rundschreibenmonat.erledigt: 0 = noch nicht verwendet, 1 = enthält mindestens einen Bewerbereintrag, 2 = versandtes Rundschreiben. 3 = übersprungenes Rundschreiben
         ' werte in rundschreiben.gelöscht: 0 = nicht manuell gelöscht, 1 = manuell gelöscht
         If TabControl1.SelectedTab Is TabPage2 Then
             rsaktuellbezeichnung = String.Empty
@@ -120,7 +120,6 @@ Public Class frmRundschreibenuebersicht
         rsaktuellbezeichnung = CStr(rsmonataktuell.monat)
     End Sub
 
-
     Private Sub RGVRundschreibenaktuell_CurrentRowChanged(sender As Object, e As CurrentRowChangedEventArgs) Handles RGVRundschreibenaktuell.CurrentRowChanged
         'Call Homepagecheck()
         'Call Voreintraege()
@@ -139,7 +138,7 @@ Public Class frmRundschreibenuebersicht
         End If
     End Sub
 
-    Private Sub btnSave_Rundschreiben_Click(sender As Object, e As EventArgs) Handles btnSave_Rundschreiben.Click, btnEintraegeloeschen.Click, btnRundschreibenaktuell_Close.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click
+    Private Sub btnSave_Rundschreiben_Click(sender As Object, e As EventArgs) Handles btnSave_Rundschreiben.Click, btnEintraegeloeschenunduebertragen.Click, btnRundschreibenaktuell_Close.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, btnEintraegeloeschen.Click
 
         Select Case True
             Case sender Is btnSave_Rundschreiben
@@ -161,7 +160,7 @@ Public Class frmRundschreibenuebersicht
             Case sender Is btnRundschreibenaktuell_Close
                 Me.Close()
 
-            Case sender Is btnEintraegeloeschen
+            Case sender Is btnEintraegeloeschenunduebertragen
 
                 If rsaktuellbezeichnung = String.Empty Then
                     Dim result As DialogResult = MessageBox.Show("Bitte erst in der linken Spalte einen Eintrag anklicken.", "Eintrag auswählen", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -187,6 +186,26 @@ Public Class frmRundschreibenuebersicht
                     Me.RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
                     Call gespeichert()
                 End If
+
+            Case sender Is btnEintraegeloeschen
+                Dim rsloeschen = BewerberDataSet.rundschreiben.Where(Function(x) x.bezeichnung = CStr(rsaktuellbezeichnung) And x.aktuell = 1)
+                For Each x In rsloeschen
+                    x.gelöscht = 1
+                    x.aktuell = 0
+                Next
+                Me.Validate()
+                Me.RundschreibenBindingSource1.EndEdit()
+                Me.RundschreibenTableAdapter.Update(Me.BewerberDataSet.rundschreiben)
+
+                Dim rsmonatloeschen = BewerberDataSet.rundschreibenmonat.Where(Function(x) x.monat = CStr(rsaktuellbezeichnung))
+                For Each x In rsmonatloeschen
+                    x.erledigt = 3
+                Next
+                Me.Validate()
+                Me.RundschreibenBindingSource.EndEdit()
+                Me.RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
+
+                Call gespeichert()
 
             Case sender Is AufklappenRadMenuItem1
                 Me.RGVRundschreibenaktuell.AutoSizeRows = True

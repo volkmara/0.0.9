@@ -242,12 +242,14 @@ Public Class frmOA
                     Call datenuebertragen()
                     MessageBox.Show("Bitte abspeichern, um die ausgewählten Stellen in die Datenbank zu übernehmen.", "Abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     'End If
+                    frmMain.oa_ausgewaehlt = True
                 End If
 
                 If vorschlagenfuerstelle_interviewer_bool Then
                     'If liste.Count > 0 Then
                     Call datenuebertragen()
                     'End If
+                    frmMain.oa_ausgewaehlt = True
                 End If
 
                 vorschlagenfuerstelle_bool = False
@@ -260,6 +262,8 @@ Public Class frmOA
     End Sub
 
     Private Sub frmOA_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Me.BewBindingSource.RemoveFilter()
+        'If liste.Count = 0 Then
+        '    Me.BewBindingSource.RemoveFilter()
+        'End If
     End Sub
 End Class

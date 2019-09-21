@@ -5,6 +5,7 @@ Public Class frmKurzfragebogen
 
     Private _frmMain As frmMain
     Public bewidneu As Integer = 0
+    ' Public Shared Property Kurzfragebogen As Boolean = False ' notwendig, damit Inallentabellen.eintragen richtig funktioniert
 
     Sub New(frmMain As frmMain)
         ' TODO: Complete member initialization 
@@ -17,21 +18,17 @@ Public Class frmKurzfragebogen
     End Sub
 
     Private Sub frmKurzfragebogen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.BewBindingSource.DataSource = frmMain.BewBindingSource
+        Me.Bew_bewerberdatenBindingSource.DataSource = frmMain.Bew_bewerberdatenBindingSource
+
+        frmMain.kurzfrage = True
         Call Getbewid()
         bewidneu = CInt(bewid + 1)
-        If Not bewidcheck(bewidneu) Then
-            Me.BewBindingSource.AddNew()
-            Me.Bew_bewerberdatenBindingSource.AddNew()
-        ElseIf bewidcheck(bewidneu) Then
-            Dim warnungstext As String = CStr("Ein Eintrag mit dieser ID existiert bereits. Neueintragen nicht möglich. Die weitere Verarbeitung wurde abgebrochen.")
-            MessageBox.Show(warnungstext, "ID bereits vorhanden", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-            Exit Sub
-            Me.Close()
-        End If
+        Me.BewBindingSource.AddNew()
     End Sub
 
     Private Sub frmKurzfragebogen_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        ' Call frmMain.DBLoad()
+        txtGeburtstag.Text = "z.B. 01.01.1970"
         Call Timerreload.Timerstop() ' Timer für DB-Reload stoppen
     End Sub
 
@@ -45,40 +42,30 @@ Public Class frmKurzfragebogen
 
     Private Sub btnNeuerBewerber_Click(sender As Object, e As EventArgs) Handles btnNeuerBewerber.Click
         Dim bewspeichern = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
-        Dim bewerberdaten = DirectCast(DirectCast(Me.Bew_bewerberdatenBindingSource.Current, DataRowView).Row, bew_bewerberdatenRow)
-        bewspeichern.anrede = CStr(cmbAnrede.Text)
-        bewspeichern.vorname = CStr(txtVorname.Text)
-        bewspeichern.name = CStr(txtName.Text)
         bewspeichern.stand = CStr("aktuell")
         bewspeichern.status = CStr("angelegt")
         bewspeichern.erstkontakt = Date.Now
-        bewspeichern.plz = CInt(txtPlz.Text)
-        bewspeichern.ort = CStr(txtOrt.Text)
-        bewspeichern.strasse = CStr(StrasseTextBox.Text)
-        bewspeichern.tel_festnetz = CStr(txtTel_festnetz.Text)
-        bewspeichern.tel_mobil = CStr(txtTel_mobil.Text)
-        bewspeichern.email = CStr(txtEmail.Text)
-        bewspeichern.verfügbarkeit = CStr(cmbVerfuegbarkeit.Text)
-        bewspeichern.arbeitszeit = CStr(cmbVz_tz.Text)
-        bewspeichern.monatsgehalt = CInt(txtMonatsgehalt.Text)
-        bewspeichern.ausbildungsberuf = CStr(txtAusbildungsberuf.Text)
-        bewspeichern.Vermittlung = CStr(txtZa_vm.Text)
-        bewspeichern.ulas = CStr(txtUlas.Text)
-        bewspeichern.refnr = CInt(bewidneu)
+        bewspeichern.refnr = bewidneu
         bewspeichern.bewerberbeschreibung = CStr(allgemein.ExporttoRtf(RTEPersönlichkeit.Document))
-        bewerberdaten.rundschreiben = CStr(cmbRundschreiben.Text)
-
+        bewspeichern.bewerberbeschreibung_text = CStr(allgemein.ExporttoTxt(RTEPersönlichkeit.Document))
         Me.Validate()
         Me.BewBindingSource.EndEdit()
-        Me.BewTableAdapter.Update(Me.BewerberDataSet.bew)
+        frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
 
+        Dim bewerberdaten = DirectCast(DirectCast(Me.Bew_bewerberdatenBindingSource.AddNew, DataRowView).Row, bew_bewerberdatenRow)
+        bewerberdaten.id_bew = bewidneu
+        bewerberdaten.rundschreiben = CStr(cmbRundschreiben.Text)
+        bewerberdaten.staatsangehörigkeit = CStr(cmbStaatsangehörigkeit.Text)
+        bewerberdaten.geburtstag = CStr(txtGeburtstag.Text)
+        Me.Validate()
         Me.Bew_bewerberdatenBindingSource.EndEdit()
-        Me.Bew_bewerberdatenTableAdapter.Update(Me.BewerberDataSet.bew_bewerberdaten)
+        frmMain.Bew_bewerberdatenTableAdapter.Update(frmMain.BewerberDataSet.bew_bewerberdaten)
 
         Call inallentabellen.eintragen()
-        frmMain.DBLoad()
 
+        frmMain.DBLoad()
         Me.Panel2.Visible = True
+        Call gespeichert()
         Me.Close()
     End Sub
 
@@ -87,7 +74,7 @@ Public Class frmKurzfragebogen
     End Function
 
     ' ================================================================================ Validierungen =======================================================
-    Private Sub cmbAnrede_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmbAnrede.Validating, txtVorname.Validating, txtName.Validating, txtMonatsgehalt.Validating, txtGehaltswunsch_monat.Validating, txtOrt.Validating, txtPlz.Validating, txtEmail.Validating
+    Private Sub cmbAnrede_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmbAnrede.Validating, txtVorname.Validating, txtName.Validating, txtMonatsgehalt.Validating, txtGehaltswunsch_monat.Validating, txtOrt.Validating, txtEmail.Validating, txtPlz.Validating
         Select Case True
             Case sender Is cmbAnrede
                 '  If AnredeComboBox.SelectedText = String.Empty Then
@@ -117,10 +104,10 @@ Public Class frmKurzfragebogen
             Case sender Is txtPlz
                 If Not IsNumeric(txtPlz.Text) Then
                     ToolTip1.Show("Bitte tragen Sie eine Postleitzahl mit fünf Ziffern ein.", CType(sender, Control), 1500)
-                ElseIf txtPlz.TextLength <= 4 Then
+                ElseIf txtPlz.TextLength < 5 Then
                     ToolTip1.Show("Bitte geben Sie eine Postleitzahl mit fünf Ziffern ein.", CType(sender, Control), 1500)
-                ElseIf txtPlz.Text = "" Then
-                    ToolTip1.Show("Bitte geben Sie eine Postleitzahl mit fünf Ziffern ein.", CType(sender, Control), 1500)
+                    'ElseIf txtPlz.Text = "" Then
+                    '    ToolTip1.Show("Bitte geben Sie eine Postleitzahl mit fünf Ziffern ein.", CType(sender, Control), 1500)
                 End If
             Case sender Is txtEmail
                 If txtEmail.Text.Trim = "" Then
@@ -166,4 +153,14 @@ Public Class frmKurzfragebogen
         End Select
     End Sub
 
+
+    Private Sub txtGeburtstag_Enter(sender As Object, e As EventArgs) Handles txtGeburtstag.Enter, cmbStaatsangehörigkeit.Enter
+        Select Case True
+            Case sender Is txtGeburtstag
+                txtGeburtstag.Text = String.Empty
+                ToolTip1.Show("Falls bekannt, das Geburtsdatum im Format dd.mm.jjjj eintragen.", CType(sender, Control), 1500)
+            Case sender Is cmbStaatsangehörigkeit
+                ToolTip1.Show("Falls bekannt, die Nationalität eintragen.", CType(sender, Control), 1500)
+        End Select
+    End Sub
 End Class
