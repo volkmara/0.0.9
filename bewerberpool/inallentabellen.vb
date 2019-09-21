@@ -20,15 +20,17 @@ Public Class inallentabellen
             Exit Sub
         End If
 
-        If Not inbewerberdaten(bewid) Then
-            Dim bewerberdaten = DirectCast(DirectCast(frmMain.Bew_bewerberdatenBindingSource.AddNew, DataRowView).Row, bew_bewerberdatenRow)
-            bewerberdaten.id_bew = CInt(bewid)
-            frmMain.Validate()
-            frmMain.Bew_bewerberdatenBindingSource.EndEdit()
-            frmMain.Bew_bewerberdatenTableAdapter.Update(frmMain.BewerberDataSet.bew_bewerberdaten)
-        Else
-            MessageBox.Show(warnungstext_exixtiert, "ID existiert bereits", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-            Exit Sub
+        If Not frmMain.kurzfrage Then
+            If Not inbewerberdaten(bewid) Then
+                Dim bewerberdaten = DirectCast(DirectCast(frmMain.Bew_bewerberdatenBindingSource.AddNew, DataRowView).Row, bew_bewerberdatenRow)
+                bewerberdaten.id_bew = CInt(bewid)
+                frmMain.Validate()
+                frmMain.Bew_bewerberdatenBindingSource.EndEdit()
+                frmMain.Bew_bewerberdatenTableAdapter.Update(frmMain.BewerberDataSet.bew_bewerberdaten)
+            Else
+                MessageBox.Show(warnungstext_exixtiert, "ID existiert bereits", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                Exit Sub
+            End If
         End If
 
         If Not inausbildung(bewid) Then

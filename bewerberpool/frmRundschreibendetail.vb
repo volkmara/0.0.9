@@ -133,9 +133,9 @@ Public Class frmRundschreibendetail
 
     Private Sub Monateauslesen() ' noch nicht versandte Rundschreibenmonate aus Tabelle "rundschreibenmonat" ermitteln
 
-        Dim monate = BewerberDataSet.rundschreibenmonat.Where(Function(x) x.erledigt = 1 OrElse x.erledigt = 0).Select(Function(x) x.monat).ToList.Distinct
+        'Dim monate = BewerberDataSet.rundschreibenmonat.Where(Function(x) x.erledigt = 1 OrElse x.erledigt = 0).Select(Function(x) x.monat).ToList.Distinct
 
-        Dim monatsliste As String = String.Empty
+        Dim monate = BewerberDataSet.rundschreibenmonat.Where(Function(x) x.erledigt < 2).Select(Function(x) x.monat).ToList.Distinct
 
         cmbMonat.Items.Clear()
         For Each x In monate

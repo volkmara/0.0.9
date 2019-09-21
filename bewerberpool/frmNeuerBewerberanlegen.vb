@@ -18,8 +18,7 @@ Public Class frmNeuerBewerberanlegen
         Call Getbewid()
         Dim bewidneu = CInt(bewid + 1)
         If Not bewidcheck(bewidneu) Then
-            frmMain.BewBindingSource.AddNew()
-            Dim bewspeichern = DirectCast(DirectCast(frmMain.BewBindingSource.Current, DataRowView).Row, bewRow)
+            Dim bewspeichern = DirectCast(DirectCast(frmMain.BewBindingSource.AddNew, DataRowView).Row, bewRow)
             bewspeichern.anrede = CStr(AnredeComboBox.Text)
             bewspeichern.vorname = CStr(VornameTextBox.Text)
             bewspeichern.name = CStr(NameTextBox.Text)

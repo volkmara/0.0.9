@@ -88,7 +88,7 @@
             Case zavm_bool
                 Me.ListBox1.Items.AddRange(New Object() {"Vermittlung", "Zeitarbeit", "Zeitarbeit mit Übernahmeoption", "egal"})
             Case arbeitsort_bool
-                Me.ListBox1.Items.AddRange(New Object() {"Bundesweit", "RSK", "BN", "BN LR", "BN RR", "KÖ", "KÖ LR", "KÖ RR", "Berg L", "LEV", "D", "Ruhr", "RLP", "GM", "Nümbrecht", "AK", "Norddeutschland"})
+                Me.ListBox1.Items.AddRange(New Object() {"Bundesweit", "RSK", "BN", "BN LR", "BN RR", "KÖ", "KÖ LR", "KÖ RR", "Berg L", "LEV", "D", "Ruhr", "RLP", "GM", "Nümbrecht", "AK", "AW", "Norddeutschland"})
             Case fuehrerschein_bool
                 Me.ListBox1.Items.AddRange(New Object() {"Pkw", "Lkw", "Motorrad", "kein Führerschein"})
             Case oepnv_bool

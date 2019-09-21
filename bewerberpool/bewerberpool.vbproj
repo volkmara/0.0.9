@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\server2012\xchange\bewerberpool\publish\</InstallUrl>
     <UpdateUrl>\\server2012\xchange\bewerberpool\publish\</UpdateUrl>
-    <ApplicationRevision>197</ApplicationRevision>
+    <ApplicationRevision>213</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -64,16 +64,17 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>8A1B9AD48681D85AFAA55DF61DFF0A51A1240F24</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>BE055E42A7226DAC84EE12A6D39A9D5050818066</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>bewerberpool_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>BP.ico</ApplicationIcon>

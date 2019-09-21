@@ -45,6 +45,10 @@ Public Class frmMain
     Public alter As Integer
     Public row_ausgewählt_bool As Boolean = False
 
+    Public Shared Property oa_ausgewaehlt As Boolean = False ' wird true, wenn eine Stelle aus OA einem Bewerber zugeordnet wird
+
+    Public Shared Property kurzfrage As Boolean = False ' notwendig, damit Inallentabellen.eintragen richtig funktioniert
+
     ' Für Drag and Drop
     Private _GrabOffset As Size
     Private Const _Tolerance As Double = 5 ^ 2
@@ -95,6 +99,7 @@ Public Class frmMain
             BewerbervollstaendigloeschenRadMenuItem2.Visibility = ElementVisibility.Collapsed
         End If
 
+        'Formatierung ColumnChooser
         BewGridView1.ColumnChooser.DesktopLocation = New Point(300, 100)
         BewGridView1.ColumnChooser.Font = New Font("Segoe", 10, FontStyle.Bold)
     End Sub
@@ -327,6 +332,10 @@ Public Class frmMain
         Call gespeichert() ' Messagebox wird angezeigt
         ' Call frmMain.topbewerbercheck()
 
+        If oa_ausgewaehlt Then
+            frmMain.BewBindingSource.RemoveFilter()
+        End If
+
         Call frmMain.BewerberaufHomepagedeaktivieren()
 
         ' Wenn Status = alt, Fenster für Anmerkung öffnen, Abspeichern zuerst, sonst öffnet sich das immer
@@ -428,7 +437,7 @@ Public Class frmMain
     ' End Sub
 
     Private Sub rundschreibencheck()
-        If Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid AndAlso Not x.rundschreibenjanein AndAlso x.aktuell = 1) Then
+        If Not Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid) Then
             btnRundschreiben.BackColor = Color.WhiteSmoke
         ElseIf Me.BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = letzteid AndAlso x.rundschreibenjanein AndAlso x.aktuell = 1 AndAlso x.gelöscht = 0 OrElse x.IsgelöschtNull) Then
             btnRundschreiben.BackColor = Color.LightSteelBlue
@@ -520,8 +529,8 @@ Public Class frmMain
     ' ================================================================================ Ende Bewerber auf gelöscht setzen ========================================================
 
 #Region "=============================================================================Buttons===================================================================================="
-    ' Button Speichern, Neu anlegen, Daten laden, Drucken, neue anmerkung
-    Private Sub SpeichernRadMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernRadMenuItem.Click, SpeichernNeuladenRadMenuItem.Click, BewerberneuRadButton.Click, DatenladenRadMenuItem2.Click, DatenladenfilterRadMenuItem2.Click, FilterzurückRadButton.Click, DruckenRadMenuItem2.Click, DruckenRadMenuItem3.Click, DruckenRadMenuItem4.Click, NeueAnmerkungRadButton.Click, Interviewerbogen.Click, Kurzfragebogen.Click, TelefoninterviewRadMenuItem.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, btnBearbeitungspeichern.Click, Top10auswaehlen.Click, Top10anzeigen.Click, btnDatenBewerbertooleinlesen.Click
+    ' Button Speichern, Neu anlegen, Daten laden, Drucken, neue anmerkung, Spalten einblenden Anmerkungen
+    Private Sub SpeichernRadMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernRadMenuItem.Click, SpeichernNeuladenRadMenuItem.Click, BewerberneuRadButton.Click, DatenladenRadMenuItem2.Click, DatenladenfilterRadMenuItem2.Click, FilterzurückRadButton.Click, DruckenRadMenuItem2.Click, DruckenRadMenuItem3.Click, DruckenRadMenuItem4.Click, NeueAnmerkungRadButton.Click, Interviewerbogen.Click, Kurzfragebogen.Click, TelefoninterviewRadMenuItem.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, btnBearbeitungspeichern.Click, Top10auswaehlen.Click, Top10anzeigen.Click, btnDatenBewerbertooleinlesen.Click, btnSpalteneinblendenAnmerkungen.Click
         Select Case True
             Case sender Is SpeichernRadMenuItem
                 Call DBSpeichern()
@@ -678,6 +687,10 @@ Public Class frmMain
                         Call frmXmleinlesen.Backupeinspielen()
                     End If
                 End If
+
+            Case sender Is btnSpalteneinblendenAnmerkungen
+                Me.NotizenRadGridView.Columns(7).IsVisible = True
+                Me.NotizenRadGridView.Columns(8).IsVisible = True
         End Select
     End Sub
 
@@ -1686,9 +1699,9 @@ Public Class frmMain
                 bodytext = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde von ", usernameklar, " als Topbewerber/in Zeitarbeit markiert.")
             End If
 
-            'email.receiver = "kontakt@heyduck-personalservice.de, beatrixhambitzer@heyduck-personalservice.de, susannehanner@heyduck-personalservice.de"
+            email.receiver = "kontakt@heyduck-personalservice.de, beatrixhambitzer@heyduck-personalservice.de, susannehanner@heyduck-personalservice.de"
             'email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
-            email.receiver = EmailTextBox1.Text
+            'email.receiver = EmailTextBox1.Text
 
             email.subject = CStr(betreff)
             email.body = CStr(bodytext)
@@ -1776,6 +1789,7 @@ Public Class frmMain
     Private Sub Sprachendaten()
 
         Dim bewerbersprachen = DirectCast(DirectCast(Me.Bewerber_sprachenBindingSource.Current, DataRowView).Row, bewerber_sprachenRow)
+        Dim sprachenbew = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
         Dim sprachen As New List(Of String)()
 
         If Not bewerbersprachen.Isdeutsch_interviewerNull AndAlso bewerbersprachen.deutsch_interviewer <> 0 Then
@@ -1786,42 +1800,49 @@ Public Class frmMain
 
         If Not bewerbersprachen.Isenglisch_interviewerNull AndAlso bewerbersprachen.englisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("E ", bewerbersprachen.englisch_interviewer.ToString))
+            sprachenbew.englisch_int = bewerbersprachen.englisch_interviewer
         ElseIf bewerbersprachen.englisch <> 0 Then
             sprachen.Add(String.Concat("E ", bewerbersprachen.englisch.ToString))
         End If
 
         If Not bewerbersprachen.Isfranzösich_interviewerNull AndAlso bewerbersprachen.französich_interviewer <> 0 Then
             sprachen.Add(String.Concat("F ", bewerbersprachen.französich_interviewer.ToString))
+            sprachenbew.franzoesisch_int = bewerbersprachen.französich_interviewer
         ElseIf bewerbersprachen.franzoesisch <> 0 Then
             sprachen.Add(String.Concat("F ", bewerbersprachen.franzoesisch.ToString))
         End If
 
         If Not bewerbersprachen.Isspanisch_interviewerNull AndAlso bewerbersprachen.spanisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("S ", bewerbersprachen.spanisch_interviewer.ToString))
+            sprachenbew.spanisch_int = bewerbersprachen.spanisch_interviewer
         ElseIf bewerbersprachen.spanisch <> 0 Then
             sprachen.Add(String.Concat("S ", bewerbersprachen.spanisch.ToString))
         End If
 
         If Not bewerbersprachen.Isitalienisch_interviewerNull AndAlso bewerbersprachen.italienisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("I ", bewerbersprachen.italienisch_interviewer.ToString))
+            sprachenbew.italienisch_int = bewerbersprachen.italienisch_interviewer
         ElseIf bewerbersprachen.italienisch <> 0 Then
             sprachen.Add(String.Concat("I ", bewerbersprachen.italienisch.ToString))
         End If
 
         If Not bewerbersprachen.Isniederlaendisch_interviewerNull AndAlso bewerbersprachen.niederlaendisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("N ", bewerbersprachen.niederlaendisch_interviewer))
+            sprachenbew.niederlaendisch_int = bewerbersprachen.niederlaendisch_interviewer
         ElseIf bewerbersprachen.niederlaendisch <> 0 Then
             sprachen.Add(String.Concat("N ", bewerbersprachen.niederlaendisch.ToString))
         End If
 
         If Not bewerbersprachen.Istuerkisch_interviewerNull AndAlso bewerbersprachen.tuerkisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("T ", bewerbersprachen.tuerkisch_interviewer.ToString))
+            sprachenbew.tuerkisch_int = bewerbersprachen.tuerkisch_interviewer
         ElseIf bewerbersprachen.tuerkisch <> 0 Then
             sprachen.Add(String.Concat("T ", bewerbersprachen.tuerkisch.ToString))
         End If
 
         If Not bewerbersprachen.Isrussisch_interviewerNull AndAlso bewerbersprachen.russisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("R ", bewerbersprachen.russisch_interviewer.ToString))
+            sprachenbew.russisch_int = bewerbersprachen.russisch_interviewer
         ElseIf bewerbersprachen.russisch <> 0 Then
             sprachen.Add(String.Concat("R ", bewerbersprachen.russisch.ToString))
         End If
@@ -1840,7 +1861,6 @@ Public Class frmMain
 
 
 #End Region
-
 
     ' Bewerber komplett aus DB löschen, interne und Mail an gelöschten Bewerber schicken.
     Private Sub Bewerberkomplettloeschen()
@@ -2010,5 +2030,13 @@ Public Class frmMain
         frmListboxen.lug_buchhaltung_software = String.Empty
         frmListboxen.fibu_kontenrahmen = String.Empty
         frmListboxen.vztz = String.Empty
+    End Sub
+
+    ' Das Event RowUpdated muss bei jeder Änderung im Dataset neu angelegt werden
+    Private Sub BewTableAdapter__RowUpdated(sender As Object, e As MySqlRowUpdatedEventArgs) Handles BewTableAdapter.RowUpdated, Bew_bewerberdatenTableAdapter.RowUpdated, Bew_assistenzTableAdapter.RowUpdated, Bew_bibuhaTableAdapter.RowUpdated, Bew_lugTableAdapter.RowUpdated, Bew_steuerfachangestellteTableAdapter.RowUpdated, Bewerber_ausbildungTableAdapter.RowUpdated, Bewerber_berufserfahrungTableAdapter.RowUpdated, Bewerber_bueroTableAdapter.RowUpdated, Bewerber_controllingTableAdapter.RowUpdated, Bewerber_edvTableAdapter.RowUpdated, Bewerber_einkaufTableAdapter.RowUpdated, Bewerber_fibuTableAdapter.RowUpdated, Bewerber_itTableAdapter.RowUpdated, Bewerber_logistikTableAdapter.RowUpdated, Bewerber_marketing_designTableAdapter.RowUpdated, Bewerber_personalTableAdapter.RowUpdated, Bewerber_raeTableAdapter.RowUpdated, Bewerber_sprachenTableAdapter.RowUpdated, Bewerber_technikTableAdapter.RowUpdated, Bewerber_versandTableAdapter.RowUpdated, Bewerber_vertriebTableAdapter.RowUpdated, GewerblichTableAdapter.RowUpdated, NotizenTableAdapter.RowUpdated, RundschreibenTableAdapter.RowUpdated, UlasTableAdapter.RowUpdated
+
+        If e.RecordsAffected = 0 Then
+            e.Status = UpdateStatus.Continue
+        End If
     End Sub
 End Class
