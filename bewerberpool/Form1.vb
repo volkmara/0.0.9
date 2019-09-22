@@ -1794,55 +1794,56 @@ Public Class frmMain
 
         If Not bewerbersprachen.Isdeutsch_interviewerNull AndAlso bewerbersprachen.deutsch_interviewer <> 0 Then
             sprachen.Add(String.Concat("D ", bewerbersprachen.deutsch_interviewer.ToString))
+            sprachenbew.deutsch = bewerbersprachen.deutsch_interviewer
         ElseIf bewerbersprachen.deutsch <> 0 Then
             sprachen.Add(String.Concat("D ", bewerbersprachen.deutsch.ToString))
         End If
 
         If Not bewerbersprachen.Isenglisch_interviewerNull AndAlso bewerbersprachen.englisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("E ", bewerbersprachen.englisch_interviewer.ToString))
-            sprachenbew.englisch_int = bewerbersprachen.englisch_interviewer
+            sprachenbew.englisch = bewerbersprachen.englisch_interviewer
         ElseIf bewerbersprachen.englisch <> 0 Then
             sprachen.Add(String.Concat("E ", bewerbersprachen.englisch.ToString))
         End If
 
         If Not bewerbersprachen.Isfranzösich_interviewerNull AndAlso bewerbersprachen.französich_interviewer <> 0 Then
             sprachen.Add(String.Concat("F ", bewerbersprachen.französich_interviewer.ToString))
-            sprachenbew.franzoesisch_int = bewerbersprachen.französich_interviewer
+            sprachenbew.franzoesisch = bewerbersprachen.französich_interviewer
         ElseIf bewerbersprachen.franzoesisch <> 0 Then
             sprachen.Add(String.Concat("F ", bewerbersprachen.franzoesisch.ToString))
         End If
 
         If Not bewerbersprachen.Isspanisch_interviewerNull AndAlso bewerbersprachen.spanisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("S ", bewerbersprachen.spanisch_interviewer.ToString))
-            sprachenbew.spanisch_int = bewerbersprachen.spanisch_interviewer
+            sprachenbew.spanisch = bewerbersprachen.spanisch_interviewer
         ElseIf bewerbersprachen.spanisch <> 0 Then
             sprachen.Add(String.Concat("S ", bewerbersprachen.spanisch.ToString))
         End If
 
         If Not bewerbersprachen.Isitalienisch_interviewerNull AndAlso bewerbersprachen.italienisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("I ", bewerbersprachen.italienisch_interviewer.ToString))
-            sprachenbew.italienisch_int = bewerbersprachen.italienisch_interviewer
+            sprachenbew.italienisch = bewerbersprachen.italienisch_interviewer
         ElseIf bewerbersprachen.italienisch <> 0 Then
             sprachen.Add(String.Concat("I ", bewerbersprachen.italienisch.ToString))
         End If
 
         If Not bewerbersprachen.Isniederlaendisch_interviewerNull AndAlso bewerbersprachen.niederlaendisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("N ", bewerbersprachen.niederlaendisch_interviewer))
-            sprachenbew.niederlaendisch_int = bewerbersprachen.niederlaendisch_interviewer
+            sprachenbew.niederlaendisch = bewerbersprachen.niederlaendisch_interviewer
         ElseIf bewerbersprachen.niederlaendisch <> 0 Then
             sprachen.Add(String.Concat("N ", bewerbersprachen.niederlaendisch.ToString))
         End If
 
         If Not bewerbersprachen.Istuerkisch_interviewerNull AndAlso bewerbersprachen.tuerkisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("T ", bewerbersprachen.tuerkisch_interviewer.ToString))
-            sprachenbew.tuerkisch_int = bewerbersprachen.tuerkisch_interviewer
+            sprachenbew.tuerkisch = bewerbersprachen.tuerkisch_interviewer
         ElseIf bewerbersprachen.tuerkisch <> 0 Then
             sprachen.Add(String.Concat("T ", bewerbersprachen.tuerkisch.ToString))
         End If
 
         If Not bewerbersprachen.Isrussisch_interviewerNull AndAlso bewerbersprachen.russisch_interviewer <> 0 Then
             sprachen.Add(String.Concat("R ", bewerbersprachen.russisch_interviewer.ToString))
-            sprachenbew.russisch_int = bewerbersprachen.russisch_interviewer
+            sprachenbew.russisch = bewerbersprachen.russisch_interviewer
         ElseIf bewerbersprachen.russisch <> 0 Then
             sprachen.Add(String.Concat("R ", bewerbersprachen.russisch.ToString))
         End If
