@@ -752,7 +752,7 @@ Public Class frmMain
 
     '================================================================================ Formatierung Gridview ===================================================================
 
-    ' Spaltenköpfe fett
+    ' Spaltenköpfe und Spalten fett
     Private Sub BewGridView1_ViewCellFormatting(ByVal sender As Object, e As Telerik.WinControls.UI.CellFormattingEventArgs) Handles BewGridView1.ViewCellFormatting
         Dim newFont10 = New Font("Microsoft Sans Serif", 10.0, FontStyle.Bold)
 
@@ -768,10 +768,59 @@ Public Class frmMain
             e.CellElement.DrawFill = True
             e.CellElement.NumberOfColors = 1
             e.CellElement.BackColor = Color.Yellow
-        Else
-            e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
-            e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
-            e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+            'Else
+            '    e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+            '    e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+            '    e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        End If
+
+        If e.CellElement.ColumnInfo.Name = "englisch_bew" Then
+            'e.CellElement.Font = newFont10
+            e.CellElement.DrawFill = True
+            e.CellElement.NumberOfColors = 1
+            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        End If
+
+        If e.CellElement.ColumnInfo.Name = "franzoesich_bew" Then
+            'e.CellElement.Font = newFont10
+            'e.CellElement.DrawFill = True
+            e.CellElement.NumberOfColors = 1
+            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        End If
+
+        If e.CellElement.ColumnInfo.Name = "italienisch_bew" Then
+            'e.CellElement.Font = newFont10
+            e.CellElement.DrawFill = True
+            e.CellElement.NumberOfColors = 1
+            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        End If
+
+        If e.CellElement.ColumnInfo.Name = "spanisch_bew" Then
+            'e.CellElement.Font = newFont10
+            e.CellElement.DrawFill = True
+            e.CellElement.NumberOfColors = 1
+            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        End If
+
+        If e.CellElement.ColumnInfo.Name = "tuerkisch_bew" Then
+            'e.CellElement.Font = newFont10
+            e.CellElement.DrawFill = True
+            e.CellElement.NumberOfColors = 1
+            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        End If
+
+        If e.CellElement.ColumnInfo.Name = "russisch_bew" Then
+            'e.CellElement.Font = newFont10
+            e.CellElement.DrawFill = True
+            e.CellElement.NumberOfColors = 1
+            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        End If
+
+        If e.CellElement.ColumnInfo.Name = "niederlaendisch_bew" Then
+            'e.CellElement.Font = newFont10
+            e.CellElement.DrawFill = True
+            e.CellElement.NumberOfColors = 1
+            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
         End If
     End Sub
 
@@ -1792,60 +1841,76 @@ Public Class frmMain
         Dim sprachenbew = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
         Dim sprachen As New List(Of String)()
 
-        If Not bewerbersprachen.Isdeutsch_interviewerNull AndAlso bewerbersprachen.deutsch_interviewer <> 0 Then
+        If bewerbersprachen.deutsch_interviewer > 0 Then
             sprachen.Add(String.Concat("D ", bewerbersprachen.deutsch_interviewer.ToString))
             sprachenbew.deutsch = bewerbersprachen.deutsch_interviewer
+            sprachenbew.deutsch_bew = bewerbersprachen.deutsch
         ElseIf bewerbersprachen.deutsch <> 0 Then
+            sprachenbew.deutsch_bew = bewerbersprachen.deutsch
             sprachen.Add(String.Concat("D ", bewerbersprachen.deutsch.ToString))
         End If
 
-        If Not bewerbersprachen.Isenglisch_interviewerNull AndAlso bewerbersprachen.englisch_interviewer <> 0 Then
+        If bewerbersprachen.englisch_interviewer > 0 Then
             sprachen.Add(String.Concat("E ", bewerbersprachen.englisch_interviewer.ToString))
             sprachenbew.englisch = bewerbersprachen.englisch_interviewer
+            sprachenbew.englisch_bew = bewerbersprachen.englisch
         ElseIf bewerbersprachen.englisch <> 0 Then
             sprachen.Add(String.Concat("E ", bewerbersprachen.englisch.ToString))
+            sprachenbew.englisch_bew = bewerbersprachen.englisch
         End If
 
-        If Not bewerbersprachen.Isfranzösich_interviewerNull AndAlso bewerbersprachen.französich_interviewer <> 0 Then
+        If bewerbersprachen.französich_interviewer > 0 Then
             sprachen.Add(String.Concat("F ", bewerbersprachen.französich_interviewer.ToString))
             sprachenbew.franzoesisch = bewerbersprachen.französich_interviewer
+            sprachenbew.franzoesich_bew = bewerbersprachen.franzoesisch
         ElseIf bewerbersprachen.franzoesisch <> 0 Then
             sprachen.Add(String.Concat("F ", bewerbersprachen.franzoesisch.ToString))
+            sprachenbew.franzoesisch = bewerbersprachen.franzoesisch
         End If
 
-        If Not bewerbersprachen.Isspanisch_interviewerNull AndAlso bewerbersprachen.spanisch_interviewer <> 0 Then
+        If bewerbersprachen.spanisch_interviewer > 0 Then
             sprachen.Add(String.Concat("S ", bewerbersprachen.spanisch_interviewer.ToString))
             sprachenbew.spanisch = bewerbersprachen.spanisch_interviewer
+            sprachenbew.spanisch_bew = bewerbersprachen.spanisch
         ElseIf bewerbersprachen.spanisch <> 0 Then
             sprachen.Add(String.Concat("S ", bewerbersprachen.spanisch.ToString))
+            sprachenbew.spanisch_bew = bewerbersprachen.spanisch
         End If
 
-        If Not bewerbersprachen.Isitalienisch_interviewerNull AndAlso bewerbersprachen.italienisch_interviewer <> 0 Then
+        If bewerbersprachen.italienisch_interviewer > 0 Then
             sprachen.Add(String.Concat("I ", bewerbersprachen.italienisch_interviewer.ToString))
             sprachenbew.italienisch = bewerbersprachen.italienisch_interviewer
+            sprachenbew.italienisch_bew = bewerbersprachen.italienisch
         ElseIf bewerbersprachen.italienisch <> 0 Then
             sprachen.Add(String.Concat("I ", bewerbersprachen.italienisch.ToString))
+            sprachenbew.italienisch_bew = bewerbersprachen.italienisch
         End If
 
-        If Not bewerbersprachen.Isniederlaendisch_interviewerNull AndAlso bewerbersprachen.niederlaendisch_interviewer <> 0 Then
-            sprachen.Add(String.Concat("N ", bewerbersprachen.niederlaendisch_interviewer))
+        If bewerbersprachen.niederlaendisch_interviewer > 0 Then
+            sprachen.Add(String.Concat("N ", bewerbersprachen.niederlaendisch_interviewer.ToString))
             sprachenbew.niederlaendisch = bewerbersprachen.niederlaendisch_interviewer
+            sprachenbew.niederlaendisch_bew = bewerbersprachen.niederlaendisch
         ElseIf bewerbersprachen.niederlaendisch <> 0 Then
             sprachen.Add(String.Concat("N ", bewerbersprachen.niederlaendisch.ToString))
+            sprachenbew.niederlaendisch_bew = bewerbersprachen.niederlaendisch
         End If
 
-        If Not bewerbersprachen.Istuerkisch_interviewerNull AndAlso bewerbersprachen.tuerkisch_interviewer <> 0 Then
+        If bewerbersprachen.tuerkisch_interviewer > 0 Then
             sprachen.Add(String.Concat("T ", bewerbersprachen.tuerkisch_interviewer.ToString))
             sprachenbew.tuerkisch = bewerbersprachen.tuerkisch_interviewer
+            sprachenbew.tuerkisch_bew = bewerbersprachen.tuerkisch
         ElseIf bewerbersprachen.tuerkisch <> 0 Then
             sprachen.Add(String.Concat("T ", bewerbersprachen.tuerkisch.ToString))
+            sprachenbew.tuerkisch_bew = bewerbersprachen.tuerkisch
         End If
 
-        If Not bewerbersprachen.Isrussisch_interviewerNull AndAlso bewerbersprachen.russisch_interviewer <> 0 Then
+        If bewerbersprachen.russisch_interviewer > 0 Then
             sprachen.Add(String.Concat("R ", bewerbersprachen.russisch_interviewer.ToString))
             sprachenbew.russisch = bewerbersprachen.russisch_interviewer
+            sprachenbew.russisch_bew = bewerbersprachen.russisch
         ElseIf bewerbersprachen.russisch <> 0 Then
             sprachen.Add(String.Concat("R ", bewerbersprachen.russisch.ToString))
+            sprachenbew.russisch_bew = bewerbersprachen.russisch
         End If
 
         sprachenliste = String.Join(vbNewLine, sprachen) ' Sprachenliste ist Public
@@ -2034,10 +2099,10 @@ Public Class frmMain
     End Sub
 
     ' Das Event RowUpdated muss bei jeder Änderung im Dataset neu angelegt werden
-    Private Sub BewTableAdapter__RowUpdated(sender As Object, e As MySqlRowUpdatedEventArgs) Handles BewTableAdapter.RowUpdated, Bew_bewerberdatenTableAdapter.RowUpdated, Bew_assistenzTableAdapter.RowUpdated, Bew_bibuhaTableAdapter.RowUpdated, Bew_lugTableAdapter.RowUpdated, Bew_steuerfachangestellteTableAdapter.RowUpdated, Bewerber_ausbildungTableAdapter.RowUpdated, Bewerber_berufserfahrungTableAdapter.RowUpdated, Bewerber_bueroTableAdapter.RowUpdated, Bewerber_controllingTableAdapter.RowUpdated, Bewerber_edvTableAdapter.RowUpdated, Bewerber_einkaufTableAdapter.RowUpdated, Bewerber_fibuTableAdapter.RowUpdated, Bewerber_itTableAdapter.RowUpdated, Bewerber_logistikTableAdapter.RowUpdated, Bewerber_marketing_designTableAdapter.RowUpdated, Bewerber_personalTableAdapter.RowUpdated, Bewerber_raeTableAdapter.RowUpdated, Bewerber_sprachenTableAdapter.RowUpdated, Bewerber_technikTableAdapter.RowUpdated, Bewerber_versandTableAdapter.RowUpdated, Bewerber_vertriebTableAdapter.RowUpdated, GewerblichTableAdapter.RowUpdated, NotizenTableAdapter.RowUpdated, RundschreibenTableAdapter.RowUpdated, UlasTableAdapter.RowUpdated
+    'Private Sub BewTableAdapter__RowUpdated(sender As Object, e As MySqlRowUpdatedEventArgs) Handles BewTableAdapter.RowUpdated, Bew_bewerberdatenTableAdapter.RowUpdated, Bew_assistenzTableAdapter.RowUpdated, Bew_bibuhaTableAdapter.RowUpdated, Bew_lugTableAdapter.RowUpdated, Bew_steuerfachangestellteTableAdapter.RowUpdated, Bewerber_ausbildungTableAdapter.RowUpdated, Bewerber_berufserfahrungTableAdapter.RowUpdated, Bewerber_bueroTableAdapter.RowUpdated, Bewerber_controllingTableAdapter.RowUpdated, Bewerber_edvTableAdapter.RowUpdated, Bewerber_einkaufTableAdapter.RowUpdated, Bewerber_fibuTableAdapter.RowUpdated, Bewerber_itTableAdapter.RowUpdated, Bewerber_logistikTableAdapter.RowUpdated, Bewerber_marketing_designTableAdapter.RowUpdated, Bewerber_personalTableAdapter.RowUpdated, Bewerber_raeTableAdapter.RowUpdated, Bewerber_sprachenTableAdapter.RowUpdated, Bewerber_technikTableAdapter.RowUpdated, Bewerber_versandTableAdapter.RowUpdated, Bewerber_vertriebTableAdapter.RowUpdated, GewerblichTableAdapter.RowUpdated, NotizenTableAdapter.RowUpdated, RundschreibenTableAdapter.RowUpdated, UlasTableAdapter.RowUpdated
 
-        If e.RecordsAffected = 0 Then
-            e.Status = UpdateStatus.Continue
-        End If
-    End Sub
+    '    If e.RecordsAffected = 0 Then
+    '        e.Status = UpdateStatus.Continue
+    '    End If
+    'End Sub
 End Class
