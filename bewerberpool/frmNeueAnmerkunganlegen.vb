@@ -56,7 +56,7 @@ Public Class frmNeueAnmerkunganlegen
 
         Select Case True
             Case anmerkungneu_bool
-                Me.BetreffListBox.Items.AddRange(New Object() {"Angebot", vbNewLine, "Anmerkungen zum Bewerbungsgespräch", vbNewLine, "Telefonkontakt", "Emailkontakt", "Email mit Nachfrage nach aktuellem Stand versandt", vbNewLine, "Vorsicht", vbNewLine, "von uns eingestellt", "von uns vermittelt", "hat neue Stelle", "hat neue Stelle, sucht weiter", vbNewLine, "sucht noch", "sucht wieder", vbNewLine, "Rundschreiben", vbNewLine, "Persönlichkeit/Äußeres etc.", vbNewLine, "Kununu"})
+                Me.BetreffListBox.Items.AddRange(New Object() {"Angebot", vbNewLine, "Anmerkungen zum Bewerbungsgespräch", vbNewLine, "Telefonkontakt", "Emailkontakt", "Email mit Nachfrage nach aktuellem Stand versandt", vbNewLine, "Vorsicht", vbNewLine, "von uns eingestellt", "von uns vermittelt", "hat neue Stelle", "hat neue Stelle, sucht weiter", vbNewLine, "sucht noch", "sucht wieder", vbNewLine, "Rundschreiben", vbNewLine, "Persönlichkeit/Äußeres etc.", vbNewLine, "Kununu", vbNewLine, "Unzuverlässig - meldet sich trotz mehrfacher Versuche nicht"})
             Case alt_bool
                 Me.BetreffListBox.Items.AddRange(New Object() {"hat neue Stelle", "hat neue Stelle, sucht weiter", "Bewerber/in ist nicht zu erreichen"})
             Case eingestellt_bool
