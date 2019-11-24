@@ -49,6 +49,7 @@ Partial Class frmRundschreibenuebersicht
         Dim GridViewComboBoxColumn9 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
         Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRundschreibenuebersicht))
         Dim GridViewDecimalColumn7 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
         Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
@@ -73,7 +74,6 @@ Partial Class frmRundschreibenuebersicht
         Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewDecimalColumn15 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
         Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRundschreibenuebersicht))
         Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.RundschreibenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -84,7 +84,9 @@ Partial Class frmRundschreibenuebersicht
         Me.RundschreibenBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnEintraegeloeschen = New Telerik.WinControls.UI.RadButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.chgNurhomepage = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
@@ -117,7 +119,6 @@ Partial Class frmRundschreibenuebersicht
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
         Me.RundschreibenmonatTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenmonatTableAdapter()
         Me.RundschreibenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenTableAdapter()
-        Me.btnEintraegeloeschen = New Telerik.WinControls.UI.RadButton()
         AnmerkungenLabel = New System.Windows.Forms.Label()
         RundschreibenreihenfolgeLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
@@ -138,6 +139,7 @@ Partial Class frmRundschreibenuebersicht
         CType(Me.RundschreibenBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.btnEintraegeloeschen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
@@ -155,7 +157,6 @@ Partial Class frmRundschreibenuebersicht
         Me.Panel2.SuspendLayout()
         CType(Me.btnKWspeichern, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BewBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnEintraegeloeschen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AnmerkungenLabel
@@ -520,10 +521,21 @@ Partial Class frmRundschreibenuebersicht
         Me.TabPage1.Text = "Rundschreiben in Vorbereitung"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'btnEintraegeloeschen
+        '
+        Me.btnEintraegeloeschen.ForeColor = System.Drawing.Color.Red
+        Me.btnEintraegeloeschen.Image = CType(resources.GetObject("btnEintraegeloeschen.Image"), System.Drawing.Image)
+        Me.btnEintraegeloeschen.Location = New System.Drawing.Point(657, 10)
+        Me.btnEintraegeloeschen.Name = "btnEintraegeloeschen"
+        Me.btnEintraegeloeschen.Size = New System.Drawing.Size(201, 47)
+        Me.btnEintraegeloeschen.TabIndex = 95
+        Me.btnEintraegeloeschen.Text = "<html><strong> <br/>   Einträge löschen></strong><br/></html>"
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.chgNurhomepage)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.ListBox1)
@@ -541,6 +553,15 @@ Partial Class frmRundschreibenuebersicht
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1500, 215)
         Me.Panel1.TabIndex = 94
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(1149, 141)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 100
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'chgNurhomepage
         '
@@ -1137,16 +1158,6 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.RundschreibenTableAdapter.ClearBeforeFill = True
         '
-        'btnEintraegeloeschen
-        '
-        Me.btnEintraegeloeschen.ForeColor = System.Drawing.Color.Red
-        Me.btnEintraegeloeschen.Image = CType(resources.GetObject("btnEintraegeloeschen.Image"), System.Drawing.Image)
-        Me.btnEintraegeloeschen.Location = New System.Drawing.Point(657, 10)
-        Me.btnEintraegeloeschen.Name = "btnEintraegeloeschen"
-        Me.btnEintraegeloeschen.Size = New System.Drawing.Size(201, 47)
-        Me.btnEintraegeloeschen.TabIndex = 95
-        Me.btnEintraegeloeschen.Text = "<html><strong> <br/>   Einträge löschen></strong><br/></html>"
-        '
         'frmRundschreibenuebersicht
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -1175,6 +1186,7 @@ Partial Class frmRundschreibenuebersicht
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.btnEintraegeloeschen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
@@ -1194,7 +1206,6 @@ Partial Class frmRundschreibenuebersicht
         Me.Panel2.PerformLayout()
         CType(Me.btnKWspeichern, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BewBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnEintraegeloeschen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1242,4 +1253,5 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents btnKWspeichern As Telerik.WinControls.UI.RadButton
     Friend WithEvents chgNurhomepage As CheckBox
     Friend WithEvents btnEintraegeloeschen As Telerik.WinControls.UI.RadButton
+    Friend WithEvents Button1 As Button
 End Class

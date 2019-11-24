@@ -9,6 +9,7 @@ Public Class frmRundschreibenuebersicht
 
     Public kw As Integer = 0
     Public rsaktuellbezeichnung As String = String.Empty
+    Public idrundschreiben As Integer = 0
 
     Private frmMain As frmMain
 
@@ -16,7 +17,6 @@ Public Class frmRundschreibenuebersicht
         Me.frmMain = frmMain
         InitializeComponent()
     End Sub
-
 
     Private Sub frmRundschreibenuebersicht_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.RundschreibenTableAdapter.Fill(Me.BewerberDataSet.rundschreiben)
@@ -113,6 +113,9 @@ Public Class frmRundschreibenuebersicht
         Call Homepagecheck()
         Call Voreintraege()
         Call Rundschreibencheck()
+
+        Dim rs = DirectCast(DirectCast(RundschreibenBindingSource1.Current, DataRowView).Row, rundschreibenRow) ' id des Eintrags aus Rundschreibentabelle, wird benötigt, um einen einzelnen Eintrag zu löschen
+        idrundschreiben = rs.id_rundschreiben
     End Sub
 
     Private Sub RGVRundschreibenmonataktuell_Click(sender As Object, e As EventArgs) Handles RGVRundschreibenmonataktuell.Click
@@ -188,7 +191,7 @@ Public Class frmRundschreibenuebersicht
                 End If
 
             Case sender Is btnEintraegeloeschen
-                Dim rsloeschen = BewerberDataSet.rundschreiben.Where(Function(x) x.bezeichnung = CStr(rsaktuellbezeichnung) And x.aktuell = 1)
+                Dim rsloeschen = BewerberDataSet.rundschreiben.Where(Function(x) x.id_rundschreiben = CInt(idrundschreiben) And x.aktuell = 1)
                 For Each x In rsloeschen
                     x.gelöscht = 1
                     x.aktuell = 0
