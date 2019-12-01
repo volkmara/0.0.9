@@ -1722,7 +1722,7 @@ Public Class frmMain
             Dim betreff As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde auf ""alt"" gesetzt")
             Dim bodytext As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde auf ""alt"" gesetzt.", vbNewLine, "Papierulas müssen ebenfalls nach alt verschoben werden.")
 
-            email.receiver = "assistenz@heyduck-personalservice.de, kontakt@heyduck-personalservice.de, volkmar.adler@heyduck-zeitarbeit.de, magdalenemersch@heyduck-personalservice.de"
+            email.receiver = "assistenz@heyduck-personalservice.de, kontakt@heyduck-personalservice.de, magdalenemersch@heyduck-personalservice.de"
             ' email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
             email.subject = CStr(betreff)
             email.body = CStr(bodytext)
@@ -2099,10 +2099,10 @@ Public Class frmMain
     End Sub
 
     ' Das Event RowUpdated muss bei jeder Änderung im Dataset neu angelegt werden
-    Private Sub BewTableAdapter__RowUpdated(sender As Object, e As MySqlRowUpdatedEventArgs) Handles BewTableAdapter.RowUpdated, Bew_bewerberdatenTableAdapter.RowUpdated, Bew_assistenzTableAdapter.RowUpdated, Bew_bibuhaTableAdapter.RowUpdated, Bew_lugTableAdapter.RowUpdated, Bew_steuerfachangestellteTableAdapter.RowUpdated, Bewerber_ausbildungTableAdapter.RowUpdated, Bewerber_berufserfahrungTableAdapter.RowUpdated, Bewerber_bueroTableAdapter.RowUpdated, Bewerber_controllingTableAdapter.RowUpdated, Bewerber_edvTableAdapter.RowUpdated, Bewerber_einkaufTableAdapter.RowUpdated, Bewerber_fibuTableAdapter.RowUpdated, Bewerber_itTableAdapter.RowUpdated, Bewerber_logistikTableAdapter.RowUpdated, Bewerber_marketing_designTableAdapter.RowUpdated, Bewerber_personalTableAdapter.RowUpdated, Bewerber_raeTableAdapter.RowUpdated, Bewerber_sprachenTableAdapter.RowUpdated, Bewerber_technikTableAdapter.RowUpdated, Bewerber_versandTableAdapter.RowUpdated, Bewerber_vertriebTableAdapter.RowUpdated, GewerblichTableAdapter.RowUpdated, NotizenTableAdapter.RowUpdated, RundschreibenTableAdapter.RowUpdated, UlasTableAdapter.RowUpdated
+    'Private Sub BewTableAdapter__RowUpdated(sender As Object, e As MySqlRowUpdatedEventArgs) Handles BewTableAdapter.RowUpdated, Bew_bewerberdatenTableAdapter.RowUpdated, Bew_assistenzTableAdapter.RowUpdated, Bew_bibuhaTableAdapter.RowUpdated, Bew_lugTableAdapter.RowUpdated, Bew_steuerfachangestellteTableAdapter.RowUpdated, Bewerber_ausbildungTableAdapter.RowUpdated, Bewerber_berufserfahrungTableAdapter.RowUpdated, Bewerber_bueroTableAdapter.RowUpdated, Bewerber_controllingTableAdapter.RowUpdated, Bewerber_edvTableAdapter.RowUpdated, Bewerber_einkaufTableAdapter.RowUpdated, Bewerber_fibuTableAdapter.RowUpdated, Bewerber_itTableAdapter.RowUpdated, Bewerber_logistikTableAdapter.RowUpdated, Bewerber_marketing_designTableAdapter.RowUpdated, Bewerber_personalTableAdapter.RowUpdated, Bewerber_raeTableAdapter.RowUpdated, Bewerber_sprachenTableAdapter.RowUpdated, Bewerber_technikTableAdapter.RowUpdated, Bewerber_versandTableAdapter.RowUpdated, Bewerber_vertriebTableAdapter.RowUpdated, GewerblichTableAdapter.RowUpdated, NotizenTableAdapter.RowUpdated, RundschreibenTableAdapter.RowUpdated, UlasTableAdapter.RowUpdated
 
-        If e.RecordsAffected = 0 Then
-            e.Status = UpdateStatus.Continue
-        End If
-    End Sub
+    '    If e.RecordsAffected = 0 Then
+    '        e.Status = UpdateStatus.Continue
+    '    End If
+    'End Sub
 End Class

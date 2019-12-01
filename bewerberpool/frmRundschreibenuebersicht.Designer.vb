@@ -86,7 +86,6 @@ Partial Class frmRundschreibenuebersicht
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnEintraegeloeschen = New Telerik.WinControls.UI.RadButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.chgNurhomepage = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
@@ -535,7 +534,6 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.chgNurhomepage)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.ListBox1)
@@ -553,15 +551,6 @@ Partial Class frmRundschreibenuebersicht
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1500, 215)
         Me.Panel1.TabIndex = 94
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(1149, 141)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 100
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'chgNurhomepage
         '
@@ -1253,5 +1242,4 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents btnKWspeichern As Telerik.WinControls.UI.RadButton
     Friend WithEvents chgNurhomepage As CheckBox
     Friend WithEvents btnEintraegeloeschen As Telerik.WinControls.UI.RadButton
-    Friend WithEvents Button1 As Button
 End Class
