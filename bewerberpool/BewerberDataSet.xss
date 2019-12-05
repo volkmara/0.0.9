@@ -16,7 +16,7 @@
     <Shape ID="DesignTable:bewerber_berufserfahrung" ZOrder="26" X="2238" Y="70" Height="267" Width="299" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:bewerber_buero" ZOrder="25" X="2607" Y="70" Height="324" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:bewerber_controlling" ZOrder="31" X="2872" Y="496" Height="324" Width="273" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:bewerber_edv" ZOrder="24" X="3254" Y="70" Height="324" Width="273" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:bewerber_edv" ZOrder="24" X="3254" Y="70" Height="324" Width="256" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:bewerber_einkauf" ZOrder="23" X="3550" Y="70" Height="324" Width="273" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:bewerber_fibu" ZOrder="22" X="3868" Y="70" Height="324" Width="273" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:bewerber_it" ZOrder="21" X="4166" Y="70" Height="324" Width="273" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />

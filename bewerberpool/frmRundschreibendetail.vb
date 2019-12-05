@@ -1,8 +1,10 @@
 ﻿Imports bewerberpool.BewerberDataSet
+Imports MySql.Data.MySqlClient
 
 Public Class frmRundschreibendetail
 
     Public Shared rundschreibentext As String = String.Empty
+    Public doppelt As Boolean = False
 
     Private _frmMain As frmMain
 
@@ -91,44 +93,49 @@ Public Class frmRundschreibendetail
                 Me.Close()
 
             Case sender Is btnNewandSave
+                Call Doppelpruefen() ' Prüfung, ob nicht ein Bewerber bereits eingetragen wurde, was dem Dataset aber nicht bekannt ist
 
-                ' Id des in der Combobox ausgewählten Monats ermitteln in der Tabelle "rundschreibenmonat" ermitteln
-                Dim monat As Integer = 0
-                Dim monatrundschreiben = BewerberDataSet.rundschreibenmonat.Where(Function(x) x.monat = cmbMonat.SelectedItem.ToString).Select(Function(x) x.idrundschreibenmonat)
+                If doppelt Then
+                    MessageBox.Show("Diese/r Bewerber/in wurde bereits eingetragen. Bitte schließen Sie das aktuelle Fenster und laden Sie die Daten neu.", "Bewerber/in bereits eingetragen", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                    Exit Sub
+                Else
+                    ' Id des in der Combobox ausgewählten Monats ermitteln in der Tabelle "rundschreibenmonat" ermitteln
+                    Dim monat As Integer = 0
+                    Dim monatrundschreiben = BewerberDataSet.rundschreibenmonat.Where(Function(x) x.monat = cmbMonat.SelectedItem.ToString).Select(Function(x) x.idrundschreibenmonat)
 
-                For Each x In monatrundschreiben
-                    monat = x
-                Next
+                    For Each x In monatrundschreiben
+                        monat = x
+                    Next
 
-                ' Filter nach Monatsid auf Bindingsource der Tabelle "rundschreibenmonat" setzen, "1" eintragen, wenn ein Bewerber für einen Rundschreibenmonat eingetragen wird
-                RundschreibenmonatBindingSource.Filter = "idrundschreibenmonat = '" & monat & "'"
-                Dim rundschreibenmonat = DirectCast(DirectCast(RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
-                rundschreibenmonat.erledigt = 1
+                    ' Filter nach Monatsid auf Bindingsource der Tabelle "rundschreibenmonat" setzen, "1" eintragen, wenn ein Bewerber für einen Rundschreibenmonat eingetragen wird
+                    RundschreibenmonatBindingSource.Filter = "idrundschreibenmonat = '" & monat & "'"
+                    Dim rundschreibenmonat = DirectCast(DirectCast(RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
+                    rundschreibenmonat.erledigt = 1
 
-                Me.Validate()
-                RundschreibenmonatBindingSource.EndEdit()
-                RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
+                    Me.Validate()
+                    RundschreibenmonatBindingSource.EndEdit()
+                    RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
 
-                ' Daten in Tabelle "rundschreiben" eingetragen
+                    ' Daten in Tabelle "rundschreiben" eingetragen
 
-                Dim rundschreiben = DirectCast(DirectCast(RundschreibenBindingSource.AddNew, DataRowView).Row, rundschreibenRow)
-                rundschreiben.bewid = CInt(letzteid)
-                rundschreiben.refnr = CInt(letzteid)
-                rundschreiben.aktuell = CInt(1)
-                rundschreiben.bezeichnung = CStr(Me.cmbMonat.SelectedItem)
-                rundschreiben.idrundschreibenmonat = CInt(monat)
-                rundschreiben.homepage = CInt(0)
-                rundschreiben.anmerkungen = txtRundschreibenanmerkungen.Text
-                rundschreiben.rundschreibenjanein = True
-                rundschreiben.nurhomepage = False
-                rundschreiben.gelöscht = CInt(0)
+                    Dim rundschreiben = DirectCast(DirectCast(RundschreibenBindingSource.AddNew, DataRowView).Row, rundschreibenRow)
+                    rundschreiben.bewid = CInt(letzteid)
+                    rundschreiben.refnr = CInt(letzteid)
+                    rundschreiben.aktuell = CInt(1)
+                    rundschreiben.bezeichnung = CStr(Me.cmbMonat.SelectedItem)
+                    rundschreiben.idrundschreibenmonat = CInt(monat)
+                    rundschreiben.homepage = CInt(0)
+                    rundschreiben.anmerkungen = txtRundschreibenanmerkungen.Text
+                    rundschreiben.rundschreibenjanein = True
+                    rundschreiben.nurhomepage = False
+                    rundschreiben.gelöscht = CInt(0)
 
-                Me.Validate()
-                Me.RundschreibenBindingSource.EndEdit()
-                Me.RundschreibenTableAdapter.Update(Me.BewerberDataSet.rundschreiben)
+                    Me.Validate()
+                    Me.RundschreibenBindingSource.EndEdit()
+                    Me.RundschreibenTableAdapter.Update(Me.BewerberDataSet.rundschreiben)
 
-                Call gespeichert()
-                Me.Close()
+                    Call gespeichert()
+                End If
         End Select
     End Sub
 
@@ -142,5 +149,31 @@ Public Class frmRundschreibendetail
         For Each x In monate
             cmbMonat.Items.Add(x)
         Next
+    End Sub
+
+    Private Sub Doppelpruefen()
+        Dim query As String = "Select * From bewerberneu.rundschreiben where bewid = @letzteid and gelöscht = 0 and aktuell = 1;"
+        Dim cnn As New MySqlConnection(connectionString)
+        Using connection As New MySqlConnection(connectionString)
+            Try
+                cnn.Open()
+                Dim command As New MySqlCommand(query, cnn)
+                With command
+                    .Parameters.AddWithValue("@letzteid", letzteid)
+                End With
+                Dim reader As MySqlDataReader = command.ExecuteReader
+                If reader.HasRows Then
+                    doppelt = True
+                End If
+                cnn.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        End Using
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Call Doppelpruefen()
+        ' MsgBox(letzteid)
     End Sub
 End Class

@@ -64,6 +64,7 @@ Partial Class frmRundschreibendetail
         Me.RundschreibenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RundschreibenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
+        Me.Button1 = New System.Windows.Forms.Button()
         RefnrLabel = New System.Windows.Forms.Label()
         AnredeLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
@@ -94,7 +95,7 @@ Partial Class frmRundschreibendetail
         RefnrLabel.ForeColor = System.Drawing.Color.Crimson
         RefnrLabel.Location = New System.Drawing.Point(16, 200)
         RefnrLabel.Name = "RefnrLabel"
-        RefnrLabel.Size = New System.Drawing.Size(49, 16)
+        RefnrLabel.Size = New System.Drawing.Size(51, 16)
         RefnrLabel.TabIndex = 15
         RefnrLabel.Text = "Refnr:"
         '
@@ -104,7 +105,7 @@ Partial Class frmRundschreibendetail
         AnredeLabel.ForeColor = System.Drawing.Color.Crimson
         AnredeLabel.Location = New System.Drawing.Point(15, 30)
         AnredeLabel.Name = "AnredeLabel"
-        AnredeLabel.Size = New System.Drawing.Size(62, 16)
+        AnredeLabel.Size = New System.Drawing.Size(64, 16)
         AnredeLabel.TabIndex = 0
         AnredeLabel.Text = "Anrede:"
         '
@@ -114,7 +115,7 @@ Partial Class frmRundschreibendetail
         VornameLabel.ForeColor = System.Drawing.Color.Crimson
         VornameLabel.Location = New System.Drawing.Point(15, 65)
         VornameLabel.Name = "VornameLabel"
-        VornameLabel.Size = New System.Drawing.Size(74, 16)
+        VornameLabel.Size = New System.Drawing.Size(76, 16)
         VornameLabel.TabIndex = 2
         VornameLabel.Text = "Vorname:"
         '
@@ -124,7 +125,7 @@ Partial Class frmRundschreibendetail
         NameLabel.ForeColor = System.Drawing.Color.Crimson
         NameLabel.Location = New System.Drawing.Point(15, 107)
         NameLabel.Name = "NameLabel"
-        NameLabel.Size = New System.Drawing.Size(86, 16)
+        NameLabel.Size = New System.Drawing.Size(88, 16)
         NameLabel.TabIndex = 4
         NameLabel.Text = "Nachname:"
         '
@@ -134,7 +135,7 @@ Partial Class frmRundschreibendetail
         AlterLabel.ForeColor = System.Drawing.Color.Crimson
         AlterLabel.Location = New System.Drawing.Point(15, 315)
         AlterLabel.Name = "AlterLabel"
-        AlterLabel.Size = New System.Drawing.Size(44, 16)
+        AlterLabel.Size = New System.Drawing.Size(46, 16)
         AlterLabel.TabIndex = 8
         AlterLabel.Text = "Alter:"
         '
@@ -144,7 +145,7 @@ Partial Class frmRundschreibendetail
         UlasLabel.ForeColor = System.Drawing.Color.Crimson
         UlasLabel.Location = New System.Drawing.Point(15, 241)
         UlasLabel.Name = "UlasLabel"
-        UlasLabel.Size = New System.Drawing.Size(44, 16)
+        UlasLabel.Size = New System.Drawing.Size(46, 16)
         UlasLabel.TabIndex = 6
         UlasLabel.Text = "Ulas:"
         '
@@ -153,7 +154,7 @@ Partial Class frmRundschreibendetail
         OrtLabel.AutoSize = True
         OrtLabel.Location = New System.Drawing.Point(16, 358)
         OrtLabel.Name = "OrtLabel"
-        OrtLabel.Size = New System.Drawing.Size(69, 16)
+        OrtLabel.Size = New System.Drawing.Size(71, 16)
         OrtLabel.TabIndex = 16
         OrtLabel.Text = "Wohnort:"
         '
@@ -162,7 +163,7 @@ Partial Class frmRundschreibendetail
         ArbeitsortLabel.AutoSize = True
         ArbeitsortLabel.Location = New System.Drawing.Point(16, 404)
         ArbeitsortLabel.Name = "ArbeitsortLabel"
-        ArbeitsortLabel.Size = New System.Drawing.Size(79, 16)
+        ArbeitsortLabel.Size = New System.Drawing.Size(81, 16)
         ArbeitsortLabel.TabIndex = 17
         ArbeitsortLabel.Text = "Arbeitsort:"
         '
@@ -171,7 +172,7 @@ Partial Class frmRundschreibendetail
         StandLabel.AutoSize = True
         StandLabel.Location = New System.Drawing.Point(16, 153)
         StandLabel.Name = "StandLabel"
-        StandLabel.Size = New System.Drawing.Size(52, 16)
+        StandLabel.Size = New System.Drawing.Size(54, 16)
         StandLabel.TabIndex = 18
         StandLabel.Text = "Stand:"
         '
@@ -180,7 +181,7 @@ Partial Class frmRundschreibendetail
         Label1.AutoSize = True
         Label1.Location = New System.Drawing.Point(16, 447)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(116, 32)
+        Label1.Size = New System.Drawing.Size(119, 32)
         Label1.TabIndex = 21
         Label1.Text = "Bereits auf " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "der Homepage:"
         '
@@ -258,7 +259,7 @@ Partial Class frmRundschreibendetail
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(7, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 16)
+        Me.Label2.Size = New System.Drawing.Size(56, 16)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Monat:"
         '
@@ -312,6 +313,7 @@ Partial Class frmRundschreibendetail
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Label1)
         Me.GroupBox1.Controls.Add(Me.chkHomepage)
         Me.GroupBox1.Controls.Add(StandLabel)
@@ -482,6 +484,15 @@ Partial Class frmRundschreibendetail
         Me.TableAdapterManager.ulasTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(19, 489)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmRundschreibendetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -542,4 +553,5 @@ Partial Class frmRundschreibendetail
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents txtRundschreibenanmerkungen As TextBox
     Friend WithEvents chkHomepage As CheckBox
+    Friend WithEvents Button1 As Button
 End Class
