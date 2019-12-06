@@ -152,7 +152,9 @@ Public Class frmRundschreibendetail
     End Sub
 
     Private Sub Doppelpruefen()
-        Dim query As String = "Select * From bewerberneu.rundschreiben where bewid = @letzteid and gelöscht = 0 and aktuell = 1;"
+        Dim rundschreibenmonat = cmbMonat.SelectedItem
+
+        Dim query As String = "Select * From bewerberneu.rundschreiben where bewid = @letzteid and bezeichnung = @rundschreibenmonat and gelöscht = 0 and aktuell = 1;"
         Dim cnn As New MySqlConnection(connectionString)
         Using connection As New MySqlConnection(connectionString)
             Try
@@ -160,20 +162,17 @@ Public Class frmRundschreibendetail
                 Dim command As New MySqlCommand(query, cnn)
                 With command
                     .Parameters.AddWithValue("@letzteid", letzteid)
+                    .Parameters.AddWithValue("@rundschreibenmonat", rundschreibenmonat)
                 End With
                 Dim reader As MySqlDataReader = command.ExecuteReader
                 If reader.HasRows Then
                     doppelt = True
+                Else doppelt = False
                 End If
                 cnn.Close()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
         End Using
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Call Doppelpruefen()
-        ' MsgBox(letzteid)
     End Sub
 End Class

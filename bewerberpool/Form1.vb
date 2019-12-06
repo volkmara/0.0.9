@@ -758,9 +758,9 @@ Public Class frmMain
 
         If TypeOf e.CellElement Is GridHeaderCellElement Then
             e.CellElement.Font = newFont10
-        Else
-            e.CellElement.ResetValue(LightVisualElement.FontProperty, ValueResetFlags.Local)
-            e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+            'Else
+            '    e.CellElement.ResetValue(LightVisualElement.FontProperty, ValueResetFlags.Local)
+            '    e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
         End If
 
         If e.CellElement.ColumnInfo.Name = "name" Then
@@ -768,60 +768,88 @@ Public Class frmMain
             e.CellElement.DrawFill = True
             e.CellElement.NumberOfColors = 1
             e.CellElement.BackColor = Color.Yellow
-            'Else
-            '    e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
-            '    e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
-            '    e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        Else
+            e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+            e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+            e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
         End If
 
-        If e.CellElement.ColumnInfo.Name = "englisch_bew" Then
-            'e.CellElement.Font = newFont10
-            e.CellElement.DrawFill = True
-            e.CellElement.NumberOfColors = 1
-            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
-        End If
+        'If e.CellElement.ColumnInfo.Name = "englisch_bew" Then
+        '    'e.CellElement.Font = newFont10
+        '    e.CellElement.DrawFill = True
+        '    e.CellElement.NumberOfColors = 1
+        '    e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        'Else
+        '    e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        'End If
 
-        If e.CellElement.ColumnInfo.Name = "franzoesich_bew" Then
-            'e.CellElement.Font = newFont10
-            'e.CellElement.DrawFill = True
-            e.CellElement.NumberOfColors = 1
-            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
-        End If
+        'If e.CellElement.ColumnInfo.Name = "franzoesich_bew" Then
+        '    'e.CellElement.Font = newFont10
+        '    e.CellElement.DrawFill = True
+        '    e.CellElement.NumberOfColors = 1
+        '    e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        'Else
+        '    e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        'End If
 
-        If e.CellElement.ColumnInfo.Name = "italienisch_bew" Then
-            'e.CellElement.Font = newFont10
-            e.CellElement.DrawFill = True
-            e.CellElement.NumberOfColors = 1
-            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
-        End If
+        'If e.CellElement.ColumnInfo.Name = "italienisch_bew" Then
+        '    'e.CellElement.Font = newFont10
+        '    e.CellElement.DrawFill = True
+        '    e.CellElement.NumberOfColors = 1
+        '    e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        'Else
+        '    e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        'End If
 
-        If e.CellElement.ColumnInfo.Name = "spanisch_bew" Then
-            'e.CellElement.Font = newFont10
-            e.CellElement.DrawFill = True
-            e.CellElement.NumberOfColors = 1
-            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
-        End If
+        'If e.CellElement.ColumnInfo.Name = "spanisch_bew" Then
+        '    'e.CellElement.Font = newFont10
+        '    e.CellElement.DrawFill = True
+        '    e.CellElement.NumberOfColors = 1
+        '    e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        'Else
+        '    e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        'End If
 
-        If e.CellElement.ColumnInfo.Name = "tuerkisch_bew" Then
-            'e.CellElement.Font = newFont10
-            e.CellElement.DrawFill = True
-            e.CellElement.NumberOfColors = 1
-            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
-        End If
+        'If e.CellElement.ColumnInfo.Name = "tuerkisch_bew" Then
+        '    'e.CellElement.Font = newFont10
+        '    e.CellElement.DrawFill = True
+        '    e.CellElement.NumberOfColors = 1
+        '    e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        'Else
+        '    e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        'End If
 
-        If e.CellElement.ColumnInfo.Name = "russisch_bew" Then
-            'e.CellElement.Font = newFont10
-            e.CellElement.DrawFill = True
-            e.CellElement.NumberOfColors = 1
-            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
-        End If
+        'If e.CellElement.ColumnInfo.Name = "russisch_bew" Then
+        '    'e.CellElement.Font = newFont10
+        '    e.CellElement.DrawFill = True
+        '    e.CellElement.NumberOfColors = 1
+        '    e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        'Else
+        '    e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        'End If
 
-        If e.CellElement.ColumnInfo.Name = "niederlaendisch_bew" Then
-            'e.CellElement.Font = newFont10
-            e.CellElement.DrawFill = True
-            e.CellElement.NumberOfColors = 1
-            e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
-        End If
+        'If e.CellElement.ColumnInfo.Name = "niederlaendisch_bew" Then
+        '    'e.CellElement.Font = newFont10
+        '    e.CellElement.DrawFill = True
+        '    e.CellElement.NumberOfColors = 1
+        '    e.CellElement.BackColor = Color.FromArgb(218, 254, 216)
+        'Else
+        '    e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+        '    e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        'End If
     End Sub
 
     ' Ende Spaltenköpfe fett
