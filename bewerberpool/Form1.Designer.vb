@@ -17985,7 +17985,7 @@ Partial Class frmMain
         Me.Panel40.BackColor = System.Drawing.Color.Yellow
         Me.Panel40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel40.Controls.Add(Me.Label71)
-        Me.Panel40.Location = New System.Drawing.Point(1024, 0)
+        Me.Panel40.Location = New System.Drawing.Point(1075, 0)
         Me.Panel40.Name = "Panel40"
         Me.Panel40.Size = New System.Drawing.Size(163, 22)
         Me.Panel40.TabIndex = 78
@@ -18104,11 +18104,11 @@ Partial Class frmMain
         Me.lblOrigulasvorhanden.BackColor = System.Drawing.Color.LightCyan
         Me.lblOrigulasvorhanden.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblOrigulasvorhanden.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOrigulasvorhanden.Location = New System.Drawing.Point(1203, 0)
+        Me.lblOrigulasvorhanden.Location = New System.Drawing.Point(1255, 0)
         Me.lblOrigulasvorhanden.Name = "lblOrigulasvorhanden"
-        Me.lblOrigulasvorhanden.Size = New System.Drawing.Size(144, 21)
+        Me.lblOrigulasvorhanden.Size = New System.Drawing.Size(121, 21)
         Me.lblOrigulasvorhanden.TabIndex = 81
-        Me.lblOrigulasvorhanden.Text = "Origulas vorhanden"
+        Me.lblOrigulasvorhanden.Text = "Origulas fehlen"
         Me.lblOrigulasvorhanden.Visible = False
         '
         'lblAnoymisierteulasvorhanden
@@ -18116,11 +18116,11 @@ Partial Class frmMain
         Me.lblAnoymisierteulasvorhanden.BackColor = System.Drawing.Color.LavenderBlush
         Me.lblAnoymisierteulasvorhanden.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblAnoymisierteulasvorhanden.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAnoymisierteulasvorhanden.Location = New System.Drawing.Point(1366, 0)
+        Me.lblAnoymisierteulasvorhanden.Location = New System.Drawing.Point(1386, 0)
         Me.lblAnoymisierteulasvorhanden.Name = "lblAnoymisierteulasvorhanden"
-        Me.lblAnoymisierteulasvorhanden.Size = New System.Drawing.Size(208, 21)
+        Me.lblAnoymisierteulasvorhanden.Size = New System.Drawing.Size(187, 21)
         Me.lblAnoymisierteulasvorhanden.TabIndex = 82
-        Me.lblAnoymisierteulasvorhanden.Text = "Anonymisierte Ulas vorhanden"
+        Me.lblAnoymisierteulasvorhanden.Text = "Anonymisierte Ulas fehlen"
         Me.lblAnoymisierteulasvorhanden.Visible = False
         '
         'Panel41

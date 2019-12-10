@@ -963,12 +963,15 @@ Public Class frmMain
             Dim ll As New List(Of IO.FileInfo)
             ll.AddRange(New IO.DirectoryInfo(ulasoriginalverzeichnis).GetFiles("*.*", SearchOption.AllDirectories))
             If ll.Count > 0 Then
-                lblOrigulasvorhanden.Visible = True
-            ElseIf ll.Count = 0 Then
                 lblOrigulasvorhanden.Visible = False
+                UlasListBox.BackColor = SystemColors.Window
+            ElseIf ll.Count = 0 Then
+                lblOrigulasvorhanden.Visible = True
+                UlasListBox.BackColor = Color.Yellow
             End If
         Else
             lblOrigulasvorhanden.Visible = False
+            UlasListBox.BackColor = SystemColors.Window
         End If
 
         ulasbearbeitetverzeichnis = String.Concat(verzeichnis, letzteid, "\bearbeitet\")
@@ -976,12 +979,15 @@ Public Class frmMain
             Dim ll As New List(Of IO.FileInfo)
             ll.AddRange(New IO.DirectoryInfo(ulasbearbeitetverzeichnis).GetFiles("*.*", SearchOption.AllDirectories))
             If ll.Count > 0 Then
-                lblAnoymisierteulasvorhanden.Visible = True
-            ElseIf ll.Count = 0 Then
                 lblAnoymisierteulasvorhanden.Visible = False
+                UlasbearbeitetListBox.BackColor = SystemColors.Window
+            ElseIf ll.Count = 0 Then
+                lblAnoymisierteulasvorhanden.Visible = True
+                UlasbearbeitetListBox.BackColor = Color.Yellow
             End If
         Else
             lblAnoymisierteulasvorhanden.Visible = False
+            UlasbearbeitetListBox.BackColor = SystemColors.Window
         End If
     End Sub
 
