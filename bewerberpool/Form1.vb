@@ -59,7 +59,7 @@ Public Class frmMain
         'TODO: Diese Codezeile lädt Daten in die Tabelle "BewerberDataSet.rundschreiben". Sie können sie bei Bedarf verschieben oder entfernen.
         Me.RundschreibenTableAdapter.Fill(Me.BewerberDataSet.rundschreiben)
         Call login() ' prüft, ob sich ein valider Benutzer einloggen will
-        Call Internetverbindung()
+        'Call Internetverbindung()
         Call DBLoad()
         RadGridLocalizationProvider.CurrentProvider = New MyGermanRadGridLocalizationProvider()
         DataFilterLocalizationProvider.CurrentProvider = New GermanDataFilterLocalizationProvider()
@@ -341,7 +341,6 @@ Public Class frmMain
         ' Wenn Status = alt, Fenster für Anmerkung öffnen, Abspeichern zuerst, sonst öffnet sich das immer
         Select Case frmMain.cmbStatus.SelectedIndex
             Case 2 'alt
-                frmNeueAnmerkunganlegen.alt_bool = True
                 Using frm = New frmNeueAnmerkunganlegen(frmMain)
                     Dim result = frm.ShowDialog
                 End Using
@@ -1750,7 +1749,9 @@ Public Class frmMain
     ' ============================================================================ Mails verschicken =========================================================
     Private Sub mailbeialt() ' Email verschicken, wenn Bewerber auf alt gesetzt wird und BP im Büro ausgeführt wird
 
-        If Not connectionString.Contains("127.0.0.1") Then
+        ' Benachrichtigungsmail geht nur raus, wenn auch eine Anmerkung gespeichert wurde, danach wird frmNeueAnmerkunganlegen.anmerkung_gespeichert_bool = False gesetzt
+
+        If Not connectionString.Contains("127.0.0.1") And frmNeueAnmerkunganlegen.anmerkung_gespeichert_bool Then
             Dim email As New Mail
 
             Dim betreff As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde auf ""alt"" gesetzt")
@@ -1761,6 +1762,7 @@ Public Class frmMain
             email.subject = CStr(betreff)
             email.body = CStr(bodytext)
             email.send()
+            frmNeueAnmerkunganlegen.anmerkung_gespeichert_bool = False
         End If
     End Sub
 

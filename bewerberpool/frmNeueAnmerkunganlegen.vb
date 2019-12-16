@@ -21,6 +21,7 @@ Public Class frmNeueAnmerkunganlegen
     Public Shared Property eingestellt_bool As Boolean = False
     Public Shared Property vermittelt_bool As Boolean = False
     Public Shared Property eingestellt_vermittelt_bool As Boolean = False
+    Public Shared Property anmerkung_gespeichert_bool As Boolean = False
 
     Public Shared Property anmerkungdragdrop_bool As Boolean = False
     Public Shared Property droptext As String = String.Empty
@@ -78,6 +79,7 @@ Public Class frmNeueAnmerkunganlegen
     End Sub
 
     Private Sub btnNeueAnmerkungSpeichern_Click(sender As Object, e As EventArgs) Handles btnNeueAnmerkungSpeichern.Click
+
         Dim provider As New Telerik.WinForms.Documents.FormatProviders.Rtf.RtfFormatProvider()
 
         Dim notizeneintragen = DirectCast(DirectCast(Me.NotizenBindingSource.AddNew, DataRowView).Row, notizenRow)
@@ -90,6 +92,9 @@ Public Class frmNeueAnmerkunganlegen
         If exportfiletxt <> String.Empty Then
             Dim result As DialogResult = MessageBox.Show("Möchten Sie Ihre neue Anmerkung abspeichern, dann drücken Sie auf den Button ""Ja"", wenn Sie nicht speichern wollen, auf den Button ""Nein""", "Neue Anmerkung speichern", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
             If result = Windows.Forms.DialogResult.Yes Then
+
+                anmerkung_gespeichert_bool = True ' True, wenn Anmerkung erstellt wird
+
                 If CStr(BetreffListBox.SelectedItem.ToString) = String.Empty OrElse CStr(exportfilertf) = String.Empty OrElse CStr(exportfiletxt) = String.Empty Then
                     MessageBox.Show("Bitte einen Betreff und/oder einen Anmerkungstext eintragen", "Fehlender Eintrag", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
@@ -122,7 +127,7 @@ Public Class frmNeueAnmerkunganlegen
                     Me.Close()
                 End If
             ElseIf result = Windows.Forms.DialogResult.No Then
-                    Exit Sub
+                Exit Sub
             End If
         Else
             MessageBox.Show("Keine Anmerkung eingetragen", "Keine Anmerkung eingetragen", MessageBoxButtons.OK, MessageBoxIcon.Hand)
