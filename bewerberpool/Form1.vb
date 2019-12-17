@@ -193,7 +193,7 @@ Public Class frmMain
 #Region " ======================================================================== Methoden zum Laden und Speichern ======================================"
     ' Daten aus DB laden
     Public Shared Sub DBLoad()
-        frmMain.BewerberDataSet.Clear()
+        ' frmMain.BewerberDataSet.Clear()
         frmMain.BewTableAdapter.Fill(frmMain.BewerberDataSet.bew)
         frmMain.Bew_bewerberdatenTableAdapter.Fill(frmMain.BewerberDataSet.bew_bewerberdaten)
         frmMain.UlasTableAdapter.Fill(frmMain.BewerberDataSet.ulas)
