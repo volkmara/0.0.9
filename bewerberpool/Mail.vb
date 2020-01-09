@@ -14,7 +14,7 @@ Public NotInheritable Class Mail
             Dim smtpServer As New SmtpClient()
             Dim mail As New MailMessage()
             smtpServer.UseDefaultCredentials = False
-            'smtpServer.Credentials = New Net.NetworkCredential("wp11114271-heyduck", "TYGMn6D7!")
+            'smtpServer.Credentials = New Net.NetworkCredential("wp11114271-heyduck", "NeP29!hy08?#")
             smtpServer.Credentials = New Net.NetworkCredential("service2@startzeit.de", "bowiguso")
             'smtpServer.Port = 587
             smtpServer.Port = 25

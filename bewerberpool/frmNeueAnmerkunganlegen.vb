@@ -93,10 +93,8 @@ Public Class frmNeueAnmerkunganlegen
             Dim result As DialogResult = MessageBox.Show("Möchten Sie Ihre neue Anmerkung abspeichern, dann drücken Sie auf den Button ""Ja"", wenn Sie nicht speichern wollen, auf den Button ""Nein""", "Neue Anmerkung speichern", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
             If result = Windows.Forms.DialogResult.Yes Then
 
-                anmerkung_gespeichert_bool = True ' True, wenn Anmerkung erstellt wird
-
-                If CStr(BetreffListBox.SelectedItem.ToString) = String.Empty OrElse CStr(exportfilertf) = String.Empty OrElse CStr(exportfiletxt) = String.Empty Then
-                    MessageBox.Show("Bitte einen Betreff und/oder einen Anmerkungstext eintragen", "Fehlender Eintrag", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                If BetreffListBox.SelectedItems.Count = 0 Then
+                    MessageBox.Show("Bitte einen Betreff auswählen.", "Fehlender Betreff", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     notizeneintragen.betreff = CStr(BetreffListBox.SelectedItem.ToString)
                     notizeneintragen.anmerkungen_rtf = CStr(exportfilertf)
@@ -117,6 +115,8 @@ Public Class frmNeueAnmerkunganlegen
                     frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
 
                     Call gespeichert()
+
+                    anmerkung_gespeichert_bool = True ' True, wenn Anmerkung erstellt wird, erst dann wird Mail rausgeschickt
 
                     'frmMain.NotizenTableAdapter.FillBy(frmMain.BewerberDataSet.notizen, CInt(letzteid))
                     frmMain.NotizenTableAdapter.Fill(frmMain.BewerberDataSet.notizen)

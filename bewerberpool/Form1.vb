@@ -336,11 +336,12 @@ Public Class frmMain
             frmMain.BewBindingSource.RemoveFilter()
         End If
 
-        Call frmMain.BewerberaufHomepagedeaktivieren()
+        ' Call frmMain.BewerberaufHomepagedeaktivieren() #deaktiviert auf Wunsch von Frau Hy
 
         ' Wenn Status = alt, Fenster für Anmerkung öffnen, Abspeichern zuerst, sonst öffnet sich das immer
         Select Case frmMain.cmbStatus.SelectedIndex
             Case 2 'alt
+                frmNeueAnmerkunganlegen.alt_bool = True
                 Using frm = New frmNeueAnmerkunganlegen(frmMain)
                     Dim result = frm.ShowDialog
                 End Using
@@ -372,30 +373,30 @@ Public Class frmMain
         frmPersönlichkeitbearbeiten.bewerberbeschreibungtext = String.Empty
     End Sub
 
-    Private Sub BewerberaufHomepagedeaktivieren()
+    'Private Sub BewerberaufHomepagedeaktivieren() # deaktiviert auf Wunsch von Frau Hy
 
-        If Not HeyduckDataSet.tt_news.Any(Function(x) CInt(x.tx_ttnewserweiterung_referenznummer) = CInt(letzteid)) Then
-            Exit Sub
-        Else
-            Dim homepage = HeyduckDataSet.tt_news.Where(Function(x) CInt(x.tx_ttnewserweiterung_referenznummer) = CInt(letzteid) AndAlso x.deleted = 0)
-            If cmbStatus.Text <> CStr("aktuell") OrElse cmbStatus.Text <> CStr("vorläufig") Then
-                Dim result As DialogResult = MessageBox.Show("Soll der ausgewählte Bewerber/die ausgewählte Bewerberin auf der Homepage deaktiviert werden", "Bewerber/in deaktivieren", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
-                If result = DialogResult.Cancel Then
-                    Exit Sub
-                ElseIf result = DialogResult.No Then
-                    Exit Sub
-                ElseIf result = DialogResult.Yes Then
-                    For Each x In homepage
-                        x.deleted = CInt(1)
-                        Me.Validate()
-                        Me.Tt_newsBindingSource.EndEdit()
-                        Me.Tt_newsTableAdapter.Update(Me.HeyduckDataSet.tt_news)
-                    Next
-                    Me.Tt_newsTableAdapter.Fill(Me.HeyduckDataSet.tt_news)
-                End If
-            End If
-        End If
-    End Sub
+    '    If Not HeyduckDataSet.tt_news.Any(Function(x) CInt(x.tx_ttnewserweiterung_referenznummer) = CInt(letzteid)) Then
+    '        Exit Sub
+    '    Else
+    '        Dim homepage = HeyduckDataSet.tt_news.Where(Function(x) CInt(x.tx_ttnewserweiterung_referenznummer) = CInt(letzteid) AndAlso x.deleted = 0)
+    '        If cmbStatus.Text <> CStr("aktuell") OrElse cmbStatus.Text <> CStr("vorläufig") Then
+    '            Dim result As DialogResult = MessageBox.Show("Soll der ausgewählte Bewerber/die ausgewählte Bewerberin auf der Homepage deaktiviert werden", "Bewerber/in deaktivieren", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
+    '            If result = DialogResult.Cancel Then
+    '                Exit Sub
+    '            ElseIf result = DialogResult.No Then
+    '                Exit Sub
+    '            ElseIf result = DialogResult.Yes Then
+    '                For Each x In homepage
+    '                    x.deleted = CInt(1)
+    '                    Me.Validate()
+    '                    Me.Tt_newsBindingSource.EndEdit()
+    '                    Me.Tt_newsTableAdapter.Update(Me.HeyduckDataSet.tt_news)
+    '                Next
+    '                Me.Tt_newsTableAdapter.Fill(Me.HeyduckDataSet.tt_news)
+    '            End If
+    '        End If
+    '    End If
+    'End Sub
 
 
 #End Region
@@ -1751,18 +1752,20 @@ Public Class frmMain
 
         ' Benachrichtigungsmail geht nur raus, wenn auch eine Anmerkung gespeichert wurde, danach wird frmNeueAnmerkunganlegen.anmerkung_gespeichert_bool = False gesetzt
 
-        If Not connectionString.Contains("127.0.0.1") And frmNeueAnmerkunganlegen.anmerkung_gespeichert_bool Then
+        'If Not connectionString.Contains("127.0.0.1") And frmNeueAnmerkunganlegen.anmerkung_gespeichert_bool Then
+        If frmNeueAnmerkunganlegen.anmerkung_gespeichert_bool Then
             Dim email As New Mail
 
             Dim betreff As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde auf ""alt"" gesetzt")
-            Dim bodytext As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde auf ""alt"" gesetzt.", vbNewLine, "Papierulas müssen ebenfalls nach alt verschoben werden.")
+            Dim bodytext As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde auf ""alt"" gesetzt.", vbNewLine, "Papierulas müssen ebenfalls nach alt verschoben werden.", vbNewLine, vbNewLine, "Bitte prüfen, ob Bewerber/in von der Homepage genommen werden soll.")
 
             email.receiver = "assistenz@heyduck-personalservice.de, kontakt@heyduck-personalservice.de, magdalenemersch@heyduck-personalservice.de"
-            ' email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
+            'email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
             email.subject = CStr(betreff)
             email.body = CStr(bodytext)
             email.send()
             frmNeueAnmerkunganlegen.anmerkung_gespeichert_bool = False
+            frmNeueAnmerkunganlegen.alt_bool = False
         End If
     End Sub
 
