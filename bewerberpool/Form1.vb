@@ -1761,8 +1761,8 @@ Public Class frmMain
             Dim betreff As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde auf ""alt"" gesetzt")
             Dim bodytext As String = String.Concat(AnredeComboBox.Text, " ", VornameTextBox.Text, " ", NameTextBox.Text, " wurde auf ""alt"" gesetzt.", vbNewLine, "Papierulas müssen ebenfalls nach alt verschoben werden.", vbNewLine, vbNewLine, "Bitte prüfen, ob Bewerber/in von der Homepage genommen werden soll.", vbNewLine, vbNewLine, "-------------------", vbNewLine, vbNewLine, "Benutzer: ", usernameklar, vbNewLine, vbNewLine, "Rechner: ", computername, vbNewLine, vbNewLine, "Windows-Login: ", benutzer)
 
-            'email.receiver = "assistenz@heyduck-personalservice.de, kontakt@heyduck-personalservice.de, magdalenemersch@heyduck-personalservice.de"
-            email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
+            email.receiver = "assistenz@heyduck-personalservice.de, kontakt@heyduck-personalservice.de, magdalenemersch@heyduck-personalservice.de, volkmar.adler@heyduck-zeitarbeit.de"
+            'email.receiver = "volkmar.adler@heyduck-zeitarbeit.de"
             email.subject = CStr(betreff)
             email.body = CStr(bodytext)
             email.send()
