@@ -57,17 +57,6 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("server=heyduck-personalservice.de;user id=heyduck;password=heyduck1!;persistsecur"& _ 
-            "ityinfo=True;database=heyduck;")>  _
-        Public ReadOnly Property heyduckConnectionString() As String
-            Get
-                Return CType(Me("heyduckConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Server=SERVER2012; user id=Adler; password=zgA7K$z!; database=oa;")>  _
         Public ReadOnly Property oaConnectionString() As String
             Get
@@ -83,6 +72,17 @@ Namespace My
         Public ReadOnly Property bewerberConnectionString() As String
             Get
                 Return CType(Me("bewerberConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=heyduck-personalservice.de;user id=heyduck;password=heyduck1!;persistsecur"& _ 
+            "ityinfo=True;database=heyduck;")>  _
+        Public ReadOnly Property heyduckConnectionString() As String
+            Get
+                Return CType(Me("heyduckConnectionString"),String)
             End Get
         End Property
         

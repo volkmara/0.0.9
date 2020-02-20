@@ -2,6 +2,7 @@
 Imports System.Net
 
 Module Module1
+
     'Public connectionString As String = "Server=127.0.0.1; uid=root; pwd=heyduck1!; Convert Zero Datetime=True; persistsecurityinfo=True; database=bewerberneu;"
     'Public oaconnectionString As String = "Server=127.0.0.1; uid=root; pwd=heyduck1!; database=oa;"
     'Public benutzerverwaltungConnectionString As String = "Server=127.0.0.1;user id=root;password=heyduck1!;persistsecurityinfo=True;database=benutzerverwaltung;"
@@ -21,6 +22,8 @@ Module Module1
     ' Ulasverzeichnis definieren
     Public verzeichnis As String = String.Empty
     Public Inet As Boolean = Inetverbindung(Inet)
+    Public computername As String = System.Environment.MachineName
+    Public benutzer As String = System.Environment.UserName
 
     Public Sub Getbewid()
         Dim query As String = ("SELECT MAX(id_bew) From bewerberneu.bew")

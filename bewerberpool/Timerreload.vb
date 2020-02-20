@@ -35,6 +35,7 @@
         frmMain.Bewerber_technikBindingSource.EndEdit()
         frmMain.Bewerber_itBindingSource.EndEdit()
         frmMain.GewerblichBindingSource.EndEdit()
+        frmMain.NotizenBindingSource.EndEdit()
 
         frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
         frmMain.Bew_bewerberdatenTableAdapter.Update(frmMain.BewerberDataSet.bew_bewerberdaten)
@@ -60,6 +61,7 @@
         frmMain.Bewerber_technikTableAdapter.Update(frmMain.BewerberDataSet.bewerber_technik)
         frmMain.Bewerber_itTableAdapter.Update(frmMain.BewerberDataSet.bewerber_it)
         frmMain.GewerblichTableAdapter.Update(frmMain.BewerberDataSet.gewerblich)
+        frmMain.NotizenTableAdapter.Update(frmMain.BewerberDataSet.notizen)
 
         frmMain.DBLoad()
         frmMain.BewGridView1.LoadLayout("filter.xml")
@@ -72,6 +74,7 @@
         ' Sets the timer interval to 5 minuten.
         myTimer.Interval = 900000 ' Speicherintervall 15 Minuten
         'myTimer.Interval = 10000
+        'myTimer.Interval = 120000
         myTimer.Start()
     End Sub
     Public Shared Sub Timerstop()
