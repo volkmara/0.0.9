@@ -661,6 +661,8 @@ Partial Class frmMain
         Dim GridViewTextBoxColumn57 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim SortDescriptor1 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
         Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim Buero_omnitrackerLabel As System.Windows.Forms.Label
+        Dim Buero_dokuwareLabel As System.Windows.Forms.Label
         Me.PictureBox32 = New System.Windows.Forms.PictureBox()
         Me.PictureBox30 = New System.Windows.Forms.PictureBox()
         Me.PictureBox31 = New System.Windows.Forms.PictureBox()
@@ -1643,6 +1645,8 @@ Partial Class frmMain
         Me.GewerblichTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.gewerblichTableAdapter()
         Me.UlasTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.ulasTableAdapter()
         Me.RundschreibenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenTableAdapter()
+        Me.Buero_omnitrackerComboBox = New System.Windows.Forms.ComboBox()
+        Me.Buero_dokuwareComboBox = New System.Windows.Forms.ComboBox()
         NameLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
         AnredeLabel = New System.Windows.Forms.Label()
@@ -2196,6 +2200,8 @@ Partial Class frmMain
         ProtokollführungLabel = New System.Windows.Forms.Label()
         Rae_protokollführungLabel = New System.Windows.Forms.Label()
         Buero_protokollführungLabel = New System.Windows.Forms.Label()
+        Buero_omnitrackerLabel = New System.Windows.Forms.Label()
+        Buero_dokuwareLabel = New System.Windows.Forms.Label()
         Panel27.SuspendLayout
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).BeginInit
@@ -12359,7 +12365,7 @@ Partial Class frmMain
         Me.Panel16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel16.Location = New System.Drawing.Point(3, 57)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(425, 742)
+        Me.Panel16.Size = New System.Drawing.Size(430, 818)
         Me.Panel16.TabIndex = 16
         '
         'PictureBox7
@@ -12402,7 +12408,7 @@ Partial Class frmMain
         Me.GroupBox32.Controls.Add(Buero_rechnungstellungLabel)
         Me.GroupBox32.Controls.Add(Buero_vorbereitende_buchhaltungLabel)
         Me.GroupBox32.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox32.Location = New System.Drawing.Point(9, 425)
+        Me.GroupBox32.Location = New System.Drawing.Point(9, 497)
         Me.GroupBox32.Name = "GroupBox32"
         Me.GroupBox32.Size = New System.Drawing.Size(406, 305)
         Me.GroupBox32.TabIndex = 3
@@ -12489,6 +12495,10 @@ Partial Class frmMain
         '
         'GroupBox33
         '
+        Me.GroupBox33.Controls.Add(Buero_dokuwareLabel)
+        Me.GroupBox33.Controls.Add(Me.Buero_dokuwareComboBox)
+        Me.GroupBox33.Controls.Add(Buero_omnitrackerLabel)
+        Me.GroupBox33.Controls.Add(Me.Buero_omnitrackerComboBox)
         Me.GroupBox33.Controls.Add(Buero_anschlaegeLabel)
         Me.GroupBox33.Controls.Add(Me.Buero_anschlaegeTextBox)
         Me.GroupBox33.Controls.Add(Buero_zehnfingerLabel)
@@ -12508,7 +12518,7 @@ Partial Class frmMain
         Me.GroupBox33.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox33.Location = New System.Drawing.Point(9, 27)
         Me.GroupBox33.Name = "GroupBox33"
-        Me.GroupBox33.Size = New System.Drawing.Size(406, 182)
+        Me.GroupBox33.Size = New System.Drawing.Size(419, 263)
         Me.GroupBox33.TabIndex = 0
         Me.GroupBox33.TabStop = False
         Me.GroupBox33.Text = "Korrespondenz"
@@ -12601,7 +12611,7 @@ Partial Class frmMain
         Me.GroupBox34.Controls.Add(Buero_telefonzentraleLabel)
         Me.GroupBox34.Controls.Add(Buero_empfangLabel)
         Me.GroupBox34.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox34.Location = New System.Drawing.Point(9, 215)
+        Me.GroupBox34.Location = New System.Drawing.Point(9, 289)
         Me.GroupBox34.Name = "GroupBox34"
         Me.GroupBox34.Size = New System.Drawing.Size(406, 195)
         Me.GroupBox34.TabIndex = 2
@@ -18459,6 +18469,42 @@ Partial Class frmMain
         '
         Me.RundschreibenTableAdapter.ClearBeforeFill = True
         '
+        'Buero_omnitrackerLabel
+        '
+        Buero_omnitrackerLabel.AutoSize = True
+        Buero_omnitrackerLabel.Location = New System.Drawing.Point(6, 195)
+        Buero_omnitrackerLabel.Name = "Buero_omnitrackerLabel"
+        Buero_omnitrackerLabel.Size = New System.Drawing.Size(95, 16)
+        Buero_omnitrackerLabel.TabIndex = 16
+        Buero_omnitrackerLabel.Text = "Omnitracker:"
+        '
+        'Buero_omnitrackerComboBox
+        '
+        Me.Buero_omnitrackerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_bueroBindingSource, "buero_omnitracker", True))
+        Me.Buero_omnitrackerComboBox.FormattingEnabled = True
+        Me.Buero_omnitrackerComboBox.Location = New System.Drawing.Point(9, 219)
+        Me.Buero_omnitrackerComboBox.Name = "Buero_omnitrackerComboBox"
+        Me.Buero_omnitrackerComboBox.Size = New System.Drawing.Size(64, 24)
+        Me.Buero_omnitrackerComboBox.TabIndex = 17
+        '
+        'Buero_dokuwareLabel
+        '
+        Buero_dokuwareLabel.AutoSize = True
+        Buero_dokuwareLabel.Location = New System.Drawing.Point(178, 195)
+        Buero_dokuwareLabel.Name = "Buero_dokuwareLabel"
+        Buero_dokuwareLabel.Size = New System.Drawing.Size(81, 16)
+        Buero_dokuwareLabel.TabIndex = 18
+        Buero_dokuwareLabel.Text = "Dokuware:"
+        '
+        'Buero_dokuwareComboBox
+        '
+        Me.Buero_dokuwareComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_bueroBindingSource, "buero_dokuware", True))
+        Me.Buero_dokuwareComboBox.FormattingEnabled = True
+        Me.Buero_dokuwareComboBox.Location = New System.Drawing.Point(181, 219)
+        Me.Buero_dokuwareComboBox.Name = "Buero_dokuwareComboBox"
+        Me.Buero_dokuwareComboBox.Size = New System.Drawing.Size(60, 24)
+        Me.Buero_dokuwareComboBox.TabIndex = 19
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -19809,4 +19855,6 @@ Partial Class frmMain
     Friend WithEvents Rae_protokollführungComboBox As ComboBox
     Friend WithEvents ProtokollführungComboBox As ComboBox
     Friend WithEvents Buero_protokollführungComboBox As ComboBox
+    Friend WithEvents Buero_dokuwareComboBox As ComboBox
+    Friend WithEvents Buero_omnitrackerComboBox As ComboBox
 End Class
