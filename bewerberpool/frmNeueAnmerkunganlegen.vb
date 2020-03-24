@@ -28,11 +28,15 @@ Public Class frmNeueAnmerkunganlegen
     Public exportfilertf As String = String.Empty
     Public exportfiletxt As String = String.Empty
 
+    Public bewid_anmerkung As Integer = 0 ' wird benötigt, um die Anmerkung nach einem Timerreload richtig abzuspeichern
+
     Private Sub frmNeueAnmerkunganlegen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
         Me.NotizenTableAdapter.Fill(Me.BewerberDataSet.notizen)
         Me.BewBindingSource.DataSource = frmMain.BewBindingSource
+
+        bewid_anmerkung = letzteid ' wird benötigt, um die Anmerkung nach einem Timerreload richtig abzuspeichern
 
         Call neueanmerkunganlegen() ' Den Text der Anmerkung vorgenerieren
         ' Fenster in den Vordergrund und wieder freigeben
@@ -103,7 +107,8 @@ Public Class frmNeueAnmerkunganlegen
                     '   rtfeintragen.geaendert_von = String.Empty ' darf nicht dbnull sein
                     notizeneintragen.eingetragen_am = Date.Now
                     notizeneintragen.geaendert_am = CDate("1970-01-01 00:00:00")
-                    notizeneintragen.bewid = CInt(letzteid)
+                    'notizeneintragen.bewid = CInt(letzteid)
+                    notizeneintragen.bewid = CInt(bewid_anmerkung)
 
                     bew.letztes_datum_anmerkung = Date.Now ' um das Datum der letzten Anmerkung bei einem Bewerber in bew einzutragen, damit das gefiltert werden kann
 
@@ -135,6 +140,7 @@ Public Class frmNeueAnmerkunganlegen
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        bewid_anmerkung = 0
         Me.Close()
     End Sub
 

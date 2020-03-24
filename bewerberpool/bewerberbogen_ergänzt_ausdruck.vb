@@ -13,9 +13,11 @@ Public Class bewerberbogen_ergänzt_ausdruck
         refnr = CInt(daten.refnr)
 
         If connectionString.Contains("127.0.0.1") Then
-            reportdatei = CStr("E:\heyduck\bewerberpool-neu\0.0.2\bewerberpool\Report2.rdlc")
+            'reportdatei = CStr("E:\heyduck\bewerberpool-neu\0.0.2\bewerberpool\Report2.rdlc")
+            reportdatei = CStr("E:\heyduck\progs vs 2019\0.0.9\bewerberpool\Report10.rdlc")
         Else
-            reportdatei = CStr("X:\bewerberpool\Report2.rdlc")
+            'reportdatei = CStr("X:\bewerberpool\Report2.rdlc")
+            reportdatei = CStr("X:\bewerberpool\Report10.rdlc")
         End If
 
         frmMain.BewTableAdapter.FillByParam1(frmMain.BewerberDataSet.bew, CInt(letzteid))

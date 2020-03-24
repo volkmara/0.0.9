@@ -13,13 +13,14 @@ Public Class bewerberbogen_ausdrucken
         If connectionString.Contains("127.0.0.1") Then
             verzeichnis = CStr("e:\heyduck\ulas\")
             ' reportdatei = CStr("E:\heyduck\bewerberpool-neu\0.0.2\bewerberpool\Bewerberbogen_Druck.rdlc")
-            reportdatei = CStr("E:\heyduck\bewerberpool-neu\0.0.6\bewerberpool\Report2.rdlc")
-            ' reportdatei = CStr("E:\heyduck\bewerberpool-neu\0.0.6\bewerberpool\Report4.rdlc")
+            'reportdatei = CStr("E:\heyduck\bewerberpool-neu\0.0.6\bewerberpool\Report2.rdlc")
+            'reportdatei = CStr("E:\heyduck\progs vs 2019\0.0.9\bewerberpool\Report2.rdlc")
+            reportdatei = CStr("E:\heyduck\bewerberpool-neu\0.0.6\bewerberpool\Report4.rdlc")
         Else
             verzeichnis = CStr("x:\ulas\")
             'reportdatei = CStr("X:\bewerberpool\Bewerberbogen_Druck.rdlc")
-            reportdatei = CStr("X:\bewerberpool\Report2.rdlc")
-            ' reportdatei = CStr("X:\bewerberpool\Report4.rdlc")
+            'reportdatei = CStr("X:\bewerberpool\Report2.rdlc")
+            reportdatei = CStr("X:\bewerberpool\Report4.rdlc")
         End If
 
         frmMain.BewTableAdapter.FillByParam1(frmMain.BewerberDataSet.bew, CInt(letzteid))

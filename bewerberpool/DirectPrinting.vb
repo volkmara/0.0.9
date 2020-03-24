@@ -165,7 +165,7 @@ Public NotInheritable Class DirectPrinting
 
         ' pDoc.DefaultPageSettings.PrinterSettings.PrinterName = "SHARP MX-3560N PCL6"
         pDoc.DefaultPageSettings.PrinterSettings.PrinterName = "SHARP MX-2301N PCL6"
-        ' pDoc.DefaultPageSettings.PrinterSettings.PrinterName = "Samsung M2020 Series"
+        'pDoc.DefaultPageSettings.PrinterSettings.PrinterName = "Samsung M2020 Series"
 
         pDoc.DefaultPageSettings.Color = True
         pDoc.DefaultPageSettings.PrinterSettings.Duplex = Duplex.Vertical
