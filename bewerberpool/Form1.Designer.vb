@@ -577,6 +577,8 @@ Partial Class frmMain
         Dim ProtokollführungLabel As System.Windows.Forms.Label
         Dim Rae_protokollführungLabel As System.Windows.Forms.Label
         Dim Buero_protokollführungLabel As System.Windows.Forms.Label
+        Dim Buero_omnitrackerLabel As System.Windows.Forms.Label
+        Dim Buero_dokuwareLabel As System.Windows.Forms.Label
         Dim GridViewDecimalColumn1 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
         Dim GridViewDecimalColumn2 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
         Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
@@ -661,15 +663,11 @@ Partial Class frmMain
         Dim GridViewTextBoxColumn57 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim SortDescriptor1 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
         Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim Buero_omnitrackerLabel As System.Windows.Forms.Label
-        Dim Buero_dokuwareLabel As System.Windows.Forms.Label
         Me.PictureBox32 = New System.Windows.Forms.PictureBox()
         Me.PictureBox30 = New System.Windows.Forms.PictureBox()
         Me.PictureBox31 = New System.Windows.Forms.PictureBox()
         Me.txtControlling_report_controlling_systeme = New System.Windows.Forms.TextBox()
         Me.Bewerber_controllingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.Controlling_sonstigesTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox52 = New System.Windows.Forms.GroupBox()
         Me.Controlling_soxxComboBox = New System.Windows.Forms.ComboBox()
@@ -1068,6 +1066,8 @@ Partial Class frmMain
         Me.Buero_vorbereitende_buchhaltungComboBox = New System.Windows.Forms.ComboBox()
         Me.Buero_sonstigesTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox33 = New System.Windows.Forms.GroupBox()
+        Me.Buero_dokuwareComboBox = New System.Windows.Forms.ComboBox()
+        Me.Buero_omnitrackerComboBox = New System.Windows.Forms.ComboBox()
         Me.Buero_anschlaegeTextBox = New System.Windows.Forms.TextBox()
         Me.Buero_zehnfingerComboBox = New System.Windows.Forms.ComboBox()
         Me.Buero_korrespondenz_freiComboBox = New System.Windows.Forms.ComboBox()
@@ -1139,7 +1139,6 @@ Partial Class frmMain
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.GroupBox45 = New System.Windows.Forms.GroupBox()
         Me.Logistik_staplerscheinCheckBox = New System.Windows.Forms.CheckBox()
-        Me.Bewerber_logistikBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Logistik_lagerverwaltungComboBox = New System.Windows.Forms.ComboBox()
         Me.Logistik_verhandlungenComboBox = New System.Windows.Forms.ComboBox()
         Me.Logistik_lieferueberwachungComboBox = New System.Windows.Forms.ComboBox()
@@ -1618,6 +1617,9 @@ Partial Class frmMain
         Me.Oa_stelleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Oa_stelleTableAdapter = New bewerberpool.oaDataSetTableAdapters.oa_stelleTableAdapter()
         Me.TableAdapterManager1 = New bewerberpool.oaDataSetTableAdapters.TableAdapterManager()
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
+        Me.Bewerber_logistikBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.NotizenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.notizenTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
@@ -1645,8 +1647,6 @@ Partial Class frmMain
         Me.GewerblichTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.gewerblichTableAdapter()
         Me.UlasTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.ulasTableAdapter()
         Me.RundschreibenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenTableAdapter()
-        Me.Buero_omnitrackerComboBox = New System.Windows.Forms.ComboBox()
-        Me.Buero_dokuwareComboBox = New System.Windows.Forms.ComboBox()
         NameLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
         AnredeLabel = New System.Windows.Forms.Label()
@@ -2207,8 +2207,6 @@ Partial Class frmMain
         CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.PictureBox31, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Bewerber_controllingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox52.SuspendLayout
         Me.GroupBox53.SuspendLayout
         Me.TabControl1.SuspendLayout
@@ -2331,7 +2329,6 @@ Partial Class frmMain
         Me.Panel22.SuspendLayout
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox45.SuspendLayout
-        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox44.SuspendLayout
         CType(Me.Bewerber_versandBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel21.SuspendLayout
@@ -2438,6 +2435,9 @@ Partial Class frmMain
         CType(Me.HeyduckDataSet, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.OaDataSet, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Oa_stelleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'NameLabel
@@ -4914,16 +4914,6 @@ Partial Class frmMain
         '
         Me.Bewerber_controllingBindingSource.DataMember = "bew_bewerber_controlling"
         Me.Bewerber_controllingBindingSource.DataSource = Me.BewBindingSource
-        '
-        'BewBindingSource
-        '
-        Me.BewBindingSource.DataMember = "bew"
-        Me.BewBindingSource.DataSource = Me.BewerberDataSet
-        '
-        'BewerberDataSet
-        '
-        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
-        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Controlling_report_controlling_systemeLabel
         '
@@ -7719,6 +7709,24 @@ Partial Class frmMain
         Buero_protokollführungLabel.Size = New System.Drawing.Size(124, 16)
         Buero_protokollführungLabel.TabIndex = 14
         Buero_protokollführungLabel.Text = "Protokollführung:"
+        '
+        'Buero_omnitrackerLabel
+        '
+        Buero_omnitrackerLabel.AutoSize = True
+        Buero_omnitrackerLabel.Location = New System.Drawing.Point(6, 195)
+        Buero_omnitrackerLabel.Name = "Buero_omnitrackerLabel"
+        Buero_omnitrackerLabel.Size = New System.Drawing.Size(95, 16)
+        Buero_omnitrackerLabel.TabIndex = 16
+        Buero_omnitrackerLabel.Text = "Omnitracker:"
+        '
+        'Buero_dokuwareLabel
+        '
+        Buero_dokuwareLabel.AutoSize = True
+        Buero_dokuwareLabel.Location = New System.Drawing.Point(178, 195)
+        Buero_dokuwareLabel.Name = "Buero_dokuwareLabel"
+        Buero_dokuwareLabel.Size = New System.Drawing.Size(81, 16)
+        Buero_dokuwareLabel.TabIndex = 18
+        Buero_dokuwareLabel.Text = "Dokuware:"
         '
         'TabControl1
         '
@@ -12523,6 +12531,24 @@ Partial Class frmMain
         Me.GroupBox33.TabStop = False
         Me.GroupBox33.Text = "Korrespondenz"
         '
+        'Buero_dokuwareComboBox
+        '
+        Me.Buero_dokuwareComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_bueroBindingSource, "buero_dokuware", True))
+        Me.Buero_dokuwareComboBox.FormattingEnabled = True
+        Me.Buero_dokuwareComboBox.Location = New System.Drawing.Point(181, 219)
+        Me.Buero_dokuwareComboBox.Name = "Buero_dokuwareComboBox"
+        Me.Buero_dokuwareComboBox.Size = New System.Drawing.Size(60, 24)
+        Me.Buero_dokuwareComboBox.TabIndex = 19
+        '
+        'Buero_omnitrackerComboBox
+        '
+        Me.Buero_omnitrackerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_bueroBindingSource, "buero_omnitracker", True))
+        Me.Buero_omnitrackerComboBox.FormattingEnabled = True
+        Me.Buero_omnitrackerComboBox.Location = New System.Drawing.Point(9, 219)
+        Me.Buero_omnitrackerComboBox.Name = "Buero_omnitrackerComboBox"
+        Me.Buero_omnitrackerComboBox.Size = New System.Drawing.Size(64, 24)
+        Me.Buero_omnitrackerComboBox.TabIndex = 17
+        '
         'Buero_anschlaegeTextBox
         '
         Me.Buero_anschlaegeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_bueroBindingSource, "buero_anschlaege", True))
@@ -13295,11 +13321,6 @@ Partial Class frmMain
         Me.Logistik_staplerscheinCheckBox.TabIndex = 7
         Me.Logistik_staplerscheinCheckBox.Text = "Ja/Nein"
         Me.Logistik_staplerscheinCheckBox.UseVisualStyleBackColor = True
-        '
-        'Bewerber_logistikBindingSource
-        '
-        Me.Bewerber_logistikBindingSource.DataMember = "bewerber_logistik"
-        Me.Bewerber_logistikBindingSource.DataSource = Me.BewerberDataSet
         '
         'Logistik_lagerverwaltungComboBox
         '
@@ -18333,6 +18354,21 @@ Partial Class frmMain
         Me.TableAdapterManager1.oa_stelleTableAdapter = Me.Oa_stelleTableAdapter
         Me.TableAdapterManager1.UpdateOrder = bewerberpool.oaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewerberDataSet
+        '
+        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
+        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Bewerber_logistikBindingSource
+        '
+        Me.Bewerber_logistikBindingSource.DataMember = "bewerber_logistik"
+        Me.Bewerber_logistikBindingSource.DataSource = Me.BewerberDataSet
+        '
         'BewTableAdapter
         '
         Me.BewTableAdapter.ClearBeforeFill = True
@@ -18469,42 +18505,6 @@ Partial Class frmMain
         '
         Me.RundschreibenTableAdapter.ClearBeforeFill = True
         '
-        'Buero_omnitrackerLabel
-        '
-        Buero_omnitrackerLabel.AutoSize = True
-        Buero_omnitrackerLabel.Location = New System.Drawing.Point(6, 195)
-        Buero_omnitrackerLabel.Name = "Buero_omnitrackerLabel"
-        Buero_omnitrackerLabel.Size = New System.Drawing.Size(95, 16)
-        Buero_omnitrackerLabel.TabIndex = 16
-        Buero_omnitrackerLabel.Text = "Omnitracker:"
-        '
-        'Buero_omnitrackerComboBox
-        '
-        Me.Buero_omnitrackerComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_bueroBindingSource, "buero_omnitracker", True))
-        Me.Buero_omnitrackerComboBox.FormattingEnabled = True
-        Me.Buero_omnitrackerComboBox.Location = New System.Drawing.Point(9, 219)
-        Me.Buero_omnitrackerComboBox.Name = "Buero_omnitrackerComboBox"
-        Me.Buero_omnitrackerComboBox.Size = New System.Drawing.Size(64, 24)
-        Me.Buero_omnitrackerComboBox.TabIndex = 17
-        '
-        'Buero_dokuwareLabel
-        '
-        Buero_dokuwareLabel.AutoSize = True
-        Buero_dokuwareLabel.Location = New System.Drawing.Point(178, 195)
-        Buero_dokuwareLabel.Name = "Buero_dokuwareLabel"
-        Buero_dokuwareLabel.Size = New System.Drawing.Size(81, 16)
-        Buero_dokuwareLabel.TabIndex = 18
-        Buero_dokuwareLabel.Text = "Dokuware:"
-        '
-        'Buero_dokuwareComboBox
-        '
-        Me.Buero_dokuwareComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_bueroBindingSource, "buero_dokuware", True))
-        Me.Buero_dokuwareComboBox.FormattingEnabled = True
-        Me.Buero_dokuwareComboBox.Location = New System.Drawing.Point(181, 219)
-        Me.Buero_dokuwareComboBox.Name = "Buero_dokuwareComboBox"
-        Me.Buero_dokuwareComboBox.Size = New System.Drawing.Size(60, 24)
-        Me.Buero_dokuwareComboBox.TabIndex = 19
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -18538,8 +18538,6 @@ Partial Class frmMain
         CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.PictureBox31, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Bewerber_controllingBindingSource, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit
         Me.GroupBox52.ResumeLayout(False)
         Me.GroupBox52.PerformLayout
         Me.GroupBox53.ResumeLayout(False)
@@ -18715,7 +18713,6 @@ Partial Class frmMain
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit
         Me.GroupBox45.ResumeLayout(False)
         Me.GroupBox45.PerformLayout
-        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         Me.GroupBox44.ResumeLayout(False)
         Me.GroupBox44.PerformLayout
         CType(Me.Bewerber_versandBindingSource, System.ComponentModel.ISupportInitialize).EndInit
@@ -18868,6 +18865,9 @@ Partial Class frmMain
         CType(Me.HeyduckDataSet, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.OaDataSet, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Oa_stelleBindingSource, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(False)
         Me.PerformLayout
 

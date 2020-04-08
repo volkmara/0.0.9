@@ -712,17 +712,18 @@ Public Class frmMain
         If TabControl1.SelectedTab Is TabPage3 Then
             Call ulascheck()
             Call einloggen.tbcheck() ' wenn Interviewer eingeloggt ist, werden manche Felder gelb
-        ElseIf TabControl1.SelectedTab Is TabPage4 Then
 
+        ElseIf TabControl1.SelectedTab Is TabPage4 Then
             If CInt(letzteid) = CInt(0) Then
                 MessageBox.Show("Bitte eine/n Bewerber auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 Me.TabControl1.SelectedTab = TabPage1
             Else
-                '  Me.NotizenTableAdapter.FillBy(Me.BewerberDataSet.notizen, CInt(letzteid))
-                Me.NotizenTableAdapter.Fill(Me.BewerberDataSet.notizen)
+                Me.NotizenTableAdapter.FillBy(Me.BewerberDataSet.notizen, CInt(letzteid))
+                'Me.NotizenTableAdapter.Fill(Me.BewerberDataSet.notizen)
                 Me.RadRTErtf.DocumentEditor.ChangeFontSize(Unit.PointToDip(10))
                 NotizenRadGridView.Columns(3).WrapText = True
                 'Me.NotizenRadGridView.Rows(0).IsCurrent = True ' Das darf nicht aktiviert werden
+
             End If
         ElseIf TabControl1.SelectedTab Is TabPage5 Then
             Call einloggen.tbcheck() ' wenn Interviewer eingeloggt ist, werden manche Felder gelb
