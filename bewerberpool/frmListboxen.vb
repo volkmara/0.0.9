@@ -332,12 +332,16 @@
                         fibu_kontenrahmen &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
                     Next
                 End If
+                'Case vztz_bool
+                '    If ListBox1.SelectedItems.Count > 0 Then
+                '        For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
+                '            vztz = String.Empty
+                '            vztz &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
+                '        Next
+                '    End If
             Case vztz_bool
-                If ListBox1.SelectedItems.Count > 0 Then
-                    For k As Integer = 0 To ListBox1.SelectedItems.Count - 1
-                        vztz &= Me.ListBox1.SelectedItems.Item(k).ToString & vbCrLf
-                    Next
-                End If
+                Dim liste As New List(Of String)()
+                liste.Add(ListBox1.SelectedItem.ToString)
         End Select
     End Sub
 
@@ -369,5 +373,9 @@
         fibu_kontenrahmen = String.Empty
         vztz = String.Empty
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MsgBox(ListBox1.SelectedItems.Count)
     End Sub
 End Class

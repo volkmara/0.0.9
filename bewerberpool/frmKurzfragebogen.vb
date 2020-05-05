@@ -1,10 +1,13 @@
 ﻿Imports System.Text.RegularExpressions
 
 Imports bewerberpool.BewerberDataSet
+Imports Telerik.Collections.Generic
+
 Public Class frmKurzfragebogen
 
     Private _frmMain As frmMain
     Public bewidneu As Integer = 0
+    Public arbeitsart As String = String.Empty
     ' Public Shared Property Kurzfragebogen As Boolean = False ' notwendig, damit Inallentabellen.eintragen richtig funktioniert
 
     Sub New(frmMain As frmMain)
@@ -41,11 +44,13 @@ Public Class frmKurzfragebogen
     ' ======================================================================== Schritt 1: Neuen Bewerber anlegen ============================================================
 
     Private Sub btnNeuerBewerber_Click(sender As Object, e As EventArgs) Handles btnNeuerBewerber.Click
+        Call ZAVM()
         Dim bewspeichern = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
         bewspeichern.stand = CStr("aktuell")
         bewspeichern.status = CStr("angelegt")
         bewspeichern.erstkontakt = Date.Now
         bewspeichern.refnr = bewidneu
+        bewspeichern.Vermittlung = arbeitsart
         bewspeichern.bewerberbeschreibung = CStr(allgemein.ExporttoRtf(RTEPersönlichkeit.Document))
         bewspeichern.bewerberbeschreibung_text = CStr(allgemein.ExporttoTxt(RTEPersönlichkeit.Document))
         Me.Validate()
@@ -136,21 +141,21 @@ Public Class frmKurzfragebogen
 
     ' =================================================================== Ende Validierungen =============================================================
 
-    Private Sub Za_vmTextBox_DoubleClick(sender As Object, e As EventArgs) Handles txtZa_vm.DoubleClick, txtUlas.DoubleClick
-        Select Case True
-            Case sender Is txtZa_vm
-                frmListboxen.zavm_bool = True
-                Using frm = New frmListboxen(Me)
-                    Dim result = frm.ShowDialog()
-                End Using
-                txtZa_vm.Text = CStr(frmListboxen.zavm)
-            Case sender Is txtUlas
-                frmUlaseintragen.ulas_bool = True
-                Using frm = New frmUlaseintragen(Me)
-                    Dim result = frm.ShowDialog(Me)
-                End Using
-                txtUlas.Text = CStr(frmUlaseintragen.ulas_wert)
-        End Select
+    Private Sub Za_vmTextBox_DoubleClick(sender As Object, e As EventArgs) Handles txtUlas.DoubleClick
+        '    Select Case True
+        '        Case sender Is txtZa_vm
+        '            frmListboxen.zavm_bool = True
+        '            Using frm = New frmListboxen(Me)
+        '                Dim result = frm.ShowDialog()
+        '            End Using
+        '            txtZa_vm.Text = CStr(frmListboxen.zavm)
+        '        Case sender Is txtUlas
+        frmUlaseintragen.ulas_bool = True
+        Using frm = New frmUlaseintragen(Me)
+            Dim result = frm.ShowDialog(Me)
+        End Using
+        txtUlas.Text = CStr(frmUlaseintragen.ulas_wert)
+        '    End Select
     End Sub
 
 
@@ -161,6 +166,21 @@ Public Class frmKurzfragebogen
                 ToolTip1.Show("Falls bekannt, das Geburtsdatum im Format dd.mm.jjjj eintragen.", CType(sender, Control), 1500)
             Case sender Is cmbStaatsangehörigkeit
                 ToolTip1.Show("Falls bekannt, die Nationalität eintragen.", CType(sender, Control), 1500)
+        End Select
+    End Sub
+
+    Private Sub ZAVM()
+        Select Case True
+            Case rbtnVM.Checked
+                arbeitsart = "Vermittlung"
+            Case rbtZA.Checked
+                arbeitsart = "Zeitarbeit"
+            Case rbtnZAVM.Checked
+                arbeitsart = "Vermittlung/Zeitarbeit"
+            Case rbtnZAÜN.Checked
+                arbeitsart = "Zeitarbeit mit Übernahme"
+            Case rbtnZAVMZAÜN.Checked
+                arbeitsart = String.Concat("Vermittlung, Zeitarbeit, ", vbNewLine, "Zeitarbeit mit Übernahme")
         End Select
     End Sub
 End Class

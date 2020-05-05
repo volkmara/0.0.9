@@ -41,6 +41,7 @@ Public Class frmMain
     Public ulasoriginalverzeichnis As String
     Public ulasbearbeitetverzeichnis As String
     Public sprachenliste As String
+    Public edvliste As String
 
     Public alter As Integer
     Public row_ausgewählt_bool As Boolean = False
@@ -249,6 +250,10 @@ Public Class frmMain
             bewspeichern.sprachkenntnisse = CStr(frmMain.sprachenliste)
         End If
 
+        If frmMain.edvliste <> String.Empty Then
+            bewspeichern.edvkenntnisse = CStr(frmMain.edvliste)
+        End If
+
         If frmMain.txtUlas.Text = String.Empty Then
             MessageBox.Show("Bitte Ulas eintragen", "Ulas eintragen", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -278,6 +283,8 @@ Public Class frmMain
         ElseIf frmMain.cmbTopbewerber.SelectedItem Is CStr("Nein") Then
             bewspeichern.topbewerberchecked = False
         End If
+
+        'Call frmMain.EDVdaten()
 
         frmMain.Validate()
         frmMain.BewBindingSource.EndEdit()
@@ -713,6 +720,7 @@ Public Class frmMain
             Call ulascheck()
             Call einloggen.tbcheck() ' wenn Interviewer eingeloggt ist, werden manche Felder gelb
 
+
         ElseIf TabControl1.SelectedTab Is TabPage4 Then
             If CInt(letzteid) = CInt(0) Then
                 MessageBox.Show("Bitte eine/n Bewerber auswählen", "Kein/e Bewerber/in ausgewählt", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -727,6 +735,10 @@ Public Class frmMain
             End If
         ElseIf TabControl1.SelectedTab Is TabPage5 Then
             Call einloggen.tbcheck() ' wenn Interviewer eingeloggt ist, werden manche Felder gelb
+
+        ElseIf TabControl1.SelectedTab Is TabPage1 Then
+            Me.NotizenTableAdapter.Fill(Me.BewerberDataSet.notizen)
+            Call letzteanmerkunganzeigen()
         End If
     End Sub
 
@@ -1957,18 +1969,143 @@ Public Class frmMain
 
         sprachenliste = String.Join(vbNewLine, sprachen) ' Sprachenliste ist Public
     End Sub
+#End Region
+
+#Region "EDV-Kenntnisse bei Änderungen im Tab EDV in Feld EDV-Kenntnisse übertragen"
+    'Private Sub EDVdaten()
+    '    'Dim bew_edv = DirectCast(DirectCast(Me.Bewerber_edvBindingSource.Current, DataRowView).Row, bewerber_edvRow)
+    '    Dim bew_edv = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+    '    Dim edvkenntnisseealt As String = bew_edv.edvkenntnisse
+    '    Dim edvkenntnisse As String = String.Empty
+    '    Dim edv As New List(Of String)()
+
+    '    If WordComboBox.SelectedIndex > 0 Then
+    '        edv.Add("Word")
+    '    End If
+
+    '    If ExcelComboBox.SelectedIndex > 0 Then
+    '        edv.Add("Excel")
+    '    End If
+
+    '    If PowerpointComboBox.SelectedIndex > 0 Then
+    '        edv.Add("PowerPoint")
+    '    End If
+
+    '    If OutlookComboBox.SelectedIndex > 0 Then
+    '        edv.Add("Outlook")
+    '    End If
+
+    '    If AccessComboBox.SelectedIndex > 0 Then
+    '        edv.Add("Access")
+    '    End If
+
+    '    If ProjectComboBox.SelectedIndex > 0 Then
+    '        edv.Add("Project")
+    '    End If
+
+    '    If ThunderbirdComboBox.SelectedIndex > 0 Then
+    '        edv.Add("Thunderbird")
+    '    End If
+
+    '    If Lotus_notesComboBox.SelectedIndex > 0 Then
+    '        edv.Add("Lotus Notes")
+    '    End If
+
+    '    'If CInt(bew_edv.word) <> 0 Then
+    '    '    edv.Add("Word")
+    '    'ElseIf CInt(bew_edv.word) = 0 Then
+    '    'End If
+
+    '    'If CInt(bew_edv.excel) <> 0 Then
+    '    '    edv.Add("Excel")
+    '    'End If
+
+    '    'If Not bew_edv.IsexcelNull AndAlso CInt(bew_edv.edv_bpool) <> 0 Then
+    '    '    edv.Add("Excel")
+    '    'End If
+
+    '    'If CInt(bew_edv.powerpoint) <> 0 Then
+    '    '    edv.Add("PowerPoint")
+    '    'End If
+
+    '    'If CInt(bew_edv.outlook) <> 0 Then
+    '    '    edv.Add("Outlook")
+    '    'End If
+
+    '    'If CInt(bew_edv.access) <> 0 Then
+    '    '    edv.Add("Outlook")
+    '    'End If
+
+    '    'If CInt(bew_edv.project) <> 0 Then
+    '    '    edv.Add("Project")
+    '    'End If
+
+    '    'If CInt(bew_edv.thunderbird) <> 0 Then
+    '    '    edv.Add("Thunderbird")
+    '    'End If
+
+    '    'If CInt(bew_edv.lotus_notes) <> 0 Then
+    '    '    edv.Add("Lotus Notes")
+    '    'End If
+
+    '    'If CInt(bew_edv.sap) <> 0 Then
+    '    '    edv.Add("SAP")
+    '    'End If
+
+    '    'If CInt(bew_edv.datev) <> 0 Then
+    '    '    edv.Add("Datev")
+    '    'End If
+
+    '    'If CInt(bew_edv.datevpro) <> 0 Then
+    '    '    edv.Add("Datevpro")
+    '    'End If
+
+    '    'If CInt(bew_edv.as400) <> 0 Then
+    '    '    edv.Add("AS400")
+    '    'End If
+
+    '    'If CInt(bew_edv.microsoft_dynamics) <> 0 Then
+    '    '    edv.Add("Dynamics")
+    '    'End If
+
+    '    'If CInt(bew_edv.microsoft_navision) <> 0 Then
+    '    '    edv.Add("Navision")
+    '    'End If
+
+    '    'If CInt(bew_edv.khksage) <> 0 Then
+    '    '    edv.Add("KHKSage")
+    '    'End If
+
+    '    'If CInt(bew_edv.lexware) <> 0 Then
+    '    '    edv.Add("Lexware")
+    '    'End If
+
+    '    'If CInt(bew_edv.oracle) <> 0 Then
+    '    '    edv.Add("Oracle")
+    '    'End If
+
+    '    edvkenntnisse = String.Join(", ", edv)
+    '    edvliste = String.Concat(edvkenntnisseealt, edvkenntnisse)
+
+    '    MsgBox(edvkenntnisseealt)
+    '    'MsgBox(edvkenntnisse)
+
+    'End Sub
+
+#End Region
 
 
     Private Sub Comboboxfill()
         For Each cmb As ComboBox In Me.GroupBox74.Controls.OfType(Of ComboBox)()
             cmb.DropDownStyle = ComboBoxStyle.DropDownList
+
             cmb.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
             cmb.SelectedIndex = 0
         Next
     End Sub
 
 
-#End Region
+
 
     ' Bewerber komplett aus DB löschen, interne und Mail an gelöschten Bewerber schicken.
     Private Sub Bewerberkomplettloeschen()
