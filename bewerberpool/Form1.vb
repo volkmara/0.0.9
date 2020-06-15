@@ -551,7 +551,10 @@ Public Class frmMain
                 TabControl1.SelectedTab = TabPage1
 
             Case sender Is BewerberneuRadButton
-                Using frm = New frmNeuerBewerberanlegen(Me)
+                'Using frm = New frmNeuerBewerberanlegen(Me)
+                '    Dim result = frm.ShowDialog
+                'End Using
+                Using frm = New frmKurzfragebogen(Me)
                     Dim result = frm.ShowDialog
                 End Using
 
@@ -632,10 +635,10 @@ Public Class frmMain
                     End Using
                 End If
 
-            Case sender Is Kurzfragebogen
-                Using frm = New frmKurzfragebogen(Me)
-                    Dim result = frm.ShowDialog
-                End Using
+            'Case sender Is Kurzfragebogen
+            '    Using frm = New frmKurzfragebogen(Me)
+            '        Dim result = frm.ShowDialog
+            '    End Using
 
             'Case sender Is TelefoninterviewRadMenuItem
             '    Using frm = New frmTelefoninterview(Me)
