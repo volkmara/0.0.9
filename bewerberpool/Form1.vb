@@ -2108,8 +2108,6 @@ Public Class frmMain
     End Sub
 
 
-
-
     ' Bewerber komplett aus DB löschen, interne und Mail an gelöschten Bewerber schicken.
     Private Sub Bewerberkomplettloeschen()
 

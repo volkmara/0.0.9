@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -57,7 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Server=127.0.0.1; uid=root; pwd=heyduck1!; database=oa;")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Server=SERVER2012; user id=Adler; password=zgA7K$z!; database=oa;")>  _
         Public ReadOnly Property oaConnectionString() As String
             Get
                 Return CType(Me("oaConnectionString"),String)
@@ -67,8 +67,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Server=127.0.0.1; uid=root; pwd=heyduck1!; Convert Zero Datetime=True; persistsec"& _ 
-            "urityinfo=True; database=bewerberneu;")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;d"& _ 
+            "atabase=bewerberneu;")>  _
         Public ReadOnly Property bewerberConnectionString() As String
             Get
                 Return CType(Me("bewerberConnectionString"),String)
@@ -89,8 +89,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Server=127.0.0.1;user id=root;password=heyduck1!;persistsecurityinfo=True;databas"& _ 
-            "e=benutzerverwaltung;")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;p"& _ 
+            "ersistsecurityinfo=True;database=benutzerverwaltung;")>  _
         Public ReadOnly Property benutzerverwaltungConnectionString() As String
             Get
                 Return CType(Me("benutzerverwaltungConnectionString"),String)
