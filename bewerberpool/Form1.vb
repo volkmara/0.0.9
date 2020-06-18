@@ -1695,7 +1695,7 @@ Public Class frmMain
 #End Region
 
     ' ========================================================================= Validierungen ===================================================
-    Private Sub AuslandsaufenthaltComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AuslandsaufenthaltComboBox.SelectedIndexChanged, StandComboBox.SelectedIndexChanged, cmbStatus.SelectedIndexChanged, VerfuegbarkeitComboBox.SelectedIndexChanged
+    Private Sub AuslandsaufenthaltComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AuslandsaufenthaltComboBox.SelectedIndexChanged, StandComboBox.SelectedIndexChanged, cmbStatus.SelectedIndexChanged, VerfuegbarkeitComboBox.SelectedIndexChanged, cmbAufmerksam.SelectedIndexChanged
         Select Case True
             Case sender Is AuslandsaufenthaltComboBox
                 If AuslandsaufenthaltComboBox.SelectedIndex > CInt(0) Then
@@ -1717,6 +1717,12 @@ Public Class frmMain
                 Else
                     KuendigungsfristComboBox1.Text = String.Empty
                     KuendigungsfristComboBox1.Enabled = False
+                End If
+            Case sender Is cmbAufmerksam
+                If cmbAufmerksam.Text = CStr("andere") Then
+                    Aufmerksam_andereTextBox.ReadOnly = False
+                Else
+                    Aufmerksam_andereTextBox.ReadOnly = True
                 End If
         End Select
     End Sub
@@ -2105,6 +2111,8 @@ Public Class frmMain
             cmb.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
             cmb.SelectedIndex = 0
         Next
+
+        Me.cmbAufmerksam.Items.AddRange(New String() {"Agentur für Arbeit", "backinjob", "Gigajob", "Indeed", "Jobmonitor", "Jobomat", "Join", "Kalaydo", "meinestadt", "Monster", "Placement24", "Rekruter", "stellenmarkt", "Stepstone", "", "Facebook", "Twitter", "Xing", "Google", "Bing", "Yahoo", "Web.de", " ", "Bonner Generalanzeiger", "Kölner Stadtanzeiger", "Rhein-Sieg-Anzeiger", "Regionale Anzeigenblätter", "", "andere"})
     End Sub
 
 

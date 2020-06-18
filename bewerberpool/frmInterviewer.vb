@@ -18,6 +18,7 @@ Public Class frmInterviewer
     Public importfilertf As String = String.Empty
     Private _frmMain As frmMain
     Private _frmOA As frmOA
+    Private _frmKurzfragebogen As frmKurzfragebogen
 
     Public sprachenliste As String = String.Empty
 
@@ -31,6 +32,15 @@ Public Class frmInterviewer
     Sub New(frmOA As frmOA)
         _frmOA = frmOA
         InitializeComponent()
+    End Sub
+
+    Sub New(frmKurzfragebogen As frmKurzfragebogen)
+        _frmKurzfragebogen = frmKurzfragebogen
+        ' Dieser Aufruf ist für den Designer erforderlich.
+        InitializeComponent()
+
+        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
+
     End Sub
 
     Private Sub frmInterviewer_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -60,7 +70,7 @@ Public Class frmInterviewer
 
         frmOA.vorschlagenfuerstelle_interviewer_bool = False
 
-        Me.cmbAufmerksam.Items.AddRange(New String() {"Agentur für Arbeit", "backinjob", "Gigajob", "Indeed", "Jobmonitor", "Jobomat", "Kalaydo", "meinestadt", "Monster", "Placement24", "Rekruter", "stellenmarkt", "Stepstone", "", "Facebook", "Twitter", "Xing", "Google", "Bing", "Yahoo", "Web.de", " ", "Bonner Generalanzeiger", "Kölner Stadtanzeiger", "Rhein-Sieg-Anzeiger", "Regionale Anzeigenblätter", "", "andere"})
+        Me.cmbAufmerksam.Items.AddRange(New String() {"Agentur für Arbeit", "backinjob", "Gigajob", "Indeed", "Jobmonitor", "Jobomat", "Join", "Kalaydo", "meinestadt", "Monster", "Placement24", "Rekruter", "stellenmarkt", "Stepstone", "", "Facebook", "Twitter", "Xing", "Google", "Bing", "Yahoo", "Web.de", " ", "Bonner Generalanzeiger", "Kölner Stadtanzeiger", "Rhein-Sieg-Anzeiger", "Regionale Anzeigenblätter", "", "andere"})
 
         Call PflichtfelderbeiStart()
     End Sub

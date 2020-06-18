@@ -8,6 +8,7 @@ Public Class frmKurzfragebogen
     Private _frmMain As frmMain
     Public bewidneu As Integer = 0
     Public arbeitsart As String = String.Empty
+    Private _frmInterviewer As frmInterviewer
     ' Public Shared Property Kurzfragebogen As Boolean = False ' notwendig, damit Inallentabellen.eintragen richtig funktioniert
 
     Sub New(frmMain As frmMain)
@@ -15,6 +16,12 @@ Public Class frmKurzfragebogen
         _frmMain = frmMain
         InitializeComponent()
     End Sub
+
+    Sub New(frmInterviewer As frmInterviewer)
+        _frmInterviewer = frmInterviewer
+        InitializeComponent()
+    End Sub
+
 
     Private Sub frmKurzfragebogen_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Call Timerreload.Reload() ' Timer für DB-Reload starten
@@ -25,8 +32,8 @@ Public Class frmKurzfragebogen
         Me.Bew_bewerberdatenBindingSource.DataSource = frmMain.Bew_bewerberdatenBindingSource
 
         frmMain.kurzfrage = True
-        Call Getbewid()
-        bewidneu = CInt(bewid + 1)
+        'Call Getbewid()
+        'bewidneu = CInt(bewid + 1)
         Me.BewBindingSource.AddNew()
     End Sub
 
@@ -45,6 +52,8 @@ Public Class frmKurzfragebogen
 
     Private Sub btnNeuerBewerber_Click(sender As Object, e As EventArgs) Handles btnNeuerBewerber.Click
         Call ZAVM()
+        Call Getbewid()
+        bewidneu = CInt(bewid + 1)
         Dim bewspeichern = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
         bewspeichern.stand = CStr("aktuell")
         bewspeichern.status = CStr("angelegt")
@@ -71,7 +80,18 @@ Public Class frmKurzfragebogen
         frmMain.DBLoad()
         Me.Panel2.Visible = True
         Call gespeichert()
-        Me.Close()
+
+        Dim resultmessage As String = String.Concat("Nachdem Sie eine/n neue/n Bewerber/in eingetragen haben, wird der Interviewerfragebogen aufgerufen, um die Einträge zu vervollständigen", vbNewLine, vbNewLine, "Wenn Sie Ihre Einträge jetzt vervollständigen wollen, klicken Sie bitte auf ""Ja"", wenn Sie das nicht wollen, klicken Sie bitte auf ""Nein"".")
+
+        Dim result As DialogResult = MessageBox.Show(resultmessage, "Weitere Bearbeitung erforderlich", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+        If result = Windows.Forms.DialogResult.Yes Then
+            Using frm As New frmInterviewer(Me)
+                Dim result1 = frm.ShowDialog()
+            End Using
+        ElseIf result = Windows.Forms.DialogResult.No Then
+            Me.Close()
+        End If
+        'Me.Close()
     End Sub
 
     Private Function bewidcheck(ByVal test As Integer) As Boolean
