@@ -86,7 +86,7 @@
     Private Sub frmListboxen_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Select True
             Case zavm_bool
-                Me.ListBox1.Items.AddRange(New Object() {"Vermittlung", "Zeitarbeit", "Zeitarbeit mit Übernahmeoption", "egal"})
+                Me.ListBox1.Items.AddRange(New Object() {"Vermittlung", "Zeitarbeit", "Zeitarbeit mit Übernahmeoption", "Vermittlung/Zeitarbeit/Zeitarbeit mit Übernahmeoption"})
             Case arbeitsort_bool
                 Me.ListBox1.Items.AddRange(New Object() {"Bundesweit", "RSK", "BN", "BN LR", "BN RR", "KÖ", "KÖ LR", "KÖ RR", "Berg L", "LEV", "D", "Ruhr", "RLP", "GM", "Nümbrecht", "AK", "AW", "Norddeutschland"})
             Case fuehrerschein_bool
