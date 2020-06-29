@@ -88,6 +88,8 @@ Public Class frmKurzfragebogen
             Using frm As New frmInterviewer(Me)
                 Dim result1 = frm.ShowDialog()
             End Using
+            frmMain.DBSpeichern()
+            Me.Close()
         ElseIf result = Windows.Forms.DialogResult.No Then
             Me.Close()
         End If

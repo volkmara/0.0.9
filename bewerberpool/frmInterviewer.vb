@@ -159,7 +159,7 @@ Public Class frmInterviewer
 
             Me.Validate()
 
-            MessageBox.Show("Bitte abspeichern, um die Änderungen aus dem Interviewerfragebogen in die DB zu übernehmen", "Bitte abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Bitte abspeichern, um die Änderungen aus dem Interviewerfragebogen in die DB zu übernehmen. Wurde manuell ein neuer Bewerber über den Kurzfragebogen angelegt, wird automatisch gespeichert.", "Bitte abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Me.Close()
 

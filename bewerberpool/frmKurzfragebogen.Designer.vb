@@ -368,14 +368,14 @@ Partial Class frmKurzfragebogen
         Me.cmbStaatsangehörigkeit.Location = New System.Drawing.Point(792, 226)
         Me.cmbStaatsangehörigkeit.Name = "cmbStaatsangehörigkeit"
         Me.cmbStaatsangehörigkeit.Size = New System.Drawing.Size(206, 24)
-        Me.cmbStaatsangehörigkeit.TabIndex = 49
+        Me.cmbStaatsangehörigkeit.TabIndex = 14
         '
         'txtGeburtstag
         '
         Me.txtGeburtstag.Location = New System.Drawing.Point(135, 226)
         Me.txtGeburtstag.Name = "txtGeburtstag"
         Me.txtGeburtstag.Size = New System.Drawing.Size(213, 22)
-        Me.txtGeburtstag.TabIndex = 15
+        Me.txtGeburtstag.TabIndex = 10
         '
         'cmbRundschreiben
         '
@@ -415,7 +415,7 @@ Partial Class frmKurzfragebogen
         Me.txtUlas.Name = "txtUlas"
         Me.txtUlas.ReadOnly = True
         Me.txtUlas.Size = New System.Drawing.Size(206, 54)
-        Me.txtUlas.TabIndex = 10
+        Me.txtUlas.TabIndex = 11
         '
         'txtName
         '
@@ -428,7 +428,7 @@ Partial Class frmKurzfragebogen
         'txtVorname
         '
         Me.txtVorname.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "vorname", True))
-        Me.txtVorname.Location = New System.Drawing.Point(134, 116)
+        Me.txtVorname.Location = New System.Drawing.Point(135, 119)
         Me.txtVorname.Name = "txtVorname"
         Me.txtVorname.Size = New System.Drawing.Size(402, 22)
         Me.txtVorname.TabIndex = 8
@@ -472,7 +472,7 @@ Partial Class frmKurzfragebogen
         Me.btnNeuerBewerber.Location = New System.Drawing.Point(16, 359)
         Me.btnNeuerBewerber.Name = "btnNeuerBewerber"
         Me.btnNeuerBewerber.Size = New System.Drawing.Size(231, 60)
-        Me.btnNeuerBewerber.TabIndex = 10
+        Me.btnNeuerBewerber.TabIndex = 21
         Me.btnNeuerBewerber.Text = "            Neue/n Bewerber/in" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                   anlegen"
         Me.btnNeuerBewerber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNeuerBewerber.UseVisualStyleBackColor = False
@@ -529,7 +529,7 @@ Partial Class frmKurzfragebogen
         Me.GroupBox3.Location = New System.Drawing.Point(838, 16)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(244, 107)
-        Me.GroupBox3.TabIndex = 18
+        Me.GroupBox3.TabIndex = 4
         Me.GroupBox3.TabStop = False
         '
         'rbtnZAVMZAÜN
@@ -594,7 +594,7 @@ Partial Class frmKurzfragebogen
         Me.RTEPersönlichkeit.Name = "RTEPersönlichkeit"
         Me.RTEPersönlichkeit.SelectionFill = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(158, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.RTEPersönlichkeit.Size = New System.Drawing.Size(443, 128)
-        Me.RTEPersönlichkeit.TabIndex = 16
+        Me.RTEPersönlichkeit.TabIndex = 19
         '
         'cmbEnglisch
         '
@@ -611,7 +611,7 @@ Partial Class frmKurzfragebogen
         Me.txtGehaltswunsch_monat.Location = New System.Drawing.Point(638, 128)
         Me.txtGehaltswunsch_monat.Name = "txtGehaltswunsch_monat"
         Me.txtGehaltswunsch_monat.Size = New System.Drawing.Size(136, 22)
-        Me.txtGehaltswunsch_monat.TabIndex = 14
+        Me.txtGehaltswunsch_monat.TabIndex = 9
         '
         'Bisherige_taetigkeitenTextBox
         '
@@ -699,7 +699,7 @@ Partial Class frmKurzfragebogen
         Me.txtEmail.Location = New System.Drawing.Point(745, 95)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(298, 22)
-        Me.txtEmail.TabIndex = 11
+        Me.txtEmail.TabIndex = 17
         '
         'txtTel_mobil
         '
@@ -707,7 +707,7 @@ Partial Class frmKurzfragebogen
         Me.txtTel_mobil.Location = New System.Drawing.Point(405, 95)
         Me.txtTel_mobil.Name = "txtTel_mobil"
         Me.txtTel_mobil.Size = New System.Drawing.Size(163, 22)
-        Me.txtTel_mobil.TabIndex = 9
+        Me.txtTel_mobil.TabIndex = 16
         '
         'txtTel_festnetz
         '
@@ -715,7 +715,7 @@ Partial Class frmKurzfragebogen
         Me.txtTel_festnetz.Location = New System.Drawing.Point(89, 95)
         Me.txtTel_festnetz.Name = "txtTel_festnetz"
         Me.txtTel_festnetz.Size = New System.Drawing.Size(166, 22)
-        Me.txtTel_festnetz.TabIndex = 7
+        Me.txtTel_festnetz.TabIndex = 15
         '
         'StrasseTextBox
         '
@@ -723,7 +723,7 @@ Partial Class frmKurzfragebogen
         Me.StrasseTextBox.Location = New System.Drawing.Point(745, 34)
         Me.StrasseTextBox.Name = "StrasseTextBox"
         Me.StrasseTextBox.Size = New System.Drawing.Size(298, 22)
-        Me.StrasseTextBox.TabIndex = 6
+        Me.StrasseTextBox.TabIndex = 14
         '
         'txtOrt
         '
@@ -731,7 +731,7 @@ Partial Class frmKurzfragebogen
         Me.txtOrt.Location = New System.Drawing.Point(309, 37)
         Me.txtOrt.Name = "txtOrt"
         Me.txtOrt.Size = New System.Drawing.Size(255, 22)
-        Me.txtOrt.TabIndex = 3
+        Me.txtOrt.TabIndex = 13
         '
         'ToolTip1
         '
