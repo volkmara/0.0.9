@@ -4,7 +4,7 @@ Public Class kopfbogendrucken
     Public Shared Property reportdatei As String = String.Empty
     '  Public Shared Property kopfbogen_wo As String = String.Empty
 
-    Public Shared Property nachricht As String = String.Concat("Eine zum Ausdruck geeignete Bewerberbeschreibung existiert nicht.", vbNewLine, vbNewLine, "Bitte vervollständigen Sie die Bearbeitung mit dem Interviewerfragebogen, speichern Sie dann  den Interviewerfragebogen ab und starten Sie dann den Ausdruck neu.")
+    Public Shared Property nachricht As String = String.Concat("Eine zum Ausdruck geeignete Bewerberbeschreibung existiert nicht.", vbNewLine, vbNewLine, "Bitte bei ""Persönlichkeit"" etwas eintragen, sonst ist nix mit Kopfbogen, entweder mit dem Interviewerfragebogen oder später.")
 
     Public Shared Sub daten()
 
