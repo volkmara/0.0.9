@@ -52,6 +52,8 @@ Partial Class frmKurzfragebogen
         Me.txtGeburtstag = New System.Windows.Forms.TextBox()
         Me.cmbRundschreiben = New System.Windows.Forms.ComboBox()
         Me.cmbInterviewart = New System.Windows.Forms.ComboBox()
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtUlas = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
@@ -85,8 +87,6 @@ Partial Class frmKurzfragebogen
         Me.txtOrt = New System.Windows.Forms.TextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.Bew_bewerberdatenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
@@ -114,6 +114,8 @@ Partial Class frmKurzfragebogen
         GeburtstagLabel = New System.Windows.Forms.Label()
         StaatsangehörigkeitLabel = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Bew_bewerberdatenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -121,8 +123,6 @@ Partial Class frmKurzfragebogen
         CType(Me.RTEPersönlichkeit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AnredeLabel
@@ -229,9 +229,9 @@ Partial Class frmKurzfragebogen
         Za_vmLabel.AutoSize = True
         Za_vmLabel.Location = New System.Drawing.Point(721, 36)
         Za_vmLabel.Name = "Za_vmLabel"
-        Za_vmLabel.Size = New System.Drawing.Size(109, 48)
+        Za_vmLabel.Size = New System.Drawing.Size(54, 16)
         Za_vmLabel.TabIndex = 4
-        Za_vmLabel.Text = "ZA/VM" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Doppelklick" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "zum Eintragen:"
+        Za_vmLabel.Text = "ZA/VM" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'MonatsgehaltLabel
         '
@@ -395,6 +395,16 @@ Partial Class frmKurzfragebogen
         Me.cmbInterviewart.Name = "cmbInterviewart"
         Me.cmbInterviewart.Size = New System.Drawing.Size(206, 24)
         Me.cmbInterviewart.TabIndex = 12
+        '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewerberDataSet
+        '
+        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
+        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label2
         '
@@ -741,16 +751,6 @@ Partial Class frmKurzfragebogen
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'BewBindingSource
-        '
-        Me.BewBindingSource.DataMember = "bew"
-        Me.BewBindingSource.DataSource = Me.BewerberDataSet
-        '
-        'BewerberDataSet
-        '
-        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
-        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'BewTableAdapter
         '
         Me.BewTableAdapter.ClearBeforeFill = True
@@ -805,6 +805,8 @@ Partial Class frmKurzfragebogen
         Me.Text = "Kurzfragebogen/Telefoninterview"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Bew_bewerberdatenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
@@ -815,8 +817,6 @@ Partial Class frmKurzfragebogen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -150,7 +150,7 @@ Public Class frmInterviewer
 
             Dim interviewer = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
             interviewer.status = CStr("fertig")
-            interviewer.interviewart = CStr("Bewerbergespräch")
+            'interviewer.interviewart = CStr("Bewerbergespräch")
             interviewer.geaendert_am = Date.Now.ToString
             interviewer.letztbearbeitung_von = CStr(usernameklar)
             interviewer.bewerberbeschreibung = CStr(exportfilertf)
