@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -78,22 +78,22 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("server=heyduck-personalservice.de;user id=heyduck;password=heyduck1!;persistsecur"& _ 
-            "ityinfo=True;database=heyduck;")>  _
-        Public ReadOnly Property heyduckConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;p"& _ 
+            "ersistsecurityinfo=True;database=benutzerverwaltung;")>  _
+        Public ReadOnly Property benutzerverwaltungConnectionString() As String
             Get
-                Return CType(Me("heyduckConnectionString"),String)
+                Return CType(Me("benutzerverwaltungConnectionString"),String)
             End Get
         End Property
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;p"& _ 
-            "ersistsecurityinfo=True;database=benutzerverwaltung;")>  _
-        Public ReadOnly Property benutzerverwaltungConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("server=heyduck-personalservice.de;user id=heyduck;password=heyduck1!;persistsecur"& _ 
+            "ityinfo=True;database=heyduck;")>  _
+        Public ReadOnly Property heyduckConnectionString() As String
             Get
-                Return CType(Me("benutzerverwaltungConnectionString"),String)
+                Return CType(Me("heyduckConnectionString"),String)
             End Get
         End Property
     End Class

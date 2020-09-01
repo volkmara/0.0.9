@@ -60,6 +60,7 @@ Public Class frmKurzfragebogen
         bewspeichern.erstkontakt = Date.Now
         bewspeichern.refnr = bewidneu
         bewspeichern.Vermittlung = arbeitsart
+        bewspeichern.topbewerber = CStr("Nein")
         bewspeichern.bewerberbeschreibung = CStr(allgemein.ExporttoRtf(RTEPersönlichkeit.Document))
         bewspeichern.bewerberbeschreibung_text = CStr(allgemein.ExporttoTxt(RTEPersönlichkeit.Document))
         Me.Validate()

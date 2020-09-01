@@ -18,14 +18,6 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;database=bewerberneu;</Value>
     </Setting>
-    <Setting Name="heyduckConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=heyduck-personalservice.de;user id=heyduck;password=heyduck1!;persistsecurityinfo=True;database=heyduck;&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=heyduck-personalservice.de;user id=heyduck;password=heyduck1!;persistsecurityinfo=True;database=heyduck;</Value>
-    </Setting>
     <Setting Name="benutzerverwaltungConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
@@ -33,6 +25,14 @@
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;persistsecurityinfo=True;database=benutzerverwaltung;</Value>
+    </Setting>
+    <Setting Name="heyduckConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=heyduck-personalservice.de;user id=heyduck;password=heyduck1!;persistsecurityinfo=True;database=heyduck;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=heyduck-personalservice.de;user id=heyduck;password=heyduck1!;persistsecurityinfo=True;database=heyduck;</Value>
     </Setting>
   </Settings>
 </SettingsFile>
