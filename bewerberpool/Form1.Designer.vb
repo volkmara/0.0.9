@@ -743,13 +743,13 @@ Partial Class frmMain
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.lblMehrAnmerkungen = New System.Windows.Forms.Label()
         Me.GroupBox21 = New System.Windows.Forms.GroupBox()
+        Me.EdvkenntnisseTextBox1 = New System.Windows.Forms.TextBox()
         Me.cmbAufmerksam = New System.Windows.Forms.ComboBox()
         Me.EmpfehlungTextBox1 = New System.Windows.Forms.TextBox()
         Me.Aufmerksam_andereTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.LetzteAnmerkungTextbox = New System.Windows.Forms.TextBox()
         Me.GroupBox77 = New System.Windows.Forms.GroupBox()
-        Me.EdvkenntnisseTextBox1 = New System.Windows.Forms.TextBox()
         Me.SprachkenntnisseTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.It_datenbank_durchschnittTextBox = New System.Windows.Forms.TextBox()
@@ -7360,7 +7360,7 @@ Partial Class frmMain
         '
         EdvkenntnisseLabel1.AutoSize = True
         EdvkenntnisseLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        EdvkenntnisseLabel1.Location = New System.Drawing.Point(0, 106)
+        EdvkenntnisseLabel1.Location = New System.Drawing.Point(-1, 251)
         EdvkenntnisseLabel1.Name = "EdvkenntnisseLabel1"
         EdvkenntnisseLabel1.Size = New System.Drawing.Size(99, 32)
         EdvkenntnisseLabel1.TabIndex = 18
@@ -8850,7 +8850,7 @@ Partial Class frmMain
         '
         'Panel5
         '
-        Me.Panel5.BackColor = System.Drawing.Color.White
+        Me.Panel5.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel5.Controls.Add(Me.lblMehrAnmerkungen)
         Me.Panel5.Controls.Add(Me.GroupBox21)
@@ -8876,6 +8876,8 @@ Partial Class frmMain
         '
         'GroupBox21
         '
+        Me.GroupBox21.Controls.Add(EdvkenntnisseLabel1)
+        Me.GroupBox21.Controls.Add(Me.EdvkenntnisseTextBox1)
         Me.GroupBox21.Controls.Add(Me.cmbAufmerksam)
         Me.GroupBox21.Controls.Add(Aufmerksam_andereLabel)
         Me.GroupBox21.Controls.Add(EmpfehlungLabel)
@@ -8883,12 +8885,22 @@ Partial Class frmMain
         Me.GroupBox21.Controls.Add(Me.Aufmerksam_andereTextBox)
         Me.GroupBox21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox21.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox21.Location = New System.Drawing.Point(6, 448)
+        Me.GroupBox21.Location = New System.Drawing.Point(6, 369)
         Me.GroupBox21.Name = "GroupBox21"
-        Me.GroupBox21.Size = New System.Drawing.Size(328, 401)
+        Me.GroupBox21.Size = New System.Drawing.Size(328, 480)
         Me.GroupBox21.TabIndex = 25
         Me.GroupBox21.TabStop = False
         Me.GroupBox21.Text = "Aufmerksam geworden auf Heyduck durch"
+        '
+        'EdvkenntnisseTextBox1
+        '
+        Me.EdvkenntnisseTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "edvkenntnisse", True))
+        Me.EdvkenntnisseTextBox1.Location = New System.Drawing.Point(132, 248)
+        Me.EdvkenntnisseTextBox1.Multiline = True
+        Me.EdvkenntnisseTextBox1.Name = "EdvkenntnisseTextBox1"
+        Me.EdvkenntnisseTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.EdvkenntnisseTextBox1.Size = New System.Drawing.Size(195, 81)
+        Me.EdvkenntnisseTextBox1.TabIndex = 19
         '
         'cmbAufmerksam
         '
@@ -8945,26 +8957,14 @@ Partial Class frmMain
         '
         'GroupBox77
         '
-        Me.GroupBox77.Controls.Add(EdvkenntnisseLabel1)
-        Me.GroupBox77.Controls.Add(Me.EdvkenntnisseTextBox1)
         Me.GroupBox77.Controls.Add(SprachkenntnisseLabel)
         Me.GroupBox77.Controls.Add(Me.SprachkenntnisseTextBox)
         Me.GroupBox77.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox77.Location = New System.Drawing.Point(4, 254)
         Me.GroupBox77.Name = "GroupBox77"
-        Me.GroupBox77.Size = New System.Drawing.Size(332, 190)
+        Me.GroupBox77.Size = New System.Drawing.Size(332, 106)
         Me.GroupBox77.TabIndex = 20
         Me.GroupBox77.TabStop = False
-        '
-        'EdvkenntnisseTextBox1
-        '
-        Me.EdvkenntnisseTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "edvkenntnisse", True))
-        Me.EdvkenntnisseTextBox1.Location = New System.Drawing.Point(133, 103)
-        Me.EdvkenntnisseTextBox1.Multiline = True
-        Me.EdvkenntnisseTextBox1.Name = "EdvkenntnisseTextBox1"
-        Me.EdvkenntnisseTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.EdvkenntnisseTextBox1.Size = New System.Drawing.Size(195, 81)
-        Me.EdvkenntnisseTextBox1.TabIndex = 19
         '
         'SprachkenntnisseTextBox
         '

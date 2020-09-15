@@ -125,7 +125,7 @@ Public Class frmNeueAnmerkunganlegen
 
                     'frmMain.NotizenTableAdapter.FillBy(frmMain.BewerberDataSet.notizen, CInt(letzteid))
                     frmMain.NotizenTableAdapter.Fill(frmMain.BewerberDataSet.notizen)
-                    frmMain.BewTableAdapter.Fill(frmMain.BewerberDataSet.bew)
+                    'frmMain.BewTableAdapter.Fill(frmMain.BewerberDataSet.bew)
                     ' frmMain.DBLoad() ' Datenbank wird neu geladen
                     frmMain.letzteanmerkunganzeigen() ' Letzte Anmerkung wird in frmMain in das Feld im Reiter Bewerber/in geladen
                     droptext = String.Empty
