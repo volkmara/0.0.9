@@ -98,7 +98,7 @@ Partial Class frmNeuerBewerberanlegen
         '
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(158, 275)
+        Me.Button1.Location = New System.Drawing.Point(32, 278)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(321, 53)
         Me.Button1.TabIndex = 8

@@ -38,9 +38,6 @@ Public Class frmInterviewer
         _frmKurzfragebogen = frmKurzfragebogen
         ' Dieser Aufruf ist für den Designer erforderlich.
         InitializeComponent()
-
-        ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
-
     End Sub
 
     Private Sub frmInterviewer_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -63,7 +60,7 @@ Public Class frmInterviewer
         Call import()
         Call Comboboxfill()
         pflichtfeldliste = String.Empty
-        sprachenliste = String.Empty
+        'sprachenliste = String.Empty
 
         Dim bewdaten = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
         Label7.Text = String.Concat(bewdaten.anrede, " ", bewdaten.vorname, " ", bewdaten.name)
@@ -106,7 +103,7 @@ Public Class frmInterviewer
     Private Sub btnUebernehmen_Click(sender As Object, e As EventArgs) Handles btnUebernehmen.Click
         Call export()
         Call telefoneintrag()
-        Call sprachendaten() ' trägt Sprachen im Feld "Sprachkenntnisse" im Reiter "Bewerber/in" ein
+        Call Sprachendaten() ' trägt Sprachen im Feld "Sprachkenntnisse" im Reiter "Bewerber/in" ein
 
         ' Validierung vorm Speichern
         If Not frmMain.StandComboBox.Text = CStr("fertig") AndAlso TabControl1.SelectedTab IsNot TabPage7 Then
@@ -157,106 +154,118 @@ Public Class frmInterviewer
             interviewer.bewerberbeschreibung_text = CStr(exportfiletxt)
             interviewer.sprachkenntnisse = CStr(sprachenliste)
 
-            Me.Validate()
+            ' Me.Validate()
 
-            MessageBox.Show("Bitte abspeichern, um die Änderungen aus dem Interviewerfragebogen in die DB zu übernehmen. Wurde manuell ein neuer Bewerber über den Kurzfragebogen angelegt, wird automatisch gespeichert.", "Bitte abspeichern", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim text As String = String.Concat("Die Einträge aus dem Interviewerfragebogen werden automatisch in die DB geschrieben, wenn sich der Interviewerfragebogen geschlossen hat.", vbNewLine, vbNewLine)
+
+            MessageBox.Show(text, "Fertig", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Einträge aus Interviewerfragebogen in DB speichern bei Close
+            Me.Validate()
+            Me.BewBindingSource.EndEdit()
+            Me.Bew_bewerberdatenBindingSource.EndEdit()
+            Me.Bewerber_ausbildungBindingSource.EndEdit()
+            Me.Bewerber_berufserfahrungBindingSource.EndEdit()
+            Me.Bewerber_sprachenBindingSource.EndEdit()
+            Me.UlasBindingSource.EndEdit()
+
+            frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
+            frmMain.Bew_bewerberdatenTableAdapter.Update(frmMain.BewerberDataSet.bew_bewerberdaten)
+            frmMain.UlasTableAdapter.Update(frmMain.BewerberDataSet.ulas)
+            frmMain.Bewerber_ausbildungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_ausbildung)
+            frmMain.Bewerber_berufserfahrungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_berufserfahrung)
+            frmMain.Bewerber_sprachenTableAdapter.Update(frmMain.BewerberDataSet.bewerber_sprachen)
+
+            Call gespeichert()
+
+            frmMain.GroupBox1.BackColor = Color.WhiteSmoke
 
             Me.Close()
 
         ElseIf result = Windows.Forms.DialogResult.No Then
             Exit Sub
         End If
+    End Sub
 
+    Private Sub Sprachendaten()
 
+        Dim bewerbersprachen = DirectCast(DirectCast(Me.Bewerber_sprachenBindingSource.Current, DataRowView).Row, bewerber_sprachenRow)
+        Dim sprachenbew = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        Dim sprachen As New List(Of String)()
 
+        If bewerbersprachen.deutsch_interviewer > 0 Then
+            sprachen.Add(String.Concat("D ", bewerbersprachen.deutsch_interviewer.ToString))
+            sprachenbew.deutsch = bewerbersprachen.deutsch_interviewer
+            sprachenbew.deutsch_bew = bewerbersprachen.deutsch
+        ElseIf bewerbersprachen.deutsch <> 0 Then
+            sprachenbew.deutsch_bew = bewerbersprachen.deutsch
+            sprachen.Add(String.Concat("D ", bewerbersprachen.deutsch.ToString))
+        End If
 
-        '' Call inallentabellen.prüfen() ' prüfen, ob in allen Tabellen die Id vorhanden ist, ansonsten anlegen
-        'Call export()
-        'Call telefoneintrag()
-        'Call sprachendaten() ' trägt Sprachen im Feld "Sprachkenntnisse" im Reiter "Bewerber/In" ein
+        If bewerbersprachen.englisch_interviewer > 0 Then
+            sprachen.Add(String.Concat("E ", bewerbersprachen.englisch_interviewer.ToString))
+            sprachenbew.englisch = bewerbersprachen.englisch_interviewer
+            sprachenbew.englisch_bew = bewerbersprachen.englisch
+        ElseIf bewerbersprachen.englisch <> 0 Then
+            sprachen.Add(String.Concat("E ", bewerbersprachen.englisch.ToString))
+            sprachenbew.englisch_bew = bewerbersprachen.englisch
+        End If
 
-        '' Validierung vorm Speichern
-        'If Not frmMain.StandComboBox.Text = CStr("fertig") AndAlso TabControl1.SelectedTab IsNot TabPage7 Then
-        '    MessageBox.Show("Bitte alle Reiter nacheinander anklicken und die Felder In allen Reitern bearbeiten", "Alle Tabreiter anwählen", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-        '    Exit Sub
-        'End If
+        If bewerbersprachen.französich_interviewer > 0 Then
+            sprachen.Add(String.Concat("F ", bewerbersprachen.französich_interviewer.ToString))
+            sprachenbew.franzoesisch = bewerbersprachen.französich_interviewer
+            sprachenbew.franzoesich_bew = bewerbersprachen.franzoesisch
+        ElseIf bewerbersprachen.franzoesisch <> 0 Then
+            sprachen.Add(String.Concat("F ", bewerbersprachen.franzoesisch.ToString))
+            sprachenbew.franzoesisch = bewerbersprachen.franzoesisch
+        End If
 
-        'Call Controlsaufweiss() ' Alle Controls, die beim Startcheck gelb gefärbt wurden, zurücksetzen
-        'Call Berufsausbildung_check()
+        If bewerbersprachen.spanisch_interviewer > 0 Then
+            sprachen.Add(String.Concat("S ", bewerbersprachen.spanisch_interviewer.ToString))
+            sprachenbew.spanisch = bewerbersprachen.spanisch_interviewer
+            sprachenbew.spanisch_bew = bewerbersprachen.spanisch
+        ElseIf bewerbersprachen.spanisch <> 0 Then
+            sprachen.Add(String.Concat("S ", bewerbersprachen.spanisch.ToString))
+            sprachenbew.spanisch_bew = bewerbersprachen.spanisch
+        End If
 
-        'If Not frmMain.StandComboBox.Text = CStr("fertig") Then
-        '    Call pflichtfelder()
-        'End If
+        If bewerbersprachen.italienisch_interviewer > 0 Then
+            sprachen.Add(String.Concat("I ", bewerbersprachen.italienisch_interviewer.ToString))
+            sprachenbew.italienisch = bewerbersprachen.italienisch_interviewer
+            sprachenbew.italienisch_bew = bewerbersprachen.italienisch
+        ElseIf bewerbersprachen.italienisch <> 0 Then
+            sprachen.Add(String.Concat("I ", bewerbersprachen.italienisch.ToString))
+            sprachenbew.italienisch_bew = bewerbersprachen.italienisch
+        End If
 
-        'If pflichtfeldliste <> String.Empty Then
-        '    MessageBox.Show("Haben Sie vergessen, diese Felder auszufüllen? " & vbCrLf & vbCrLf & pflichtfeldliste & vbCrLf & vbCrLf & "Nicht schlimm, das kann ja mal passieren. Bitte ergänzen 'Sie' einfach Ihre Angaben. " & vbCrLf & vbCrLf & "Vielen Dank", "Pflichtfelder bitte ausfüllen", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '    pflichtfeldliste = String.Empty
-        '    Exit Sub
-        'Else
-        '    Dim bewspeichern = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
-        '    bewspeichern.geaendert_am = Date.Now.ToString
-        '    bewspeichern.letztbearbeitung_von = CStr(usernameklar)
-        '    bewspeichern.status = CStr("fertig")
-        '    ' rundschreibenjanein ist nach dem Anlegen im Bewerbertool DBNull, muss nach dem Bearbeiten auf 0 gesetzt werden
-        '    'If bewspeichern.IsrundschreibenjaneinNull Then
-        '    '    bewspeichern.rundschreibenjanein = CInt(0)
-        '    'End If
+        If bewerbersprachen.niederlaendisch_interviewer > 0 Then
+            sprachen.Add(String.Concat("N ", bewerbersprachen.niederlaendisch_interviewer.ToString))
+            sprachenbew.niederlaendisch = bewerbersprachen.niederlaendisch_interviewer
+            sprachenbew.niederlaendisch_bew = bewerbersprachen.niederlaendisch
+        ElseIf bewerbersprachen.niederlaendisch <> 0 Then
+            sprachen.Add(String.Concat("N ", bewerbersprachen.niederlaendisch.ToString))
+            sprachenbew.niederlaendisch_bew = bewerbersprachen.niederlaendisch
+        End If
 
-        '    If frmUlaseintragen.ulas_wert <> String.Empty Then
-        '        bewspeichern.ulas = CStr(frmUlaseintragen.ulas_wert)
-        '    End If
+        If bewerbersprachen.tuerkisch_interviewer > 0 Then
+            sprachen.Add(String.Concat("T ", bewerbersprachen.tuerkisch_interviewer.ToString))
+            sprachenbew.tuerkisch = bewerbersprachen.tuerkisch_interviewer
+            sprachenbew.tuerkisch_bew = bewerbersprachen.tuerkisch
+        ElseIf bewerbersprachen.tuerkisch <> 0 Then
+            sprachen.Add(String.Concat("T ", bewerbersprachen.tuerkisch.ToString))
+            sprachenbew.tuerkisch_bew = bewerbersprachen.tuerkisch
+        End If
 
-        '    bewspeichern.interviewart = CStr("Bewerbergespräch")
+        If bewerbersprachen.russisch_interviewer > 0 Then
+            sprachen.Add(String.Concat("R ", bewerbersprachen.russisch_interviewer.ToString))
+            sprachenbew.russisch = bewerbersprachen.russisch_interviewer
+            sprachenbew.russisch_bew = bewerbersprachen.russisch
+        ElseIf bewerbersprachen.russisch <> 0 Then
+            sprachen.Add(String.Concat("R ", bewerbersprachen.russisch.ToString))
+            sprachenbew.russisch_bew = bewerbersprachen.russisch
+        End If
 
-        '    bewspeichern.bewerberbeschreibung = CStr(exportfilertf)
-        '    bewspeichern.bewerberbeschreibung_text = CStr(exportfiletxt)
-        '    bewspeichern.sprachkenntnisse = CStr(sprachenliste)
-
-        '    Me.Validate()
-        '    Me.BewBindingSource.EndEdit()
-        '    Me.Bew_bewerberdatenBindingSource.EndEdit()
-        '    Me.UlasBindingSource.EndEdit()
-        '    Me.Bewerber_berufserfahrungBindingSource.EndEdit()
-        '    Me.Bewerber_ausbildungBindingSource.EndEdit()
-        '    Me.Bewerber_sprachenBindingSource.EndEdit()
-
-        '    frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
-        '    frmMain.Bew_bewerberdatenTableAdapter.Update(frmMain.BewerberDataSet.bew_bewerberdaten)
-        '    frmMain.Bewerber_ausbildungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_ausbildung)
-        '    frmMain.Bewerber_berufserfahrungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_berufserfahrung)
-        '    frmMain.Bewerber_sprachenTableAdapter.Update(frmMain.BewerberDataSet.bewerber_sprachen)
-        '    frmMain.UlasTableAdapter.Update(frmMain.BewerberDataSet.ulas)
-        '    frmMain.BewGridView1.FilterDescriptors.Clear()
-        '    Call gespeichert()
-        '    '  pflichtfeldliste = String.Empty
-
-        '    ' OpenFD für Originalunterlagen öffnen
-
-        '    If connectionString.Contains("127.0.0.1") Then
-        '        verzeichnis = CStr("e:\heyduck\ulas\")
-        '    Else
-        '        verzeichnis = CStr("x:\ulas\")
-        '    End If
-        '    Dim zielverzeichnis As String = String.Concat(verzeichnis, letzteid, "\", "Originale", "\")
-
-        '    Dim abspeichern As String = String.Concat("Sie können jetzt die Originalunterlagen des Bewerbers/der Bewerberin abspeichern.", vbNewLine, vbNewLine, "Weitere Dateien können ggf. später über das Feld ""Originalunterlagen Bewerber/in"" im Reiter ""Daten"" hochgeladen werden (Rechtsklick).")
-
-        '    If Not IO.Directory.Exists(zielverzeichnis) Then
-        '        Dim result As DialogResult = MessageBox.Show(CStr(abspeichern), "Unterlagen speichern", MessageBoxButtons.YesNo, MessageBoxIcon.Hand)
-        '        If result = Windows.Forms.DialogResult.Yes Then
-        '            Call ulasspeichern.originalulasspeichern()
-        '        ElseIf result = Windows.Forms.DialogResult.No Then
-        '            Me.Close()
-        '        End If
-        '    Else
-        '        Dim ulasprüfen As String = String.Concat("Das Verzeichnis für Originalunterlagen dieses Bewerbers/dieser Bewerberin existiert bereits. Bitte überprüfen Sie die Unterlagen. ", vbNewLine, vbNewLine, "Vorhandene Unterlagen können ggf. später über das Feld ""Originalunterlagen Bewerber/in"" im Reiter ""Daten"" überschrieben werden (Rechtsklick)")
-        '        MessageBox.Show(ulasprüfen, "Verzeichnis vorhanden", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '        Me.Close() ' Wird geschlossen, wenn origulas (=> wenn zielverzeichnis existiert) bereits vorhanden sind
-        '    End If
-
-        '    frmMain.DBLoad()
-        '    Me.Close()
-        'End If
+        sprachenliste = String.Join(vbNewLine, sprachen) ' Sprachenliste ist Public
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
@@ -464,6 +473,7 @@ Public Class frmInterviewer
         Dim ausbildung = DirectCast(DirectCast(Me.Bewerber_ausbildungBindingSource.Current, DataRowView).Row, bewerber_ausbildungRow)
 
         ' Kontaktdaten
+
         If bewerber.Istel_festnetzNull OrElse bewerber.tel_festnetz = String.Empty Then
             kontaktdatenliste.Add("Festnetz")
             txtTel_festnetz.BackColor = Color.Yellow
@@ -528,6 +538,16 @@ Public Class frmInterviewer
         If bewerberdaten.Ispkw_oepnvNull OrElse bewerberdaten.pkw_oepnv = String.Empty Then
             beschäftigungliste.Add("PKW/ÖPNV")
             txtPkw_oepnv.BackColor = Color.Yellow
+        End If
+
+        If bewerber.IsmonatsgehaltNull OrElse txtMonatsgehalt.Text = String.Empty Then
+            beschäftigungliste.Add("Monatsgehalt")
+            txtMonatsgehalt.BackColor = Color.Yellow
+        End If
+
+        If bewerber.Isgehaltswunsch_monatNull OrElse txtGehaltswunsch_monat.Text = String.Empty Then
+            beschäftigungliste.Add("Gehaltswunsch Monat")
+            txtGehaltswunsch_monat.BackColor = Color.Yellow
         End If
 
         'Berufserfahrung
@@ -904,78 +924,6 @@ Public Class frmInterviewer
             cmb.SelectedIndex = 0
         Next
     End Sub
-
-    ' bereitet Fremdsprachen für Feld "Sprachkenntnisse" und Tabelle in frmMain auf; es werden die Interviewereinträge verwendet, soweit vorhanden
-    Private Sub sprachendaten()
-        Dim fremdsprachen As New List(Of String)()
-
-        If cmbEnglisch_interviewer.SelectedIndex <> 0 Then
-            fremdsprachen.Add("E" & CInt(Me.cmbEnglisch_interviewer.SelectedIndex).ToString & vbCrLf)
-            'Else
-            '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf txtEnglisch.Text <> String.Empty AndAlso Me.cmbEnglisch_interviewer.SelectedIndex = 0 Then
-            fremdsprachen.Add("E" & CStr(Me.txtEnglisch.Text.Substring(0, 1) & vbCrLf))
-        End If
-
-        If cmbFranzösich_interviewer.SelectedIndex <> 0 Then
-            fremdsprachen.Add("F" & CInt(Me.cmbFranzösich_interviewer.SelectedIndex).ToString & vbCrLf)
-            'Else
-            '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf txtFranzoesisch.Text <> String.Empty AndAlso cmbFranzösich_interviewer.SelectedIndex = 0 Then
-            fremdsprachen.Add("F" & CStr(Me.txtFranzoesisch.Text.Substring(0, 1) & vbCrLf))
-        End If
-
-        If cmbSpanisch_interviewer.SelectedIndex <> 0 Then
-            fremdsprachen.Add("S" & CInt(Me.cmbSpanisch_interviewer.SelectedIndex).ToString & vbCrLf)
-            'Else
-            '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf txtSpanisch.Text <> String.Empty AndAlso cmbSpanisch_interviewer.SelectedIndex = 0 Then
-            fremdsprachen.Add("S" & CStr(Me.txtSpanisch.Text.Substring(0, 1) & vbCrLf))
-        End If
-
-        If cmbItalienisch_interviewer.SelectedIndex <> 0 Then
-            fremdsprachen.Add("I" & CInt(Me.cmbItalienisch_interviewer.SelectedIndex).ToString & vbCrLf)
-            'Else
-            '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf txtItalienisch.Text <> String.Empty AndAlso cmbItalienisch_interviewer.SelectedIndex = 0 Then
-            fremdsprachen.Add("I" & CStr(Me.txtItalienisch.Text.Substring(0, 1) & vbCrLf))
-        End If
-
-        If cmbTuerkisch_interviewer.SelectedIndex <> 0 Then
-            fremdsprachen.Add("T" & CInt(Me.cmbTuerkisch_interviewer.SelectedIndex).ToString & vbCrLf)
-            'Else
-            '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf txtTuerkisch.Text <> String.Empty AndAlso cmbTuerkisch_interviewer.SelectedIndex = 0 Then
-            fremdsprachen.Add("T" & CStr(Me.txtTuerkisch.Text.Substring(0, 1) & vbCrLf))
-        End If
-
-        If cmbRussisch_interviewer.SelectedIndex <> 0 Then
-            fremdsprachen.Add("R" & CInt(Me.cmbRussisch_interviewer.SelectedIndex).ToString & vbCrLf)
-            'Else
-            '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf txtRussisch.Text <> String.Empty AndAlso cmbRussisch_interviewer.SelectedIndex = 0 Then
-            fremdsprachen.Add("R" & CStr(Me.txtRussisch.Text.Substring(0, 1) & vbCrLf))
-        End If
-
-        If cmbNiederlaendisch_interviewer.SelectedIndex <> 0 Then
-            fremdsprachen.Add("N" & CInt(Me.cmbNiederlaendisch_interviewer.SelectedIndex).ToString & vbCrLf)
-            'Else
-            '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf txtNiederlaendisch.Text <> String.Empty AndAlso cmbNiederlaendisch_interviewer.SelectedIndex = 0 Then
-            fremdsprachen.Add("N" & CStr(Me.txtNiederlaendisch.Text.Substring(0, 1) & vbCrLf))
-        End If
-
-        If cmbDeutsch_interviewer.SelectedIndex <> 0 Then
-            fremdsprachen.Add("D" & CInt(Me.cmbDeutsch_interviewer.SelectedIndex).ToString & vbCrLf)
-            'Else
-            '   fremdsprachen.Add("E0" & vbCrLf)
-        ElseIf txtDeutsch.Text <> String.Empty AndAlso cmbDeutsch_interviewer.SelectedIndex = 0 Then
-            fremdsprachen.Add("D" & CStr(Me.txtDeutsch.Text.Substring(0, 1) & vbCrLf))
-        End If
-
-        sprachenliste = String.Join(String.Empty, fremdsprachen)
-    End Sub
-
 
     Private Sub Stelle_vorschlagen_laut_interviewerTextBox_DoubleClick(sender As Object, e As EventArgs) Handles txtFuerstelle.DoubleClick
         frmOA.vorschlagenfuerstelle_interviewer_bool = True

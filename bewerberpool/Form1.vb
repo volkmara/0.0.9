@@ -94,10 +94,17 @@ Public Class frmMain
             End If
         Next
 
+        ' Hy, Adler
         If loginflag = 8 OrElse loginflag = 9 Then
             BewerbervollstaendigloeschenRadMenuItem2.Visibility = ElementVisibility.Visible
         Else
             BewerbervollstaendigloeschenRadMenuItem2.Visibility = ElementVisibility.Collapsed
+        End If
+
+        ' Adler
+        If loginflag = 8 Then
+            DatenladenRadMenuItem2.Visibility = ElementVisibility.Visible
+            FilterzurückRadButton.Visible = True
         End If
 
         'Formatierung ColumnChooser
@@ -284,8 +291,6 @@ Public Class frmMain
             bewspeichern.topbewerberchecked = False
         End If
 
-        'Call frmMain.EDVdaten()
-
         frmMain.Validate()
         frmMain.BewBindingSource.EndEdit()
         frmMain.Bew_bewerberdatenBindingSource.EndEdit()
@@ -348,10 +353,10 @@ Public Class frmMain
         ' Wenn Status = alt, Fenster für Anmerkung öffnen, Abspeichern zuerst, sonst öffnet sich das immer
         Select Case frmMain.cmbStatus.SelectedIndex
             Case 2 'alt
-                frmNeueAnmerkunganlegen.alt_bool = True
-                Using frm = New frmNeueAnmerkunganlegen(frmMain)
-                    Dim result = frm.ShowDialog
-                End Using
+                '    frmNeueAnmerkunganlegen.alt_bool = True
+                '    Using frm = New frmNeueAnmerkunganlegen(frmMain)
+                '        Dim result = frm.ShowDialog
+                '    End Using
                 Call frmMain.mailbeialt()
             Case 4 ' eingestellt
                 frmNeueAnmerkunganlegen.eingestellt_bool = True
@@ -388,7 +393,7 @@ Public Class frmMain
             Exit Sub
         Else
             Dim homepage = HeyduckDataSet.tt_news.Where(Function(x) CInt(x.tx_ttnewserweiterung_referenznummer) = CInt(letzteid) And x.deleted = 0)
-            If cmbStatus.Text <> CStr("aktuell") OrElse cmbStatus.Text <> CStr("vorläufig") Then
+            If cmbStatus.Text <> "aktuell" Then
                 Dim result As DialogResult = MessageBox.Show("Soll der ausgewählte Bewerber/die ausgewählte Bewerberin auf der Homepage deaktiviert werden", "Bewerber/in deaktivieren", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
                 If result = DialogResult.Cancel Then
                     Exit Sub

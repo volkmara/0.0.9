@@ -78,8 +78,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;p"& _ 
-            "ersistsecurityinfo=True;database=benutzerverwaltung;")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Server=127.0.0.1;user id=root;password=heyduck1!;persistsecurityinfo=True;databas"& _ 
+            "e=benutzerverwaltung;")>  _
         Public ReadOnly Property benutzerverwaltungConnectionString() As String
             Get
                 Return CType(Me("benutzerverwaltungConnectionString"),String)

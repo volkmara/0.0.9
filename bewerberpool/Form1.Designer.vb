@@ -17809,6 +17809,7 @@ Partial Class frmMain
         Me.SpeichernNeuladenRadMenuItem.Text = "   Speichern, neu laden"
         Me.SpeichernNeuladenRadMenuItem.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         Me.SpeichernNeuladenRadMenuItem.UseCompatibleTextRendering = False
+        Me.SpeichernNeuladenRadMenuItem.Visibility = Telerik.WinControls.ElementVisibility.Collapsed
         '
         'BewerberneuRadButton
         '
@@ -17829,7 +17830,8 @@ Partial Class frmMain
         Me.DatenladenRadDropDownButton.Name = "DatenladenRadDropDownButton"
         Me.DatenladenRadDropDownButton.Size = New System.Drawing.Size(163, 37)
         Me.DatenladenRadDropDownButton.TabIndex = 68
-        Me.DatenladenRadDropDownButton.Text = "<html><strong><span style=""font-size: 9pt"">Laden</span></strong></html>"
+        Me.DatenladenRadDropDownButton.Text = "<html><strong><span style=""font-size: 9pt"">      Alles neu laden</span></strong><" &
+    "/html>"
         '
         'DatenladenRadMenuItem2
         '
@@ -17846,7 +17848,7 @@ Partial Class frmMain
         Me.DatenladenfilterRadMenuItem2.Image = CType(resources.GetObject("DatenladenfilterRadMenuItem2.Image"), System.Drawing.Image)
         Me.DatenladenfilterRadMenuItem2.ImageAlignment = System.Drawing.ContentAlignment.MiddleLeft
         Me.DatenladenfilterRadMenuItem2.Name = "DatenladenfilterRadMenuItem2"
-        Me.DatenladenfilterRadMenuItem2.Text = "Daten laden, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Filter zurücksetzen"
+        Me.DatenladenfilterRadMenuItem2.Text = "<html><strong>   Alle Daten neu laden</strong></html>"
         '
         'BewerberRadMenuItem1
         '
@@ -17896,11 +17898,12 @@ Partial Class frmMain
         '
         Me.FilterzurückRadButton.ForeColor = System.Drawing.Color.Red
         Me.FilterzurückRadButton.Image = CType(resources.GetObject("FilterzurückRadButton.Image"), System.Drawing.Image)
-        Me.FilterzurückRadButton.Location = New System.Drawing.Point(517, 28)
+        Me.FilterzurückRadButton.Location = New System.Drawing.Point(1538, 28)
         Me.FilterzurückRadButton.Name = "FilterzurückRadButton"
         Me.FilterzurückRadButton.Size = New System.Drawing.Size(163, 37)
         Me.FilterzurückRadButton.TabIndex = 70
         Me.FilterzurückRadButton.Text = "<html><strong>Filter<br />zurücksetzen</strong></html>"
+        Me.FilterzurückRadButton.Visible = False
         '
         'ToolTip2
         '
@@ -17914,7 +17917,7 @@ Partial Class frmMain
         Me.DruckenRadDropDownButton.ForeColor = System.Drawing.Color.Red
         Me.DruckenRadDropDownButton.Image = CType(resources.GetObject("DruckenRadDropDownButton.Image"), System.Drawing.Image)
         Me.DruckenRadDropDownButton.Items.AddRange(New Telerik.WinControls.RadItem() {Me.DruckenRadMenuItem2, Me.DruckenRadMenuItem3, Me.DruckenRadMenuItem4})
-        Me.DruckenRadDropDownButton.Location = New System.Drawing.Point(855, 27)
+        Me.DruckenRadDropDownButton.Location = New System.Drawing.Point(687, 27)
         Me.DruckenRadDropDownButton.Name = "DruckenRadDropDownButton"
         Me.DruckenRadDropDownButton.Size = New System.Drawing.Size(163, 37)
         Me.DruckenRadDropDownButton.TabIndex = 75
@@ -17950,7 +17953,7 @@ Partial Class frmMain
         Me.NeueAnmerkungRadButton.BackColor = System.Drawing.Color.Violet
         Me.NeueAnmerkungRadButton.ForeColor = System.Drawing.Color.Black
         Me.NeueAnmerkungRadButton.Image = CType(resources.GetObject("NeueAnmerkungRadButton.Image"), System.Drawing.Image)
-        Me.NeueAnmerkungRadButton.Location = New System.Drawing.Point(1024, 28)
+        Me.NeueAnmerkungRadButton.Location = New System.Drawing.Point(857, 28)
         Me.NeueAnmerkungRadButton.Name = "NeueAnmerkungRadButton"
         Me.NeueAnmerkungRadButton.Size = New System.Drawing.Size(163, 37)
         Me.NeueAnmerkungRadButton.TabIndex = 76
@@ -18011,7 +18014,7 @@ Partial Class frmMain
         Me.FragebogenRadDropDownButton.ForeColor = System.Drawing.Color.Black
         Me.FragebogenRadDropDownButton.Image = CType(resources.GetObject("FragebogenRadDropDownButton.Image"), System.Drawing.Image)
         Me.FragebogenRadDropDownButton.Items.AddRange(New Telerik.WinControls.RadItem() {Me.Interviewerbogen, Me.Kurzfragebogen, Me.TelefoninterviewRadMenuItem})
-        Me.FragebogenRadDropDownButton.Location = New System.Drawing.Point(1203, 28)
+        Me.FragebogenRadDropDownButton.Location = New System.Drawing.Point(1026, 28)
         Me.FragebogenRadDropDownButton.Name = "FragebogenRadDropDownButton"
         Me.FragebogenRadDropDownButton.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.FragebogenRadDropDownButton.Size = New System.Drawing.Size(163, 37)
@@ -18064,7 +18067,7 @@ Partial Class frmMain
         Me.Tabellebtn.ForeColor = System.Drawing.Color.Red
         Me.Tabellebtn.Image = CType(resources.GetObject("Tabellebtn.Image"), System.Drawing.Image)
         Me.Tabellebtn.Items.AddRange(New Telerik.WinControls.RadItem() {Me.AufklappenRadMenuItem1, Me.EinklappenRadMenuItem1})
-        Me.Tabellebtn.Location = New System.Drawing.Point(1375, 27)
+        Me.Tabellebtn.Location = New System.Drawing.Point(1194, 27)
         Me.Tabellebtn.Name = "Tabellebtn"
         Me.Tabellebtn.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.Tabellebtn.Size = New System.Drawing.Size(163, 37)
@@ -18159,7 +18162,7 @@ Partial Class frmMain
         Me.btnRundschreiben.ForeColor = System.Drawing.Color.Red
         Me.btnRundschreiben.Image = CType(resources.GetObject("btnRundschreiben.Image"), System.Drawing.Image)
         Me.btnRundschreiben.Items.AddRange(New Telerik.WinControls.RadItem() {Me.Top10auswaehlen, Me.RadMenuSeparatorItem1, Me.Top10anzeigen})
-        Me.btnRundschreiben.Location = New System.Drawing.Point(686, 28)
+        Me.btnRundschreiben.Location = New System.Drawing.Point(518, 28)
         Me.btnRundschreiben.Name = "btnRundschreiben"
         Me.btnRundschreiben.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnRundschreiben.Size = New System.Drawing.Size(163, 37)
@@ -18219,7 +18222,7 @@ Partial Class frmMain
         '
         Me.btnDatenBewerbertooleinlesen.ForeColor = System.Drawing.Color.Red
         Me.btnDatenBewerbertooleinlesen.Image = CType(resources.GetObject("btnDatenBewerbertooleinlesen.Image"), System.Drawing.Image)
-        Me.btnDatenBewerbertooleinlesen.Location = New System.Drawing.Point(1550, 27)
+        Me.btnDatenBewerbertooleinlesen.Location = New System.Drawing.Point(1364, 27)
         Me.btnDatenBewerbertooleinlesen.Name = "btnDatenBewerbertooleinlesen"
         Me.btnDatenBewerbertooleinlesen.Size = New System.Drawing.Size(163, 37)
         Me.btnDatenBewerbertooleinlesen.TabIndex = 71
@@ -18414,6 +18417,7 @@ Partial Class frmMain
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.Tan
         Me.ClientSize = New System.Drawing.Size(1736, 1044)
+        Me.Controls.Add(Me.FilterzurückRadButton)
         Me.Controls.Add(Me.btnDatenBewerbertooleinlesen)
         Me.Controls.Add(Me.btnRundschreiben)
         Me.Controls.Add(Me.Panel41)
@@ -18424,7 +18428,6 @@ Partial Class frmMain
         Me.Controls.Add(Me.Panel40)
         Me.Controls.Add(Me.NeueAnmerkungRadButton)
         Me.Controls.Add(Me.DruckenRadDropDownButton)
-        Me.Controls.Add(Me.FilterzurückRadButton)
         Me.Controls.Add(Me.RadMenu1)
         Me.Controls.Add(Me.DatenladenRadDropDownButton)
         Me.Controls.Add(Me.BewerberneuRadButton)
