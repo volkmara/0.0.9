@@ -7,6 +7,8 @@ Imports Telerik.WinForms.Documents.FormatProviders.Txt
 Imports Telerik.WinForms.RichTextEditor
 Imports Telerik.WinForms.Documents.RichTextBoxCommands
 Imports bewerberpool.BewerberDataSet
+Imports Telerik.WinControls.UI
+
 Public Class frmInterviewer
 
     Public pflichtfeldliste As String = String.Empty
@@ -21,6 +23,7 @@ Public Class frmInterviewer
     Private _frmKurzfragebogen As frmKurzfragebogen
 
     Public sprachenliste As String = String.Empty
+    Public edvliste As String = String.Empty
 
     Public tabpagecount As Integer = CInt(0)
 
@@ -45,6 +48,8 @@ Public Class frmInterviewer
     End Sub
 
     Private Sub frmInterviewer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: Diese Codezeile lädt Daten in die Tabelle "BewerberDataSet.bewerber_edv". Sie können sie bei Bedarf verschieben oder entfernen.
+        Me.Bewerber_edvTableAdapter.Fill(Me.BewerberDataSet.bewerber_edv)
         ' Die Bindingsources dieser Form werden umgestöpselt auf die Bindingsources von frmMain
         Me.BewBindingSource.DataSource = frmMain.BewBindingSource.Current ' muss bewbindingsource.current sein, damit der richtige Bewerber in den Interviewerfragebogen geladen wird
         Me.Bew_bewerberdatenBindingSource.DataSource = frmMain.Bew_bewerberdatenBindingSource
@@ -52,6 +57,7 @@ Public Class frmInterviewer
         Me.Bewerber_berufserfahrungBindingSource.DataSource = frmMain.Bewerber_berufserfahrungBindingSource
         Me.Bewerber_sprachenBindingSource.DataSource = frmMain.Bewerber_sprachenBindingSource
         Me.UlasBindingSource.DataSource = frmMain.UlasBindingSource
+        Me.Bewerber_edvBindingSource.DataSource = frmMain.Bewerber_edvBindingSource
         Call Timerreload.Timerstop() ' Timer für DB-Reload stoppen
     End Sub
 
@@ -104,6 +110,7 @@ Public Class frmInterviewer
         Call export()
         Call telefoneintrag()
         Call Sprachendaten() ' trägt Sprachen im Feld "Sprachkenntnisse" im Reiter "Bewerber/in" ein
+        Call Edvdaten() ' EDVkenntnisse für Feld EDVkenntnisse im Reiter Bewerber/in
 
         ' Validierung vorm Speichern
         If Not frmMain.StandComboBox.Text = CStr("fertig") AndAlso TabControl1.SelectedTab IsNot TabPage7 Then
@@ -153,6 +160,7 @@ Public Class frmInterviewer
             interviewer.bewerberbeschreibung = CStr(exportfilertf)
             interviewer.bewerberbeschreibung_text = CStr(exportfiletxt)
             interviewer.sprachkenntnisse = CStr(sprachenliste)
+            interviewer.edvkenntnisse = edvliste
 
             ' Me.Validate()
 
@@ -167,6 +175,7 @@ Public Class frmInterviewer
             Me.Bewerber_ausbildungBindingSource.EndEdit()
             Me.Bewerber_berufserfahrungBindingSource.EndEdit()
             Me.Bewerber_sprachenBindingSource.EndEdit()
+            Me.Bewerber_edvBindingSource.EndEdit()
             Me.UlasBindingSource.EndEdit()
 
             frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
@@ -175,6 +184,7 @@ Public Class frmInterviewer
             frmMain.Bewerber_ausbildungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_ausbildung)
             frmMain.Bewerber_berufserfahrungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_berufserfahrung)
             frmMain.Bewerber_sprachenTableAdapter.Update(frmMain.BewerberDataSet.bewerber_sprachen)
+            frmMain.Bewerber_edvTableAdapter.Update(frmMain.BewerberDataSet.bewerber_edv)
 
             Call gespeichert()
 
@@ -186,6 +196,7 @@ Public Class frmInterviewer
             Exit Sub
         End If
     End Sub
+#End Region
 
     Private Sub Sprachendaten()
 
@@ -268,11 +279,90 @@ Public Class frmInterviewer
         sprachenliste = String.Join(vbNewLine, sprachen) ' Sprachenliste ist Public
     End Sub
 
+    Private Sub Edvdaten()
+
+        ' Dim bewerberedv = DirectCast(DirectCast(Me.Bewerber_edvBindingSource.Current, DataRowView).Row, bewerber_edvRow)
+        'Dim bewedv = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        Dim edv As New List(Of String)()
+
+        If cmbWord.SelectedIndex > 0 Then
+            edv.Add("Word")
+        End If
+
+        If cmbExcel.SelectedIndex > 0 Then
+            edv.Add("Excel")
+        End If
+
+        If cmbPowerpoint.SelectedIndex > 0 Then
+            edv.Add("Powerpoint")
+        End If
+
+        If cmbOutlook.SelectedIndex > 0 Then
+            edv.Add("Outlook")
+        End If
+
+        If cmbAccess.SelectedIndex > 0 Then
+            edv.Add("Access")
+        End If
+
+        If cmbProject.SelectedIndex > 0 Then
+            edv.Add("Project")
+        End If
+
+        If cmbThunderbird.SelectedIndex > 0 Then
+            edv.Add("Thunderbird")
+        End If
+
+        If cmbLotus_notes.SelectedIndex > 0 Then
+            edv.Add("Lotus Notes")
+        End If
+
+        If cmbSAP.SelectedIndex > 0 Then
+            edv.Add("SAP")
+        End If
+
+        If cmbDatev.SelectedIndex > 0 Then
+            edv.Add("Datev")
+        End If
+
+        If cmbDatevpro.SelectedIndex > 0 Then
+            edv.Add("Datevpro")
+        End If
+
+        If cmbMicrosoft_dynamics.SelectedIndex > 0 Then
+            edv.Add("Microsoft Dynamics")
+        End If
+
+        If cmbMicrosoft_navision.SelectedIndex > 0 Then
+            edv.Add("Microsoft Navision")
+        End If
+
+        If cmbAS400.SelectedIndex > 0 Then
+            edv.Add("AS 400")
+        End If
+
+        If cmbKhksage.SelectedIndex > 0 Then
+            edv.Add("KHK Sage")
+        End If
+
+        If cmbLexware.SelectedIndex > 0 Then
+            edv.Add("Lexware")
+        End If
+
+        If cmbAmadeus.SelectedIndex > 0 Then
+            edv.Add("Amadeus")
+        End If
+
+        edvliste = String.Join(vbNewLine, edv)
+    End Sub
+
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.BewBindingSource.RemoveFilter()
         Me.Close()
     End Sub
-#End Region
+
+
+
     ' ========================================================================= Pflichtfelder =============================================================================
     Private Sub pflichtfelder()
 
@@ -862,7 +952,7 @@ Public Class frmInterviewer
         End Using
     End Sub
 
-    Private Sub txtZa_vm_DoubleClick(sender As Object, e As EventArgs) Handles txtZa_vm.DoubleClick, txtArbeitsort.DoubleClick, txtFuehrerschein.DoubleClick, txtPkw_oepnv.DoubleClick, txtStudium_abschluss.DoubleClick, txtUlas.DoubleClick
+    Private Sub txtZa_vm_DoubleClick(sender As Object, e As EventArgs) Handles txtZa_vm.DoubleClick, txtArbeitsort.DoubleClick, txtFuehrerschein.DoubleClick, txtPkw_oepnv.DoubleClick, txtStudium_abschluss.DoubleClick, txtUlas.DoubleClick, txtSAPModule.DoubleClick
         Select Case True
             Case sender Is txtZa_vm
                 frmListboxen.zavm_bool = True
@@ -892,6 +982,10 @@ Public Class frmInterviewer
                 If frmUlaseintragen.ulas_wert <> String.Empty Then
                     txtUlas.Text = CStr(frmUlaseintragen.ulas_wert)
                 End If
+            Case sender Is txtSAPModule
+                frmListboxen.sapmodule_bool = True
+                Call listboxenaufrufen()
+                txtSAPModule.Text = frmListboxen.sapmodule
         End Select
     End Sub
     ' ============================================================================= Listboxen aufrufen Ende =====================================================================
@@ -919,6 +1013,24 @@ Public Class frmInterviewer
 
     Private Sub Comboboxfill()
         For Each cmb As ComboBox In Me.GroupBox8.Controls.OfType(Of ComboBox)()
+            cmb.DropDownStyle = ComboBoxStyle.DropDownList
+            cmb.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+            cmb.SelectedIndex = 0
+        Next
+
+        For Each cmb As ComboBox In Me.GroupBox13.Controls.OfType(Of ComboBox)()
+            cmb.DropDownStyle = ComboBoxStyle.DropDownList
+            cmb.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+            cmb.SelectedIndex = 0
+        Next
+
+        For Each cmb As ComboBox In Me.GroupBox14.Controls.OfType(Of ComboBox)()
+            cmb.DropDownStyle = ComboBoxStyle.DropDownList
+            cmb.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+            cmb.SelectedIndex = 0
+        Next
+
+        For Each cmb As ComboBox In Me.GroupBox15.Controls.OfType(Of ComboBox)()
             cmb.DropDownStyle = ComboBoxStyle.DropDownList
             cmb.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
             cmb.SelectedIndex = 0

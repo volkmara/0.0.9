@@ -47,6 +47,7 @@ Partial Class frmKurzfragebogen
         Dim GeburtstagLabel As System.Windows.Forms.Label
         Dim StaatsangehörigkeitLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmKurzfragebogen))
+        Dim StandLabel As System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cmbStaatsangehörigkeit = New System.Windows.Forms.ComboBox()
         Me.txtGeburtstag = New System.Windows.Forms.TextBox()
@@ -90,6 +91,8 @@ Partial Class frmKurzfragebogen
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.Bew_bewerberdatenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
+        Me.cmbStand = New System.Windows.Forms.ComboBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         AnredeLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
         NameLabel = New System.Windows.Forms.Label()
@@ -113,6 +116,7 @@ Partial Class frmKurzfragebogen
         RundschreibenLabel = New System.Windows.Forms.Label()
         GeburtstagLabel = New System.Windows.Forms.Label()
         StaatsangehörigkeitLabel = New System.Windows.Forms.Label()
+        StandLabel = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,6 +127,7 @@ Partial Class frmKurzfragebogen
         CType(Me.RTEPersönlichkeit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'AnredeLabel
@@ -501,6 +506,7 @@ Partial Class frmKurzfragebogen
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox2.Controls.Add(Me.GroupBox4)
         Me.GroupBox2.Controls.Add(Me.GroupBox3)
         Me.GroupBox2.Controls.Add(Me.btnNeuerBewerber)
         Me.GroupBox2.Controls.Add(Label3)
@@ -524,7 +530,7 @@ Partial Class frmKurzfragebogen
         Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox2.Location = New System.Drawing.Point(8, 179)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1099, 445)
+        Me.GroupBox2.Size = New System.Drawing.Size(1102, 445)
         Me.GroupBox2.TabIndex = 12
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Berufsdaten"
@@ -791,13 +797,44 @@ Partial Class frmKurzfragebogen
         Me.TableAdapterManager.ulasTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'StandLabel
+        '
+        StandLabel.AutoSize = True
+        StandLabel.Location = New System.Drawing.Point(14, 39)
+        StandLabel.Name = "StandLabel"
+        StandLabel.Size = New System.Drawing.Size(83, 32)
+        StandLabel.TabIndex = 21
+        StandLabel.Text = "Bewerber " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "für die 10?:"
+        '
+        'cmbStand
+        '
+        Me.cmbStand.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "stand", True))
+        Me.cmbStand.FormattingEnabled = True
+        Me.cmbStand.Items.AddRange(New Object() {"", "10"})
+        Me.cmbStand.Location = New System.Drawing.Point(136, 39)
+        Me.cmbStand.Name = "cmbStand"
+        Me.cmbStand.Size = New System.Drawing.Size(92, 24)
+        Me.cmbStand.TabIndex = 22
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.BackColor = System.Drawing.Color.Yellow
+        Me.GroupBox4.Controls.Add(Me.cmbStand)
+        Me.GroupBox4.Controls.Add(StandLabel)
+        Me.GroupBox4.Location = New System.Drawing.Point(327, 329)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(237, 90)
+        Me.GroupBox4.TabIndex = 23
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "10 ?"
+        '
         'frmKurzfragebogen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(1152, 924)
+        Me.ClientSize = New System.Drawing.Size(1152, 915)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmKurzfragebogen"
@@ -817,6 +854,8 @@ Partial Class frmKurzfragebogen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -863,4 +902,6 @@ Partial Class frmKurzfragebogen
     Friend WithEvents rbtnZAVM As RadioButton
     Friend WithEvents rbtZA As RadioButton
     Friend WithEvents rbtnVM As RadioButton
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents cmbStand As ComboBox
 End Class

@@ -55,8 +55,13 @@ Public Class frmKurzfragebogen
         Call Getbewid()
         bewidneu = CInt(bewid + 1)
         Dim bewspeichern = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
-        bewspeichern.stand = CStr("aktuell")
-        bewspeichern.status = CStr("angelegt")
+        If cmbStand.Text = "10" Then
+            bewspeichern.stand = "10"
+            bewspeichern.status = CStr("fertig")
+        Else
+            bewspeichern.stand = CStr("aktuell")
+            bewspeichern.status = CStr("angelegt")
+        End If
         bewspeichern.erstkontakt = Date.Now
         bewspeichern.refnr = bewidneu
         bewspeichern.Vermittlung = arbeitsart

@@ -249,6 +249,7 @@ Public Class frmMain
 
         Call frmMain.Altersberechnung() ' berechnet das Alter anhand des Geburtstags
         Call frmMain.Sprachendaten() ' trägt Sprachkenntnisse (neu) ein
+        Call frmMain.EDVdaten()
         Dim bewspeichern = DirectCast(DirectCast(frmMain.BewBindingSource.Current, DataRowView).Row, bewRow)
         bewspeichern.geaendert_am = Date.Now.ToString
         bewspeichern.letztbearbeitung_von = CStr(usernameklar)
@@ -713,7 +714,7 @@ Public Class frmMain
 
     ' Interviewerfragebogen nur zugänglich, wenn Stand nicht auf "fertig steht
     Private Sub interviewerbogenanzeigen()
-        If StandComboBox.Text = CStr("fertig") Then
+        If StandComboBox.Text = CStr("fertig") OrElse StandComboBox.Text = "10" Then
             Interviewerbogen.Visibility = ElementVisibility.Collapsed
         Else
             Interviewerbogen.Visibility = ElementVisibility.Visible
@@ -1745,7 +1746,6 @@ Public Class frmMain
         End If
     End Sub
 
-
     ' ========================================================================= Validierungen Auslandsaufenthalt Ende ===================================================
 
     ' Datum Erstkontakt auf zehn Stellen kürzen ohne Uhrzeit, wenn im format dd.mm.yyyy - hh:hh.mm.ss, wenn Telefon und Handy leer, dann kein Eintrag
@@ -1986,125 +1986,83 @@ Public Class frmMain
 #End Region
 
 #Region "EDV-Kenntnisse bei Änderungen im Tab EDV in Feld EDV-Kenntnisse übertragen"
-    'Private Sub EDVdaten()
-    '    'Dim bew_edv = DirectCast(DirectCast(Me.Bewerber_edvBindingSource.Current, DataRowView).Row, bewerber_edvRow)
-    '    Dim bew_edv = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
-    '    Dim edvkenntnisseealt As String = bew_edv.edvkenntnisse
-    '    Dim edvkenntnisse As String = String.Empty
-    '    Dim edv As New List(Of String)()
+    Private Sub EDVdaten()
+        'Dim bew_edv = DirectCast(DirectCast(Me.Bewerber_edvBindingSource.Current, DataRowView).Row, bewerber_edvRow)
+        'Dim bew_edv = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        'Dim edvkenntnisseealt As String = bew_edv.edvkenntnisse
+        'Dim edvkenntnisse As String = String.Empty
+        Dim edv As New List(Of String)()
 
-    '    If WordComboBox.SelectedIndex > 0 Then
-    '        edv.Add("Word")
-    '    End If
+        If WordComboBox.Text <> String.Empty Then
+            edv.Add("Word")
+        End If
 
-    '    If ExcelComboBox.SelectedIndex > 0 Then
-    '        edv.Add("Excel")
-    '    End If
+        If ExcelComboBox.Text <> String.Empty Then
+            edv.Add("Excel")
+        End If
 
-    '    If PowerpointComboBox.SelectedIndex > 0 Then
-    '        edv.Add("PowerPoint")
-    '    End If
+        If PowerpointComboBox.Text <> String.Empty Then
+            edv.Add("PowerPoint")
+        End If
 
-    '    If OutlookComboBox.SelectedIndex > 0 Then
-    '        edv.Add("Outlook")
-    '    End If
+        If OutlookComboBox.Text <> String.Empty Then
+            edv.Add("Outlook")
+        End If
 
-    '    If AccessComboBox.SelectedIndex > 0 Then
-    '        edv.Add("Access")
-    '    End If
+        If AccessComboBox.Text <> String.Empty Then
+            edv.Add("Access")
+        End If
 
-    '    If ProjectComboBox.SelectedIndex > 0 Then
-    '        edv.Add("Project")
-    '    End If
+        If ProjectComboBox.Text <> String.Empty Then
+            edv.Add("Project")
+        End If
 
-    '    If ThunderbirdComboBox.SelectedIndex > 0 Then
-    '        edv.Add("Thunderbird")
-    '    End If
+        If ThunderbirdComboBox.Text <> String.Empty Then
+            edv.Add("Thunderbird")
+        End If
 
-    '    If Lotus_notesComboBox.SelectedIndex > 0 Then
-    '        edv.Add("Lotus Notes")
-    '    End If
+        If Lotus_notesComboBox.Text <> String.Empty Then
+            edv.Add("Lotus Notes")
+        End If
 
-    '    'If CInt(bew_edv.word) <> 0 Then
-    '    '    edv.Add("Word")
-    '    'ElseIf CInt(bew_edv.word) = 0 Then
-    '    'End If
+        If SapComboBox.Text <> String.Empty Then
+            edv.Add("SAP")
+        End If
 
-    '    'If CInt(bew_edv.excel) <> 0 Then
-    '    '    edv.Add("Excel")
-    '    'End If
+        If DatevComboBox.Text <> String.Empty Then
+            edv.Add("Datev")
+        End If
 
-    '    'If Not bew_edv.IsexcelNull AndAlso CInt(bew_edv.edv_bpool) <> 0 Then
-    '    '    edv.Add("Excel")
-    '    'End If
+        If DatevproComboBox.Text <> String.Empty Then
+            edv.Add("Datevpro")
+        End If
 
-    '    'If CInt(bew_edv.powerpoint) <> 0 Then
-    '    '    edv.Add("PowerPoint")
-    '    'End If
+        If As400ComboBox.Text <> String.Empty Then
+            edv.Add("AS 400")
+        End If
 
-    '    'If CInt(bew_edv.outlook) <> 0 Then
-    '    '    edv.Add("Outlook")
-    '    'End If
+        If Microsoft_dynamicsComboBox.Text <> String.Empty Then
+            edv.Add("Microsoft Dynamics")
+        End If
 
-    '    'If CInt(bew_edv.access) <> 0 Then
-    '    '    edv.Add("Outlook")
-    '    'End If
+        If Microsoft_navisionComboBox.Text <> String.Empty Then
+            edv.Add("Microsoft Navision")
+        End If
 
-    '    'If CInt(bew_edv.project) <> 0 Then
-    '    '    edv.Add("Project")
-    '    'End If
+        If KhksageComboBox.Text <> String.Empty Then
+            edv.Add("KHK Sage")
+        End If
 
-    '    'If CInt(bew_edv.thunderbird) <> 0 Then
-    '    '    edv.Add("Thunderbird")
-    '    'End If
+        If LexwareComboBox.Text <> String.Empty Then
+            edv.Add("Lexware")
+        End If
 
-    '    'If CInt(bew_edv.lotus_notes) <> 0 Then
-    '    '    edv.Add("Lotus Notes")
-    '    'End If
+        If OracleComboBox.Text <> String.Empty Then
+            edv.Add("Oracle")
+        End If
 
-    '    'If CInt(bew_edv.sap) <> 0 Then
-    '    '    edv.Add("SAP")
-    '    'End If
-
-    '    'If CInt(bew_edv.datev) <> 0 Then
-    '    '    edv.Add("Datev")
-    '    'End If
-
-    '    'If CInt(bew_edv.datevpro) <> 0 Then
-    '    '    edv.Add("Datevpro")
-    '    'End If
-
-    '    'If CInt(bew_edv.as400) <> 0 Then
-    '    '    edv.Add("AS400")
-    '    'End If
-
-    '    'If CInt(bew_edv.microsoft_dynamics) <> 0 Then
-    '    '    edv.Add("Dynamics")
-    '    'End If
-
-    '    'If CInt(bew_edv.microsoft_navision) <> 0 Then
-    '    '    edv.Add("Navision")
-    '    'End If
-
-    '    'If CInt(bew_edv.khksage) <> 0 Then
-    '    '    edv.Add("KHKSage")
-    '    'End If
-
-    '    'If CInt(bew_edv.lexware) <> 0 Then
-    '    '    edv.Add("Lexware")
-    '    'End If
-
-    '    'If CInt(bew_edv.oracle) <> 0 Then
-    '    '    edv.Add("Oracle")
-    '    'End If
-
-    '    edvkenntnisse = String.Join(", ", edv)
-    '    edvliste = String.Concat(edvkenntnisseealt, edvkenntnisse)
-
-    '    MsgBox(edvkenntnisseealt)
-    '    'MsgBox(edvkenntnisse)
-
-    'End Sub
+        edvliste = String.Join(vbNewLine, edv)
+    End Sub
 
 #End Region
 
@@ -2290,7 +2248,6 @@ Public Class frmMain
         frmListboxen.fibu_kontenrahmen = String.Empty
         frmListboxen.vztz = String.Empty
     End Sub
-
 
     ' Das Event RowUpdated muss bei jeder Änderung im Dataset neu angelegt werden
     'Public Shared Sub BewTableAdapter__RowUpdated(sender As Object, e As MySqlRowUpdatedEventArgs) Handles BewTableAdapter.RowUpdated, Bew_bewerberdatenTableAdapter.RowUpdated, Bew_assistenzTableAdapter.RowUpdated, Bew_bibuhaTableAdapter.RowUpdated, Bew_lugTableAdapter.RowUpdated, Bew_steuerfachangestellteTableAdapter.RowUpdated, Bewerber_ausbildungTableAdapter.RowUpdated, Bewerber_berufserfahrungTableAdapter.RowUpdated, Bewerber_bueroTableAdapter.RowUpdated, Bewerber_controllingTableAdapter.RowUpdated, Bewerber_edvTableAdapter.RowUpdated, Bewerber_einkaufTableAdapter.RowUpdated, Bewerber_fibuTableAdapter.RowUpdated, Bewerber_itTableAdapter.RowUpdated, Bewerber_logistikTableAdapter.RowUpdated, Bewerber_marketing_designTableAdapter.RowUpdated, Bewerber_personalTableAdapter.RowUpdated, Bewerber_raeTableAdapter.RowUpdated, Bewerber_sprachenTableAdapter.RowUpdated, Bewerber_technikTableAdapter.RowUpdated, Bewerber_versandTableAdapter.RowUpdated, Bewerber_vertriebTableAdapter.RowUpdated, GewerblichTableAdapter.RowUpdated, NotizenTableAdapter.RowUpdated, RundschreibenTableAdapter.RowUpdated, UlasTableAdapter.RowUpdated

@@ -94,12 +94,34 @@ Partial Class frmInterviewer
         Dim TaetigkeitenLabel As System.Windows.Forms.Label
         Dim AufmerksamLabel As System.Windows.Forms.Label
         Dim Aufmerksam_andereLabel As System.Windows.Forms.Label
+        Dim WordLabel As System.Windows.Forms.Label
+        Dim ExcelLabel As System.Windows.Forms.Label
+        Dim PowerpointLabel As System.Windows.Forms.Label
+        Dim OutlookLabel As System.Windows.Forms.Label
+        Dim AccessLabel As System.Windows.Forms.Label
+        Dim ProjectLabel As System.Windows.Forms.Label
+        Dim SapLabel As System.Windows.Forms.Label
+        Dim DatevLabel As System.Windows.Forms.Label
+        Dim DatevproLabel As System.Windows.Forms.Label
+        Dim Microsoft_dynamicsLabel As System.Windows.Forms.Label
+        Dim Microsoft_navisionLabel As System.Windows.Forms.Label
+        Dim As400Label As System.Windows.Forms.Label
+        Dim KhksageLabel As System.Windows.Forms.Label
+        Dim LexwareLabel As System.Windows.Forms.Label
+        Dim OracleLabel As System.Windows.Forms.Label
+        Dim Sap_moduleLabel As System.Windows.Forms.Label
+        Dim ThunderbirdLabel As System.Windows.Forms.Label
+        Dim Lotus_notesLabel As System.Windows.Forms.Label
+        Dim Software_sonstigeLabel As System.Windows.Forms.Label
+        Dim AmadeusLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInterviewer))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmbInterviewer = New System.Windows.Forms.ComboBox()
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnUebernehmen = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -202,6 +224,34 @@ Partial Class frmInterviewer
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtEnglisch = New System.Windows.Forms.TextBox()
         Me.cmbMuendlich_schriftlich = New System.Windows.Forms.ComboBox()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.GroupBox13 = New System.Windows.Forms.GroupBox()
+        Me.cmbAmadeus = New System.Windows.Forms.ComboBox()
+        Me.Bewerber_edvBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.txtSoftware_sonstige = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.GroupBox14 = New System.Windows.Forms.GroupBox()
+        Me.cmbLotus_notes = New System.Windows.Forms.ComboBox()
+        Me.cmbThunderbird = New System.Windows.Forms.ComboBox()
+        Me.cmbProject = New System.Windows.Forms.ComboBox()
+        Me.cmbAccess = New System.Windows.Forms.ComboBox()
+        Me.cmbOutlook = New System.Windows.Forms.ComboBox()
+        Me.cmbPowerpoint = New System.Windows.Forms.ComboBox()
+        Me.cmbExcel = New System.Windows.Forms.ComboBox()
+        Me.cmbWord = New System.Windows.Forms.ComboBox()
+        Me.GroupBox15 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtSAPModule = New System.Windows.Forms.TextBox()
+        Me.cmbOracle = New System.Windows.Forms.ComboBox()
+        Me.cmbLexware = New System.Windows.Forms.ComboBox()
+        Me.cmbKhksage = New System.Windows.Forms.ComboBox()
+        Me.cmbAS400 = New System.Windows.Forms.ComboBox()
+        Me.cmbMicrosoft_navision = New System.Windows.Forms.ComboBox()
+        Me.cmbMicrosoft_dynamics = New System.Windows.Forms.ComboBox()
+        Me.cmbDatevpro = New System.Windows.Forms.ComboBox()
+        Me.cmbDatev = New System.Windows.Forms.ComboBox()
+        Me.cmbSAP = New System.Windows.Forms.ComboBox()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
@@ -216,8 +266,6 @@ Partial Class frmInterviewer
         Me.UlasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.Bew_bewerberdatenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter()
         Me.Bewerber_ausbildungTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewerber_ausbildungTableAdapter()
@@ -225,6 +273,7 @@ Partial Class frmInterviewer
         Me.Bewerber_sprachenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewerber_sprachenTableAdapter()
         Me.UlasTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.ulasTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
+        Me.Bewerber_edvTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewerber_edvTableAdapter()
         InterviewerLabel = New System.Windows.Forms.Label()
         EmpfehlungLabel = New System.Windows.Forms.Label()
         BeurteilungLabel = New System.Windows.Forms.Label()
@@ -296,11 +345,33 @@ Partial Class frmInterviewer
         TaetigkeitenLabel = New System.Windows.Forms.Label()
         AufmerksamLabel = New System.Windows.Forms.Label()
         Aufmerksam_andereLabel = New System.Windows.Forms.Label()
+        WordLabel = New System.Windows.Forms.Label()
+        ExcelLabel = New System.Windows.Forms.Label()
+        PowerpointLabel = New System.Windows.Forms.Label()
+        OutlookLabel = New System.Windows.Forms.Label()
+        AccessLabel = New System.Windows.Forms.Label()
+        ProjectLabel = New System.Windows.Forms.Label()
+        SapLabel = New System.Windows.Forms.Label()
+        DatevLabel = New System.Windows.Forms.Label()
+        DatevproLabel = New System.Windows.Forms.Label()
+        Microsoft_dynamicsLabel = New System.Windows.Forms.Label()
+        Microsoft_navisionLabel = New System.Windows.Forms.Label()
+        As400Label = New System.Windows.Forms.Label()
+        KhksageLabel = New System.Windows.Forms.Label()
+        LexwareLabel = New System.Windows.Forms.Label()
+        OracleLabel = New System.Windows.Forms.Label()
+        Sap_moduleLabel = New System.Windows.Forms.Label()
+        ThunderbirdLabel = New System.Windows.Forms.Label()
+        Lotus_notesLabel = New System.Windows.Forms.Label()
+        Software_sonstigeLabel = New System.Windows.Forms.Label()
+        AmadeusLabel = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -326,6 +397,12 @@ Partial Class frmInterviewer
         Me.Panel6.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
         CType(Me.Bewerber_sprachenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage8.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.GroupBox13.SuspendLayout()
+        CType(Me.Bewerber_edvBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox14.SuspendLayout()
+        Me.GroupBox15.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
@@ -336,8 +413,6 @@ Partial Class frmInterviewer
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'InterviewerLabel
@@ -979,6 +1054,186 @@ Partial Class frmInterviewer
         Aufmerksam_andereLabel.TabIndex = 4
         Aufmerksam_andereLabel.Text = "Auf Heyduck aufmerksam " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "geworden " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "durch anderes:"
         '
+        'WordLabel
+        '
+        WordLabel.AutoSize = True
+        WordLabel.Location = New System.Drawing.Point(18, 33)
+        WordLabel.Name = "WordLabel"
+        WordLabel.Size = New System.Drawing.Size(49, 16)
+        WordLabel.TabIndex = 0
+        WordLabel.Text = "Word:"
+        '
+        'ExcelLabel
+        '
+        ExcelLabel.AutoSize = True
+        ExcelLabel.Location = New System.Drawing.Point(246, 33)
+        ExcelLabel.Name = "ExcelLabel"
+        ExcelLabel.Size = New System.Drawing.Size(50, 16)
+        ExcelLabel.TabIndex = 2
+        ExcelLabel.Text = "Excel:"
+        '
+        'PowerpointLabel
+        '
+        PowerpointLabel.AutoSize = True
+        PowerpointLabel.Location = New System.Drawing.Point(491, 33)
+        PowerpointLabel.Name = "PowerpointLabel"
+        PowerpointLabel.Size = New System.Drawing.Size(89, 16)
+        PowerpointLabel.TabIndex = 4
+        PowerpointLabel.Text = "Powerpoint:"
+        '
+        'OutlookLabel
+        '
+        OutlookLabel.AutoSize = True
+        OutlookLabel.Location = New System.Drawing.Point(745, 33)
+        OutlookLabel.Name = "OutlookLabel"
+        OutlookLabel.Size = New System.Drawing.Size(65, 16)
+        OutlookLabel.TabIndex = 6
+        OutlookLabel.Text = "Outlook:"
+        '
+        'AccessLabel
+        '
+        AccessLabel.AutoSize = True
+        AccessLabel.Location = New System.Drawing.Point(18, 90)
+        AccessLabel.Name = "AccessLabel"
+        AccessLabel.Size = New System.Drawing.Size(63, 16)
+        AccessLabel.TabIndex = 8
+        AccessLabel.Text = "Access:"
+        '
+        'ProjectLabel
+        '
+        ProjectLabel.AutoSize = True
+        ProjectLabel.Location = New System.Drawing.Point(246, 90)
+        ProjectLabel.Name = "ProjectLabel"
+        ProjectLabel.Size = New System.Drawing.Size(61, 16)
+        ProjectLabel.TabIndex = 10
+        ProjectLabel.Text = "Project:"
+        '
+        'SapLabel
+        '
+        SapLabel.AutoSize = True
+        SapLabel.Location = New System.Drawing.Point(18, 24)
+        SapLabel.Name = "SapLabel"
+        SapLabel.Size = New System.Drawing.Size(42, 16)
+        SapLabel.TabIndex = 0
+        SapLabel.Text = "SAP:"
+        '
+        'DatevLabel
+        '
+        DatevLabel.AutoSize = True
+        DatevLabel.Location = New System.Drawing.Point(246, 27)
+        DatevLabel.Name = "DatevLabel"
+        DatevLabel.Size = New System.Drawing.Size(53, 16)
+        DatevLabel.TabIndex = 2
+        DatevLabel.Text = "Datev:"
+        '
+        'DatevproLabel
+        '
+        DatevproLabel.AutoSize = True
+        DatevproLabel.Location = New System.Drawing.Point(491, 24)
+        DatevproLabel.Name = "DatevproLabel"
+        DatevproLabel.Size = New System.Drawing.Size(76, 16)
+        DatevproLabel.TabIndex = 4
+        DatevproLabel.Text = "Datevpro:"
+        '
+        'Microsoft_dynamicsLabel
+        '
+        Microsoft_dynamicsLabel.AutoSize = True
+        Microsoft_dynamicsLabel.Location = New System.Drawing.Point(745, 21)
+        Microsoft_dynamicsLabel.Name = "Microsoft_dynamicsLabel"
+        Microsoft_dynamicsLabel.Size = New System.Drawing.Size(80, 32)
+        Microsoft_dynamicsLabel.TabIndex = 6
+        Microsoft_dynamicsLabel.Text = "Microsoft " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Dynamics:"
+        '
+        'Microsoft_navisionLabel
+        '
+        Microsoft_navisionLabel.AutoSize = True
+        Microsoft_navisionLabel.Location = New System.Drawing.Point(18, 81)
+        Microsoft_navisionLabel.Name = "Microsoft_navisionLabel"
+        Microsoft_navisionLabel.Size = New System.Drawing.Size(73, 32)
+        Microsoft_navisionLabel.TabIndex = 8
+        Microsoft_navisionLabel.Text = "Microsoft" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Navision:"
+        '
+        'As400Label
+        '
+        As400Label.AutoSize = True
+        As400Label.Location = New System.Drawing.Point(246, 84)
+        As400Label.Name = "As400Label"
+        As400Label.Size = New System.Drawing.Size(56, 16)
+        As400Label.TabIndex = 10
+        As400Label.Text = "AS400:"
+        '
+        'KhksageLabel
+        '
+        KhksageLabel.AutoSize = True
+        KhksageLabel.Location = New System.Drawing.Point(491, 81)
+        KhksageLabel.Name = "KhksageLabel"
+        KhksageLabel.Size = New System.Drawing.Size(78, 16)
+        KhksageLabel.TabIndex = 12
+        KhksageLabel.Text = "KHKSage:"
+        '
+        'LexwareLabel
+        '
+        LexwareLabel.AutoSize = True
+        LexwareLabel.Location = New System.Drawing.Point(745, 81)
+        LexwareLabel.Name = "LexwareLabel"
+        LexwareLabel.Size = New System.Drawing.Size(69, 16)
+        LexwareLabel.TabIndex = 14
+        LexwareLabel.Text = "Lexware:"
+        '
+        'OracleLabel
+        '
+        OracleLabel.AutoSize = True
+        OracleLabel.Location = New System.Drawing.Point(18, 138)
+        OracleLabel.Name = "OracleLabel"
+        OracleLabel.Size = New System.Drawing.Size(58, 16)
+        OracleLabel.TabIndex = 16
+        OracleLabel.Text = "Oracle:"
+        '
+        'Sap_moduleLabel
+        '
+        Sap_moduleLabel.AutoSize = True
+        Sap_moduleLabel.Location = New System.Drawing.Point(18, 204)
+        Sap_moduleLabel.Name = "Sap_moduleLabel"
+        Sap_moduleLabel.Size = New System.Drawing.Size(97, 16)
+        Sap_moduleLabel.TabIndex = 18
+        Sap_moduleLabel.Text = "SAP Module:"
+        '
+        'ThunderbirdLabel
+        '
+        ThunderbirdLabel.AutoSize = True
+        ThunderbirdLabel.Location = New System.Drawing.Point(485, 90)
+        ThunderbirdLabel.Name = "ThunderbirdLabel"
+        ThunderbirdLabel.Size = New System.Drawing.Size(96, 16)
+        ThunderbirdLabel.TabIndex = 12
+        ThunderbirdLabel.Text = "Thunderbird:"
+        '
+        'Lotus_notesLabel
+        '
+        Lotus_notesLabel.AutoSize = True
+        Lotus_notesLabel.Location = New System.Drawing.Point(745, 90)
+        Lotus_notesLabel.Name = "Lotus_notesLabel"
+        Lotus_notesLabel.Size = New System.Drawing.Size(94, 16)
+        Lotus_notesLabel.TabIndex = 14
+        Lotus_notesLabel.Text = "Lotus Notes:"
+        '
+        'Software_sonstigeLabel
+        '
+        Software_sonstigeLabel.AutoSize = True
+        Software_sonstigeLabel.Location = New System.Drawing.Point(556, 18)
+        Software_sonstigeLabel.Name = "Software_sonstigeLabel"
+        Software_sonstigeLabel.Size = New System.Drawing.Size(175, 32)
+        Software_sonstigeLabel.TabIndex = 0
+        Software_sonstigeLabel.Text = "Sonstige EDV:-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "und Softwarekenntnisse:"
+        '
+        'AmadeusLabel
+        '
+        AmadeusLabel.AutoSize = True
+        AmadeusLabel.Location = New System.Drawing.Point(21, 34)
+        AmadeusLabel.Name = "AmadeusLabel"
+        AmadeusLabel.Size = New System.Drawing.Size(77, 16)
+        AmadeusLabel.TabIndex = 2
+        AmadeusLabel.Text = "Amadeus:"
+        '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -1046,6 +1301,16 @@ Partial Class frmInterviewer
         Me.cmbInterviewer.Size = New System.Drawing.Size(151, 24)
         Me.cmbInterviewer.TabIndex = 4
         '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewerberDataSet
+        '
+        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
+        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'btnClose
         '
         Me.btnClose.BackColor = System.Drawing.Color.Gainsboro
@@ -1093,13 +1358,14 @@ Partial Class frmInterviewer
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Controls.Add(Me.TabPage8)
         Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Controls.Add(Me.TabPage7)
         Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(6, 6)
+        Me.TabControl1.Location = New System.Drawing.Point(6, 8)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1037, 566)
+        Me.TabControl1.Size = New System.Drawing.Size(1016, 650)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -1111,7 +1377,7 @@ Partial Class frmInterviewer
         Me.TabPage1.Location = New System.Drawing.Point(4, 24)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1029, 538)
+        Me.TabPage1.Size = New System.Drawing.Size(1008, 622)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Kontaktdaten"
         '
@@ -1120,9 +1386,9 @@ Partial Class frmInterviewer
         Me.Panel2.Controls.Add(Me.GroupBox3)
         Me.Panel2.Controls.Add(Me.GroupBox1)
         Me.Panel2.Controls.Add(Me.GroupBox2)
-        Me.Panel2.Location = New System.Drawing.Point(0, 6)
+        Me.Panel2.Location = New System.Drawing.Point(2, 6)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1006, 723)
+        Me.Panel2.Size = New System.Drawing.Size(1006, 535)
         Me.Panel2.TabIndex = 0
         '
         'GroupBox3
@@ -1369,7 +1635,7 @@ Partial Class frmInterviewer
         Me.TabPage2.Location = New System.Drawing.Point(4, 24)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1029, 538)
+        Me.TabPage2.Size = New System.Drawing.Size(1008, 622)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Beschäftigung"
         '
@@ -1698,7 +1964,7 @@ Partial Class frmInterviewer
         Me.TabPage3.Controls.Add(Me.Panel4)
         Me.TabPage3.Location = New System.Drawing.Point(4, 24)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1029, 538)
+        Me.TabPage3.Size = New System.Drawing.Size(1008, 622)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Ausbildung/Studium"
         '
@@ -1785,7 +2051,7 @@ Partial Class frmInterviewer
         Me.TabPage4.Controls.Add(Me.Panel5)
         Me.TabPage4.Location = New System.Drawing.Point(4, 24)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(1029, 538)
+        Me.TabPage4.Size = New System.Drawing.Size(1008, 622)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Berufserfahrung"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -1914,11 +2180,10 @@ Partial Class frmInterviewer
         '
         'TabPage5
         '
-        Me.TabPage5.AutoScroll = True
         Me.TabPage5.Controls.Add(Me.Panel6)
         Me.TabPage5.Location = New System.Drawing.Point(4, 24)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(1029, 538)
+        Me.TabPage5.Size = New System.Drawing.Size(1008, 622)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Sprachkenntnisse"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -2197,12 +2462,322 @@ Partial Class frmInterviewer
         Me.cmbMuendlich_schriftlich.Size = New System.Drawing.Size(246, 24)
         Me.cmbMuendlich_schriftlich.TabIndex = 1
         '
+        'TabPage8
+        '
+        Me.TabPage8.Controls.Add(Me.Panel9)
+        Me.TabPage8.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage8.Size = New System.Drawing.Size(1008, 622)
+        Me.TabPage8.TabIndex = 7
+        Me.TabPage8.Text = "EDV"
+        Me.TabPage8.UseVisualStyleBackColor = True
+        '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel9.Controls.Add(Me.GroupBox13)
+        Me.Panel9.Controls.Add(Me.Label10)
+        Me.Panel9.Controls.Add(Me.GroupBox14)
+        Me.Panel9.Controls.Add(Me.GroupBox15)
+        Me.Panel9.Location = New System.Drawing.Point(4, 6)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(998, 608)
+        Me.Panel9.TabIndex = 0
+        '
+        'GroupBox13
+        '
+        Me.GroupBox13.BackColor = System.Drawing.Color.White
+        Me.GroupBox13.Controls.Add(AmadeusLabel)
+        Me.GroupBox13.Controls.Add(Me.cmbAmadeus)
+        Me.GroupBox13.Controls.Add(Software_sonstigeLabel)
+        Me.GroupBox13.Controls.Add(Me.txtSoftware_sonstige)
+        Me.GroupBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox13.ForeColor = System.Drawing.Color.Crimson
+        Me.GroupBox13.Location = New System.Drawing.Point(10, 484)
+        Me.GroupBox13.Name = "GroupBox13"
+        Me.GroupBox13.Size = New System.Drawing.Size(977, 110)
+        Me.GroupBox13.TabIndex = 3
+        Me.GroupBox13.TabStop = False
+        Me.GroupBox13.Text = "Sonstige EDV-Kenntnisse:"
+        '
+        'cmbAmadeus
+        '
+        Me.cmbAmadeus.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "amadeus", True))
+        Me.cmbAmadeus.FormattingEnabled = True
+        Me.cmbAmadeus.Location = New System.Drawing.Point(141, 31)
+        Me.cmbAmadeus.Name = "cmbAmadeus"
+        Me.cmbAmadeus.Size = New System.Drawing.Size(121, 24)
+        Me.cmbAmadeus.TabIndex = 3
+        '
+        'Bewerber_edvBindingSource
+        '
+        Me.Bewerber_edvBindingSource.DataMember = "bewerber_edv"
+        Me.Bewerber_edvBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'txtSoftware_sonstige
+        '
+        Me.txtSoftware_sonstige.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "software_sonstige", True))
+        Me.txtSoftware_sonstige.Location = New System.Drawing.Point(752, 18)
+        Me.txtSoftware_sonstige.Multiline = True
+        Me.txtSoftware_sonstige.Name = "txtSoftware_sonstige"
+        Me.txtSoftware_sonstige.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtSoftware_sonstige.Size = New System.Drawing.Size(190, 72)
+        Me.txtSoftware_sonstige.TabIndex = 1
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Crimson
+        Me.Label10.Location = New System.Drawing.Point(7, 3)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(119, 16)
+        Me.Label10.TabIndex = 2
+        Me.Label10.Text = "EDV-Kenntnisse"
+        '
+        'GroupBox14
+        '
+        Me.GroupBox14.BackColor = System.Drawing.Color.White
+        Me.GroupBox14.Controls.Add(Lotus_notesLabel)
+        Me.GroupBox14.Controls.Add(Me.cmbLotus_notes)
+        Me.GroupBox14.Controls.Add(ThunderbirdLabel)
+        Me.GroupBox14.Controls.Add(Me.cmbThunderbird)
+        Me.GroupBox14.Controls.Add(ProjectLabel)
+        Me.GroupBox14.Controls.Add(Me.cmbProject)
+        Me.GroupBox14.Controls.Add(AccessLabel)
+        Me.GroupBox14.Controls.Add(Me.cmbAccess)
+        Me.GroupBox14.Controls.Add(OutlookLabel)
+        Me.GroupBox14.Controls.Add(Me.cmbOutlook)
+        Me.GroupBox14.Controls.Add(PowerpointLabel)
+        Me.GroupBox14.Controls.Add(Me.cmbPowerpoint)
+        Me.GroupBox14.Controls.Add(ExcelLabel)
+        Me.GroupBox14.Controls.Add(Me.cmbExcel)
+        Me.GroupBox14.Controls.Add(WordLabel)
+        Me.GroupBox14.Controls.Add(Me.cmbWord)
+        Me.GroupBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox14.ForeColor = System.Drawing.Color.Crimson
+        Me.GroupBox14.Location = New System.Drawing.Point(10, 32)
+        Me.GroupBox14.Name = "GroupBox14"
+        Me.GroupBox14.Size = New System.Drawing.Size(977, 135)
+        Me.GroupBox14.TabIndex = 0
+        Me.GroupBox14.TabStop = False
+        Me.GroupBox14.Text = "Officeprogramme"
+        '
+        'cmbLotus_notes
+        '
+        Me.cmbLotus_notes.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "lotus_notes", True))
+        Me.cmbLotus_notes.FormattingEnabled = True
+        Me.cmbLotus_notes.Location = New System.Drawing.Point(849, 87)
+        Me.cmbLotus_notes.Name = "cmbLotus_notes"
+        Me.cmbLotus_notes.Size = New System.Drawing.Size(93, 24)
+        Me.cmbLotus_notes.TabIndex = 15
+        '
+        'cmbThunderbird
+        '
+        Me.cmbThunderbird.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "thunderbird", True))
+        Me.cmbThunderbird.FormattingEnabled = True
+        Me.cmbThunderbird.Location = New System.Drawing.Point(585, 87)
+        Me.cmbThunderbird.Name = "cmbThunderbird"
+        Me.cmbThunderbird.Size = New System.Drawing.Size(97, 24)
+        Me.cmbThunderbird.TabIndex = 13
+        '
+        'cmbProject
+        '
+        Me.cmbProject.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "project", True))
+        Me.cmbProject.FormattingEnabled = True
+        Me.cmbProject.Location = New System.Drawing.Point(321, 87)
+        Me.cmbProject.Name = "cmbProject"
+        Me.cmbProject.Size = New System.Drawing.Size(97, 24)
+        Me.cmbProject.TabIndex = 11
+        '
+        'cmbAccess
+        '
+        Me.cmbAccess.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "access", True))
+        Me.cmbAccess.FormattingEnabled = True
+        Me.cmbAccess.Location = New System.Drawing.Point(97, 87)
+        Me.cmbAccess.Name = "cmbAccess"
+        Me.cmbAccess.Size = New System.Drawing.Size(97, 24)
+        Me.cmbAccess.TabIndex = 9
+        '
+        'cmbOutlook
+        '
+        Me.cmbOutlook.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "outlook", True))
+        Me.cmbOutlook.FormattingEnabled = True
+        Me.cmbOutlook.Location = New System.Drawing.Point(845, 30)
+        Me.cmbOutlook.Name = "cmbOutlook"
+        Me.cmbOutlook.Size = New System.Drawing.Size(97, 24)
+        Me.cmbOutlook.TabIndex = 7
+        '
+        'cmbPowerpoint
+        '
+        Me.cmbPowerpoint.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "powerpoint", True))
+        Me.cmbPowerpoint.FormattingEnabled = True
+        Me.cmbPowerpoint.Location = New System.Drawing.Point(585, 30)
+        Me.cmbPowerpoint.Name = "cmbPowerpoint"
+        Me.cmbPowerpoint.Size = New System.Drawing.Size(97, 24)
+        Me.cmbPowerpoint.TabIndex = 5
+        '
+        'cmbExcel
+        '
+        Me.cmbExcel.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "excel", True))
+        Me.cmbExcel.FormattingEnabled = True
+        Me.cmbExcel.Location = New System.Drawing.Point(321, 33)
+        Me.cmbExcel.Name = "cmbExcel"
+        Me.cmbExcel.Size = New System.Drawing.Size(97, 24)
+        Me.cmbExcel.TabIndex = 3
+        '
+        'cmbWord
+        '
+        Me.cmbWord.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "word", True))
+        Me.cmbWord.FormattingEnabled = True
+        Me.cmbWord.Location = New System.Drawing.Point(97, 30)
+        Me.cmbWord.Name = "cmbWord"
+        Me.cmbWord.Size = New System.Drawing.Size(97, 24)
+        Me.cmbWord.TabIndex = 1
+        '
+        'GroupBox15
+        '
+        Me.GroupBox15.BackColor = System.Drawing.Color.White
+        Me.GroupBox15.Controls.Add(Me.Label8)
+        Me.GroupBox15.Controls.Add(Sap_moduleLabel)
+        Me.GroupBox15.Controls.Add(Me.txtSAPModule)
+        Me.GroupBox15.Controls.Add(OracleLabel)
+        Me.GroupBox15.Controls.Add(Me.cmbOracle)
+        Me.GroupBox15.Controls.Add(LexwareLabel)
+        Me.GroupBox15.Controls.Add(Me.cmbLexware)
+        Me.GroupBox15.Controls.Add(KhksageLabel)
+        Me.GroupBox15.Controls.Add(Me.cmbKhksage)
+        Me.GroupBox15.Controls.Add(As400Label)
+        Me.GroupBox15.Controls.Add(Me.cmbAS400)
+        Me.GroupBox15.Controls.Add(Microsoft_navisionLabel)
+        Me.GroupBox15.Controls.Add(Me.cmbMicrosoft_navision)
+        Me.GroupBox15.Controls.Add(Microsoft_dynamicsLabel)
+        Me.GroupBox15.Controls.Add(Me.cmbMicrosoft_dynamics)
+        Me.GroupBox15.Controls.Add(DatevproLabel)
+        Me.GroupBox15.Controls.Add(Me.cmbDatevpro)
+        Me.GroupBox15.Controls.Add(DatevLabel)
+        Me.GroupBox15.Controls.Add(Me.cmbDatev)
+        Me.GroupBox15.Controls.Add(SapLabel)
+        Me.GroupBox15.Controls.Add(Me.cmbSAP)
+        Me.GroupBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox15.ForeColor = System.Drawing.Color.Crimson
+        Me.GroupBox15.Location = New System.Drawing.Point(10, 173)
+        Me.GroupBox15.Name = "GroupBox15"
+        Me.GroupBox15.Size = New System.Drawing.Size(977, 304)
+        Me.GroupBox15.TabIndex = 1
+        Me.GroupBox15.TabStop = False
+        Me.GroupBox15.Text = "ERP, CRM"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.Label8.Location = New System.Drawing.Point(21, 234)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(91, 45)
+        Me.Label8.TabIndex = 20
+        Me.Label8.Text = "(Doppelklick," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "um Module" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "einzutragen)"
+        '
+        'txtSAPModule
+        '
+        Me.txtSAPModule.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "sap_module", True))
+        Me.txtSAPModule.Location = New System.Drawing.Point(141, 201)
+        Me.txtSAPModule.Multiline = True
+        Me.txtSAPModule.Name = "txtSAPModule"
+        Me.txtSAPModule.ReadOnly = True
+        Me.txtSAPModule.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtSAPModule.Size = New System.Drawing.Size(209, 84)
+        Me.txtSAPModule.TabIndex = 19
+        '
+        'cmbOracle
+        '
+        Me.cmbOracle.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "oracle", True))
+        Me.cmbOracle.FormattingEnabled = True
+        Me.cmbOracle.Location = New System.Drawing.Point(97, 135)
+        Me.cmbOracle.Name = "cmbOracle"
+        Me.cmbOracle.Size = New System.Drawing.Size(100, 24)
+        Me.cmbOracle.TabIndex = 17
+        '
+        'cmbLexware
+        '
+        Me.cmbLexware.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "lexware", True))
+        Me.cmbLexware.FormattingEnabled = True
+        Me.cmbLexware.Location = New System.Drawing.Point(845, 78)
+        Me.cmbLexware.Name = "cmbLexware"
+        Me.cmbLexware.Size = New System.Drawing.Size(97, 24)
+        Me.cmbLexware.TabIndex = 15
+        '
+        'cmbKhksage
+        '
+        Me.cmbKhksage.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "khksage", True))
+        Me.cmbKhksage.FormattingEnabled = True
+        Me.cmbKhksage.Location = New System.Drawing.Point(585, 78)
+        Me.cmbKhksage.Name = "cmbKhksage"
+        Me.cmbKhksage.Size = New System.Drawing.Size(97, 24)
+        Me.cmbKhksage.TabIndex = 13
+        '
+        'cmbAS400
+        '
+        Me.cmbAS400.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "as400", True))
+        Me.cmbAS400.FormattingEnabled = True
+        Me.cmbAS400.Location = New System.Drawing.Point(321, 81)
+        Me.cmbAS400.Name = "cmbAS400"
+        Me.cmbAS400.Size = New System.Drawing.Size(97, 24)
+        Me.cmbAS400.TabIndex = 11
+        '
+        'cmbMicrosoft_navision
+        '
+        Me.cmbMicrosoft_navision.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "microsoft_navision", True))
+        Me.cmbMicrosoft_navision.FormattingEnabled = True
+        Me.cmbMicrosoft_navision.Location = New System.Drawing.Point(97, 81)
+        Me.cmbMicrosoft_navision.Name = "cmbMicrosoft_navision"
+        Me.cmbMicrosoft_navision.Size = New System.Drawing.Size(100, 24)
+        Me.cmbMicrosoft_navision.TabIndex = 9
+        '
+        'cmbMicrosoft_dynamics
+        '
+        Me.cmbMicrosoft_dynamics.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "microsoft_dynamics", True))
+        Me.cmbMicrosoft_dynamics.FormattingEnabled = True
+        Me.cmbMicrosoft_dynamics.Location = New System.Drawing.Point(843, 21)
+        Me.cmbMicrosoft_dynamics.Name = "cmbMicrosoft_dynamics"
+        Me.cmbMicrosoft_dynamics.Size = New System.Drawing.Size(99, 24)
+        Me.cmbMicrosoft_dynamics.TabIndex = 7
+        '
+        'cmbDatevpro
+        '
+        Me.cmbDatevpro.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "datevpro", True))
+        Me.cmbDatevpro.FormattingEnabled = True
+        Me.cmbDatevpro.Location = New System.Drawing.Point(585, 21)
+        Me.cmbDatevpro.Name = "cmbDatevpro"
+        Me.cmbDatevpro.Size = New System.Drawing.Size(97, 24)
+        Me.cmbDatevpro.TabIndex = 5
+        '
+        'cmbDatev
+        '
+        Me.cmbDatev.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "datev", True))
+        Me.cmbDatev.FormattingEnabled = True
+        Me.cmbDatev.Location = New System.Drawing.Point(321, 21)
+        Me.cmbDatev.Name = "cmbDatev"
+        Me.cmbDatev.Size = New System.Drawing.Size(97, 24)
+        Me.cmbDatev.TabIndex = 3
+        '
+        'cmbSAP
+        '
+        Me.cmbSAP.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "sap", True))
+        Me.cmbSAP.FormattingEnabled = True
+        Me.cmbSAP.Location = New System.Drawing.Point(97, 21)
+        Me.cmbSAP.Name = "cmbSAP"
+        Me.cmbSAP.Size = New System.Drawing.Size(100, 24)
+        Me.cmbSAP.TabIndex = 1
+        '
         'TabPage6
         '
         Me.TabPage6.Controls.Add(Me.Panel7)
         Me.TabPage6.Location = New System.Drawing.Point(4, 24)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(1029, 538)
+        Me.TabPage6.Size = New System.Drawing.Size(1008, 622)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Persönlichkeit/Äusseres/Charaktereigenschaften"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -2243,7 +2818,7 @@ Partial Class frmInterviewer
         Me.TabPage7.Controls.Add(Me.Panel8)
         Me.TabPage7.Location = New System.Drawing.Point(4, 24)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(1029, 538)
+        Me.TabPage7.Size = New System.Drawing.Size(1008, 622)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Ulas"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -2322,16 +2897,6 @@ Partial Class frmInterviewer
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'BewBindingSource
-        '
-        Me.BewBindingSource.DataMember = "bew"
-        Me.BewBindingSource.DataSource = Me.BewerberDataSet
-        '
-        'BewerberDataSet
-        '
-        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
-        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'BewTableAdapter
         '
         Me.BewTableAdapter.ClearBeforeFill = True
@@ -2388,6 +2953,10 @@ Partial Class frmInterviewer
         Me.TableAdapterManager.ulasTableAdapter = Me.UlasTableAdapter
         Me.TableAdapterManager.UpdateOrder = bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'Bewerber_edvTableAdapter
+        '
+        Me.Bewerber_edvTableAdapter.ClearBeforeFill = True
+        '
         'frmInterviewer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2406,6 +2975,8 @@ Partial Class frmInterviewer
         Me.SplitContainer1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -2441,6 +3012,16 @@ Partial Class frmInterviewer
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout()
         CType(Me.Bewerber_sprachenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage8.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        Me.GroupBox13.ResumeLayout(False)
+        Me.GroupBox13.PerformLayout()
+        CType(Me.Bewerber_edvBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox14.ResumeLayout(False)
+        Me.GroupBox14.PerformLayout()
+        Me.GroupBox15.ResumeLayout(False)
+        Me.GroupBox15.PerformLayout()
         Me.TabPage6.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
@@ -2452,8 +3033,6 @@ Partial Class frmInterviewer
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2587,4 +3166,33 @@ Partial Class frmInterviewer
     Friend WithEvents cmbAufmerksam As ComboBox
     Friend WithEvents txtAufmerksam_andere As TextBox
     Friend WithEvents txtFuerstelle As TextBox
+    Friend WithEvents TabPage8 As TabPage
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents GroupBox14 As GroupBox
+    Friend WithEvents Bewerber_edvBindingSource As BindingSource
+    Friend WithEvents Bewerber_edvTableAdapter As BewerberDataSetTableAdapters.bewerber_edvTableAdapter
+    Friend WithEvents cmbWord As ComboBox
+    Friend WithEvents cmbExcel As ComboBox
+    Friend WithEvents cmbOutlook As ComboBox
+    Friend WithEvents cmbPowerpoint As ComboBox
+    Friend WithEvents GroupBox15 As GroupBox
+    Friend WithEvents cmbProject As ComboBox
+    Friend WithEvents cmbAccess As ComboBox
+    Friend WithEvents cmbOracle As ComboBox
+    Friend WithEvents cmbLexware As ComboBox
+    Friend WithEvents cmbKhksage As ComboBox
+    Friend WithEvents cmbAS400 As ComboBox
+    Friend WithEvents cmbMicrosoft_navision As ComboBox
+    Friend WithEvents cmbMicrosoft_dynamics As ComboBox
+    Friend WithEvents cmbDatevpro As ComboBox
+    Friend WithEvents cmbDatev As ComboBox
+    Friend WithEvents cmbSAP As ComboBox
+    Friend WithEvents txtSAPModule As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents cmbLotus_notes As ComboBox
+    Friend WithEvents cmbThunderbird As ComboBox
+    Friend WithEvents GroupBox13 As GroupBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents cmbAmadeus As ComboBox
+    Friend WithEvents txtSoftware_sonstige As TextBox
 End Class
