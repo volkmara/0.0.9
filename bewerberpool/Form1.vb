@@ -57,7 +57,6 @@ Public Class frmMain
     'Public Inet As Boolean = allgemein.Inetverbindung(Inet)
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: Diese Codezeile lädt Daten in die Tabelle "BewerberDataSet.rundschreiben". Sie können sie bei Bedarf verschieben oder entfernen.
         Me.RundschreibenTableAdapter.Fill(Me.BewerberDataSet.rundschreiben)
         Call login() ' prüft, ob sich ein valider Benutzer einloggen will
         'Call Internetverbindung()
@@ -103,7 +102,6 @@ Public Class frmMain
 
         ' Adler
         If loginflag = 8 Then
-            DatenladenRadMenuItem2.Visibility = ElementVisibility.Visible
             FilterzurückRadButton.Visible = True
         End If
 
@@ -545,13 +543,13 @@ Public Class frmMain
 
 #Region "=============================================================================Buttons===================================================================================="
     ' Button Speichern, Neu anlegen, Daten laden, Drucken, neue anmerkung, Spalten einblenden Anmerkungen
-    Private Sub SpeichernRadMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernRadMenuItem.Click, SpeichernNeuladenRadMenuItem.Click, BewerberneuRadButton.Click, DatenladenRadMenuItem2.Click, DatenladenfilterRadMenuItem2.Click, FilterzurückRadButton.Click, DruckenRadMenuItem2.Click, DruckenRadMenuItem3.Click, DruckenRadMenuItem4.Click, NeueAnmerkungRadButton.Click, Interviewerbogen.Click, Kurzfragebogen.Click, TelefoninterviewRadMenuItem.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, btnBearbeitungspeichern.Click, Top10auswaehlen.Click, Top10anzeigen.Click, btnDatenBewerbertooleinlesen.Click, btnSpalteneinblendenAnmerkungen.Click
+
+    Private Sub RbtnSpeichern_Click(sender As Object, e As EventArgs) Handles RbtnSpeichern.Click, RbtnDatenladen.Click, BewerberneuRadButton.Click, FilterzurückRadButton.Click, DruckenRadMenuItem2.Click, DruckenRadMenuItem3.Click, DruckenRadMenuItem4.Click, NeueAnmerkungRadButton.Click, btnBearbeitungspeichern.Click, Interviewerbogen.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, Top10auswaehlen.Click, Top10anzeigen.Click, btnDatenBewerbertooleinlesen.Click, btnSpalteneinblendenAnmerkungen.Click
         Select Case True
-            Case sender Is SpeichernRadMenuItem
+            Case sender Is RbtnSpeichern
                 Call DBSpeichern()
 
-            Case sender Is SpeichernNeuladenRadMenuItem
-                Call DBSpeichern()
+            Case sender Is RbtnDatenladen
                 Me.BewGridView1.FilterDescriptors.Clear()
                 Call DBLoad()
                 TabControl1.SelectedTab = TabPage1
@@ -563,23 +561,6 @@ Public Class frmMain
                 Using frm = New frmKurzfragebogen(Me)
                     Dim result = frm.ShowDialog
                 End Using
-
-            Case sender Is DatenladenRadMenuItem2
-                Dim result As DialogResult = MessageBox.Show("Möchten Sie ihre Eingaben vorher speichern?", "Speichern?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                If result = Windows.Forms.DialogResult.No Then
-                    Call DBLoad()
-                ElseIf result = Windows.Forms.DialogResult.Yes Then
-                    Exit Sub
-                End If
-
-            Case sender Is DatenladenfilterRadMenuItem2
-                Dim result As DialogResult = MessageBox.Show("Möchten Sie ihre Eingaben vorher speichern?", "Speichern?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                If result = Windows.Forms.DialogResult.No Then
-                    Me.BewGridView1.FilterDescriptors.Clear()
-                    Call DBLoad()
-                ElseIf result = Windows.Forms.DialogResult.Yes Then
-                    Exit Sub
-                End If
 
             Case sender Is FilterzurückRadButton
                 Dim result As DialogResult = MessageBox.Show("Möchten Sie ihre Eingaben vorher speichern?", "Speichern?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -640,16 +621,6 @@ Public Class frmMain
                         Dim result = frm.ShowDialog(Me)
                     End Using
                 End If
-
-            'Case sender Is Kurzfragebogen
-            '    Using frm = New frmKurzfragebogen(Me)
-            '        Dim result = frm.ShowDialog
-            '    End Using
-
-            'Case sender Is TelefoninterviewRadMenuItem
-            '    Using frm = New frmTelefoninterview(Me)
-            '        Dim result = frm.ShowDialog
-            '    End Using
 
             Case sender Is AufklappenRadMenuItem1
                 BewGridView1.AutoSizeRows = True
@@ -2062,6 +2033,7 @@ Public Class frmMain
         End If
 
         edvliste = String.Join(vbNewLine, edv)
+        'edvliste.Trim(",")
     End Sub
 
 #End Region
@@ -2248,6 +2220,8 @@ Public Class frmMain
         frmListboxen.fibu_kontenrahmen = String.Empty
         frmListboxen.vztz = String.Empty
     End Sub
+
+
 
     ' Das Event RowUpdated muss bei jeder Änderung im Dataset neu angelegt werden
     'Public Shared Sub BewTableAdapter__RowUpdated(sender As Object, e As MySqlRowUpdatedEventArgs) Handles BewTableAdapter.RowUpdated, Bew_bewerberdatenTableAdapter.RowUpdated, Bew_assistenzTableAdapter.RowUpdated, Bew_bibuhaTableAdapter.RowUpdated, Bew_lugTableAdapter.RowUpdated, Bew_steuerfachangestellteTableAdapter.RowUpdated, Bewerber_ausbildungTableAdapter.RowUpdated, Bewerber_berufserfahrungTableAdapter.RowUpdated, Bewerber_bueroTableAdapter.RowUpdated, Bewerber_controllingTableAdapter.RowUpdated, Bewerber_edvTableAdapter.RowUpdated, Bewerber_einkaufTableAdapter.RowUpdated, Bewerber_fibuTableAdapter.RowUpdated, Bewerber_itTableAdapter.RowUpdated, Bewerber_logistikTableAdapter.RowUpdated, Bewerber_marketing_designTableAdapter.RowUpdated, Bewerber_personalTableAdapter.RowUpdated, Bewerber_raeTableAdapter.RowUpdated, Bewerber_sprachenTableAdapter.RowUpdated, Bewerber_technikTableAdapter.RowUpdated, Bewerber_versandTableAdapter.RowUpdated, Bewerber_vertriebTableAdapter.RowUpdated, GewerblichTableAdapter.RowUpdated, NotizenTableAdapter.RowUpdated, RundschreibenTableAdapter.RowUpdated, UlasTableAdapter.RowUpdated

@@ -120,8 +120,6 @@ Partial Class frmInterviewer
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmbInterviewer = New System.Windows.Forms.ComboBox()
-        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnUebernehmen = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -155,6 +153,8 @@ Partial Class frmInterviewer
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.txtFuerstelle = New System.Windows.Forms.TextBox()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtVerfuegbarkeitindividuell = New System.Windows.Forms.TextBox()
         Me.WechselwunschTextBox = New System.Windows.Forms.TextBox()
         Me.Beendigungsgrund_detailsTextBox = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -228,7 +228,6 @@ Partial Class frmInterviewer
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.GroupBox13 = New System.Windows.Forms.GroupBox()
         Me.cmbAmadeus = New System.Windows.Forms.ComboBox()
-        Me.Bewerber_edvBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.txtSoftware_sonstige = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox14 = New System.Windows.Forms.GroupBox()
@@ -266,6 +265,9 @@ Partial Class frmInterviewer
         Me.UlasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
+        Me.Bewerber_edvBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.Bew_bewerberdatenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter()
         Me.Bewerber_ausbildungTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewerber_ausbildungTableAdapter()
@@ -370,8 +372,6 @@ Partial Class frmInterviewer
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -400,7 +400,6 @@ Partial Class frmInterviewer
         Me.TabPage8.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
-        CType(Me.Bewerber_edvBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox14.SuspendLayout()
         Me.GroupBox15.SuspendLayout()
         Me.TabPage6.SuspendLayout()
@@ -413,6 +412,9 @@ Partial Class frmInterviewer
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Bewerber_edvBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'InterviewerLabel
@@ -994,7 +996,7 @@ Partial Class frmInterviewer
         'Beendigungsgrund_detailsLabel
         '
         Beendigungsgrund_detailsLabel.AutoSize = True
-        Beendigungsgrund_detailsLabel.Location = New System.Drawing.Point(6, 84)
+        Beendigungsgrund_detailsLabel.Location = New System.Drawing.Point(6, 128)
         Beendigungsgrund_detailsLabel.Name = "Beendigungsgrund_detailsLabel"
         Beendigungsgrund_detailsLabel.Size = New System.Drawing.Size(104, 48)
         Beendigungsgrund_detailsLabel.TabIndex = 10
@@ -1003,7 +1005,7 @@ Partial Class frmInterviewer
         'WechselwunschLabel
         '
         WechselwunschLabel.AutoSize = True
-        WechselwunschLabel.Location = New System.Drawing.Point(515, 81)
+        WechselwunschLabel.Location = New System.Drawing.Point(515, 125)
         WechselwunschLabel.Name = "WechselwunschLabel"
         WechselwunschLabel.Size = New System.Drawing.Size(122, 16)
         WechselwunschLabel.TabIndex = 11
@@ -1221,9 +1223,10 @@ Partial Class frmInterviewer
         Software_sonstigeLabel.AutoSize = True
         Software_sonstigeLabel.Location = New System.Drawing.Point(556, 18)
         Software_sonstigeLabel.Name = "Software_sonstigeLabel"
-        Software_sonstigeLabel.Size = New System.Drawing.Size(175, 32)
+        Software_sonstigeLabel.Size = New System.Drawing.Size(171, 64)
         Software_sonstigeLabel.TabIndex = 0
-        Software_sonstigeLabel.Text = "Sonstige EDV:-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "und Softwarekenntnisse:"
+        Software_sonstigeLabel.Text = "Sonstige EDV:-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "und Softwarekenntnisse" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(einzelne Einträge bitte" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Kommata tre" &
+    "nnen):"
         '
         'AmadeusLabel
         '
@@ -1249,9 +1252,8 @@ Partial Class frmInterviewer
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.AutoScroll = True
         Me.SplitContainer1.Panel2.Controls.Add(Me.TabControl1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1051, 746)
+        Me.SplitContainer1.Size = New System.Drawing.Size(1056, 746)
         Me.SplitContainer1.SplitterDistance = 146
         Me.SplitContainer1.TabIndex = 0
         '
@@ -1268,7 +1270,7 @@ Partial Class frmInterviewer
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(6, 8)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1025, 144)
+        Me.Panel1.Size = New System.Drawing.Size(1042, 130)
         Me.Panel1.TabIndex = 0
         '
         'Label7
@@ -1300,16 +1302,6 @@ Partial Class frmInterviewer
         Me.cmbInterviewer.Name = "cmbInterviewer"
         Me.cmbInterviewer.Size = New System.Drawing.Size(151, 24)
         Me.cmbInterviewer.TabIndex = 4
-        '
-        'BewBindingSource
-        '
-        Me.BewBindingSource.DataMember = "bew"
-        Me.BewBindingSource.DataSource = Me.BewerberDataSet
-        '
-        'BewerberDataSet
-        '
-        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
-        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnClose
         '
@@ -1365,7 +1357,7 @@ Partial Class frmInterviewer
         Me.TabControl1.Location = New System.Drawing.Point(6, 8)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1016, 650)
+        Me.TabControl1.Size = New System.Drawing.Size(1042, 585)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -1377,7 +1369,7 @@ Partial Class frmInterviewer
         Me.TabPage1.Location = New System.Drawing.Point(4, 24)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1008, 622)
+        Me.TabPage1.Size = New System.Drawing.Size(1034, 557)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Kontaktdaten"
         '
@@ -1635,20 +1627,19 @@ Partial Class frmInterviewer
         Me.TabPage2.Location = New System.Drawing.Point(4, 24)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1008, 622)
+        Me.TabPage2.Size = New System.Drawing.Size(1034, 557)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Beschäftigung"
         '
         'Panel3
         '
-        Me.Panel3.AutoScroll = True
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.GroupBox12)
         Me.Panel3.Controls.Add(Me.GroupBox9)
         Me.Panel3.Controls.Add(Me.GroupBox4)
         Me.Panel3.Location = New System.Drawing.Point(6, 6)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1006, 1126)
+        Me.Panel3.Size = New System.Drawing.Size(1006, 1085)
         Me.Panel3.TabIndex = 0
         '
         'GroupBox12
@@ -1657,9 +1648,9 @@ Partial Class frmInterviewer
         Me.GroupBox12.Controls.Add(Me.txtFuerstelle)
         Me.GroupBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox12.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox12.Location = New System.Drawing.Point(3, 887)
+        Me.GroupBox12.Location = New System.Drawing.Point(3, 911)
         Me.GroupBox12.Name = "GroupBox12"
-        Me.GroupBox12.Size = New System.Drawing.Size(998, 174)
+        Me.GroupBox12.Size = New System.Drawing.Size(979, 167)
         Me.GroupBox12.TabIndex = 2
         Me.GroupBox12.TabStop = False
         Me.GroupBox12.Text = "Für Stellen vorschlagen (Auswahl aus OA mit Doppeklick)"
@@ -1667,7 +1658,7 @@ Partial Class frmInterviewer
         'txtFuerstelle
         '
         Me.txtFuerstelle.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "fuerstelle", True))
-        Me.txtFuerstelle.Location = New System.Drawing.Point(9, 25)
+        Me.txtFuerstelle.Location = New System.Drawing.Point(9, 34)
         Me.txtFuerstelle.Multiline = True
         Me.txtFuerstelle.Name = "txtFuerstelle"
         Me.txtFuerstelle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -1677,6 +1668,8 @@ Partial Class frmInterviewer
         'GroupBox9
         '
         Me.GroupBox9.BackColor = System.Drawing.Color.White
+        Me.GroupBox9.Controls.Add(Me.Label11)
+        Me.GroupBox9.Controls.Add(Me.txtVerfuegbarkeitindividuell)
         Me.GroupBox9.Controls.Add(WechselwunschLabel)
         Me.GroupBox9.Controls.Add(Me.WechselwunschTextBox)
         Me.GroupBox9.Controls.Add(Beendigungsgrund_detailsLabel)
@@ -1690,27 +1683,46 @@ Partial Class frmInterviewer
         Me.GroupBox9.Controls.Add(Me.cmbVerfuegbarkeit)
         Me.GroupBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox9.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox9.Location = New System.Drawing.Point(3, 538)
+        Me.GroupBox9.Location = New System.Drawing.Point(3, 543)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(999, 344)
+        Me.GroupBox9.Size = New System.Drawing.Size(998, 362)
         Me.GroupBox9.TabIndex = 1
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Verfügbarkeit, Kündigung"
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 69)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(105, 32)
+        Me.Label11.TabIndex = 13
+        Me.Label11.Text = "Verfügbarkeit " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "individuell:"
+        '
+        'txtVerfuegbarkeitindividuell
+        '
+        Me.txtVerfuegbarkeitindividuell.Location = New System.Drawing.Point(124, 69)
+        Me.txtVerfuegbarkeitindividuell.Multiline = True
+        Me.txtVerfuegbarkeitindividuell.Name = "txtVerfuegbarkeitindividuell"
+        Me.txtVerfuegbarkeitindividuell.ReadOnly = True
+        Me.txtVerfuegbarkeitindividuell.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtVerfuegbarkeitindividuell.Size = New System.Drawing.Size(327, 38)
+        Me.txtVerfuegbarkeitindividuell.TabIndex = 4
+        '
         'WechselwunschTextBox
         '
         Me.WechselwunschTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "wechselwunsch", True))
-        Me.WechselwunschTextBox.Location = New System.Drawing.Point(639, 78)
+        Me.WechselwunschTextBox.Location = New System.Drawing.Point(639, 122)
         Me.WechselwunschTextBox.Multiline = True
         Me.WechselwunschTextBox.Name = "WechselwunschTextBox"
         Me.WechselwunschTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.WechselwunschTextBox.Size = New System.Drawing.Size(340, 158)
+        Me.WechselwunschTextBox.Size = New System.Drawing.Size(325, 158)
         Me.WechselwunschTextBox.TabIndex = 12
         '
         'Beendigungsgrund_detailsTextBox
         '
         Me.Beendigungsgrund_detailsTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "beendigungsgrund_details", True))
-        Me.Beendigungsgrund_detailsTextBox.Location = New System.Drawing.Point(124, 81)
+        Me.Beendigungsgrund_detailsTextBox.Location = New System.Drawing.Point(124, 125)
         Me.Beendigungsgrund_detailsTextBox.Multiline = True
         Me.Beendigungsgrund_detailsTextBox.Name = "Beendigungsgrund_detailsTextBox"
         Me.Beendigungsgrund_detailsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -1721,7 +1733,7 @@ Partial Class frmInterviewer
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Yellow
-        Me.Label4.Location = New System.Drawing.Point(6, 260)
+        Me.Label4.Location = New System.Drawing.Point(6, 287)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(678, 64)
         Me.Label4.TabIndex = 10
@@ -1736,7 +1748,7 @@ Partial Class frmInterviewer
         Me.BeendigungsgrundComboBox.Items.AddRange(New Object() {"", "Arbeitgeber", "selbst", "Aufhebungsvertrag", "Zeitablauf", "betriebsbedingt", "Betriebsaufgabe"})
         Me.BeendigungsgrundComboBox.Location = New System.Drawing.Point(800, 28)
         Me.BeendigungsgrundComboBox.Name = "BeendigungsgrundComboBox"
-        Me.BeendigungsgrundComboBox.Size = New System.Drawing.Size(179, 24)
+        Me.BeendigungsgrundComboBox.Size = New System.Drawing.Size(164, 24)
         Me.BeendigungsgrundComboBox.TabIndex = 9
         '
         'KuendigungsfristComboBox
@@ -1752,7 +1764,6 @@ Partial Class frmInterviewer
         '
         'cmbVerfuegbarkeit
         '
-        Me.cmbVerfuegbarkeit.DataBindings.Add(New System.Windows.Forms.Binding("SelectedItem", Me.BewBindingSource, "verfügbarkeit", True))
         Me.cmbVerfuegbarkeit.FormattingEnabled = True
         Me.cmbVerfuegbarkeit.Items.AddRange(New Object() {"", "sofort", "nach Absprache", "nach Kündigung"})
         Me.cmbVerfuegbarkeit.Location = New System.Drawing.Point(124, 28)
@@ -1799,7 +1810,7 @@ Partial Class frmInterviewer
         Me.GroupBox4.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox4.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(1000, 530)
+        Me.GroupBox4.Size = New System.Drawing.Size(998, 530)
         Me.GroupBox4.TabIndex = 0
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Beschäftigung"
@@ -1964,7 +1975,7 @@ Partial Class frmInterviewer
         Me.TabPage3.Controls.Add(Me.Panel4)
         Me.TabPage3.Location = New System.Drawing.Point(4, 24)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1008, 622)
+        Me.TabPage3.Size = New System.Drawing.Size(1034, 557)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Ausbildung/Studium"
         '
@@ -2051,7 +2062,7 @@ Partial Class frmInterviewer
         Me.TabPage4.Controls.Add(Me.Panel5)
         Me.TabPage4.Location = New System.Drawing.Point(4, 24)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(1008, 622)
+        Me.TabPage4.Size = New System.Drawing.Size(1034, 557)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Berufserfahrung"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -2180,10 +2191,11 @@ Partial Class frmInterviewer
         '
         'TabPage5
         '
+        Me.TabPage5.AutoScroll = True
         Me.TabPage5.Controls.Add(Me.Panel6)
         Me.TabPage5.Location = New System.Drawing.Point(4, 24)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(1008, 622)
+        Me.TabPage5.Size = New System.Drawing.Size(1034, 557)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Sprachkenntnisse"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -2464,11 +2476,12 @@ Partial Class frmInterviewer
         '
         'TabPage8
         '
+        Me.TabPage8.AutoScroll = True
         Me.TabPage8.Controls.Add(Me.Panel9)
         Me.TabPage8.Location = New System.Drawing.Point(4, 24)
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(1008, 622)
+        Me.TabPage8.Size = New System.Drawing.Size(1034, 557)
         Me.TabPage8.TabIndex = 7
         Me.TabPage8.Text = "EDV"
         Me.TabPage8.UseVisualStyleBackColor = True
@@ -2480,7 +2493,7 @@ Partial Class frmInterviewer
         Me.Panel9.Controls.Add(Me.Label10)
         Me.Panel9.Controls.Add(Me.GroupBox14)
         Me.Panel9.Controls.Add(Me.GroupBox15)
-        Me.Panel9.Location = New System.Drawing.Point(4, 6)
+        Me.Panel9.Location = New System.Drawing.Point(2, 6)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(998, 608)
         Me.Panel9.TabIndex = 0
@@ -2509,11 +2522,6 @@ Partial Class frmInterviewer
         Me.cmbAmadeus.Name = "cmbAmadeus"
         Me.cmbAmadeus.Size = New System.Drawing.Size(121, 24)
         Me.cmbAmadeus.TabIndex = 3
-        '
-        'Bewerber_edvBindingSource
-        '
-        Me.Bewerber_edvBindingSource.DataMember = "bewerber_edv"
-        Me.Bewerber_edvBindingSource.DataSource = Me.BewerberDataSet
         '
         'txtSoftware_sonstige
         '
@@ -2777,7 +2785,7 @@ Partial Class frmInterviewer
         Me.TabPage6.Controls.Add(Me.Panel7)
         Me.TabPage6.Location = New System.Drawing.Point(4, 24)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(1008, 622)
+        Me.TabPage6.Size = New System.Drawing.Size(1034, 557)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Persönlichkeit/Äusseres/Charaktereigenschaften"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -2818,7 +2826,7 @@ Partial Class frmInterviewer
         Me.TabPage7.Controls.Add(Me.Panel8)
         Me.TabPage7.Location = New System.Drawing.Point(4, 24)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(1008, 622)
+        Me.TabPage7.Size = New System.Drawing.Size(1034, 557)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Ulas"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -2897,6 +2905,21 @@ Partial Class frmInterviewer
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewerberDataSet
+        '
+        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
+        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Bewerber_edvBindingSource
+        '
+        Me.Bewerber_edvBindingSource.DataMember = "bewerber_edv"
+        Me.Bewerber_edvBindingSource.DataSource = Me.BewerberDataSet
+        '
         'BewTableAdapter
         '
         Me.BewTableAdapter.ClearBeforeFill = True
@@ -2962,7 +2985,7 @@ Partial Class frmInterviewer
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(1051, 746)
+        Me.ClientSize = New System.Drawing.Size(1056, 746)
         Me.ControlBox = False
         Me.Controls.Add(Me.SplitContainer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -2975,8 +2998,6 @@ Partial Class frmInterviewer
         Me.SplitContainer1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -3017,7 +3038,6 @@ Partial Class frmInterviewer
         Me.Panel9.PerformLayout()
         Me.GroupBox13.ResumeLayout(False)
         Me.GroupBox13.PerformLayout()
-        CType(Me.Bewerber_edvBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox14.ResumeLayout(False)
         Me.GroupBox14.PerformLayout()
         Me.GroupBox15.ResumeLayout(False)
@@ -3033,6 +3053,9 @@ Partial Class frmInterviewer
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Bewerber_edvBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3195,4 +3218,6 @@ Partial Class frmInterviewer
     Friend WithEvents Label10 As Label
     Friend WithEvents cmbAmadeus As ComboBox
     Friend WithEvents txtSoftware_sonstige As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents txtVerfuegbarkeitindividuell As TextBox
 End Class

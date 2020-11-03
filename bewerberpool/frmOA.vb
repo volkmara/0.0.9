@@ -89,7 +89,7 @@ Public Class frmOA
     ' Es werden die Werte ausgelesen, die bereits früher eingetragen wurden und in die Bindinglist eingetragen, die mit Listbox1 verbunden ist
     Private Sub voreintraege()
 
-        Dim stellewerte = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        Dim stellewerte = DirectCast(DirectCast(frmMain.BewBindingSource.Current, DataRowView).Row, bewRow)
         Dim lines() As String
         Dim eintraege As String = String.Empty
 
@@ -262,8 +262,8 @@ Public Class frmOA
     End Sub
 
     Private Sub frmOA_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        'If liste.Count = 0 Then
-        '    Me.BewBindingSource.RemoveFilter()
-        'End If
+        If liste.Count = 0 Then
+            Me.BewBindingSource.RemoveFilter()
+        End If
     End Sub
 End Class

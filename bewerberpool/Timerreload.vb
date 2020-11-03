@@ -63,7 +63,7 @@
         frmMain.GewerblichTableAdapter.Update(frmMain.BewerberDataSet.gewerblich)
         'frmMain.NotizenTableAdapter.Update(frmMain.BewerberDataSet.notizen)
 
-        frmMain.DBLoad()
+        'frmMain.DBLoad()
         frmMain.BewGridView1.LoadLayout("filter.xml")
         myTimer.Enabled = True
     End Sub

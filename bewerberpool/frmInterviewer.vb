@@ -154,6 +154,15 @@ Public Class frmInterviewer
 
             Dim interviewer = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
             interviewer.status = CStr("fertig")
+
+            If Not cmbVerfuegbarkeit.SelectedIndex = 2 Then
+                interviewer.verfügbarkeit = cmbVerfuegbarkeit.Text
+                'MsgBox(cmbVerfuegbarkeit.Text)
+            Else
+                interviewer.verfügbarkeit = txtVerfuegbarkeitindividuell.Text
+                'MsgBox(txtVerfuegbarkeitindividuell.Text)
+            End If
+
             'interviewer.interviewart = CStr("Bewerbergespräch")
             interviewer.geaendert_am = Date.Now.ToString
             interviewer.letztbearbeitung_von = CStr(usernameklar)
@@ -161,6 +170,7 @@ Public Class frmInterviewer
             interviewer.bewerberbeschreibung_text = CStr(exportfiletxt)
             interviewer.sprachkenntnisse = CStr(sprachenliste)
             interviewer.edvkenntnisse = edvliste
+            interviewer.ausbildungsberuf = txtAusbildungsberuf.Text
 
             ' Me.Validate()
 
@@ -284,6 +294,7 @@ Public Class frmInterviewer
         ' Dim bewerberedv = DirectCast(DirectCast(Me.Bewerber_edvBindingSource.Current, DataRowView).Row, bewerber_edvRow)
         'Dim bewedv = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
         Dim edv As New List(Of String)()
+        Dim edvcmb As String
 
         If cmbWord.SelectedIndex > 0 Then
             edv.Add("Word")
@@ -353,7 +364,11 @@ Public Class frmInterviewer
             edv.Add("Amadeus")
         End If
 
-        edvliste = String.Join(vbNewLine, edv)
+        'edvliste = String.Join(vbNewLine, edv)
+        edvcmb = String.Join(", ", edv)
+        edvcmb = String.Concat(edvcmb, ", ")
+
+        edvliste = String.Concat(edvcmb, txtSoftware_sonstige.Text.TrimEnd(CChar(","))) ' wird im Hauptfenster angezeigt nach Speicherung in der DB
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
@@ -856,6 +871,13 @@ Public Class frmInterviewer
 
     Private Sub Vz_tzComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbVz_tz.SelectedIndexChanged, cmbAuslandsaufenthalt.SelectedIndexChanged, cmbVerfuegbarkeit.SelectedIndexChanged, cmbMdE.SelectedIndexChanged
 
+        If cmbVerfuegbarkeit.SelectedIndex = 2 Then
+            txtVerfuegbarkeitindividuell.ReadOnly = False
+        Else
+            txtVerfuegbarkeitindividuell.ReadOnly = True
+        End If
+
+
         If cmbVz_tz.Text = String.Empty OrElse cmbVz_tz.Text = CStr("Vollzeit") Then
             cmbTeilzeit_stunden.Enabled = False
             cmbTeilzeit_wann.Enabled = False
@@ -1092,5 +1114,9 @@ Public Class frmInterviewer
                 tb.BackColor = Color.White
             End If
         Next
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Call Edvdaten()
     End Sub
 End Class

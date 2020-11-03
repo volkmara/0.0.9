@@ -72,6 +72,8 @@ Public Class frmKurzfragebogen
         Me.BewBindingSource.EndEdit()
         frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
 
+
+
         Dim bewerberdaten = DirectCast(DirectCast(Me.Bew_bewerberdatenBindingSource.AddNew, DataRowView).Row, bew_bewerberdatenRow)
         bewerberdaten.id_bew = bewidneu
         bewerberdaten.rundschreiben = CStr(cmbRundschreiben.Text)
@@ -85,13 +87,15 @@ Public Class frmKurzfragebogen
 
         frmMain.DBLoad()
         Me.Panel2.Visible = True
+
         Call gespeichert()
 
         Dim resultmessage As String = String.Concat("Nachdem Sie eine/n neue/n Bewerber/in eingetragen haben, wird der Interviewerfragebogen aufgerufen, um die Einträge zu vervollständigen", vbNewLine, vbNewLine, "Wenn Sie Ihre Einträge jetzt vervollständigen wollen, klicken Sie bitte auf ""Ja"", wenn Sie das nicht wollen, klicken Sie bitte auf ""Nein"".")
 
         Dim result As DialogResult = MessageBox.Show(resultmessage, "Weitere Bearbeitung erforderlich", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
         If result = Windows.Forms.DialogResult.Yes Then
-            Using frm As New frmInterviewer(Me)
+            frmMain.BewBindingSource.Filter = "id_bew = '" & bewid & "'"
+            Using frm As New frmInterviewer(Me) ' erforderlich, damit STellen im Interviewerfragebogen direkt eingetragen werden können
                 Dim result1 = frm.ShowDialog()
             End Using
             frmMain.DBSpeichern()
