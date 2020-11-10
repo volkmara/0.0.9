@@ -51,7 +51,7 @@ Public Class frmKurzfragebogen
     ' ======================================================================== Schritt 1: Neuen Bewerber anlegen ============================================================
 
     Private Sub btnNeuerBewerber_Click(sender As Object, e As EventArgs) Handles btnNeuerBewerber.Click
-        Call ZAVM()
+        ' Call ZAVM()
         Call Getbewid()
         bewidneu = CInt(bewid + 1)
         Dim bewspeichern = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
@@ -66,13 +66,11 @@ Public Class frmKurzfragebogen
         bewspeichern.refnr = bewidneu
         bewspeichern.Vermittlung = arbeitsart
         bewspeichern.topbewerber = CStr("Nein")
-        bewspeichern.bewerberbeschreibung = CStr(allgemein.ExporttoRtf(RTEPersönlichkeit.Document))
-        bewspeichern.bewerberbeschreibung_text = CStr(allgemein.ExporttoTxt(RTEPersönlichkeit.Document))
+        ' bewspeichern.bewerberbeschreibung = CStr(allgemein.ExporttoRtf(RTEPersönlichkeit.Document))
+        'bewspeichern.bewerberbeschreibung_text = CStr(allgemein.ExporttoTxt(RTEPersönlichkeit.Document))
         Me.Validate()
         Me.BewBindingSource.EndEdit()
         frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
-
-
 
         Dim bewerberdaten = DirectCast(DirectCast(Me.Bew_bewerberdatenBindingSource.AddNew, DataRowView).Row, bew_bewerberdatenRow)
         bewerberdaten.id_bew = bewidneu
@@ -111,7 +109,7 @@ Public Class frmKurzfragebogen
     End Function
 
     ' ================================================================================ Validierungen =======================================================
-    Private Sub cmbAnrede_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmbAnrede.Validating, txtVorname.Validating, txtName.Validating, txtMonatsgehalt.Validating, txtGehaltswunsch_monat.Validating, txtOrt.Validating, txtEmail.Validating, txtPlz.Validating
+    Private Sub cmbAnrede_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmbAnrede.Validating, txtVorname.Validating, txtName.Validating, txtOrt.Validating, txtEmail.Validating, txtPlz.Validating
         Select Case True
             Case sender Is cmbAnrede
                 '  If AnredeComboBox.SelectedText = String.Empty Then
@@ -126,14 +124,14 @@ Public Class frmKurzfragebogen
                 If txtName.Text = String.Empty Then
                     MessageBox.Show("Bitte einen Nachnamen eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                 End If
-            Case sender Is txtMonatsgehalt
-                If txtMonatsgehalt.Text = String.Empty Then
-                    MessageBox.Show("Bitte das letzte Monatsgehalt (nur Ziffern) eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-                End If
-            Case sender Is txtGehaltswunsch_monat
-                If txtGehaltswunsch_monat.Text = String.Empty Then
-                    MessageBox.Show("Bitte das angestrebte Monatsgehalt (nur Ziffern) eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-                End If
+            'Case sender Is txtMonatsgehalt
+            '    If txtMonatsgehalt.Text = String.Empty Then
+            '        MessageBox.Show("Bitte das letzte Monatsgehalt (nur Ziffern) eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            '    End If
+            'Case sender Is txtGehaltswunsch_monat
+            '    If txtGehaltswunsch_monat.Text = String.Empty Then
+            '        MessageBox.Show("Bitte das angestrebte Monatsgehalt (nur Ziffern) eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            '    End If
             Case sender Is txtOrt
                 If txtOrt.Text = String.Empty Then
                     MessageBox.Show("Bitte den Wohnort eintragen", "Pflichtfeld", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -201,18 +199,18 @@ Public Class frmKurzfragebogen
         End Select
     End Sub
 
-    Private Sub ZAVM()
-        Select Case True
-            Case rbtnVM.Checked
-                arbeitsart = "Vermittlung"
-            Case rbtZA.Checked
-                arbeitsart = "Zeitarbeit"
-            Case rbtnZAVM.Checked
-                arbeitsart = "Vermittlung/Zeitarbeit"
-            Case rbtnZAÜN.Checked
-                arbeitsart = "Zeitarbeit mit Übernahme"
-            Case rbtnZAVMZAÜN.Checked
-                arbeitsart = String.Concat("Vermittlung, Zeitarbeit, ", vbNewLine, "Zeitarbeit mit Übernahme")
-        End Select
-    End Sub
+    'Private Sub ZAVM()
+    '    Select Case True
+    '        Case rbtnVM.Checked
+    '            arbeitsart = "Vermittlung"
+    '        Case rbtZA.Checked
+    '            arbeitsart = "Zeitarbeit"
+    '        Case rbtnZAVM.Checked
+    '            arbeitsart = "Vermittlung/Zeitarbeit"
+    '        Case rbtnZAÜN.Checked
+    '            arbeitsart = "Zeitarbeit mit Übernahme"
+    '        Case rbtnZAVMZAÜN.Checked
+    '            arbeitsart = String.Concat("Vermittlung, Zeitarbeit, ", vbNewLine, "Zeitarbeit mit Übernahme")
+    '    End Select
+    'End Sub
 End Class

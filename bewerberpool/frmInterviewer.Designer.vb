@@ -265,6 +265,9 @@ Partial Class frmInterviewer
         Me.UlasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.Bewerber_edvBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -1993,6 +1996,9 @@ Partial Class frmInterviewer
         'GroupBox5
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.White
+        Me.GroupBox5.Controls.Add(Me.Label14)
+        Me.GroupBox5.Controls.Add(Me.Label13)
+        Me.GroupBox5.Controls.Add(Me.Label12)
         Me.GroupBox5.Controls.Add(StudienfaecherLabel)
         Me.GroupBox5.Controls.Add(Me.txtStudienfaecher)
         Me.GroupBox5.Controls.Add(Studium_abschlussLabel)
@@ -2905,6 +2911,39 @@ Partial Class frmInterviewer
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(11, 58)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(85, 60)
+        Me.Label12.TabIndex = 1
+        Me.Label12.Text = "(Mehrere " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ausbildungen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Kommata" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "trennen)"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(502, 58)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(154, 30)
+        Me.Label13.TabIndex = 2
+        Me.Label13.Text = "(Mehrere Qualifizierungen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Kommata trennen)"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Black
+        Me.Label14.Location = New System.Drawing.Point(502, 181)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(140, 30)
+        Me.Label14.TabIndex = 2
+        Me.Label14.Text = "(Mehrere Studienfächer " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Kommata trennen)"
+        '
         'BewBindingSource
         '
         Me.BewBindingSource.DataMember = "bew"
@@ -3220,4 +3259,7 @@ Partial Class frmInterviewer
     Friend WithEvents txtSoftware_sonstige As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents txtVerfuegbarkeitindividuell As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
 End Class

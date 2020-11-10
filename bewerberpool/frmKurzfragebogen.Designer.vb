@@ -32,22 +32,13 @@ Partial Class frmKurzfragebogen
         Dim Tel_festnetzLabel As System.Windows.Forms.Label
         Dim Tel_mobilLabel As System.Windows.Forms.Label
         Dim EmailLabel As System.Windows.Forms.Label
-        Dim VerfuegbarkeitLabel As System.Windows.Forms.Label
-        Dim Vz_tzLabel As System.Windows.Forms.Label
-        Dim Za_vmLabel As System.Windows.Forms.Label
-        Dim MonatsgehaltLabel As System.Windows.Forms.Label
-        Dim AusbildungsberufLabel As System.Windows.Forms.Label
-        Dim Bisherige_taetigkeitenLabel As System.Windows.Forms.Label
         Dim UlasLabel As System.Windows.Forms.Label
-        Dim Gehaltswunsch_monatLabel As System.Windows.Forms.Label
-        Dim EnglischLabel As System.Windows.Forms.Label
-        Dim Label3 As System.Windows.Forms.Label
         Dim InterviewartLabel As System.Windows.Forms.Label
         Dim RundschreibenLabel As System.Windows.Forms.Label
         Dim GeburtstagLabel As System.Windows.Forms.Label
         Dim StaatsangehörigkeitLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmKurzfragebogen))
         Dim StandLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmKurzfragebogen))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cmbStaatsangehörigkeit = New System.Windows.Forms.ComboBox()
         Me.txtGeburtstag = New System.Windows.Forms.TextBox()
@@ -64,21 +55,8 @@ Partial Class frmKurzfragebogen
         Me.Bew_bewerberdatenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnNeuerBewerber = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.rbtnZAVMZAÜN = New System.Windows.Forms.RadioButton()
-        Me.rbtnZAÜN = New System.Windows.Forms.RadioButton()
-        Me.rbtnZAVM = New System.Windows.Forms.RadioButton()
-        Me.rbtZA = New System.Windows.Forms.RadioButton()
-        Me.rbtnVM = New System.Windows.Forms.RadioButton()
-        Me.RTEPersönlichkeit = New Telerik.WinControls.UI.RadRichTextEditor()
-        Me.cmbEnglisch = New System.Windows.Forms.ComboBox()
-        Me.txtGehaltswunsch_monat = New System.Windows.Forms.TextBox()
-        Me.Bisherige_taetigkeitenTextBox = New System.Windows.Forms.TextBox()
-        Me.txtAusbildungsberuf = New System.Windows.Forms.TextBox()
-        Me.txtMonatsgehalt = New System.Windows.Forms.TextBox()
-        Me.cmbVz_tz = New System.Windows.Forms.ComboBox()
-        Me.cmbVerfuegbarkeit = New System.Windows.Forms.ComboBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.cmbStand = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtPlz = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
@@ -91,8 +69,6 @@ Partial Class frmKurzfragebogen
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.Bew_bewerberdatenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
-        Me.cmbStand = New System.Windows.Forms.ComboBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         AnredeLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
         NameLabel = New System.Windows.Forms.Label()
@@ -102,16 +78,7 @@ Partial Class frmKurzfragebogen
         Tel_festnetzLabel = New System.Windows.Forms.Label()
         Tel_mobilLabel = New System.Windows.Forms.Label()
         EmailLabel = New System.Windows.Forms.Label()
-        VerfuegbarkeitLabel = New System.Windows.Forms.Label()
-        Vz_tzLabel = New System.Windows.Forms.Label()
-        Za_vmLabel = New System.Windows.Forms.Label()
-        MonatsgehaltLabel = New System.Windows.Forms.Label()
-        AusbildungsberufLabel = New System.Windows.Forms.Label()
-        Bisherige_taetigkeitenLabel = New System.Windows.Forms.Label()
         UlasLabel = New System.Windows.Forms.Label()
-        Gehaltswunsch_monatLabel = New System.Windows.Forms.Label()
-        EnglischLabel = New System.Windows.Forms.Label()
-        Label3 = New System.Windows.Forms.Label()
         InterviewartLabel = New System.Windows.Forms.Label()
         RundschreibenLabel = New System.Windows.Forms.Label()
         GeburtstagLabel = New System.Windows.Forms.Label()
@@ -122,12 +89,9 @@ Partial Class frmKurzfragebogen
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Bew_bewerberdatenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.RTEPersönlichkeit, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'AnredeLabel
@@ -211,60 +175,6 @@ Partial Class frmKurzfragebogen
         EmailLabel.TabIndex = 10
         EmailLabel.Text = "Email:"
         '
-        'VerfuegbarkeitLabel
-        '
-        VerfuegbarkeitLabel.AutoSize = True
-        VerfuegbarkeitLabel.Location = New System.Drawing.Point(13, 36)
-        VerfuegbarkeitLabel.Name = "VerfuegbarkeitLabel"
-        VerfuegbarkeitLabel.Size = New System.Drawing.Size(105, 16)
-        VerfuegbarkeitLabel.TabIndex = 0
-        VerfuegbarkeitLabel.Text = "Verfügbarkeit:"
-        '
-        'Vz_tzLabel
-        '
-        Vz_tzLabel.AutoSize = True
-        Vz_tzLabel.Location = New System.Drawing.Point(385, 36)
-        Vz_tzLabel.Name = "Vz_tzLabel"
-        Vz_tzLabel.Size = New System.Drawing.Size(119, 16)
-        Vz_tzLabel.TabIndex = 2
-        Vz_tzLabel.Text = "Vollzeit/Teilzeit:"
-        '
-        'Za_vmLabel
-        '
-        Za_vmLabel.AutoSize = True
-        Za_vmLabel.Location = New System.Drawing.Point(721, 36)
-        Za_vmLabel.Name = "Za_vmLabel"
-        Za_vmLabel.Size = New System.Drawing.Size(54, 16)
-        Za_vmLabel.TabIndex = 4
-        Za_vmLabel.Text = "ZA/VM" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'MonatsgehaltLabel
-        '
-        MonatsgehaltLabel.AutoSize = True
-        MonatsgehaltLabel.Location = New System.Drawing.Point(13, 131)
-        MonatsgehaltLabel.Name = "MonatsgehaltLabel"
-        MonatsgehaltLabel.Size = New System.Drawing.Size(158, 16)
-        MonatsgehaltLabel.TabIndex = 6
-        MonatsgehaltLabel.Text = "Letztes Monatsgehalt:"
-        '
-        'AusbildungsberufLabel
-        '
-        AusbildungsberufLabel.AutoSize = True
-        AusbildungsberufLabel.Location = New System.Drawing.Point(13, 189)
-        AusbildungsberufLabel.Name = "AusbildungsberufLabel"
-        AusbildungsberufLabel.Size = New System.Drawing.Size(133, 32)
-        AusbildungsberufLabel.TabIndex = 10
-        AusbildungsberufLabel.Text = "Ausbildungsberuf/" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Studium:"
-        '
-        'Bisherige_taetigkeitenLabel
-        '
-        Bisherige_taetigkeitenLabel.AutoSize = True
-        Bisherige_taetigkeitenLabel.Location = New System.Drawing.Point(460, 180)
-        Bisherige_taetigkeitenLabel.Name = "Bisherige_taetigkeitenLabel"
-        Bisherige_taetigkeitenLabel.Size = New System.Drawing.Size(164, 64)
-        Bisherige_taetigkeitenLabel.TabIndex = 12
-        Bisherige_taetigkeitenLabel.Text = "Bisherige Tätigkeiten, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "berufliche " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Schwerpunkte, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Zeugnistext:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
         'UlasLabel
         '
         UlasLabel.AutoSize = True
@@ -273,33 +183,6 @@ Partial Class frmKurzfragebogen
         UlasLabel.Size = New System.Drawing.Size(44, 16)
         UlasLabel.TabIndex = 9
         UlasLabel.Text = "Ulas:"
-        '
-        'Gehaltswunsch_monatLabel
-        '
-        Gehaltswunsch_monatLabel.AutoSize = True
-        Gehaltswunsch_monatLabel.Location = New System.Drawing.Point(420, 131)
-        Gehaltswunsch_monatLabel.Name = "Gehaltswunsch_monatLabel"
-        Gehaltswunsch_monatLabel.Size = New System.Drawing.Size(161, 16)
-        Gehaltswunsch_monatLabel.TabIndex = 13
-        Gehaltswunsch_monatLabel.Text = "Gehaltswunsch Monat:"
-        '
-        'EnglischLabel
-        '
-        EnglischLabel.AutoSize = True
-        EnglischLabel.Location = New System.Drawing.Point(13, 294)
-        EnglischLabel.Name = "EnglischLabel"
-        EnglischLabel.Size = New System.Drawing.Size(71, 16)
-        EnglischLabel.TabIndex = 14
-        EnglischLabel.Text = "Englisch:"
-        '
-        'Label3
-        '
-        Label3.AutoSize = True
-        Label3.Location = New System.Drawing.Point(460, 294)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(110, 16)
-        Label3.TabIndex = 17
-        Label3.Text = "Persönlichkeit:"
         '
         'InterviewartLabel
         '
@@ -338,6 +221,15 @@ Partial Class frmKurzfragebogen
         StaatsangehörigkeitLabel.TabIndex = 16
         StaatsangehörigkeitLabel.Text = "Nationalität:"
         '
+        'StandLabel
+        '
+        StandLabel.AutoSize = True
+        StandLabel.Location = New System.Drawing.Point(14, 39)
+        StandLabel.Name = "StandLabel"
+        StandLabel.Size = New System.Drawing.Size(83, 32)
+        StandLabel.TabIndex = 21
+        StandLabel.Text = "Bewerber " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "für die 10?:"
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -369,7 +261,7 @@ Partial Class frmKurzfragebogen
         'cmbStaatsangehörigkeit
         '
         Me.cmbStaatsangehörigkeit.FormattingEnabled = True
-        Me.cmbStaatsangehörigkeit.Items.AddRange(New Object() {"deutsch", "belgisch", "britisch", "chinesisch", "französisch", "griechisch", "italienisch", "japanisch", "kroatisch", "niederländisch", "polnisch", "portugiesisch", "russisch", "slowakisch", "slowenisch", "spanisch", "tschechisch", "türkisch", "ukrainisch", "ungarisch", "USA"})
+        Me.cmbStaatsangehörigkeit.Items.AddRange(New Object() {"deutsch", "belgisch", "britisch", "chinesisch", "französisch", "griechisch", "italienisch", "japanisch", "kroatisch", "niederländisch", "polnisch", "portugiesisch", "russisch", "Kasachstan", "slowakisch", "slowenisch", "spanisch", "tschechisch", "türkisch", "ukrainisch", "ungarisch", "USA"})
         Me.cmbStaatsangehörigkeit.Location = New System.Drawing.Point(792, 226)
         Me.cmbStaatsangehörigkeit.Name = "cmbStaatsangehörigkeit"
         Me.cmbStaatsangehörigkeit.Size = New System.Drawing.Size(206, 24)
@@ -377,7 +269,7 @@ Partial Class frmKurzfragebogen
         '
         'txtGeburtstag
         '
-        Me.txtGeburtstag.Location = New System.Drawing.Point(135, 226)
+        Me.txtGeburtstag.Location = New System.Drawing.Point(143, 226)
         Me.txtGeburtstag.Name = "txtGeburtstag"
         Me.txtGeburtstag.Size = New System.Drawing.Size(213, 22)
         Me.txtGeburtstag.TabIndex = 10
@@ -484,7 +376,7 @@ Partial Class frmKurzfragebogen
         Me.btnNeuerBewerber.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNeuerBewerber.Image = CType(resources.GetObject("btnNeuerBewerber.Image"), System.Drawing.Image)
         Me.btnNeuerBewerber.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNeuerBewerber.Location = New System.Drawing.Point(16, 359)
+        Me.btnNeuerBewerber.Location = New System.Drawing.Point(368, 208)
         Me.btnNeuerBewerber.Name = "btnNeuerBewerber"
         Me.btnNeuerBewerber.Size = New System.Drawing.Size(231, 60)
         Me.btnNeuerBewerber.TabIndex = 21
@@ -496,186 +388,36 @@ Partial Class frmKurzfragebogen
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.GroupBox2)
+        Me.Panel2.Controls.Add(Me.GroupBox4)
         Me.Panel2.Controls.Add(Me.GroupBox1)
+        Me.Panel2.Controls.Add(Me.btnNeuerBewerber)
         Me.Panel2.Location = New System.Drawing.Point(6, 278)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1129, 637)
+        Me.Panel2.Size = New System.Drawing.Size(1129, 289)
         Me.Panel2.TabIndex = 1
         '
-        'GroupBox2
+        'GroupBox4
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.GroupBox2.Controls.Add(Me.GroupBox4)
-        Me.GroupBox2.Controls.Add(Me.GroupBox3)
-        Me.GroupBox2.Controls.Add(Me.btnNeuerBewerber)
-        Me.GroupBox2.Controls.Add(Label3)
-        Me.GroupBox2.Controls.Add(Me.RTEPersönlichkeit)
-        Me.GroupBox2.Controls.Add(EnglischLabel)
-        Me.GroupBox2.Controls.Add(Me.cmbEnglisch)
-        Me.GroupBox2.Controls.Add(Gehaltswunsch_monatLabel)
-        Me.GroupBox2.Controls.Add(Me.txtGehaltswunsch_monat)
-        Me.GroupBox2.Controls.Add(Bisherige_taetigkeitenLabel)
-        Me.GroupBox2.Controls.Add(Me.Bisherige_taetigkeitenTextBox)
-        Me.GroupBox2.Controls.Add(AusbildungsberufLabel)
-        Me.GroupBox2.Controls.Add(Me.txtAusbildungsberuf)
-        Me.GroupBox2.Controls.Add(MonatsgehaltLabel)
-        Me.GroupBox2.Controls.Add(Me.txtMonatsgehalt)
-        Me.GroupBox2.Controls.Add(Za_vmLabel)
-        Me.GroupBox2.Controls.Add(Vz_tzLabel)
-        Me.GroupBox2.Controls.Add(Me.cmbVz_tz)
-        Me.GroupBox2.Controls.Add(VerfuegbarkeitLabel)
-        Me.GroupBox2.Controls.Add(Me.cmbVerfuegbarkeit)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 179)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1102, 445)
-        Me.GroupBox2.TabIndex = 12
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Berufsdaten"
+        Me.GroupBox4.BackColor = System.Drawing.Color.Yellow
+        Me.GroupBox4.Controls.Add(Me.cmbStand)
+        Me.GroupBox4.Controls.Add(StandLabel)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(7, 193)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(237, 90)
+        Me.GroupBox4.TabIndex = 23
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "10 ?"
         '
-        'GroupBox3
+        'cmbStand
         '
-        Me.GroupBox3.Controls.Add(Me.rbtnZAVMZAÜN)
-        Me.GroupBox3.Controls.Add(Me.rbtnZAÜN)
-        Me.GroupBox3.Controls.Add(Me.rbtnZAVM)
-        Me.GroupBox3.Controls.Add(Me.rbtZA)
-        Me.GroupBox3.Controls.Add(Me.rbtnVM)
-        Me.GroupBox3.Location = New System.Drawing.Point(838, 16)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(244, 107)
-        Me.GroupBox3.TabIndex = 4
-        Me.GroupBox3.TabStop = False
-        '
-        'rbtnZAVMZAÜN
-        '
-        Me.rbtnZAVMZAÜN.AutoSize = True
-        Me.rbtnZAVMZAÜN.Location = New System.Drawing.Point(85, 62)
-        Me.rbtnZAVMZAÜN.Name = "rbtnZAVMZAÜN"
-        Me.rbtnZAVMZAÜN.Size = New System.Drawing.Size(118, 20)
-        Me.rbtnZAVMZAÜN.TabIndex = 4
-        Me.rbtnZAVMZAÜN.TabStop = True
-        Me.rbtnZAVMZAÜN.Text = "VM/ZA/ZAÜN"
-        Me.rbtnZAVMZAÜN.UseVisualStyleBackColor = True
-        '
-        'rbtnZAÜN
-        '
-        Me.rbtnZAÜN.AutoSize = True
-        Me.rbtnZAÜN.Location = New System.Drawing.Point(7, 62)
-        Me.rbtnZAÜN.Name = "rbtnZAÜN"
-        Me.rbtnZAÜN.Size = New System.Drawing.Size(72, 20)
-        Me.rbtnZAÜN.TabIndex = 3
-        Me.rbtnZAÜN.TabStop = True
-        Me.rbtnZAÜN.Text = "ZA/ÜN"
-        Me.rbtnZAÜN.UseVisualStyleBackColor = True
-        '
-        'rbtnZAVM
-        '
-        Me.rbtnZAVM.AutoSize = True
-        Me.rbtnZAVM.Location = New System.Drawing.Point(154, 22)
-        Me.rbtnZAVM.Name = "rbtnZAVM"
-        Me.rbtnZAVM.Size = New System.Drawing.Size(72, 20)
-        Me.rbtnZAVM.TabIndex = 2
-        Me.rbtnZAVM.TabStop = True
-        Me.rbtnZAVM.Text = "ZA/VM"
-        Me.rbtnZAVM.UseVisualStyleBackColor = True
-        '
-        'rbtZA
-        '
-        Me.rbtZA.AutoSize = True
-        Me.rbtZA.Location = New System.Drawing.Point(85, 22)
-        Me.rbtZA.Name = "rbtZA"
-        Me.rbtZA.Size = New System.Drawing.Size(45, 20)
-        Me.rbtZA.TabIndex = 1
-        Me.rbtZA.TabStop = True
-        Me.rbtZA.Text = "ZA"
-        Me.rbtZA.UseVisualStyleBackColor = True
-        '
-        'rbtnVM
-        '
-        Me.rbtnVM.AutoSize = True
-        Me.rbtnVM.Location = New System.Drawing.Point(7, 22)
-        Me.rbtnVM.Name = "rbtnVM"
-        Me.rbtnVM.Size = New System.Drawing.Size(48, 20)
-        Me.rbtnVM.TabIndex = 0
-        Me.rbtnVM.TabStop = True
-        Me.rbtnVM.Text = "VM"
-        Me.rbtnVM.UseVisualStyleBackColor = True
-        '
-        'RTEPersönlichkeit
-        '
-        Me.RTEPersönlichkeit.BorderColor = System.Drawing.Color.FromArgb(CType(CType(156, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.RTEPersönlichkeit.Location = New System.Drawing.Point(638, 291)
-        Me.RTEPersönlichkeit.Name = "RTEPersönlichkeit"
-        Me.RTEPersönlichkeit.SelectionFill = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(158, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.RTEPersönlichkeit.Size = New System.Drawing.Size(443, 128)
-        Me.RTEPersönlichkeit.TabIndex = 19
-        '
-        'cmbEnglisch
-        '
-        Me.cmbEnglisch.FormattingEnabled = True
-        Me.cmbEnglisch.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
-        Me.cmbEnglisch.Location = New System.Drawing.Point(160, 291)
-        Me.cmbEnglisch.Name = "cmbEnglisch"
-        Me.cmbEnglisch.Size = New System.Drawing.Size(121, 24)
-        Me.cmbEnglisch.TabIndex = 15
-        '
-        'txtGehaltswunsch_monat
-        '
-        Me.txtGehaltswunsch_monat.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "gehaltswunsch_monat", True))
-        Me.txtGehaltswunsch_monat.Location = New System.Drawing.Point(638, 128)
-        Me.txtGehaltswunsch_monat.Name = "txtGehaltswunsch_monat"
-        Me.txtGehaltswunsch_monat.Size = New System.Drawing.Size(136, 22)
-        Me.txtGehaltswunsch_monat.TabIndex = 9
-        '
-        'Bisherige_taetigkeitenTextBox
-        '
-        Me.Bisherige_taetigkeitenTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "tätigkeiten", True))
-        Me.Bisherige_taetigkeitenTextBox.Location = New System.Drawing.Point(638, 177)
-        Me.Bisherige_taetigkeitenTextBox.Multiline = True
-        Me.Bisherige_taetigkeitenTextBox.Name = "Bisherige_taetigkeitenTextBox"
-        Me.Bisherige_taetigkeitenTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.Bisherige_taetigkeitenTextBox.Size = New System.Drawing.Size(443, 88)
-        Me.Bisherige_taetigkeitenTextBox.TabIndex = 13
-        '
-        'txtAusbildungsberuf
-        '
-        Me.txtAusbildungsberuf.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "ausbildungsberuf", True))
-        Me.txtAusbildungsberuf.Location = New System.Drawing.Point(160, 186)
-        Me.txtAusbildungsberuf.Multiline = True
-        Me.txtAusbildungsberuf.Name = "txtAusbildungsberuf"
-        Me.txtAusbildungsberuf.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtAusbildungsberuf.Size = New System.Drawing.Size(250, 79)
-        Me.txtAusbildungsberuf.TabIndex = 11
-        '
-        'txtMonatsgehalt
-        '
-        Me.txtMonatsgehalt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "monatsgehalt", True))
-        Me.txtMonatsgehalt.Location = New System.Drawing.Point(202, 128)
-        Me.txtMonatsgehalt.Name = "txtMonatsgehalt"
-        Me.txtMonatsgehalt.Size = New System.Drawing.Size(137, 22)
-        Me.txtMonatsgehalt.TabIndex = 7
-        '
-        'cmbVz_tz
-        '
-        Me.cmbVz_tz.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "arbeitszeit", True))
-        Me.cmbVz_tz.FormattingEnabled = True
-        Me.cmbVz_tz.Items.AddRange(New Object() {"", "Vollzeit", "Teilzeit", "Teilzeit flexibel", "Vollzeit/Teilzeit"})
-        Me.cmbVz_tz.Location = New System.Drawing.Point(510, 33)
-        Me.cmbVz_tz.Name = "cmbVz_tz"
-        Me.cmbVz_tz.Size = New System.Drawing.Size(162, 24)
-        Me.cmbVz_tz.TabIndex = 3
-        '
-        'cmbVerfuegbarkeit
-        '
-        Me.cmbVerfuegbarkeit.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "verfügbarkeit", True))
-        Me.cmbVerfuegbarkeit.FormattingEnabled = True
-        Me.cmbVerfuegbarkeit.Items.AddRange(New Object() {"", "sofort", "nach Absprache", "nach Kündigung"})
-        Me.cmbVerfuegbarkeit.Location = New System.Drawing.Point(127, 33)
-        Me.cmbVerfuegbarkeit.Name = "cmbVerfuegbarkeit"
-        Me.cmbVerfuegbarkeit.Size = New System.Drawing.Size(212, 24)
-        Me.cmbVerfuegbarkeit.TabIndex = 1
+        Me.cmbStand.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "stand", True))
+        Me.cmbStand.FormattingEnabled = True
+        Me.cmbStand.Items.AddRange(New Object() {"", "10"})
+        Me.cmbStand.Location = New System.Drawing.Point(136, 39)
+        Me.cmbStand.Name = "cmbStand"
+        Me.cmbStand.Size = New System.Drawing.Size(92, 24)
+        Me.cmbStand.TabIndex = 22
         '
         'GroupBox1
         '
@@ -797,44 +539,13 @@ Partial Class frmKurzfragebogen
         Me.TableAdapterManager.ulasTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'StandLabel
-        '
-        StandLabel.AutoSize = True
-        StandLabel.Location = New System.Drawing.Point(14, 39)
-        StandLabel.Name = "StandLabel"
-        StandLabel.Size = New System.Drawing.Size(83, 32)
-        StandLabel.TabIndex = 21
-        StandLabel.Text = "Bewerber " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "für die 10?:"
-        '
-        'cmbStand
-        '
-        Me.cmbStand.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "stand", True))
-        Me.cmbStand.FormattingEnabled = True
-        Me.cmbStand.Items.AddRange(New Object() {"", "10"})
-        Me.cmbStand.Location = New System.Drawing.Point(136, 39)
-        Me.cmbStand.Name = "cmbStand"
-        Me.cmbStand.Size = New System.Drawing.Size(92, 24)
-        Me.cmbStand.TabIndex = 22
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Yellow
-        Me.GroupBox4.Controls.Add(Me.cmbStand)
-        Me.GroupBox4.Controls.Add(StandLabel)
-        Me.GroupBox4.Location = New System.Drawing.Point(327, 329)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(237, 90)
-        Me.GroupBox4.TabIndex = 23
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "10 ?"
-        '
         'frmKurzfragebogen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(1152, 915)
+        Me.ClientSize = New System.Drawing.Size(1152, 576)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmKurzfragebogen"
@@ -846,16 +557,11 @@ Partial Class frmKurzfragebogen
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Bew_bewerberdatenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        CType(Me.RTEPersönlichkeit, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -877,17 +583,8 @@ Partial Class frmKurzfragebogen
     Friend WithEvents txtTel_festnetz As System.Windows.Forms.TextBox
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents cmbVerfuegbarkeit As System.Windows.Forms.ComboBox
-    Friend WithEvents cmbVz_tz As System.Windows.Forms.ComboBox
-    Friend WithEvents txtMonatsgehalt As System.Windows.Forms.TextBox
-    Friend WithEvents txtAusbildungsberuf As System.Windows.Forms.TextBox
-    Friend WithEvents Bisherige_taetigkeitenTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtUlas As System.Windows.Forms.TextBox
-    Friend WithEvents txtGehaltswunsch_monat As System.Windows.Forms.TextBox
-    Friend WithEvents cmbEnglisch As ComboBox
-    Friend WithEvents RTEPersönlichkeit As Telerik.WinControls.UI.RadRichTextEditor
     Friend WithEvents cmbInterviewart As ComboBox
     Friend WithEvents Bew_bewerberdatenBindingSource As BindingSource
     Friend WithEvents Bew_bewerberdatenTableAdapter As BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter
@@ -896,12 +593,6 @@ Partial Class frmKurzfragebogen
     Friend WithEvents TableAdapterManager As BewerberDataSetTableAdapters.TableAdapterManager
     Friend WithEvents cmbStaatsangehörigkeit As ComboBox
     Friend WithEvents txtPlz As TextBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents rbtnZAVMZAÜN As RadioButton
-    Friend WithEvents rbtnZAÜN As RadioButton
-    Friend WithEvents rbtnZAVM As RadioButton
-    Friend WithEvents rbtZA As RadioButton
-    Friend WithEvents rbtnVM As RadioButton
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents cmbStand As ComboBox
 End Class

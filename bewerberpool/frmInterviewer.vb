@@ -24,6 +24,7 @@ Public Class frmInterviewer
 
     Public sprachenliste As String = String.Empty
     Public edvliste As String = String.Empty
+    Public ausbildungstudium As String = String.Empty
 
     Public tabpagecount As Integer = CInt(0)
 
@@ -111,6 +112,7 @@ Public Class frmInterviewer
         Call telefoneintrag()
         Call Sprachendaten() ' trägt Sprachen im Feld "Sprachkenntnisse" im Reiter "Bewerber/in" ein
         Call Edvdaten() ' EDVkenntnisse für Feld EDVkenntnisse im Reiter Bewerber/in
+        Call Ausbildungsdaten() ' Ausbildung, Qualifizierungen, Studium, Abschluss kumuliert
 
         ' Validierung vorm Speichern
         If Not frmMain.StandComboBox.Text = CStr("fertig") AndAlso TabControl1.SelectedTab IsNot TabPage7 Then
@@ -170,7 +172,8 @@ Public Class frmInterviewer
             interviewer.bewerberbeschreibung_text = CStr(exportfiletxt)
             interviewer.sprachkenntnisse = CStr(sprachenliste)
             interviewer.edvkenntnisse = edvliste
-            interviewer.ausbildungsberuf = txtAusbildungsberuf.Text
+            'interviewer.ausbildungsberuf = txtAusbildungsberuf.Text
+            interviewer.ausbildungsberuf = ausbildungstudium
 
             ' Me.Validate()
 
@@ -200,9 +203,12 @@ Public Class frmInterviewer
 
             frmMain.GroupBox1.BackColor = Color.WhiteSmoke
 
+            frmMain.BewBindingSource.RemoveFilter() ' im Kurzfragebogen wurde ein Filter auf die Bindingsource von bewBindingSource gesetzt, der hier entfernt werden muss
+
             Me.Close()
 
         ElseIf result = Windows.Forms.DialogResult.No Then
+            frmMain.BewBindingSource.RemoveFilter() ' im Kurzfragebogen wurde ein Filter auf die Bindingsource von bewBindingSource gesetzt, der hier entfernt werden muss
             Exit Sub
         End If
     End Sub
@@ -371,8 +377,12 @@ Public Class frmInterviewer
         edvliste = String.Concat(edvcmb, txtSoftware_sonstige.Text.TrimEnd(CChar(","))) ' wird im Hauptfenster angezeigt nach Speicherung in der DB
     End Sub
 
+    Private Sub Ausbildungsdaten()
+        ausbildungstudium = String.Concat(txtAusbildungsberuf.Text, vbNewLine, txtAusbildung_qualifizierung.Text, vbNewLine, txtStudienfaecher.Text, vbNewLine, txtStudium_abschluss.Text)
+    End Sub
+
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Me.BewBindingSource.RemoveFilter()
+        frmMain.BewBindingSource.RemoveFilter() ' im Kurzfragebogen wurde ein Filter auf die Bindingsource von bewBindingSource gesetzt, der hier entfernt werden muss
         Me.Close()
     End Sub
 
@@ -838,11 +848,11 @@ Public Class frmInterviewer
                     ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
                     ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
                 End If
-            Case sender Is txtGehaltswunsch_monat
-                If txtGehaltswunsch_monat.Text = String.Empty Then
-                    ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
-                    ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
-                End If
+            'Case sender Is txtGehaltswunsch_monat
+            '    If txtGehaltswunsch_monat.Text = String.Empty Then
+            '        ErrorProvider1.SetError(CType(sender, Control), "Eintragen!")
+            '        ToolTip1.Show("Eintragen!", CType(sender, Control), 1500)
+            '    End If
 
             Case sender Is txtTaetigkeiten
                 If txtTaetigkeiten.Text = String.Empty Then
@@ -1116,7 +1126,4 @@ Public Class frmInterviewer
         Next
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Call Edvdaten()
-    End Sub
 End Class
