@@ -563,13 +563,13 @@ Public Class frmMain
                 End Using
 
             Case sender Is FilterzurückRadButton
-                Dim result As DialogResult = MessageBox.Show("Möchten Sie ihre Eingaben vorher speichern?", "Speichern?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                If result = Windows.Forms.DialogResult.No Then
-                    Me.BewGridView1.FilterDescriptors.Clear()
+                'Dim result As DialogResult = MessageBox.Show("Möchten Sie ihre Eingaben vorher speichern?", "Speichern?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                'If result = Windows.Forms.DialogResult.No Then
+                Me.BewGridView1.FilterDescriptors.Clear()
                     Me.BewGridView1.Rows(0).IsCurrent = True
-                ElseIf result = Windows.Forms.DialogResult.Yes Then
-                    Exit Sub
-                End If
+                'ElseIf result = Windows.Forms.DialogResult.Yes Then
+                'Exit Sub
+                'End If
 
             Case sender Is DruckenRadMenuItem2
                 If BewGridView1.SelectedRows.Count = 0 Then
