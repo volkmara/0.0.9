@@ -171,44 +171,46 @@ Public Class frmInterviewer
             interviewer.bewerberbeschreibung = CStr(exportfilertf)
             interviewer.bewerberbeschreibung_text = CStr(exportfiletxt)
             interviewer.sprachkenntnisse = CStr(sprachenliste)
-            interviewer.edvkenntnisse = edvliste
+            If Not frmXmleinlesen.xmlbool AndAlso edvliste <> String.Empty Then ' erforderlich, damit Einträge nicht überschrieben werden, wenn zuvor eine xmldatei eingelesen wurde
+                interviewer.edvkenntnisse = edvliste
+            End If
             'interviewer.ausbildungsberuf = txtAusbildungsberuf.Text
             interviewer.ausbildungsberuf = ausbildungstudium
 
-            ' Me.Validate()
+                ' Me.Validate()
 
-            Dim text As String = String.Concat("Die Einträge aus dem Interviewerfragebogen werden automatisch in die DB geschrieben, wenn sich der Interviewerfragebogen geschlossen hat.", vbNewLine, vbNewLine)
+                Dim text As String = String.Concat("Die Einträge aus dem Interviewerfragebogen werden automatisch in die DB geschrieben, wenn sich der Interviewerfragebogen geschlossen hat.", vbNewLine, vbNewLine)
 
-            MessageBox.Show(text, "Fertig", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show(text, "Fertig", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            ' Einträge aus Interviewerfragebogen in DB speichern bei Close
-            Me.Validate()
-            Me.BewBindingSource.EndEdit()
-            Me.Bew_bewerberdatenBindingSource.EndEdit()
-            Me.Bewerber_ausbildungBindingSource.EndEdit()
-            Me.Bewerber_berufserfahrungBindingSource.EndEdit()
-            Me.Bewerber_sprachenBindingSource.EndEdit()
-            Me.Bewerber_edvBindingSource.EndEdit()
-            Me.UlasBindingSource.EndEdit()
+                ' Einträge aus Interviewerfragebogen in DB speichern bei Close
+                Me.Validate()
+                Me.BewBindingSource.EndEdit()
+                Me.Bew_bewerberdatenBindingSource.EndEdit()
+                Me.Bewerber_ausbildungBindingSource.EndEdit()
+                Me.Bewerber_berufserfahrungBindingSource.EndEdit()
+                Me.Bewerber_sprachenBindingSource.EndEdit()
+                Me.Bewerber_edvBindingSource.EndEdit()
+                Me.UlasBindingSource.EndEdit()
 
-            frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
-            frmMain.Bew_bewerberdatenTableAdapter.Update(frmMain.BewerberDataSet.bew_bewerberdaten)
-            frmMain.UlasTableAdapter.Update(frmMain.BewerberDataSet.ulas)
-            frmMain.Bewerber_ausbildungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_ausbildung)
-            frmMain.Bewerber_berufserfahrungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_berufserfahrung)
-            frmMain.Bewerber_sprachenTableAdapter.Update(frmMain.BewerberDataSet.bewerber_sprachen)
-            frmMain.Bewerber_edvTableAdapter.Update(frmMain.BewerberDataSet.bewerber_edv)
+                frmMain.BewTableAdapter.Update(frmMain.BewerberDataSet.bew)
+                frmMain.Bew_bewerberdatenTableAdapter.Update(frmMain.BewerberDataSet.bew_bewerberdaten)
+                frmMain.UlasTableAdapter.Update(frmMain.BewerberDataSet.ulas)
+                frmMain.Bewerber_ausbildungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_ausbildung)
+                frmMain.Bewerber_berufserfahrungTableAdapter.Update(frmMain.BewerberDataSet.bewerber_berufserfahrung)
+                frmMain.Bewerber_sprachenTableAdapter.Update(frmMain.BewerberDataSet.bewerber_sprachen)
+                frmMain.Bewerber_edvTableAdapter.Update(frmMain.BewerberDataSet.bewerber_edv)
 
-            Call gespeichert()
+                Call gespeichert()
 
-            frmMain.GroupBox1.BackColor = Color.WhiteSmoke
+                frmMain.GroupBox1.BackColor = Color.WhiteSmoke
 
-            frmMain.BewBindingSource.RemoveFilter() ' im Kurzfragebogen wurde ein Filter auf die Bindingsource von bewBindingSource gesetzt, der hier entfernt werden muss
+                frmMain.BewBindingSource.RemoveFilter() ' im Kurzfragebogen wurde ein Filter auf die Bindingsource von bewBindingSource gesetzt, der hier entfernt werden muss
 
-            Me.Close()
+                Me.Close()
 
-        ElseIf result = Windows.Forms.DialogResult.No Then
-            frmMain.BewBindingSource.RemoveFilter() ' im Kurzfragebogen wurde ein Filter auf die Bindingsource von bewBindingSource gesetzt, der hier entfernt werden muss
+            ElseIf result = Windows.Forms.DialogResult.No Then
+                frmMain.BewBindingSource.RemoveFilter() ' im Kurzfragebogen wurde ein Filter auf die Bindingsource von bewBindingSource gesetzt, der hier entfernt werden muss
             Exit Sub
         End If
     End Sub
@@ -296,85 +298,86 @@ Public Class frmInterviewer
     End Sub
 
     Private Sub Edvdaten()
+        If Not frmXmleinlesen.xmlbool Then ' erforderlich, damit Einträge nicht überschrieben werden, wenn zuvor eine xmldatei eingelesen wurde
+            ' Dim bewerberedv = DirectCast(DirectCast(Me.Bewerber_edvBindingSource.Current, DataRowView).Row, bewerber_edvRow)
+            'Dim bewedv = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+            Dim edv As New List(Of String)()
+            Dim edvcmb As String
 
-        ' Dim bewerberedv = DirectCast(DirectCast(Me.Bewerber_edvBindingSource.Current, DataRowView).Row, bewerber_edvRow)
-        'Dim bewedv = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
-        Dim edv As New List(Of String)()
-        Dim edvcmb As String
+            If cmbWord.SelectedIndex > 0 Then
+                edv.Add("Word")
+            End If
 
-        If cmbWord.SelectedIndex > 0 Then
-            edv.Add("Word")
+            If cmbExcel.SelectedIndex > 0 Then
+                edv.Add("Excel")
+            End If
+
+            If cmbPowerpoint.SelectedIndex > 0 Then
+                edv.Add("Powerpoint")
+            End If
+
+            If cmbOutlook.SelectedIndex > 0 Then
+                edv.Add("Outlook")
+            End If
+
+            If cmbAccess.SelectedIndex > 0 Then
+                edv.Add("Access")
+            End If
+
+            If cmbProject.SelectedIndex > 0 Then
+                edv.Add("Project")
+            End If
+
+            If cmbThunderbird.SelectedIndex > 0 Then
+                edv.Add("Thunderbird")
+            End If
+
+            If cmbLotus_notes.SelectedIndex > 0 Then
+                edv.Add("Lotus Notes")
+            End If
+
+            If cmbSAP.SelectedIndex > 0 Then
+                edv.Add("SAP")
+            End If
+
+            If cmbDatev.SelectedIndex > 0 Then
+                edv.Add("Datev")
+            End If
+
+            If cmbDatevpro.SelectedIndex > 0 Then
+                edv.Add("Datevpro")
+            End If
+
+            If cmbMicrosoft_dynamics.SelectedIndex > 0 Then
+                edv.Add("Microsoft Dynamics")
+            End If
+
+            If cmbMicrosoft_navision.SelectedIndex > 0 Then
+                edv.Add("Microsoft Navision")
+            End If
+
+            If cmbAS400.SelectedIndex > 0 Then
+                edv.Add("AS 400")
+            End If
+
+            If cmbKhksage.SelectedIndex > 0 Then
+                edv.Add("KHK Sage")
+            End If
+
+            If cmbLexware.SelectedIndex > 0 Then
+                edv.Add("Lexware")
+            End If
+
+            If cmbAmadeus.SelectedIndex > 0 Then
+                edv.Add("Amadeus")
+            End If
+
+            'edvliste = String.Join(vbNewLine, edv)
+            edvcmb = String.Join(", ", edv)
+            edvcmb = String.Concat(edvcmb, ", ")
+
+            edvliste = String.Concat(edvcmb, txtSoftware_sonstige.Text.TrimEnd(CChar(","))) ' wird im Hauptfenster angezeigt nach Speicherung in der DB
         End If
-
-        If cmbExcel.SelectedIndex > 0 Then
-            edv.Add("Excel")
-        End If
-
-        If cmbPowerpoint.SelectedIndex > 0 Then
-            edv.Add("Powerpoint")
-        End If
-
-        If cmbOutlook.SelectedIndex > 0 Then
-            edv.Add("Outlook")
-        End If
-
-        If cmbAccess.SelectedIndex > 0 Then
-            edv.Add("Access")
-        End If
-
-        If cmbProject.SelectedIndex > 0 Then
-            edv.Add("Project")
-        End If
-
-        If cmbThunderbird.SelectedIndex > 0 Then
-            edv.Add("Thunderbird")
-        End If
-
-        If cmbLotus_notes.SelectedIndex > 0 Then
-            edv.Add("Lotus Notes")
-        End If
-
-        If cmbSAP.SelectedIndex > 0 Then
-            edv.Add("SAP")
-        End If
-
-        If cmbDatev.SelectedIndex > 0 Then
-            edv.Add("Datev")
-        End If
-
-        If cmbDatevpro.SelectedIndex > 0 Then
-            edv.Add("Datevpro")
-        End If
-
-        If cmbMicrosoft_dynamics.SelectedIndex > 0 Then
-            edv.Add("Microsoft Dynamics")
-        End If
-
-        If cmbMicrosoft_navision.SelectedIndex > 0 Then
-            edv.Add("Microsoft Navision")
-        End If
-
-        If cmbAS400.SelectedIndex > 0 Then
-            edv.Add("AS 400")
-        End If
-
-        If cmbKhksage.SelectedIndex > 0 Then
-            edv.Add("KHK Sage")
-        End If
-
-        If cmbLexware.SelectedIndex > 0 Then
-            edv.Add("Lexware")
-        End If
-
-        If cmbAmadeus.SelectedIndex > 0 Then
-            edv.Add("Amadeus")
-        End If
-
-        'edvliste = String.Join(vbNewLine, edv)
-        edvcmb = String.Join(", ", edv)
-        edvcmb = String.Concat(edvcmb, ", ")
-
-        edvliste = String.Concat(edvcmb, txtSoftware_sonstige.Text.TrimEnd(CChar(","))) ' wird im Hauptfenster angezeigt nach Speicherung in der DB
     End Sub
 
     Private Sub Ausbildungsdaten()
@@ -1056,17 +1059,30 @@ Public Class frmInterviewer
             cmb.SelectedIndex = 0
         Next
 
-        For Each cmb As ComboBox In Me.GroupBox14.Controls.OfType(Of ComboBox)()
-            cmb.DropDownStyle = ComboBoxStyle.DropDownList
-            cmb.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
-            cmb.SelectedIndex = 0
-        Next
+        ' erforderlich, damit Einträge nicht überschrieben werden, wenn zuvor eine xmldatei eingelesen wurde
 
-        For Each cmb As ComboBox In Me.GroupBox15.Controls.OfType(Of ComboBox)()
-            cmb.DropDownStyle = ComboBoxStyle.DropDownList
-            cmb.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
-            cmb.SelectedIndex = 0
-        Next
+        If frmXmleinlesen.xmlbool Then
+            Me.GroupBox14.Enabled = False
+            Me.GroupBox15.Enabled = False
+            Me.GroupBox13.Enabled = False
+
+        ElseIf Not frmXmleinlesen.xmlbool Then
+            Me.GroupBox14.Enabled = True
+            Me.GroupBox15.Enabled = True
+            Me.GroupBox13.Enabled = True
+
+            For Each cmb As ComboBox In Me.GroupBox14.Controls.OfType(Of ComboBox)()
+                cmb.DropDownStyle = ComboBoxStyle.DropDownList
+                cmb.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+                cmb.SelectedIndex = 0
+            Next
+
+            For Each cmb As ComboBox In Me.GroupBox15.Controls.OfType(Of ComboBox)()
+                cmb.DropDownStyle = ComboBoxStyle.DropDownList
+                cmb.Items.AddRange(New Object() {"0", "1", "2", "3", "4"})
+                cmb.SelectedIndex = 0
+            Next
+        End If
     End Sub
 
     Private Sub Stelle_vorschlagen_laut_interviewerTextBox_DoubleClick(sender As Object, e As EventArgs) Handles txtFuerstelle.DoubleClick
@@ -1126,4 +1142,8 @@ Public Class frmInterviewer
         Next
     End Sub
 
+    Private Sub frmInterviewer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        ' erforderlich, damit Einträge nicht überschrieben werden, wenn zuvor eine xmldatei eingelesen wurde, Bool zurücksetzen
+        frmXmleinlesen.xmlbool = False
+    End Sub
 End Class

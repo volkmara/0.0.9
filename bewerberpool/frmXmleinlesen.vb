@@ -19,6 +19,7 @@ Public Class frmXmleinlesen
     Public eintraegekorrekt_bool As Boolean = True
     Public Shared Property sqlfile As String = String.Empty
     Public Shared Property xmleinlesen_bool As Boolean = False
+    Public Shared Property xmlbool As Boolean = False
 
     Public Sub New(frmMain As frmMain)
         Me.frmMain = frmMain
@@ -244,6 +245,8 @@ Public Class frmXmleinlesen
             Dim dateiname As String = CStr(lstXml.SelectedItem.ToString)
             System.IO.File.Copy(dateiname, xmlalt, True)
             System.IO.File.Delete(dateiname)
+            ' xmlbool auf true setzen für Interviewerfragebogen
+            xmlbool = True
         End If
     End Sub
 

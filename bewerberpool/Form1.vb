@@ -637,11 +637,11 @@ Public Class frmMain
                     Exit Sub
                 End If
 
-                If BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = CInt(letzteid) AndAlso x.aktuell = CInt(1)) Then
-                    MessageBox.Show("Diese/r Bewerber/in ist bereits für das kommende Rundschreiben vorgesehen. Darum leuchtet der Rundschreiben-Button in diesem scheußlichen Blau. Wieder ein Mausklick zuviel...", "Ist bereits für das kommende Rundschreiben vorgesehen", MessageBoxButtons.OK, MessageBoxIcon.Hand)
-                    Exit Sub
-                Else
-                    Using frm = New frmRundschreibendetail(Me)
+                'If BewerberDataSet.rundschreiben.Any(Function(x) x.bewid = CInt(letzteid) AndAlso x.aktuell = CInt(1)) Then
+                '    MessageBox.Show("Diese/r Bewerber/in ist bereits für das kommende Rundschreiben vorgesehen. Darum leuchtet der Rundschreiben-Button in diesem scheußlichen Blau. ", "Ist bereits für das kommende Rundschreiben vorgesehen", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                '    Exit Sub
+                'Else
+                Using frm = New frmRundschreibendetail(Me)
                         Dim result = frm.ShowDialog(Me)
                         frm.BewerberDataSet = Me.BewerberDataSet
                         frm.BewTableAdapter = Me.BewTableAdapter
@@ -650,7 +650,7 @@ Public Class frmMain
                         frm.RundschreibenBindingSource.DataSource = Me.RundschreibenBindingSource
                     End Using
                     Me.BewBindingSource.RemoveFilter()
-                End If
+               ' End If
 
             Case sender Is Top10anzeigen
 

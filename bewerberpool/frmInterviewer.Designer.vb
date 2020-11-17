@@ -120,6 +120,8 @@ Partial Class frmInterviewer
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmbInterviewer = New System.Windows.Forms.ComboBox()
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnUebernehmen = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -181,6 +183,9 @@ Partial Class frmInterviewer
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.txtStudienfaecher = New System.Windows.Forms.TextBox()
         Me.Bewerber_ausbildungBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.txtStudium_abschluss = New System.Windows.Forms.TextBox()
@@ -227,8 +232,8 @@ Partial Class frmInterviewer
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.GroupBox13 = New System.Windows.Forms.GroupBox()
-        Me.cmbAmadeus = New System.Windows.Forms.ComboBox()
         Me.txtSoftware_sonstige = New System.Windows.Forms.TextBox()
+        Me.Bewerber_edvBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox14 = New System.Windows.Forms.GroupBox()
         Me.cmbLotus_notes = New System.Windows.Forms.ComboBox()
@@ -240,6 +245,7 @@ Partial Class frmInterviewer
         Me.cmbExcel = New System.Windows.Forms.ComboBox()
         Me.cmbWord = New System.Windows.Forms.ComboBox()
         Me.GroupBox15 = New System.Windows.Forms.GroupBox()
+        Me.cmbAmadeus = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtSAPModule = New System.Windows.Forms.TextBox()
         Me.cmbOracle = New System.Windows.Forms.ComboBox()
@@ -265,12 +271,6 @@ Partial Class frmInterviewer
         Me.UlasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
-        Me.Bewerber_edvBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.Bew_bewerberdatenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bew_bewerberdatenTableAdapter()
         Me.Bewerber_ausbildungTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewerber_ausbildungTableAdapter()
@@ -375,6 +375,8 @@ Partial Class frmInterviewer
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -403,6 +405,7 @@ Partial Class frmInterviewer
         Me.TabPage8.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
+        CType(Me.Bewerber_edvBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox14.SuspendLayout()
         Me.GroupBox15.SuspendLayout()
         Me.TabPage6.SuspendLayout()
@@ -415,9 +418,6 @@ Partial Class frmInterviewer
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Bewerber_edvBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'InterviewerLabel
@@ -1234,7 +1234,7 @@ Partial Class frmInterviewer
         'AmadeusLabel
         '
         AmadeusLabel.AutoSize = True
-        AmadeusLabel.Location = New System.Drawing.Point(21, 34)
+        AmadeusLabel.Location = New System.Drawing.Point(225, 138)
         AmadeusLabel.Name = "AmadeusLabel"
         AmadeusLabel.Size = New System.Drawing.Size(77, 16)
         AmadeusLabel.TabIndex = 2
@@ -1305,6 +1305,16 @@ Partial Class frmInterviewer
         Me.cmbInterviewer.Name = "cmbInterviewer"
         Me.cmbInterviewer.Size = New System.Drawing.Size(151, 24)
         Me.cmbInterviewer.TabIndex = 4
+        '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewerberDataSet
+        '
+        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
+        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnClose
         '
@@ -2015,6 +2025,39 @@ Partial Class frmInterviewer
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Berufsausbildung/Studium"
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Black
+        Me.Label14.Location = New System.Drawing.Point(502, 181)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(140, 30)
+        Me.Label14.TabIndex = 2
+        Me.Label14.Text = "(Mehrere Studienfächer " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Kommata trennen)"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(502, 58)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(154, 30)
+        Me.Label13.TabIndex = 2
+        Me.Label13.Text = "(Mehrere Qualifizierungen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Kommata trennen)"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(11, 58)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(85, 60)
+        Me.Label12.TabIndex = 1
+        Me.Label12.Text = "(Mehrere " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ausbildungen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Kommata" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "trennen)"
+        '
         'txtStudienfaecher
         '
         Me.txtStudienfaecher.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_ausbildungBindingSource, "studienfaecher", True))
@@ -2507,8 +2550,6 @@ Partial Class frmInterviewer
         'GroupBox13
         '
         Me.GroupBox13.BackColor = System.Drawing.Color.White
-        Me.GroupBox13.Controls.Add(AmadeusLabel)
-        Me.GroupBox13.Controls.Add(Me.cmbAmadeus)
         Me.GroupBox13.Controls.Add(Software_sonstigeLabel)
         Me.GroupBox13.Controls.Add(Me.txtSoftware_sonstige)
         Me.GroupBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2520,15 +2561,6 @@ Partial Class frmInterviewer
         Me.GroupBox13.TabStop = False
         Me.GroupBox13.Text = "Sonstige EDV-Kenntnisse:"
         '
-        'cmbAmadeus
-        '
-        Me.cmbAmadeus.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "amadeus", True))
-        Me.cmbAmadeus.FormattingEnabled = True
-        Me.cmbAmadeus.Location = New System.Drawing.Point(141, 31)
-        Me.cmbAmadeus.Name = "cmbAmadeus"
-        Me.cmbAmadeus.Size = New System.Drawing.Size(121, 24)
-        Me.cmbAmadeus.TabIndex = 3
-        '
         'txtSoftware_sonstige
         '
         Me.txtSoftware_sonstige.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "software_sonstige", True))
@@ -2538,6 +2570,11 @@ Partial Class frmInterviewer
         Me.txtSoftware_sonstige.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtSoftware_sonstige.Size = New System.Drawing.Size(190, 72)
         Me.txtSoftware_sonstige.TabIndex = 1
+        '
+        'Bewerber_edvBindingSource
+        '
+        Me.Bewerber_edvBindingSource.DataMember = "bewerber_edv"
+        Me.Bewerber_edvBindingSource.DataSource = Me.BewerberDataSet
         '
         'Label10
         '
@@ -2569,6 +2606,7 @@ Partial Class frmInterviewer
         Me.GroupBox14.Controls.Add(Me.cmbExcel)
         Me.GroupBox14.Controls.Add(WordLabel)
         Me.GroupBox14.Controls.Add(Me.cmbWord)
+        Me.GroupBox14.Enabled = False
         Me.GroupBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox14.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox14.Location = New System.Drawing.Point(10, 32)
@@ -2644,6 +2682,7 @@ Partial Class frmInterviewer
         'cmbWord
         '
         Me.cmbWord.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "word", True))
+        Me.cmbWord.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
         Me.cmbWord.FormattingEnabled = True
         Me.cmbWord.Location = New System.Drawing.Point(97, 30)
         Me.cmbWord.Name = "cmbWord"
@@ -2653,6 +2692,8 @@ Partial Class frmInterviewer
         'GroupBox15
         '
         Me.GroupBox15.BackColor = System.Drawing.Color.White
+        Me.GroupBox15.Controls.Add(AmadeusLabel)
+        Me.GroupBox15.Controls.Add(Me.cmbAmadeus)
         Me.GroupBox15.Controls.Add(Me.Label8)
         Me.GroupBox15.Controls.Add(Sap_moduleLabel)
         Me.GroupBox15.Controls.Add(Me.txtSAPModule)
@@ -2674,14 +2715,24 @@ Partial Class frmInterviewer
         Me.GroupBox15.Controls.Add(Me.cmbDatev)
         Me.GroupBox15.Controls.Add(SapLabel)
         Me.GroupBox15.Controls.Add(Me.cmbSAP)
+        Me.GroupBox15.Enabled = False
         Me.GroupBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox15.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox15.Location = New System.Drawing.Point(10, 173)
         Me.GroupBox15.Name = "GroupBox15"
-        Me.GroupBox15.Size = New System.Drawing.Size(977, 304)
+        Me.GroupBox15.Size = New System.Drawing.Size(977, 305)
         Me.GroupBox15.TabIndex = 1
         Me.GroupBox15.TabStop = False
-        Me.GroupBox15.Text = "ERP, CRM"
+        Me.GroupBox15.Text = "ERP, CRM, Amadeus"
+        '
+        'cmbAmadeus
+        '
+        Me.cmbAmadeus.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_edvBindingSource, "amadeus", True))
+        Me.cmbAmadeus.FormattingEnabled = True
+        Me.cmbAmadeus.Location = New System.Drawing.Point(321, 135)
+        Me.cmbAmadeus.Name = "cmbAmadeus"
+        Me.cmbAmadeus.Size = New System.Drawing.Size(97, 24)
+        Me.cmbAmadeus.TabIndex = 3
         '
         'Label8
         '
@@ -2911,54 +2962,6 @@ Partial Class frmInterviewer
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(11, 58)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(85, 60)
-        Me.Label12.TabIndex = 1
-        Me.Label12.Text = "(Mehrere " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ausbildungen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Kommata" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "trennen)"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(502, 58)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(154, 30)
-        Me.Label13.TabIndex = 2
-        Me.Label13.Text = "(Mehrere Qualifizierungen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Kommata trennen)"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.Black
-        Me.Label14.Location = New System.Drawing.Point(502, 181)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(140, 30)
-        Me.Label14.TabIndex = 2
-        Me.Label14.Text = "(Mehrere Studienfächer " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mit Kommata trennen)"
-        '
-        'BewBindingSource
-        '
-        Me.BewBindingSource.DataMember = "bew"
-        Me.BewBindingSource.DataSource = Me.BewerberDataSet
-        '
-        'BewerberDataSet
-        '
-        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
-        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Bewerber_edvBindingSource
-        '
-        Me.Bewerber_edvBindingSource.DataMember = "bewerber_edv"
-        Me.Bewerber_edvBindingSource.DataSource = Me.BewerberDataSet
-        '
         'BewTableAdapter
         '
         Me.BewTableAdapter.ClearBeforeFill = True
@@ -3037,6 +3040,8 @@ Partial Class frmInterviewer
         Me.SplitContainer1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
@@ -3077,6 +3082,7 @@ Partial Class frmInterviewer
         Me.Panel9.PerformLayout()
         Me.GroupBox13.ResumeLayout(False)
         Me.GroupBox13.PerformLayout()
+        CType(Me.Bewerber_edvBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox14.ResumeLayout(False)
         Me.GroupBox14.PerformLayout()
         Me.GroupBox15.ResumeLayout(False)
@@ -3092,9 +3098,6 @@ Partial Class frmInterviewer
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Bewerber_edvBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

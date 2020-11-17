@@ -96,7 +96,7 @@ Public Class frmRundschreibendetail
                 Call Doppelpruefen() ' Prüfung, ob nicht ein Bewerber bereits eingetragen wurde, was dem Dataset aber nicht bekannt ist
 
                 If doppelt Then
-                    MessageBox.Show("Diese/r Bewerber/in wurde bereits eingetragen. Bitte schließen Sie das aktuelle Fenster und laden Sie die Daten neu.", "Bewerber/in bereits eingetragen", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+                    MessageBox.Show("Diese/r Bewerber/in wurde bereits eingetragen. Bitte schließen Sie das aktuelle Fenster und laden Sie ggf. die Daten neu.", "Bewerber/in bereits eingetragen", MessageBoxButtons.OK, MessageBoxIcon.Stop)
                     Exit Sub
                 Else
                     ' Id des in der Combobox ausgewählten Monats ermitteln in der Tabelle "rundschreibenmonat" ermitteln
