@@ -25,6 +25,7 @@ Public Class frmInterviewer
     Public sprachenliste As String = String.Empty
     Public edvliste As String = String.Empty
     Public ausbildungstudium As String = String.Empty
+    Public aufmerksam As String = String.Empty
 
     Public tabpagecount As Integer = CInt(0)
 
@@ -113,6 +114,7 @@ Public Class frmInterviewer
         Call Sprachendaten() ' trägt Sprachen im Feld "Sprachkenntnisse" im Reiter "Bewerber/in" ein
         Call Edvdaten() ' EDVkenntnisse für Feld EDVkenntnisse im Reiter Bewerber/in
         Call Ausbildungsdaten() ' Ausbildung, Qualifizierungen, Studium, Abschluss kumuliert
+        Call aufmerksamliste()
 
         ' Validierung vorm Speichern
         If Not frmMain.StandComboBox.Text = CStr("fertig") AndAlso TabControl1.SelectedTab IsNot TabPage7 Then
@@ -176,10 +178,11 @@ Public Class frmInterviewer
             End If
             'interviewer.ausbildungsberuf = txtAusbildungsberuf.Text
             interviewer.ausbildungsberuf = ausbildungstudium
+            interviewer.aufmerksam = aufmerksam
 
-                ' Me.Validate()
+            ' Me.Validate()
 
-                Dim text As String = String.Concat("Die Einträge aus dem Interviewerfragebogen werden automatisch in die DB geschrieben, wenn sich der Interviewerfragebogen geschlossen hat.", vbNewLine, vbNewLine)
+            Dim text As String = String.Concat("Die Einträge aus dem Interviewerfragebogen werden automatisch in die DB geschrieben, wenn sich der Interviewerfragebogen geschlossen hat.", vbNewLine, vbNewLine)
 
                 MessageBox.Show(text, "Fertig", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -384,6 +387,16 @@ Public Class frmInterviewer
         ausbildungstudium = String.Concat(txtAusbildungsberuf.Text, vbNewLine, txtAusbildung_qualifizierung.Text, vbNewLine, txtStudienfaecher.Text, vbNewLine, txtStudium_abschluss.Text)
     End Sub
 
+    Private Sub aufmerksamliste()
+
+        If txtEmpfehlung.Text <> String.Empty Then
+            aufmerksam = String.Concat(cmbAufmerksam.Text, ", ", "Empfohlen von: ", txtEmpfehlung.Text)
+        Else
+            aufmerksam = cmbAufmerksam.Text
+        End If
+
+    End Sub
+
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         frmMain.BewBindingSource.RemoveFilter() ' im Kurzfragebogen wurde ein Filter auf die Bindingsource von bewBindingSource gesetzt, der hier entfernt werden muss
         Me.Close()
@@ -567,6 +580,11 @@ Public Class frmInterviewer
         If txtTaetigkeiten.Text = String.Empty Then
             pflichtfeld.Add("Bisherige Tätigkeiten, berufliche Schwerpunkte, Zeugnistext")
             txtTaetigkeiten.BackColor = Color.Yellow
+        End If
+
+        If cmbAufmerksam.Text = String.Empty Then
+            pflichtfeld.Add("Aufmerksam geworden durch")
+            cmbAufmerksam.BackColor = Color.Yellow
         End If
 
         pflichtfeldliste = String.Join(vbCrLf, pflichtfeld)

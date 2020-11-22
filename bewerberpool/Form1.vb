@@ -1956,6 +1956,10 @@ Public Class frmMain
     End Sub
 #End Region
 
+    Private Sub aufmerksam()
+
+    End Sub
+
 #Region "EDV-Kenntnisse bei Änderungen im Tab EDV in Feld EDV-Kenntnisse übertragen"
     Private Sub EDVdaten()
         'Dim bew_edv = DirectCast(DirectCast(Me.Bewerber_edvBindingSource.Current, DataRowView).Row, bewerber_edvRow)

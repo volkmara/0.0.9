@@ -575,6 +575,7 @@ Partial Class frmMain
         Dim Buero_protokollführungLabel As System.Windows.Forms.Label
         Dim Buero_omnitrackerLabel As System.Windows.Forms.Label
         Dim Buero_dokuwareLabel As System.Windows.Forms.Label
+        Dim AufmerksamLabel As System.Windows.Forms.Label
         Dim GridViewDecimalColumn1 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
         Dim GridViewDecimalColumn2 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
         Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
@@ -647,16 +648,17 @@ Partial Class frmMain
         Dim GridViewCheckBoxColumn2 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
         Dim GridViewTextBoxColumn51 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn52 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn53 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim GridViewDecimalColumn18 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
         Dim GridViewDecimalColumn19 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn53 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn54 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDateTimeColumn2 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
         Dim GridViewTextBoxColumn55 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDateTimeColumn2 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
         Dim GridViewTextBoxColumn56 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDateTimeColumn3 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
         Dim GridViewTextBoxColumn57 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDateTimeColumn3 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+        Dim GridViewTextBoxColumn58 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim SortDescriptor1 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
         Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.PictureBox32 = New System.Windows.Forms.PictureBox()
@@ -743,6 +745,7 @@ Partial Class frmMain
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.lblMehrAnmerkungen = New System.Windows.Forms.Label()
         Me.GroupBox21 = New System.Windows.Forms.GroupBox()
+        Me.txtAufmerksam = New System.Windows.Forms.TextBox()
         Me.EdvkenntnisseTextBox1 = New System.Windows.Forms.TextBox()
         Me.cmbAufmerksam = New System.Windows.Forms.ComboBox()
         Me.EmpfehlungTextBox1 = New System.Windows.Forms.TextBox()
@@ -2186,6 +2189,7 @@ Partial Class frmMain
         Buero_protokollführungLabel = New System.Windows.Forms.Label()
         Buero_omnitrackerLabel = New System.Windows.Forms.Label()
         Buero_dokuwareLabel = New System.Windows.Forms.Label()
+        AufmerksamLabel = New System.Windows.Forms.Label()
         Panel27.SuspendLayout
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).BeginInit
@@ -7356,7 +7360,7 @@ Partial Class frmMain
         '
         EdvkenntnisseLabel1.AutoSize = True
         EdvkenntnisseLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        EdvkenntnisseLabel1.Location = New System.Drawing.Point(-1, 251)
+        EdvkenntnisseLabel1.Location = New System.Drawing.Point(4, 387)
         EdvkenntnisseLabel1.Name = "EdvkenntnisseLabel1"
         EdvkenntnisseLabel1.Size = New System.Drawing.Size(99, 32)
         EdvkenntnisseLabel1.TabIndex = 18
@@ -7554,7 +7558,7 @@ Partial Class frmMain
         'Aufmerksam_andereLabel
         '
         Aufmerksam_andereLabel.AutoSize = True
-        Aufmerksam_andereLabel.Location = New System.Drawing.Point(12, 58)
+        Aufmerksam_andereLabel.Location = New System.Drawing.Point(6, 201)
         Aufmerksam_andereLabel.Name = "Aufmerksam_andereLabel"
         Aufmerksam_andereLabel.Size = New System.Drawing.Size(273, 16)
         Aufmerksam_andereLabel.TabIndex = 12
@@ -7563,7 +7567,7 @@ Partial Class frmMain
         'EmpfehlungLabel
         '
         EmpfehlungLabel.AutoSize = True
-        EmpfehlungLabel.Location = New System.Drawing.Point(6, 182)
+        EmpfehlungLabel.Location = New System.Drawing.Point(4, 322)
         EmpfehlungLabel.Name = "EmpfehlungLabel"
         EmpfehlungLabel.Size = New System.Drawing.Size(114, 16)
         EmpfehlungLabel.TabIndex = 0
@@ -7685,6 +7689,15 @@ Partial Class frmMain
         Buero_dokuwareLabel.Size = New System.Drawing.Size(81, 16)
         Buero_dokuwareLabel.TabIndex = 18
         Buero_dokuwareLabel.Text = "Dokuware:"
+        '
+        'AufmerksamLabel
+        '
+        AufmerksamLabel.AutoSize = True
+        AufmerksamLabel.Location = New System.Drawing.Point(6, 73)
+        AufmerksamLabel.Name = "AufmerksamLabel"
+        AufmerksamLabel.Size = New System.Drawing.Size(188, 16)
+        AufmerksamLabel.TabIndex = 19
+        AufmerksamLabel.Text = "Aufmerksamkeit kumuliert:"
         '
         'TabControl1
         '
@@ -8279,7 +8292,12 @@ Partial Class frmMain
         GridViewTextBoxColumn52.IsVisible = False
         GridViewTextBoxColumn52.Name = "fuerkunde"
         GridViewTextBoxColumn52.VisibleInColumnChooser = False
-        Me.BewGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn1, GridViewDecimalColumn2, GridViewTextBoxColumn1, GridViewDateTimeColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewDecimalColumn3, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewDecimalColumn4, GridViewDecimalColumn5, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewDecimalColumn6, GridViewDecimalColumn7, GridViewDecimalColumn8, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewTextBoxColumn25, GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewTextBoxColumn28, GridViewTextBoxColumn29, GridViewTextBoxColumn30, GridViewTextBoxColumn31, GridViewTextBoxColumn32, GridViewTextBoxColumn33, GridViewDecimalColumn9, GridViewTextBoxColumn34, GridViewDecimalColumn10, GridViewTextBoxColumn35, GridViewDecimalColumn11, GridViewTextBoxColumn36, GridViewDecimalColumn12, GridViewTextBoxColumn37, GridViewDecimalColumn13, GridViewTextBoxColumn38, GridViewDecimalColumn14, GridViewTextBoxColumn39, GridViewDecimalColumn15, GridViewTextBoxColumn40, GridViewDecimalColumn16, GridViewTextBoxColumn41, GridViewTextBoxColumn42, GridViewTextBoxColumn43, GridViewTextBoxColumn44, GridViewTextBoxColumn45, GridViewTextBoxColumn46, GridViewTextBoxColumn47, GridViewTextBoxColumn48, GridViewTextBoxColumn49, GridViewTextBoxColumn50, GridViewDecimalColumn17, GridViewCheckBoxColumn1, GridViewCheckBoxColumn2, GridViewTextBoxColumn51, GridViewTextBoxColumn52})
+        GridViewTextBoxColumn53.EnableExpressionEditor = False
+        GridViewTextBoxColumn53.FieldName = "aufmerksam"
+        GridViewTextBoxColumn53.HeaderText = "Aufmerksam durch"
+        GridViewTextBoxColumn53.Name = "aufmerksam"
+        GridViewTextBoxColumn53.Width = 150
+        Me.BewGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn1, GridViewDecimalColumn2, GridViewTextBoxColumn1, GridViewDateTimeColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewDecimalColumn3, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewDecimalColumn4, GridViewDecimalColumn5, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewDecimalColumn6, GridViewDecimalColumn7, GridViewDecimalColumn8, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewTextBoxColumn25, GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewTextBoxColumn28, GridViewTextBoxColumn29, GridViewTextBoxColumn30, GridViewTextBoxColumn31, GridViewTextBoxColumn32, GridViewTextBoxColumn33, GridViewDecimalColumn9, GridViewTextBoxColumn34, GridViewDecimalColumn10, GridViewTextBoxColumn35, GridViewDecimalColumn11, GridViewTextBoxColumn36, GridViewDecimalColumn12, GridViewTextBoxColumn37, GridViewDecimalColumn13, GridViewTextBoxColumn38, GridViewDecimalColumn14, GridViewTextBoxColumn39, GridViewDecimalColumn15, GridViewTextBoxColumn40, GridViewDecimalColumn16, GridViewTextBoxColumn41, GridViewTextBoxColumn42, GridViewTextBoxColumn43, GridViewTextBoxColumn44, GridViewTextBoxColumn45, GridViewTextBoxColumn46, GridViewTextBoxColumn47, GridViewTextBoxColumn48, GridViewTextBoxColumn49, GridViewTextBoxColumn50, GridViewDecimalColumn17, GridViewCheckBoxColumn1, GridViewCheckBoxColumn2, GridViewTextBoxColumn51, GridViewTextBoxColumn52, GridViewTextBoxColumn53})
         Me.BewGridView1.MasterTemplate.DataSource = Me.BewBindingSource
         Me.BewGridView1.MasterTemplate.EnableFiltering = True
         Me.BewGridView1.MasterTemplate.EnableGrouping = False
@@ -8855,7 +8873,7 @@ Partial Class frmMain
         Me.Panel5.Location = New System.Drawing.Point(1335, 8)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(339, 866)
+        Me.Panel5.Size = New System.Drawing.Size(352, 866)
         Me.Panel5.TabIndex = 14
         '
         'lblMehrAnmerkungen
@@ -8872,6 +8890,8 @@ Partial Class frmMain
         '
         'GroupBox21
         '
+        Me.GroupBox21.Controls.Add(AufmerksamLabel)
+        Me.GroupBox21.Controls.Add(Me.txtAufmerksam)
         Me.GroupBox21.Controls.Add(EdvkenntnisseLabel1)
         Me.GroupBox21.Controls.Add(Me.EdvkenntnisseTextBox1)
         Me.GroupBox21.Controls.Add(Me.cmbAufmerksam)
@@ -8883,15 +8903,26 @@ Partial Class frmMain
         Me.GroupBox21.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox21.Location = New System.Drawing.Point(6, 369)
         Me.GroupBox21.Name = "GroupBox21"
-        Me.GroupBox21.Size = New System.Drawing.Size(328, 480)
+        Me.GroupBox21.Size = New System.Drawing.Size(344, 488)
         Me.GroupBox21.TabIndex = 25
         Me.GroupBox21.TabStop = False
         Me.GroupBox21.Text = "Aufmerksam geworden auf Heyduck durch"
         '
+        'txtAufmerksam
+        '
+        Me.txtAufmerksam.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "aufmerksam", True))
+        Me.txtAufmerksam.Location = New System.Drawing.Point(7, 95)
+        Me.txtAufmerksam.Multiline = True
+        Me.txtAufmerksam.Name = "txtAufmerksam"
+        Me.txtAufmerksam.ReadOnly = True
+        Me.txtAufmerksam.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtAufmerksam.Size = New System.Drawing.Size(313, 98)
+        Me.txtAufmerksam.TabIndex = 20
+        '
         'EdvkenntnisseTextBox1
         '
         Me.EdvkenntnisseTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "edvkenntnisse", True))
-        Me.EdvkenntnisseTextBox1.Location = New System.Drawing.Point(132, 248)
+        Me.EdvkenntnisseTextBox1.Location = New System.Drawing.Point(129, 387)
         Me.EdvkenntnisseTextBox1.Multiline = True
         Me.EdvkenntnisseTextBox1.Name = "EdvkenntnisseTextBox1"
         Me.EdvkenntnisseTextBox1.ReadOnly = True
@@ -8901,17 +8932,18 @@ Partial Class frmMain
         '
         'cmbAufmerksam
         '
+        Me.cmbAufmerksam.BackColor = System.Drawing.Color.Yellow
         Me.cmbAufmerksam.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "aufmerksam", True))
         Me.cmbAufmerksam.FormattingEnabled = True
         Me.cmbAufmerksam.Location = New System.Drawing.Point(9, 21)
         Me.cmbAufmerksam.Name = "cmbAufmerksam"
-        Me.cmbAufmerksam.Size = New System.Drawing.Size(299, 24)
+        Me.cmbAufmerksam.Size = New System.Drawing.Size(281, 24)
         Me.cmbAufmerksam.TabIndex = 14
         '
         'EmpfehlungTextBox1
         '
         Me.EmpfehlungTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "empfehlung", True))
-        Me.EmpfehlungTextBox1.Location = New System.Drawing.Point(157, 179)
+        Me.EmpfehlungTextBox1.Location = New System.Drawing.Point(169, 322)
         Me.EmpfehlungTextBox1.Multiline = True
         Me.EmpfehlungTextBox1.Name = "EmpfehlungTextBox1"
         Me.EmpfehlungTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -8921,12 +8953,12 @@ Partial Class frmMain
         'Aufmerksam_andereTextBox
         '
         Me.Aufmerksam_andereTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "aufmerksam_andere", True))
-        Me.Aufmerksam_andereTextBox.Location = New System.Drawing.Point(15, 81)
+        Me.Aufmerksam_andereTextBox.Location = New System.Drawing.Point(9, 225)
         Me.Aufmerksam_andereTextBox.Multiline = True
         Me.Aufmerksam_andereTextBox.Name = "Aufmerksam_andereTextBox"
         Me.Aufmerksam_andereTextBox.ReadOnly = True
         Me.Aufmerksam_andereTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.Aufmerksam_andereTextBox.Size = New System.Drawing.Size(293, 80)
+        Me.Aufmerksam_andereTextBox.Size = New System.Drawing.Size(311, 80)
         Me.Aufmerksam_andereTextBox.TabIndex = 13
         '
         'GroupBox10
@@ -10436,28 +10468,28 @@ Partial Class frmMain
         GridViewDecimalColumn19.IsAutoGenerated = True
         GridViewDecimalColumn19.Name = "bewid"
         GridViewDecimalColumn19.VisibleInColumnChooser = False
-        GridViewTextBoxColumn53.AllowGroup = False
-        GridViewTextBoxColumn53.AllowSort = False
-        GridViewTextBoxColumn53.EnableExpressionEditor = False
-        GridViewTextBoxColumn53.FieldName = "betreff"
-        GridViewTextBoxColumn53.HeaderText = "Betreff"
-        GridViewTextBoxColumn53.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn53.IsAutoGenerated = True
-        GridViewTextBoxColumn53.MinWidth = 350
-        GridViewTextBoxColumn53.Name = "betreff"
-        GridViewTextBoxColumn53.VisibleInColumnChooser = False
-        GridViewTextBoxColumn53.Width = 350
         GridViewTextBoxColumn54.AllowGroup = False
         GridViewTextBoxColumn54.AllowSort = False
         GridViewTextBoxColumn54.EnableExpressionEditor = False
-        GridViewTextBoxColumn54.FieldName = "anmerkungen_text"
-        GridViewTextBoxColumn54.HeaderText = "Anmerkungen"
+        GridViewTextBoxColumn54.FieldName = "betreff"
+        GridViewTextBoxColumn54.HeaderText = "Betreff"
         GridViewTextBoxColumn54.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         GridViewTextBoxColumn54.IsAutoGenerated = True
-        GridViewTextBoxColumn54.MinWidth = 500
-        GridViewTextBoxColumn54.Name = "anmerkungen_text"
+        GridViewTextBoxColumn54.MinWidth = 350
+        GridViewTextBoxColumn54.Name = "betreff"
         GridViewTextBoxColumn54.VisibleInColumnChooser = False
-        GridViewTextBoxColumn54.Width = 630
+        GridViewTextBoxColumn54.Width = 350
+        GridViewTextBoxColumn55.AllowGroup = False
+        GridViewTextBoxColumn55.AllowSort = False
+        GridViewTextBoxColumn55.EnableExpressionEditor = False
+        GridViewTextBoxColumn55.FieldName = "anmerkungen_text"
+        GridViewTextBoxColumn55.HeaderText = "Anmerkungen"
+        GridViewTextBoxColumn55.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn55.IsAutoGenerated = True
+        GridViewTextBoxColumn55.MinWidth = 500
+        GridViewTextBoxColumn55.Name = "anmerkungen_text"
+        GridViewTextBoxColumn55.VisibleInColumnChooser = False
+        GridViewTextBoxColumn55.Width = 630
         GridViewDateTimeColumn2.AllowGroup = False
         GridViewDateTimeColumn2.EnableExpressionEditor = False
         GridViewDateTimeColumn2.FieldName = "eingetragen_am"
@@ -10468,23 +10500,23 @@ Partial Class frmMain
         GridViewDateTimeColumn2.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending
         GridViewDateTimeColumn2.VisibleInColumnChooser = False
         GridViewDateTimeColumn2.Width = 100
-        GridViewTextBoxColumn55.AllowGroup = False
-        GridViewTextBoxColumn55.AllowSort = False
-        GridViewTextBoxColumn55.EnableExpressionEditor = False
-        GridViewTextBoxColumn55.FieldName = "eingetragen_von"
-        GridViewTextBoxColumn55.HeaderText = "von"
-        GridViewTextBoxColumn55.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn55.IsAutoGenerated = True
-        GridViewTextBoxColumn55.Name = "eingetragen_von"
-        GridViewTextBoxColumn55.VisibleInColumnChooser = False
-        GridViewTextBoxColumn55.Width = 80
+        GridViewTextBoxColumn56.AllowGroup = False
+        GridViewTextBoxColumn56.AllowSort = False
         GridViewTextBoxColumn56.EnableExpressionEditor = False
-        GridViewTextBoxColumn56.FieldName = "anmerkungen_rtf"
-        GridViewTextBoxColumn56.HeaderText = "anmerkungen_rtf"
+        GridViewTextBoxColumn56.FieldName = "eingetragen_von"
+        GridViewTextBoxColumn56.HeaderText = "von"
+        GridViewTextBoxColumn56.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         GridViewTextBoxColumn56.IsAutoGenerated = True
-        GridViewTextBoxColumn56.IsVisible = False
-        GridViewTextBoxColumn56.Name = "anmerkungen_rtf"
+        GridViewTextBoxColumn56.Name = "eingetragen_von"
         GridViewTextBoxColumn56.VisibleInColumnChooser = False
+        GridViewTextBoxColumn56.Width = 80
+        GridViewTextBoxColumn57.EnableExpressionEditor = False
+        GridViewTextBoxColumn57.FieldName = "anmerkungen_rtf"
+        GridViewTextBoxColumn57.HeaderText = "anmerkungen_rtf"
+        GridViewTextBoxColumn57.IsAutoGenerated = True
+        GridViewTextBoxColumn57.IsVisible = False
+        GridViewTextBoxColumn57.Name = "anmerkungen_rtf"
+        GridViewTextBoxColumn57.VisibleInColumnChooser = False
         GridViewDateTimeColumn3.AllowGroup = False
         GridViewDateTimeColumn3.AllowSort = False
         GridViewDateTimeColumn3.EnableExpressionEditor = False
@@ -10495,17 +10527,17 @@ Partial Class frmMain
         GridViewDateTimeColumn3.IsVisible = False
         GridViewDateTimeColumn3.Name = "geaendert_am"
         GridViewDateTimeColumn3.Width = 100
-        GridViewTextBoxColumn57.AllowGroup = False
-        GridViewTextBoxColumn57.AllowSort = False
-        GridViewTextBoxColumn57.EnableExpressionEditor = False
-        GridViewTextBoxColumn57.FieldName = "geaendert_von"
-        GridViewTextBoxColumn57.HeaderText = "von"
-        GridViewTextBoxColumn57.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn57.IsAutoGenerated = True
-        GridViewTextBoxColumn57.IsVisible = False
-        GridViewTextBoxColumn57.Name = "geaendert_von"
-        GridViewTextBoxColumn57.Width = 80
-        Me.NotizenRadGridView.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn18, GridViewDecimalColumn19, GridViewTextBoxColumn53, GridViewTextBoxColumn54, GridViewDateTimeColumn2, GridViewTextBoxColumn55, GridViewTextBoxColumn56, GridViewDateTimeColumn3, GridViewTextBoxColumn57})
+        GridViewTextBoxColumn58.AllowGroup = False
+        GridViewTextBoxColumn58.AllowSort = False
+        GridViewTextBoxColumn58.EnableExpressionEditor = False
+        GridViewTextBoxColumn58.FieldName = "geaendert_von"
+        GridViewTextBoxColumn58.HeaderText = "von"
+        GridViewTextBoxColumn58.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn58.IsAutoGenerated = True
+        GridViewTextBoxColumn58.IsVisible = False
+        GridViewTextBoxColumn58.Name = "geaendert_von"
+        GridViewTextBoxColumn58.Width = 80
+        Me.NotizenRadGridView.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn18, GridViewDecimalColumn19, GridViewTextBoxColumn54, GridViewTextBoxColumn55, GridViewDateTimeColumn2, GridViewTextBoxColumn56, GridViewTextBoxColumn57, GridViewDateTimeColumn3, GridViewTextBoxColumn58})
         Me.NotizenRadGridView.MasterTemplate.DataSource = Me.NotizenBindingSource
         Me.NotizenRadGridView.MasterTemplate.EnableFiltering = True
         Me.NotizenRadGridView.MasterTemplate.EnableGrouping = False
@@ -18389,7 +18421,7 @@ Partial Class frmMain
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Bewerberpool 0.5.4"
+        Me.Text = "Bewerberpool 0.5.5"
         Panel27.ResumeLayout(False)
         Panel27.PerformLayout
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).EndInit
@@ -19707,4 +19739,5 @@ Partial Class frmMain
     Friend WithEvents cmbAufmerksam As ComboBox
     Friend WithEvents RbtnSpeichern As Telerik.WinControls.UI.RadButton
     Friend WithEvents RbtnDatenladen As Telerik.WinControls.UI.RadButton
+    Friend WithEvents txtAufmerksam As TextBox
 End Class
