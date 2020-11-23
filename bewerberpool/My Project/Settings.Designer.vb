@@ -68,6 +68,16 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Server=SERVER2012; user id=Adler; password=zgA7K$z!; database=oa;")>  _
+        Public ReadOnly Property oaConnectionString() As String
+            Get
+                Return CType(Me("oaConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Server=SERVER2012; user id=Adler; password=zgA7K$z!; Convert Zero Datetime=True;p"& _ 
             "ersistsecurityinfo=True;database=benutzerverwaltung;")>  _
         Public ReadOnly Property benutzerverwaltungConnectionString() As String
@@ -84,16 +94,6 @@ Namespace My
         Public ReadOnly Property bewerberConnectionString() As String
             Get
                 Return CType(Me("bewerberConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Server=SERVER2012; user id=Adler; password=zgA7K$z!; database=oa;")>  _
-        Public ReadOnly Property oaConnectionString() As String
-            Get
-                Return CType(Me("oaConnectionString"),String)
             End Get
         End Property
     End Class
