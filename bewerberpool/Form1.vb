@@ -1672,7 +1672,7 @@ Public Class frmMain
 #End Region
 
     ' ========================================================================= Validierungen ===================================================
-    Private Sub AuslandsaufenthaltComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AuslandsaufenthaltComboBox.SelectedIndexChanged, StandComboBox.SelectedIndexChanged, cmbStatus.SelectedIndexChanged, VerfuegbarkeitComboBox.SelectedIndexChanged, cmbAufmerksam.SelectedIndexChanged
+    Private Sub AuslandsaufenthaltComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AuslandsaufenthaltComboBox.SelectedIndexChanged, StandComboBox.SelectedIndexChanged, cmbStatus.SelectedIndexChanged, VerfuegbarkeitComboBox.SelectedIndexChanged
         Select Case True
             Case sender Is AuslandsaufenthaltComboBox
                 If AuslandsaufenthaltComboBox.SelectedIndex > CInt(0) Then
@@ -2051,7 +2051,7 @@ Public Class frmMain
             cmb.SelectedIndex = 0
         Next
 
-        Me.cmbAufmerksam.Items.AddRange(New String() {"Agentur für Arbeit", "backinjob", "Gigajob", "Indeed", "Jobmonitor", "Jobomat", "Join", "Kalaydo", "meinestadt", "Monster", "Placement24", "Rekruter", "stellenmarkt", "Stepstone", " ", "Facebook", "Twitter", "Xing", "Google", "Bing", "Yahoo", "Web.de", " ", "Homepage", " ", "Bonner Generalanzeiger", "Kölner Stadtanzeiger", "Rhein-Sieg-Anzeiger", "Regionale Anzeigenblätter", " ", "andere"})
+        Me.cmbAufmerksam.Items.AddRange(New String() {"Agentur für Arbeit", "backinjob", "Gigajob", "Indeed", "Jobmonitor", "Jobomat", " ", "Join", "Join/Xing", "Join/Indeed", "Join/LinkedIn", "Join/Stepstone", " ", "Kalaydo", "meinestadt", "Monster", "Placement24", "Rekruter", "stellenmarkt", "Stepstone", " ", "Facebook", "Twitter", "Xing", "Google", "Bing", "Yahoo", "Web.de", " ", "Homepage", " ", "Bonner Generalanzeiger", "Kölner Stadtanzeiger", "Rhein-Sieg-Anzeiger", "Regionale Anzeigenblätter", " ", "andere"})
     End Sub
 
 

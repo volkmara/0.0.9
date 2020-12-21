@@ -745,9 +745,9 @@ Partial Class frmMain
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.lblMehrAnmerkungen = New System.Windows.Forms.Label()
         Me.GroupBox21 = New System.Windows.Forms.GroupBox()
+        Me.cmbAufmerksam = New System.Windows.Forms.ComboBox()
         Me.txtAufmerksam = New System.Windows.Forms.TextBox()
         Me.EdvkenntnisseTextBox1 = New System.Windows.Forms.TextBox()
-        Me.cmbAufmerksam = New System.Windows.Forms.ComboBox()
         Me.EmpfehlungTextBox1 = New System.Windows.Forms.TextBox()
         Me.Aufmerksam_andereTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
@@ -8890,11 +8890,11 @@ Partial Class frmMain
         '
         'GroupBox21
         '
+        Me.GroupBox21.Controls.Add(Me.cmbAufmerksam)
         Me.GroupBox21.Controls.Add(AufmerksamLabel)
         Me.GroupBox21.Controls.Add(Me.txtAufmerksam)
         Me.GroupBox21.Controls.Add(EdvkenntnisseLabel1)
         Me.GroupBox21.Controls.Add(Me.EdvkenntnisseTextBox1)
-        Me.GroupBox21.Controls.Add(Me.cmbAufmerksam)
         Me.GroupBox21.Controls.Add(Aufmerksam_andereLabel)
         Me.GroupBox21.Controls.Add(EmpfehlungLabel)
         Me.GroupBox21.Controls.Add(Me.EmpfehlungTextBox1)
@@ -8907,6 +8907,16 @@ Partial Class frmMain
         Me.GroupBox21.TabIndex = 25
         Me.GroupBox21.TabStop = False
         Me.GroupBox21.Text = "Aufmerksam geworden auf Heyduck durch"
+        '
+        'cmbAufmerksam
+        '
+        Me.cmbAufmerksam.BackColor = System.Drawing.Color.Yellow
+        Me.cmbAufmerksam.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BewBindingSource, "aufmerksam", True))
+        Me.cmbAufmerksam.FormattingEnabled = True
+        Me.cmbAufmerksam.Location = New System.Drawing.Point(9, 27)
+        Me.cmbAufmerksam.Name = "cmbAufmerksam"
+        Me.cmbAufmerksam.Size = New System.Drawing.Size(311, 24)
+        Me.cmbAufmerksam.TabIndex = 2
         '
         'txtAufmerksam
         '
@@ -8929,16 +8939,6 @@ Partial Class frmMain
         Me.EdvkenntnisseTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.EdvkenntnisseTextBox1.Size = New System.Drawing.Size(195, 81)
         Me.EdvkenntnisseTextBox1.TabIndex = 19
-        '
-        'cmbAufmerksam
-        '
-        Me.cmbAufmerksam.BackColor = System.Drawing.Color.Yellow
-        Me.cmbAufmerksam.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bew_bewerberdatenBindingSource, "aufmerksam", True))
-        Me.cmbAufmerksam.FormattingEnabled = True
-        Me.cmbAufmerksam.Location = New System.Drawing.Point(9, 21)
-        Me.cmbAufmerksam.Name = "cmbAufmerksam"
-        Me.cmbAufmerksam.Size = New System.Drawing.Size(281, 24)
-        Me.cmbAufmerksam.TabIndex = 14
         '
         'EmpfehlungTextBox1
         '
@@ -9053,7 +9053,7 @@ Partial Class frmMain
         Me.GroupBox6.Controls.Add(Buero_durchschnittLabel)
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox6.Location = New System.Drawing.Point(705, 2741)
+        Me.GroupBox6.Location = New System.Drawing.Point(705, 3523)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(324, 24)
         Me.GroupBox6.TabIndex = 15
@@ -18421,7 +18421,7 @@ Partial Class frmMain
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Bewerberpool 0.5.5"
+        Me.Text = "Bewerberpool 0.5.6"
         Panel27.ResumeLayout(False)
         Panel27.PerformLayout
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).EndInit
@@ -19736,8 +19736,8 @@ Partial Class frmMain
     Friend WithEvents Buero_protokollführungComboBox As ComboBox
     Friend WithEvents Buero_dokuwareComboBox As ComboBox
     Friend WithEvents Buero_omnitrackerComboBox As ComboBox
-    Friend WithEvents cmbAufmerksam As ComboBox
     Friend WithEvents RbtnSpeichern As Telerik.WinControls.UI.RadButton
     Friend WithEvents RbtnDatenladen As Telerik.WinControls.UI.RadButton
     Friend WithEvents txtAufmerksam As TextBox
+    Friend WithEvents cmbAufmerksam As ComboBox
 End Class
