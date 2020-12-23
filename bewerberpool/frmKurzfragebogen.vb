@@ -38,7 +38,7 @@ Public Class frmKurzfragebogen
     End Sub
 
     Private Sub frmKurzfragebogen_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        txtGeburtstag.Text = "z.B. 01.01.1970"
+        txtGeburtstag.Text = "TT.MM.JJJJ"
         Call Timerreload.Timerstop() ' Timer für DB-Reload stoppen
     End Sub
 

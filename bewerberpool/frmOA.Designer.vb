@@ -60,20 +60,20 @@ Partial Class frmOA
         Me.Oa_qualifikationTextBox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.OAGridView = New Telerik.WinControls.UI.RadGridView()
-        Me.Oa_stelleTableAdapter = New bewerberpool.oaDataSetTableAdapters.oa_stelleTableAdapter()
         Me.btneintragloeschen = New Telerik.WinControls.UI.RadButton()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnCloseandDelete = New Telerik.WinControls.UI.RadButton()
         Me.btnWerteeintragenFensterschliessen = New Telerik.WinControls.UI.RadButton()
-        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Oa_stelleTableAdapter = New bewerberpool.oaDataSetTableAdapters.oa_stelleTableAdapter()
+        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Oa_arbeitsortLabel = New System.Windows.Forms.Label()
         Oa_arbeitszeitLabel = New System.Windows.Forms.Label()
         Oa_zavmLabel = New System.Windows.Forms.Label()
@@ -85,15 +85,15 @@ Partial Class frmOA
         Me.GroupBox2.SuspendLayout()
         CType(Me.Oa_stelleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OAGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OAGridView.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btneintragloeschen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCloseandDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnWerteeintragenFensterschliessen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Oa_arbeitsortLabel
@@ -162,7 +162,7 @@ Partial Class frmOA
         Me.Panel1.ForeColor = System.Drawing.Color.Crimson
         Me.Panel1.Location = New System.Drawing.Point(9, 315)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1217, 336)
+        Me.Panel1.Size = New System.Drawing.Size(1391, 586)
         Me.Panel1.TabIndex = 0
         '
         'RadRTEhtml
@@ -172,7 +172,7 @@ Partial Class frmOA
         Me.RadRTEhtml.Location = New System.Drawing.Point(598, 30)
         Me.RadRTEhtml.Name = "RadRTEhtml"
         Me.RadRTEhtml.SelectionFill = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(158, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.RadRTEhtml.Size = New System.Drawing.Size(608, 297)
+        Me.RadRTEhtml.Size = New System.Drawing.Size(754, 436)
         Me.RadRTEhtml.TabIndex = 14
         '
         'GroupBox2
@@ -284,11 +284,6 @@ Partial Class frmOA
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(281, 164)
         Me.ListBox1.TabIndex = 1
-        '
-        'BewerberDataSet
-        '
-        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
-        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'OAGridView
         '
@@ -418,10 +413,6 @@ Partial Class frmOA
         Me.OAGridView.Size = New System.Drawing.Size(696, 214)
         Me.OAGridView.TabIndex = 0
         '
-        'Oa_stelleTableAdapter
-        '
-        Me.Oa_stelleTableAdapter.ClearBeforeFill = True
-        '
         'btneintragloeschen
         '
         Me.btneintragloeschen.ForeColor = System.Drawing.Color.Red
@@ -465,15 +456,6 @@ Partial Class frmOA
         Me.btnWerteeintragenFensterschliessen.TabIndex = 8
         Me.btnWerteeintragenFensterschliessen.Text = "<html><strong>      Fenster schließen, <br /></strong><strong>   Stellen eintrage" &
     "n</strong></html>"
-        '
-        'BewBindingSource
-        '
-        Me.BewBindingSource.DataMember = "bew"
-        Me.BewBindingSource.DataSource = Me.BewerberDataSet
-        '
-        'BewTableAdapter
-        '
-        Me.BewTableAdapter.ClearBeforeFill = True
         '
         'Panel2
         '
@@ -539,12 +521,30 @@ Partial Class frmOA
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "2. Ausgewählte Stellen Stellen eintragen"
         '
+        'Oa_stelleTableAdapter
+        '
+        Me.Oa_stelleTableAdapter.ClearBeforeFill = True
+        '
+        'BewerberDataSet
+        '
+        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
+        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewTableAdapter
+        '
+        Me.BewTableAdapter.ClearBeforeFill = True
+        '
         'frmOA
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkOrange
-        Me.ClientSize = New System.Drawing.Size(1233, 657)
+        Me.ClientSize = New System.Drawing.Size(1400, 901)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox1)
@@ -561,23 +561,20 @@ Partial Class frmOA
         Me.GroupBox2.PerformLayout()
         CType(Me.Oa_stelleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OAGridView.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OAGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btneintragloeschen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCloseandDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnWerteeintragenFensterschliessen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents OaDataSet As bewerberpool.oaDataSet
-    Friend WithEvents Oa_stelleBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Oa_stelleTableAdapter As bewerberpool.oaDataSetTableAdapters.oa_stelleTableAdapter
     Friend WithEvents OAGridView As Telerik.WinControls.UI.RadGridView
     Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -602,4 +599,7 @@ Partial Class frmOA
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents OaDataSet As oaDataSet
+    Friend WithEvents Oa_stelleBindingSource As BindingSource
+    Friend WithEvents Oa_stelleTableAdapter As oaDataSetTableAdapters.oa_stelleTableAdapter
 End Class

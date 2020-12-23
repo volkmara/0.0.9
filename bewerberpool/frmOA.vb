@@ -37,7 +37,7 @@ Public Class frmOA
 
     Private Sub frmOA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
-        Oa_stelleTableAdapter.Fill(OaDataSet.oa_stelle)
+        Me.Oa_stelleTableAdapter.Fill(Me.OaDataSet.oa_stelle)
         Me.BewBindingSource.DataSource = frmMain.BewBindingSource
         Me.BewBindingSource.Filter = "id_bew = '" & letzteid & "'"
     End Sub
