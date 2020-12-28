@@ -1,4 +1,5 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.ComponentModel
+Imports System.Text.RegularExpressions
 
 Imports bewerberpool.BewerberDataSet
 Imports Telerik.Collections.Generic
@@ -8,6 +9,7 @@ Public Class frmKurzfragebogen
     Private _frmMain As frmMain
     Public bewidneu As Integer = 0
     Public arbeitsart As String = String.Empty
+    Public clicked As Boolean = False
     Private _frmInterviewer As frmInterviewer
     ' Public Shared Property Kurzfragebogen As Boolean = False ' notwendig, damit Inallentabellen.eintragen richtig funktioniert
 
@@ -54,7 +56,9 @@ Public Class frmKurzfragebogen
         ' Call ZAVM()
         Call Getbewid()
         bewidneu = CInt(bewid + 1)
+        'Me.BewBindingSource.AddNew()
         Dim bewspeichern = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+
         If cmbStand.Text = "10" Then
             bewspeichern.stand = "10"
             bewspeichern.status = CStr("fertig")
@@ -110,6 +114,7 @@ Public Class frmKurzfragebogen
 
     ' ================================================================================ Validierungen =======================================================
     Private Sub cmbAnrede_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmbAnrede.Validating, txtVorname.Validating, txtName.Validating, txtOrt.Validating, txtEmail.Validating, txtPlz.Validating
+
         Select Case True
             Case sender Is cmbAnrede
                 '  If AnredeComboBox.SelectedText = String.Empty Then
@@ -199,18 +204,14 @@ Public Class frmKurzfragebogen
         End Select
     End Sub
 
-    'Private Sub ZAVM()
-    '    Select Case True
-    '        Case rbtnVM.Checked
-    '            arbeitsart = "Vermittlung"
-    '        Case rbtZA.Checked
-    '            arbeitsart = "Zeitarbeit"
-    '        Case rbtnZAVM.Checked
-    '            arbeitsart = "Vermittlung/Zeitarbeit"
-    '        Case rbtnZAÜN.Checked
-    '            arbeitsart = "Zeitarbeit mit Übernahme"
-    '        Case rbtnZAVMZAÜN.Checked
-    '            arbeitsart = String.Concat("Vermittlung, Zeitarbeit, ", vbNewLine, "Zeitarbeit mit Übernahme")
-    '    End Select
-    'End Sub
+    Private Sub frmKurzfragebogen_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+
+        If MessageBox.Show("Wirklich beenden?", "Frage", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub frmKurzfragebogen_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        frmMain.DBLoad()
+    End Sub
 End Class
