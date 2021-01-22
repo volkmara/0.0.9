@@ -94,10 +94,10 @@ Public Class frmNeueAnmerkunganlegen
         exportfiletxt = allgemein.ExporttoTxt(Me.AnmerkungRTE.Document)
 
         If exportfiletxt <> String.Empty Then
-            Dim result As DialogResult = MessageBox.Show("Möchten Sie Ihre neue Anmerkung abspeichern, dann drücken Sie auf den Button ""Ja"", wenn Sie nicht speichern wollen, auf den Button ""Nein""", "Neue Anmerkung speichern", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
-            If result = Windows.Forms.DialogResult.Yes Then
+            '  Dim result As DialogResult = MessageBox.Show("Möchten Sie Ihre neue Anmerkung abspeichern, dann drücken Sie auf den Button ""Ja"", wenn Sie nicht speichern wollen, auf den Button ""Nein""", "Neue Anmerkung speichern", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+            ' If result = Windows.Forms.DialogResult.Yes Then
 
-                If BetreffListBox.SelectedItems.Count = 0 Then
+            If BetreffListBox.SelectedItems.Count = 0 Then
                     MessageBox.Show("Bitte einen Betreff auswählen.", "Fehlender Betreff", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     notizeneintragen.betreff = CStr(BetreffListBox.SelectedItem.ToString)
@@ -131,12 +131,12 @@ Public Class frmNeueAnmerkunganlegen
                     droptext = String.Empty
                     Me.Close()
                 End If
-            ElseIf result = Windows.Forms.DialogResult.No Then
-                Exit Sub
+            'ElseIf result = Windows.Forms.DialogResult.No Then
+            Exit Sub
             End If
-        Else
-            MessageBox.Show("Keine Anmerkung eingetragen", "Keine Anmerkung eingetragen", MessageBoxButtons.OK, MessageBoxIcon.Hand)
-        End If
+        'Else
+        'MessageBox.Show("Keine Anmerkung eingetragen", "Keine Anmerkung eingetragen", MessageBoxButtons.OK, MessageBoxIcon.Hand)
+        'End If
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click

@@ -666,8 +666,6 @@ Partial Class frmMain
         Me.PictureBox31 = New System.Windows.Forms.PictureBox()
         Me.txtControlling_report_controlling_systeme = New System.Windows.Forms.TextBox()
         Me.Bewerber_controllingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.Controlling_sonstigesTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox52 = New System.Windows.Forms.GroupBox()
         Me.Controlling_soxxComboBox = New System.Windows.Forms.ComboBox()
@@ -1136,7 +1134,6 @@ Partial Class frmMain
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.GroupBox45 = New System.Windows.Forms.GroupBox()
         Me.Logistik_staplerscheinCheckBox = New System.Windows.Forms.CheckBox()
-        Me.Bewerber_logistikBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Logistik_lagerverwaltungComboBox = New System.Windows.Forms.ComboBox()
         Me.Logistik_verhandlungenComboBox = New System.Windows.Forms.ComboBox()
         Me.Logistik_lieferueberwachungComboBox = New System.Windows.Forms.ComboBox()
@@ -1607,6 +1604,9 @@ Partial Class frmMain
         Me.HeyduckDataSet = New bewerberpool.heyduckDataSet()
         Me.Tt_newsTableAdapter = New bewerberpool.heyduckDataSetTableAdapters.tt_newsTableAdapter()
         Me.TableAdapterManager2 = New bewerberpool.heyduckDataSetTableAdapters.TableAdapterManager()
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
+        Me.Bewerber_logistikBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OaDataSet = New bewerberpool.oaDataSet()
         Me.Oa_stelleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Oa_stelleTableAdapter = New bewerberpool.oaDataSetTableAdapters.oa_stelleTableAdapter()
@@ -2195,8 +2195,6 @@ Partial Class frmMain
         CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.PictureBox31, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Bewerber_controllingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox52.SuspendLayout
         Me.GroupBox53.SuspendLayout
         Me.TabControl1.SuspendLayout
@@ -2319,7 +2317,6 @@ Partial Class frmMain
         Me.Panel22.SuspendLayout
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox45.SuspendLayout
-        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox44.SuspendLayout
         CType(Me.Bewerber_versandBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel21.SuspendLayout
@@ -2424,6 +2421,9 @@ Partial Class frmMain
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Tt_newsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.HeyduckDataSet, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.OaDataSet, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Oa_stelleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
@@ -4902,16 +4902,6 @@ Partial Class frmMain
         '
         Me.Bewerber_controllingBindingSource.DataMember = "bew_bewerber_controlling"
         Me.Bewerber_controllingBindingSource.DataSource = Me.BewBindingSource
-        '
-        'BewBindingSource
-        '
-        Me.BewBindingSource.DataMember = "bew"
-        Me.BewBindingSource.DataSource = Me.BewerberDataSet
-        '
-        'BewerberDataSet
-        '
-        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
-        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Controlling_report_controlling_systemeLabel
         '
@@ -13263,11 +13253,6 @@ Partial Class frmMain
         Me.Logistik_staplerscheinCheckBox.Text = "Ja/Nein"
         Me.Logistik_staplerscheinCheckBox.UseVisualStyleBackColor = True
         '
-        'Bewerber_logistikBindingSource
-        '
-        Me.Bewerber_logistikBindingSource.DataMember = "bewerber_logistik"
-        Me.Bewerber_logistikBindingSource.DataSource = Me.BewerberDataSet
-        '
         'Logistik_lagerverwaltungComboBox
         '
         Me.Logistik_lagerverwaltungComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Bewerber_logistikBindingSource, "logistik_lagerverwaltung", True))
@@ -18238,6 +18223,21 @@ Partial Class frmMain
         Me.TableAdapterManager2.tt_newsTableAdapter = Me.Tt_newsTableAdapter
         Me.TableAdapterManager2.UpdateOrder = bewerberpool.heyduckDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewerberDataSet
+        '
+        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
+        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Bewerber_logistikBindingSource
+        '
+        Me.Bewerber_logistikBindingSource.DataMember = "bewerber_logistik"
+        Me.Bewerber_logistikBindingSource.DataSource = Me.BewerberDataSet
+        '
         'OaDataSet
         '
         Me.OaDataSet.DataSetName = "oaDataSet"
@@ -18421,15 +18421,13 @@ Partial Class frmMain
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Bewerberpool 0.5.6"
+        Me.Text = "Bewerberpool 0.5.7"
         Panel27.ResumeLayout(False)
         Panel27.PerformLayout
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.PictureBox31, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Bewerber_controllingBindingSource, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit
         Me.GroupBox52.ResumeLayout(False)
         Me.GroupBox52.PerformLayout
         Me.GroupBox53.ResumeLayout(False)
@@ -18605,7 +18603,6 @@ Partial Class frmMain
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit
         Me.GroupBox45.ResumeLayout(False)
         Me.GroupBox45.PerformLayout
-        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         Me.GroupBox44.ResumeLayout(False)
         Me.GroupBox44.PerformLayout
         CType(Me.Bewerber_versandBindingSource, System.ComponentModel.ISupportInitialize).EndInit
@@ -18756,6 +18753,9 @@ Partial Class frmMain
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Tt_newsBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.HeyduckDataSet, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.OaDataSet, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Oa_stelleBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(False)
