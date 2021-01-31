@@ -709,6 +709,8 @@ Partial Class frmMain
         Me.StandComboBox = New System.Windows.Forms.ComboBox()
         Me.cmbStatus = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtBewerberRS = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.JahresgehaltTextBox1 = New System.Windows.Forms.TextBox()
         Me.RundschreibenComboBox = New System.Windows.Forms.ComboBox()
         Me.Bew_bewerberdatenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -1604,6 +1606,10 @@ Partial Class frmMain
         Me.HeyduckDataSet = New bewerberpool.heyduckDataSet()
         Me.Tt_newsTableAdapter = New bewerberpool.heyduckDataSetTableAdapters.tt_newsTableAdapter()
         Me.TableAdapterManager2 = New bewerberpool.heyduckDataSetTableAdapters.TableAdapterManager()
+        Me.NewsletterDataSet = New bewerberpool.newsletterDataSet()
+        Me.Bewerberrsabmeldung_membersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Bewerberrsabmeldung_membersTableAdapter = New bewerberpool.newsletterDataSetTableAdapters.bewerberrsabmeldung_membersTableAdapter()
+        Me.TableAdapterManager3 = New bewerberpool.newsletterDataSetTableAdapters.TableAdapterManager()
         Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.Bewerber_logistikBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -2421,6 +2427,8 @@ Partial Class frmMain
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Tt_newsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.HeyduckDataSet, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NewsletterDataSet, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Bewerberrsabmeldung_membersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
@@ -8309,7 +8317,7 @@ Partial Class frmMain
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Location = New System.Drawing.Point(3, 8)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(324, 1119)
+        Me.Panel1.Size = New System.Drawing.Size(324, 1176)
         Me.Panel1.TabIndex = 0
         '
         'GroupBox14
@@ -8410,7 +8418,7 @@ Partial Class frmMain
         Me.GroupBox2.Controls.Add(Me.cmbStatus)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 776)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 833)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(307, 334)
         Me.GroupBox2.TabIndex = 1
@@ -8499,6 +8507,8 @@ Partial Class frmMain
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox1.Controls.Add(Me.txtBewerberRS)
+        Me.GroupBox1.Controls.Add(Me.Label22)
         Me.GroupBox1.Controls.Add(Me.JahresgehaltTextBox1)
         Me.GroupBox1.Controls.Add(JahresgehaltLabel1)
         Me.GroupBox1.Controls.Add(Me.RundschreibenComboBox)
@@ -8529,9 +8539,26 @@ Partial Class frmMain
         Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox1.Location = New System.Drawing.Point(8, 226)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(307, 544)
+        Me.GroupBox1.Size = New System.Drawing.Size(307, 602)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'txtBewerberRS
+        '
+        Me.txtBewerberRS.Location = New System.Drawing.Point(152, 555)
+        Me.txtBewerberRS.Name = "txtBewerberRS"
+        Me.txtBewerberRS.ReadOnly = True
+        Me.txtBewerberRS.Size = New System.Drawing.Size(142, 22)
+        Me.txtBewerberRS.TabIndex = 16
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(5, 555)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(99, 32)
+        Me.Label22.TabIndex = 16
+        Me.Label22.Text = "Einwilligung" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "BewerberRS:"
         '
         'JahresgehaltTextBox1
         '
@@ -18223,6 +18250,26 @@ Partial Class frmMain
         Me.TableAdapterManager2.tt_newsTableAdapter = Me.Tt_newsTableAdapter
         Me.TableAdapterManager2.UpdateOrder = bewerberpool.heyduckDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'NewsletterDataSet
+        '
+        Me.NewsletterDataSet.DataSetName = "newsletterDataSet"
+        Me.NewsletterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Bewerberrsabmeldung_membersBindingSource
+        '
+        Me.Bewerberrsabmeldung_membersBindingSource.DataMember = "bewerberrsabmeldung_members"
+        Me.Bewerberrsabmeldung_membersBindingSource.DataSource = Me.NewsletterDataSet
+        '
+        'Bewerberrsabmeldung_membersTableAdapter
+        '
+        Me.Bewerberrsabmeldung_membersTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager3
+        '
+        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager3.bewerberrsabmeldung_membersTableAdapter = Me.Bewerberrsabmeldung_membersTableAdapter
+        Me.TableAdapterManager3.UpdateOrder = bewerberpool.newsletterDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'BewBindingSource
         '
         Me.BewBindingSource.DataMember = "bew"
@@ -18421,7 +18468,7 @@ Partial Class frmMain
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Bewerberpool 0.5.7"
+        Me.Text = "Bewerberpool 0.5.8"
         Panel27.ResumeLayout(False)
         Panel27.PerformLayout
         CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).EndInit
@@ -18753,6 +18800,8 @@ Partial Class frmMain
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Tt_newsBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.HeyduckDataSet, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NewsletterDataSet, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Bewerberrsabmeldung_membersBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).EndInit
@@ -19740,4 +19789,10 @@ Partial Class frmMain
     Friend WithEvents RbtnDatenladen As Telerik.WinControls.UI.RadButton
     Friend WithEvents txtAufmerksam As TextBox
     Friend WithEvents cmbAufmerksam As ComboBox
+    Friend WithEvents NewsletterDataSet As newsletterDataSet
+    Friend WithEvents Bewerberrsabmeldung_membersBindingSource As BindingSource
+    Friend WithEvents Bewerberrsabmeldung_membersTableAdapter As newsletterDataSetTableAdapters.bewerberrsabmeldung_membersTableAdapter
+    Friend WithEvents txtBewerberRS As TextBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents TableAdapterManager3 As newsletterDataSetTableAdapters.TableAdapterManager
 End Class

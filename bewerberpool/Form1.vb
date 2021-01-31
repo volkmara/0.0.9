@@ -57,6 +57,8 @@ Public Class frmMain
     'Public Inet As Boolean = allgemein.Inetverbindung(Inet)
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: Diese Codezeile lädt Daten in die Tabelle "NewsletterDataSet.bewerberrsabmeldung_members". Sie können sie bei Bedarf verschieben oder entfernen.
+        Me.Bewerberrsabmeldung_membersTableAdapter.Fill(Me.NewsletterDataSet.bewerberrsabmeldung_members)
         Me.RundschreibenTableAdapter.Fill(Me.BewerberDataSet.rundschreiben)
         Call login() ' prüft, ob sich ein valider Benutzer einloggen will
         'Call Internetverbindung()
@@ -134,7 +136,7 @@ Public Class frmMain
         DirectCast(e, HandledMouseEventArgs).Handled = True
     End Sub
 
-    Private Sub ComboBox1_MouseWheel(sender As Object, e As MouseEventArgs) Handles VerfuegbarkeitComboBox.MouseWheel, Teilzeit_stundenComboBox.MouseWheel, Teilzeit_wannComboBox.MouseWheel, AnredeComboBox.MouseWheel, StandComboBox.MouseWheel, cmbStatus.MouseWheel, InterviewartComboBox.MouseWheel, InterviewerComboBox.MouseWheel, BrancheComboBox.MouseWheel, StaatsangehörigkeitComboBox.MouseWheel, AufenhaltstitelComboBox.MouseWheel, ArbeitserlaubnisComboBox.MouseWheel, FamilienstandComboBox.MouseWheel, Kinder_betreuungComboBox.MouseWheel, SteuerklasseComboBox.MouseWheel, KonfessionComboBox.MouseWheel, VorstrafenComboBox1.MouseWheel, KrankheitenComboBox1.MouseWheel, SchulabschlussComboBox.MouseWheel, HaendedruckComboBox.MouseWheel, ParfumComboBox.MouseWheel, RaucherComboBox.MouseWheel, SchulabschlussComboBox.MouseWheel, FuehrungsverantwortungComboBox.MouseWheel, PersonalverantwortungComboBox.MouseWheel
+    Private Sub ComboBox1_MouseWheel(sender As Object, e As MouseEventArgs) Handles VerfuegbarkeitComboBox.MouseWheel, Teilzeit_stundenComboBox.MouseWheel, Teilzeit_wannComboBox.MouseWheel, AnredeComboBox.MouseWheel, StandComboBox.MouseWheel, cmbStatus.MouseWheel, InterviewartComboBox.MouseWheel, InterviewerComboBox.MouseWheel, BrancheComboBox.MouseWheel, StaatsangehörigkeitComboBox.MouseWheel, AufenhaltstitelComboBox.MouseWheel, ArbeitserlaubnisComboBox.MouseWheel, FamilienstandComboBox.MouseWheel, Kinder_betreuungComboBox.MouseWheel, SteuerklasseComboBox.MouseWheel, KonfessionComboBox.MouseWheel, VorstrafenComboBox1.MouseWheel, KrankheitenComboBox1.MouseWheel, SchulabschlussComboBox.MouseWheel, HaendedruckComboBox.MouseWheel, ParfumComboBox.MouseWheel, RaucherComboBox.MouseWheel, SchulabschlussComboBox.MouseWheel, FuehrungsverantwortungComboBox.MouseWheel, PersonalverantwortungComboBox.MouseWheel, cmbAufmerksam.MouseWheel
         Dim HMEA As HandledMouseEventArgs = DirectCast(e, HandledMouseEventArgs)
         HMEA.Handled = True
     End Sub
@@ -172,6 +174,7 @@ Public Class frmMain
         Call refnrhomepage()
         Call Variablen_leeren()
         Call Sprachendaten()
+        Call BewerberRS()
     End Sub
 
     Private Sub BewGridView1_CurrentRowChanged(sender As Object, e As CurrentRowChangedEventArgs) Handles BewGridView1.CurrentRowChanged
@@ -184,7 +187,7 @@ Public Class frmMain
         Call bewerberbeschreibungladen() ' Lädt Bewerberbeschreibung und prüft, ob RTF oder nicht
         Call letzteanmerkunganzeigen() ' zeigt letzte Anmerkung auf Tab Bewerber/in an, darf hier nicht aktiviert werden
         Call ulaseinlesen() ' Ulas in Listbox einlesen
-        Call bearbeiteteulaseinlesen() 'bearbeitete Ulas in Listbox einlesen
+        Call bearbeiteteulaseinlesen() 'bearbeitete Ulas in Listbox einlesenRS
         Call interviewerbogenanzeigen() ' Interviewerfragebogen nur zugänglich, wenn Stand nicht auf "fertig steht
         Call ulascheck() ' Anzeigen, ob Ulas abgespeichert wurden
         Call rundschreibencheck() ' Prüfen und anzeigen, ob Bewerber für Rundschreiben vorgesehen ist
@@ -2225,7 +2228,26 @@ Public Class frmMain
         frmListboxen.vztz = String.Empty
     End Sub
 
+#Region "Bewerberrundschreiben"
 
+    ' Prüfen, ob Bewerber sich vom BewerberRS abgemeldet hat
+
+    Private Function BewerberwillRS(ByVal test As String) As Boolean
+        Dim bew = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        Return NewsletterDataSet.bewerberrsabmeldung_members.Any(Function(x) x.u_MessengerOther = bew.refnr.ToString)
+    End Function
+    Private Sub BewerberRS()
+
+        Dim bew = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        If BewerberwillRS(bew.refnr.ToString) Then
+            txtBewerberRS.BackColor = Color.Red
+            txtBewerberRS.Text = "Abgemeldet"
+        Else
+            Exit Sub
+        End If
+    End Sub
+
+#End Region
 
     ' Das Event RowUpdated muss bei jeder Änderung im Dataset neu angelegt werden
     'Public Shared Sub BewTableAdapter__RowUpdated(sender As Object, e As MySqlRowUpdatedEventArgs) Handles BewTableAdapter.RowUpdated, Bew_bewerberdatenTableAdapter.RowUpdated, Bew_assistenzTableAdapter.RowUpdated, Bew_bibuhaTableAdapter.RowUpdated, Bew_lugTableAdapter.RowUpdated, Bew_steuerfachangestellteTableAdapter.RowUpdated, Bewerber_ausbildungTableAdapter.RowUpdated, Bewerber_berufserfahrungTableAdapter.RowUpdated, Bewerber_bueroTableAdapter.RowUpdated, Bewerber_controllingTableAdapter.RowUpdated, Bewerber_edvTableAdapter.RowUpdated, Bewerber_einkaufTableAdapter.RowUpdated, Bewerber_fibuTableAdapter.RowUpdated, Bewerber_itTableAdapter.RowUpdated, Bewerber_logistikTableAdapter.RowUpdated, Bewerber_marketing_designTableAdapter.RowUpdated, Bewerber_personalTableAdapter.RowUpdated, Bewerber_raeTableAdapter.RowUpdated, Bewerber_sprachenTableAdapter.RowUpdated, Bewerber_technikTableAdapter.RowUpdated, Bewerber_versandTableAdapter.RowUpdated, Bewerber_vertriebTableAdapter.RowUpdated, GewerblichTableAdapter.RowUpdated, NotizenTableAdapter.RowUpdated, RundschreibenTableAdapter.RowUpdated, UlasTableAdapter.RowUpdated
