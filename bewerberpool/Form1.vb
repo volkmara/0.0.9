@@ -2239,14 +2239,20 @@ Public Class frmMain
     Private Sub BewerberRS()
 
         Dim bew = DirectCast(DirectCast(Me.BewBindingSource.Current, DataRowView).Row, bewRow)
+        Dim rundschreiben = NewsletterDataSet.bewerberrsabmeldung_members.Where(Function(x) x.u_MessengerOther = bew.refnr.ToString).Select(Function(x) x.DateOfSubscription)
+
         If BewerberwillRS(bew.refnr.ToString) Then
-            txtBewerberRS.BackColor = Color.Red
+            txtBewerberRS.BackColor = Color.OrangeRed
             txtBewerberRS.Text = "Abgemeldet"
+            For Each x In rundschreiben
+                txtDatumAbmeldungRS.Text = x.ToString
+            Next
         Else
-            Exit Sub
+            txtBewerberRS.BackColor = Color.White
+            txtBewerberRS.Text = String.Empty
+            txtDatumAbmeldungRS.Text = String.Empty
         End If
     End Sub
-
 #End Region
 
     ' Das Event RowUpdated muss bei jeder Änderung im Dataset neu angelegt werden

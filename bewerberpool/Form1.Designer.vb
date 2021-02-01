@@ -576,96 +576,98 @@ Partial Class frmMain
         Dim Buero_omnitrackerLabel As System.Windows.Forms.Label
         Dim Buero_dokuwareLabel As System.Windows.Forms.Label
         Dim AufmerksamLabel As System.Windows.Forms.Label
-        Dim GridViewDecimalColumn1 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewDecimalColumn2 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDateTimeColumn1 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn3 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn4 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewDecimalColumn5 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn6 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewDecimalColumn7 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewDecimalColumn8 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn28 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn29 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn30 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn31 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn32 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn33 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn34 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn9 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn35 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn10 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn36 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn11 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn37 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn12 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn38 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn13 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn39 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn14 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn40 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn15 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn41 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn16 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn42 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn43 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn44 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn45 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn46 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn47 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn48 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn49 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn50 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn51 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn17 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewCheckBoxColumn1 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
-        Dim GridViewCheckBoxColumn2 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
-        Dim GridViewTextBoxColumn52 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn53 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim GridViewDecimalColumn18 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewDecimalColumn19 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim GridViewTextBoxColumn54 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn55 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDateTimeColumn2 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-        Dim GridViewTextBoxColumn56 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn57 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDateTimeColumn3 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-        Dim GridViewTextBoxColumn58 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim SortDescriptor1 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewDecimalColumn20 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn21 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn59 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDateTimeColumn4 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+        Dim GridViewTextBoxColumn60 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn61 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn62 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn22 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn63 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn64 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn65 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn66 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn23 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn24 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn67 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn68 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn25 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn26 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn27 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn69 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn70 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn71 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn72 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn73 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn74 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn75 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn76 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn77 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn78 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn79 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn80 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn81 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn82 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn83 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn84 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn85 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn86 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn87 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn88 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn89 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn90 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn91 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn92 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn28 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn93 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn29 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn94 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn30 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn95 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn31 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn96 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn32 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn97 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn33 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn98 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn34 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn99 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn35 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn100 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn101 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn102 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn103 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn104 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn105 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn106 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn107 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn108 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn109 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn36 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewCheckBoxColumn3 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
+        Dim GridViewCheckBoxColumn4 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
+        Dim GridViewTextBoxColumn110 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn111 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewDecimalColumn37 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn38 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn112 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn113 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDateTimeColumn5 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+        Dim GridViewTextBoxColumn114 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn115 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDateTimeColumn6 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+        Dim GridViewTextBoxColumn116 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim SortDescriptor2 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
+        Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.PictureBox32 = New System.Windows.Forms.PictureBox()
         Me.PictureBox30 = New System.Windows.Forms.PictureBox()
         Me.PictureBox31 = New System.Windows.Forms.PictureBox()
         Me.txtControlling_report_controlling_systeme = New System.Windows.Forms.TextBox()
         Me.Bewerber_controllingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
         Me.Controlling_sonstigesTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox52 = New System.Windows.Forms.GroupBox()
         Me.Controlling_soxxComboBox = New System.Windows.Forms.ComboBox()
@@ -709,6 +711,8 @@ Partial Class frmMain
         Me.StandComboBox = New System.Windows.Forms.ComboBox()
         Me.cmbStatus = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtDatumAbmeldungRS = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
         Me.txtBewerberRS = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.JahresgehaltTextBox1 = New System.Windows.Forms.TextBox()
@@ -1136,6 +1140,7 @@ Partial Class frmMain
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.GroupBox45 = New System.Windows.Forms.GroupBox()
         Me.Logistik_staplerscheinCheckBox = New System.Windows.Forms.CheckBox()
+        Me.Bewerber_logistikBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Logistik_lagerverwaltungComboBox = New System.Windows.Forms.ComboBox()
         Me.Logistik_verhandlungenComboBox = New System.Windows.Forms.ComboBox()
         Me.Logistik_lieferueberwachungComboBox = New System.Windows.Forms.ComboBox()
@@ -1555,6 +1560,8 @@ Partial Class frmMain
         Me.TextBox48 = New System.Windows.Forms.TextBox()
         Me.TextBox49 = New System.Windows.Forms.TextBox()
         Me.Label65 = New System.Windows.Forms.Label()
+        Me.Bewerberrsabmeldung_membersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NewsletterDataSet = New bewerberpool.newsletterDataSet()
         Me.UlasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewerberneuRadButton = New Telerik.WinControls.UI.RadButton()
         Me.BewerberRadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
@@ -1606,13 +1613,6 @@ Partial Class frmMain
         Me.HeyduckDataSet = New bewerberpool.heyduckDataSet()
         Me.Tt_newsTableAdapter = New bewerberpool.heyduckDataSetTableAdapters.tt_newsTableAdapter()
         Me.TableAdapterManager2 = New bewerberpool.heyduckDataSetTableAdapters.TableAdapterManager()
-        Me.NewsletterDataSet = New bewerberpool.newsletterDataSet()
-        Me.Bewerberrsabmeldung_membersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Bewerberrsabmeldung_membersTableAdapter = New bewerberpool.newsletterDataSetTableAdapters.bewerberrsabmeldung_membersTableAdapter()
-        Me.TableAdapterManager3 = New bewerberpool.newsletterDataSetTableAdapters.TableAdapterManager()
-        Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
-        Me.Bewerber_logistikBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OaDataSet = New bewerberpool.oaDataSet()
         Me.Oa_stelleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Oa_stelleTableAdapter = New bewerberpool.oaDataSetTableAdapters.oa_stelleTableAdapter()
@@ -1644,6 +1644,8 @@ Partial Class frmMain
         Me.GewerblichTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.gewerblichTableAdapter()
         Me.UlasTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.ulasTableAdapter()
         Me.RundschreibenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenTableAdapter()
+        Me.Bewerberrsabmeldung_membersTableAdapter = New bewerberpool.newsletterDataSetTableAdapters.bewerberrsabmeldung_membersTableAdapter()
+        Me.TableAdapterManager3 = New bewerberpool.newsletterDataSetTableAdapters.TableAdapterManager()
         NameLabel = New System.Windows.Forms.Label()
         VornameLabel = New System.Windows.Forms.Label()
         AnredeLabel = New System.Windows.Forms.Label()
@@ -2201,6 +2203,8 @@ Partial Class frmMain
         CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.PictureBox31, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Bewerber_controllingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox52.SuspendLayout
         Me.GroupBox53.SuspendLayout
         Me.TabControl1.SuspendLayout
@@ -2323,6 +2327,7 @@ Partial Class frmMain
         Me.Panel22.SuspendLayout
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox45.SuspendLayout
+        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox44.SuspendLayout
         CType(Me.Bewerber_versandBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel21.SuspendLayout
@@ -2410,6 +2415,8 @@ Partial Class frmMain
         Me.GroupBox67.SuspendLayout
         Me.Panel34.SuspendLayout
         Me.GroupBox65.SuspendLayout
+        CType(Me.Bewerberrsabmeldung_membersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NewsletterDataSet, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.BewerberneuRadButton, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.FilterzurückRadButton, System.ComponentModel.ISupportInitialize).BeginInit
@@ -2427,11 +2434,6 @@ Partial Class frmMain
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Tt_newsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.HeyduckDataSet, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NewsletterDataSet, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Bewerberrsabmeldung_membersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.OaDataSet, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Oa_stelleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
@@ -4911,6 +4913,16 @@ Partial Class frmMain
         Me.Bewerber_controllingBindingSource.DataMember = "bew_bewerber_controlling"
         Me.Bewerber_controllingBindingSource.DataSource = Me.BewBindingSource
         '
+        'BewBindingSource
+        '
+        Me.BewBindingSource.DataMember = "bew"
+        Me.BewBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'BewerberDataSet
+        '
+        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
+        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Controlling_report_controlling_systemeLabel
         '
         Controlling_report_controlling_systemeLabel.AutoSize = True
@@ -7134,9 +7146,9 @@ Partial Class frmMain
         RundschreibenLabel.AutoSize = True
         RundschreibenLabel.Location = New System.Drawing.Point(3, 504)
         RundschreibenLabel.Name = "RundschreibenLabel"
-        RundschreibenLabel.Size = New System.Drawing.Size(116, 32)
+        RundschreibenLabel.Size = New System.Drawing.Size(90, 32)
         RundschreibenLabel.TabIndex = 41
-        RundschreibenLabel.Text = "Einwilligung" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Rundschreiben:"
+        RundschreibenLabel.Text = "Einwilligung" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "KundenRS:"
         '
         'Gdb_gradLabel
         '
@@ -7769,538 +7781,538 @@ Partial Class frmMain
         Me.BewGridView1.MasterTemplate.AllowDeleteRow = False
         Me.BewGridView1.MasterTemplate.AllowDragToGroup = False
         Me.BewGridView1.MasterTemplate.AllowEditRow = False
-        GridViewDecimalColumn1.DataType = GetType(Integer)
-        GridViewDecimalColumn1.EnableExpressionEditor = False
-        GridViewDecimalColumn1.FieldName = "id_bew"
-        GridViewDecimalColumn1.HeaderText = "ID"
-        GridViewDecimalColumn1.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDecimalColumn1.IsAutoGenerated = True
-        GridViewDecimalColumn1.IsVisible = False
-        GridViewDecimalColumn1.Name = "id_bew"
-        GridViewDecimalColumn1.ReadOnly = True
-        GridViewDecimalColumn1.VisibleInColumnChooser = False
-        GridViewDecimalColumn2.DataType = GetType(Integer)
-        GridViewDecimalColumn2.EnableExpressionEditor = False
-        GridViewDecimalColumn2.FieldName = "refnr"
-        GridViewDecimalColumn2.HeaderText = "RefNr"
-        GridViewDecimalColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDecimalColumn2.IsAutoGenerated = True
-        GridViewDecimalColumn2.MinWidth = 50
-        GridViewDecimalColumn2.Name = "refnr"
-        GridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDecimalColumn2.Width = 55
-        GridViewTextBoxColumn1.DataType = GetType(Date)
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "erstkontakt"
-        GridViewTextBoxColumn1.FormatInfo = New System.Globalization.CultureInfo("de-DE")
-        GridViewTextBoxColumn1.FormatString = "{0:dd.MM.yyyy}"
-        GridViewTextBoxColumn1.HeaderText = "Erstkontakt"
-        GridViewTextBoxColumn1.IsAutoGenerated = True
-        GridViewTextBoxColumn1.Name = "erstkontakt"
-        GridViewTextBoxColumn1.Width = 90
-        GridViewDateTimeColumn1.EnableExpressionEditor = False
-        GridViewDateTimeColumn1.FieldName = "letztes_datum_anmerkung"
-        GridViewDateTimeColumn1.HeaderText = "Letzte Anmerkung am"
-        GridViewDateTimeColumn1.IsVisible = False
-        GridViewDateTimeColumn1.Name = "letztes_datum_anmerkung"
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.FieldName = "anrede"
-        GridViewTextBoxColumn2.HeaderText = "Anrede"
-        GridViewTextBoxColumn2.IsAutoGenerated = True
-        GridViewTextBoxColumn2.Name = "anrede"
-        GridViewTextBoxColumn2.Width = 65
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.FieldName = "vorname"
-        GridViewTextBoxColumn3.HeaderText = "Vorname"
-        GridViewTextBoxColumn3.IsAutoGenerated = True
-        GridViewTextBoxColumn3.Name = "vorname"
-        GridViewTextBoxColumn3.Width = 80
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.FieldName = "name"
-        GridViewTextBoxColumn4.HeaderText = "Nachname"
-        GridViewTextBoxColumn4.IsAutoGenerated = True
-        GridViewTextBoxColumn4.MaxWidth = 100
-        GridViewTextBoxColumn4.MinWidth = 100
-        GridViewTextBoxColumn4.Name = "name"
-        GridViewTextBoxColumn4.Width = 100
-        GridViewDecimalColumn3.DataType = GetType(Integer)
-        GridViewDecimalColumn3.EnableExpressionEditor = False
-        GridViewDecimalColumn3.FieldName = "alter"
-        GridViewDecimalColumn3.HeaderText = "Alter"
-        GridViewDecimalColumn3.IsAutoGenerated = True
-        GridViewDecimalColumn3.Name = "alter"
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "topbewerber"
-        GridViewTextBoxColumn5.HeaderText = "Top"
-        GridViewTextBoxColumn5.Name = "Top"
-        GridViewTextBoxColumn6.EnableExpressionEditor = False
-        GridViewTextBoxColumn6.FieldName = "stand"
-        GridViewTextBoxColumn6.HeaderText = "Stand"
-        GridViewTextBoxColumn6.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn6.IsAutoGenerated = True
-        GridViewTextBoxColumn6.MinWidth = 0
-        GridViewTextBoxColumn6.Name = "stand"
-        GridViewTextBoxColumn6.Width = 60
-        GridViewTextBoxColumn7.EnableExpressionEditor = False
-        GridViewTextBoxColumn7.FieldName = "branche"
-        GridViewTextBoxColumn7.HeaderText = "Letzte Branche"
-        GridViewTextBoxColumn7.IsAutoGenerated = True
-        GridViewTextBoxColumn7.IsVisible = False
-        GridViewTextBoxColumn7.MinWidth = 150
-        GridViewTextBoxColumn7.Name = "branche"
-        GridViewTextBoxColumn7.Width = 150
-        GridViewTextBoxColumn8.EnableExpressionEditor = False
-        GridViewTextBoxColumn8.FieldName = "status"
-        GridViewTextBoxColumn8.HeaderText = "status"
-        GridViewTextBoxColumn8.IsAutoGenerated = True
-        GridViewTextBoxColumn8.IsVisible = False
-        GridViewTextBoxColumn8.Name = "status"
-        GridViewDecimalColumn4.DataType = GetType(String)
-        GridViewDecimalColumn4.EnableExpressionEditor = False
-        GridViewDecimalColumn4.FieldName = "ulas"
-        GridViewDecimalColumn4.HeaderText = "Ulas"
-        GridViewDecimalColumn4.IsAutoGenerated = True
-        GridViewDecimalColumn4.Name = "ulas"
-        GridViewDecimalColumn5.DataType = GetType(Integer)
-        GridViewDecimalColumn5.EnableExpressionEditor = False
-        GridViewDecimalColumn5.FieldName = "plz"
-        GridViewDecimalColumn5.HeaderText = "Plz"
-        GridViewDecimalColumn5.IsAutoGenerated = True
-        GridViewDecimalColumn5.IsVisible = False
-        GridViewDecimalColumn5.Name = "plz"
-        GridViewDecimalColumn5.Width = 40
-        GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "ort"
-        GridViewTextBoxColumn9.HeaderText = "Ort"
-        GridViewTextBoxColumn9.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn9.IsAutoGenerated = True
-        GridViewTextBoxColumn9.Name = "ort"
-        GridViewTextBoxColumn9.Width = 100
-        GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "beurteilung"
-        GridViewTextBoxColumn10.HeaderText = "Beurt."
-        GridViewTextBoxColumn10.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn10.IsAutoGenerated = True
-        GridViewTextBoxColumn10.MinWidth = 60
-        GridViewTextBoxColumn10.Name = "beurteilung"
-        GridViewTextBoxColumn10.Width = 60
-        GridViewDecimalColumn6.DataType = GetType(Integer)
-        GridViewDecimalColumn6.EnableExpressionEditor = False
-        GridViewDecimalColumn6.FieldName = "monatsgehalt"
-        GridViewDecimalColumn6.HeaderText = "Gehalt"
-        GridViewDecimalColumn6.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDecimalColumn6.IsAutoGenerated = True
-        GridViewDecimalColumn6.MinWidth = 60
-        GridViewDecimalColumn6.Name = "monatsgehalt"
-        GridViewDecimalColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDecimalColumn6.Width = 70
-        GridViewDecimalColumn7.DataType = GetType(Integer)
-        GridViewDecimalColumn7.EnableExpressionEditor = False
-        GridViewDecimalColumn7.FieldName = "gehaltswunsch_monat"
-        GridViewDecimalColumn7.HeaderText = "Gehaltswunsch Monat"
-        GridViewDecimalColumn7.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDecimalColumn7.IsAutoGenerated = True
-        GridViewDecimalColumn7.Name = "gehaltswunsch_monat"
-        GridViewDecimalColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDecimalColumn7.Width = 70
-        GridViewDecimalColumn8.DataType = GetType(Integer)
-        GridViewDecimalColumn8.EnableExpressionEditor = False
-        GridViewDecimalColumn8.FieldName = "jahresgehalt"
-        GridViewDecimalColumn8.HeaderText = "Jahresgehalt"
-        GridViewDecimalColumn8.IsAutoGenerated = True
-        GridViewDecimalColumn8.IsVisible = False
-        GridViewDecimalColumn8.Name = "jahresgehalt"
-        GridViewTextBoxColumn11.EnableExpressionEditor = False
-        GridViewTextBoxColumn11.FieldName = "jobwunsch"
-        GridViewTextBoxColumn11.HeaderText = "Jobwunsch"
-        GridViewTextBoxColumn11.IsAutoGenerated = True
-        GridViewTextBoxColumn11.IsVisible = False
-        GridViewTextBoxColumn11.Name = "jobwunsch"
-        GridViewTextBoxColumn12.EnableExpressionEditor = False
-        GridViewTextBoxColumn12.FieldName = "arbeitsort"
-        GridViewTextBoxColumn12.HeaderText = "Arbeitsort"
-        GridViewTextBoxColumn12.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn12.IsAutoGenerated = True
-        GridViewTextBoxColumn12.Name = "arbeitsort"
-        GridViewTextBoxColumn12.Width = 100
-        GridViewTextBoxColumn13.EnableExpressionEditor = False
-        GridViewTextBoxColumn13.FieldName = "ausbildungsberuf"
-        GridViewTextBoxColumn13.HeaderText = "Ausbildung"
-        GridViewTextBoxColumn13.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn13.IsAutoGenerated = True
-        GridViewTextBoxColumn13.MinWidth = 100
-        GridViewTextBoxColumn13.Name = "ausbildungsberuf"
-        GridViewTextBoxColumn13.Width = 120
-        GridViewTextBoxColumn14.EnableExpressionEditor = False
-        GridViewTextBoxColumn14.FieldName = "tätigkeiten"
-        GridViewTextBoxColumn14.HeaderText = "Tätigkeiten"
-        GridViewTextBoxColumn14.IsAutoGenerated = True
-        GridViewTextBoxColumn14.Name = "tätigkeiten"
-        GridViewTextBoxColumn14.Width = 200
-        GridViewTextBoxColumn15.EnableExpressionEditor = False
-        GridViewTextBoxColumn15.FieldName = "bewerberbeschreibung_text"
-        GridViewTextBoxColumn15.HeaderText = "Persönlichkeit etc."
-        GridViewTextBoxColumn15.IsAutoGenerated = True
-        GridViewTextBoxColumn15.MinWidth = 200
-        GridViewTextBoxColumn15.Name = "bewerberbeschreibung_text"
-        GridViewTextBoxColumn15.Width = 200
-        GridViewTextBoxColumn16.EnableExpressionEditor = False
-        GridViewTextBoxColumn16.FieldName = "verfügbarkeit"
-        GridViewTextBoxColumn16.HeaderText = "Verfügbar"
-        GridViewTextBoxColumn16.IsAutoGenerated = True
-        GridViewTextBoxColumn16.Name = "verfügbarkeit"
-        GridViewTextBoxColumn16.Width = 80
-        GridViewTextBoxColumn17.EnableExpressionEditor = False
-        GridViewTextBoxColumn17.FieldName = "aufmerksam"
-        GridViewTextBoxColumn17.HeaderText = "Aufmerksam durch"
-        GridViewTextBoxColumn17.Name = "aufmerksam"
-        GridViewTextBoxColumn17.Width = 150
-        GridViewTextBoxColumn18.EnableExpressionEditor = False
-        GridViewTextBoxColumn18.FieldName = "arbeitszeit"
-        GridViewTextBoxColumn18.HeaderText = "VZ/TZ"
-        GridViewTextBoxColumn18.IsAutoGenerated = True
-        GridViewTextBoxColumn18.Name = "arbeitszeit"
-        GridViewTextBoxColumn18.Width = 80
-        GridViewTextBoxColumn19.EnableExpressionEditor = False
-        GridViewTextBoxColumn19.FieldName = "Vermittlung"
-        GridViewTextBoxColumn19.HeaderText = "ZA/VM"
-        GridViewTextBoxColumn19.IsAutoGenerated = True
-        GridViewTextBoxColumn19.Name = "Vermittlung"
-        GridViewTextBoxColumn19.Width = 100
-        GridViewTextBoxColumn20.EnableExpressionEditor = False
-        GridViewTextBoxColumn20.FieldName = "sprachkenntnisse"
-        GridViewTextBoxColumn20.HeaderText = "Sprache"
-        GridViewTextBoxColumn20.IsAutoGenerated = True
-        GridViewTextBoxColumn20.IsVisible = False
-        GridViewTextBoxColumn20.Name = "sprachkenntnisse"
-        GridViewTextBoxColumn20.Width = 80
-        GridViewTextBoxColumn21.EnableExpressionEditor = False
-        GridViewTextBoxColumn21.FieldName = "edvkenntnisse"
-        GridViewTextBoxColumn21.HeaderText = "Edv"
-        GridViewTextBoxColumn21.IsAutoGenerated = True
-        GridViewTextBoxColumn21.Name = "edvkenntnisse"
-        GridViewTextBoxColumn21.Width = 80
-        GridViewTextBoxColumn22.EnableExpressionEditor = False
-        GridViewTextBoxColumn22.FieldName = "charaktereigenschaften"
-        GridViewTextBoxColumn22.HeaderText = "Charaktereigenschaften"
-        GridViewTextBoxColumn22.IsAutoGenerated = True
-        GridViewTextBoxColumn22.IsVisible = False
-        GridViewTextBoxColumn22.Name = "charaktereigenschaften"
-        GridViewTextBoxColumn22.VisibleInColumnChooser = False
-        GridViewTextBoxColumn23.EnableExpressionEditor = False
-        GridViewTextBoxColumn23.FieldName = "feedback"
-        GridViewTextBoxColumn23.HeaderText = "feedback"
-        GridViewTextBoxColumn23.IsAutoGenerated = True
-        GridViewTextBoxColumn23.IsVisible = False
-        GridViewTextBoxColumn23.Name = "feedback"
-        GridViewTextBoxColumn23.VisibleInColumnChooser = False
-        GridViewTextBoxColumn24.EnableExpressionEditor = False
-        GridViewTextBoxColumn24.FieldName = "persoenlichkeit_bpool"
-        GridViewTextBoxColumn24.HeaderText = "persoenlichkeit_bpool"
-        GridViewTextBoxColumn24.IsAutoGenerated = True
-        GridViewTextBoxColumn24.IsVisible = False
-        GridViewTextBoxColumn24.Name = "persoenlichkeit_bpool"
-        GridViewTextBoxColumn24.VisibleInColumnChooser = False
-        GridViewTextBoxColumn25.EnableExpressionEditor = False
-        GridViewTextBoxColumn25.FieldName = "letztbearbeitung_von"
-        GridViewTextBoxColumn25.HeaderText = "letztbearbeitung_von"
-        GridViewTextBoxColumn25.IsAutoGenerated = True
-        GridViewTextBoxColumn25.IsVisible = False
-        GridViewTextBoxColumn25.Name = "letztbearbeitung_von"
-        GridViewTextBoxColumn25.VisibleInColumnChooser = False
-        GridViewTextBoxColumn26.EnableExpressionEditor = False
-        GridViewTextBoxColumn26.FieldName = "urlaubsplanung"
-        GridViewTextBoxColumn26.HeaderText = "urlaubsplanung"
-        GridViewTextBoxColumn26.IsAutoGenerated = True
-        GridViewTextBoxColumn26.IsVisible = False
-        GridViewTextBoxColumn26.Name = "urlaubsplanung"
-        GridViewTextBoxColumn26.VisibleInColumnChooser = False
-        GridViewTextBoxColumn27.EnableExpressionEditor = False
-        GridViewTextBoxColumn27.FieldName = "interviewart"
-        GridViewTextBoxColumn27.HeaderText = "interviewart"
-        GridViewTextBoxColumn27.IsAutoGenerated = True
-        GridViewTextBoxColumn27.IsVisible = False
-        GridViewTextBoxColumn27.Name = "interviewart"
-        GridViewTextBoxColumn27.VisibleInColumnChooser = False
-        GridViewTextBoxColumn28.AllowGroup = False
-        GridViewTextBoxColumn28.AllowSort = False
-        GridViewTextBoxColumn28.EnableExpressionEditor = False
-        GridViewTextBoxColumn28.FieldName = "tel_festnetz"
-        GridViewTextBoxColumn28.HeaderText = "Festnetz"
-        GridViewTextBoxColumn28.IsAutoGenerated = True
-        GridViewTextBoxColumn28.IsVisible = False
-        GridViewTextBoxColumn28.Name = "tel_festnetz"
-        GridViewTextBoxColumn28.Width = 100
-        GridViewTextBoxColumn29.AllowGroup = False
-        GridViewTextBoxColumn29.AllowSort = False
-        GridViewTextBoxColumn29.EnableExpressionEditor = False
-        GridViewTextBoxColumn29.FieldName = "tel_mobil"
-        GridViewTextBoxColumn29.HeaderText = "Mobil"
-        GridViewTextBoxColumn29.IsAutoGenerated = True
-        GridViewTextBoxColumn29.IsVisible = False
-        GridViewTextBoxColumn29.Name = "tel_mobil"
-        GridViewTextBoxColumn29.Width = 100
-        GridViewTextBoxColumn30.EnableExpressionEditor = False
-        GridViewTextBoxColumn30.FieldName = "email"
-        GridViewTextBoxColumn30.HeaderText = "email"
-        GridViewTextBoxColumn30.IsAutoGenerated = True
-        GridViewTextBoxColumn30.IsVisible = False
-        GridViewTextBoxColumn30.Name = "email"
-        GridViewTextBoxColumn31.EnableExpressionEditor = False
-        GridViewTextBoxColumn31.FieldName = "kontaktdaten"
-        GridViewTextBoxColumn31.HeaderText = "kontaktdaten"
-        GridViewTextBoxColumn31.IsAutoGenerated = True
-        GridViewTextBoxColumn31.IsVisible = False
-        GridViewTextBoxColumn31.Name = "kontaktdaten"
-        GridViewTextBoxColumn31.VisibleInColumnChooser = False
-        GridViewTextBoxColumn32.EnableExpressionEditor = False
-        GridViewTextBoxColumn32.FieldName = "anmerkungen_bpoolalt"
-        GridViewTextBoxColumn32.HeaderText = "Anmerkungen Bpoolalt"
-        GridViewTextBoxColumn32.IsAutoGenerated = True
-        GridViewTextBoxColumn32.IsVisible = False
-        GridViewTextBoxColumn32.Name = "anmerkungen_bpoolalt"
-        GridViewTextBoxColumn32.VisibleInColumnChooser = False
-        GridViewTextBoxColumn32.Width = 500
-        GridViewTextBoxColumn33.EnableExpressionEditor = False
-        GridViewTextBoxColumn33.FieldName = "zeit_bewerberbogen"
-        GridViewTextBoxColumn33.HeaderText = "zeit_bewerberbogen"
-        GridViewTextBoxColumn33.IsAutoGenerated = True
-        GridViewTextBoxColumn33.IsVisible = False
-        GridViewTextBoxColumn33.Name = "zeit_bewerberbogen"
-        GridViewTextBoxColumn33.VisibleInColumnChooser = False
-        GridViewTextBoxColumn34.EnableExpressionEditor = False
-        GridViewTextBoxColumn34.FieldName = "kuendigungsfrist"
-        GridViewTextBoxColumn34.HeaderText = "Kündigungsfrist"
-        GridViewTextBoxColumn34.IsAutoGenerated = True
-        GridViewTextBoxColumn34.IsVisible = False
-        GridViewTextBoxColumn34.Name = "kuendigungsfrist"
-        GridViewDecimalColumn9.DataType = GetType(Integer)
-        GridViewDecimalColumn9.EnableExpressionEditor = False
-        GridViewDecimalColumn9.FieldName = "englisch"
-        GridViewDecimalColumn9.HeaderText = "Englisch"
-        GridViewDecimalColumn9.IsAutoGenerated = True
-        GridViewDecimalColumn9.Name = "E"
-        GridViewDecimalColumn9.Width = 30
-        GridViewTextBoxColumn35.DataType = GetType(Integer)
-        GridViewTextBoxColumn35.EnableExpressionEditor = False
-        GridViewTextBoxColumn35.FieldName = "englisch_bew"
-        GridViewTextBoxColumn35.HeaderText = "E Bew"
-        GridViewTextBoxColumn35.MinWidth = 65
-        GridViewTextBoxColumn35.Name = "englisch_bew"
-        GridViewTextBoxColumn35.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewTextBoxColumn35.Width = 65
-        GridViewDecimalColumn10.DataType = GetType(Integer)
-        GridViewDecimalColumn10.EnableExpressionEditor = False
-        GridViewDecimalColumn10.FieldName = "franzoesisch"
-        GridViewDecimalColumn10.HeaderText = "Französisch"
-        GridViewDecimalColumn10.IsAutoGenerated = True
-        GridViewDecimalColumn10.IsVisible = False
-        GridViewDecimalColumn10.Name = "franzoesisch"
-        GridViewDecimalColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewTextBoxColumn36.DataType = GetType(Integer)
-        GridViewTextBoxColumn36.EnableExpressionEditor = False
-        GridViewTextBoxColumn36.FieldName = "franzoesich_bew"
-        GridViewTextBoxColumn36.HeaderText = "F Bew"
-        GridViewTextBoxColumn36.MinWidth = 65
-        GridViewTextBoxColumn36.Name = "franzoesich_bew"
-        GridViewTextBoxColumn36.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewTextBoxColumn36.Width = 65
-        GridViewDecimalColumn11.DataType = GetType(Integer)
-        GridViewDecimalColumn11.EnableExpressionEditor = False
-        GridViewDecimalColumn11.FieldName = "italienisch"
-        GridViewDecimalColumn11.HeaderText = "Italienisch"
-        GridViewDecimalColumn11.IsAutoGenerated = True
-        GridViewDecimalColumn11.IsVisible = False
-        GridViewDecimalColumn11.Name = "italienisch"
-        GridViewTextBoxColumn37.DataType = GetType(Integer)
-        GridViewTextBoxColumn37.EnableExpressionEditor = False
-        GridViewTextBoxColumn37.FieldName = "italienisch_bew"
-        GridViewTextBoxColumn37.HeaderText = "I Bew"
-        GridViewTextBoxColumn37.IsVisible = False
-        GridViewTextBoxColumn37.MinWidth = 65
-        GridViewTextBoxColumn37.Name = "italienisch_bew"
-        GridViewTextBoxColumn37.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewTextBoxColumn37.Width = 65
-        GridViewDecimalColumn12.DataType = GetType(Integer)
-        GridViewDecimalColumn12.EnableExpressionEditor = False
-        GridViewDecimalColumn12.FieldName = "spanisch"
-        GridViewDecimalColumn12.HeaderText = "Spanisch"
-        GridViewDecimalColumn12.IsAutoGenerated = True
-        GridViewDecimalColumn12.IsVisible = False
-        GridViewDecimalColumn12.Name = "spanisch"
-        GridViewTextBoxColumn38.DataType = GetType(Integer)
-        GridViewTextBoxColumn38.EnableExpressionEditor = False
-        GridViewTextBoxColumn38.FieldName = "spanisch_bew"
-        GridViewTextBoxColumn38.HeaderText = "S Bew"
-        GridViewTextBoxColumn38.IsVisible = False
-        GridViewTextBoxColumn38.MinWidth = 65
-        GridViewTextBoxColumn38.Name = "spanisch_bew"
-        GridViewTextBoxColumn38.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewTextBoxColumn38.Width = 65
-        GridViewDecimalColumn13.DataType = GetType(Integer)
-        GridViewDecimalColumn13.EnableExpressionEditor = False
-        GridViewDecimalColumn13.FieldName = "tuerkisch"
-        GridViewDecimalColumn13.HeaderText = "Türkisch"
-        GridViewDecimalColumn13.IsAutoGenerated = True
-        GridViewDecimalColumn13.IsVisible = False
-        GridViewDecimalColumn13.Name = "tuerkisch"
-        GridViewTextBoxColumn39.DataType = GetType(Integer)
-        GridViewTextBoxColumn39.EnableExpressionEditor = False
-        GridViewTextBoxColumn39.FieldName = "tuerkisch_bew"
-        GridViewTextBoxColumn39.HeaderText = "T Bew"
-        GridViewTextBoxColumn39.IsVisible = False
-        GridViewTextBoxColumn39.MinWidth = 65
-        GridViewTextBoxColumn39.Name = "tuerkisch_bew"
-        GridViewTextBoxColumn39.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewTextBoxColumn39.Width = 65
-        GridViewDecimalColumn14.DataType = GetType(Integer)
-        GridViewDecimalColumn14.EnableExpressionEditor = False
-        GridViewDecimalColumn14.FieldName = "russisch"
-        GridViewDecimalColumn14.HeaderText = "Russisch"
-        GridViewDecimalColumn14.IsAutoGenerated = True
-        GridViewDecimalColumn14.IsVisible = False
-        GridViewDecimalColumn14.Name = "russisch"
-        GridViewTextBoxColumn40.DataType = GetType(Integer)
-        GridViewTextBoxColumn40.EnableExpressionEditor = False
-        GridViewTextBoxColumn40.FieldName = "russisch_bew"
-        GridViewTextBoxColumn40.HeaderText = "R Bew"
-        GridViewTextBoxColumn40.IsVisible = False
-        GridViewTextBoxColumn40.MinWidth = 65
-        GridViewTextBoxColumn40.Name = "russisch_bew"
-        GridViewTextBoxColumn40.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewTextBoxColumn40.Width = 65
-        GridViewDecimalColumn15.DataType = GetType(Integer)
-        GridViewDecimalColumn15.EnableExpressionEditor = False
-        GridViewDecimalColumn15.FieldName = "niederlaendisch"
-        GridViewDecimalColumn15.HeaderText = "Niederlaendisch"
-        GridViewDecimalColumn15.IsAutoGenerated = True
-        GridViewDecimalColumn15.IsVisible = False
-        GridViewDecimalColumn15.Name = "niederlaendisch"
-        GridViewTextBoxColumn41.DataType = GetType(Integer)
-        GridViewTextBoxColumn41.EnableExpressionEditor = False
-        GridViewTextBoxColumn41.FieldName = "niederlaendisch_bew"
-        GridViewTextBoxColumn41.HeaderText = "N Bew"
-        GridViewTextBoxColumn41.IsVisible = False
-        GridViewTextBoxColumn41.MinWidth = 65
-        GridViewTextBoxColumn41.Name = "niederlaendisch_bew"
-        GridViewTextBoxColumn41.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewTextBoxColumn41.Width = 65
-        GridViewDecimalColumn16.DataType = GetType(Integer)
-        GridViewDecimalColumn16.EnableExpressionEditor = False
-        GridViewDecimalColumn16.FieldName = "deutsch"
-        GridViewDecimalColumn16.HeaderText = "Deutsch"
-        GridViewDecimalColumn16.IsAutoGenerated = True
-        GridViewDecimalColumn16.IsVisible = False
-        GridViewDecimalColumn16.Name = "deutsch"
-        GridViewTextBoxColumn42.EnableExpressionEditor = False
-        GridViewTextBoxColumn42.FieldName = "interviewer"
-        GridViewTextBoxColumn42.HeaderText = "Interviewer"
-        GridViewTextBoxColumn42.IsAutoGenerated = True
-        GridViewTextBoxColumn42.Name = "Interviewer"
-        GridViewTextBoxColumn42.Width = 80
-        GridViewTextBoxColumn43.EnableExpressionEditor = False
-        GridViewTextBoxColumn43.FieldName = "edv_bpoolalt"
-        GridViewTextBoxColumn43.HeaderText = "EDV_Bpoolalt"
-        GridViewTextBoxColumn43.IsAutoGenerated = True
-        GridViewTextBoxColumn43.IsVisible = False
-        GridViewTextBoxColumn43.Name = "edv_bpoolalt"
-        GridViewTextBoxColumn43.VisibleInColumnChooser = False
-        GridViewTextBoxColumn43.Width = 150
-        GridViewTextBoxColumn44.EnableExpressionEditor = False
-        GridViewTextBoxColumn44.FieldName = "arbeitsort_bpoolalt"
-        GridViewTextBoxColumn44.HeaderText = "arbeitsort_bpoolalt"
-        GridViewTextBoxColumn44.IsAutoGenerated = True
-        GridViewTextBoxColumn44.IsVisible = False
-        GridViewTextBoxColumn44.Name = "arbeitsort_bpoolalt"
-        GridViewTextBoxColumn44.VisibleInColumnChooser = False
-        GridViewTextBoxColumn45.EnableExpressionEditor = False
-        GridViewTextBoxColumn45.FieldName = "letzte_aktualisierung_bpoolalt"
-        GridViewTextBoxColumn45.HeaderText = "letzte_aktualisierung_bpoolalt"
-        GridViewTextBoxColumn45.IsAutoGenerated = True
-        GridViewTextBoxColumn45.IsVisible = False
-        GridViewTextBoxColumn45.Name = "letzte_aktualisierung_bpoolalt"
-        GridViewTextBoxColumn45.VisibleInColumnChooser = False
-        GridViewTextBoxColumn46.EnableExpressionEditor = False
-        GridViewTextBoxColumn46.FieldName = "letzter_telefonkontakt_bpoolalt"
-        GridViewTextBoxColumn46.HeaderText = "letzter_telefonkontakt_bpoolalt"
-        GridViewTextBoxColumn46.IsAutoGenerated = True
-        GridViewTextBoxColumn46.IsVisible = False
-        GridViewTextBoxColumn46.Name = "letzter_telefonkontakt_bpoolalt"
-        GridViewTextBoxColumn46.VisibleInColumnChooser = False
-        GridViewTextBoxColumn47.EnableExpressionEditor = False
-        GridViewTextBoxColumn47.FieldName = "berufserfahrung_bpoolalt"
-        GridViewTextBoxColumn47.HeaderText = "Berufserfahrung Bpoolalt"
-        GridViewTextBoxColumn47.IsAutoGenerated = True
-        GridViewTextBoxColumn47.IsVisible = False
-        GridViewTextBoxColumn47.Name = "berufserfahrung_bpoolalt"
-        GridViewTextBoxColumn47.VisibleInColumnChooser = False
-        GridViewTextBoxColumn48.EnableExpressionEditor = False
-        GridViewTextBoxColumn48.FieldName = "geaendert_am"
-        GridViewTextBoxColumn48.HeaderText = "geaendert_am"
-        GridViewTextBoxColumn48.IsAutoGenerated = True
-        GridViewTextBoxColumn48.IsVisible = False
-        GridViewTextBoxColumn48.Name = "geaendert_am"
-        GridViewTextBoxColumn49.EnableExpressionEditor = False
-        GridViewTextBoxColumn49.FieldName = "bewerberbeschreibung"
-        GridViewTextBoxColumn49.HeaderText = "Bewerberbeschreibung"
-        GridViewTextBoxColumn49.IsAutoGenerated = True
-        GridViewTextBoxColumn49.IsVisible = False
-        GridViewTextBoxColumn49.Name = "bewerberbeschreibung"
-        GridViewTextBoxColumn50.EnableExpressionEditor = False
-        GridViewTextBoxColumn50.FieldName = "strasse"
-        GridViewTextBoxColumn50.HeaderText = "strasse"
-        GridViewTextBoxColumn50.IsAutoGenerated = True
-        GridViewTextBoxColumn50.IsVisible = False
-        GridViewTextBoxColumn50.Name = "strasse"
-        GridViewTextBoxColumn50.VisibleInColumnChooser = False
-        GridViewTextBoxColumn51.EnableExpressionEditor = False
-        GridViewTextBoxColumn51.FieldName = "entfernung"
-        GridViewTextBoxColumn51.HeaderText = "Entfernung"
-        GridViewTextBoxColumn51.IsAutoGenerated = True
-        GridViewTextBoxColumn51.IsVisible = False
-        GridViewTextBoxColumn51.Name = "entfernung"
-        GridViewDecimalColumn17.DataType = GetType(Integer)
-        GridViewDecimalColumn17.EnableExpressionEditor = False
-        GridViewDecimalColumn17.FieldName = "gehaltswunsch_jahr"
-        GridViewDecimalColumn17.HeaderText = "Gehaltswunsch Jahresgehalt"
-        GridViewDecimalColumn17.IsAutoGenerated = True
-        GridViewDecimalColumn17.IsVisible = False
-        GridViewDecimalColumn17.Name = "gehaltswunsch_jahr"
-        GridViewCheckBoxColumn1.EnableExpressionEditor = False
-        GridViewCheckBoxColumn1.FieldName = "rundschreiben"
-        GridViewCheckBoxColumn1.HeaderText = "Rundschreiben"
-        GridViewCheckBoxColumn1.IsVisible = False
-        GridViewCheckBoxColumn1.MinWidth = 20
-        GridViewCheckBoxColumn1.Name = "rundschreiben"
-        GridViewCheckBoxColumn1.VisibleInColumnChooser = False
-        GridViewCheckBoxColumn2.EnableExpressionEditor = False
-        GridViewCheckBoxColumn2.FieldName = "topbewerberchecked"
-        GridViewCheckBoxColumn2.HeaderText = "topbewerberchecked"
-        GridViewCheckBoxColumn2.IsAutoGenerated = True
-        GridViewCheckBoxColumn2.IsVisible = False
-        GridViewCheckBoxColumn2.MinWidth = 20
-        GridViewCheckBoxColumn2.Name = "topbewerberchecked"
-        GridViewCheckBoxColumn2.VisibleInColumnChooser = False
-        GridViewTextBoxColumn52.EnableExpressionEditor = False
-        GridViewTextBoxColumn52.FieldName = "fuerstelle"
-        GridViewTextBoxColumn52.HeaderText = "fuerstelle"
-        GridViewTextBoxColumn52.IsAutoGenerated = True
-        GridViewTextBoxColumn52.IsVisible = False
-        GridViewTextBoxColumn52.Name = "fuerstelle"
-        GridViewTextBoxColumn52.VisibleInColumnChooser = False
-        GridViewTextBoxColumn53.EnableExpressionEditor = False
-        GridViewTextBoxColumn53.FieldName = "fuerkunde"
-        GridViewTextBoxColumn53.HeaderText = "fuerkunde"
-        GridViewTextBoxColumn53.IsAutoGenerated = True
-        GridViewTextBoxColumn53.IsVisible = False
-        GridViewTextBoxColumn53.Name = "fuerkunde"
-        GridViewTextBoxColumn53.VisibleInColumnChooser = False
-        Me.BewGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn1, GridViewDecimalColumn2, GridViewTextBoxColumn1, GridViewDateTimeColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewDecimalColumn3, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewDecimalColumn4, GridViewDecimalColumn5, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewDecimalColumn6, GridViewDecimalColumn7, GridViewDecimalColumn8, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewTextBoxColumn25, GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewTextBoxColumn28, GridViewTextBoxColumn29, GridViewTextBoxColumn30, GridViewTextBoxColumn31, GridViewTextBoxColumn32, GridViewTextBoxColumn33, GridViewTextBoxColumn34, GridViewDecimalColumn9, GridViewTextBoxColumn35, GridViewDecimalColumn10, GridViewTextBoxColumn36, GridViewDecimalColumn11, GridViewTextBoxColumn37, GridViewDecimalColumn12, GridViewTextBoxColumn38, GridViewDecimalColumn13, GridViewTextBoxColumn39, GridViewDecimalColumn14, GridViewTextBoxColumn40, GridViewDecimalColumn15, GridViewTextBoxColumn41, GridViewDecimalColumn16, GridViewTextBoxColumn42, GridViewTextBoxColumn43, GridViewTextBoxColumn44, GridViewTextBoxColumn45, GridViewTextBoxColumn46, GridViewTextBoxColumn47, GridViewTextBoxColumn48, GridViewTextBoxColumn49, GridViewTextBoxColumn50, GridViewTextBoxColumn51, GridViewDecimalColumn17, GridViewCheckBoxColumn1, GridViewCheckBoxColumn2, GridViewTextBoxColumn52, GridViewTextBoxColumn53})
+        GridViewDecimalColumn20.DataType = GetType(Integer)
+        GridViewDecimalColumn20.EnableExpressionEditor = False
+        GridViewDecimalColumn20.FieldName = "id_bew"
+        GridViewDecimalColumn20.HeaderText = "ID"
+        GridViewDecimalColumn20.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewDecimalColumn20.IsAutoGenerated = True
+        GridViewDecimalColumn20.IsVisible = False
+        GridViewDecimalColumn20.Name = "id_bew"
+        GridViewDecimalColumn20.ReadOnly = True
+        GridViewDecimalColumn20.VisibleInColumnChooser = False
+        GridViewDecimalColumn21.DataType = GetType(Integer)
+        GridViewDecimalColumn21.EnableExpressionEditor = False
+        GridViewDecimalColumn21.FieldName = "refnr"
+        GridViewDecimalColumn21.HeaderText = "RefNr"
+        GridViewDecimalColumn21.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewDecimalColumn21.IsAutoGenerated = True
+        GridViewDecimalColumn21.MinWidth = 50
+        GridViewDecimalColumn21.Name = "refnr"
+        GridViewDecimalColumn21.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewDecimalColumn21.Width = 55
+        GridViewTextBoxColumn59.DataType = GetType(Date)
+        GridViewTextBoxColumn59.EnableExpressionEditor = False
+        GridViewTextBoxColumn59.FieldName = "erstkontakt"
+        GridViewTextBoxColumn59.FormatInfo = New System.Globalization.CultureInfo("de-DE")
+        GridViewTextBoxColumn59.FormatString = "{0:dd.MM.yyyy}"
+        GridViewTextBoxColumn59.HeaderText = "Erstkontakt"
+        GridViewTextBoxColumn59.IsAutoGenerated = True
+        GridViewTextBoxColumn59.Name = "erstkontakt"
+        GridViewTextBoxColumn59.Width = 90
+        GridViewDateTimeColumn4.EnableExpressionEditor = False
+        GridViewDateTimeColumn4.FieldName = "letztes_datum_anmerkung"
+        GridViewDateTimeColumn4.HeaderText = "Letzte Anmerkung am"
+        GridViewDateTimeColumn4.IsVisible = False
+        GridViewDateTimeColumn4.Name = "letztes_datum_anmerkung"
+        GridViewTextBoxColumn60.EnableExpressionEditor = False
+        GridViewTextBoxColumn60.FieldName = "anrede"
+        GridViewTextBoxColumn60.HeaderText = "Anrede"
+        GridViewTextBoxColumn60.IsAutoGenerated = True
+        GridViewTextBoxColumn60.Name = "anrede"
+        GridViewTextBoxColumn60.Width = 65
+        GridViewTextBoxColumn61.EnableExpressionEditor = False
+        GridViewTextBoxColumn61.FieldName = "vorname"
+        GridViewTextBoxColumn61.HeaderText = "Vorname"
+        GridViewTextBoxColumn61.IsAutoGenerated = True
+        GridViewTextBoxColumn61.Name = "vorname"
+        GridViewTextBoxColumn61.Width = 80
+        GridViewTextBoxColumn62.EnableExpressionEditor = False
+        GridViewTextBoxColumn62.FieldName = "name"
+        GridViewTextBoxColumn62.HeaderText = "Nachname"
+        GridViewTextBoxColumn62.IsAutoGenerated = True
+        GridViewTextBoxColumn62.MaxWidth = 100
+        GridViewTextBoxColumn62.MinWidth = 100
+        GridViewTextBoxColumn62.Name = "name"
+        GridViewTextBoxColumn62.Width = 100
+        GridViewDecimalColumn22.DataType = GetType(Integer)
+        GridViewDecimalColumn22.EnableExpressionEditor = False
+        GridViewDecimalColumn22.FieldName = "alter"
+        GridViewDecimalColumn22.HeaderText = "Alter"
+        GridViewDecimalColumn22.IsAutoGenerated = True
+        GridViewDecimalColumn22.Name = "alter"
+        GridViewTextBoxColumn63.EnableExpressionEditor = False
+        GridViewTextBoxColumn63.FieldName = "topbewerber"
+        GridViewTextBoxColumn63.HeaderText = "Top"
+        GridViewTextBoxColumn63.Name = "Top"
+        GridViewTextBoxColumn64.EnableExpressionEditor = False
+        GridViewTextBoxColumn64.FieldName = "stand"
+        GridViewTextBoxColumn64.HeaderText = "Stand"
+        GridViewTextBoxColumn64.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn64.IsAutoGenerated = True
+        GridViewTextBoxColumn64.MinWidth = 0
+        GridViewTextBoxColumn64.Name = "stand"
+        GridViewTextBoxColumn64.Width = 60
+        GridViewTextBoxColumn65.EnableExpressionEditor = False
+        GridViewTextBoxColumn65.FieldName = "branche"
+        GridViewTextBoxColumn65.HeaderText = "Letzte Branche"
+        GridViewTextBoxColumn65.IsAutoGenerated = True
+        GridViewTextBoxColumn65.IsVisible = False
+        GridViewTextBoxColumn65.MinWidth = 150
+        GridViewTextBoxColumn65.Name = "branche"
+        GridViewTextBoxColumn65.Width = 150
+        GridViewTextBoxColumn66.EnableExpressionEditor = False
+        GridViewTextBoxColumn66.FieldName = "status"
+        GridViewTextBoxColumn66.HeaderText = "status"
+        GridViewTextBoxColumn66.IsAutoGenerated = True
+        GridViewTextBoxColumn66.IsVisible = False
+        GridViewTextBoxColumn66.Name = "status"
+        GridViewDecimalColumn23.DataType = GetType(String)
+        GridViewDecimalColumn23.EnableExpressionEditor = False
+        GridViewDecimalColumn23.FieldName = "ulas"
+        GridViewDecimalColumn23.HeaderText = "Ulas"
+        GridViewDecimalColumn23.IsAutoGenerated = True
+        GridViewDecimalColumn23.Name = "ulas"
+        GridViewDecimalColumn24.DataType = GetType(Integer)
+        GridViewDecimalColumn24.EnableExpressionEditor = False
+        GridViewDecimalColumn24.FieldName = "plz"
+        GridViewDecimalColumn24.HeaderText = "Plz"
+        GridViewDecimalColumn24.IsAutoGenerated = True
+        GridViewDecimalColumn24.IsVisible = False
+        GridViewDecimalColumn24.Name = "plz"
+        GridViewDecimalColumn24.Width = 40
+        GridViewTextBoxColumn67.EnableExpressionEditor = False
+        GridViewTextBoxColumn67.FieldName = "ort"
+        GridViewTextBoxColumn67.HeaderText = "Ort"
+        GridViewTextBoxColumn67.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn67.IsAutoGenerated = True
+        GridViewTextBoxColumn67.Name = "ort"
+        GridViewTextBoxColumn67.Width = 100
+        GridViewTextBoxColumn68.EnableExpressionEditor = False
+        GridViewTextBoxColumn68.FieldName = "beurteilung"
+        GridViewTextBoxColumn68.HeaderText = "Beurt."
+        GridViewTextBoxColumn68.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn68.IsAutoGenerated = True
+        GridViewTextBoxColumn68.MinWidth = 60
+        GridViewTextBoxColumn68.Name = "beurteilung"
+        GridViewTextBoxColumn68.Width = 60
+        GridViewDecimalColumn25.DataType = GetType(Integer)
+        GridViewDecimalColumn25.EnableExpressionEditor = False
+        GridViewDecimalColumn25.FieldName = "monatsgehalt"
+        GridViewDecimalColumn25.HeaderText = "Gehalt"
+        GridViewDecimalColumn25.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewDecimalColumn25.IsAutoGenerated = True
+        GridViewDecimalColumn25.MinWidth = 60
+        GridViewDecimalColumn25.Name = "monatsgehalt"
+        GridViewDecimalColumn25.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewDecimalColumn25.Width = 70
+        GridViewDecimalColumn26.DataType = GetType(Integer)
+        GridViewDecimalColumn26.EnableExpressionEditor = False
+        GridViewDecimalColumn26.FieldName = "gehaltswunsch_monat"
+        GridViewDecimalColumn26.HeaderText = "Gehaltswunsch Monat"
+        GridViewDecimalColumn26.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewDecimalColumn26.IsAutoGenerated = True
+        GridViewDecimalColumn26.Name = "gehaltswunsch_monat"
+        GridViewDecimalColumn26.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewDecimalColumn26.Width = 70
+        GridViewDecimalColumn27.DataType = GetType(Integer)
+        GridViewDecimalColumn27.EnableExpressionEditor = False
+        GridViewDecimalColumn27.FieldName = "jahresgehalt"
+        GridViewDecimalColumn27.HeaderText = "Jahresgehalt"
+        GridViewDecimalColumn27.IsAutoGenerated = True
+        GridViewDecimalColumn27.IsVisible = False
+        GridViewDecimalColumn27.Name = "jahresgehalt"
+        GridViewTextBoxColumn69.EnableExpressionEditor = False
+        GridViewTextBoxColumn69.FieldName = "jobwunsch"
+        GridViewTextBoxColumn69.HeaderText = "Jobwunsch"
+        GridViewTextBoxColumn69.IsAutoGenerated = True
+        GridViewTextBoxColumn69.IsVisible = False
+        GridViewTextBoxColumn69.Name = "jobwunsch"
+        GridViewTextBoxColumn70.EnableExpressionEditor = False
+        GridViewTextBoxColumn70.FieldName = "arbeitsort"
+        GridViewTextBoxColumn70.HeaderText = "Arbeitsort"
+        GridViewTextBoxColumn70.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn70.IsAutoGenerated = True
+        GridViewTextBoxColumn70.Name = "arbeitsort"
+        GridViewTextBoxColumn70.Width = 100
+        GridViewTextBoxColumn71.EnableExpressionEditor = False
+        GridViewTextBoxColumn71.FieldName = "ausbildungsberuf"
+        GridViewTextBoxColumn71.HeaderText = "Ausbildung"
+        GridViewTextBoxColumn71.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn71.IsAutoGenerated = True
+        GridViewTextBoxColumn71.MinWidth = 100
+        GridViewTextBoxColumn71.Name = "ausbildungsberuf"
+        GridViewTextBoxColumn71.Width = 120
+        GridViewTextBoxColumn72.EnableExpressionEditor = False
+        GridViewTextBoxColumn72.FieldName = "tätigkeiten"
+        GridViewTextBoxColumn72.HeaderText = "Tätigkeiten"
+        GridViewTextBoxColumn72.IsAutoGenerated = True
+        GridViewTextBoxColumn72.Name = "tätigkeiten"
+        GridViewTextBoxColumn72.Width = 200
+        GridViewTextBoxColumn73.EnableExpressionEditor = False
+        GridViewTextBoxColumn73.FieldName = "bewerberbeschreibung_text"
+        GridViewTextBoxColumn73.HeaderText = "Persönlichkeit etc."
+        GridViewTextBoxColumn73.IsAutoGenerated = True
+        GridViewTextBoxColumn73.MinWidth = 200
+        GridViewTextBoxColumn73.Name = "bewerberbeschreibung_text"
+        GridViewTextBoxColumn73.Width = 200
+        GridViewTextBoxColumn74.EnableExpressionEditor = False
+        GridViewTextBoxColumn74.FieldName = "verfügbarkeit"
+        GridViewTextBoxColumn74.HeaderText = "Verfügbar"
+        GridViewTextBoxColumn74.IsAutoGenerated = True
+        GridViewTextBoxColumn74.Name = "verfügbarkeit"
+        GridViewTextBoxColumn74.Width = 80
+        GridViewTextBoxColumn75.EnableExpressionEditor = False
+        GridViewTextBoxColumn75.FieldName = "aufmerksam"
+        GridViewTextBoxColumn75.HeaderText = "Aufmerksam durch"
+        GridViewTextBoxColumn75.Name = "aufmerksam"
+        GridViewTextBoxColumn75.Width = 150
+        GridViewTextBoxColumn76.EnableExpressionEditor = False
+        GridViewTextBoxColumn76.FieldName = "arbeitszeit"
+        GridViewTextBoxColumn76.HeaderText = "VZ/TZ"
+        GridViewTextBoxColumn76.IsAutoGenerated = True
+        GridViewTextBoxColumn76.Name = "arbeitszeit"
+        GridViewTextBoxColumn76.Width = 80
+        GridViewTextBoxColumn77.EnableExpressionEditor = False
+        GridViewTextBoxColumn77.FieldName = "Vermittlung"
+        GridViewTextBoxColumn77.HeaderText = "ZA/VM"
+        GridViewTextBoxColumn77.IsAutoGenerated = True
+        GridViewTextBoxColumn77.Name = "Vermittlung"
+        GridViewTextBoxColumn77.Width = 100
+        GridViewTextBoxColumn78.EnableExpressionEditor = False
+        GridViewTextBoxColumn78.FieldName = "sprachkenntnisse"
+        GridViewTextBoxColumn78.HeaderText = "Sprache"
+        GridViewTextBoxColumn78.IsAutoGenerated = True
+        GridViewTextBoxColumn78.IsVisible = False
+        GridViewTextBoxColumn78.Name = "sprachkenntnisse"
+        GridViewTextBoxColumn78.Width = 80
+        GridViewTextBoxColumn79.EnableExpressionEditor = False
+        GridViewTextBoxColumn79.FieldName = "edvkenntnisse"
+        GridViewTextBoxColumn79.HeaderText = "Edv"
+        GridViewTextBoxColumn79.IsAutoGenerated = True
+        GridViewTextBoxColumn79.Name = "edvkenntnisse"
+        GridViewTextBoxColumn79.Width = 80
+        GridViewTextBoxColumn80.EnableExpressionEditor = False
+        GridViewTextBoxColumn80.FieldName = "charaktereigenschaften"
+        GridViewTextBoxColumn80.HeaderText = "Charaktereigenschaften"
+        GridViewTextBoxColumn80.IsAutoGenerated = True
+        GridViewTextBoxColumn80.IsVisible = False
+        GridViewTextBoxColumn80.Name = "charaktereigenschaften"
+        GridViewTextBoxColumn80.VisibleInColumnChooser = False
+        GridViewTextBoxColumn81.EnableExpressionEditor = False
+        GridViewTextBoxColumn81.FieldName = "feedback"
+        GridViewTextBoxColumn81.HeaderText = "feedback"
+        GridViewTextBoxColumn81.IsAutoGenerated = True
+        GridViewTextBoxColumn81.IsVisible = False
+        GridViewTextBoxColumn81.Name = "feedback"
+        GridViewTextBoxColumn81.VisibleInColumnChooser = False
+        GridViewTextBoxColumn82.EnableExpressionEditor = False
+        GridViewTextBoxColumn82.FieldName = "persoenlichkeit_bpool"
+        GridViewTextBoxColumn82.HeaderText = "persoenlichkeit_bpool"
+        GridViewTextBoxColumn82.IsAutoGenerated = True
+        GridViewTextBoxColumn82.IsVisible = False
+        GridViewTextBoxColumn82.Name = "persoenlichkeit_bpool"
+        GridViewTextBoxColumn82.VisibleInColumnChooser = False
+        GridViewTextBoxColumn83.EnableExpressionEditor = False
+        GridViewTextBoxColumn83.FieldName = "letztbearbeitung_von"
+        GridViewTextBoxColumn83.HeaderText = "letztbearbeitung_von"
+        GridViewTextBoxColumn83.IsAutoGenerated = True
+        GridViewTextBoxColumn83.IsVisible = False
+        GridViewTextBoxColumn83.Name = "letztbearbeitung_von"
+        GridViewTextBoxColumn83.VisibleInColumnChooser = False
+        GridViewTextBoxColumn84.EnableExpressionEditor = False
+        GridViewTextBoxColumn84.FieldName = "urlaubsplanung"
+        GridViewTextBoxColumn84.HeaderText = "urlaubsplanung"
+        GridViewTextBoxColumn84.IsAutoGenerated = True
+        GridViewTextBoxColumn84.IsVisible = False
+        GridViewTextBoxColumn84.Name = "urlaubsplanung"
+        GridViewTextBoxColumn84.VisibleInColumnChooser = False
+        GridViewTextBoxColumn85.EnableExpressionEditor = False
+        GridViewTextBoxColumn85.FieldName = "interviewart"
+        GridViewTextBoxColumn85.HeaderText = "interviewart"
+        GridViewTextBoxColumn85.IsAutoGenerated = True
+        GridViewTextBoxColumn85.IsVisible = False
+        GridViewTextBoxColumn85.Name = "interviewart"
+        GridViewTextBoxColumn85.VisibleInColumnChooser = False
+        GridViewTextBoxColumn86.AllowGroup = False
+        GridViewTextBoxColumn86.AllowSort = False
+        GridViewTextBoxColumn86.EnableExpressionEditor = False
+        GridViewTextBoxColumn86.FieldName = "tel_festnetz"
+        GridViewTextBoxColumn86.HeaderText = "Festnetz"
+        GridViewTextBoxColumn86.IsAutoGenerated = True
+        GridViewTextBoxColumn86.IsVisible = False
+        GridViewTextBoxColumn86.Name = "tel_festnetz"
+        GridViewTextBoxColumn86.Width = 100
+        GridViewTextBoxColumn87.AllowGroup = False
+        GridViewTextBoxColumn87.AllowSort = False
+        GridViewTextBoxColumn87.EnableExpressionEditor = False
+        GridViewTextBoxColumn87.FieldName = "tel_mobil"
+        GridViewTextBoxColumn87.HeaderText = "Mobil"
+        GridViewTextBoxColumn87.IsAutoGenerated = True
+        GridViewTextBoxColumn87.IsVisible = False
+        GridViewTextBoxColumn87.Name = "tel_mobil"
+        GridViewTextBoxColumn87.Width = 100
+        GridViewTextBoxColumn88.EnableExpressionEditor = False
+        GridViewTextBoxColumn88.FieldName = "email"
+        GridViewTextBoxColumn88.HeaderText = "email"
+        GridViewTextBoxColumn88.IsAutoGenerated = True
+        GridViewTextBoxColumn88.IsVisible = False
+        GridViewTextBoxColumn88.Name = "email"
+        GridViewTextBoxColumn89.EnableExpressionEditor = False
+        GridViewTextBoxColumn89.FieldName = "kontaktdaten"
+        GridViewTextBoxColumn89.HeaderText = "kontaktdaten"
+        GridViewTextBoxColumn89.IsAutoGenerated = True
+        GridViewTextBoxColumn89.IsVisible = False
+        GridViewTextBoxColumn89.Name = "kontaktdaten"
+        GridViewTextBoxColumn89.VisibleInColumnChooser = False
+        GridViewTextBoxColumn90.EnableExpressionEditor = False
+        GridViewTextBoxColumn90.FieldName = "anmerkungen_bpoolalt"
+        GridViewTextBoxColumn90.HeaderText = "Anmerkungen Bpoolalt"
+        GridViewTextBoxColumn90.IsAutoGenerated = True
+        GridViewTextBoxColumn90.IsVisible = False
+        GridViewTextBoxColumn90.Name = "anmerkungen_bpoolalt"
+        GridViewTextBoxColumn90.VisibleInColumnChooser = False
+        GridViewTextBoxColumn90.Width = 500
+        GridViewTextBoxColumn91.EnableExpressionEditor = False
+        GridViewTextBoxColumn91.FieldName = "zeit_bewerberbogen"
+        GridViewTextBoxColumn91.HeaderText = "zeit_bewerberbogen"
+        GridViewTextBoxColumn91.IsAutoGenerated = True
+        GridViewTextBoxColumn91.IsVisible = False
+        GridViewTextBoxColumn91.Name = "zeit_bewerberbogen"
+        GridViewTextBoxColumn91.VisibleInColumnChooser = False
+        GridViewTextBoxColumn92.EnableExpressionEditor = False
+        GridViewTextBoxColumn92.FieldName = "kuendigungsfrist"
+        GridViewTextBoxColumn92.HeaderText = "Kündigungsfrist"
+        GridViewTextBoxColumn92.IsAutoGenerated = True
+        GridViewTextBoxColumn92.IsVisible = False
+        GridViewTextBoxColumn92.Name = "kuendigungsfrist"
+        GridViewDecimalColumn28.DataType = GetType(Integer)
+        GridViewDecimalColumn28.EnableExpressionEditor = False
+        GridViewDecimalColumn28.FieldName = "englisch"
+        GridViewDecimalColumn28.HeaderText = "Englisch"
+        GridViewDecimalColumn28.IsAutoGenerated = True
+        GridViewDecimalColumn28.Name = "E"
+        GridViewDecimalColumn28.Width = 30
+        GridViewTextBoxColumn93.DataType = GetType(Integer)
+        GridViewTextBoxColumn93.EnableExpressionEditor = False
+        GridViewTextBoxColumn93.FieldName = "englisch_bew"
+        GridViewTextBoxColumn93.HeaderText = "E Bew"
+        GridViewTextBoxColumn93.MinWidth = 65
+        GridViewTextBoxColumn93.Name = "englisch_bew"
+        GridViewTextBoxColumn93.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewTextBoxColumn93.Width = 65
+        GridViewDecimalColumn29.DataType = GetType(Integer)
+        GridViewDecimalColumn29.EnableExpressionEditor = False
+        GridViewDecimalColumn29.FieldName = "franzoesisch"
+        GridViewDecimalColumn29.HeaderText = "Französisch"
+        GridViewDecimalColumn29.IsAutoGenerated = True
+        GridViewDecimalColumn29.IsVisible = False
+        GridViewDecimalColumn29.Name = "franzoesisch"
+        GridViewDecimalColumn29.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewTextBoxColumn94.DataType = GetType(Integer)
+        GridViewTextBoxColumn94.EnableExpressionEditor = False
+        GridViewTextBoxColumn94.FieldName = "franzoesich_bew"
+        GridViewTextBoxColumn94.HeaderText = "F Bew"
+        GridViewTextBoxColumn94.MinWidth = 65
+        GridViewTextBoxColumn94.Name = "franzoesich_bew"
+        GridViewTextBoxColumn94.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewTextBoxColumn94.Width = 65
+        GridViewDecimalColumn30.DataType = GetType(Integer)
+        GridViewDecimalColumn30.EnableExpressionEditor = False
+        GridViewDecimalColumn30.FieldName = "italienisch"
+        GridViewDecimalColumn30.HeaderText = "Italienisch"
+        GridViewDecimalColumn30.IsAutoGenerated = True
+        GridViewDecimalColumn30.IsVisible = False
+        GridViewDecimalColumn30.Name = "italienisch"
+        GridViewTextBoxColumn95.DataType = GetType(Integer)
+        GridViewTextBoxColumn95.EnableExpressionEditor = False
+        GridViewTextBoxColumn95.FieldName = "italienisch_bew"
+        GridViewTextBoxColumn95.HeaderText = "I Bew"
+        GridViewTextBoxColumn95.IsVisible = False
+        GridViewTextBoxColumn95.MinWidth = 65
+        GridViewTextBoxColumn95.Name = "italienisch_bew"
+        GridViewTextBoxColumn95.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewTextBoxColumn95.Width = 65
+        GridViewDecimalColumn31.DataType = GetType(Integer)
+        GridViewDecimalColumn31.EnableExpressionEditor = False
+        GridViewDecimalColumn31.FieldName = "spanisch"
+        GridViewDecimalColumn31.HeaderText = "Spanisch"
+        GridViewDecimalColumn31.IsAutoGenerated = True
+        GridViewDecimalColumn31.IsVisible = False
+        GridViewDecimalColumn31.Name = "spanisch"
+        GridViewTextBoxColumn96.DataType = GetType(Integer)
+        GridViewTextBoxColumn96.EnableExpressionEditor = False
+        GridViewTextBoxColumn96.FieldName = "spanisch_bew"
+        GridViewTextBoxColumn96.HeaderText = "S Bew"
+        GridViewTextBoxColumn96.IsVisible = False
+        GridViewTextBoxColumn96.MinWidth = 65
+        GridViewTextBoxColumn96.Name = "spanisch_bew"
+        GridViewTextBoxColumn96.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewTextBoxColumn96.Width = 65
+        GridViewDecimalColumn32.DataType = GetType(Integer)
+        GridViewDecimalColumn32.EnableExpressionEditor = False
+        GridViewDecimalColumn32.FieldName = "tuerkisch"
+        GridViewDecimalColumn32.HeaderText = "Türkisch"
+        GridViewDecimalColumn32.IsAutoGenerated = True
+        GridViewDecimalColumn32.IsVisible = False
+        GridViewDecimalColumn32.Name = "tuerkisch"
+        GridViewTextBoxColumn97.DataType = GetType(Integer)
+        GridViewTextBoxColumn97.EnableExpressionEditor = False
+        GridViewTextBoxColumn97.FieldName = "tuerkisch_bew"
+        GridViewTextBoxColumn97.HeaderText = "T Bew"
+        GridViewTextBoxColumn97.IsVisible = False
+        GridViewTextBoxColumn97.MinWidth = 65
+        GridViewTextBoxColumn97.Name = "tuerkisch_bew"
+        GridViewTextBoxColumn97.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewTextBoxColumn97.Width = 65
+        GridViewDecimalColumn33.DataType = GetType(Integer)
+        GridViewDecimalColumn33.EnableExpressionEditor = False
+        GridViewDecimalColumn33.FieldName = "russisch"
+        GridViewDecimalColumn33.HeaderText = "Russisch"
+        GridViewDecimalColumn33.IsAutoGenerated = True
+        GridViewDecimalColumn33.IsVisible = False
+        GridViewDecimalColumn33.Name = "russisch"
+        GridViewTextBoxColumn98.DataType = GetType(Integer)
+        GridViewTextBoxColumn98.EnableExpressionEditor = False
+        GridViewTextBoxColumn98.FieldName = "russisch_bew"
+        GridViewTextBoxColumn98.HeaderText = "R Bew"
+        GridViewTextBoxColumn98.IsVisible = False
+        GridViewTextBoxColumn98.MinWidth = 65
+        GridViewTextBoxColumn98.Name = "russisch_bew"
+        GridViewTextBoxColumn98.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewTextBoxColumn98.Width = 65
+        GridViewDecimalColumn34.DataType = GetType(Integer)
+        GridViewDecimalColumn34.EnableExpressionEditor = False
+        GridViewDecimalColumn34.FieldName = "niederlaendisch"
+        GridViewDecimalColumn34.HeaderText = "Niederlaendisch"
+        GridViewDecimalColumn34.IsAutoGenerated = True
+        GridViewDecimalColumn34.IsVisible = False
+        GridViewDecimalColumn34.Name = "niederlaendisch"
+        GridViewTextBoxColumn99.DataType = GetType(Integer)
+        GridViewTextBoxColumn99.EnableExpressionEditor = False
+        GridViewTextBoxColumn99.FieldName = "niederlaendisch_bew"
+        GridViewTextBoxColumn99.HeaderText = "N Bew"
+        GridViewTextBoxColumn99.IsVisible = False
+        GridViewTextBoxColumn99.MinWidth = 65
+        GridViewTextBoxColumn99.Name = "niederlaendisch_bew"
+        GridViewTextBoxColumn99.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        GridViewTextBoxColumn99.Width = 65
+        GridViewDecimalColumn35.DataType = GetType(Integer)
+        GridViewDecimalColumn35.EnableExpressionEditor = False
+        GridViewDecimalColumn35.FieldName = "deutsch"
+        GridViewDecimalColumn35.HeaderText = "Deutsch"
+        GridViewDecimalColumn35.IsAutoGenerated = True
+        GridViewDecimalColumn35.IsVisible = False
+        GridViewDecimalColumn35.Name = "deutsch"
+        GridViewTextBoxColumn100.EnableExpressionEditor = False
+        GridViewTextBoxColumn100.FieldName = "interviewer"
+        GridViewTextBoxColumn100.HeaderText = "Interviewer"
+        GridViewTextBoxColumn100.IsAutoGenerated = True
+        GridViewTextBoxColumn100.Name = "Interviewer"
+        GridViewTextBoxColumn100.Width = 80
+        GridViewTextBoxColumn101.EnableExpressionEditor = False
+        GridViewTextBoxColumn101.FieldName = "edv_bpoolalt"
+        GridViewTextBoxColumn101.HeaderText = "EDV_Bpoolalt"
+        GridViewTextBoxColumn101.IsAutoGenerated = True
+        GridViewTextBoxColumn101.IsVisible = False
+        GridViewTextBoxColumn101.Name = "edv_bpoolalt"
+        GridViewTextBoxColumn101.VisibleInColumnChooser = False
+        GridViewTextBoxColumn101.Width = 150
+        GridViewTextBoxColumn102.EnableExpressionEditor = False
+        GridViewTextBoxColumn102.FieldName = "arbeitsort_bpoolalt"
+        GridViewTextBoxColumn102.HeaderText = "arbeitsort_bpoolalt"
+        GridViewTextBoxColumn102.IsAutoGenerated = True
+        GridViewTextBoxColumn102.IsVisible = False
+        GridViewTextBoxColumn102.Name = "arbeitsort_bpoolalt"
+        GridViewTextBoxColumn102.VisibleInColumnChooser = False
+        GridViewTextBoxColumn103.EnableExpressionEditor = False
+        GridViewTextBoxColumn103.FieldName = "letzte_aktualisierung_bpoolalt"
+        GridViewTextBoxColumn103.HeaderText = "letzte_aktualisierung_bpoolalt"
+        GridViewTextBoxColumn103.IsAutoGenerated = True
+        GridViewTextBoxColumn103.IsVisible = False
+        GridViewTextBoxColumn103.Name = "letzte_aktualisierung_bpoolalt"
+        GridViewTextBoxColumn103.VisibleInColumnChooser = False
+        GridViewTextBoxColumn104.EnableExpressionEditor = False
+        GridViewTextBoxColumn104.FieldName = "letzter_telefonkontakt_bpoolalt"
+        GridViewTextBoxColumn104.HeaderText = "letzter_telefonkontakt_bpoolalt"
+        GridViewTextBoxColumn104.IsAutoGenerated = True
+        GridViewTextBoxColumn104.IsVisible = False
+        GridViewTextBoxColumn104.Name = "letzter_telefonkontakt_bpoolalt"
+        GridViewTextBoxColumn104.VisibleInColumnChooser = False
+        GridViewTextBoxColumn105.EnableExpressionEditor = False
+        GridViewTextBoxColumn105.FieldName = "berufserfahrung_bpoolalt"
+        GridViewTextBoxColumn105.HeaderText = "Berufserfahrung Bpoolalt"
+        GridViewTextBoxColumn105.IsAutoGenerated = True
+        GridViewTextBoxColumn105.IsVisible = False
+        GridViewTextBoxColumn105.Name = "berufserfahrung_bpoolalt"
+        GridViewTextBoxColumn105.VisibleInColumnChooser = False
+        GridViewTextBoxColumn106.EnableExpressionEditor = False
+        GridViewTextBoxColumn106.FieldName = "geaendert_am"
+        GridViewTextBoxColumn106.HeaderText = "geaendert_am"
+        GridViewTextBoxColumn106.IsAutoGenerated = True
+        GridViewTextBoxColumn106.IsVisible = False
+        GridViewTextBoxColumn106.Name = "geaendert_am"
+        GridViewTextBoxColumn107.EnableExpressionEditor = False
+        GridViewTextBoxColumn107.FieldName = "bewerberbeschreibung"
+        GridViewTextBoxColumn107.HeaderText = "Bewerberbeschreibung"
+        GridViewTextBoxColumn107.IsAutoGenerated = True
+        GridViewTextBoxColumn107.IsVisible = False
+        GridViewTextBoxColumn107.Name = "bewerberbeschreibung"
+        GridViewTextBoxColumn108.EnableExpressionEditor = False
+        GridViewTextBoxColumn108.FieldName = "strasse"
+        GridViewTextBoxColumn108.HeaderText = "strasse"
+        GridViewTextBoxColumn108.IsAutoGenerated = True
+        GridViewTextBoxColumn108.IsVisible = False
+        GridViewTextBoxColumn108.Name = "strasse"
+        GridViewTextBoxColumn108.VisibleInColumnChooser = False
+        GridViewTextBoxColumn109.EnableExpressionEditor = False
+        GridViewTextBoxColumn109.FieldName = "entfernung"
+        GridViewTextBoxColumn109.HeaderText = "Entfernung"
+        GridViewTextBoxColumn109.IsAutoGenerated = True
+        GridViewTextBoxColumn109.IsVisible = False
+        GridViewTextBoxColumn109.Name = "entfernung"
+        GridViewDecimalColumn36.DataType = GetType(Integer)
+        GridViewDecimalColumn36.EnableExpressionEditor = False
+        GridViewDecimalColumn36.FieldName = "gehaltswunsch_jahr"
+        GridViewDecimalColumn36.HeaderText = "Gehaltswunsch Jahresgehalt"
+        GridViewDecimalColumn36.IsAutoGenerated = True
+        GridViewDecimalColumn36.IsVisible = False
+        GridViewDecimalColumn36.Name = "gehaltswunsch_jahr"
+        GridViewCheckBoxColumn3.EnableExpressionEditor = False
+        GridViewCheckBoxColumn3.FieldName = "rundschreiben"
+        GridViewCheckBoxColumn3.HeaderText = "Rundschreiben"
+        GridViewCheckBoxColumn3.IsVisible = False
+        GridViewCheckBoxColumn3.MinWidth = 20
+        GridViewCheckBoxColumn3.Name = "rundschreiben"
+        GridViewCheckBoxColumn3.VisibleInColumnChooser = False
+        GridViewCheckBoxColumn4.EnableExpressionEditor = False
+        GridViewCheckBoxColumn4.FieldName = "topbewerberchecked"
+        GridViewCheckBoxColumn4.HeaderText = "topbewerberchecked"
+        GridViewCheckBoxColumn4.IsAutoGenerated = True
+        GridViewCheckBoxColumn4.IsVisible = False
+        GridViewCheckBoxColumn4.MinWidth = 20
+        GridViewCheckBoxColumn4.Name = "topbewerberchecked"
+        GridViewCheckBoxColumn4.VisibleInColumnChooser = False
+        GridViewTextBoxColumn110.EnableExpressionEditor = False
+        GridViewTextBoxColumn110.FieldName = "fuerstelle"
+        GridViewTextBoxColumn110.HeaderText = "fuerstelle"
+        GridViewTextBoxColumn110.IsAutoGenerated = True
+        GridViewTextBoxColumn110.IsVisible = False
+        GridViewTextBoxColumn110.Name = "fuerstelle"
+        GridViewTextBoxColumn110.VisibleInColumnChooser = False
+        GridViewTextBoxColumn111.EnableExpressionEditor = False
+        GridViewTextBoxColumn111.FieldName = "fuerkunde"
+        GridViewTextBoxColumn111.HeaderText = "fuerkunde"
+        GridViewTextBoxColumn111.IsAutoGenerated = True
+        GridViewTextBoxColumn111.IsVisible = False
+        GridViewTextBoxColumn111.Name = "fuerkunde"
+        GridViewTextBoxColumn111.VisibleInColumnChooser = False
+        Me.BewGridView1.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn20, GridViewDecimalColumn21, GridViewTextBoxColumn59, GridViewDateTimeColumn4, GridViewTextBoxColumn60, GridViewTextBoxColumn61, GridViewTextBoxColumn62, GridViewDecimalColumn22, GridViewTextBoxColumn63, GridViewTextBoxColumn64, GridViewTextBoxColumn65, GridViewTextBoxColumn66, GridViewDecimalColumn23, GridViewDecimalColumn24, GridViewTextBoxColumn67, GridViewTextBoxColumn68, GridViewDecimalColumn25, GridViewDecimalColumn26, GridViewDecimalColumn27, GridViewTextBoxColumn69, GridViewTextBoxColumn70, GridViewTextBoxColumn71, GridViewTextBoxColumn72, GridViewTextBoxColumn73, GridViewTextBoxColumn74, GridViewTextBoxColumn75, GridViewTextBoxColumn76, GridViewTextBoxColumn77, GridViewTextBoxColumn78, GridViewTextBoxColumn79, GridViewTextBoxColumn80, GridViewTextBoxColumn81, GridViewTextBoxColumn82, GridViewTextBoxColumn83, GridViewTextBoxColumn84, GridViewTextBoxColumn85, GridViewTextBoxColumn86, GridViewTextBoxColumn87, GridViewTextBoxColumn88, GridViewTextBoxColumn89, GridViewTextBoxColumn90, GridViewTextBoxColumn91, GridViewTextBoxColumn92, GridViewDecimalColumn28, GridViewTextBoxColumn93, GridViewDecimalColumn29, GridViewTextBoxColumn94, GridViewDecimalColumn30, GridViewTextBoxColumn95, GridViewDecimalColumn31, GridViewTextBoxColumn96, GridViewDecimalColumn32, GridViewTextBoxColumn97, GridViewDecimalColumn33, GridViewTextBoxColumn98, GridViewDecimalColumn34, GridViewTextBoxColumn99, GridViewDecimalColumn35, GridViewTextBoxColumn100, GridViewTextBoxColumn101, GridViewTextBoxColumn102, GridViewTextBoxColumn103, GridViewTextBoxColumn104, GridViewTextBoxColumn105, GridViewTextBoxColumn106, GridViewTextBoxColumn107, GridViewTextBoxColumn108, GridViewTextBoxColumn109, GridViewDecimalColumn36, GridViewCheckBoxColumn3, GridViewCheckBoxColumn4, GridViewTextBoxColumn110, GridViewTextBoxColumn111})
         Me.BewGridView1.MasterTemplate.DataSource = Me.BewBindingSource
         Me.BewGridView1.MasterTemplate.EnableFiltering = True
         Me.BewGridView1.MasterTemplate.EnableGrouping = False
         Me.BewGridView1.MasterTemplate.ShowHeaderCellButtons = True
-        Me.BewGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.BewGridView1.MasterTemplate.ViewDefinition = TableViewDefinition3
         Me.BewGridView1.Name = "BewGridView1"
         Me.BewGridView1.ReadOnly = True
         Me.BewGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -8317,7 +8329,7 @@ Partial Class frmMain
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Location = New System.Drawing.Point(3, 8)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(324, 1176)
+        Me.Panel1.Size = New System.Drawing.Size(324, 1256)
         Me.Panel1.TabIndex = 0
         '
         'GroupBox14
@@ -8418,7 +8430,7 @@ Partial Class frmMain
         Me.GroupBox2.Controls.Add(Me.cmbStatus)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 833)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 915)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(307, 334)
         Me.GroupBox2.TabIndex = 1
@@ -8507,6 +8519,8 @@ Partial Class frmMain
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GroupBox1.Controls.Add(Me.txtDatumAbmeldungRS)
+        Me.GroupBox1.Controls.Add(Me.Label27)
         Me.GroupBox1.Controls.Add(Me.txtBewerberRS)
         Me.GroupBox1.Controls.Add(Me.Label22)
         Me.GroupBox1.Controls.Add(Me.JahresgehaltTextBox1)
@@ -8539,9 +8553,26 @@ Partial Class frmMain
         Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox1.Location = New System.Drawing.Point(8, 226)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(307, 602)
+        Me.GroupBox1.Size = New System.Drawing.Size(307, 683)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'txtDatumAbmeldungRS
+        '
+        Me.txtDatumAbmeldungRS.Location = New System.Drawing.Point(11, 641)
+        Me.txtDatumAbmeldungRS.Name = "txtDatumAbmeldungRS"
+        Me.txtDatumAbmeldungRS.ReadOnly = True
+        Me.txtDatumAbmeldungRS.Size = New System.Drawing.Size(282, 22)
+        Me.txtDatumAbmeldungRS.TabIndex = 16
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(8, 608)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(246, 16)
+        Me.Label27.TabIndex = 16
+        Me.Label27.Text = "Datum und Uhrzeit der Abmeldung:"
         '
         'txtBewerberRS
         '
@@ -10470,98 +10501,98 @@ Partial Class frmMain
         '
         Me.NotizenRadGridView.MasterTemplate.AllowAddNewRow = False
         Me.NotizenRadGridView.MasterTemplate.AllowEditRow = False
-        GridViewDecimalColumn18.AllowSort = False
-        GridViewDecimalColumn18.DataType = GetType(Integer)
-        GridViewDecimalColumn18.EnableExpressionEditor = False
-        GridViewDecimalColumn18.FieldName = "id"
-        GridViewDecimalColumn18.HeaderText = "id"
-        GridViewDecimalColumn18.IsAutoGenerated = True
-        GridViewDecimalColumn18.Name = "id"
-        GridViewDecimalColumn18.VisibleInColumnChooser = False
-        GridViewDecimalColumn19.DataType = GetType(Integer)
-        GridViewDecimalColumn19.EnableExpressionEditor = False
-        GridViewDecimalColumn19.FieldName = "bewid"
-        GridViewDecimalColumn19.HeaderText = "bewid"
-        GridViewDecimalColumn19.IsAutoGenerated = True
-        GridViewDecimalColumn19.Name = "bewid"
-        GridViewDecimalColumn19.VisibleInColumnChooser = False
-        GridViewTextBoxColumn54.AllowGroup = False
-        GridViewTextBoxColumn54.AllowSort = False
-        GridViewTextBoxColumn54.EnableExpressionEditor = False
-        GridViewTextBoxColumn54.FieldName = "betreff"
-        GridViewTextBoxColumn54.HeaderText = "Betreff"
-        GridViewTextBoxColumn54.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn54.IsAutoGenerated = True
-        GridViewTextBoxColumn54.MinWidth = 350
-        GridViewTextBoxColumn54.Name = "betreff"
-        GridViewTextBoxColumn54.VisibleInColumnChooser = False
-        GridViewTextBoxColumn54.Width = 350
-        GridViewTextBoxColumn55.AllowGroup = False
-        GridViewTextBoxColumn55.AllowSort = False
-        GridViewTextBoxColumn55.EnableExpressionEditor = False
-        GridViewTextBoxColumn55.FieldName = "anmerkungen_text"
-        GridViewTextBoxColumn55.HeaderText = "Anmerkungen"
-        GridViewTextBoxColumn55.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn55.IsAutoGenerated = True
-        GridViewTextBoxColumn55.MinWidth = 500
-        GridViewTextBoxColumn55.Name = "anmerkungen_text"
-        GridViewTextBoxColumn55.VisibleInColumnChooser = False
-        GridViewTextBoxColumn55.Width = 630
-        GridViewDateTimeColumn2.AllowGroup = False
-        GridViewDateTimeColumn2.EnableExpressionEditor = False
-        GridViewDateTimeColumn2.FieldName = "eingetragen_am"
-        GridViewDateTimeColumn2.HeaderText = "eingetragen am"
-        GridViewDateTimeColumn2.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDateTimeColumn2.IsAutoGenerated = True
-        GridViewDateTimeColumn2.Name = "eingetragen_am"
-        GridViewDateTimeColumn2.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending
-        GridViewDateTimeColumn2.VisibleInColumnChooser = False
-        GridViewDateTimeColumn2.Width = 100
-        GridViewTextBoxColumn56.AllowGroup = False
-        GridViewTextBoxColumn56.AllowSort = False
-        GridViewTextBoxColumn56.EnableExpressionEditor = False
-        GridViewTextBoxColumn56.FieldName = "eingetragen_von"
-        GridViewTextBoxColumn56.HeaderText = "von"
-        GridViewTextBoxColumn56.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn56.IsAutoGenerated = True
-        GridViewTextBoxColumn56.Name = "eingetragen_von"
-        GridViewTextBoxColumn56.VisibleInColumnChooser = False
-        GridViewTextBoxColumn56.Width = 80
-        GridViewTextBoxColumn57.EnableExpressionEditor = False
-        GridViewTextBoxColumn57.FieldName = "anmerkungen_rtf"
-        GridViewTextBoxColumn57.HeaderText = "anmerkungen_rtf"
-        GridViewTextBoxColumn57.IsAutoGenerated = True
-        GridViewTextBoxColumn57.IsVisible = False
-        GridViewTextBoxColumn57.Name = "anmerkungen_rtf"
-        GridViewTextBoxColumn57.VisibleInColumnChooser = False
-        GridViewDateTimeColumn3.AllowGroup = False
-        GridViewDateTimeColumn3.AllowSort = False
-        GridViewDateTimeColumn3.EnableExpressionEditor = False
-        GridViewDateTimeColumn3.FieldName = "geaendert_am"
-        GridViewDateTimeColumn3.HeaderText = "Geändert am"
-        GridViewDateTimeColumn3.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDateTimeColumn3.IsAutoGenerated = True
-        GridViewDateTimeColumn3.IsVisible = False
-        GridViewDateTimeColumn3.Name = "geaendert_am"
-        GridViewDateTimeColumn3.Width = 100
-        GridViewTextBoxColumn58.AllowGroup = False
-        GridViewTextBoxColumn58.AllowSort = False
-        GridViewTextBoxColumn58.EnableExpressionEditor = False
-        GridViewTextBoxColumn58.FieldName = "geaendert_von"
-        GridViewTextBoxColumn58.HeaderText = "von"
-        GridViewTextBoxColumn58.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewTextBoxColumn58.IsAutoGenerated = True
-        GridViewTextBoxColumn58.IsVisible = False
-        GridViewTextBoxColumn58.Name = "geaendert_von"
-        GridViewTextBoxColumn58.Width = 80
-        Me.NotizenRadGridView.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn18, GridViewDecimalColumn19, GridViewTextBoxColumn54, GridViewTextBoxColumn55, GridViewDateTimeColumn2, GridViewTextBoxColumn56, GridViewTextBoxColumn57, GridViewDateTimeColumn3, GridViewTextBoxColumn58})
+        GridViewDecimalColumn37.AllowSort = False
+        GridViewDecimalColumn37.DataType = GetType(Integer)
+        GridViewDecimalColumn37.EnableExpressionEditor = False
+        GridViewDecimalColumn37.FieldName = "id"
+        GridViewDecimalColumn37.HeaderText = "id"
+        GridViewDecimalColumn37.IsAutoGenerated = True
+        GridViewDecimalColumn37.Name = "id"
+        GridViewDecimalColumn37.VisibleInColumnChooser = False
+        GridViewDecimalColumn38.DataType = GetType(Integer)
+        GridViewDecimalColumn38.EnableExpressionEditor = False
+        GridViewDecimalColumn38.FieldName = "bewid"
+        GridViewDecimalColumn38.HeaderText = "bewid"
+        GridViewDecimalColumn38.IsAutoGenerated = True
+        GridViewDecimalColumn38.Name = "bewid"
+        GridViewDecimalColumn38.VisibleInColumnChooser = False
+        GridViewTextBoxColumn112.AllowGroup = False
+        GridViewTextBoxColumn112.AllowSort = False
+        GridViewTextBoxColumn112.EnableExpressionEditor = False
+        GridViewTextBoxColumn112.FieldName = "betreff"
+        GridViewTextBoxColumn112.HeaderText = "Betreff"
+        GridViewTextBoxColumn112.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn112.IsAutoGenerated = True
+        GridViewTextBoxColumn112.MinWidth = 350
+        GridViewTextBoxColumn112.Name = "betreff"
+        GridViewTextBoxColumn112.VisibleInColumnChooser = False
+        GridViewTextBoxColumn112.Width = 350
+        GridViewTextBoxColumn113.AllowGroup = False
+        GridViewTextBoxColumn113.AllowSort = False
+        GridViewTextBoxColumn113.EnableExpressionEditor = False
+        GridViewTextBoxColumn113.FieldName = "anmerkungen_text"
+        GridViewTextBoxColumn113.HeaderText = "Anmerkungen"
+        GridViewTextBoxColumn113.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn113.IsAutoGenerated = True
+        GridViewTextBoxColumn113.MinWidth = 500
+        GridViewTextBoxColumn113.Name = "anmerkungen_text"
+        GridViewTextBoxColumn113.VisibleInColumnChooser = False
+        GridViewTextBoxColumn113.Width = 630
+        GridViewDateTimeColumn5.AllowGroup = False
+        GridViewDateTimeColumn5.EnableExpressionEditor = False
+        GridViewDateTimeColumn5.FieldName = "eingetragen_am"
+        GridViewDateTimeColumn5.HeaderText = "eingetragen am"
+        GridViewDateTimeColumn5.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewDateTimeColumn5.IsAutoGenerated = True
+        GridViewDateTimeColumn5.Name = "eingetragen_am"
+        GridViewDateTimeColumn5.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending
+        GridViewDateTimeColumn5.VisibleInColumnChooser = False
+        GridViewDateTimeColumn5.Width = 100
+        GridViewTextBoxColumn114.AllowGroup = False
+        GridViewTextBoxColumn114.AllowSort = False
+        GridViewTextBoxColumn114.EnableExpressionEditor = False
+        GridViewTextBoxColumn114.FieldName = "eingetragen_von"
+        GridViewTextBoxColumn114.HeaderText = "von"
+        GridViewTextBoxColumn114.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn114.IsAutoGenerated = True
+        GridViewTextBoxColumn114.Name = "eingetragen_von"
+        GridViewTextBoxColumn114.VisibleInColumnChooser = False
+        GridViewTextBoxColumn114.Width = 80
+        GridViewTextBoxColumn115.EnableExpressionEditor = False
+        GridViewTextBoxColumn115.FieldName = "anmerkungen_rtf"
+        GridViewTextBoxColumn115.HeaderText = "anmerkungen_rtf"
+        GridViewTextBoxColumn115.IsAutoGenerated = True
+        GridViewTextBoxColumn115.IsVisible = False
+        GridViewTextBoxColumn115.Name = "anmerkungen_rtf"
+        GridViewTextBoxColumn115.VisibleInColumnChooser = False
+        GridViewDateTimeColumn6.AllowGroup = False
+        GridViewDateTimeColumn6.AllowSort = False
+        GridViewDateTimeColumn6.EnableExpressionEditor = False
+        GridViewDateTimeColumn6.FieldName = "geaendert_am"
+        GridViewDateTimeColumn6.HeaderText = "Geändert am"
+        GridViewDateTimeColumn6.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewDateTimeColumn6.IsAutoGenerated = True
+        GridViewDateTimeColumn6.IsVisible = False
+        GridViewDateTimeColumn6.Name = "geaendert_am"
+        GridViewDateTimeColumn6.Width = 100
+        GridViewTextBoxColumn116.AllowGroup = False
+        GridViewTextBoxColumn116.AllowSort = False
+        GridViewTextBoxColumn116.EnableExpressionEditor = False
+        GridViewTextBoxColumn116.FieldName = "geaendert_von"
+        GridViewTextBoxColumn116.HeaderText = "von"
+        GridViewTextBoxColumn116.HeaderTextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        GridViewTextBoxColumn116.IsAutoGenerated = True
+        GridViewTextBoxColumn116.IsVisible = False
+        GridViewTextBoxColumn116.Name = "geaendert_von"
+        GridViewTextBoxColumn116.Width = 80
+        Me.NotizenRadGridView.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn37, GridViewDecimalColumn38, GridViewTextBoxColumn112, GridViewTextBoxColumn113, GridViewDateTimeColumn5, GridViewTextBoxColumn114, GridViewTextBoxColumn115, GridViewDateTimeColumn6, GridViewTextBoxColumn116})
         Me.NotizenRadGridView.MasterTemplate.DataSource = Me.NotizenBindingSource
         Me.NotizenRadGridView.MasterTemplate.EnableFiltering = True
         Me.NotizenRadGridView.MasterTemplate.EnableGrouping = False
-        SortDescriptor1.Direction = System.ComponentModel.ListSortDirection.Descending
-        SortDescriptor1.PropertyName = "eingetragen_am"
-        Me.NotizenRadGridView.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor1})
-        Me.NotizenRadGridView.MasterTemplate.ViewDefinition = TableViewDefinition2
+        SortDescriptor2.Direction = System.ComponentModel.ListSortDirection.Descending
+        SortDescriptor2.PropertyName = "eingetragen_am"
+        Me.NotizenRadGridView.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor2})
+        Me.NotizenRadGridView.MasterTemplate.ViewDefinition = TableViewDefinition4
         Me.NotizenRadGridView.Name = "NotizenRadGridView"
         Me.NotizenRadGridView.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.NotizenRadGridView.Size = New System.Drawing.Size(1369, 298)
@@ -13279,6 +13310,11 @@ Partial Class frmMain
         Me.Logistik_staplerscheinCheckBox.TabIndex = 7
         Me.Logistik_staplerscheinCheckBox.Text = "Ja/Nein"
         Me.Logistik_staplerscheinCheckBox.UseVisualStyleBackColor = True
+        '
+        'Bewerber_logistikBindingSource
+        '
+        Me.Bewerber_logistikBindingSource.DataMember = "bewerber_logistik"
+        Me.Bewerber_logistikBindingSource.DataSource = Me.BewerberDataSet
         '
         'Logistik_lagerverwaltungComboBox
         '
@@ -17803,6 +17839,16 @@ Partial Class frmMain
         Me.Label65.TabIndex = 0
         Me.Label65.Text = "Bewerber/in: "
         '
+        'Bewerberrsabmeldung_membersBindingSource
+        '
+        Me.Bewerberrsabmeldung_membersBindingSource.DataMember = "bewerberrsabmeldung_members"
+        Me.Bewerberrsabmeldung_membersBindingSource.DataSource = Me.NewsletterDataSet
+        '
+        'NewsletterDataSet
+        '
+        Me.NewsletterDataSet.DataSetName = "newsletterDataSet"
+        Me.NewsletterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'UlasBindingSource
         '
         Me.UlasBindingSource.DataMember = "bew_ulas"
@@ -18250,41 +18296,6 @@ Partial Class frmMain
         Me.TableAdapterManager2.tt_newsTableAdapter = Me.Tt_newsTableAdapter
         Me.TableAdapterManager2.UpdateOrder = bewerberpool.heyduckDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'NewsletterDataSet
-        '
-        Me.NewsletterDataSet.DataSetName = "newsletterDataSet"
-        Me.NewsletterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Bewerberrsabmeldung_membersBindingSource
-        '
-        Me.Bewerberrsabmeldung_membersBindingSource.DataMember = "bewerberrsabmeldung_members"
-        Me.Bewerberrsabmeldung_membersBindingSource.DataSource = Me.NewsletterDataSet
-        '
-        'Bewerberrsabmeldung_membersTableAdapter
-        '
-        Me.Bewerberrsabmeldung_membersTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager3
-        '
-        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager3.bewerberrsabmeldung_membersTableAdapter = Me.Bewerberrsabmeldung_membersTableAdapter
-        Me.TableAdapterManager3.UpdateOrder = bewerberpool.newsletterDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'BewBindingSource
-        '
-        Me.BewBindingSource.DataMember = "bew"
-        Me.BewBindingSource.DataSource = Me.BewerberDataSet
-        '
-        'BewerberDataSet
-        '
-        Me.BewerberDataSet.DataSetName = "BewerberDataSet"
-        Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Bewerber_logistikBindingSource
-        '
-        Me.Bewerber_logistikBindingSource.DataMember = "bewerber_logistik"
-        Me.Bewerber_logistikBindingSource.DataSource = Me.BewerberDataSet
-        '
         'OaDataSet
         '
         Me.OaDataSet.DataSetName = "oaDataSet"
@@ -18442,6 +18453,16 @@ Partial Class frmMain
         '
         Me.RundschreibenTableAdapter.ClearBeforeFill = True
         '
+        'Bewerberrsabmeldung_membersTableAdapter
+        '
+        Me.Bewerberrsabmeldung_membersTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager3
+        '
+        Me.TableAdapterManager3.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager3.bewerberrsabmeldung_membersTableAdapter = Me.Bewerberrsabmeldung_membersTableAdapter
+        Me.TableAdapterManager3.UpdateOrder = bewerberpool.newsletterDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -18475,6 +18496,8 @@ Partial Class frmMain
         CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.PictureBox31, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Bewerber_controllingBindingSource, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit
         Me.GroupBox52.ResumeLayout(False)
         Me.GroupBox52.PerformLayout
         Me.GroupBox53.ResumeLayout(False)
@@ -18650,6 +18673,7 @@ Partial Class frmMain
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit
         Me.GroupBox45.ResumeLayout(False)
         Me.GroupBox45.PerformLayout
+        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         Me.GroupBox44.ResumeLayout(False)
         Me.GroupBox44.PerformLayout
         CType(Me.Bewerber_versandBindingSource, System.ComponentModel.ISupportInitialize).EndInit
@@ -18783,6 +18807,8 @@ Partial Class frmMain
         Me.Panel34.ResumeLayout(False)
         Me.GroupBox65.ResumeLayout(False)
         Me.GroupBox65.PerformLayout
+        CType(Me.Bewerberrsabmeldung_membersBindingSource, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NewsletterDataSet, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.UlasBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.BewerberneuRadButton, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.FilterzurückRadButton, System.ComponentModel.ISupportInitialize).EndInit
@@ -18800,11 +18826,6 @@ Partial Class frmMain
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Tt_newsBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.HeyduckDataSet, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NewsletterDataSet, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Bewerberrsabmeldung_membersBindingSource, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Bewerber_logistikBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.OaDataSet, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Oa_stelleBindingSource, System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(False)
@@ -19795,4 +19816,6 @@ Partial Class frmMain
     Friend WithEvents txtBewerberRS As TextBox
     Friend WithEvents Label22 As Label
     Friend WithEvents TableAdapterManager3 As newsletterDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents Label27 As Label
+    Friend WithEvents txtDatumAbmeldungRS As TextBox
 End Class
