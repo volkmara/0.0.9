@@ -547,7 +547,7 @@ Public Class frmMain
 #Region "=============================================================================Buttons===================================================================================="
     ' Button Speichern, Neu anlegen, Daten laden, Drucken, neue anmerkung, Spalten einblenden Anmerkungen
 
-    Private Sub RbtnSpeichern_Click(sender As Object, e As EventArgs) Handles RbtnSpeichern.Click, RbtnDatenladen.Click, BewerberneuRadButton.Click, FilterzurückRadButton.Click, DruckenRadMenuItem2.Click, DruckenRadMenuItem3.Click, DruckenRadMenuItem4.Click, NeueAnmerkungRadButton.Click, btnBearbeitungspeichern.Click, Interviewerbogen.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, Top10auswaehlen.Click, Top10anzeigen.Click, btnDatenBewerbertooleinlesen.Click, btnSpalteneinblendenAnmerkungen.Click
+    Private Sub RbtnSpeichern_Click(sender As Object, e As EventArgs) Handles RbtnSpeichern.Click, RbtnDatenladen.Click, BewerberneuRadButton.Click, FilterzurückRadButton.Click, DruckenRadMenuItem2.Click, DruckenRadMenuItem3.Click, DruckenRadMenuItem4.Click, NeueAnmerkungRadButton.Click, btnBearbeitungspeichern.Click, Interviewerbogen.Click, AufklappenRadMenuItem1.Click, EinklappenRadMenuItem1.Click, Top10auswaehlen.Click, Top10anzeigen.Click, btnDatenBewerbertooleinlesen.Click, btnSpalteneinblendenAnmerkungen.Click, BewerberRSAuswahl.Click
         Select Case True
             Case sender Is RbtnSpeichern
                 Call DBSpeichern()
@@ -569,7 +569,7 @@ Public Class frmMain
                 'Dim result As DialogResult = MessageBox.Show("Möchten Sie ihre Eingaben vorher speichern?", "Speichern?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 'If result = Windows.Forms.DialogResult.No Then
                 Me.BewGridView1.FilterDescriptors.Clear()
-                    Me.BewGridView1.Rows(0).IsCurrent = True
+                Me.BewGridView1.Rows(0).IsCurrent = True
                 'ElseIf result = Windows.Forms.DialogResult.Yes Then
                 'Exit Sub
                 'End If
@@ -645,20 +645,19 @@ Public Class frmMain
                 '    Exit Sub
                 'Else
                 Using frm = New frmRundschreibendetail(Me)
-                        Dim result = frm.ShowDialog(Me)
-                        frm.BewerberDataSet = Me.BewerberDataSet
-                        frm.BewTableAdapter = Me.BewTableAdapter
-                        frm.RundschreibenTableAdapter = Me.RundschreibenTableAdapter
-                        frm.BewBindingSource.DataSource = Me.BewBindingSource
-                        frm.RundschreibenBindingSource.DataSource = Me.RundschreibenBindingSource
-                    End Using
-                    Me.BewBindingSource.RemoveFilter()
+                    Dim result = frm.ShowDialog(Me)
+                    frm.BewerberDataSet = Me.BewerberDataSet
+                    frm.BewTableAdapter = Me.BewTableAdapter
+                    frm.RundschreibenTableAdapter = Me.RundschreibenTableAdapter
+                    frm.BewBindingSource.DataSource = Me.BewBindingSource
+                    frm.RundschreibenBindingSource.DataSource = Me.RundschreibenBindingSource
+                End Using
+                Me.BewBindingSource.RemoveFilter()
                ' End If
 
             Case sender Is Top10anzeigen
-
                 Using frm = New frmRundschreibenuebersicht(Me)
-                    frm.ShowDialog(Me)
+                    Dim result = frm.ShowDialog(Me)
                 End Using
                 frmMain.DBLoad()
 
@@ -683,6 +682,11 @@ Public Class frmMain
             Case sender Is btnSpalteneinblendenAnmerkungen
                 Me.NotizenRadGridView.Columns(7).IsVisible = True
                 Me.NotizenRadGridView.Columns(8).IsVisible = True
+
+            Case sender Is BewerberRSAuswahl
+                Using frm = New frmBewerberRSAuswahl(Me)
+                    Dim result = frm.ShowDialog(Me)
+                End Using
         End Select
     End Sub
 

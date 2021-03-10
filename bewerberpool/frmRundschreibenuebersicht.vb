@@ -9,7 +9,9 @@ Public Class frmRundschreibenuebersicht
 
     Public kw As Integer = 0
     Public rsaktuellbezeichnung As String = String.Empty
-    Public idrundschreiben As Integer = 0
+    Public rsaktuellbezeichnungpremium As String = String.Empty
+    Public idrundschreiben As Integer = 0 ' id RS normal
+    Public idrundschreibenpremium As Integer = 0 'id PremiumRS
 
     Private frmMain As frmMain
 
@@ -19,15 +21,22 @@ Public Class frmRundschreibenuebersicht
     End Sub
 
     Private Sub frmRundschreibenuebersicht_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.RundschreibenTableAdapter.Fill(Me.BewerberDataSet.rundschreiben)
-        Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
         Me.RundschreibenmonatTableAdapter.Fill(Me.BewerberDataSet.rundschreibenmonat)
+        Me.RundschreibenTableAdapter.Fill(Me.BewerberDataSet.rundschreiben)
+
+        Me.RundschreibenpremiumTableAdapter.Fill(Me.BewerberDataSet.rundschreibenpremium)
+        Me.RundschreibenpremiummonatTableAdapter.Fill(Me.BewerberDataSet.rundschreibenpremiummonat)
+        Me.BewTableAdapter.Fill(Me.BewerberDataSet.bew)
     End Sub
 
     Private Sub frmRundschreibenuebersicht_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Me.RundschreibenmonatBindingSource.Filter = "erledigt = 1"
         Me.RundschreibenBindingSource1.Filter = "aktuell = 1"
         Me.RGVRundschreibenmonataktuell.ClearSelection()
+
+        Me.RundschreibenpremiummonatBindingSource.Filter = "erledigt = 1"
+        Me.RundschreibenpremiumBindingSource.Filter = "aktuell = 1"
+        Me.RGVRundschreibenPremiumMonat.ClearSelection()
 
         ' Button zum Eintragen der KW nur Anzeigen bei Hy und Adler
         If loginflag = 8 OrElse loginflag = 9 Then
@@ -41,7 +50,7 @@ Public Class frmRundschreibenuebersicht
         Call Kalenderwoche()
         lblKW.Text = CStr(kw)
     End Sub
-    Private Sub RGVRundschreibenMonat_ViewCellFormatting(sender As Object, e As Telerik.WinControls.UI.CellFormattingEventArgs) Handles RGVRundschreibenMonat.ViewCellFormatting, RGVBewerber.ViewCellFormatting, RGVRundschreibenaktuell.ViewCellFormatting, RGVRundschreibenmonataktuell.ViewCellFormatting
+    Private Sub RGVRundschreibenMonat_ViewCellFormatting(sender As Object, e As Telerik.WinControls.UI.CellFormattingEventArgs) Handles RGVRundschreibenMonat.ViewCellFormatting, RGVBewerber.ViewCellFormatting, RGVRundschreibenaktuell.ViewCellFormatting, RGVRundschreibenmonataktuell.ViewCellFormatting, RGVRundschreibenPremiumMonat.ViewCellFormatting, RGVRundschreibenPremium.ViewCellFormatting
         Dim newFont10 = New Font("Microsoft Sans Serif", 10.0, FontStyle.Bold)
 
         If TypeOf e.CellElement Is GridHeaderCellElement Then
@@ -65,25 +74,32 @@ Public Class frmRundschreibenuebersicht
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
         ' Werte in rundschreibenmonat.erledigt: 0 = noch nicht verwendet, 1 = enthält mindestens einen Bewerbereintrag, 2 = versandtes Rundschreiben. 3 = übersprungenes Rundschreiben
+        ' Werte in rundschreibenmonatpremium.erledigt: 0 = noch nicht verwendet, 1 = enthält mindestens einen Bewerbereintrag, 2 = versandtes Rundschreiben. 3 = übersprungenes Rundschreiben
+
         ' werte in rundschreiben.gelöscht: 0 = nicht manuell gelöscht, 1 = manuell gelöscht
+
+        ' Einträge in Tabelle "rundschreiben-aktuell": 0: war bereits mal im normalen RS - 1: ist für das aktuelle normale RS vorgesehen - 2: für das aktuelle PremiumRS vorgesehen - 3: war bereits mal im PremiumRS
+
         If TabControl1.SelectedTab Is TabPage2 Then
             rsaktuellbezeichnung = String.Empty
             Me.RundschreibenmonatBindingSource.Filter = "erledigt = 2"
         ElseIf TabControl1.SelectedTab Is TabPage1 Then
+            Me.RundschreibenBindingSource1.RemoveFilter()
+            Me.RundschreibenmonatBindingSource.RemoveFilter()
             rsaktuellbezeichnung = String.Empty
             Me.RundschreibenBindingSource1.Filter = "aktuell = 1"
             Me.RundschreibenmonatBindingSource.Filter = "erledigt = 1"
             Me.RGVRundschreibenmonataktuell.ClearSelection()
+        ElseIf TabControl1.SelectedTab Is TabPage3 Then
+            ' Me.RundschreibenBindingSource1.RemoveFilter()
+            'Me.RundschreibenmonatBindingSource.RemoveFilter()
+            rsaktuellbezeichnung = String.Empty
+            Me.RundschreibenpremiumBindingSource.Filter = "aktuell = 1"
+            Me.RundschreibenpremiummonatBindingSource.Filter = "erledigt = 1"
+            Me.RGVRundschreibenPremiumMonat.ClearSelection()
         End If
     End Sub
 
-    Private Sub RGVRundschreibenMonat_Click(sender As Object, e As EventArgs) Handles RGVRundschreibenMonat.Click
-        Dim rsmonataktuell = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
-        rsaktuellbezeichnung = CStr(rsmonataktuell.monat)
-        Me.RundschreibenBindingSource1.Filter = "aktuell = 0 AND nurhomepage = False AND gelöscht = 0 And bezeichnung = '" & rsaktuellbezeichnung & "'"
-        Me.RGVBewerber.AutoSizeRows = True
-        Me.RGVBewerber.Columns(14).WrapText = True
-    End Sub
 
 #Region "Tabpage 1: aktuelle Rundschreibenbewerber"
 
@@ -121,12 +137,6 @@ Public Class frmRundschreibenuebersicht
     Private Sub RGVRundschreibenmonataktuell_Click(sender As Object, e As EventArgs) Handles RGVRundschreibenmonataktuell.Click
         Dim rsmonataktuell = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
         rsaktuellbezeichnung = CStr(rsmonataktuell.monat)
-    End Sub
-
-    Private Sub RGVRundschreibenaktuell_CurrentRowChanged(sender As Object, e As CurrentRowChangedEventArgs) Handles RGVRundschreibenaktuell.CurrentRowChanged
-        'Call Homepagecheck()
-        'Call Voreintraege()
-        'Call Rundschreibencheck()
     End Sub
 
     Private Sub Rundschreibencheck()
@@ -225,6 +235,15 @@ Public Class frmRundschreibenuebersicht
 
 #Region "Tabpage 2: Rundschreibenübersicht"
 
+    Private Sub RGVRundschreibenMonat_Click(sender As Object, e As EventArgs) Handles RGVRundschreibenMonat.Click
+
+        Dim rsmonataktuell = DirectCast(DirectCast(Me.RundschreibenmonatBindingSource.Current, DataRowView).Row, rundschreibenmonatRow)
+        rsaktuellbezeichnung = CStr(rsmonataktuell.monat)
+        Me.RundschreibenBindingSource1.Filter = "aktuell = 0 AND nurhomepage = False AND gelöscht = 0 And bezeichnung = '" & rsaktuellbezeichnung & "'"
+        Me.RGVBewerber.AutoSizeRows = True
+        Me.RGVBewerber.Columns(14).WrapText = True
+    End Sub
+
     Private Sub Kalenderwoche()
         kw = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(Now, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
     End Sub
@@ -245,6 +264,133 @@ Public Class frmRundschreibenuebersicht
             Me.RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
             Call gespeichert()
         End If
+    End Sub
+
+#End Region
+
+#Region "Tabpage 3: Premiumrundschreiben"
+
+    Private Sub HomepagecheckPremium()
+        Dim rundschreibenpremium = DirectCast(DirectCast(RundschreibenpremiumBindingSource.Current, DataRowView).Row, rundschreibenpremiumRow)
+        If frmMain.HeyduckDataSet.tt_news.Any(Function(x) x.tx_ttnewserweiterung_referenznummer = CStr(rundschreibenpremium.refnr)) Then
+            chkAufHomepagePremium.Checked = True
+        Else
+            chkAufHomepagePremium.Checked = False
+        End If
+    End Sub
+    Private Sub Premiumvoreintraege()
+        Dim listepremium As New BindingList(Of String)
+
+        Dim bewerber = DirectCast(DirectCast(RundschreibenpremiumBindingSource.Current, DataRowView).Row, rundschreibenpremiumRow)
+        Dim bewerberid As Integer = CInt(bewerber.bewid)
+
+        'Es werden nur die Rundschreiben aufgelistet, die zeitlich vor dem aktuellen Rundschreiben liegen, also die, bei denen x.aktuell = 0 ist
+        Dim bewpremiumrundschreiben = BewerberDataSet.rundschreibenpremium.Where(Function(x) x.bewid = bewerberid AndAlso x.aktuell = CInt(0) AndAlso x.gelöscht = 0).Select(Function(x) x.bezeichnung).Reverse.ToList
+
+
+        'Dim bewpremiumrundschreiben = BewerberDataSet.rundschreibenpremium.Where(Function(x) x.bewid = bewerberid AndAlso x.aktuell = CInt(1) AndAlso x.gelöscht = 0).Select(Function(x) x.bezeichnung).Reverse.ToList
+
+        ListBox2.DataSource = bewpremiumrundschreiben
+    End Sub
+
+    Private Sub RundschreibenPremiumCheck()
+        Dim rundschreibenpremium = DirectCast(DirectCast(RundschreibenpremiumBindingSource.Current, DataRowView).Row, rundschreibenpremiumRow)
+        If rundschreibenpremium.aktuell = CInt(1) Then
+            rbtnJaPremium.Checked = True
+            rbtnNeinPremium.Checked = False
+        ElseIf rundschreibenpremium.aktuell = CInt(0) Then
+            rbtnJaPremium.Checked = False
+            rbtnNeinPremium.Checked = True
+        End If
+    End Sub
+
+    Private Sub RGVRundschreibenPremium_Click(sender As Object, e As EventArgs) Handles RGVRundschreibenPremium.Click
+        Call HomepagecheckPremium()
+        Call Premiumvoreintraege()
+        Call RundschreibenPremiumCheck()
+
+        Dim rspremium = DirectCast(DirectCast(RundschreibenpremiumBindingSource.Current, DataRowView).Row, rundschreibenpremiumRow) ' id des Eintrags aus Rundschreibentabelle, wird benötigt, um einen einzelnen Eintrag zu löschen
+        idrundschreibenpremium = rspremium.idrundschreibenpremium
+    End Sub
+
+    Private Sub RGVRundschreibenPremiumMonat_Click(sender As Object, e As EventArgs) Handles RGVRundschreibenPremiumMonat.Click
+        Dim rspremiummonataktuell = DirectCast(DirectCast(Me.RundschreibenpremiummonatBindingSource.Current, DataRowView).Row, rundschreibenpremiummonatRow)
+        rsaktuellbezeichnungpremium = CStr(rspremiummonataktuell.monat)
+    End Sub
+
+    Private Sub btnPremiumClose_Click(sender As Object, e As EventArgs) Handles btnPremiumClose.Click, btnRSPremiumspeichern.Click, btnMonatPremiumloeschen.Click, btnPremiumEintraegeloeschen.Click, AufklappenPremium.Click, EinklappenPremium.Click
+        Select Case True
+            Case sender Is btnPremiumClose
+                Me.Close()
+            Case sender Is btnRSPremiumspeichern
+                Dim rundschreibenpremium = DirectCast(DirectCast(RundschreibenpremiumBindingSource.Current, DataRowView).Row, rundschreibenpremiumRow)
+                If rbtnNeinPremium.Checked Then
+                    rundschreibenpremium.aktuell = CInt(0)
+                    rundschreibenpremium.gelöscht = CInt(1)
+                    rundschreibenpremium.premiumrundschreibenjanein = False
+                ElseIf rbtnJaPremium.Checked Then
+                    rundschreibenpremium.aktuell = CInt(1)
+                    rundschreibenpremium.gelöscht = CInt(0)
+                End If
+
+                Me.Validate()
+                Me.RundschreibenpremiumBindingSource.EndEdit()
+                Me.RundschreibenpremiumTableAdapter.Update(Me.BewerberDataSet.rundschreibenpremium)
+                Call gespeichert()
+
+            Case sender Is btnPremiumEintraegeloeschen
+                Dim rspremiumloeschen = BewerberDataSet.rundschreibenpremium.Where(Function(x) x.idrundschreibenpremium = CInt(idrundschreibenpremium) And x.aktuell = 1)
+                For Each x In rspremiumloeschen
+                    x.gelöscht = 1
+                    x.aktuell = 0
+                Next
+                Me.Validate()
+                Me.RundschreibenpremiumBindingSource.EndEdit()
+                Me.RundschreibenpremiumTableAdapter.Update(Me.BewerberDataSet.rundschreibenpremium)
+
+                'Dim rsmonatpremiumloeschen = BewerberDataSet.rundschreibenpremiummonat.Where(Function(x) x.monat = CStr(rsaktuellbezeichnung))
+                'For Each x In rsmonatpremiumloeschen
+                '    x.erledigt = 3
+                'Next
+                'Me.Validate()
+                'Me.RundschreibenpremiummonatBindingSource.EndEdit()
+                'Me.RundschreibenpremiummonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenpremiummonat)
+                Call gespeichert()
+
+            Case sender Is btnMonatPremiumloeschen
+                If rsaktuellbezeichnungpremium = String.Empty Then
+                    Dim result As DialogResult = MessageBox.Show("Bitte erst in der linken Spalte einen Eintrag anklicken.", "Eintrag auswählen", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Exit Sub
+                Else
+
+                    Dim rs = BewerberDataSet.rundschreibenpremium.Where(Function(x) x.aktuell = 1 And x.bezeichnung = CStr(rsaktuellbezeichnungpremium))
+
+                    For Each x In rs
+                        x.aktuell = CInt(0)
+                    Next
+
+                    Me.Validate()
+                    Me.RundschreibenpremiumbewBindingSource.EndEdit()
+                    Me.RundschreibenpremiumTableAdapter.Update(Me.BewerberDataSet.rundschreibenpremium)
+
+                    Dim rsmonat = BewerberDataSet.rundschreibenpremiummonat.Where(Function(x) x.erledigt = 1 AndAlso x.monat = CStr(rsaktuellbezeichnungpremium))
+                    For Each x In rsmonat
+                        x.erledigt = CInt(2)
+                    Next
+
+                    Me.Validate()
+                    Me.RundschreibenpremiummonatBindingSource.EndEdit()
+                    Me.RundschreibenpremiummonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenpremiummonat)
+                    Call gespeichert()
+                End If
+
+            Case sender Is AufklappenPremium
+                Me.RGVRundschreibenPremium.AutoSizeRows = True
+                Me.RGVRundschreibenPremium.Columns(10).WrapText = True
+            Case sender Is EinklappenRadMenuItem1
+                Me.RGVRundschreibenPremium.AutoSizeRows = False
+                Me.RGVRundschreibenPremium.Columns(10).WrapText = False
+        End Select
     End Sub
 #End Region
 End Class

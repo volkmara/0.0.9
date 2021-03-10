@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\server2012\xchange\bewerberpool\publish\</InstallUrl>
     <UpdateUrl>\\server2012\xchange\bewerberpool\publish\</UpdateUrl>
-    <ApplicationRevision>293</ApplicationRevision>
+    <ApplicationRevision>294</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -205,6 +205,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formatierung.vb" />
+    <Compile Include="frmBewerberRSAuswahl.Designer.vb">
+      <DependentUpon>frmBewerberRSAuswahl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBewerberRSAuswahl.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBogendruck.Designer.vb">
       <DependentUpon>frmBogendruck.vb</DependentUpon>
     </Compile>
@@ -357,6 +363,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBewerberRSAuswahl.resx">
+      <DependentUpon>frmBewerberRSAuswahl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBogendruck.resx">
       <DependentUpon>frmBogendruck.vb</DependentUpon>

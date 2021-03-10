@@ -40,14 +40,18 @@ Partial Class frmRundschreibendetail
         Me.btnNewandSave = New Telerik.WinControls.UI.RadButton()
         Me.btnClose = New Telerik.WinControls.UI.RadButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.cmbMonat = New System.Windows.Forms.ComboBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtRundschreibenanmerkungen = New System.Windows.Forms.TextBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.cmbRSPremium = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cmbMonat = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.chkHomepage = New System.Windows.Forms.CheckBox()
         Me.StandTextBox = New System.Windows.Forms.TextBox()
@@ -63,6 +67,11 @@ Partial Class frmRundschreibendetail
         Me.RundschreibenmonatTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenmonatTableAdapter()
         Me.RundschreibenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RundschreibenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenTableAdapter()
+        Me.RundschreibenpremiummonatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RundschreibenpremiummonatTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenpremiummonatTableAdapter()
+        Me.btnPremium = New Telerik.WinControls.UI.RadButton()
+        Me.RundschreibenpremiumBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RundschreibenpremiumTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenpremiumTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
         RefnrLabel = New System.Windows.Forms.Label()
         AnredeLabel = New System.Windows.Forms.Label()
@@ -79,13 +88,17 @@ Partial Class frmRundschreibendetail
         CType(Me.btnNewandSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.RundschreibenmonatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RundschreibenpremiummonatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPremium, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RundschreibenpremiumBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RefnrLabel
@@ -200,19 +213,20 @@ Partial Class frmRundschreibendetail
         '
         'btnNewandSave
         '
+        Me.btnNewandSave.Enabled = False
         Me.btnNewandSave.ForeColor = System.Drawing.Color.Red
         Me.btnNewandSave.Image = CType(resources.GetObject("btnNewandSave.Image"), System.Drawing.Image)
-        Me.btnNewandSave.Location = New System.Drawing.Point(520, 12)
+        Me.btnNewandSave.Location = New System.Drawing.Point(243, 12)
         Me.btnNewandSave.Name = "btnNewandSave"
-        Me.btnNewandSave.Size = New System.Drawing.Size(163, 37)
+        Me.btnNewandSave.Size = New System.Drawing.Size(211, 37)
         Me.btnNewandSave.TabIndex = 15
-        Me.btnNewandSave.Text = "<html><strong>Neu und " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "speichern>/strong></html>"
+        Me.btnNewandSave.Text = "<html><strong>        Für normales RS eintragen>/strong></html>"
         '
         'btnClose
         '
         Me.btnClose.ForeColor = System.Drawing.Color.Red
         Me.btnClose.Image = CType(resources.GetObject("btnClose.Image"), System.Drawing.Image)
-        Me.btnClose.Location = New System.Drawing.Point(693, 12)
+        Me.btnClose.Location = New System.Drawing.Point(708, 12)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(163, 37)
         Me.btnClose.TabIndex = 17
@@ -222,81 +236,55 @@ Partial Class frmRundschreibendetail
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(11, 55)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(845, 563)
+        Me.Panel1.Size = New System.Drawing.Size(860, 771)
         Me.Panel1.TabIndex = 18
         '
-        'FlowLayoutPanel1
+        'Panel2
         '
-        Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FlowLayoutPanel1.Controls.Add(Me.GroupBox3)
-        Me.FlowLayoutPanel1.Controls.Add(Me.GroupBox4)
-        Me.FlowLayoutPanel1.Controls.Add(Me.GroupBox2)
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(324, 22)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(511, 530)
-        Me.FlowLayoutPanel1.TabIndex = 17
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.GroupBox5)
+        Me.Panel2.Controls.Add(Me.GroupBox2)
+        Me.Panel2.Controls.Add(Me.GroupBox4)
+        Me.Panel2.Controls.Add(Me.GroupBox3)
+        Me.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.ForeColor = System.Drawing.Color.Crimson
+        Me.Panel2.Location = New System.Drawing.Point(332, 15)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(515, 745)
+        Me.Panel2.TabIndex = 19
         '
-        'GroupBox3
+        'GroupBox5
         '
-        Me.GroupBox3.Controls.Add(Me.Label2)
-        Me.GroupBox3.Controls.Add(Me.cmbMonat)
-        Me.GroupBox3.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(486, 90)
-        Me.GroupBox3.TabIndex = 17
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Für welches Rundschreiben vorgesehen"
+        Me.GroupBox5.Controls.Add(Me.ListBox2)
+        Me.GroupBox5.ForeColor = System.Drawing.Color.Crimson
+        Me.GroupBox5.Location = New System.Drawing.Point(14, 340)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(486, 194)
+        Me.GroupBox5.TabIndex = 20
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Bereits im Premiumrundschreiben gewesen"
         '
-        'Label2
+        'ListBox2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 29)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 16)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Monat:"
-        '
-        'cmbMonat
-        '
-        Me.cmbMonat.FormattingEnabled = True
-        Me.cmbMonat.Location = New System.Drawing.Point(83, 26)
-        Me.cmbMonat.Name = "cmbMonat"
-        Me.cmbMonat.Size = New System.Drawing.Size(397, 24)
-        Me.cmbMonat.TabIndex = 21
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.ListBox1)
-        Me.GroupBox4.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox4.Location = New System.Drawing.Point(3, 99)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(486, 208)
-        Me.GroupBox4.TabIndex = 18
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Bereits im Rundschreiben gewesen:"
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 16
-        Me.ListBox1.Location = New System.Drawing.Point(6, 22)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(474, 180)
-        Me.ListBox1.TabIndex = 0
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.ItemHeight = 16
+        Me.ListBox2.Location = New System.Drawing.Point(6, 22)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(474, 164)
+        Me.ListBox2.TabIndex = 0
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.txtRundschreibenanmerkungen)
         Me.GroupBox2.ForeColor = System.Drawing.Color.Crimson
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 313)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 538)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(486, 205)
+        Me.GroupBox2.Size = New System.Drawing.Size(486, 200)
         Me.GroupBox2.TabIndex = 19
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Anmerkungen:"
@@ -309,6 +297,74 @@ Partial Class frmRundschreibendetail
         Me.txtRundschreibenanmerkungen.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtRundschreibenanmerkungen.Size = New System.Drawing.Size(474, 155)
         Me.txtRundschreibenanmerkungen.TabIndex = 1
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.ListBox1)
+        Me.GroupBox4.ForeColor = System.Drawing.Color.Crimson
+        Me.GroupBox4.Location = New System.Drawing.Point(14, 169)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(486, 165)
+        Me.GroupBox4.TabIndex = 18
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Bereits im normalen Rundschreiben gewesen:"
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 16
+        Me.ListBox1.Location = New System.Drawing.Point(6, 22)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(474, 132)
+        Me.ListBox1.TabIndex = 0
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.cmbRSPremium)
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.cmbMonat)
+        Me.GroupBox3.ForeColor = System.Drawing.Color.Crimson
+        Me.GroupBox3.Location = New System.Drawing.Point(14, 10)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(486, 144)
+        Me.GroupBox3.TabIndex = 17
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Für welches Rundschreiben vorgesehen"
+        '
+        'cmbRSPremium
+        '
+        Me.cmbRSPremium.FormattingEnabled = True
+        Me.cmbRSPremium.Location = New System.Drawing.Point(125, 95)
+        Me.cmbRSPremium.Name = "cmbRSPremium"
+        Me.cmbRSPremium.Size = New System.Drawing.Size(355, 24)
+        Me.cmbRSPremium.TabIndex = 23
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(7, 85)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(97, 32)
+        Me.Label3.TabIndex = 22
+        Me.Label3.Text = "Monat " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "RS Premium:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(7, 29)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(84, 32)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Monat " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "RS normal:"
+        '
+        'cmbMonat
+        '
+        Me.cmbMonat.FormattingEnabled = True
+        Me.cmbMonat.Location = New System.Drawing.Point(125, 26)
+        Me.cmbMonat.Name = "cmbMonat"
+        Me.cmbMonat.Size = New System.Drawing.Size(355, 24)
+        Me.cmbMonat.TabIndex = 21
         '
         'GroupBox1
         '
@@ -335,7 +391,7 @@ Partial Class frmRundschreibendetail
         Me.GroupBox1.ForeColor = System.Drawing.Color.Crimson
         Me.GroupBox1.Location = New System.Drawing.Point(9, 15)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(309, 537)
+        Me.GroupBox1.Size = New System.Drawing.Size(362, 745)
         Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Bewerber/innen-Daten"
@@ -450,6 +506,35 @@ Partial Class frmRundschreibendetail
         '
         Me.RundschreibenTableAdapter.ClearBeforeFill = True
         '
+        'RundschreibenpremiummonatBindingSource
+        '
+        Me.RundschreibenpremiummonatBindingSource.DataMember = "rundschreibenpremiummonat"
+        Me.RundschreibenpremiummonatBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'RundschreibenpremiummonatTableAdapter
+        '
+        Me.RundschreibenpremiummonatTableAdapter.ClearBeforeFill = True
+        '
+        'btnPremium
+        '
+        Me.btnPremium.Enabled = False
+        Me.btnPremium.ForeColor = System.Drawing.Color.Red
+        Me.btnPremium.Image = CType(resources.GetObject("btnPremium.Image"), System.Drawing.Image)
+        Me.btnPremium.Location = New System.Drawing.Point(475, 12)
+        Me.btnPremium.Name = "btnPremium"
+        Me.btnPremium.Size = New System.Drawing.Size(218, 37)
+        Me.btnPremium.TabIndex = 21
+        Me.btnPremium.Text = "<html><strong>        Für PremiumRS eintragen>/strong></html>"
+        '
+        'RundschreibenpremiumBindingSource
+        '
+        Me.RundschreibenpremiumBindingSource.DataMember = "rundschreibenpremium"
+        Me.RundschreibenpremiumBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'RundschreibenpremiumTableAdapter
+        '
+        Me.RundschreibenpremiumTableAdapter.ClearBeforeFill = True
+        '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
@@ -478,6 +563,8 @@ Partial Class frmRundschreibendetail
         Me.TableAdapterManager.gewerblichTableAdapter = Nothing
         Me.TableAdapterManager.notizenTableAdapter = Nothing
         Me.TableAdapterManager.rundschreibenmonatTableAdapter = Me.RundschreibenmonatTableAdapter
+        Me.TableAdapterManager.rundschreibenpremiummonatTableAdapter = Me.RundschreibenpremiummonatTableAdapter
+        Me.TableAdapterManager.rundschreibenpremiumTableAdapter = Me.RundschreibenpremiumTableAdapter
         Me.TableAdapterManager.rundschreibenTableAdapter = Me.RundschreibenTableAdapter
         Me.TableAdapterManager.ulasTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
@@ -487,7 +574,8 @@ Partial Class frmRundschreibendetail
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Tan
-        Me.ClientSize = New System.Drawing.Size(863, 628)
+        Me.ClientSize = New System.Drawing.Size(881, 833)
+        Me.Controls.Add(Me.btnPremium)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnNewandSave)
@@ -499,16 +587,20 @@ Partial Class frmRundschreibendetail
         CType(Me.btnNewandSave, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.RundschreibenmonatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RundschreibenpremiummonatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPremium, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RundschreibenpremiumBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -518,7 +610,6 @@ Partial Class frmRundschreibendetail
     Friend WithEvents btnNewandSave As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnClose As Telerik.WinControls.UI.RadButton
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
@@ -538,8 +629,18 @@ Partial Class frmRundschreibendetail
     Friend WithEvents RundschreibenBindingSource As BindingSource
     Friend WithEvents RundschreibenTableAdapter As BewerberDataSetTableAdapters.rundschreibenTableAdapter
     Friend WithEvents StandTextBox As TextBox
-    Friend WithEvents TableAdapterManager As BewerberDataSetTableAdapters.TableAdapterManager
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents txtRundschreibenanmerkungen As TextBox
     Friend WithEvents chkHomepage As CheckBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents cmbRSPremium As ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents RundschreibenpremiummonatBindingSource As BindingSource
+    Friend WithEvents RundschreibenpremiummonatTableAdapter As BewerberDataSetTableAdapters.rundschreibenpremiummonatTableAdapter
+    Friend WithEvents btnPremium As Telerik.WinControls.UI.RadButton
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents RundschreibenpremiumBindingSource As BindingSource
+    Friend WithEvents RundschreibenpremiumTableAdapter As BewerberDataSetTableAdapters.rundschreibenpremiumTableAdapter
+    Friend WithEvents TableAdapterManager As BewerberDataSetTableAdapters.TableAdapterManager
 End Class

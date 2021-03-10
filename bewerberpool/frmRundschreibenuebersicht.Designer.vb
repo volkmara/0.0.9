@@ -28,6 +28,9 @@ Partial Class frmRundschreibenuebersicht
         Dim Label1 As System.Windows.Forms.Label
         Dim Label5 As System.Windows.Forms.Label
         Dim RundschreibenLabel As System.Windows.Forms.Label
+        Dim Label12 As System.Windows.Forms.Label
+        Dim Label13 As System.Windows.Forms.Label
+        Dim AktuellLabel As System.Windows.Forms.Label
         Dim GridViewDecimalColumn1 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
         Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
@@ -75,18 +78,43 @@ Partial Class frmRundschreibenuebersicht
         Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewDecimalColumn15 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
         Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewDecimalColumn16 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn17 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewDecimalColumn18 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn19 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewComboBoxColumn19 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn20 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn21 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn22 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn23 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn24 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn25 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewComboBoxColumn26 As Telerik.WinControls.UI.GridViewComboBoxColumn = New Telerik.WinControls.UI.GridViewComboBoxColumn()
+        Dim GridViewDecimalColumn20 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn21 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn22 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn23 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewDecimalColumn24 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim GridViewCheckBoxColumn1 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
+        Dim TableViewDefinition6 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.BewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewerberDataSet = New bewerberpool.BewerberDataSet()
+        Me.BewBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RundschreibenBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RundschreibenmonatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RundschreibenBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.RGVRundschreibenMonat = New Telerik.WinControls.UI.RadGridView()
-        Me.RundschreibenmonatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RGVBewerber = New Telerik.WinControls.UI.RadGridView()
-        Me.RundschreibenBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnEintraegeloeschen = New Telerik.WinControls.UI.RadButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.AktuellTextBox = New System.Windows.Forms.TextBox()
         Me.chgNurhomepage = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
@@ -106,6 +134,27 @@ Partial Class frmRundschreibenuebersicht
         Me.btnEintraegeloeschenunduebertragen = New Telerik.WinControls.UI.RadButton()
         Me.btnSave_Rundschreiben = New Telerik.WinControls.UI.RadButton()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.chkAufHomepagePremium = New System.Windows.Forms.CheckBox()
+        Me.rbtnJaPremium = New System.Windows.Forms.RadioButton()
+        Me.rbtnNeinPremium = New System.Windows.Forms.RadioButton()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
+        Me.RGVRundschreibenPremiumMonat = New Telerik.WinControls.UI.RadGridView()
+        Me.RundschreibenpremiummonatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RGVRundschreibenPremium = New Telerik.WinControls.UI.RadGridView()
+        Me.RundschreibenpremiumBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.btnPremiumEintraegeloeschen = New Telerik.WinControls.UI.RadButton()
+        Me.rbtnTabellePremium = New Telerik.WinControls.UI.RadDropDownButton()
+        Me.AufklappenPremium = New Telerik.WinControls.UI.RadMenuItem()
+        Me.EinklappenPremium = New Telerik.WinControls.UI.RadMenuItem()
+        Me.btnPremiumClose = New Telerik.WinControls.UI.RadButton()
+        Me.btnMonatPremiumloeschen = New Telerik.WinControls.UI.RadButton()
+        Me.btnRSPremiumspeichern = New Telerik.WinControls.UI.RadButton()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnKWspeichern = New Telerik.WinControls.UI.RadButton()
@@ -114,18 +163,27 @@ Partial Class frmRundschreibenuebersicht
         Me.lblAktuellesDatum = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.BewBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BewTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.bewTableAdapter()
         Me.TableAdapterManager = New bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager()
         Me.RundschreibenmonatTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenmonatTableAdapter()
         Me.RundschreibenTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenTableAdapter()
+        Me.RundschreibenpremiummonatTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenpremiummonatTableAdapter()
+        Me.RundschreibenpremiumTableAdapter = New bewerberpool.BewerberDataSetTableAdapters.rundschreibenpremiumTableAdapter()
+        Me.RundschreibenpremiumbewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RundschreibenpremiumbewBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         AnmerkungenLabel = New System.Windows.Forms.Label()
         RundschreibenreihenfolgeLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
         Label5 = New System.Windows.Forms.Label()
         RundschreibenLabel = New System.Windows.Forms.Label()
+        Label12 = New System.Windows.Forms.Label()
+        Label13 = New System.Windows.Forms.Label()
+        AktuellLabel = New System.Windows.Forms.Label()
         CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BewBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RundschreibenBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RundschreibenmonatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -133,10 +191,8 @@ Partial Class frmRundschreibenuebersicht
         Me.SplitContainer1.SuspendLayout()
         CType(Me.RGVRundschreibenMonat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RGVRundschreibenMonat.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RundschreibenmonatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RGVBewerber, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RGVBewerber.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RundschreibenBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.btnEintraegeloeschen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,10 +209,28 @@ Partial Class frmRundschreibenuebersicht
         CType(Me.btnRundschreibenaktuell_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEintraegeloeschenunduebertragen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSave_Rundschreiben, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer3.Panel1.SuspendLayout()
+        Me.SplitContainer3.Panel2.SuspendLayout()
+        Me.SplitContainer3.SuspendLayout()
+        CType(Me.RGVRundschreibenPremiumMonat, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RGVRundschreibenPremiumMonat.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RundschreibenpremiummonatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RGVRundschreibenPremium, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RGVRundschreibenPremium.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RundschreibenpremiumBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPremiumEintraegeloeschen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.rbtnTabellePremium, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPremiumClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnMonatPremiumloeschen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnRSPremiumspeichern, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.btnKWspeichern, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BewBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RundschreibenpremiumbewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RundschreibenpremiumbewBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AnmerkungenLabel
@@ -209,6 +283,35 @@ Partial Class frmRundschreibenuebersicht
         RundschreibenLabel.TabIndex = 95
         RundschreibenLabel.Text = "Für Rundschreiben" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ausgewählt:"
         '
+        'Label12
+        '
+        Label12.AutoSize = True
+        Label12.ForeColor = System.Drawing.Color.Crimson
+        Label12.Location = New System.Drawing.Point(338, 13)
+        Label12.Name = "Label12"
+        Label12.Size = New System.Drawing.Size(138, 32)
+        Label12.TabIndex = 106
+        Label12.Text = "Für Rundschreiben" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ausgewählt:"
+        '
+        'Label13
+        '
+        Label13.AutoSize = True
+        Label13.ForeColor = System.Drawing.Color.Crimson
+        Label13.Location = New System.Drawing.Point(15, 15)
+        Label13.Name = "Label13"
+        Label13.Size = New System.Drawing.Size(80, 32)
+        Label13.TabIndex = 109
+        Label13.Text = "Auf Home-" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "page:"
+        '
+        'AktuellLabel
+        '
+        AktuellLabel.AutoSize = True
+        AktuellLabel.Location = New System.Drawing.Point(1135, 136)
+        AktuellLabel.Name = "AktuellLabel"
+        AktuellLabel.Size = New System.Drawing.Size(58, 16)
+        AktuellLabel.TabIndex = 99
+        AktuellLabel.Text = "aktuell:"
+        '
         'BewBindingSource
         '
         Me.BewBindingSource.DataMember = "bew"
@@ -218,6 +321,21 @@ Partial Class frmRundschreibenuebersicht
         '
         Me.BewerberDataSet.DataSetName = "BewerberDataSet"
         Me.BewerberDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BewBindingSource1
+        '
+        Me.BewBindingSource1.DataMember = "rundschreiben_bew"
+        Me.BewBindingSource1.DataSource = Me.RundschreibenBindingSource1
+        '
+        'RundschreibenBindingSource1
+        '
+        Me.RundschreibenBindingSource1.DataMember = "rundschreibenmonat_rundschreiben"
+        Me.RundschreibenBindingSource1.DataSource = Me.RundschreibenmonatBindingSource
+        '
+        'RundschreibenmonatBindingSource
+        '
+        Me.RundschreibenmonatBindingSource.DataMember = "rundschreibenmonat"
+        Me.RundschreibenmonatBindingSource.DataSource = Me.BewerberDataSet
         '
         'RundschreibenBindingSource
         '
@@ -300,11 +418,6 @@ Partial Class frmRundschreibenuebersicht
         Me.RGVRundschreibenMonat.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.RGVRundschreibenMonat.Size = New System.Drawing.Size(322, 684)
         Me.RGVRundschreibenMonat.TabIndex = 0
-        '
-        'RundschreibenmonatBindingSource
-        '
-        Me.RundschreibenmonatBindingSource.DataMember = "rundschreibenmonat"
-        Me.RundschreibenmonatBindingSource.DataSource = Me.BewerberDataSet
         '
         'RGVBewerber
         '
@@ -489,14 +602,10 @@ Partial Class frmRundschreibenuebersicht
         Me.RGVBewerber.Size = New System.Drawing.Size(1177, 684)
         Me.RGVBewerber.TabIndex = 0
         '
-        'RundschreibenBindingSource1
-        '
-        Me.RundschreibenBindingSource1.DataMember = "rundschreibenmonat_rundschreiben"
-        Me.RundschreibenBindingSource1.DataSource = Me.RundschreibenmonatBindingSource
-        '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(9, 13)
         Me.TabControl1.Name = "TabControl1"
@@ -533,12 +642,14 @@ Partial Class frmRundschreibenuebersicht
         Me.btnEintraegeloeschen.Name = "btnEintraegeloeschen"
         Me.btnEintraegeloeschen.Size = New System.Drawing.Size(201, 47)
         Me.btnEintraegeloeschen.TabIndex = 95
-        Me.btnEintraegeloeschen.Text = "<html><strong> <br/>   Einträge löschen></strong><br/></html>"
+        Me.btnEintraegeloeschen.Text = "<html><strong> <br/>   Eintrag löschen></strong><br/></html>"
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(AktuellLabel)
+        Me.Panel1.Controls.Add(Me.AktuellTextBox)
         Me.Panel1.Controls.Add(Me.chgNurhomepage)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.ListBox1)
@@ -556,6 +667,13 @@ Partial Class frmRundschreibenuebersicht
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1500, 215)
         Me.Panel1.TabIndex = 94
+        '
+        'AktuellTextBox
+        '
+        Me.AktuellTextBox.Location = New System.Drawing.Point(1199, 133)
+        Me.AktuellTextBox.Name = "AktuellTextBox"
+        Me.AktuellTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.AktuellTextBox.TabIndex = 100
         '
         'chgNurhomepage
         '
@@ -1002,7 +1120,7 @@ Partial Class frmRundschreibenuebersicht
         Me.btnSave_Rundschreiben.Name = "btnSave_Rundschreiben"
         Me.btnSave_Rundschreiben.Size = New System.Drawing.Size(163, 49)
         Me.btnSave_Rundschreiben.TabIndex = 86
-        Me.btnSave_Rundschreiben.Text = "<html><strong>Speichern>/strong></html>"
+        Me.btnSave_Rundschreiben.Text = "<html><strong>         Rundschreibennormal <br />speichern</strong></html>"
         '
         'Label4
         '
@@ -1014,6 +1132,451 @@ Partial Class frmRundschreibenuebersicht
         Me.Label4.Size = New System.Drawing.Size(228, 36)
         Me.Label4.TabIndex = 84
         Me.Label4.Text = "Ausgewählte Bewerber/innen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "für das Kundenrundschreiben"
+        '
+        'TabPage3
+        '
+        Me.TabPage3.AutoScroll = True
+        Me.TabPage3.Controls.Add(Me.Panel3)
+        Me.TabPage3.Controls.Add(Me.SplitContainer3)
+        Me.TabPage3.Controls.Add(Me.Label10)
+        Me.TabPage3.Controls.Add(Me.btnPremiumEintraegeloeschen)
+        Me.TabPage3.Controls.Add(Me.rbtnTabellePremium)
+        Me.TabPage3.Controls.Add(Me.btnPremiumClose)
+        Me.TabPage3.Controls.Add(Me.btnMonatPremiumloeschen)
+        Me.TabPage3.Controls.Add(Me.btnRSPremiumspeichern)
+        Me.TabPage3.Controls.Add(Me.Label9)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(1527, 844)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Rundschreiben Premium"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel3.Controls.Add(Me.chkAufHomepagePremium)
+        Me.Panel3.Controls.Add(Label12)
+        Me.Panel3.Controls.Add(Me.rbtnJaPremium)
+        Me.Panel3.Controls.Add(Label13)
+        Me.Panel3.Controls.Add(Me.rbtnNeinPremium)
+        Me.Panel3.Controls.Add(Me.ListBox2)
+        Me.Panel3.Controls.Add(Me.Label11)
+        Me.Panel3.Location = New System.Drawing.Point(6, 630)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1500, 208)
+        Me.Panel3.TabIndex = 103
+        '
+        'chkAufHomepagePremium
+        '
+        Me.chkAufHomepagePremium.AutoSize = True
+        Me.chkAufHomepagePremium.Location = New System.Drawing.Point(131, 15)
+        Me.chkAufHomepagePremium.Name = "chkAufHomepagePremium"
+        Me.chkAufHomepagePremium.Size = New System.Drawing.Size(44, 20)
+        Me.chkAufHomepagePremium.TabIndex = 110
+        Me.chkAufHomepagePremium.Text = "Ja"
+        Me.chkAufHomepagePremium.UseVisualStyleBackColor = True
+        '
+        'rbtnJaPremium
+        '
+        Me.rbtnJaPremium.AutoSize = True
+        Me.rbtnJaPremium.ForeColor = System.Drawing.Color.Crimson
+        Me.rbtnJaPremium.Location = New System.Drawing.Point(568, 13)
+        Me.rbtnJaPremium.Name = "rbtnJaPremium"
+        Me.rbtnJaPremium.Size = New System.Drawing.Size(43, 20)
+        Me.rbtnJaPremium.TabIndex = 107
+        Me.rbtnJaPremium.TabStop = True
+        Me.rbtnJaPremium.Text = "Ja"
+        Me.rbtnJaPremium.UseVisualStyleBackColor = True
+        '
+        'rbtnNeinPremium
+        '
+        Me.rbtnNeinPremium.AutoSize = True
+        Me.rbtnNeinPremium.ForeColor = System.Drawing.Color.Crimson
+        Me.rbtnNeinPremium.Location = New System.Drawing.Point(626, 13)
+        Me.rbtnNeinPremium.Name = "rbtnNeinPremium"
+        Me.rbtnNeinPremium.Size = New System.Drawing.Size(58, 20)
+        Me.rbtnNeinPremium.TabIndex = 108
+        Me.rbtnNeinPremium.TabStop = True
+        Me.rbtnNeinPremium.Text = "Nein"
+        Me.rbtnNeinPremium.UseVisualStyleBackColor = True
+        '
+        'ListBox2
+        '
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.ItemHeight = 16
+        Me.ListBox2.Location = New System.Drawing.Point(341, 108)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(343, 84)
+        Me.ListBox2.TabIndex = 105
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Crimson
+        Me.Label11.Location = New System.Drawing.Point(338, 75)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(346, 16)
+        Me.Label11.TabIndex = 104
+        Me.Label11.Text = "Bereits in Premiumrundschreiben vorgeschlagen:"
+        '
+        'SplitContainer3
+        '
+        Me.SplitContainer3.Location = New System.Drawing.Point(6, 124)
+        Me.SplitContainer3.Name = "SplitContainer3"
+        '
+        'SplitContainer3.Panel1
+        '
+        Me.SplitContainer3.Panel1.Controls.Add(Me.RGVRundschreibenPremiumMonat)
+        '
+        'SplitContainer3.Panel2
+        '
+        Me.SplitContainer3.Panel2.Controls.Add(Me.RGVRundschreibenPremium)
+        Me.SplitContainer3.Size = New System.Drawing.Size(1500, 500)
+        Me.SplitContainer3.SplitterDistance = 322
+        Me.SplitContainer3.TabIndex = 102
+        '
+        'RGVRundschreibenPremiumMonat
+        '
+        Me.RGVRundschreibenPremiumMonat.BackColor = System.Drawing.Color.Transparent
+        Me.RGVRundschreibenPremiumMonat.Cursor = System.Windows.Forms.Cursors.Default
+        Me.RGVRundschreibenPremiumMonat.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RGVRundschreibenPremiumMonat.EnableAnalytics = False
+        Me.RGVRundschreibenPremiumMonat.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RGVRundschreibenPremiumMonat.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.RGVRundschreibenPremiumMonat.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.RGVRundschreibenPremiumMonat.Location = New System.Drawing.Point(0, 0)
+        '
+        '
+        '
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.AllowAddNewRow = False
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.AllowColumnChooser = False
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.AllowColumnReorder = False
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.AllowDeleteRow = False
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.AllowDragToGroup = False
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.AllowEditRow = False
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.AutoGenerateColumns = False
+        GridViewDecimalColumn16.DataType = GetType(Integer)
+        GridViewDecimalColumn16.EnableExpressionEditor = False
+        GridViewDecimalColumn16.FieldName = "idrundschreibenpremiummonat"
+        GridViewDecimalColumn16.HeaderText = "idrundschreibenpremiummonat"
+        GridViewDecimalColumn16.IsAutoGenerated = True
+        GridViewDecimalColumn16.IsVisible = False
+        GridViewDecimalColumn16.Name = "idrundschreibenpremiummonat"
+        GridViewTextBoxColumn9.EnableExpressionEditor = False
+        GridViewTextBoxColumn9.FieldName = "monat"
+        GridViewTextBoxColumn9.HeaderText = "Rundschreiben"
+        GridViewTextBoxColumn9.IsAutoGenerated = True
+        GridViewTextBoxColumn9.Name = "monat"
+        GridViewTextBoxColumn9.ReadOnly = True
+        GridViewTextBoxColumn9.Width = 250
+        GridViewDecimalColumn17.DataType = GetType(Integer)
+        GridViewDecimalColumn17.EnableExpressionEditor = False
+        GridViewDecimalColumn17.FieldName = "erledigt"
+        GridViewDecimalColumn17.HeaderText = "erledigt"
+        GridViewDecimalColumn17.IsAutoGenerated = True
+        GridViewDecimalColumn17.IsVisible = False
+        GridViewDecimalColumn17.Name = "erledigt"
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn16, GridViewTextBoxColumn9, GridViewDecimalColumn17})
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.DataSource = Me.RundschreibenpremiummonatBindingSource
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.EnableGrouping = False
+        Me.RGVRundschreibenPremiumMonat.MasterTemplate.ViewDefinition = TableViewDefinition5
+        Me.RGVRundschreibenPremiumMonat.Name = "RGVRundschreibenPremiumMonat"
+        Me.RGVRundschreibenPremiumMonat.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.RGVRundschreibenPremiumMonat.Size = New System.Drawing.Size(322, 500)
+        Me.RGVRundschreibenPremiumMonat.TabIndex = 0
+        '
+        'RundschreibenpremiummonatBindingSource
+        '
+        Me.RundschreibenpremiummonatBindingSource.DataMember = "rundschreibenpremiummonat"
+        Me.RundschreibenpremiummonatBindingSource.DataSource = Me.BewerberDataSet
+        '
+        'RGVRundschreibenPremium
+        '
+        Me.RGVRundschreibenPremium.BackColor = System.Drawing.Color.Transparent
+        Me.RGVRundschreibenPremium.Cursor = System.Windows.Forms.Cursors.Default
+        Me.RGVRundschreibenPremium.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RGVRundschreibenPremium.Font = New System.Drawing.Font("Arial", 9.75!)
+        Me.RGVRundschreibenPremium.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.RGVRundschreibenPremium.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.RGVRundschreibenPremium.Location = New System.Drawing.Point(0, 0)
+        '
+        '
+        '
+        Me.RGVRundschreibenPremium.MasterTemplate.AllowAddNewRow = False
+        Me.RGVRundschreibenPremium.MasterTemplate.AllowColumnReorder = False
+        Me.RGVRundschreibenPremium.MasterTemplate.AllowDeleteRow = False
+        Me.RGVRundschreibenPremium.MasterTemplate.AllowDragToGroup = False
+        GridViewDecimalColumn18.DataType = GetType(Integer)
+        GridViewDecimalColumn18.EnableExpressionEditor = False
+        GridViewDecimalColumn18.FieldName = "bewid"
+        GridViewDecimalColumn18.HeaderText = "bewid"
+        GridViewDecimalColumn18.IsAutoGenerated = True
+        GridViewDecimalColumn18.IsVisible = False
+        GridViewDecimalColumn18.Name = "bewid"
+        GridViewTextBoxColumn10.EnableExpressionEditor = False
+        GridViewTextBoxColumn10.FieldName = "bezeichnung"
+        GridViewTextBoxColumn10.HeaderText = "bezeichnung"
+        GridViewTextBoxColumn10.IsAutoGenerated = True
+        GridViewTextBoxColumn10.IsVisible = False
+        GridViewTextBoxColumn10.Name = "bezeichnung"
+        GridViewDecimalColumn19.DataType = GetType(Integer)
+        GridViewDecimalColumn19.EnableExpressionEditor = False
+        GridViewDecimalColumn19.FieldName = "refnr"
+        GridViewDecimalColumn19.HeaderText = "RefNr"
+        GridViewDecimalColumn19.IsAutoGenerated = True
+        GridViewDecimalColumn19.Name = "refnr"
+        GridViewDecimalColumn19.ReadOnly = True
+        GridViewDecimalColumn19.Width = 80
+        GridViewComboBoxColumn19.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn19.DataType = GetType(Integer)
+        GridViewComboBoxColumn19.DisplayMember = "anrede"
+        GridViewComboBoxColumn19.EnableExpressionEditor = False
+        GridViewComboBoxColumn19.FieldName = "idrundschreibenpremium"
+        GridViewComboBoxColumn19.HeaderText = "Anrede"
+        GridViewComboBoxColumn19.Name = "anrede"
+        GridViewComboBoxColumn19.ReadOnly = True
+        GridViewComboBoxColumn19.ValueMember = "id_bew"
+        GridViewComboBoxColumn19.Width = 80
+        GridViewComboBoxColumn20.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn20.DataType = GetType(Integer)
+        GridViewComboBoxColumn20.DisplayMember = "vorname"
+        GridViewComboBoxColumn20.EnableExpressionEditor = False
+        GridViewComboBoxColumn20.FieldName = "idrundschreibenpremium"
+        GridViewComboBoxColumn20.HeaderText = "Vorname"
+        GridViewComboBoxColumn20.Name = "vorname"
+        GridViewComboBoxColumn20.ReadOnly = True
+        GridViewComboBoxColumn20.ValueMember = "id_bew"
+        GridViewComboBoxColumn20.Width = 150
+        GridViewComboBoxColumn21.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn21.DataType = GetType(Integer)
+        GridViewComboBoxColumn21.DisplayMember = "name"
+        GridViewComboBoxColumn21.EnableExpressionEditor = False
+        GridViewComboBoxColumn21.FieldName = "idrundschreibenpremium"
+        GridViewComboBoxColumn21.HeaderText = "Nachname"
+        GridViewComboBoxColumn21.Name = "column1"
+        GridViewComboBoxColumn21.ReadOnly = True
+        GridViewComboBoxColumn21.ValueMember = "id_bew"
+        GridViewComboBoxColumn21.Width = 200
+        GridViewComboBoxColumn22.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn22.DataType = GetType(Integer)
+        GridViewComboBoxColumn22.DisplayMember = "stand"
+        GridViewComboBoxColumn22.EnableExpressionEditor = False
+        GridViewComboBoxColumn22.FieldName = "idrundschreibenpremium"
+        GridViewComboBoxColumn22.HeaderText = "Stand"
+        GridViewComboBoxColumn22.Name = "stand"
+        GridViewComboBoxColumn22.ReadOnly = True
+        GridViewComboBoxColumn22.ValueMember = "id_bew"
+        GridViewComboBoxColumn23.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn23.DataType = GetType(Integer)
+        GridViewComboBoxColumn23.DisplayMember = "ulas"
+        GridViewComboBoxColumn23.EnableExpressionEditor = False
+        GridViewComboBoxColumn23.FieldName = "idrundschreibenpremium"
+        GridViewComboBoxColumn23.HeaderText = "Ulas"
+        GridViewComboBoxColumn23.Name = "ulas"
+        GridViewComboBoxColumn23.ReadOnly = True
+        GridViewComboBoxColumn23.ValueMember = "id_bew"
+        GridViewComboBoxColumn24.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn24.DataType = GetType(Integer)
+        GridViewComboBoxColumn24.DisplayMember = "ort"
+        GridViewComboBoxColumn24.EnableExpressionEditor = False
+        GridViewComboBoxColumn24.FieldName = "idrundschreibenpremium"
+        GridViewComboBoxColumn24.HeaderText = "Wohnort"
+        GridViewComboBoxColumn24.Name = "wohnort"
+        GridViewComboBoxColumn24.ReadOnly = True
+        GridViewComboBoxColumn24.ValueMember = "id_bew"
+        GridViewComboBoxColumn24.Width = 150
+        GridViewComboBoxColumn25.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn25.DataType = GetType(Integer)
+        GridViewComboBoxColumn25.DisplayMember = "alter"
+        GridViewComboBoxColumn25.EnableExpressionEditor = False
+        GridViewComboBoxColumn25.FieldName = "idrundschreibenpremium"
+        GridViewComboBoxColumn25.HeaderText = "Alter"
+        GridViewComboBoxColumn25.Name = "alter"
+        GridViewComboBoxColumn25.ReadOnly = True
+        GridViewComboBoxColumn25.ValueMember = "id_bew"
+        GridViewComboBoxColumn26.DataSource = Me.BewBindingSource
+        GridViewComboBoxColumn26.DataType = GetType(Integer)
+        GridViewComboBoxColumn26.DisplayMember = "arbeitsort"
+        GridViewComboBoxColumn26.EnableExpressionEditor = False
+        GridViewComboBoxColumn26.FieldName = "idrundschreibenpremium"
+        GridViewComboBoxColumn26.HeaderText = "Arbeitsort"
+        GridViewComboBoxColumn26.Name = "arbeitsort"
+        GridViewComboBoxColumn26.ReadOnly = True
+        GridViewComboBoxColumn26.ValueMember = "id_bew"
+        GridViewComboBoxColumn26.Width = 150
+        GridViewDecimalColumn20.DataType = GetType(Integer)
+        GridViewDecimalColumn20.EnableExpressionEditor = False
+        GridViewDecimalColumn20.FieldName = "aktuell"
+        GridViewDecimalColumn20.HeaderText = "aktuell"
+        GridViewDecimalColumn20.IsAutoGenerated = True
+        GridViewDecimalColumn20.IsVisible = False
+        GridViewDecimalColumn20.Name = "aktuell"
+        GridViewDecimalColumn21.DataType = GetType(Integer)
+        GridViewDecimalColumn21.EnableExpressionEditor = False
+        GridViewDecimalColumn21.FieldName = "idrundschreibenmonatpremium"
+        GridViewDecimalColumn21.HeaderText = "idrundschreibenmonatpremium"
+        GridViewDecimalColumn21.IsAutoGenerated = True
+        GridViewDecimalColumn21.IsVisible = False
+        GridViewDecimalColumn21.Name = "idrundschreibenmonatpremium"
+        GridViewDecimalColumn22.DataType = GetType(Integer)
+        GridViewDecimalColumn22.EnableExpressionEditor = False
+        GridViewDecimalColumn22.FieldName = "homepage"
+        GridViewDecimalColumn22.HeaderText = "homepage"
+        GridViewDecimalColumn22.IsAutoGenerated = True
+        GridViewDecimalColumn22.IsVisible = False
+        GridViewDecimalColumn22.Name = "homepage"
+        GridViewTextBoxColumn11.EnableExpressionEditor = False
+        GridViewTextBoxColumn11.FieldName = "anmerkungen"
+        GridViewTextBoxColumn11.HeaderText = "anmerkungen"
+        GridViewTextBoxColumn11.IsAutoGenerated = True
+        GridViewTextBoxColumn11.IsVisible = False
+        GridViewTextBoxColumn11.Name = "anmerkungen"
+        GridViewDecimalColumn23.DataType = GetType(Integer)
+        GridViewDecimalColumn23.EnableExpressionEditor = False
+        GridViewDecimalColumn23.FieldName = "rundschreibenreihenfolge"
+        GridViewDecimalColumn23.HeaderText = "Reihenfolge"
+        GridViewDecimalColumn23.IsAutoGenerated = True
+        GridViewDecimalColumn23.Name = "rundschreibenreihenfolge"
+        GridViewDecimalColumn23.Width = 80
+        GridViewDecimalColumn24.DataType = GetType(Integer)
+        GridViewDecimalColumn24.EnableExpressionEditor = False
+        GridViewDecimalColumn24.FieldName = "gelöscht"
+        GridViewDecimalColumn24.HeaderText = "gelöscht"
+        GridViewDecimalColumn24.IsAutoGenerated = True
+        GridViewDecimalColumn24.IsVisible = False
+        GridViewDecimalColumn24.Name = "gelöscht"
+        GridViewCheckBoxColumn1.EnableExpressionEditor = False
+        GridViewCheckBoxColumn1.FieldName = "premiumrundschreibenjanein"
+        GridViewCheckBoxColumn1.HeaderText = "premiumrundschreibenjanein"
+        GridViewCheckBoxColumn1.IsAutoGenerated = True
+        GridViewCheckBoxColumn1.IsVisible = False
+        GridViewCheckBoxColumn1.MinWidth = 20
+        GridViewCheckBoxColumn1.Name = "premiumrundschreibenjanein"
+        Me.RGVRundschreibenPremium.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn18, GridViewTextBoxColumn10, GridViewDecimalColumn19, GridViewComboBoxColumn19, GridViewComboBoxColumn20, GridViewComboBoxColumn21, GridViewComboBoxColumn22, GridViewComboBoxColumn23, GridViewComboBoxColumn24, GridViewComboBoxColumn25, GridViewComboBoxColumn26, GridViewDecimalColumn20, GridViewDecimalColumn21, GridViewDecimalColumn22, GridViewTextBoxColumn11, GridViewDecimalColumn23, GridViewDecimalColumn24, GridViewCheckBoxColumn1})
+        Me.RGVRundschreibenPremium.MasterTemplate.DataSource = Me.RundschreibenpremiumBindingSource
+        Me.RGVRundschreibenPremium.MasterTemplate.EnableGrouping = False
+        Me.RGVRundschreibenPremium.MasterTemplate.ViewDefinition = TableViewDefinition6
+        Me.RGVRundschreibenPremium.Name = "RGVRundschreibenPremium"
+        Me.RGVRundschreibenPremium.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.RGVRundschreibenPremium.Size = New System.Drawing.Size(1174, 500)
+        Me.RGVRundschreibenPremium.TabIndex = 0
+        '
+        'RundschreibenpremiumBindingSource
+        '
+        Me.RundschreibenpremiumBindingSource.DataMember = "rundschreibenpremiummonat_rundschreibenpremium"
+        Me.RundschreibenpremiumBindingSource.DataSource = Me.RundschreibenpremiummonatBindingSource
+        '
+        'Label10
+        '
+        Me.Label10.BackColor = System.Drawing.Color.Yellow
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Crimson
+        Me.Label10.Location = New System.Drawing.Point(5, 78)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(759, 25)
+        Me.Label10.TabIndex = 101
+        Me.Label10.Text = "Die Bewerber bzw. Bewerberinnen müssen in der Tabelle mit der Maus angeklickt wer" &
+    "den!"
+        '
+        'btnPremiumEintraegeloeschen
+        '
+        Me.btnPremiumEintraegeloeschen.ForeColor = System.Drawing.Color.Red
+        Me.btnPremiumEintraegeloeschen.Image = CType(resources.GetObject("btnPremiumEintraegeloeschen.Image"), System.Drawing.Image)
+        Me.btnPremiumEintraegeloeschen.Location = New System.Drawing.Point(682, 12)
+        Me.btnPremiumEintraegeloeschen.Name = "btnPremiumEintraegeloeschen"
+        Me.btnPremiumEintraegeloeschen.Size = New System.Drawing.Size(201, 47)
+        Me.btnPremiumEintraegeloeschen.TabIndex = 100
+        Me.btnPremiumEintraegeloeschen.Text = "<html><strong> <br/>   Eintrag löschen></strong><br/></html>"
+        '
+        'rbtnTabellePremium
+        '
+        Me.rbtnTabellePremium.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.rbtnTabellePremium.ForeColor = System.Drawing.Color.Red
+        Me.rbtnTabellePremium.Image = CType(resources.GetObject("rbtnTabellePremium.Image"), System.Drawing.Image)
+        Me.rbtnTabellePremium.Items.AddRange(New Telerik.WinControls.RadItem() {Me.AufklappenPremium, Me.EinklappenPremium})
+        Me.rbtnTabellePremium.Location = New System.Drawing.Point(999, 14)
+        Me.rbtnTabellePremium.Name = "rbtnTabellePremium"
+        Me.rbtnTabellePremium.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.rbtnTabellePremium.Size = New System.Drawing.Size(163, 37)
+        Me.rbtnTabellePremium.TabIndex = 99
+        Me.rbtnTabellePremium.Text = "<html><span style=""font-size: 9pt"">Tabelle...</span></html>"
+        CType(Me.rbtnTabellePremium.GetChildAt(0), Telerik.WinControls.UI.RadDropDownButtonElement).Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        CType(Me.rbtnTabellePremium.GetChildAt(0), Telerik.WinControls.UI.RadDropDownButtonElement).Text = "<html><span style=""font-size: 9pt"">Tabelle...</span></html>"
+        CType(Me.rbtnTabellePremium.GetChildAt(0), Telerik.WinControls.UI.RadDropDownButtonElement).Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        CType(Me.rbtnTabellePremium.GetChildAt(0), Telerik.WinControls.UI.RadDropDownButtonElement).CanFocus = True
+        CType(Me.rbtnTabellePremium.GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).LineLimit = False
+        CType(Me.rbtnTabellePremium.GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.Red
+        CType(Me.rbtnTabellePremium.GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        CType(Me.rbtnTabellePremium.GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'AufklappenPremium
+        '
+        Me.AufklappenPremium.Alignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.AufklappenPremium.DescriptionFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AufklappenPremium.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AufklappenPremium.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.AufklappenPremium.Image = Nothing
+        Me.AufklappenPremium.ImageAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AufklappenPremium.Name = "AufklappenPremium"
+        Me.AufklappenPremium.Padding = New System.Windows.Forms.Padding(10, 3, 5, 3)
+        Me.AufklappenPremium.Text = "    Aufklappen"
+        Me.AufklappenPremium.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.AufklappenPremium.UseCompatibleTextRendering = False
+        '
+        'EinklappenPremium
+        '
+        Me.EinklappenPremium.DescriptionFont = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EinklappenPremium.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EinklappenPremium.Image = Nothing
+        Me.EinklappenPremium.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.EinklappenPremium.Name = "EinklappenPremium"
+        Me.EinklappenPremium.Text = "      Einklappen"
+        Me.EinklappenPremium.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.EinklappenPremium.UseCompatibleTextRendering = False
+        '
+        'btnPremiumClose
+        '
+        Me.btnPremiumClose.ForeColor = System.Drawing.Color.Red
+        Me.btnPremiumClose.Image = CType(resources.GetObject("btnPremiumClose.Image"), System.Drawing.Image)
+        Me.btnPremiumClose.Location = New System.Drawing.Point(1181, 14)
+        Me.btnPremiumClose.Name = "btnPremiumClose"
+        Me.btnPremiumClose.Size = New System.Drawing.Size(163, 37)
+        Me.btnPremiumClose.TabIndex = 98
+        Me.btnPremiumClose.Text = "<html><strong>   Fenster schließen>/strong></html>"
+        '
+        'btnMonatPremiumloeschen
+        '
+        Me.btnMonatPremiumloeschen.ForeColor = System.Drawing.Color.Red
+        Me.btnMonatPremiumloeschen.Image = CType(resources.GetObject("btnMonatPremiumloeschen.Image"), System.Drawing.Image)
+        Me.btnMonatPremiumloeschen.Location = New System.Drawing.Point(455, 14)
+        Me.btnMonatPremiumloeschen.Name = "btnMonatPremiumloeschen"
+        Me.btnMonatPremiumloeschen.Size = New System.Drawing.Size(201, 47)
+        Me.btnMonatPremiumloeschen.TabIndex = 97
+        Me.btnMonatPremiumloeschen.Text = "<html><strong><br /><br /><br />Monatsauswahl löschen<br /></strong><br /></html>" &
+    ""
+        '
+        'btnRSPremiumspeichern
+        '
+        Me.btnRSPremiumspeichern.ForeColor = System.Drawing.Color.Red
+        Me.btnRSPremiumspeichern.Image = CType(resources.GetObject("btnRSPremiumspeichern.Image"), System.Drawing.Image)
+        Me.btnRSPremiumspeichern.Location = New System.Drawing.Point(274, 12)
+        Me.btnRSPremiumspeichern.Name = "btnRSPremiumspeichern"
+        Me.btnRSPremiumspeichern.Size = New System.Drawing.Size(163, 49)
+        Me.btnRSPremiumspeichern.TabIndex = 96
+        Me.btnRSPremiumspeichern.Text = "<html><strong>    Premiumeinträge<br />    speichern</strong></html>"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Yellow
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(6, 12)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(238, 36)
+        Me.Label9.TabIndex = 85
+        Me.Label9.Text = "Ausgewählte Bewerber/innen " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "für das Premiumrundschreiben"
         '
         'TabPage2
         '
@@ -1103,11 +1666,6 @@ Partial Class frmRundschreibenuebersicht
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Kalenderwoche eintragen:"
         '
-        'BewBindingSource1
-        '
-        Me.BewBindingSource1.DataMember = "rundschreiben_bew"
-        Me.BewBindingSource1.DataSource = Me.RundschreibenBindingSource1
-        '
         'BewTableAdapter
         '
         Me.BewTableAdapter.ClearBeforeFill = True
@@ -1140,6 +1698,8 @@ Partial Class frmRundschreibenuebersicht
         Me.TableAdapterManager.gewerblichTableAdapter = Nothing
         Me.TableAdapterManager.notizenTableAdapter = Nothing
         Me.TableAdapterManager.rundschreibenmonatTableAdapter = Nothing
+        Me.TableAdapterManager.rundschreibenpremiummonatTableAdapter = Nothing
+        Me.TableAdapterManager.rundschreibenpremiumTableAdapter = Nothing
         Me.TableAdapterManager.rundschreibenTableAdapter = Nothing
         Me.TableAdapterManager.ulasTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = bewerberpool.BewerberDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
@@ -1151,6 +1711,24 @@ Partial Class frmRundschreibenuebersicht
         'RundschreibenTableAdapter
         '
         Me.RundschreibenTableAdapter.ClearBeforeFill = True
+        '
+        'RundschreibenpremiummonatTableAdapter
+        '
+        Me.RundschreibenpremiummonatTableAdapter.ClearBeforeFill = True
+        '
+        'RundschreibenpremiumTableAdapter
+        '
+        Me.RundschreibenpremiumTableAdapter.ClearBeforeFill = True
+        '
+        'RundschreibenpremiumbewBindingSource
+        '
+        Me.RundschreibenpremiumbewBindingSource.DataMember = "rundschreibenpremium_bew"
+        Me.RundschreibenpremiumbewBindingSource.DataSource = Me.RundschreibenpremiumBindingSource
+        '
+        'RundschreibenpremiumbewBindingSource1
+        '
+        Me.RundschreibenpremiumbewBindingSource1.DataMember = "rundschreibenpremium_bew"
+        Me.RundschreibenpremiumbewBindingSource1.DataSource = Me.RundschreibenpremiumBindingSource
         '
         'frmRundschreibenuebersicht
         '
@@ -1166,6 +1744,9 @@ Partial Class frmRundschreibenuebersicht
         Me.Text = "Rundschreibenübersicht"
         CType(Me.BewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BewerberDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BewBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RundschreibenBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RundschreibenmonatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RundschreibenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
@@ -1173,10 +1754,8 @@ Partial Class frmRundschreibenuebersicht
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.RGVRundschreibenMonat.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RGVRundschreibenMonat, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RundschreibenmonatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RGVBewerber.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RGVBewerber, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RundschreibenBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -1195,11 +1774,31 @@ Partial Class frmRundschreibenuebersicht
         CType(Me.btnRundschreibenaktuell_Close, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEintraegeloeschenunduebertragen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnSave_Rundschreiben, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.SplitContainer3.Panel1.ResumeLayout(False)
+        Me.SplitContainer3.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer3.ResumeLayout(False)
+        CType(Me.RGVRundschreibenPremiumMonat.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RGVRundschreibenPremiumMonat, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RundschreibenpremiummonatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RGVRundschreibenPremium.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RGVRundschreibenPremium, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RundschreibenpremiumBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPremiumEintraegeloeschen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.rbtnTabellePremium, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPremiumClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnMonatPremiumloeschen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnRSPremiumspeichern, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.btnKWspeichern, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BewBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RundschreibenpremiumbewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RundschreibenpremiumbewBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1231,14 +1830,12 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents BewBindingSource1 As BindingSource
     Friend WithEvents RundschreibenBindingSource1 As BindingSource
     Friend WithEvents AnmerkungenTextBox As TextBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents RundschreibenreihenfolgeTextBox As TextBox
     Friend WithEvents chkAufHomepage As CheckBox
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents Label2 As Label
     Friend WithEvents rbtnNein As RadioButton
     Friend WithEvents rbtnJa As RadioButton
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents lblAktuellesDatum As Label
@@ -1247,4 +1844,32 @@ Partial Class frmRundschreibenuebersicht
     Friend WithEvents btnKWspeichern As Telerik.WinControls.UI.RadButton
     Friend WithEvents chgNurhomepage As CheckBox
     Friend WithEvents btnEintraegeloeschen As Telerik.WinControls.UI.RadButton
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents SplitContainer3 As SplitContainer
+    Friend WithEvents Label10 As Label
+    Friend WithEvents btnPremiumEintraegeloeschen As Telerik.WinControls.UI.RadButton
+    Friend WithEvents rbtnTabellePremium As Telerik.WinControls.UI.RadDropDownButton
+    Friend WithEvents AufklappenPremium As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents EinklappenPremium As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents btnPremiumClose As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btnMonatPremiumloeschen As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btnRSPremiumspeichern As Telerik.WinControls.UI.RadButton
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents RGVRundschreibenPremiumMonat As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents rbtnNeinPremium As RadioButton
+    Friend WithEvents rbtnJaPremium As RadioButton
+    Friend WithEvents chkAufHomepagePremium As CheckBox
+    Friend WithEvents RGVRundschreibenPremium As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents AktuellTextBox As TextBox
+    Friend WithEvents RundschreibenpremiummonatBindingSource As BindingSource
+    Friend WithEvents RundschreibenpremiummonatTableAdapter As BewerberDataSetTableAdapters.rundschreibenpremiummonatTableAdapter
+    Friend WithEvents RundschreibenpremiumBindingSource As BindingSource
+    Friend WithEvents RundschreibenpremiumTableAdapter As BewerberDataSetTableAdapters.rundschreibenpremiumTableAdapter
+    Friend WithEvents RundschreibenpremiumbewBindingSource As BindingSource
+    Friend WithEvents RundschreibenpremiumbewBindingSource1 As BindingSource
+    Friend WithEvents Panel3 As Panel
 End Class
