@@ -262,12 +262,12 @@ Public Class frmRundschreibendetail
 
             'Filter nach Monatsid auf Bindingsource der Tabelle "rundschreibenpremiummonat" setzen, "2" eintragen, wenn ein Premiumbewerber für einen Rundschreibenmonat eingetragen wird
             RundschreibenpremiummonatBindingSource.Filter = "idrundschreibenpremiummonat = '" & monat & "'"
-            Dim rundschreibenmonat = DirectCast(DirectCast(RundschreibenpremiummonatBindingSource.Current, DataRowView).Row, rundschreibenpremiummonatRow)
-            rundschreibenmonat.erledigt = 1
+            Dim rundschreibenpremiummonat = DirectCast(DirectCast(RundschreibenpremiummonatBindingSource.Current, DataRowView).Row, rundschreibenpremiummonatRow)
+            rundschreibenpremiummonat.erledigt = 1
 
             Me.Validate()
-            RundschreibenmonatBindingSource.EndEdit()
-            RundschreibenmonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenmonat)
+            RundschreibenpremiummonatBindingSource.EndEdit()
+            RundschreibenpremiummonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenpremiummonat)
 
             Dim rundschreibenpremium = DirectCast(DirectCast(RundschreibenpremiumBindingSource.AddNew, DataRowView).Row, rundschreibenpremiumRow)
             rundschreibenpremium.bewid = CInt(letzteid)

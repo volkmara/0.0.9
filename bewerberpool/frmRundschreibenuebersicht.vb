@@ -336,6 +336,13 @@ Public Class frmRundschreibenuebersicht
                 Me.Validate()
                 Me.RundschreibenpremiumBindingSource.EndEdit()
                 Me.RundschreibenpremiumTableAdapter.Update(Me.BewerberDataSet.rundschreibenpremium)
+
+                Dim rundschreibenmonatpremium = DirectCast(DirectCast(RundschreibenpremiummonatBindingSource.Current, DataRowView).Row, rundschreibenpremiumRow)
+                rundschreibenmonatpremium.aktuell = 1
+                Me.Validate()
+                Me.RundschreibenpremiummonatBindingSource.EndEdit()
+                Me.RundschreibenpremiummonatTableAdapter.Update(Me.BewerberDataSet.rundschreibenpremiummonat)
+
                 Call gespeichert()
 
             Case sender Is btnPremiumEintraegeloeschen
